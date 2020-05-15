@@ -1,0 +1,263 @@
+/* * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} */
+
+/* GLOBAL STYLES */
+/* button {
+  background: #0000ff;
+  border: 4px solid #0000ff;
+  color: #fff;
+  font-size: 1.5rem;
+  height: 77px;
+  text-transform: uppercase;
+  width: 332px;
+}
+
+button:hover {
+  background: #fff;
+  color: #0000ff;
+  cursor: pointer;
+  transition: 400ms;
+} */
+
+/* NAVIGATION BAR */
+/* .landingPage-navBar {
+  align-items: center;
+  background: #fff;
+  display: flex;
+  height: 10vh;
+  justify-content: space-between;
+  padding: 0 10vw;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+}
+
+.landingPage .landingPage-navBar h2 {
+  color: #0000ff;
+  font-size: 2.5rem;
+}
+.landingPage-navBar-links {
+  display: flex;
+  align-items: center;
+}
+
+.landingPage-navBar ul  {
+  align-items: center;
+  display: flex;
+  font-family: sans-serif;
+  list-style: none;
+}
+.landingPage-navBar ul li  {
+  align-items: center;
+  display: flex;
+  font-size: 1rem;
+  height: 40px;
+  margin-right: 20px;
+  text-transform: uppercase;
+}
+
+.landingPage-navBar .job-seekers {
+  border-right: 1px solid #000;
+  padding-right: 20px;
+}
+
+.landingPage-navBar .landingPage-signIn-button {
+  background: #fff;
+  border: 1px solid blue;
+  color: blue;
+  font-size: 1.2rem;
+  height: 40px;
+  width: 100px;
+}
+
+.landingPage-navBar .landingPage-signIn-button:hover {
+  cursor: pointer;
+} */
+
+/* MAIN HEADER */
+.landingPage-header {
+  background: url('../../assets/img/photograph-of-men-having-conversation-seating-on-chair-1015568.jpg') center center/cover;
+  /* color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.7rem;
+  height: 90vh;
+  margin-top: 10vh;
+  position: relative; */
+}
+
+/* .landingPage-overlay {
+  background: #333;
+  height: 100%;
+  opacity: .33;
+  width: 100%;
+}
+
+.landingPage-heading-buttons {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  justify-content: space-between;
+  left: 10%;
+  position: absolute;
+  top: 10%;
+  width: 1000px;
+}
+
+.landingPage-heading {
+  width: 600px;
+}
+
+.landingPage-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 680px;
+}
+
+.button {
+  background: #0000ff;
+  border: 4px solid #0000ff;
+  color: #fff;
+  font-size: 1.5rem;
+  height: 77px;
+  text-transform: uppercase;
+  width: 332px;
+}
+
+.button:hover {
+  background: #fff;
+  color: #0000ff;
+  cursor: pointer;
+  transition: 400ms;
+} */
+
+/* ABOUT HEADER */
+/* .about-header {
+  background: #333;
+  display: flex;
+  height: 330px;
+  justify-content: space-between;
+  padding: 75px 10vw 0 10vw;
+  text-align: center;
+}
+
+.step { width: 275px; color: #fff; }
+
+.about-header h2 {
+  font-size: 2rem;
+}
+
+.about-header p {
+  font-size: 1.2rem;
+}
+
+.outer-circle {
+  background: #ea4d69;
+  border-radius: 50%;
+  display: grid;
+  height: 65px;
+  opacity: .75;
+  margin: auto;
+
+  place-items: center;
+  position: relative;
+  width: 65px;
+}
+
+.inner-circle {
+  position: absolute;
+  background: red;
+  border-radius: 50%;
+  color: #fff;
+  display: grid;
+  font-size: 1.2rem;
+  height: 46.77px;
+  opacity: 1;
+  place-items: center;
+  width: 46.77px;
+  z-index: 2;
+}
+
+.inner-circle p { font-size: 1.7rem; } */
+
+/* ABOUT MAIN */
+/* .about-main {
+  height: 100vh;
+  padding: 5vw 10vw 0 10vw;
+}
+
+.block {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 5vh;
+} */
+
+/* about block one */
+/* .work-from-anywhere {
+  width: 500px;
+}
+
+.about-main h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.about-main p {
+  color: #7a7a7a;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.about-main img {
+  height: 630px;
+  width: 420px;
+} */
+
+/* about block two */
+/* .build-your-team {
+  width: 500px;
+}
+
+.about-main .imgTwo {
+  height: 422px;
+  width: 633px;
+}
+
+.build-your-team button {
+  background: #ea4d69;
+  border: 4px solid #ea4d69;
+}
+
+.build-your-team button:hover {
+  background: #fff;
+  border: 4px solid #ea4d69;
+  color: #ea4d69;
+  transition: 400ms;
+} */
+
+/* FOOTER */
+/* .footer {
+  background: #dfdfdf;
+  display: grid;
+  height: 25vh;
+  place-items: center;
+  margin-top: 450px;
+}
+
+.footer ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  width: 800px;
+}
+
+.socialMedia img {
+  margin-right: 20px;
+} */
