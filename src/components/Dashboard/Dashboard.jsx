@@ -7,7 +7,7 @@ import ProfileDropdown from './ProfileDropdown.jsx';
 // import JobMatches from './JobMatches.jsx';
 import Reminder from './Reminder.jsx';
 
-class App extends Component {
+class Dashboard extends Component {
   constructor(props) {
     super(props);
 
@@ -67,4 +67,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Dashboard;

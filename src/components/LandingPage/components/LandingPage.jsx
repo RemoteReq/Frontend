@@ -1,39 +1,29 @@
 import React, { Component } from 'react';
-import Navigation from './Navigation.jsx';
+import Navigation from '../../parts/Navigation-1.jsx';
 import LPHeader from './LPHeader.jsx';
 import AboutHeader from './AboutHeader.jsx';
 import AboutMain from './AboutMain.jsx';
 import CallToAction from './CallToAction.jsx';
-import Footer from './Footer.jsx';
+import Footer from '../../parts/Footer.jsx';
 
-class App extends Component {
+class LandingPage extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      LandingPageMenuVisible: false
+      LandingPageMenuVisible: false,
     };
 
     this.menuClick = this.menuClick.bind(this);
-    // this.handleWindowResize = this.handleWindowResize.bind(this);
-  }
-
-  
-  // componentDidMount() {
-  //   window.addEventListener('resize', this.handleWindowResize())
-  // }
-  // handleWindowResize() {
-  //   console.log(window.innerWidth)
-  // }
 
   menuClick() {
-    this.setState({ LandingPageMenuVisible: !this.state.LandingPageMenuVisible })
+    this.setState({ LandingPageMenuVisible: !this.state.LandingPageMenuVisible });
   }
 
   render() {
     return (
       <div className='landingPage'>
-        <Navigation 
+        <Navigation
           menuClick={this.menuClick}
           LandingPageMenuVisible={this.state.LandingPageMenuVisible}
         />
@@ -47,4 +37,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default LandingPage;

@@ -6,7 +6,7 @@ import LoginPage from './LoginPage.jsx';
 import Registration from './Registration.jsx';
 import Footer from './Footer.jsx';
 
-class App extends Component {
+class Auth extends Component {
   constructor(props) {
     super(props);
 
@@ -126,4 +126,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Auth;
