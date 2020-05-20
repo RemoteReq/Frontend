@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Connect from '../../assets/img/Connect.png';
-import Forward from '../../assets/img/Forward.png';
-import Profile from '../../assets/img/Profile.png';
+import Connect from '../../../../assets/img/Connect.png';
+import Forward from '../../../../assets/img/Forward.png';
+import Profile from '../../../../assets/img/Profile.png';
 
 const AboutHeader = () => (
   <div className='about-header'>
@@ -22,6 +22,6 @@ const AboutHeader = () => (
       <p>Interview, get hired, and start making your impact.</p>
     </div>
   </div>
-)
+);
 
 export default AboutHeader;

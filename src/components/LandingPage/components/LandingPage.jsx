@@ -7,32 +7,16 @@ import CallToAction from './CallToAction.jsx';
 import Footer from '../../parts/Footer.jsx';
 
 class LandingPage extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      LandingPageMenuVisible: false,
-    };
-
-    this.menuClick = this.menuClick.bind(this);
-
-  menuClick() {
-    this.setState({ LandingPageMenuVisible: !this.state.LandingPageMenuVisible });
-  }
-
   render() {
     return (
-      <div className='landingPage'>
-        <Navigation
-          menuClick={this.menuClick}
-          LandingPageMenuVisible={this.state.LandingPageMenuVisible}
-        />
-        <LPHeader />
-        <AboutHeader />
-        <AboutMain />
-        <CallToAction />
-        <Footer />
-      </div>
+        <div className='landingPage'>
+          <Navigation/>
+          <LPHeader />
+          <AboutHeader />
+          <AboutMain />
+          <CallToAction />
+          <Footer />
+        </div>
     );
   }
 }

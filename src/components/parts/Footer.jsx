@@ -1,5 +1,5 @@
 import React from 'react';
-import RRLogo from '../../assets/img/RR-cobalt.png';
+import RRLogo from '../../../assets/img/RR-cobalt.png';
 // import FaceBookIcon from '#assets/img/facebook.png';
 // import LinkedinIcon from '#assets/img/linkedin.png';
 // import TwitterIcon from '#assets/img/twitter.png';

@@ -1,5 +1,5 @@
 import React from 'react';
-import RemoteReq from '../../assets/img/RemoteReq-logotype-cobalt.png';
+import RemoteReq from '../../../assets/img/RemoteReq-logotype-cobalt.png';
 
 const Navigation = (props) => {
   let menuVisible;
