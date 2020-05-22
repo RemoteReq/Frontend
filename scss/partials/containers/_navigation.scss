@@ -31,8 +31,12 @@
 
       button {
         a {
+          display: inline;
           color: $PrimaryColor;
           text-decoration: none;
+          font-size: 14pt;
+          white-space: nowrap;
+          padding: 0;
         }
       }
 

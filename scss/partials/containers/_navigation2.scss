@@ -45,38 +45,4 @@
 
     .hamburgerMenu { display: none; }
   }
-
-  .dashboard-navBar-links {
-    display: flex;
-    align-items: center;
-
-      button {
-        a {
-          color: $PrimaryColor;
-          text-decoration: none;
-        }
-      }
-
-    .find-talent-btn {
-      background: $PrimaryColor;
-      color: $SecondaryColor;
-      margin-right: 20px;
-    }
-
-    .find-talent-btn:hover {
-      background: $SecondaryColor;
-      color: $PrimaryColor;
-    }
-
-    .log-in-btn {
-      background: $SecondaryColor;
-      color: $PrimaryColor;
-      width: 200px;
-    }
-
-    .log-in-btn:hover {
-      background: $TertiaryColor;
-      border: 4px solid $TertiaryColor;
-    }
-  }
 }
