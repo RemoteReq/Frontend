@@ -1,7 +1,5 @@
 import React from 'react';
 import { GoogleLogin } from 'react-google-login';
-import FBImage from '../../../assets/img/facebook.png';
-import GglImage from '../../../assets/img/google.png';
 
 const responseGoogle = (response) => {
   console.log(response);
@@ -15,23 +13,14 @@ const LoginPage = (props) => (
         <p>
           By continuing, you agree to our  <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
         </p>
-        {/* <div className="fb-login">
-          <img src={ FBImage } alt="" srcSet=""/>
-          <h3>Continue as Name</h3>
-        </div> */}
 
         <GoogleLogin
         clientId="1005468463474-snfb80jfo4sg40fdapbcguuoa6uvbqq1.apps.googleusercontent.com"
-          buttonText="Login"
+          buttonText="Sign In with Google"
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
           cookiePolicy={'single_host_origin'}
           />
-
-        {/* <div className="google-login">
-          <img src={ GglImage } alt="" srcSet=""/>
-          <h3>Continue with Google</h3>
-        </div> */}
 
       </div>
       <form className="login-form" >
