@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Navigation from './Navigation.jsx';
+import Navigation from '../../components/parts/Navigation2.jsx';
 import ProfileCard from './ProfileCard.jsx';
 import JobList from './jobList/JobList.jsx';
 import ProfileDropdown from './ProfileDropdown.jsx';

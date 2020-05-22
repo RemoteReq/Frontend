@@ -3,7 +3,8 @@ import {
   BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
 import LandingPage from './LandingPage/components/LandingPage.jsx';
-import SignIn from './Auth/Auth.jsx';
+import SignIn from './Auth/LoginPage.jsx';
+import Dashboard from '../pages/Dashboard/Dashboard.jsx';
 
 
 class App extends Component {
@@ -11,10 +12,10 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route path="/" component={LandingPage}/>
+          <Route exact path="/" component={LandingPage} />
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component="signup" />
-          <Route path="/dashboard" component="dashboard" />
+          <Route path="/dashboard" component={Dashboard} />
           <Route path="/QnA" component="questionnaire" />
         </Switch>
       </Router>

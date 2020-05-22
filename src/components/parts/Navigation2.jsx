@@ -1,6 +1,6 @@
 import React from 'react';
-import RemoteReq from '../../assets/img/RR-cobalt.png';
-import ProfileIcon from '../../assets/img/Profile.png';
+import RemoteReq from '../../../assets/img/RR-cobalt.png';
+import ProfileIcon from '../../../assets/img/Profile.png';
 
 const Navigation2 = (props) => {
   let menuVisible;
