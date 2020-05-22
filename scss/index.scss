@@ -32,6 +32,10 @@
 @import './partials/containers//jobListing.scss';
 @import './partials/containers/navigation2';
 
+//Auth
+@import './partials/containers/_loginPage.scss';
+@import './partials/containers/_registration.scss';
+
 // import tablet container style files
 @import './partials/containers/tablet/_tabletNavigation.scss';
 @import './partials/containers/tablet/_tabletMainHeader.scss';

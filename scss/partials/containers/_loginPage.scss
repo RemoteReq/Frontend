@@ -1,0 +1,95 @@
+// TODO:
+// create style variables
+
+.login-form-page {
+  padding-top: 24px;
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  width: 100vw;
+
+  .login-container {
+    height: 75%;
+    padding: 1rem;
+
+    .login-fb-google {
+      border-bottom: 1px solid #d4d4d4;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      text-align: center;
+
+      .fb-login {
+        align-items: center;
+        background: #4e71ba;
+        border: 1px solid #d4d4d4;
+        color: #fff;
+        display: flex;
+        height: 40px;
+        padding: 0 .5rem;
+        margin-bottom: 20px;
+
+        h3 { margin: auto; }
+
+        img {
+          height: 35px;
+          margin-right: 10px;
+        }
+      }
+
+      .google-login {
+        align-items: center;
+        border: 1px solid #d4d4d4;
+        color: red;
+        display: flex;
+        height: 40px;
+        padding: 0 .5rem;
+        text-align: center;
+
+        h3 { margin: auto; }
+
+        img {
+          height: 35px;
+          margin-right: 10px;
+        }
+      }
+
+      a { text-decoration: none; }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+
+      input {
+        border: 1px solid #d4d4d4;
+        border-radius: 5px;
+        font-size: 1.3rem;
+        height: 40px;
+        margin-bottom: 10px;
+        outline: none;
+        padding: 0 .5rem;
+      }
+
+      button {
+        background: #0000ff;
+        border: none;
+        color: #fff;
+        font-size: 1.3rem;
+        height: 40px;
+        margin: auto;
+        margin-bottom: 20px;
+        width: 200px;
+      }
+
+      button:hover {
+        cursor: pointer;
+      }
+
+      a { text-decoration: none; }
+    }
+  }
+}

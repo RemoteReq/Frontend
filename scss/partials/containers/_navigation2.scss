@@ -1,7 +1,7 @@
 // media query required because some of the styles were overriding media queries for mobile styles
 
 @media screen and (min-width: 1366px) {
-  .landingPage-navBar {
+  .dashboard-navBar {
     align-items: center;
     background: #fff;
     display: flex;
@@ -39,14 +39,14 @@
     padding-left: 18pt;
   }
 
-  .landingPage-name-menu {
+  .dashboard-name-menu {
 
     .remotereq-name { max-width: 50px; }
 
     .hamburgerMenu { display: none; }
   }
 
-  .landingPage-navBar-links {
+  .dashboard-navBar-links {
     display: flex;
     align-items: center;
 

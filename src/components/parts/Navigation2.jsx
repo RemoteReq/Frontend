@@ -16,13 +16,13 @@ const Navigation2 = (props) => {
   }
 
   return (
-    <nav className='landingPage-navBar'>
-      <div className='landingPage-name-menu'>
+    <nav className='dashboard-navBar'>
+      <div className='dashboard-name-menu'>
         <a className='Dashboard-Home' href="http://localhost:8080/dashboard">
           <img src={ RemoteReq } className='remotereq-name' alt='remote' />
           <p>Job Board</p>
         </a>
-        <div className='landingPage-menu'>
+        <div className='dashboard-menu'>
           <label
             htmlFor='toggle'
             className='hamburgerMenu'
@@ -30,7 +30,7 @@ const Navigation2 = (props) => {
           >&#9776;</label>
         </div>
       </div>
-      <div className='landingPage-navBar-links'>
+      <div className='dashboard-navBar-links'>
         <a className="dash-nav" href="/joblist"></a>
         <a>
           <img src={ProfileIcon}/>
