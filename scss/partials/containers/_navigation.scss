@@ -1,0 +1,61 @@
+// media query required because some of the styles were overriding media queries for mobile styles
+
+@media screen and (min-width: 1366px) {
+  .landingPage-navBar {
+    align-items: center;
+    background: #fff;
+    display: flex;
+    // height: 15vh;
+    height: 150px;
+    justify-content: space-between;
+    letter-spacing: 1px;
+    padding: 0 10vw;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+  }
+
+  .landingPage-name-menu {
+
+    .remotereq-name { width: 300px; }
+
+    .hamburgerMenu { display: none; }
+  }
+
+  
+
+  .landingPage-navBar-links {
+    display: flex;
+    align-items: center;
+
+      button {
+        a {
+          color: $PrmColor;
+          text-decoration: none;
+        }
+      }
+
+    .find-talent-btn {
+      background: $PrmColor;
+      color: $ScndColor;
+      margin-right: 20px;
+    }
+
+    .find-talent-btn:hover {
+      background: $ScndColor;
+      color: $PrmColor;
+    }
+
+    .log-in-btn {
+      background: $ScndColor;
+      color: $PrmColor;
+      width: 200px;
+    }
+
+    .log-in-btn:hover {
+      background: $TrtColor;
+      border: 4px solid $TrtColor;
+    }
+  }
+}

@@ -17,4 +17,25 @@
 @import './partials/elements/_sample.scss';
 
 // import container partials files
-@import './partials/containers/_sampleContainer.scss';
+@import './partials/containers/_navigation.scss';
+@import './partials/containers/_mainHeader.scss';
+@import './partials/containers/_aboutHeader.scss';
+@import './partials/containers/_aboutMain.scss';
+@import './partials/containers/_callToAction.scss';
+@import './partials/containers/_footer.scss';
+
+// import tablet container style files
+@import './partials/containers/tablet/_tabletNavigation.scss';
+@import './partials/containers/tablet/_tabletMainHeader.scss';
+@import './partials/containers/tablet/_tabletAboutHeader.scss';
+@import './partials/containers/tablet/_tabletAboutMain.scss';
+@import './partials/containers/tablet/_tabletCallToAction.scss';
+@import './partials/containers/tablet/_tabletFooter.scss';
+
+// import mobile container style files
+@import './partials/containers/mobile/_mobileNavigation.scss';
+@import './partials/containers/mobile/_mobileMainHeader.scss';
+@import './partials/containers/mobile/_mobileAboutHeader.scss';
+@import './partials/containers/mobile/_mobileAboutMain.scss';
+@import './partials/containers/mobile/_mobileCallToAction.scss';
+@import './partials/containers/mobile/_mobileFooter.scss';

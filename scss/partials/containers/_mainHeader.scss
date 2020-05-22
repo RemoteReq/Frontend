@@ -1,0 +1,58 @@
+@media screen and (min-width: 1366px) {
+  .landingPage-header {
+    background: #fbf9f4;
+    // height: 100vh;
+    height: 1000px;
+    padding: 250px 10vw 0 10vw;
+
+    .landingPage-heading-btns {
+      width: 40vw;
+
+      .heading {
+
+        h1 {
+          font-family: $MainFont;
+          font-size: 65pt;
+          font-weight: normal;
+          margin-bottom: 37px;
+        }
+
+        h3 {
+          color: $ScndFontColor;
+          font-family: $SecondaryFont;
+          font-size: 20pt;
+          font-weight: normal;
+          line-height: 37px;
+          margin-bottom: 37px;
+        }
+      }
+
+      .create-profile-btn {
+        background: $ScndColor;
+        color: $PrmColor;
+        font-size: 20pt;
+        height: 100px;
+        margin-bottom: 37px;
+      }
+  
+      .create-profile-btn:hover {
+        background: $TrtColor;
+        border: 4px solid $TrtColor;
+      }
+
+      .find-talent {
+
+        a {
+          color: $ScndColor;
+          font-family: $SecondaryFont;
+          font-size: 22pt;
+          font-weight: bold;
+        }
+
+        a:hover {
+          color: $TrtColor;
+        }
+      }
+    }
+  }
+}

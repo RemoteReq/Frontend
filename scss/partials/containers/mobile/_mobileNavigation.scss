@@ -1,0 +1,71 @@
+@media screen and (max-width: 767px) {
+  .landingPage-navBar {
+    align-items: center;
+    background: $PrmColor;
+    display: flex;
+    // flex-direction: column;
+    font-size: 1rem;
+    height: 80px;
+    justify-content: space-between;
+    outline: none;
+    position: fixed;
+    padding: 0 5vw;
+    width: 100%;
+    z-index: 3;
+
+    .landingPage-name-menu {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 3%;
+      width: 100%;
+
+      img {
+        width: 40vw;
+      }
+
+      .hamburgerMenu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 35px;
+        height: 35px;
+
+        .line {
+          background: $TrtColor;
+          height: 6px;
+          width: 35px;
+        }
+      }
+    }
+
+    .landingPage-navBar-links {
+      background: $PrmColor;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      padding: 10vh 0;
+      position: absolute;
+      top: 80px;
+      width: 90%;
+
+      .find-talent-btn {
+        background: $PrmColor;
+        color: $ScndColor;
+        margin-bottom: 5vh;
+      }
+
+      .log-in-btn {
+        background: $ScndColor;
+
+        a {
+          color: $PrmColor;
+          text-decoration: none;
+        }
+        
+      }
+    }
+
+    
+  }
+}

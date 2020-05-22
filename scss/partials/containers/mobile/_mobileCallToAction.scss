@@ -1,0 +1,33 @@
+@media screen and (max-width: 767px) {
+    .call-to-action {
+        background: #fbf9f4;
+        padding: 10vh 5vw;
+        text-align: center;
+
+        h1 {
+            font-family: $MainFont;
+            // font-size: 65pt;
+            font-size: 14vw;
+            font-weight: normal;
+            margin: auto;
+            margin-bottom: 37px;
+            width: 70%;
+        }
+
+        .call-to-action-btns {
+            button {
+                background: $ScndColor;
+                color: $PrmColor;
+                font-size: 20pt;
+                height: 100px;
+                margin-bottom: 37px;
+                width: 100%;
+            }
+
+            .cta-find-talent {
+                background: $PrmColor;
+                color: $ScndColor;
+            }
+        }
+    }
+}

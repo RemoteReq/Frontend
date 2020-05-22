@@ -1,4 +1,44 @@
-body {
-  margin: 0;
+* {
   padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+
+body {
+  position: relative;
+  // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media screen and (min-width: 1366px) {
+  // button {
+  //   background: #0000ff;
+  //   border: 4px solid #0000ff;
+  //   color: #fff;
+  //   font-size: 1.5rem;
+  //   height: 77px;
+  //   text-transform: uppercase;
+  //   width: 332px;
+  // }
+
+  // button:hover {
+  //   background: #fff;
+  //   color: #0000ff;
+  //   cursor: pointer;
+  //   transition: 400ms;
+  // }
+}
+@media screen and (min-width: 481px) and (max-width: 1365px) {
+  
+}
+button {
+  border: 4px solid $ScndColor;
+  font-family: $SecondaryFont;
+  font-size: 14pt;
+  font-weight: bold;
+  height: 80px;
+  letter-spacing: 2pt;
+  padding: 0 40px;
+  text-transform: uppercase;
+}
+
+button:hover { cursor: pointer; }

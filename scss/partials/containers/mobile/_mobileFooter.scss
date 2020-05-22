@@ -1,0 +1,27 @@
+@media screen and (max-width: 767px) {
+  .footer {
+    align-items: center;
+    display: flex;
+    height: 15vh;
+    justify-content: space-between;
+    margin: 10vh 10vw 5vh 10vw;
+
+    ul {
+      // display: flex;
+      list-style: none;
+
+      li {
+        color: $ScndFontColor;
+        font-family: $SecondaryFont;
+        font-size: 12pt;
+        // margin-right: 80px;
+        margin-bottom: 3vh;
+      }
+    }
+
+    img {
+      align-self: flex-start;
+      width: 20px;
+    }
+  }
+}
