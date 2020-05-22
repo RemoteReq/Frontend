@@ -1,0 +1,35 @@
+.reminder {
+  background-color: $PrimaryColor;
+  font-family: $SecondaryFont;
+  position: fixed;
+  margin: 20vh 15vw 0 0;
+  right: 0;
+  padding: 2% 4%;
+  box-shadow: 4px 4px 20px  #e2e2e2;
+
+  h1 {
+    font-family: $SecondaryFont;
+    font-weight: 600;
+  }
+
+  .reminder-message {
+
+    h3 {
+      color: $SecondaryFontColor;
+      text-align: center;
+      padding: 2% 0 2% 0;
+    }
+    
+    p {
+      padding: 0 10%;
+      text-align: center;
+      color: $SecondaryFontColor;
+    }
+
+    .questionnaire-button {
+      display: flex;
+      padding: 4% 0 10% 0;
+      justify-content: center;
+    }
+  }
+}

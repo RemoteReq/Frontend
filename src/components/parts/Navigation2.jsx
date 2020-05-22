@@ -31,7 +31,7 @@ const Navigation2 = (props) => {
         </div>
       </div>
       <div className='landingPage-navBar-links'>
-        <a className="dash-nav" href="/joblist">Hello World</a>
+        <a className="dash-nav" href="/joblist"></a>
         <a>
           <img src={ProfileIcon}/>
         </a>

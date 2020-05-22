@@ -24,6 +24,14 @@
 @import './partials/containers/_callToAction.scss';
 @import './partials/containers/_footer.scss';
 
+// Dashboard
+@import './partials/containers/_profileCard.scss';
+@import './partials/containers/_jobList.scss';
+@import './partials/containers/profileDropdownMenu.scss';
+@import './partials/containers/reminder.scss';
+@import './partials/containers//jobListing.scss';
+@import './partials/containers/navigation2';
+
 // import tablet container style files
 @import './partials/containers/tablet/_tabletNavigation.scss';
 @import './partials/containers/tablet/_tabletMainHeader.scss';
