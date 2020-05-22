@@ -16,8 +16,8 @@
 
         .call-to-action-btns {
             button {
-                background: $ScndColor;
-                color: $PrmColor;
+                background: $SecondaryColor;
+                color: $PrimaryColor;
                 font-size: 20pt;
                 height: 100px;
                 margin-bottom: 37px;
@@ -27,19 +27,19 @@
 
             .cta-find-jobs { margin-right: 20px; }
             .cta-find-jobs:hover {
-                background: $TrtColor;
-                border-color: $TrtColor;
+                background: $TertiaryColor;
+                border-color: $TertiaryColor;
             }
 
             .cta-find-talent {
-                background: $PrmColor;
-                color: $ScndColor;
+                background: $PrimaryColor;
+                color: $SecondaryColor;
                 margin-left: 20px;
             }
 
             .cta-find-talent:hover {
-                background: $ScndColor;
-                color: $PrmColor;
+                background: $SecondaryColor;
+                color: $PrimaryColor;
             }
         }
     }

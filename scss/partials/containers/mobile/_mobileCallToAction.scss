@@ -16,8 +16,8 @@
 
         .call-to-action-btns {
             button {
-                background: $ScndColor;
-                color: $PrmColor;
+                background: $SecondaryColor;
+                color: $PrimaryColor;
                 font-size: 20pt;
                 height: 100px;
                 margin-bottom: 37px;
@@ -25,8 +25,8 @@
             }
 
             .cta-find-talent {
-                background: $PrmColor;
-                color: $ScndColor;
+                background: $PrimaryColor;
+                color: $SecondaryColor;
             }
         }
     }

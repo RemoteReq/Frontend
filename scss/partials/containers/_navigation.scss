@@ -31,31 +31,31 @@
 
       button {
         a {
-          color: $PrmColor;
+          color: $PrimaryColor;
           text-decoration: none;
         }
       }
 
     .find-talent-btn {
-      background: $PrmColor;
-      color: $ScndColor;
+      background: $PrimaryColor;
+      color: $SecondaryColor;
       margin-right: 20px;
     }
 
     .find-talent-btn:hover {
-      background: $ScndColor;
-      color: $PrmColor;
+      background: $SecondaryColor;
+      color: $PrimaryColor;
     }
 
     .log-in-btn {
-      background: $ScndColor;
-      color: $PrmColor;
+      background: $SecondaryColor;
+      color: $PrimaryColor;
       width: 200px;
     }
 
     .log-in-btn:hover {
-      background: $TrtColor;
-      border: 4px solid $TrtColor;
+      background: $TertiaryColor;
+      border: 4px solid $TertiaryColor;
     }
   }
 }

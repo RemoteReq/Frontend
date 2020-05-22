@@ -1,7 +1,7 @@
 @media screen and (min-width: 768px) and (max-width: 1365px) {
   .landingPage-navBar {
       align-items: center;
-      background: $PrmColor;
+      background: $PrimaryColor;
       display: flex;
     //   height: 10vh;
       height: 100px;
@@ -23,35 +23,35 @@
 
             button {
                 font-size: 16px;
-                border: 3px solid $ScndColor;
+                border: 3px solid $SecondaryColor;
                 height: 60px;
                 padding: 0 1vw;
                 margin-left: 10px;
             }
 
             .find-talent-btn {
-                background: $PrmColor;
-                color: $ScndColor;
+                background: $PrimaryColor;
+                color: $SecondaryColor;
             }
 
             .find-talent-btn:hover {
-                background: $ScndColor;
-                color: $PrmColor;
+                background: $SecondaryColor;
+                color: $PrimaryColor;
             }
 
             .log-in-btn {
-                background: $ScndColor;
+                background: $SecondaryColor;
                 width: 160px;
 
                 a {
-                    color: $PrmColor;
+                    color: $PrimaryColor;
                     text-decoration: none;
                 }
             }
 
             .log-in-btn:hover {
-                background: $TrtColor;
-                border-color: $TrtColor;
+                background: $TertiaryColor;
+                border-color: $TertiaryColor;
             }
         }
   }

@@ -24,7 +24,7 @@
     }
 
     h3 {
-      color: $ScndFontColor;
+      color: $SecondaryFontColor;
       font-family: $SecondaryFont;
       font-weight: normal;
       font-size: 18pt;
@@ -33,14 +33,14 @@
     }
 
     a {
-      color: $ScndColor;
+      color: $SecondaryFontColor;
       font-family: $SecondaryFont;
       font-size: 22pt;
       font-weight: bold;
     }
 
     a:hover {
-      color: $TrtColor;
+      color: $TertiaryColor;
     }
 
     .your-personal-recruiter {
