@@ -18,7 +18,7 @@ const Navigation2 = (props) => {
   return (
     <nav className='landingPage-navBar'>
       <div className='landingPage-name-menu'>
-        <a className='Dashboard-Home' href="http://localhost:8082">
+        <a className='Dashboard-Home' href="http://localhost:8080/dashboard">
           <img src={ RemoteReq } className='remotereq-name' alt='remote' />
           <p>Job Board</p>
         </a>
