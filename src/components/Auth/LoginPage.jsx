@@ -1,11 +1,11 @@
 import React from 'react';
-import FBImage from '../../assets/img/facebook.png';
-import GglImage from '../../assets/img/google.png';
 import { GoogleLogin } from 'react-google-login';
+import FBImage from '../../../assets/img/facebook.png';
+import GglImage from '../../../assets/img/google.png';
 
 const responseGoogle = (response) => {
   console.log(response);
-}
+};
 
 const LoginPage = (props) => (
   <div className="login-form-page">
@@ -20,7 +20,7 @@ const LoginPage = (props) => (
           <h3>Continue as Name</h3>
         </div> */}
 
-        <GoogleLogin 
+        <GoogleLogin
         clientId="1005468463474-snfb80jfo4sg40fdapbcguuoa6uvbqq1.apps.googleusercontent.com"
           buttonText="Login"
           onSuccess={responseGoogle}

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Axios from 'axios';
-import Navigation from './Navigation.jsx';
+import Navigation from '../parts/Navigation1.jsx';
 import LoginPage from './LoginPage.jsx';
 import Registration from './Registration.jsx';
-import Footer from './Footer.jsx';
+import Footer from '../parts/Footer.jsx';
 
 class Auth extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class Auth extends Component {
       regPhoneNumber: '',
       regPass: '',
       regPassTwo: '',
-      navMenuVisible: false
+      navMenuVisible: false,
     };
 
     this.userInput = this.userInput.bind(this);
@@ -90,8 +90,8 @@ class Auth extends Component {
     };
 
     Axios.post(url, {
-      body: credentials
-     })
+      body: credentials,
+    })
       .then(() => console.log('success!!'))
       .catch(() => console.log('login failed'));
   }

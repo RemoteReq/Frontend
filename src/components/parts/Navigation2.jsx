@@ -2,7 +2,7 @@ import React from 'react';
 import RemoteReq from '../../assets/img/RR-cobalt.png';
 import ProfileIcon from '../../assets/img/Profile.png';
 
-const Navigation = (props) => {
+const Navigation2 = (props) => {
   let menuVisible;
 
   if (props.LandingPageMenuVisible === false && screen.width < 481) {
@@ -40,4 +40,4 @@ const Navigation = (props) => {
   );
 };
 
-export default Navigation;
+export default Navigation2;

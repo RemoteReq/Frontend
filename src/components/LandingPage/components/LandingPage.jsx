@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navigation from '../../parts/Navigation-1.jsx';
+import Navigation from '../../parts/Navigation1.jsx';
 import LPHeader from './LPHeader.jsx';
 import AboutHeader from './AboutHeader.jsx';
 import AboutMain from './AboutMain.jsx';

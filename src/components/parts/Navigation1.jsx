@@ -1,7 +1,7 @@
 import React from 'react';
 import RemoteReq from '../../../assets/img/RemoteReq-logotype-cobalt.png';
 
-const Navigation = (props) => {
+const Navigation1 = (props) => {
   let menuVisible;
 
   const width = window.innerWidth;
@@ -40,4 +40,4 @@ const Navigation = (props) => {
   );
 };
 
-export default Navigation;
+export default Navigation1;
