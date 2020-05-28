@@ -10,44 +10,45 @@
 */
 
 // import variables partial files
-@import './partials/variables/_variables.scss';
-@import './partials/variables/_defaults.scss';
+@import './variables/_variables.scss';
+@import './variables/_defaults.scss';
 
-// import element partials files
-// @import './partials/elements/_sample.scss';
+// import pages
+@import './pages/_loginPage.scss'; 
 
-// import container partials files
-@import './partials/containers/_navigation.scss';
-@import './partials/containers/_mainHeader.scss';
-@import './partials/containers/_aboutHeader.scss';
-@import './partials/containers/_aboutMain.scss';
-@import './partials/containers/_callToAction.scss';
-@import './partials/containers/_footer.scss';
+// import parts (components)
+@import './parts/_registration.scss';
+@import './parts/_navigation.scss';
+@import './parts/_mainHeader.scss';
+@import './parts/_aboutHeader.scss';
+@import './parts/_aboutMain.scss';
+@import './parts/_callToAction.scss';
+@import './parts/_footer.scss';
+@import './parts/_profileCard.scss';
+@import './parts/_jobList.scss';
+@import './parts/_profileDropdownMenu.scss';
+@import './parts/_reminder.scss';
+@import './parts/_jobListing.scss';
+@import './parts/_navigation2.scss';
 
-// Dashboard
-@import './partials/containers/_profileCard.scss';
-@import './partials/containers/_jobList.scss';
-@import './partials/containers/profileDropdownMenu.scss';
-@import './partials/containers/reminder.scss';
-@import './partials/containers//jobListing.scss';
-@import './partials/containers/navigation2';
+/* ---------------------------------------------------------------------
+  Below is responsive styling files
 
-//Auth
-@import './partials/containers/_loginPage.scss';
-@import './partials/containers/_registration.scss';
+  Mess with this later
+ --------------------------------------------------------------------- */
 
 // import tablet container style files
-@import './partials/containers/tablet/_tabletNavigation.scss';
-@import './partials/containers/tablet/_tabletMainHeader.scss';
-@import './partials/containers/tablet/_tabletAboutHeader.scss';
-@import './partials/containers/tablet/_tabletAboutMain.scss';
-@import './partials/containers/tablet/_tabletCallToAction.scss';
-@import './partials/containers/tablet/_tabletFooter.scss';
+@import './responsive/tablet/_tabletNavigation.scss';
+@import './responsive/tablet/_tabletMainHeader.scss';
+@import './responsive/tablet/_tabletAboutHeader.scss';
+@import './responsive/tablet/_tabletAboutMain.scss';
+@import './responsive/tablet/_tabletCallToAction.scss';
+@import './responsive/tablet/_tabletFooter.scss';
 
 // import mobile container style files
-@import './partials/containers/mobile/_mobileNavigation.scss';
-@import './partials/containers/mobile/_mobileMainHeader.scss';
-@import './partials/containers/mobile/_mobileAboutHeader.scss';
-@import './partials/containers/mobile/_mobileAboutMain.scss';
-@import './partials/containers/mobile/_mobileCallToAction.scss';
-@import './partials/containers/mobile/_mobileFooter.scss';
+@import './responsive/mobile/_mobileNavigation.scss';
+@import './responsive/mobile/_mobileMainHeader.scss';
+@import './responsive/mobile/_mobileAboutHeader.scss';
+@import './responsive/mobile/_mobileAboutMain.scss';
+@import './responsive/mobile/_mobileCallToAction.scss';
+@import './responsive/mobile/_mobileFooter.scss';
