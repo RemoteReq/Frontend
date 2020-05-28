@@ -1,28 +1,26 @@
-@media screen and (min-width: 1366px) {
-  .footer {
-    align-items: center;
-    // border-top: 2px solid $ScndFontColor;
+.footer {
+  align-items: center;
+  // border-top: 2px solid $ScndFontColor;
+  display: flex;
+  height: 30vh;
+  justify-content: space-between;
+  margin: 0 10vw 0 10vw;
+
+  ul {
     display: flex;
-    height: 30vh;
-    justify-content: space-between;
-    margin: 0 10vw 0 10vw;
+    list-style: none;
 
-    ul {
-      display: flex;
-      list-style: none;
-
-      li {
-        color: $SecondaryFontColor;
-        font-family: $SecondaryFont;
-        font-size: 14pt;
-        margin-right: 80px;
-      }
-
-      li:hover { cursor: pointer; }
+    li {
+      color: $SecondaryFontColor;
+      font-family: $SecondaryFont;
+      font-size: 14pt;
+      margin-right: 80px;
     }
 
-    img {
-      width: 40px;
-    }
+    li:hover { cursor: pointer; }
+  }
+
+  img {
+    width: 40px;
   }
 }

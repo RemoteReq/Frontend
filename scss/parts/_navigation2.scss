@@ -1,48 +1,44 @@
-// media query required because some of the styles were overriding media queries for mobile styles
+.dashboard-navBar {
+  align-items: center;
+  background: #fff;
+  display: flex;
+  height: 15vh;
+  justify-content: space-between;
+  letter-spacing: 1px;
+  padding: 0 10vw;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+}
 
-@media screen and (min-width: 1366px) {
-  .dashboard-navBar {
-    align-items: center;
-    background: #fff;
-    display: flex;
-    height: 15vh;
-    justify-content: space-between;
-    letter-spacing: 1px;
-    padding: 0 10vw;
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    z-index: 1;
+.Dashboard-Home {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  p {
+    padding-left: 30pt;
   }
+}
 
-  .Dashboard-Home {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.dash-nav {
+  color: black;
+  font-size: 12pt;
+}
 
-    p {
-      padding-left: 30pt;
-    }
-  }
+a {
+  text-decoration: none;
+  color: gray;
+  font-family: $SecondaryFont;
+  // font-weight: bolder;
+  font-size: 20pt;
+  padding-left: 18pt;
+}
 
-  .dash-nav {
-    color: black;
-    font-size: 12pt;
-  }
+.dashboard-name-menu {
 
-  a {
-    text-decoration: none;
-    color: gray;
-    font-family: $SecondaryFont;
-    // font-weight: bolder;
-    font-size: 20pt;
-    padding-left: 18pt;
-  }
+  .remotereq-name { max-width: 50px; }
 
-  .dashboard-name-menu {
-
-    .remotereq-name { max-width: 50px; }
-
-    .hamburgerMenu { display: none; }
-  }
+  .hamburgerMenu { display: none; }
 }

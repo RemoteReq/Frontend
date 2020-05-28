@@ -1,29 +1,27 @@
-@media screen and (min-width: 1366px) {
-  .about-header {
-    display: flex;
-    padding: 10vh 10vw 0 10vw;
-    margin-bottom: 37px;
+.about-header {
+  display: flex;
+  padding: 10vh 10vw 0 10vw;
+  margin-bottom: 37px;
 
-    .box {
-      padding-right: 75px;
+  .box {
+    padding-right: 75px;
 
-      img {
-        width: 60px;
-      }
+    img {
+      width: 60px;
+    }
 
-      h3 {
-        font-family: $SecondaryFont;
-        font-size: 28pt;
-        margin-bottom: 34px;
-      }
+    h3 {
+      font-family: $SecondaryFont;
+      font-size: 28pt;
+      margin-bottom: 34px;
+    }
 
-      p {
-        color: $SecondaryFontColor;
-        font-family: $SecondaryFont;
-        font-size: 18pt;
-        line-height: 34px;
-        margin-bottom: 34px;
-      }
+    p {
+      color: $SecondaryFontColor;
+      font-family: $SecondaryFont;
+      font-size: 18pt;
+      line-height: 34px;
+      margin-bottom: 34px;
     }
   }
 }

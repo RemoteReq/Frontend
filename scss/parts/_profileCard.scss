@@ -1,47 +1,45 @@
-@media screen and (min-width: 1366px) {
-  .profile-card {
-    background: #fff;
-    box-shadow: 4px 4px 20px #e2e2e2;
-    display: flex;
-    flex-direction: column;
-    margin: 20vh 0 0 15vw;
-    position: fixed;
-    height: 80vh;
-    width: 20vw;
+.profile-card {
+  background: #fff;
+  box-shadow: 4px 4px 20px #e2e2e2;
+  display: flex;
+  flex-direction: column;
+  margin: 20vh 0 0 15vw;
+  position: fixed;
+  height: 80vh;
+  width: 20vw;
 
-    .profile-card-contents {
-      padding: 20px;
-    }
+  .profile-card-contents {
+    padding: 20px;
+  }
 
-    .profile-card-picture {
-      width: 200px;
-      height: 200px;
-      background-color: lightgray;
-    }
+  .profile-card-picture {
+    width: 200px;
+    height: 200px;
+    background-color: lightgray;
+  }
 
-    .profile-card-name{
-      font-family: $SecondaryFont;
-      font-weight: bolder;
-    }
+  .profile-card-name{
+    font-family: $SecondaryFont;
+    font-weight: bolder;
+  }
 
-    .profile-card-profession{
-      font-weight: lighter;
-      font-family: $SecondaryFont;
-      color: gray;
-    }
+  .profile-card-profession{
+    font-weight: lighter;
+    font-family: $SecondaryFont;
+    color: gray;
+  }
 
-    .profile-card-bio-header {
-      font-family: $SecondaryFont;
-      color: gray;
-    }
+  .profile-card-bio-header {
+    font-family: $SecondaryFont;
+    color: gray;
+  }
 
-    p {
-      font-family: $SecondaryFont;
-      color: lightgray;
-    }
+  p {
+    font-family: $SecondaryFont;
+    color: lightgray;
+  }
 
-    .blue-block-button {
-      padding: auto;
-    }
+  .blue-block-button {
+    padding: auto;
   }
 }

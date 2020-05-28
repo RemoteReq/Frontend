@@ -43,12 +43,6 @@ class Dashboard extends Component {
           <ProfileCard />
 
           <Switch>
-
-            {/*
-              If the user hasn't submitted their questionnaire yet, then the Reminder should be displayed
-              Otherwise display a list of Jobs
-            */}
-
             <Route
               path='/joblist'
               render={
