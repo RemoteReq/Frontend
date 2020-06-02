@@ -1,0 +1,56 @@
+.mission {
+  margin-top: 150px;
+  display: block;
+  
+  .mission-block {
+    display: flex;
+    justify-content: center;
+    background-color: $Yellow;
+
+    .mission-graphics {
+      // .red-line {
+      //   background: url('../../assets/svg/red-line.svg')
+      // }
+    }
+    
+    .mission-statement {
+      padding-top: 100px;
+      color: $BackgroundColor;
+      text-align: center;
+      padding-bottom: 100px;
+      
+      .mission-statement-upper {
+        font-size: 42pt;
+        padding-bottom: 50px;
+      }
+      
+      .mission-statement-lower {
+        font-size: 14pt;
+        font-family: $SecondaryFont;
+        
+        p {
+          height: 80px;
+        }
+      }
+    }
+  }
+    
+  .mission-join-us {
+    padding: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    h1 {
+      text-align: center;
+      font-weight: lighter;
+      font-size: 42pt;
+    }
+
+    .join-us-container {
+      display: flex;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+}

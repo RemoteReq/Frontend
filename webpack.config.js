@@ -51,6 +51,11 @@ module.exports = {
           },
         ],
       },
+      // svg loader
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader',
+      },
     ],
   },
   plugins: [

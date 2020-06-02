@@ -15,6 +15,7 @@
 
 // import pages
 @import './pages/_loginPage.scss'; 
+@import './pages/_missionPage.scss';
 
 // import parts (components)
 @import './parts/_registration.scss';
@@ -30,6 +31,9 @@
 @import './parts/_reminder.scss';
 @import './parts/_jobListing.scss';
 @import './parts/_navigation2.scss';
+
+// import elements
+@import './elements/_buttons.scss';
 
 /* ---------------------------------------------------------------------
   Below is responsive styling files
