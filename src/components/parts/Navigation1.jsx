@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import RemoteReq from '../../../assets/img/RemoteReq-logotype-cobalt.png';
 
 const Navigation1 = (props) => {
@@ -33,12 +34,13 @@ const Navigation1 = (props) => {
       </div>
       { menuVisible === true ? (
         <div className='landingPage-navBar-links'>
-          <button className='find-talent-btn'>find talent</button>
-            <a href='/signin'>
-              <button className='log-in-btn'>
-              sign in
-              </button>
-            </a>
+          <Link to="/findTalen">
+            <button className='find-talent-btn'>find talent</button>
+          </Link>
+
+          <Link to='/signin'>
+            <button className='log-in-btn'>sign in</button>
+          </Link>
         </div>
       ) : null}
 
