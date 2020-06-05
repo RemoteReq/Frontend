@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import RRLogo from '../../../assets/img/RR-cobalt.png';
 // import FaceBookIcon from '#assets/img/facebook.png';
 // import LinkedinIcon from '#assets/img/linkedin.png';
@@ -7,9 +8,9 @@ import RRLogo from '../../../assets/img/RR-cobalt.png';
 const Footer = () => (
   <div className='footer'>
     <ul className='footerLinks'>
-      <li><a href='#'></a>Our Story</li>
-      <li><a href='#'></a>Find Jobs</li>
-      <li><a href='#'></a>Find Talent</li>
+      <li><Link to="/mission">Our Mission</Link></li>
+      <li><Link to="/signup">Find Jobs</Link></li>
+      <li><Link to="/findTalent">Find Talent</Link></li>
     </ul>
     <a href="http://localhost:8080">
       <img src={ RRLogo } alt='remotereq logo'/>

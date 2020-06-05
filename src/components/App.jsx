@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
+import ScrollToTop from './parts/ScrollToTop.jsx';
 import LandingPage from './LandingPage/components/LandingPage.jsx';
 import SignIn from './Auth/LoginPage.jsx';
 import SignUp from './Auth/Registration.jsx';
@@ -15,17 +16,19 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Navigation/>
-        <Switch>
-          <Route exact path="/" component={LandingPage} />
-          <Route path="/signin" component={SignIn} />
-          <Route path="/signup" component={SignUp} />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/QnA" component="questionnaire" />
-          <Route path="/mission" component={Mission} />
-          <Route path="/findTalent" component={FindTalent} />
-        </Switch>
-        <Footer/>
+        <ScrollToTop>
+          <Navigation/>
+          <Switch>
+            <Route exact path="/" component={LandingPage} />
+            <Route path="/signin" component={SignIn} />
+            <Route path="/signup" component={SignUp} />
+            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/QnA" component="questionnaire" />
+            <Route path="/mission" component={Mission} />
+            <Route path="/findTalent" component={FindTalent} />
+          </Switch>
+          <Footer/>
+        </ScrollToTop>
       </Router>
     );
   }
