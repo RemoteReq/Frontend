@@ -19,6 +19,19 @@ const FindTalent = () => (
       </div>
     </div>
 
+    <div className="find-talent-mid">
+
+    </div>
+
+    <div className="find-talent-pricing">
+
+    </div>
+
+    <div className="find-talent-lower">
+      <h1>Build your remote team.</h1>
+      <button className="button-1">Submit a Job Req</button>
+    </div>
+
   </div>
 );
 

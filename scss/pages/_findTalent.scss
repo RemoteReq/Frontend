@@ -28,4 +28,19 @@
       width: 50%;
     }
   }
+
+  .find-talent-lower {
+    background-color: $BackgroundColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8% 0 8% 0;
+
+    h1 {
+      font-family: $MainFont;
+      font-weight: lighter;
+      font-size: 48pt;
+      padding: 0 0 4% 0;
+    }
+  }
 }
