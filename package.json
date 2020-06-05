@@ -7,7 +7,7 @@
     "server": "nodemon ./server/server.js",
     "build:dev": "webpack-dev-server",
     "build:pro": "webpack --mode production",
-    "dockerize": "sudo docker build -t name . && sudo docker run --name name -p 8080:3030 -d name",
+    "dockerize": "sudo docker build -t rrapp . && sudo docker run --name rrapp -p 8080:3030 -d rrapp",
     "update": "sudo docker kill name && sudo docker container rm -f name && sudo docker image rm -f kill name && npm run dockerize"
   },
   "repository": {
