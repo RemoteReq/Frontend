@@ -24,7 +24,12 @@
 
         button:hover { cursor: pointer; }
 
-        .cta-find-jobs { margin-right: 20px; }
+        .cta-find-jobs { 
+            margin-right: 20px; 
+            a {
+                color: white;
+            }
+        }
         .cta-find-jobs:hover {
             background: $TertiaryColor;
             border-color: $TertiaryColor;
@@ -32,13 +37,14 @@
 
         .cta-find-talent {
             background: $PrimaryColor;
-            color: $SecondaryColor;
             margin-left: 20px;
+            a{
+                color: $SecondaryColor;
+            }
         }
 
         .cta-find-talent:hover {
             background: $SecondaryColor;
-            color: $PrimaryColor;
         }
     }
 }
