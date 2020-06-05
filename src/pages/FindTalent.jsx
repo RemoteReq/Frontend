@@ -1,4 +1,7 @@
 import React from 'react';
+import triplet1 from '#assets/img/Profile.png';
+import triplet2 from '#assets/img/Connect.png';
+import triplet3 from '#assets/img/Forward.png';
 
 const FindTalent = () => (
   <div className="find-talent-page">
@@ -20,7 +23,26 @@ const FindTalent = () => (
     </div>
 
     <div className="find-talent-mid">
+      <div className="mid-triplet">
+        <img className="triplet-icon" src={triplet1}></img>
 
+        <h3>Submit a Job Req</h3>
+        <p>Share your scope of work and profile of your ideal here.</p>
+      </div>
+
+      <div className="mid-triplet">
+          <img className="triplet-icon" src={triplet2}></img>
+
+          <h3>Get Matched</h3>
+          <p>Our talent matching algorithm generates your list of finalists.</p>
+      </div>
+
+      <div className="mid-triplet">
+        <img className="triplet-icon" src={triplet3}></img>
+
+          <h3>Interview and hire</h3>
+          <p>Interview, hire, and grow your team. Can this get any longer?</p>
+      </div>
     </div>
 
     <div className="find-talent-pricing">

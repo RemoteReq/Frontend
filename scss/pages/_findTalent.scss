@@ -29,6 +29,35 @@
     }
   }
 
+  .find-talent-mid {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 10% 0 10%;
+
+    .mid-triplet {
+      display: flex;
+      flex-direction: column;
+      width: 25%;
+      padding: 8% 0 8% 0;
+
+      img {
+        height: 40px;
+        max-width: 40px;
+      }
+
+      h3 {
+        font-family: $SecondaryFont;
+        font-size: 18pt;
+      }
+
+      p {
+        font-family: $SecondaryFont;
+        font-size: 14pt;
+        color: $SecondaryFontColor;
+      }
+    }
+  }
+
   .find-talent-lower {
     background-color: $BackgroundColor;
     display: flex;
