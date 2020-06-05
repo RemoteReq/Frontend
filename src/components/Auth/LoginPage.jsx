@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { GoogleLogin } from 'react-google-login';
 
-const backend = 'http://3.21.186.204';
+const backend = 'http://3.21.186.204:3030';
 
 const responseGoogle = (response) => {
   console.log(response);
