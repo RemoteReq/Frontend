@@ -28,6 +28,11 @@ class LoginPage extends Component {
 
     axios.post(`${backend}/signup`,
       {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
+      },
+      {
         username: this.state.username,
         password: this.state.password,
       })

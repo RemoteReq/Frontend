@@ -21,9 +21,9 @@ const Navigation1 = (props) => {
   return (
     <nav className='landingPage-navBar'>
       <div className='landingPage-name-menu'>
-        <a href="http://localhost:8080" target="_self">
+        <Link to="/" target="_self">
         <img src={ RemoteReq } className='remotereq-name' alt=""/>
-        </a>
+        </Link>
         { width < 768 ? (
           <div className='hamburgerMenu' onClick={() => props.menuClick()}>
           <div className='line top-line'></div>
