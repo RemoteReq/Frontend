@@ -46,7 +46,41 @@ const FindTalent = () => (
     </div>
 
     <div className="find-talent-pricing">
+      <h1>Simple, transparent pricing</h1>
+      <p>Explain the pricing here</p>
 
+      <div className="card-container">
+        <div className="pricing-card">
+          <p className="pricing-card-title">Gigs</p>
+          <h1 className="pricing-card-price">$1,000</h1>
+
+          <div className="divider"></div>
+
+          <div className="pricing-card-description">
+            <p>For projects lasting 11 months or less</p>
+            <p>3 Finalist candidates</p>
+            <p>Temporary skills &amp; expertise</p>
+            <p>Negotioable hourly rates</p>
+          </div>
+
+          <button className="button-1">Submit a Job Req</button>
+        </div>
+
+        <div className="pricing-card">
+        <p className="pricing-card-title">Full-Time</p>
+          <h1 className="pricing-card-price">$2,500</h1>
+
+          <div className="divider"></div>
+
+          <div className="pricing-card-description">
+            <p>Grow your team with a remote hire</p>
+            <p>3-5 Finalist Candidates</p>
+            <p>Added capacity, skills, &amp; expertise</p>
+          </div>
+
+          <button className="button-1">Submit a Job Req</button>
+        </div>
+      </div>
     </div>
 
     <div className="find-talent-lower">

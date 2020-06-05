@@ -58,6 +58,67 @@
     }
   }
 
+  .find-talent-pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4% 15%;
+
+    .card-container {
+      display: flex;
+      justify-content: space-evenly;
+      height: 200%;
+      width: 100%;
+
+      .pricing-card {
+        padding: 4% 0;
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 4px 4px 20px #e2e2e2;
+
+        .pricing-card-title {
+          font-weight: 600;
+          color: $Yellow;
+        }
+
+        .pricing-card-price {
+          font-family: $SecondaryFont;
+          font-weight: 600;
+        }
+
+        .divider {
+          width: 80%;
+          border-bottom: 1px solid #e2e2e2;
+        }
+
+        .pricing-card-description {
+          padding: 4% 0 0 0 ;
+          height: 250px;
+        }
+
+      }
+    }
+
+    h1  {
+      font-family: $MainFont;
+      font-size: 36pt;
+      font-weight: lighter;
+      padding: 0 0 4% 0;
+    }
+
+    p {
+      text-align: center;
+      font-family: $SecondaryFont;
+      color: $SecondaryFontColor;
+      font-size: 14pt;
+      padding: 2% 0;
+    }
+
+
+  }
+
   .find-talent-lower {
     background-color: $BackgroundColor;
     display: flex;
