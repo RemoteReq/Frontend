@@ -31,8 +31,9 @@ class LoginPage extends Component {
 
     console.log('fire away!');
 
-    axios.post(`${backend}/api/signup`, body)
+    axios.post(`${backend}/api/signin`, body)
       .then((response) => console.log(response));
+
   }
 
   updateInfoOnChange(e) {
