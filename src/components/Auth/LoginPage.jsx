@@ -24,18 +24,14 @@ class LoginPage extends Component {
   login(e) {
     e.preventDefault();
 
+    const body = {
+      username: this.state.username,
+      password: this.state.password,
+    };
+
     console.log('fire away!');
 
-    axios.post(`${backend}/signup`,
-      {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-        },
-      },
-      {
-        username: this.state.username,
-        password: this.state.password,
-      })
+    axios.post(`${backend}/api/signup`, body)
       .then((response) => console.log(response));
   }
 
