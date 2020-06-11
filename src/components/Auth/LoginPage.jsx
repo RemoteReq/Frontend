@@ -29,11 +29,10 @@ class LoginPage extends Component {
       password: this.state.password,
     };
 
-    console.log('fire away!');
+    console.log('fire away!', body);
 
     axios.post(`${backend}/api/signin`, body)
       .then((response) => console.log(response));
-
   }
 
   updateInfoOnChange(e) {
@@ -42,8 +41,6 @@ class LoginPage extends Component {
     this.setState({
       [`${e.target.name}`]: e.target.value,
     });
-
-    console.log(this.state);
   }
 
   render() {
