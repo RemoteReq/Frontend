@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import NameEmailNumberPass from './regSubComponents/NameEmailNumberPass.jsx';
 
 const backend = 'http://3.21.186.204:3030';
 
