@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Route, Redirect } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
 
 const backend = 'http://3.21.186.204:3030';
@@ -8,13 +9,41 @@ const responseGoogle = (response) => {
   console.log(response);
 };
 
-class LoginPage extends Component {
+const Auth = {
+  isAuthenticated: false,
+  authenticate(cb, creds) {
+    this.isAuthenticated = true;
+
+    axios.post(`${backend}/api/signin`, creds)
+    .then((response) => {
+      console.log('I hope this works!!');
+
+      if (response.status === 200) {
+        cb();
+      }
+    })
+  }
+}
+
+export const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route {...rest} render={(props) => (
+    Auth.isAuthenticated === true
+      ? <Component {...props} />
+      : <Redirect to={{
+          pathname: '/signin',
+          state: { from: props.location }
+        }} />
+  )} />
+)
+
+export class LoginPage extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       username: '',
       password: '',
+      redirectToReferrer: false
     };
 
     this.updateInfoOnChange = this.updateInfoOnChange.bind(this);
@@ -23,16 +52,28 @@ class LoginPage extends Component {
 
   login(e) {
     e.preventDefault();
-
+    
     const body = {
       username: this.state.username,
       password: this.state.password,
     };
-
+    
     console.log('fire away!', body);
+    
+    // axios.post(`${backend}/api/signin`, body)
+    // .then((response) => {
+    //   console.log(response);
+    //   return response.status;
+    // })
+    // .then((statusCode) => {
+    //   this.updateAuthStatus(statusCode);
+    // })
 
-    axios.post(`${backend}/api/signin`, body)
-      .then((response) => console.log(response));
+    Auth.authenticate(() => {
+      this.setState({
+        redirectToReferrer: true,
+      })
+    }, body)
   }
 
   updateInfoOnChange(e) {
@@ -44,6 +85,15 @@ class LoginPage extends Component {
   }
 
   render() {
+    const { from } = this.props.location.state || { from: { pathname: '/' } }
+    const { redirectToReferrer } = this.state;
+
+    if (redirectToReferrer === true){
+      return(
+        <Redirect to ={from} />
+      )
+    }
+
     return (
         <div className="login-form-page">
         <div className="login-container" >
@@ -89,5 +139,3 @@ class LoginPage extends Component {
     );
   }
 }
-
-export default LoginPage;
