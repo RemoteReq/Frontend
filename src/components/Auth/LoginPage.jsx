@@ -16,8 +16,10 @@ const Auth = {
     
     axios.post(`${backend}/api/signin`, creds)
     .then((response) => {
-      console.log('I hope this works!!');
-      
+      console.log('I hope this works!!', response);
+      return response;
+    })
+    .then((response) => {
       if (response.status === 200) {
         cb();
       }
