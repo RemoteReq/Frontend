@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter as Router, Switch, Route, Link,
+  BrowserRouter as Router, Switch, Route, Link, Redirect
 } from 'react-router-dom';
 import ScrollToTop from './parts/ScrollToTop.jsx';
 import LandingPage from './LandingPage/components/LandingPage.jsx';
@@ -11,8 +11,25 @@ import Footer from './parts/Footer.jsx';
 import Dashboard from '../pages/Dashboard/Dashboard.jsx';
 import Mission from '../pages/Mission/Mission.jsx';
 import FindTalent from '../pages/FindTalent.jsx';
+import Page404 from '../pages/Page404.jsx';
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route {...rest} render={(props) => (
+    auth.isAuthenticated === true
+      ? <Component {...props} />
+      : <Redirect to={{
+          pathname: '/signin',
+          state: { from: props.location }
+        }} />
+  )} />
+)
+
+const auth = {
+  isAuthenticated: false,
+};
 
 class App extends Component {
+
   render() {
     return (
       <Router>
@@ -22,10 +39,11 @@ class App extends Component {
             <Route exact path="/" component={LandingPage} />
             <Route path="/signin" component={SignIn} />
             <Route path="/signup" component={SignUp} />
-            <Route path="/dashboard" component={Dashboard} />
+            <PrivateRoute path="/dashboard" component={Dashboard} />
             <Route path="/QnA" component="questionnaire" />
             <Route path="/mission" component={Mission} />
             <Route path="/findTalent" component={FindTalent} />
+            <Route component={Page404} />
           </Switch>
           <Footer/>
         </ScrollToTop>
