@@ -6,7 +6,7 @@ const Page404 = () => (
     <div className="message">
       <h1>404</h1>
       <p>
-        {"We're sorry but the URL you entered does not exist"}
+        {"We're sorry but the URL you are trying to visit does not exist."}
       </p>
     </div>
   </div>
