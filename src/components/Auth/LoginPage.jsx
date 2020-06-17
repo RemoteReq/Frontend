@@ -13,11 +13,11 @@ const Auth = {
   isAuthenticated: false,
   authenticate(cb, creds) {
     this.isAuthenticated = true;
-
+    
     axios.post(`${backend}/api/signin`, creds)
     .then((response) => {
       console.log('I hope this works!!');
-
+      
       if (response.status === 200) {
         cb();
       }
@@ -58,20 +58,21 @@ export class LoginPage extends Component {
       password: this.state.password,
     };
     
+    const formData = new FormData();
+
+    formData.append('username', this.state.username);
+    formData.append('password', this.state.password);
+
     console.log('fire away!', body);
-    
-    // axios.post(`${backend}/api/signin`, body)
-    // .then((response) => {
-    //   console.log(response);
-    //   return response.status;
-    // })
-    // .then((statusCode) => {
-    //   this.updateAuthStatus(statusCode);
-    // })
+    for (var pair of formData.entries()) {
+      console.log(pair[0] + ', ' + pair[1]);
+    }
 
     Auth.authenticate(() => {
       this.setState({
         redirectToReferrer: true,
+      }, () => {
+        console.log('redirecting..')
       })
     }, body)
   }
@@ -116,15 +117,17 @@ export class LoginPage extends Component {
             */}
           </div>
 
-          <div className="login-form" >
+          <form className="login-form" >
             <input
               name="username"
+              autoComplete="current-username"
               className="login-email"
               onChange={ this.updateInfoOnChange }
               placeholder="Email" />
             <input
               type="password"
               name="password"
+              autoComplete="current-password"
               className="login-password"
               onChange={ this.updateInfoOnChange }
               placeholder="Password" />
@@ -133,7 +136,7 @@ export class LoginPage extends Component {
             <p>
               Don't have an account? <a href="/signup">Sign Up</a>
             </p>
-          </div>
+          </form>
         </div>
       </div>
     );
