@@ -1,8 +1,11 @@
 import React from 'react';
 import RemoteReq from '../../../assets/img/RR-cobalt.png';
 import ProfileIcon from '../../../assets/img/Profile.png';
+import auth from '../Auth/Auth.js';
 
 const Navigation2 = (props) => {
+  console.log('nav props', props)
+
   let menuVisible;
 
   if (props.LandingPageMenuVisible === false && screen.width < 481) {
@@ -31,10 +34,14 @@ const Navigation2 = (props) => {
         </div>
       </div>
       <div className='dashboard-navBar-links'>
-        <a className="dash-nav" href="/joblist"></a>
         <a>
           <img src={ProfileIcon}/>
         </a>
+        <a className="dash-nav"
+          onClick={() => auth.logout(() => {
+            props.updateRedirect()
+          })}
+        >Sign out</a>
       </div>
     </nav>
   );

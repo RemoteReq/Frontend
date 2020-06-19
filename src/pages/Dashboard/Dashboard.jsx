@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Switch, Route } from 'react-router-dom';
 import Navigation from '../../components/parts/Navigation2.jsx';
 import ProfileCard from './ProfileCard.jsx';
 import JobList from './jobList/JobList.jsx';
@@ -19,7 +19,18 @@ class Dashboard extends Component {
       profileMenuDropdown: false,
     };
 
+    this.updateRedirect = this.updateRedirect.bind(this)
     this.showProfileMenu = this.showProfileMenu.bind(this);
+  }
+
+  componentDidMount() {
+    console.log(auth.isAuthenticated());
+    if (auth.isAuthenticated()) {
+
+      this.setState({
+        redirectToReferrer: true
+      });
+    }
   }
 
   showProfileMenu() {
@@ -40,10 +51,26 @@ class Dashboard extends Component {
     .catch(error => console.log(error))
   }
 
+  updateRedirect() {
+    this.setState({
+      redirectToReferrer: false
+    }, () => {
+      console.log('Signing you out.. See you next time!')
+    })
+  }
+
   render() {
+    const { redirectToReferrer } = this.state;
+
+    if (redirectToReferrer === false){
+      return(
+        <Redirect to='signin'/>
+      )
+    }
+
     return (
       <Router>
-        <Navigation showProfileMenu={ this.showProfileMenu } />
+        <Navigation showProfileMenu={ this.showProfileMenu } updateRedirect={this.updateRedirect}/>
 
         <ProfileDropdown profileMenuDropdown= { this.state.profileMenuDropdown } />
 
