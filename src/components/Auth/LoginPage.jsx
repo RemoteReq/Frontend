@@ -21,6 +21,7 @@ const Auth = {
     })
     .then((response) => {
       if (response.status === 200) {
+        localStorage.setItem('session', response.data.token);
         cb();
       }
     })
@@ -61,15 +62,12 @@ export class LoginPage extends Component {
     };
 
     console.log('fire away!', body);
-    for (var pair of formData.entries()) {
-      console.log(pair[0] + ', ' + pair[1]);
-    }
 
     Auth.authenticate(() => {
       this.setState({
         redirectToReferrer: true,
-      }, () => {
-        console.log('redirecting..')
+      }, (token) => {
+        console.log('redirecting..');
       })
     }, body)
   }
