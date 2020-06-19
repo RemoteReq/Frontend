@@ -24,13 +24,10 @@ class Auth {
     cb();
   }
 
-  checkSession() {
-    const sesh = localStorage.getItem('session');
-
-    sesh ? this.authState = true : this.authState = false;
-  }
-
   isAuthenticated() {
+    const sesh = localStorage.getItem('session');
+    sesh ? this.authState = true : this.authState = false;
+
     return this.authState;
   }
 }
