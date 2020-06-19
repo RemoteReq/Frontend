@@ -86,7 +86,7 @@ export class LoginPage extends Component {
 
     if (redirectToReferrer === true){
       return(
-        <Redirect to ={from} />
+        <Redirect to ='dashboard' />
       )
     }
 
