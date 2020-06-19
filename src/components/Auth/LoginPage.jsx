@@ -1,45 +1,13 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import auth from './Auth.js'
 import { Route, Redirect } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
-
-const backend = 'http://3.21.186.204:3030';
 
 const responseGoogle = (response) => {
   console.log(response);
 };
 
-const Auth = {
-  isAuthenticated: false,
-  authenticate(cb, creds) {
-    this.isAuthenticated = true;
-    
-    axios.post(`${backend}/api/signin`, creds)
-    .then((response) => {
-      console.log('I hope this works!!', response);
-      return response;
-    })
-    .then((response) => {
-      if (response.status === 200) {
-        localStorage.setItem('session', response.data.token);
-        cb();
-      }
-    })
-  }
-}
-
-export const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route {...rest} render={(props) => (
-    Auth.isAuthenticated === true
-      ? <Component {...props} />
-      : <Redirect to={{
-          pathname: '/signin',
-          state: { from: props.location }
-        }} />
-  )} />
-)
-
-export class LoginPage extends Component {
+class LoginPage extends Component {
   constructor(props) {
     super(props);
 
@@ -53,6 +21,14 @@ export class LoginPage extends Component {
     this.login = this.login.bind(this);
   }
 
+  componentDidMount() {
+    if (auth.isAuthenticated) {
+      this.setState({
+        redirectToReferrer: true
+      });
+    }
+  }
+
   login(e) {
     e.preventDefault();
     
@@ -61,15 +37,11 @@ export class LoginPage extends Component {
       password: this.state.password,
     };
 
-    console.log('fire away!', body);
-
-    Auth.authenticate(() => {
+    auth.login(body, () => {
       this.setState({
-        redirectToReferrer: true,
-      }, (token) => {
-        console.log('redirecting..');
+        redirectToReferrer: true
       })
-    }, body)
+    })
   }
 
   updateInfoOnChange(e) {
@@ -136,3 +108,5 @@ export class LoginPage extends Component {
     );
   }
 }
+
+export default LoginPage;

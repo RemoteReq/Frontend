@@ -24,12 +24,12 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3030/api/jobs')
-      .then((response) => response.json())
-      .then((response) => {
-        this.setState({ jobListing: response });
-      })
-      .catch((err) => console.log('you have an error, ', err));
+    // fetch('http://localhost:3030/api/jobs')
+    //   .then((response) => response.json())
+    //   .then((response) => {
+    //     this.setState({ jobListing: response });
+    //   })
+    //   .catch((err) => console.log('you have an error, ', err));
   }
 
   render() {

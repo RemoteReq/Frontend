@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Axios from 'axios';
-import Navigation from '../parts/Navigation1.jsx';
-import LoginPage from './LoginPage.jsx';
-import Registration from './Registration.jsx';
-import Footer from '../parts/Footer.jsx';
+import Navigation from '../../parts/Navigation1.jsx';
+import LoginPage from '../LoginPage.jsx';
+import Registration from '../Registration.jsx';
+import Footer from '../../parts/Footer.jsx';
 
 class Auth extends Component {
   constructor(props) {
