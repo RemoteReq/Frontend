@@ -59,11 +59,6 @@ export class LoginPage extends Component {
       username: this.state.username,
       password: this.state.password,
     };
-    
-    const formData = new FormData();
-
-    formData.append('username', this.state.username);
-    formData.append('password', this.state.password);
 
     console.log('fire away!', body);
     for (var pair of formData.entries()) {
