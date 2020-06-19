@@ -22,7 +22,9 @@ class LoginPage extends Component {
   }
 
   componentDidMount() {
+    console.log(auth.isAuthenticated());
     if (auth.isAuthenticated()) {
+
       this.setState({
         redirectToReferrer: true
       });

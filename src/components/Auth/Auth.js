@@ -13,9 +13,9 @@ class Auth {
       if (response.status === 200) {
         localStorage.setItem('session', response.data.token);
         this.authState = true;
+        cb();
       }
     })
-    .then(cb());
   }
 
   logout(cb) {
