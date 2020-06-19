@@ -6,6 +6,9 @@ import JobList from './jobList/JobList.jsx';
 import ProfileDropdown from './ProfileDropdown.jsx';
 // import JobMatches from './JobMatches.jsx';
 import Reminder from './Reminder.jsx';
+import axios from 'axios';
+
+const backend = 'http://3.21.186.204:3030'
 
 class Dashboard extends Component {
   constructor(props) {
@@ -24,12 +27,17 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
-    // fetch('http://localhost:3030/api/jobs')
-    //   .then((response) => response.json())
-    //   .then((response) => {
-    //     this.setState({ jobListing: response });
-    //   })
-    //   .catch((err) => console.log('you have an error, ', err));
+    console.log(localStorage.getItem("session"));
+
+    axios({
+      url: `${backend}/api/user/getSingleUserDetails`,
+      method: 'post',
+      headers: {
+        token: localStorage.getItem('session'),
+      },
+    })
+    .then(response => {console.log(response)})
+    .catch(error => console.log(error))
   }
 
   render() {
