@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Reminder = () => (
     <div className="reminder">
@@ -18,9 +19,11 @@ const Reminder = () => (
         </p>
 
         <div className="questionnaire-button">
+          <Link to="/questionnaire">
           <button className="blue-block-button">
             Start Questionnaire
           </button>
+          </Link>
         </div>
 
       </div>

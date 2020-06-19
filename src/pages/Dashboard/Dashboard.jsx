@@ -6,6 +6,7 @@ import JobList from './jobList/JobList.jsx';
 import ProfileDropdown from './ProfileDropdown.jsx';
 // import JobMatches from './JobMatches.jsx';
 import Reminder from './Reminder.jsx';
+import auth from '../../components/Auth/Auth.js';
 import axios from 'axios';
 
 const backend = 'http://3.21.186.204:3030'
@@ -24,22 +25,17 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
-    console.log(auth.isAuthenticated());
+    // check session status on visit
+    console.log('checking auth status...', auth.isAuthenticated());
     if (auth.isAuthenticated()) {
 
       this.setState({
         redirectToReferrer: true
       });
     }
-  }
 
-  showProfileMenu() {
-    this.setState({ profileMenuDropdown: !this.state.profileMenuDropdown });
-  }
-
-  componentDidMount() {
-    console.log(localStorage.getItem("session"));
-
+    // request user details based off token
+    console.log('retrieving user details... ');
     axios({
       url: `${backend}/api/user/getSingleUserDetails`,
       method: 'post',
@@ -47,8 +43,12 @@ class Dashboard extends Component {
         token: localStorage.getItem('session'),
       },
     })
-    .then(response => {console.log(response)})
+    .then(response => {console.log('user details retrieved!', response)})
     .catch(error => console.log(error))
+  }
+  
+  showProfileMenu() {
+    this.setState({ profileMenuDropdown: !this.state.profileMenuDropdown });
   }
 
   updateRedirect() {
