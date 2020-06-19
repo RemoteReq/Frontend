@@ -96,7 +96,6 @@ export class LoginPage extends Component {
           <p>
             By continuing, you agree to our  <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
           </p>
-
           <div className="login-fb-google">
             {/*
 
