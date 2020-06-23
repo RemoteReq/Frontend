@@ -28,25 +28,28 @@ class Dashboard extends Component {
     // check session status on visit
     console.log('checking auth status...', auth.isAuthenticated());
     if (auth.isAuthenticated()) {
+      // request user details based off token
 
-      this.setState({
-        redirectToReferrer: true
-      });
+      console.log('retrieving user details... ');
+
+      axios({
+        url: `${backend}/api/user/getSingleUserDetails`,
+        method: 'post',
+        headers: {
+          token: localStorage.getItem('session'),
+        },
+      })
+      .then(response => {
+        this.setState({
+          redirectToReferrer: true,
+          userDetails: response.data
+        })
+        console.log('user details retrieved!', response)
+      })
+      .catch(error => console.log(error))
     }
-
-    // request user details based off token
-    console.log('retrieving user details... ');
-    axios({
-      url: `${backend}/api/user/getSingleUserDetails`,
-      method: 'post',
-      headers: {
-        token: localStorage.getItem('session'),
-      },
-    })
-    .then(response => {console.log('user details retrieved!', response)})
-    .catch(error => console.log(error))
   }
-  
+    
   showProfileMenu() {
     this.setState({ profileMenuDropdown: !this.state.profileMenuDropdown });
   }
@@ -55,7 +58,7 @@ class Dashboard extends Component {
     this.setState({
       redirectToReferrer: false
     }, () => {
-      console.log('Signing you out.. See you next time!')
+      console.log('Signing you out... See you next time!')
     })
   }
 
@@ -75,7 +78,7 @@ class Dashboard extends Component {
         <ProfileDropdown profileMenuDropdown= { this.state.profileMenuDropdown } />
 
         <div className='dashboard'>
-          <ProfileCard />
+          <ProfileCard/>
 
           <Switch>
             <Route
