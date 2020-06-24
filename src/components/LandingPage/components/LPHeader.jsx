@@ -6,7 +6,7 @@ const LPHeader = () => (
     {/* <div className="landingPage-overlay"></div> */}
     <div className='landingPage-heading-btns'>
       <div className='heading'>
-        <h1>Find remote work with purpose.</h1>
+        <h1>Find remote work with greater purpose.</h1>
         { window.innerWidth > 767 ? (
           <h3>We connect highly-skilled, remote professionals with nonprofit and for-profit companies working for the greater good. Find a part-time gig, or full-time, today.</h3>
 
