@@ -46,17 +46,17 @@ class Registration extends Component {
 
         <div className="left-side-header">
           <h1>
-            Join hundreds
+            Work from home,
             <br/>
-            of elite
-            <br/>
-            professionals.
+            or anywhere else.
           </h1>
         </div>
 
         <div className="left-side-blurb">
-          Create your professional profile so we can start
-          <br/>finding you jobs. Blah bleep blah bop bope.
+          Create a remote, job seeker profile to be matched with 
+          <br/>nonprofit and for-profit companies 
+          <br/>working on causes you care most about.
+          
         </div>
       </div>
 
