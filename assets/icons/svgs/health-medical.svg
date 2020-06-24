@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>health-medical</title>
+    <desc>Created with Sketch.</desc>
+    <g id="health-medical" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M36,56 L8,56 L8,21.8657375 C8,14.2085593 14.269429,8 22,8 C29.7319327,8 36,14.2085593 36,21.8657375 L36,56 Z" id="Fill-1" fill="#F15F1B"></path>
+        <path d="M8,56 L8,28 L41.8111368,28 C49.646757,28 56,34.2680673 56,42 C56,49.7319327 49.646757,56 41.8111368,56 L8,56 Z" id="Fill-4" fill="#E69E22"></path>
+        <polygon id="Fill-7" fill="#1D39EB" points="8 56 36 56 36 28 8 28"></polygon>
+        <rect id="Rectangle" x="0" y="0" width="64" height="64"></rect>
+    </g>
+</svg>

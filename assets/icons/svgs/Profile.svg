@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Profile</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Profile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" x="0" y="0" width="64" height="64"></rect>
+        <path d="M55,47.3345081 L55,58 L9,58 L9,47.3345081 C9,34.4467484 19.298364,24 32,24 L32,24 C44.701636,24 55,34.4467484 55,47.3345081" id="Fill-1" fill="#1D39EB"></path>
+        <path d="M49,23 C49,32.3892092 41.3878089,40 32,40 C22.6121911,40 15,32.3892092 15,23 C15,13.6121911 22.6121911,6 32,6 C41.3878089,6 49,13.6121911 49,23" id="Fill-4" fill="#E69E22"></path>
+        <path d="M32,24 C37.9552804,24 43.3822517,26.2964988 47.4671756,30.064354 C44.7850684,35.9269582 38.86766,40 32,40 C25.13234,40 19.2149316,35.9269582 16.5328029,30.0642581 C20.5307238,26.3768178 25.8138884,24.0986295 31.6196798,24.003126 L32,24 Z" id="Combined-Shape" fill="#F15F1B"></path>
+    </g>
+</svg>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Veterans</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Veterans" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Fill-1" fill="#F15F1B" points="9 11 9 26.8545033 31.8005416 43.3703704 55 26.8545033 55 11"></polygon>
+        <path d="M49,38.0376353 C49,47.4460858 41.3885943,55.0740741 31.999403,55.0740741 C22.6102117,55.0740741 15,47.4460858 15,38.0376353 C15,28.6279883 22.6102117,21 31.999403,21 C41.3885943,21 49,28.6279883 49,38.0376353" id="Fill-2" fill="#E69E22"></path>
+        <path d="M31.999403,21.1481481 C39.176008,21.1481481 45.3139824,25.5949377 47.8083084,31.883499 L31.8005416,43.1481481 L16.1646316,31.9517397 C18.6411823,25.6271316 24.7968663,21.1481481 31.999403,21.1481481 Z" id="Combined-Shape" fill="#1D39EB"></path>
+        <rect id="Rectangle" x="0" y="0" width="64" height="64"></rect>
+    </g>
+</svg>

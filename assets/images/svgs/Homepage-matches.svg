@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="447px" height="233px" viewBox="0 0 447 233" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="43" y="22" width="334" height="88" rx="2"></rect>
+        <filter x="-9.9%" y="-31.8%" width="122.8%" height="186.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="5" dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="11" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.90868433   0 0 0 0 0.90868433   0 0 0 0 0.90868433  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="RR-web-desktop-home" transform="translate(-848.000000, -1244.000000)">
+            <g id="Group-2" transform="translate(848.000000, 1244.000000)">
+                <g id="Rectangle" opacity="0.399414062" style="mix-blend-mode: multiply;" fill="black" fill-opacity="1">
+                    <use filter="url(#filter-2)" xlink:href="#path-1"></use>
+                </g>
+                <rect id="Rectangle" fill="#FEFCF6" x="0" y="0" width="377" height="105" rx="1"></rect>
+                <rect id="Rectangle-Copy-4" fill="#FEFCF6" x="87" y="142" width="338" height="91" rx="1"></rect>
+                <g id="Group-14-Copy" transform="translate(184.000000, 32.000000)">
+                    <text id="97%-Match" font-family="OpenSans-Bold, Open Sans" font-size="26.244" font-weight="bold" letter-spacing="1.74960001" fill="#455EFD">
+                        <tspan x="55.846242" y="29.4352678">97% MATCH</tspan>
+                    </text>
+                    <g id="Group-4-Copy" transform="translate(0.000000, 3.185759)" stroke-width="6.561">
+                        <ellipse id="Oval" stroke="#E6E6E6" cx="18.533416" cy="18.7894737" rx="18.533416" ry="18.7894737"></ellipse>
+                        <path d="M12.2454208,1.03854928 C3.25188001,4.52729008 0,12.3550625 0,18.7894737 C0,29.1666135 8.29769298,37.5789474 18.533416,37.5789474 L18.533416,37.5789474 C28.769139,37.5789474 37.066832,29.1666135 37.066832,18.7894737 C37.066832,8.41233391 28.769139,0 18.533416,0" id="Path" stroke="#455EFD"></path>
+                    </g>
+                </g>
+                <rect id="Rectangle-Copy-18" fill="#E2D4D5" x="37" y="39" width="113" height="9" rx="4.5"></rect>
+                <rect id="Rectangle-Copy-20" fill="#E2D4D5" x="133" y="173" width="113" height="9" rx="4.5"></rect>
+                <rect id="Rectangle-Copy-19" fill="#E2D4D5" x="37" y="57" width="68" height="9" rx="4.5"></rect>
+                <rect id="Rectangle-Copy-21" fill="#E2D4D5" x="133" y="191" width="68" height="9" rx="4.5"></rect>
+                <g id="Group-13-Copy" transform="translate(285.000000, 170.000000)">
+                    <text id="50%-Match" font-family="OpenSans-Bold, Open Sans" font-size="19.44" font-weight="bold" letter-spacing="1.29600005" fill="#E69E22">
+                        <tspan x="40.1202486" y="21.0493548">50% MATCH</tspan>
+                    </text>
+                    <g id="Group-4-Copy-2" stroke-width="4.86">
+                        <ellipse id="Oval" stroke="#E6E6E6" cx="13.4759358" cy="13.5483871" rx="13.4759358" ry="13.5483871"></ellipse>
+                        <path d="M13.4759358,27.0967742 L13.4759358,27.0967742 C20.9184897,27.0967742 26.9518717,21.0309547 26.9518717,13.5483871 C26.9518717,6.06581952 20.9184897,0 13.4759358,0" id="Path" stroke="#E69E22"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

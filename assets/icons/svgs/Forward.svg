@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Forward</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Forward" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Fill-1" fill="#E69E22" points="24 8 24 56.9230769 59 31.9665968"></polygon>
+        <polygon id="Fill-2" fill="#F15F1B" points="6 8 6 56.9230769 41 31.9665968"></polygon>
+        <path d="M24,20.325 L41,31.9665968 L24,44.088 L24,20.325 Z" id="Combined-Shape" fill="#1D39EB"></path>
+        <rect id="Rectangle" x="0" y="0" width="64" height="64"></rect>
+    </g>
+</svg>

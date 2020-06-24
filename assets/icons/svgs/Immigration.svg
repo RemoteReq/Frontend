@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Immigration</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Immigration" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Fill-1" fill="#1D39EB" points="12 46 50 46 50 9 12 9"></polygon>
+        <polygon id="Fill-2" fill="#F15F1B" points="12 9.95454545 12 46 40 58.6363636 40 21.895885"></polygon>
+        <polygon id="Fill-3" fill="#E69E22" points="12 9 12 46 40 46 40 21.0856934"></polygon>
+        <rect id="Rectangle" x="0" y="0" width="64" height="64"></rect>
+    </g>
+</svg>

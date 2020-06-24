@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Matched</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Matched" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Fill-1" fill="#E69E22" points="8 57 41 57 41 24 8 24"></polygon>
+        <polygon id="Fill-2" fill="#F15F1B" points="24 40 57 40 57 7 24 7"></polygon>
+        <path d="M41,24 L41,40 L24,40 L24,24 L41,24 Z" id="Combined-Shape" fill="#1D39EB"></path>
+        <rect id="Rectangle" x="0" y="0" width="64" height="64"></rect>
+    </g>
+</svg>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>environmental</title>
+    <desc>Created with Sketch.</desc>
+    <g id="environmental" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Fill-1" fill="#1D39EB" points="39.5353297 10 17 52 63 52"></polygon>
+        <polygon id="Fill-2" fill="#E69E22" points="1 52 41 52 20.5959959 16"></polygon>
+        <path d="M28.671,30.248 L41,52 L17,52 L28.671,30.248 Z" id="Combined-Shape" fill="#F15F1B"></path>
+        <rect id="Rectangle" x="0" y="0" width="64" height="64"></rect>
+    </g>
+</svg>

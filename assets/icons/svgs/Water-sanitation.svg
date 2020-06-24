@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Water-sanitation</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Water-sanitation" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M40,37.0128033 C40,46.9469746 32.3889512,55 23,55 C13.6110488,55 6,46.9469746 6,37.0128033 C6,25.3023677 23,9 23,9 C23,9 40,25.3023677 40,37.0128033" id="Fill-1" fill="#1D39EB"></path>
+        <path d="M57,30.1421359 C57,38.3478017 50.7324487,45 43,45 C35.2688066,45 29,38.3478017 29,30.1421359 C29,20.4682701 43,7 43,7 C43,7 57,20.4682701 57,30.1421359" id="Fill-4" fill="#F15F1B"></path>
+        <path d="M40,37.0128033 C40,39.5838056 39.490216,42.0288099 38.5717631,44.2408292 C33.0100135,42.2741732 29,36.7050135 29,30.1421359 C29,26.96591 30.5092135,23.3806437 32.5365986,19.9973381 C36.414543,25.2883212 40,31.6348027 40,37.0128033 Z" id="Combined-Shape" fill="#E69E22"></path>
+        <rect id="Rectangle" x="0" y="0" width="64" height="64"></rect>
+    </g>
+</svg>

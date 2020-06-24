@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>education</title>
+    <desc>Created with Sketch.</desc>
+    <g id="education" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Fill-1" fill="#1D39EB" points="32 7 4 26.7941765 32 46 60 26.2058235"></polygon>
+        <polygon id="Fill-2" fill="#F15F1B" points="9 41.7332184 32 57 55 41.2654451 32 26"></polygon>
+        <path d="M32,26 L46.591,35.684 L32,46 L17.401,35.986 L32,26 Z" id="Combined-Shape" fill="#E69E22"></path>
+        <rect id="Rectangle" x="0" y="0" width="64" height="64"></rect>
+    </g>
+</svg>

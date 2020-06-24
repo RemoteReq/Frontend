@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Voting</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Voting" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#E69E22" transform="translate(38.031223, 31.688077) rotate(-315.000000) translate(-38.031223, -31.688077) " x="29.5312229" y="6.68807717" width="17" height="50"></rect>
+        <rect id="Rectangle-Copy" fill="#F15F1B" transform="translate(20.031223, 37.688077) rotate(-45.000000) translate(-20.031223, -37.688077) " x="11.5312229" y="20.6880772" width="17" height="34"></rect>
+        <polygon id="Path" fill="#1D39EB" points="26.0235 31.657074 38.047 43.682 26.0208153 55.7091543 14 43.6883391"></polygon>
+        <rect id="Rectangle" x="0" y="0" width="64" height="64"></rect>
+    </g>
+</svg>
