@@ -43,7 +43,7 @@ class ProfileCard extends Component{
         <div className="profile-card-contents">
           <div className="profile-card-picture"></div>
           <h2 className="profile-card-name">{userDetails.firstName + ' ' + userDetails.lastName}</h2>
-          <h2 className="profile-card-profession">Software Developer</h2>
+          <h2 className="profile-card-profession">{userDetails.jobRole || 'You Job Role Here'}</h2>
         <div className="profile-card-edit-button"></div>
 
         <div className="profile-card-bio">
