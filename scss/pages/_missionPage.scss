@@ -8,9 +8,23 @@
     background-color: $Yellow;
 
     .mission-graphics {
-      // .red-line {
-      //   background: url('../../assets/svg/red-line.svg')
-      // }
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      .red-line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+
+      .pink-line{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 0;
+      }
     }
     
     .mission-statement {
@@ -40,6 +54,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: $BackgroundColor;
     
     h1 {
       text-align: center;
