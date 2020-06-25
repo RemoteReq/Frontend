@@ -16,14 +16,18 @@ const LPHeader = () => (
       </div>
 
       <div className="button-and-link">
-        <Link to="/signup">
-          <button className='button-1'>Create your Profile</button>
-        </Link>
+        <div>
+          <Link to="/signup">
+            <button className='button-1'>Create your Profile</button>
+          </Link>
+        </div>
 
-        <Link to="/findTalent" 
-              className="large-link"
-              >Find Talent
-        </Link>
+        <div>
+          <Link to="/findTalent" 
+                className="large-link"
+                >Find Talent
+          </Link>
+        </div>
       </div>
 
     </div>
