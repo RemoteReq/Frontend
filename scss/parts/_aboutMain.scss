@@ -8,38 +8,12 @@
     width: 48%;
   }
 
-  .eyebrow {
-    color: #e69e22;
-    font-family: $SecondaryFont;
-    font-size: 20pt;
-    margin-bottom: 34px;
-  }
-
   h1 {
-    font-family: $MainFont;
-    font-size: 60pt;
-    font-weight: normal;
     margin-bottom: 34px;
   }
 
   h3 {
-    color: $SecondaryFontColor;
-    font-family: $SecondaryFont;
-    font-weight: normal;
-    font-size: 18pt;
-    line-height: 37px;
     margin-bottom: 34px;
-  }
-
-  a {
-    color: $SecondaryFontColor;
-    font-family: $SecondaryFont;
-    font-size: 22pt;
-    font-weight: bold;
-  }
-
-  a:hover {
-    color: $TertiaryColor;
   }
 
   .your-personal-recruiter {

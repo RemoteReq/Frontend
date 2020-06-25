@@ -1,5 +1,7 @@
+// override React-Router <Link/> styling
 a {
   text-decoration: underline;
+  padding-left: 0;
 }
 
 .large-link {

@@ -1,50 +1,15 @@
 .call-to-action {
-    align-items: center;
-    background: #fbf9f4;
-    display: flex;
-    flex-direction: column;
-    padding: 10vh 10vw;
+	align-items: center;
+	background: #fbf9f4;
+	display: flex;
+	flex-direction: column;
+	padding: 10vh 10vw;
 
-    h1 {
-        font-family: $MainFont;
-        font-size: 65pt;
-        font-weight: normal;
-        margin-bottom: 37px;
-        width: 50%;
-    }
-
-    .call-to-action-btns {
-        button {
-            background: $SecondaryColor;
-            color: $PrimaryColor;
-            font-size: 20pt;
-            height: 100px;
-            margin-bottom: 37px;
-        }
-
-        button:hover { cursor: pointer; }
-
-        .cta-find-jobs { 
-            margin-right: 20px; 
-            a {
-                color: white;
-            }
-        }
-        .cta-find-jobs:hover {
-            background: $TertiaryColor;
-            border-color: $TertiaryColor;
-        }
-
-        .cta-find-talent {
-            background: $PrimaryColor;
-            margin-left: 20px;
-            a{
-                color: $SecondaryColor;
-            }
-        }
-
-        .cta-find-talent:hover {
-            background: $SecondaryColor;
-        }
-    }
+	h2 {
+		margin-bottom: 37px;
+  }
+  
+  .button-2 {
+    margin-left: 20px;
+  }
 }
