@@ -93,7 +93,7 @@ const FindTalent = () => (
         <WebFooterLeft className="web-footer-left" width={500}/>
 
         <div className="footer-contents">
-          <h1>Build your remote team.</h1>
+          <h1>Build your remote team</h1>
           <button className="button-1">Submit a Job Req</button>
         </div>
 
