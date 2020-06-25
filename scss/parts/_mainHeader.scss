@@ -9,52 +9,21 @@
 
     .heading {
 
-      h1 {
-        font-family: $MainFont;
-        font-size: 65pt;
-        font-weight: normal;
-        margin-bottom: 37px;
-      }
+      // h1 {
+      //   font-family: $MainFont;
+      //   font-size: 65pt;
+      //   font-weight: normal;
+      //   margin-bottom: 37px;
+      // }
 
-      h3 {
-        color: $SecondaryFontColor;
-        font-family: $SecondaryFont;
-        font-size: 20pt;
-        font-weight: normal;
-        line-height: 37px;
-        margin-bottom: 37px;
-      }
-    }
-
-    .create-profile-btn {
-      background: $SecondaryColor;
-      color: $PrimaryColor;
-      font-size: 20pt;
-      height: 100px;
-      margin-bottom: 37px;
-
-      a {
-        color: white;
-      }
-    }
-
-    .create-profile-btn:hover {
-      background: $TertiaryColor;
-      border: 4px solid $TertiaryColor;
-    }
-
-    .find-talent {
-
-      a {
-        color: $SecondaryColor;
-        font-family: $SecondaryFont;
-        font-size: 22pt;
-        font-weight: bold;
-      }
-
-      a:hover {
-        color: $TertiaryColor;
-      }
+      // h3 {
+      //   color: $SecondaryFontColor;
+      //   font-family: $SecondaryFont;
+      //   font-size: 20pt;
+      //   font-weight: normal;
+      //   line-height: 37px;
+      //   margin-bottom: 37px;
+      // }
     }
   }
 }
