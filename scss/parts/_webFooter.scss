@@ -1,7 +1,7 @@
 .webfooter {
   background-color: $BackgroundColor;
   display: flex;
-  height: 50vh;
+  height: 55vh;
 
   .webfooter-graphics {
     position: relative;
@@ -17,6 +17,8 @@
     }
 
     .webfooter-content {
+      width: 60%;
+      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -26,9 +28,13 @@
         padding: 100px;
         z-index: 1;
       }
-
-      .webfooter-buttonGroup{
+      
+      .webfooter-component{
         display: flex;
+
+        a {
+          margin: 0 10px;
+        }
       }
     }
 

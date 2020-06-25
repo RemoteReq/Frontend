@@ -1,8 +1,11 @@
 import React from 'react';
 import RedLine from '#assets/images/svgs/red-line.svg';
 import PinkLine from '#assets/images/svgs/pink-line.svg';
+import WebFooter from '../../components/parts/WebFooter.jsx';
 
 const Mission = () => (
+  <div>
+
   <div className="mission">
 
     <div className="mission-block">
@@ -34,18 +37,17 @@ const Mission = () => (
       </div>
     </div>
 
-    <div className="mission-join-us">
+    </div>
 
-      <h1>Put our network </h1>
-      <h1>to work for your cause.</h1>
-
-      <div className="join-us-container">
+    <WebFooter 
+      header={"Put our network to work for your cause."} 
+      graphics={false}
+      component={
         <button className="button-1">
           Submit a Job Req
-       </button>
-      </div>
-
-    </div>
+        </button>
+      }
+      />
 
   </div>
 );

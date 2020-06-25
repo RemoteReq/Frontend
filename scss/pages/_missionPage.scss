@@ -1,5 +1,6 @@
 .mission {
   display: block;
+  // height: 100vh;
   
   .mission-block {
     display: flex;
@@ -38,7 +39,7 @@
       
       p{
         color: $BackgroundColor;
-        line-height: 80px;
+        line-height: 78px;
       }
     }
   }

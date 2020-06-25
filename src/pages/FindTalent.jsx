@@ -89,10 +89,12 @@ const FindTalent = () => (
       </div>
     </div>
 
-    <WebFooter header={"Build your remote team."} 
-               buttonGroup={
-                <button className="button-1">Submit a Job Req</button>
-               }
+    <WebFooter 
+    header={"Build your remote team."} 
+    graphics={true}
+    component={
+      <button className="button-1">Submit a Job Req</button>
+    }
     />
 
   </div>
