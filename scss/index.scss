@@ -41,9 +41,6 @@
 @import './parts/_editor.scss';
 @import './parts/_webFooter.scss';
 @import './parts/_footer.scss';
-@import './parts/_section.scss';
-@import './parts/_reverseSection.scss';
-@import './parts/_middleSection.scss';
 
 // import elements
 @import './elements/_buttons.scss';
@@ -51,6 +48,7 @@
 @import './elements/_links.scss';
 @import './elements/_paragraphs.scss';
 @import './elements/inputs.scss';
+@import './elements/_sections.scss/'
 
 /* ---------------------------------------------------------------------
   Below is responsive styling files
