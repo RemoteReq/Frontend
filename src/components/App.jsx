@@ -4,11 +4,12 @@ import {
 } from 'react-router-dom';
 import ProtectedRoute from './Auth/ProtectedRoute.jsx';
 import ScrollToTop from './parts/ScrollToTop.jsx';
-import LandingPage from './LandingPage/components/LandingPage.jsx';
 import LoginPage from './Auth/LoginPage.jsx';
 import SignUp from './Auth/Registration.jsx';
 import Navigation from './parts/Navigation1.jsx';
 import Footer from './parts/Footer.jsx';
+
+import LandingPage from '../pages/LandingPage/LandingPage.jsx';
 import Dashboard from '../pages/Dashboard/Dashboard.jsx';
 import Mission from '../pages/Mission/Mission.jsx';
 import FindTalent from '../pages/FindTalent.jsx';
@@ -21,16 +22,16 @@ class App extends Component {
       <Router>
         <ScrollToTop>
           <Navigation/>
-          <Switch>
-            <Route exact path="/" component={LandingPage} />
-            <Route path="/signin" component={LoginPage} />
-            <Route path="/signup" component={SignUp} />
-            <ProtectedRoute path="/dashboard" component={Dashboard} />
-            <Route path="/QnA" component="questionnaire" />
-            <Route path="/mission" component={Mission} />
-            <Route path="/findTalent" component={FindTalent} />
-            <Route component={Page404} />
-          </Switch>
+            <Switch>
+              <Route exact path="/" component={LandingPage} />
+              <Route path="/signin" component={LoginPage} />
+              <Route path="/signup" component={SignUp} />
+              <ProtectedRoute path="/dashboard" component={Dashboard} />
+              <Route path="/QnA" component="questionnaire" />
+              <Route path="/mission" component={Mission} />
+              <Route path="/findTalent" component={FindTalent} />
+              <Route component={Page404} />
+            </Switch>
           <Footer/>
         </ScrollToTop>
       </Router>

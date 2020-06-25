@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const backend = 'http://3.21.186.204:3030';
 
@@ -43,26 +44,22 @@ class Registration extends Component {
     return (
       <div className='registration'>
       <div className="left-side-register">
+        <h1>
+          Work from home,
+          <br/>
+          or anywhere else.
+        </h1>
 
-        <div className="left-side-header">
-          <h1>
-            Work from home,
-            <br/>
-            or anywhere else.
-          </h1>
-        </div>
-
-        <div className="left-side-blurb">
+        <p>
           Create a remote, job seeker profile to be matched with 
           <br/>nonprofit and for-profit companies 
           <br/>working on causes you care most about.
-          
-        </div>
+        </p>
       </div>
 
       <form>
         <div>
-          <h2>Create your profile</h2>
+          <h3>Create your profile</h3>
 
           <input
             tpye='text'
@@ -107,12 +104,12 @@ class Registration extends Component {
 
         <button
           type='submit'
-          className='registration-btn'
+          className='button-1'
           onClick={ this.signUp }
-          >CREATE YOUR PROFILE
+          >Create Your Profile
         </button>
 
-        <p className="redirect-to-signin">Already have an account? <a href='/signin'>Sign In</a></p>
+        <p className="small-paragraph">Already have an account? <Link className="small-link" to='/signin'>Sign In</Link></p>
       </form>
     </div>
     );

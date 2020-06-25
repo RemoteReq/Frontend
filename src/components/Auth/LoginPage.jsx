@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import auth from './Auth.js'
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Redirect, Link } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
 
 const responseGoogle = (response) => {
@@ -90,7 +90,7 @@ class LoginPage extends Component {
               autoComplete="current-username"
               className="login-email"
               onChange={ this.updateInfoOnChange }
-              placeholder="Email" />
+              placeholder="Username" />
             <input
               type="password"
               name="password"
@@ -99,9 +99,9 @@ class LoginPage extends Component {
               onChange={ this.updateInfoOnChange }
               placeholder="Password" />
             <button onClick={ this.login }>Login</button>
-            <a href="#">Forgot Password</a>
-            <p>
-              Don't have an account? <a href="/signup">Sign Up</a>
+            <Link to="#">Forgot your Password?</Link>
+            <p className="small-paragraph">
+              Don't have an account? <Link to="/signup">Sign Up</Link>
             </p>
           </form>
         </div>
