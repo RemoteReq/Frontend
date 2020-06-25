@@ -43,7 +43,7 @@ class Registration extends Component {
   render() {
     return (
       <div className='registration'>
-      <div className="left-side-register">
+      <div className="left-side-signup">
         <h1>
           Work from home,
           <br/>
@@ -65,38 +65,38 @@ class Registration extends Component {
             tpye='text'
             name='username'
             onChange={ this.onChange }
-            placeholder='username'
+            placeholder='Username'
             required>
           </input>
           <input
             type='text'
             name='firstName'
             onChange={ this.onChange }
-            placeholder='first name'
+            placeholder='First Name'
             required />
           <input
             type='text'
             name='lastName'
             onChange={ this.onChange }
-            placeholder='last name'
+            placeholder='Last Name'
             required />
           <input
             type='email'
             name='email'
             onChange={ this.onChange }
-            placeholder='email'
+            placeholder='Email'
             required />
           <input
             type='password'
             name='password'
             onChange={ this.onChange }
-            placeholder='create your password'
+            placeholder='Create your password'
             required />
           <input
             type='password'
             name='regPassTwo'
             onChange={ this.onChange }
-            placeholder='confirm your password'
+            placeholder='Confirm your password'
             required />
         </div>
 

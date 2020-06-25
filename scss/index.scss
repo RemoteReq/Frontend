@@ -22,29 +22,32 @@
 @import './pages/_findTalent.scss';
 @import './pages/_404.scss';
 @import './pages/_dashboard.scss';
+@import './pages/_signUp.scss';
+// landing page is currently split, will refactor this section soon //
+@import './pages/landing-page/_mainHeader.scss';
+@import './pages/landing-page/_aboutHeader.scss';
+@import './pages/landing-page/_aboutMain.scss';
+@import './pages/landing-page/_callToAction.scss';
+////////////////////////////////////////////////////////////////////
 
 // import parts (components)
-@import './parts/_registration.scss';
 @import './parts/_navigation.scss';
-@import './parts/_mainHeader.scss';
-@import './parts/_aboutHeader.scss';
-@import './parts/_aboutMain.scss';
-@import './parts/_callToAction.scss';
-@import './parts/_footer.scss';
+@import './parts/_navigation2.scss';
 @import './parts/_profileCard.scss';
 @import './parts/_jobList.scss';
 @import './parts/_profileDropdownMenu.scss';
 @import './parts/_reminder.scss';
 @import './parts/_jobListing.scss';
-@import './parts/_navigation2.scss';
-@import './parts/_webFooter.scss';
 @import './parts/_editor.scss';
+@import './parts/_webFooter.scss';
+@import './parts/_footer.scss';
 
 // import elements
 @import './elements/_buttons.scss';
 @import './elements/_headings.scss';
 @import './elements/_links.scss';
 @import './elements/_paragraphs.scss';
+@import './elements/inputs.scss';
 
 /* ---------------------------------------------------------------------
   Below is responsive styling files
