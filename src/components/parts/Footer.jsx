@@ -8,13 +8,14 @@ import RRLogo from '../../../assets/img/RR-cobalt.png';
 const Footer = () => (
   <div className='footer'>
     <ul className='footerLinks'>
-      <li><Link to="/mission">Our Mission</Link></li>
-      <li><Link to="/signup">Find Jobs</Link></li>
-      <li><Link to="/findTalent">Find Talent</Link></li>
+      <li><Link to="/mission" className="small-link">Our Mission</Link></li>
+      <li><Link to="/signup" className="small-link">Find Jobs</Link></li>
+      <li><Link to="/findTalent" className="small-link">Find Talent</Link></li>
     </ul>
-    <a href="http://localhost:8080">
+
+    <Link to="/">
       <img src={ RRLogo } alt='remotereq logo'/>
-    </a>
+    </Link>
   </div>
 );
 

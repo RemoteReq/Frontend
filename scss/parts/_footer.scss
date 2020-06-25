@@ -1,8 +1,7 @@
 .footer {
   align-items: center;
-  // border-top: 2px solid $ScndFontColor;
   display: flex;
-  height: 30vh;
+  height: 15vh;
   justify-content: space-between;
   margin: 0 10vw 0 10vw;
 
@@ -15,9 +14,13 @@
       font-family: $SecondaryFont;
       font-size: 14pt;
       margin-right: 80px;
-    }
 
-    li:hover { cursor: pointer; }
+      a {
+        text-decoration: none;
+        color: #595959;
+        font-size: 14pt;
+      }
+    }
   }
 
   img {
