@@ -66,8 +66,11 @@ class LoginPage extends Component {
     return (
         <div className="login-form-page">
         <div className="login-container" >
-          <p>
-            By continuing, you agree to our  <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+          <p className="small-paragraph">
+            By continuing, you agree to our
+            &nbsp;<Link to="#" className="small-link">Terms of Use</Link> &nbsp;
+            and 
+            &nbsp;<Link to="#"className="small-link">Our Privacy Policy</Link>.
           </p>
           <div className="login-fb-google">
             {/*
@@ -98,10 +101,13 @@ class LoginPage extends Component {
               className="login-password"
               onChange={ this.updateInfoOnChange }
               placeholder="Password" />
-            <button onClick={ this.login }>Login</button>
-            <Link to="#">Forgot your Password?</Link>
+            <button onClick={ this.login }
+                    className="button-1"
+            >Sign in
+            </button>
+            {/* <Link to="#">Forgot your Password?</Link> */}
             <p className="small-paragraph">
-              Don't have an account? <Link to="/signup">Sign Up</Link>
+              Don't have an account? <Link to="/signup" className="small-link">Sign Up</Link>
             </p>
           </form>
         </div>
