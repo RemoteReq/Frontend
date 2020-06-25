@@ -14,7 +14,7 @@ const LPHeader = () => (
           : <h3>We connect highly-skilled, remote professionals with companies working for the greater good.</h3>
         }
       </div>
-      <button className='create-profile-btn'><Link to="/signup">Create your Profile</Link></button>
+      <button className='button-1'><Link to="/signup">Create your Profile</Link></button>
       <h3 className='find-talent'><Link to="/findTalent">Find Talent</Link></h3>
     </div>
   </div>

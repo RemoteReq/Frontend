@@ -35,11 +35,11 @@ const Navigation1 = (props) => {
       { menuVisible === true ? (
         <div className='landingPage-navBar-links'>
           <Link to="/findTalent">
-            <button className='find-talent-btn'>find talent</button>
+            <button className='button-2'>find talent</button>
           </Link>
 
           <Link to='/signin'>
-            <button className='log-in-btn'>sign in</button>
+            <button className='button-1'>find jobs</button>
           </Link>
         </div>
       ) : null}

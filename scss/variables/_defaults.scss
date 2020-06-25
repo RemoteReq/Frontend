@@ -6,18 +6,4 @@
 
 body {
   position: relative;
-  // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-button {
-  border: 4px solid $SecondaryColor;
-  font-family: $SecondaryFont;
-  font-size: 14pt;
-  font-weight: bold;
-  height: 80px;
-  letter-spacing: 2pt;
-  padding: 0 40px;
-  text-transform: uppercase;
-}
-
-button:hover { cursor: pointer; }

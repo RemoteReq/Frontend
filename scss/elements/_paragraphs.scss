@@ -1,0 +1,10 @@
+// Going by the style guide, all <p/> tags share the same style. If anything goes south refer here
+body {
+  p {
+    font-family: 'Open Sans', serif;
+    size: 20pt;
+    line-height: 35px;
+    color: #595959;
+    font-weight: normal;
+  }
+}

@@ -9,6 +9,9 @@
 
 */
 
+// import vendors
+@import './vendors/_fontsList.scss';
+
 // import variables partial files
 @import './variables/_variables.scss';
 @import './variables/_defaults.scss';
@@ -38,6 +41,9 @@
 
 // import elements
 @import './elements/_buttons.scss';
+@import './elements/_headings.scss';
+@import './elements/_links.scss';
+@import './elements/paragraphs.scss';
 
 /* ---------------------------------------------------------------------
   Below is responsive styling files
