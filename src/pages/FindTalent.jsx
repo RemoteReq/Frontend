@@ -2,9 +2,10 @@ import React from 'react';
 import triplet1 from '#assets/img/Profile.png';
 import triplet2 from '#assets/img/Connect.png';
 import triplet3 from '#assets/img/Forward.png';
+import WebFooter from '../components/parts/WebFooter.jsx';
 import heroes from '#assets/images/pngs/find-talent-heroes.png';
-import WebFooterLeft from '#assets/images/svgs/RR-web-footer-left.svg';
-import WebFooterRight from '#assets/images/svgs/RR-web-footer-right.svg';
+// import WebFooterLeft from '#assets/images/svgs/RR-web-footer-left.svg';
+// import WebFooterRight from '#assets/images/svgs/RR-web-footer-right.svg';
 
 const FindTalent = () => (
   <div className="find-talent-page">
@@ -88,18 +89,11 @@ const FindTalent = () => (
       </div>
     </div>
 
-    <div className="find-talent-lower">
-      <div className="find-talent-lower-graphics">
-        <WebFooterLeft className="web-footer-left" width={500}/>
-
-        <div className="footer-contents">
-          <h1>Build your remote team</h1>
-          <button className="button-1">Submit a Job Req</button>
-        </div>
-
-        <WebFooterRight className="web-footer-right" width={500}/>
-      </div>
-    </div>
+    <WebFooter header={"Build your remote team."} 
+               buttonGroup={
+                <button className="button-1">Submit a Job Req</button>
+               }
+    />
 
   </div>
 );

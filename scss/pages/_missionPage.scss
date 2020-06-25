@@ -1,5 +1,4 @@
 .mission {
-  margin-top: 150px;
   display: block;
   
   .mission-block {
@@ -34,17 +33,12 @@
       padding-bottom: 100px;
       
       .mission-statement-upper {
-        font-size: 42pt;
         padding-bottom: 50px;
       }
       
-      .mission-statement-lower {
-        font-size: 14pt;
-        font-family: $SecondaryFont;
-        
-        p {
-          height: 80px;
-        }
+      p{
+        color: $BackgroundColor;
+        line-height: 80px;
       }
     }
   }

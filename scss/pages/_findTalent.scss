@@ -116,45 +116,5 @@
     }
 
 
-  }
-
-  .find-talent-lower {
-    background-color: $BackgroundColor;
-    display: flex;
-    height: 50vh;
-
-    .find-talent-lower-graphics {
-      position: relative;
-      display: flex;
-      justify-content: space-around;
-      height: 100%;
-      width: 100%;
-
-      .web-footer-left {
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-
-      .web-footer-right {
-        position: absolute;
-        top: 0;
-        right: 0;
-      }
-
-      .footer-contents {
-        padding-top: 100px;
-        display: flex;
-        flex-direction: column;
-        z-index: 1;
-
-        h1{
-          font-family: $MainFont;
-          font-weight: lighter;
-          font-size: 48pt;
-        }
-      }
-    }
-
-  }
+  }  
 }

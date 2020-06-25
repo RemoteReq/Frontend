@@ -1,6 +1,6 @@
 import React from 'react';
-import RedLine from '../../../assets/svg/red-line.svg';
-import PinkLine from '../../../assets/svg/pink-line.svg';
+import RedLine from '#assets/images/svgs/red-line.svg';
+import PinkLine from '#assets/images/svgs/pink-line.svg';
 
 const Mission = () => (
   <div className="mission">
@@ -11,18 +11,22 @@ const Mission = () => (
 
         <div className="mission-statement">
           <div className="mission-statement-upper">
-            On behalf of remotes,
-            <br/>
-            created by remotes.
+            <h2>
+              On behalf of remotes,
+              <br/>
+              created by remotes.
+            </h2>
           </div>
 
           <div className="mission-statement-lower">
-            <p>We are the creatives, and the builders,</p>
-            <p>With the skills and expertise,</p>
-            <p>The special-ops forces of mission-driven businesses,</p>
-            <p>Strengthening the ranks of small business and nonprofits,</p>
-            <p>A thousand strong, and growing,</p>
-            <p>Commited, professional, and proven.</p>
+            <p>
+              We are the creatives, and the builders, <br/>
+              With the skills and expertise, <br/>
+              The special-ops forces of mission-driven businesses, <br/>
+              Strengthening the ranks of small business and nonprofits, <br/>
+              A thousand strong, and growing, <br/>
+              Commited, professional, and proven.
+            </p>
           </div>
         </div>
 
