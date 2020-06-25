@@ -8,14 +8,28 @@ const LPHeader = () => (
       <div className='heading'>
         <h1>Find remote work with greater purpose.</h1>
         { window.innerWidth > 767 ? (
-          <h3>We connect highly-skilled, remote professionals with nonprofit and for-profit companies working for the greater good. Find a part-time gig, or full-time, today.</h3>
+          <p>We connect highly-skilled, remote professionals with nonprofit and for-profit companies working for the greater good. Find a part-time gig, or full-time, today.</p>
 
         )
-          : <h3>We connect highly-skilled, remote professionals with companies working for the greater good.</h3>
+          : <p>We connect highly-skilled, remote professionals with companies working for the greater good.</p>
         }
       </div>
-      <button className='create-profile-btn'><Link to="/signup">Create your Profile</Link></button>
-      <h3 className='find-talent'><Link to="/findTalent">Find Talent</Link></h3>
+
+      <div className="button-and-link">
+        <div>
+          <Link to="/signup">
+            <button className='button-1'>Create your Profile</button>
+          </Link>
+        </div>
+
+        <div>
+          <Link to="/findTalent" 
+                className="large-link"
+                >Find Talent
+          </Link>
+        </div>
+      </div>
+
     </div>
   </div>
 );

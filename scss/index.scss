@@ -9,6 +9,9 @@
 
 */
 
+// import vendors
+@import './vendors/_fontsList.scss';
+
 // import variables partial files
 @import './variables/_variables.scss';
 @import './variables/_defaults.scss';
@@ -34,10 +37,17 @@
 @import './parts/_reminder.scss';
 @import './parts/_jobListing.scss';
 @import './parts/_navigation2.scss';
+<<<<<<< HEAD
 @import './parts/_webFooter.scss';
+=======
+@import './parts/_editor.scss';
+>>>>>>> reorg
 
 // import elements
 @import './elements/_buttons.scss';
+@import './elements/_headings.scss';
+@import './elements/_links.scss';
+@import './elements/_paragraphs.scss';
 
 /* ---------------------------------------------------------------------
   Below is responsive styling files

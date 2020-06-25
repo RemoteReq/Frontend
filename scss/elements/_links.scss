@@ -1,0 +1,16 @@
+// override React-Router <Link/> styling
+a {
+  text-decoration: underline;
+  padding-left: 0;
+}
+
+.large-link {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18pt;
+  color: #1D39EB;
+  font-weight: 600;
+}
+
+.large-link:hover {
+  color: #455EFD;
+}
