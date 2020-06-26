@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const backend = 'http://3.21.186.204:3030'
+const backend = 'http://3.21.186.204:3030';
 
 class Auth {
   constructor() {
@@ -9,13 +9,13 @@ class Auth {
 
   login(credentials, cb) {
     axios.post(`${backend}/api/signin`, credentials)
-    .then(response => {
-      if (response.status === 200) {
-        localStorage.setItem('session', response.data.token);
-        this.authState = true;
-        cb();
-      }
-    })
+      .then((response) => {
+        if (response.status === 200) {
+          localStorage.setItem('session', response.data.token);
+          this.authState = true;
+          cb();
+        }
+      });
   }
 
   logout(cb) {
@@ -25,8 +25,7 @@ class Auth {
   }
 
   isAuthenticated() {
-    const sesh = localStorage.getItem('session');
-    sesh ? this.authState = true : this.authState = false;
+    // localStorage.getItem('session') ? this.authState = true : this.authState = false;
 
     return this.authState;
   }

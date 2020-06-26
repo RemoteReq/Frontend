@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import auth from '../../components/Auth/Auth.js'
-import { Route, Redirect, Link } from 'react-router-dom';
-import { GoogleLogin } from 'react-google-login';
+import { Redirect, Link } from 'react-router-dom';
+// import { GoogleLogin } from 'react-google-login';
+import auth from '../../components/Auth/Auth.jsx';
 
-const responseGoogle = (response) => {
-  console.log(response);
-};
+// const responseGoogle = (response) => {
+//   console.log(response);
+// };
 
 class SignIn extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class SignIn extends Component {
     this.state = {
       username: '',
       password: '',
-      redirectToReferrer: false
+      redirectToReferrer: false,
     };
 
     this.updateInfoOnChange = this.updateInfoOnChange.bind(this);
@@ -24,16 +24,15 @@ class SignIn extends Component {
   componentDidMount() {
     console.log(auth.isAuthenticated());
     if (auth.isAuthenticated()) {
-
       this.setState({
-        redirectToReferrer: true
+        redirectToReferrer: true,
       });
     }
   }
 
   login(e) {
     e.preventDefault();
-    
+
     const body = {
       username: this.state.username,
       password: this.state.password,
@@ -41,9 +40,9 @@ class SignIn extends Component {
 
     auth.login(body, () => {
       this.setState({
-        redirectToReferrer: true
-      })
-    })
+        redirectToReferrer: true,
+      });
+    });
   }
 
   updateInfoOnChange(e) {
@@ -57,10 +56,10 @@ class SignIn extends Component {
   render() {
     const { redirectToReferrer } = this.state;
 
-    if (redirectToReferrer === true){
-      return(
+    if (redirectToReferrer === true) {
+      return (
         <Redirect to ='dashboard' />
-      )
+      );
     }
 
     return (
@@ -69,7 +68,7 @@ class SignIn extends Component {
           <p className="small-paragraph">
             By continuing, you agree to our
             &nbsp;<Link to="#" className="small-link">Terms of Use</Link> &nbsp;
-            and 
+            and
             &nbsp;<Link to="#"className="small-link">Our Privacy Policy</Link>.
           </p>
           <div className="login-fb-google">
@@ -107,7 +106,7 @@ class SignIn extends Component {
             </button>
             {/* <Link to="#">Forgot your Password?</Link> */}
             <p className="small-paragraph">
-              Don't have an account? <Link to="/signup" className="small-link">Sign Up</Link>
+              Don&apos;t have an account? <Link to="/signup" className="small-link">Sign Up</Link>
             </p>
           </form>
         </div>

@@ -37,7 +37,7 @@ class SignUp extends Component {
 
     axios.post(`${backend}/api/signup`, body)
       .then((response) => console.log(response))
-      .catch(err => console.log(err))
+      .catch((err) => console.log(err));
   }
 
   render() {
@@ -51,8 +51,8 @@ class SignUp extends Component {
         </h1>
 
         <p>
-          Create a remote, job seeker profile to be matched with 
-          <br/>nonprofit and for-profit companies 
+          Create a remote, job seeker profile to be matched with
+          <br/>nonprofit and for-profit companies
           <br/>working on causes you care most about.
         </p>
       </div>

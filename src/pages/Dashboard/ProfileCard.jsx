@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Auth from '../../components/Auth/Auth.js';
 import axios from 'axios';
+import Auth from '../../components/Auth/Auth.jsx';
 
 const backend = 'http://3.21.186.204:3030';
 
-class ProfileCard extends Component{
+class ProfileCard extends Component {
   constructor(props) {
     super(props);
 
     this.state = {};
   }
 
-  componentDidMount(){
+  componentDidMount() {
     if (Auth.isAuthenticated()) {
       console.log('retrieving user details... ');
 
@@ -23,29 +23,29 @@ class ProfileCard extends Component{
           token: localStorage.getItem('session'),
         },
       })
-      .then(response => {
-        this.setState({
-          redirectToReferrer: true,
-          userDetails: response.data
+        .then((response) => {
+          this.setState({
+            redirectToReferrer: true,
+            userDetails: response.data,
+          });
+          console.log('user details retrieved!', response);
         })
-        console.log('user details retrieved!', response)
-      })
-      .catch(error => console.log(error))
+        .catch((error) => console.log(error));
     }
   }
 
   render() {
     const { userDetails } = this.state;
 
-    return(
-      userDetails ? 
-      
-      <div className="profile-card">
+    return (
+      userDetails
+
+        ? <div className="profile-card">
         <div className="profile-card-contents">
-          
+
           <div className="profile-card-picture"></div>
 
-          <h3 className="profile-card-name">{userDetails.firstName + ' ' + userDetails.lastName}</h3>
+          <h3 className="profile-card-name">{`${userDetails.firstName} ${userDetails.lastName}`}</h3>
           <h4>{userDetails.jobRole || 'You Job Role Here'}</h4>
 
           <div className="profile-card-bio">
@@ -56,9 +56,7 @@ class ProfileCard extends Component{
             <p className="small-paragraph">{userDetails.cause || 'selected cause here'}</p>
 
             <h5>Education</h5>
-            {userDetails.education.map((item)=> {
-              return <p className="small-paragraph">{item || 'user education item here'}</p>
-            })}
+            {userDetails.education.map((item, key) => <p className="small-paragraph" key={key}>{item || 'user education item here'}</p>)}
 
             <h5>Phone #</h5>
             <p className="small-paragraph">{userDetails.mobileNum || 'user number here'}</p>
@@ -68,9 +66,7 @@ class ProfileCard extends Component{
 
             <h5>Skills</h5>
             <ul>
-              {userDetails.keySkills.map((item) => {
-                return <li>{item || 'user skill item here'}</li>
-              })}
+              {userDetails.keySkills.map((item, key) => <li key={key}>{item || 'user skill item here'}</li>)}
             </ul>
 
             <button className="button-2">Upload Resume</button>
@@ -81,13 +77,11 @@ class ProfileCard extends Component{
         <Link to="/settings">
           Edit
         </Link>
-        
+
       </div>
-      
-      :
-      
-      <div>loading...</div>
-    )
+
+        : <div>loading...</div>
+    );
   }
 }
 

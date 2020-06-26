@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter as Router, Switch, Route, Link, Redirect
+  BrowserRouter as Router, Switch, Route,
 } from 'react-router-dom';
 import ProtectedRoute from './Auth/ProtectedRoute.jsx';
 
@@ -22,7 +22,6 @@ import Page404 from '../pages/Page404.jsx';
 
 class App extends Component {
   render() {
-
     return (
       <Router>
         <ScrollToTop>
