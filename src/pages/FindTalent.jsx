@@ -1,7 +1,7 @@
 import React from 'react';
-import triplet1 from '#assets/img/Profile.png';
-import triplet2 from '#assets/img/Connect.png';
-import triplet3 from '#assets/img/Forward.png';
+import triplet1 from '#assets/icons/pngs/Profile.png';
+import triplet2 from '#assets/icons/pngs/Matched.png';
+import triplet3 from '#assets/icons/pngs/Forward.png';
 import WebFooter from '../components/parts/WebFooter.jsx';
 import heroes from '#assets/images/pngs/find-talent-heroes.png';
 // import WebFooterLeft from '#assets/images/svgs/RR-web-footer-left.svg';

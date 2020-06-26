@@ -2,12 +2,10 @@
   background: #fff;
   box-shadow: 4px 4px 20px #e2e2e2;
   display: flex;
-  margin: 20vh 0 0 15vw;
-  height: 80vh;
-  width: 20vw;
+  margin: 4vh 0 4vh 15vw;
 
   .profile-card-contents {
-    padding: 20px;
+    padding: 40px;
   }
 
   .profile-card-picture {
@@ -16,32 +14,12 @@
     background-color: lightgray;
   }
 
-  .profile-card-name{
-    font-family: $SecondaryFont;
-    font-weight: bolder;
+  h4 {
+    margin: 15px 0;
+    font-weight: 800;
   }
 
-  .profile-card-profession{
-    font-weight: lighter;
-    font-family: $SecondaryFont;
-    color: gray;
-  }
-
-  .profile-card-bio-header {
-    font-family: $SecondaryFont;
-    color: gray;
-  }
-
-  p {
-    font-family: $SecondaryFont;
-    color: lightgray;
-  }
-
-  .blue-block-button {
-    padding: auto;
-  }
-
-  .profile-card-edit-button {
-    padding: 20px;
+  .button-1 {
+    margin-left: 20px;
   }
 }

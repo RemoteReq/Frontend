@@ -24,12 +24,12 @@ class App extends Component {
           <Navigation/>
             <Switch>
               <Route exact path="/" component={LandingPage} />
-              <Route path="/signin" component={LoginPage} />
-              <Route path="/signup" component={SignUp} />
-              <ProtectedRoute path="/dashboard" component={Dashboard} />
-              <Route path="/QnA" component="questionnaire" />
-              <Route path="/mission" component={Mission} />
-              <Route path="/findTalent" component={FindTalent} />
+              <Route exact path="/signin" component={LoginPage} />
+              <Route exact path="/signup" component={SignUp} />
+              <Route exact path="/QnA" component="questionnaire" />
+              <Route exact path="/mission" component={Mission} />
+              <Route exact path="/findTalent" component={FindTalent} />
+              <ProtectedRoute exact path="/dashboard" component={Dashboard} />
               <Route component={Page404} />
             </Switch>
           <Footer/>

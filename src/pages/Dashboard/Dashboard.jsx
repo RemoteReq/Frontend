@@ -74,9 +74,7 @@ class Dashboard extends Component {
     return (
       <Router>
         <Navigation showProfileMenu={ this.showProfileMenu } updateRedirect={this.updateRedirect}/>
-
-        <ProfileDropdown profileMenuDropdown= { this.state.profileMenuDropdown } />
-
+        
         <div className='dashboard'>
           <ProfileCard/>
 

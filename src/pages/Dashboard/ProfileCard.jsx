@@ -44,40 +44,41 @@ class ProfileCard extends Component{
           
           <div className="profile-card-picture"></div>
 
-          <h2 className="profile-card-name">{userDetails.firstName + ' ' + userDetails.lastName}</h2>
-          <h2 className="profile-card-profession">{userDetails.jobRole || 'You Job Role Here'}</h2>
+          <h3 className="profile-card-name">{userDetails.firstName + ' ' + userDetails.lastName}</h3>
+          <h5>{userDetails.jobRole || 'You Job Role Here'}</h5>
 
           <div className="profile-card-bio">
-            <h3 className="profile-card-bio-header">About</h3>
-            <p>{userDetails.about || 'your bio here'}</p>
+            <h4>About</h4>
+            <p className="small-paragraph">{userDetails.about || 'your bio here'}</p>
 
-            <h3 className="profile-card-bio-header">Cause</h3>
-            <p>{userDetails.cause || 'selected cause here'}</p>
+            <h4>Cause</h4>
+            <p className="small-paragraph">{userDetails.cause || 'selected cause here'}</p>
 
-            <h3 className="profile-card-bio-header">Education</h3>
+            <h4>Education</h4>
             {userDetails.education.map((item)=> {
-              return <p>{item || 'user education item here'}</p>
+              return <p className="small-paragraph">{item || 'user education item here'}</p>
             })}
 
-            <h3 className="profile-card-bio-header">Phone #</h3>
-            <p>{userDetails.mobileNum || 'user number here'}</p>
+            <h4>Phone #</h4>
+            <p className="small-paragraph">{userDetails.mobileNum || 'user number here'}</p>
 
-            <h3 className="profile-card-bio-header">Email</h3>
-            <p>{userDetails.email || 'user email here'}</p>
+            <h4>Email</h4>
+            <p className="small-paragraph">{userDetails.email || 'user email here'}</p>
 
-            <h3 className="profile-card-bio-header">Skills</h3>
+            <h4>Skills</h4>
             <ul>
               {userDetails.keySkills.map((item) => {
                 return <li>{item || 'user skill item here'}</li>
               })}
             </ul>
 
-            <button className="blue-block-button">Upload Resume</button>
+            <button className="button-1">Upload Resume</button>
           </div>
 
         </div>
+
+        <div>Edit</div>
         
-        <div className="profile-card-edit-button">Edit</div>
       </div>
       
       :

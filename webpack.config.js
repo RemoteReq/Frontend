@@ -61,7 +61,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      favicon: './assets/img/RR-cobalt-square.png',
+      favicon: './assets/images/pngs/RR-cobalt-square.png',
     }),
   ],
 };

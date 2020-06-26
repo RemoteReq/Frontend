@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import RemoteReq from '../../../assets/img/RemoteReq-logotype-cobalt.png';
+import RemoteReq from '#assets/images/pngs/RemoteReq-logotype-cobalt.png';
 
 const Navigation1 = (props) => {
   let menuVisible;
