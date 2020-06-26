@@ -25,9 +25,9 @@ class Auth {
   }
 
   isAuthenticated() {
-    // localStorage.getItem('session') ? this.authState = true : this.authState = false;
+    const status = localStorage.getItem('session') ? this.authState = true : this.authState = false;
 
-    return this.authState;
+    return status;
   }
 }
 

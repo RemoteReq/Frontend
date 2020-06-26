@@ -46,23 +46,23 @@ class ProfileCard extends Component {
           <div className="profile-card-picture"></div>
 
           <h3 className="profile-card-name">{`${userDetails.firstName} ${userDetails.lastName}`}</h3>
-          <h4>{userDetails.jobRole || 'You Job Role Here'}</h4>
+          <h4>{userDetails.jobRole || ''}</h4>
 
           <div className="profile-card-bio">
             <h5>About</h5>
-            <p className="small-paragraph">{userDetails.about || 'your bio here'}</p>
+            <p className="small-paragraph">{userDetails.about || ''}</p>
 
             <h5>Cause</h5>
-            <p className="small-paragraph">{userDetails.cause || 'selected cause here'}</p>
+            <p className="small-paragraph">{userDetails.cause || ''}</p>
 
             <h5>Education</h5>
-            {userDetails.education.map((item, key) => <p className="small-paragraph" key={key}>{item || 'user education item here'}</p>)}
+            {userDetails.education.map((item, key) => <p className="small-paragraph" key={key}>{item || ''}</p>)}
 
             <h5>Phone #</h5>
-            <p className="small-paragraph">{userDetails.mobileNum || 'user number here'}</p>
+            <p className="small-paragraph">{userDetails.mobileNum || ''}</p>
 
             <h5>Email</h5>
-            <p className="small-paragraph">{userDetails.email || 'user email here'}</p>
+            <p className="small-paragraph">{userDetails.email || ''}</p>
 
             <h5>Skills</h5>
             <ul>
