@@ -72,7 +72,7 @@ class ProfileCard extends Component{
               })}
             </ul>
 
-            <button className="button-1">Upload Resume</button>
+            <button className="button-2">Upload Resume</button>
           </div>
 
         </div>

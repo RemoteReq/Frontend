@@ -4,6 +4,10 @@ a {
   padding-left: 0;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 .large-link {
   font-family: 'Open Sans', sans-serif;
   font-size: 18pt;

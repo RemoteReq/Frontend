@@ -10,30 +10,32 @@
   top: 0;
   width: 100vw;
   z-index: 1;
-}
 
-.Dashboard-Home {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  p {
-    padding-left: 30pt;
+  a{
+    text-decoration: none;
   }
-}
+  
+  .dashboard-home {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    img {
+      max-width: 40px;
+    }
+    
+    p {
+      padding-left: 30pt;
+    }
+  }
 
-.dash-nav {
-  color: black;
-  font-size: 12pt;
-}
+  .dashboard-links {
+    display: flex;
+    align-items: center;
 
-a {
-  padding-left: 18pt;
-}
-
-.dashboard-name-menu {
-
-  .remotereq-name { max-width: 50px; }
-
-  .hamburgerMenu { display: none; }
+    img {
+      width: 64px;
+    }
+  }
+  
 }
