@@ -1,0 +1,23 @@
+.rnp-module {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows:  repeat(2, 1fr);
+  margin: 100px 0;
+  
+  .cubelet {
+    // border: 1px dotted gray;
+    margin: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+       max-width: 23%;
+    }
+
+    p {
+      font-size: 16pt;
+      font-weight: bolder;
+    }
+  }
+}

@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import quickHiring from '#assets/images/pngs/quick-hiring.png'
+import RnPmodule from './RnPModule.jsx';
+import quickHiring from '#assets/images/pngs/quick-hiring.png';
 import Matches from '#assets/images/svgs/matches.svg';
+import RnPModule from './RnPModule.jsx';
 
 const AboutMain = () => (
   <div className='about-main'>
@@ -23,20 +25,10 @@ const AboutMain = () => (
     <section className="middle-section">
       <h2>Remote + Purposeful</h2>
       <p>No more watching from the sidelines. Do impactful work from anywhere.</p>
+      
+      <RnPModule />
     </section>
 
-    <div>
-      <ul>
-        <li>Health &amp; Wellness</li>
-        <li>LGBTQIA+ Rights</li>
-        <li>Climate Change</li>
-        <li>Water &amp; Sanitation</li>
-        <li>Racial Justice</li>
-        <li>Voting Rights</li>
-        <li>Educational Equity</li>
-        <li>Women's Rights</li>
-      </ul>
-    </div>
 
     <section className="reverse-section">
       <div className="section-desc">
