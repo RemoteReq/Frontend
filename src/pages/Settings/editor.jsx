@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const backend = 'http://3.21.186.204:3030';
 
-class ProfileEditor extends Component{
+class Settings extends Component{
   constructor(props){
     super(props);
 
@@ -50,4 +50,4 @@ class ProfileEditor extends Component{
   }
 }
 
-export default ProfileEditor;
+export default Settings;
