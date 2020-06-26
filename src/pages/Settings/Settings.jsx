@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Auth from '../../../components/Auth/Auth.js';
+import Auth from '../../components/Auth/Auth.js';
 import axios from 'axios';
 
 const backend = 'http://3.21.186.204:3030';

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const backend = 'http://3.21.186.204:3030';
 
-class Registration extends Component {
+class SignUp extends Component {
   constructor(props) {
     super(props);
 
@@ -116,4 +116,4 @@ class Registration extends Component {
   }
 }
 
-export default Registration;
+export default SignUp;
