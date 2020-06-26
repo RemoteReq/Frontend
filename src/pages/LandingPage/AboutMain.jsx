@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import RnPmodule from './RnPModule.jsx';
-import quickHiring from '#assets/images/pngs/quick-hiring.png';
-import Matches from '#assets/images/svgs/matches.svg';
 import RnPModule from './RnPModule.jsx';
+import quickHiring from '#assets/images/pngs/quick-hiring.png';
+import Matches from '#assets/images/pngs/matches.png';
 
 const AboutMain = () => (
   <div className='about-main'>
@@ -17,7 +16,9 @@ const AboutMain = () => (
       </div>
 
       <div className="section-graphic">
-        <Matches className="svg-matches" height={'100%'} width={'100%'}/>
+        <img src={Matches}/>
+
+        {/* <Matches className="svg-matches" height={'100%'} width={'100%'}/> */}
       </div>
     </section>
 
@@ -25,7 +26,7 @@ const AboutMain = () => (
     <section className="middle-section">
       <h2>Remote + Purposeful</h2>
       <p>No more watching from the sidelines. Do impactful work from anywhere.</p>
-      
+
       <RnPModule />
     </section>
 

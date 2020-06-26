@@ -6,67 +6,61 @@ import Sanitation_Icon from '#assets/icons/pngs/Water-sanitation.png';
 import Race_Icon from '#assets/icons/pngs/Profile.png';
 import Voting_Icon from '#assets/icons/pngs/Voting.png';
 import Education_Icon from '#assets/icons/pngs/Education.png';
-import Women_Icon from "#assets/icons/pngs/Womens-rights.png";
+import Women_Icon from '#assets/icons/pngs/Womens-rights.png';
 
 const cubelets = [
   {
     icon: HealthAndMedical_Icon,
-    label: "Health & Wellness",
+    label: 'Health & Wellness',
   },
   {
     icon: LGBTQ_Icon,
-    label: "LGBTQIA+ Rights",
+    label: 'LGBTQIA+ Rights',
   },
   {
     icon: Environmental_Icon,
-    label: "Environmental",
+    label: 'Environmental',
   },
   {
     icon: Sanitation_Icon,
-    label: "Water &  Sanitation",
+    label: 'Water &  Sanitation',
   },
   {
     icon: Race_Icon,
-    label: "Racial Justice",
+    label: 'Racial Justice',
   },
   {
     icon: Voting_Icon,
-    label: "Voting Rights",
+    label: 'Voting Rights',
   },
   {
     icon: Education_Icon,
-    label: "Educational Equity",
+    label: 'Educational Equity',
   },
   {
     icon: Women_Icon,
-    label: "Women \'s Rights",
-  },  
-]
+    label: "Women's Rights",
+  },
+];
 
-const CubeletView = ({ icon, label}) => {
-  return (
-    <div className="cubelet"> 
-        <img src={icon || "noneya"}/>
+const CubeletView = ({ icon, label }) => (
+    <div className="cubelet">
+        <img src={icon || 'noneya'}/>
 
       <p>
-        {label || "I am a cubelet!!"}
+        {label || 'I am a cubelet!!'}
       </p>
     </div>
-  )
-}
+);
 
-const RnPModule = () => {
-  return (
+const RnPModule = () => (
     <div className="rnp-module">
       {
-        cubelets.map((cubelet, key) => {
-          return (
+        cubelets.map((cubelet, key) => (
             <CubeletView icon={cubelet.icon} label={cubelet.label} key={key}/>
-          )
-        })
+        ))
       }
     </div>
-  )
-}
+);
 
 export default RnPModule;

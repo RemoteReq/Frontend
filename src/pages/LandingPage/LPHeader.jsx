@@ -32,8 +32,6 @@ const LPHeader = () => (
 
     <img src={LandingPageGraphic}/>
 
-    {/* <LandingPageGraphic height={2000} width={2000}/> */}
-
   </div>
 );
 
