@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Auth from '../../components/Auth/Auth.js';
 import axios from 'axios';
 
@@ -45,27 +46,27 @@ class ProfileCard extends Component{
           <div className="profile-card-picture"></div>
 
           <h3 className="profile-card-name">{userDetails.firstName + ' ' + userDetails.lastName}</h3>
-          <h5>{userDetails.jobRole || 'You Job Role Here'}</h5>
+          <h4>{userDetails.jobRole || 'You Job Role Here'}</h4>
 
           <div className="profile-card-bio">
-            <h4>About</h4>
+            <h5>About</h5>
             <p className="small-paragraph">{userDetails.about || 'your bio here'}</p>
 
-            <h4>Cause</h4>
+            <h5>Cause</h5>
             <p className="small-paragraph">{userDetails.cause || 'selected cause here'}</p>
 
-            <h4>Education</h4>
+            <h5>Education</h5>
             {userDetails.education.map((item)=> {
               return <p className="small-paragraph">{item || 'user education item here'}</p>
             })}
 
-            <h4>Phone #</h4>
+            <h5>Phone #</h5>
             <p className="small-paragraph">{userDetails.mobileNum || 'user number here'}</p>
 
-            <h4>Email</h4>
+            <h5>Email</h5>
             <p className="small-paragraph">{userDetails.email || 'user email here'}</p>
 
-            <h4>Skills</h4>
+            <h5>Skills</h5>
             <ul>
               {userDetails.keySkills.map((item) => {
                 return <li>{item || 'user skill item here'}</li>
@@ -77,7 +78,9 @@ class ProfileCard extends Component{
 
         </div>
 
-        <div>Edit</div>
+        <Link to="/settings">
+          Edit
+        </Link>
         
       </div>
       
