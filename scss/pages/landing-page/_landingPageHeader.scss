@@ -2,6 +2,7 @@
   background: #fbf9f4;
   padding: 50px 10vw 50px 10vw;
   display: flex;
+  position: relative;
 
   .landingPage-heading-btns {
     width: 30vw;
@@ -25,6 +26,12 @@
       }
 
     }
+  }
 
+  img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
   }
 }
