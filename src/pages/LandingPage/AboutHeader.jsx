@@ -3,7 +3,8 @@ import Connect from '#assets/icons/pngs/Matched.png';
 import Forward from '#assets/icons/pngs/Forward.png';
 import Profile from '#assets/icons/pngs/Profile.png';
 
-const AboutHeader = () => (
+const AboutHeader = () => {
+  return (
   <div className='about-header'>
     <div className='box create-profile'>
       <img src={ Profile } alt='profile icon'/>
@@ -12,7 +13,7 @@ const AboutHeader = () => (
     </div>
     <div className='box get-matched'>
       <img src={ Connect } alt='connect icon'/>
-      <h3>We match you</h3>
+      <h3>Get Matched</h3>
       <p>Our recruiting algorithm finds your best fit remote matches. Think of us as your personal recruiter.</p>
     </div>
     <div className='box pay-forward'>
@@ -21,6 +22,7 @@ const AboutHeader = () => (
       <p>Interview, get hired, and start making an impact.</p>
     </div>
   </div>
-);
+  );
+};
 
 export default AboutHeader;

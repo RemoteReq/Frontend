@@ -29,7 +29,7 @@ class Settings extends Component {
           });
           console.log('user details retrieved!', response);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => { return console.log(error); });
     }
   }
 
@@ -39,11 +39,29 @@ class Settings extends Component {
 
   render() {
     return (
+    /*
+        Pseudo Design:
+
+        <SettingsNav /> // Displays the routes you can take to edit different parts of your profile
+
+        <Switch>
+          <ProfileEditor   exact route="/profile"/> // Should find a way to default '/settings to '/settings/profile
+          <JobFinderEditor exact route="/jobFinder"/>
+          <AccountEditor   exact route="/account"/>
+        <Switch />
+      */
+
       <div>
         Edit Profile
 
-        <form>
 
+        <form>
+          <input></input>
+
+          <input></input>
+
+
+          <button className="button-1">Submit Changes</button>
         </form>
       </div>
     );
