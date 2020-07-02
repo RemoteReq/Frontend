@@ -27,8 +27,15 @@ class ResetPassword extends Component {
 
   onClick(e) {
     e.preventDefault();
+    const { password, confirmPassword } = this.state;
 
-    console.log(this.state);
+    if (password === confirmPassword) {
+      // Request should only be sent if the passwords match
+      console.log('Sending password reset request');
+    } else {
+      // When they passwords do no match, highlight the inputs in red
+      console.log('Passwords do not match');
+    }
   }
 
   render() {
@@ -43,6 +50,7 @@ class ResetPassword extends Component {
           <input
             name="password"
             type="password"
+            placeholder="New Password"
             onChange={(e) => { this.onChange(e); }}
           >
           </input>
@@ -50,6 +58,7 @@ class ResetPassword extends Component {
           <input
             name="confirmPassword"
             type="password"
+            placeholder="Confirm New Password"
             onChange={(e) => { this.onChange(e); }}
           >
           </input>
