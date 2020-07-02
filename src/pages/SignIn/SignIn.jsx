@@ -108,6 +108,10 @@ class SignIn extends Component {
             <p className="small-paragraph">
               Don&apos;t have an account? <Link to="/signup" className="small-link">Sign Up</Link>
             </p>
+
+            <p className="small-paragraph">
+              <Link to="/forgotPassword">Forgot your password?</Link>
+            </p>
           </form>
         </div>
       </div>

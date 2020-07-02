@@ -18,6 +18,8 @@ import Dashboard from '../pages/Dashboard/Dashboard.jsx';
 import Mission from '../pages/Mission/Mission.jsx';
 import FindTalent from '../pages/FindTalent.jsx';
 import Page404 from '../pages/Page404.jsx';
+import ForgotPassword from '../pages/ForgotPassword/ForgotPassord.jsx';
+import ResetPassword from '../pages/ResetPassword/ResetPassword.jsx';
 
 
 class App extends Component {
@@ -33,6 +35,8 @@ class App extends Component {
               <Route exact path="/QnA" component="questionnaire" />
               <Route exact path="/mission" component={Mission} />
               <Route exact path="/findTalent" component={FindTalent} />
+              <Route exact path="/forgotPassword" component={ForgotPassword} />
+              <Route exact path="/resetPassword" component={ResetPassword} />
               <ProtectedRoute exact path="/settings" component={Settings} />
               <ProtectedRoute exact path="/dashboard" component={Dashboard} />
               <Route component={Page404} />

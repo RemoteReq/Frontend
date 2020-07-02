@@ -23,6 +23,9 @@
 @import './pages/_404.scss';
 @import './pages/_dashboard.scss';
 @import './pages/_signUp.scss';
+@import './pages/_forgotPassword.scss';
+@import './pages/_resetPassword.scss';
+
 // landing page is currently split, will refactor this section soon //
 @import './pages/landing-page/_landingPageHeader.scss';
 @import './pages/landing-page/_aboutHeader.scss';
@@ -48,8 +51,9 @@
 @import './elements/_headings.scss';
 @import './elements/_links.scss';
 @import './elements/_paragraphs.scss';
-@import './elements/inputs.scss';
-@import './elements/_sections.scss/'
+@import './elements/_inputs.scss';
+@import './elements/_sections.scss/';
+@import './elements/_forms.scss';
 
 /* ---------------------------------------------------------------------
   Below is responsive styling files
