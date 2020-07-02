@@ -34,7 +34,7 @@ class SignIn extends Component {
     e.preventDefault();
 
     const body = {
-      username: this.state.username,
+      emailOrUserName: this.state.username,
       password: this.state.password,
     };
 
