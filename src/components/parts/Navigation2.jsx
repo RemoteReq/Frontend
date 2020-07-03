@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import RemoteReq from '#assets/images/pngs/RR-cobalt.png';
 import auth from '../Auth/Auth.jsx';
 
-const Navigation2 = (props) => (
+const Navigation2 = (props) => {
+  return (
     <nav className='dashboard-navBar'>
       <Link className='dashboard-home stealth-link' to="/dashboard">
         <img src={ RemoteReq } className='remotereq-name' alt='remote' />
@@ -13,12 +14,15 @@ const Navigation2 = (props) => (
       <div className='dashboard-links'>
 
         <a className="large-link"
-          onClick={() => auth.logout(() => {
-            props.updateRedirect();
-          })}
+          onClick={() => {
+            return auth.logout(() => {
+              props.updateRedirect();
+            });
+          }}
         >Sign out</a>
       </div>
     </nav>
-);
+  );
+};
 
 export default Navigation2;

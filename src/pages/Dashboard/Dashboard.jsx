@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter as Router, Redirect, Switch, Route,
+  Redirect, Switch, Route,
 } from 'react-router-dom';
 import axios from 'axios';
 import Navigation from '../../components/parts/Navigation2.jsx';
@@ -73,7 +73,7 @@ class Dashboard extends Component {
     }
 
     return (
-      <Router>
+      <div>
         <Navigation
           showProfileMenu={ this.showProfileMenu }
           updateRedirect={this.updateRedirect}
@@ -96,7 +96,7 @@ class Dashboard extends Component {
             />
           </Switch>
         </div>
-      </Router>
+      </div>
     );
   }
 }

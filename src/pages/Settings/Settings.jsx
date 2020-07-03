@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Redirect, Switch } from 'react-router-dom';
+import Navigation2 from '../../components/parts/Navigation2.jsx';
 import Auth from '../../components/Auth/Auth.jsx';
 
 const backend = 'http://3.21.186.204:3030';
@@ -33,11 +35,27 @@ class Settings extends Component {
     }
   }
 
+  updateRedirect() {
+    this.setState({
+      redirectToReferrer: false,
+    }, () => {
+      console.log('Signing you out... See you next time!');
+    });
+  }
+
   onSubmit() {
 
   }
 
   render() {
+    const { redirectToReferrer } = this.state;
+
+    if (redirectToReferrer === false) {
+      return (
+        <Redirect to='signin'/>
+      );
+    }
+
     return (
     /*
         Pseudo Design:
@@ -50,19 +68,21 @@ class Settings extends Component {
           <AccountEditor   exact route="/account"/>
         <Switch />
       */
-
       <div>
-        Edit Profile
+        <Navigation2 />
+        <div>
+          Edit Profile
 
 
-        <form>
-          <input></input>
+          <form>
+            <input></input>
 
-          <input></input>
+            <input></input>
 
 
-          <button className="button-1">Submit Changes</button>
-        </form>
+            <button className="button-1">Submit Changes</button>
+          </form>
+        </div>
       </div>
     );
   }
