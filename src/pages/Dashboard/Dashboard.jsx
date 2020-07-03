@@ -4,7 +4,8 @@ import {
 } from 'react-router-dom';
 import axios from 'axios';
 import Navigation from '../../components/parts/Navigation2.jsx';
-import ProfileCard from './ProfileCard.jsx';
+// import ProfileCard from './ProfileCard.jsx';
+import StatelessProfileCard from './StatelessProfileCard.jsx';
 import JobList from './jobList/JobList.jsx';
 import Reminder from './Reminder.jsx';
 import auth from '../../components/Auth/Auth.jsx';
@@ -43,10 +44,9 @@ class Dashboard extends Component {
           this.setState({
             redirectToReferrer: true,
             userDetails: response.data,
-          });
-          console.log('user details retrieved!', response);
+          }, () => { return console.log('user details retrieved!', this.state); });
         })
-        .catch((error) => console.log(error));
+        .catch((error) => { return console.log(error); });
     }
   }
 
@@ -64,6 +64,7 @@ class Dashboard extends Component {
 
   render() {
     const { redirectToReferrer } = this.state;
+    const { userDetails } = this.state;
 
     if (redirectToReferrer === false) {
       return (
@@ -73,16 +74,19 @@ class Dashboard extends Component {
 
     return (
       <Router>
-        <Navigation showProfileMenu={ this.showProfileMenu } updateRedirect={this.updateRedirect}/>
+        <Navigation
+          showProfileMenu={ this.showProfileMenu }
+          updateRedirect={this.updateRedirect}
+        />
 
         <div className='dashboard'>
-          <ProfileCard/>
+          <StatelessProfileCard userDetails={userDetails}/>
 
           <Switch>
             <Route
               path='/joblist'
               render={
-                () => <JobList jobs={this.state.jobListing}/>
+                () => { return <JobList jobs={this.state.jobListing}/>; }
               }
             />
 
