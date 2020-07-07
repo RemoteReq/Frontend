@@ -4,14 +4,15 @@ import RnPModule from './RnPModule.jsx';
 import quickHiring from '#assets/images/pngs/quick-hiring.png';
 import Matches from '#assets/images/pngs/matches.png';
 
-const AboutMain = () => (
+const AboutMain = () => {
+  return (
   <div className='about-main'>
     <h3 className='eyebrow'>What makes us different?</h3>
 
     <section>
       <div className="section-desc">
         <h2>Meet your personal recruiter</h2>
-        <p>No more lost hours scouring jobs boards. No more lengthy applications. Simply create a profile, and let us do the work for you.</p>
+        <p>No more wasted hours scouring jobs boards. No more lengthy applications. Simply create a profile, and let us do the work for you.</p>
         <Link to={'/signup'} className="large-link">Get Started</Link>
       </div>
 
@@ -43,6 +44,7 @@ const AboutMain = () => (
       </div>
     </section>
   </div>
-);
+  );
+};
 
 export default AboutMain;

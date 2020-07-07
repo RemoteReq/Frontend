@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import triplet1 from '#assets/icons/pngs/Profile.png';
 import triplet2 from '#assets/icons/pngs/Matched.png';
 import triplet3 from '#assets/icons/pngs/Forward.png';
@@ -7,7 +8,8 @@ import heroes from '#assets/images/pngs/find-talent-heroes.png';
 // import WebFooterLeft from '#assets/images/svgs/RR-web-footer-left.svg';
 // import WebFooterRight from '#assets/images/svgs/RR-web-footer-right.svg';
 
-const FindTalent = () => (
+const FindTalent = () => {
+  return (
   <div className="find-talent-page">
     <div className="find-talent-upper">
       <div className="find-talent-upper-left">
@@ -15,11 +17,13 @@ const FindTalent = () => (
 
         <p>
           Our network of remote professional are ready to help you do more good. Let us do the work for you.
-          We will find, vet, and connect you with the remote talent you need. 
+          We will find, vet, and connect you with the remote talent you need.
           Submit a job req to get started. Pay only for the candidates you choose to engage.
         </p>
 
-        <button className="button-1">Submit a Job Req</button>
+        <Link to="/employer">
+          <button className="button-1">Submit a Job Req</button>
+        </Link>
       </div>
 
       <div className="find-talent-upper-graphics">
@@ -84,13 +88,15 @@ const FindTalent = () => (
             <p>Negotioable pay</p>
           </div>
 
-          <button className="button-1">Submit a Job Req</button>
+
+            <button className="button-1">Submit a Job Req</button>
+
         </div>
       </div>
     </div>
 
-    <WebFooter 
-    header={"Build your remote team."} 
+    <WebFooter
+    header={'Build your remote team.'}
     graphics={true}
     component={
       <button className="button-1">Submit a Job Req</button>
@@ -98,6 +104,7 @@ const FindTalent = () => (
     />
 
   </div>
-);
+  );
+};
 
 export default FindTalent;

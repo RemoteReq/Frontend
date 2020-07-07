@@ -46,6 +46,10 @@
 @import './parts/_footer.scss';
 @import './parts/_rnpModule.scss';
 
+// import employer side components
+@import './pages/employer/_eSignUp.scss';
+@import './pages/employer/_eSignIn.scss';
+
 // import elements
 @import './elements/_buttons.scss';
 @import './elements/_headings.scss';

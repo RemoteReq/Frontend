@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter as Router, Switch, Route,
+  BrowserRouter as Router, Switch, Route, Redirect,
 } from 'react-router-dom';
 import ProtectedRoute from './Auth/ProtectedRoute.jsx';
 
@@ -20,6 +20,7 @@ import FindTalent from '../pages/FindTalent.jsx';
 import Page404 from '../pages/Page404.jsx';
 import ForgotPassword from '../pages/ForgotPassword/ForgotPassord.jsx';
 import ResetPassword from '../pages/ResetPassword/ResetPassword.jsx';
+import Employer from '../pages/Employer/Employer.jsx';
 
 
 class App extends Component {
@@ -30,16 +31,17 @@ class App extends Component {
           <Navigation/>
             <Switch>
               <Route exact path="/" component={LandingPage} />
-              <Route exact path="/signin" component={SignIn} />
-              <Route exact path="/signup" component={SignUp} />
-              <Route exact path="/QnA" component="questionnaire" />
-              <Route exact path="/mission" component={Mission} />
-              <Route exact path="/findTalent" component={FindTalent} />
-              <Route exact path="/forgotPassword" component={ForgotPassword} />
-              <Route exact path="/resetPassword" component={ResetPassword} />
-              <ProtectedRoute exact path="/settings" component={Settings} />
-              <ProtectedRoute exact path="/dashboard" component={Dashboard} />
-              <Route component={Page404} />
+              <Route path="/signin" component={SignIn} />
+              <Route path="/signup" component={SignUp} />
+              <Route path="/employer" component={Employer} />
+              <Route path="/QnA" component="questionnaire" />
+              <Route path="/mission" component={Mission} />
+              <Route path="/findTalent" component={FindTalent} />
+              <Route path="/forgotPassword" component={ForgotPassword} />
+              <Route path="/resetPassword" component={ResetPassword} />
+              <ProtectedRoute path="/settings" component={Settings} />
+              <ProtectedRoute path="/dashboard" component={Dashboard} />
+              {/* <Route component={Page404} /> */}
             </Switch>
           <Footer/>
         </ScrollToTop>
