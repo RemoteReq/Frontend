@@ -2,8 +2,8 @@ import React from 'react';
 import {
   Switch, Route, Link, useRouteMatch, Redirect,
 } from 'react-router-dom';
-import ESignIn from './SignIn/SignIn.jsx';
-import ESignUp from './SignUp/SignUp.jsx';
+import ESignIn from './ESignIn/ESignIn.jsx';
+import ESignUp from './ESignUp/ESignUp.jsx';
 
 const Employer = () => {
   const { path, url } = useRouteMatch();
