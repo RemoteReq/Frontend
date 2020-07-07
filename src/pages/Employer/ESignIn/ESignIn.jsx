@@ -10,7 +10,7 @@ class ESignIn extends Component {
 
   render() {
     return (
-      <div className="e-signin-form-page">
+      <div className="e-signin">
       <div className="e-signin-container" >
         <p className="small-paragraph">
           By continuing, you agree to our
@@ -48,7 +48,7 @@ class ESignIn extends Component {
             onChange={ this.updateInfoOnChange }
             placeholder="Password" />
           <button onClick={ this.login }
-                  className="button-1"
+                  className="e-button"
           >Sign in
           </button>
           {/* <Link to="#">Forgot your Password?</Link> */}

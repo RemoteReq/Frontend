@@ -72,7 +72,7 @@ class ESignUp extends Component {
 
         <button
           type='submit'
-          className='button-1'
+          className='e-button'
           onClick={ this.signUp }
           >Create Your Profile
         </button>

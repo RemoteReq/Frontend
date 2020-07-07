@@ -1,0 +1,62 @@
+.e-signin {
+  display: grid;
+  place-items: center;
+  height: 70vh;
+  width: 100%;
+
+  .e-signin-container {
+    height: 75%;
+
+    .login-fb-google {
+      border-bottom: 1px solid #d4d4d4;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      text-align: center;
+
+      .fb-login {
+        align-items: center;
+        background: #4e71ba;
+        border: 1px solid #d4d4d4;
+        color: #fff;
+        display: flex;
+        height: 40px;
+        padding: 0 .5rem;
+        margin-bottom: 20px;
+
+        h3 { margin: auto; }
+
+        img {
+          height: 35px;
+          margin-right: 10px;
+        }
+      }
+
+      .google-login {
+        align-items: center;
+        border: 1px solid #d4d4d4;
+        color: red;
+        display: flex;
+        height: 40px;
+        padding: 0 .5rem;
+        text-align: center;
+
+        h3 { margin: auto; }
+
+        img {
+          height: 35px;
+          margin-right: 10px;
+        }
+      }
+
+    }
+
+    .e-signin-form {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
