@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
+const backend = 'http://3.21.186.204:3030';
 
 class ForgotPassword extends Component {
   constructor(props) {
@@ -23,7 +26,13 @@ class ForgotPassword extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    console.log(this.state);
+    const body = {
+      email: this.state.email,
+    };
+
+    axios.post(`${backend}/api/signin/forgotPassword`, body)
+      .then(() => { return console.log('sending email for passwordrecovery!'); })
+      .catch(() => { return console.log('unable to send email for password recovery'); });
   }
 
   render() {
