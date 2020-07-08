@@ -68,7 +68,7 @@ const FindTalent = () => {
           <div className="pricing-card-description">
             <p>For projects lasting 11 months or less</p>
             <p>3 "best fit" candidates</p>
-            <p>Added capcity, skills, and expertise</p>
+            <p>Added capacity, skills, and expertise</p>
             <p>Negotioable hourly rates</p>
           </div>
 
@@ -83,9 +83,9 @@ const FindTalent = () => {
 
           <div className="pricing-card-description">
             <p>Grow your team with a remote hire</p>
-            <p>3-5 Finalist Candidates</p>
+            <p>3-5 "best fit" Candidates</p>
             <p>Added capacity, skills, and expertise</p>
-            <p>Negotioable pay</p>
+            <p>Negotioable pay and salary</p>
           </div>
 
 
