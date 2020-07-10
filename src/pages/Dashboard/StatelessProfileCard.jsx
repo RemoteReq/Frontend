@@ -10,7 +10,7 @@ const StatelessProfileCard = ({ userDetails }) => {
 
             <div className="profile-card-picture"></div>
 
-            <h3 className="profile-card-name">{`${userDetails.firstName} ${userDetails.lastName}`}</h3>
+            <h3 className="profile-card-name">{`${userDetails.fullName}`}</h3>
             <h4>{userDetails.jobRole || ''}</h4>
 
             <div className="profile-card-bio">

@@ -19,7 +19,7 @@ class ProfileEditor extends Component {
       <form>
         <label>Name</label>
         <input
-          defaultValue={`${userDetails.firstName} ${userDetails.lastName}`}
+          defaultValue={`${userDetails.fullName}`}
         />
 
         <label>About</label>
