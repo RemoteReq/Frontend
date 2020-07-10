@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { Redirect, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import Navigation2 from '../../components/parts/Navigation2.jsx';
-import ProfileEditor from './Profile/ProfileEditor.jsx';
-import AccountEditor from './Account/AccountEditor.jsx';
+// import ProfileEditor from './Profile/ProfileEditor.jsx';
+import ProfileEditor from './Profile/StatelessProfileEditor.jsx';
+// import AccountEditor from './Account/AccountEditor.jsx';
+import AccountEditor from './Account/StatelessAccountEditor.jsx';
 import JobPreferenceEditor from './JobPreference/JobPreferenceEditor.jsx';
 import SettingsNav from './SettingsNav.jsx';
 import Auth from '../../components/Auth/Auth.jsx';
@@ -15,6 +17,9 @@ class Settings extends Component {
     super(props);
 
     this.state = {};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -32,7 +37,7 @@ class Settings extends Component {
           this.setState({
             redirectToReferrer: true,
             userDetails: response.data,
-          });
+          }, () => { console.log(this.state); });
         })
         .catch((error) => { return console.log(error); });
     }
@@ -46,8 +51,37 @@ class Settings extends Component {
     });
   }
 
-  onSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
 
+    const body = this.state.userDetails;
+
+    console.log('Here is the data you are about to send', JSON.stringify(body));
+
+    axios({
+      url: `${backend}/api/user/updateUserProfile`,
+      method: 'post',
+      headers: {
+        token: localStorage.getItem('session'),
+      },
+      data: body,
+    })
+      .then((response) => {
+        console.log('reponse after posting from settings', response);
+      });
+  }
+
+  handleChange(e) {
+    e.preventDefault();
+
+    this.setState(
+      {
+        userDetails: {
+          ...this.state.userDetails,
+          [e.target.name]: e.target.value,
+        },
+      },
+    );
   }
 
   render() {
@@ -76,14 +110,24 @@ class Settings extends Component {
                     path="/settings/profile"
                     render={(props) => {
                       return (
-                      <ProfileEditor {...props} userDetails={userDetails} />
+                      <ProfileEditor
+                        {...props}
+                        userDetails={userDetails}
+                        handleChange={this.handleChange}
+                        handleSubmit={this.handleSubmit}
+                        />
                       );
                     }}
                   />
                   <Route path="/settings/account"
                   render={(props) => {
                     return (
-                      <AccountEditor {...props} userDetails={userDetails} />
+                      <AccountEditor
+                        {...props}
+                        userDetails={userDetails}
+                        handleChange={this.handleChange}
+                        handleSubmit={this.handleSubmit}
+                      />
                     );
                   }
 
