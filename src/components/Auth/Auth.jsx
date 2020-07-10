@@ -29,6 +29,16 @@ class Auth {
 
     return status;
   }
+
+  verify(id) {
+    axios.post(`${backend}/api/signup/userEmailVerify?id=${id}`)
+      .then((result) => {
+        console.log('here are your verification results', result);
+      })
+      .catch((err) => {
+        console.log('error in verification request', err);
+      });
+  }
 }
 
 export default new Auth();
