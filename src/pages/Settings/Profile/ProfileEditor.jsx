@@ -16,29 +16,48 @@ class ProfileEditor extends Component {
     return (
     <div className="profile-editor">
       <h3>Your Profile</h3>
-      <form>
-        <label>Name</label>
-        <input
-          defaultValue={`${userDetails.fullName}`}
-        />
 
-        <label>About</label>
-        <div className="textarea-div">
-          <textarea
-            defaultValue={`${userDetails.about || ''}`}
-            />
+      <form>
+        <div>
+          <label>Name</label>
+          <input
+            defaultValue={`${userDetails.fullName || ''}`}
+          />
+
+          <label>About</label>
+          <div className="textarea-div">
+            <textarea
+              defaultValue={`${userDetails.about || ''}`}
+              />
+          </div>
+
+          <label>Education</label>
+          <input/>
+
+          <label>Current Company</label>
+          <input />
+
+
+          <label>LinkedIn URL</label>
+          <input />
+
+          <label>Github URL</label>
+          <input />
+
+          <label>Twitter Handle</label>
+          <input/>
+
+          <label>Personal URL</label>
+          <input/>
+
+          <button className="button-1">Submit</button>
         </div>
 
-        <label>Cause</label>
-        <input
-          defaultValue={`${userDetails.cause || ''}`}
-        />
-
-        <label>Education</label>
-        <input/>
-
-        <button className="button-1">Submit</button>
+        <div>
+          Image Column
+        </div>
       </form>
+
     </div>
     );
   }

@@ -1,3 +1,11 @@
 .profile-editor {
-  
+
+  form {
+    input {
+      padding: 10px 15px;
+      font-size: 1rem;
+    }
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+  }
 }
