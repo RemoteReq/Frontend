@@ -25,6 +25,7 @@
 @import './pages/_signUp.scss';
 @import './pages/_forgotPassword.scss';
 @import './pages/_resetPassword.scss';
+@import './pages/_verify.scss';
 
 // landing page is currently split, will refactor this section soon //
 @import './pages/landing-page/_landingPageHeader.scss';
@@ -45,6 +46,7 @@
 @import './parts/_webFooter.scss';
 @import './parts/_footer.scss';
 @import './parts/_rnpModule.scss';
+@import './parts/_notice.scss';
 
 // import employer side components
 @import './pages/employer/_eSignUp.scss';

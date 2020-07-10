@@ -30,10 +30,12 @@ class Auth {
     return status;
   }
 
-  verify(id) {
+  verify(id, cb) {
     axios.post(`${backend}/api/signup/userEmailVerify?id=${id}`)
-      .then((result) => {
-        console.log('here are your verification results', result);
+      .then((response) => {
+        if (response.status === 200) {
+          cb();
+        }
       })
       .catch((err) => {
         console.log('error in verification request', err);
