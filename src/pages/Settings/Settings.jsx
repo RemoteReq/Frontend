@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { Redirect, Switch, Route } from 'react-router-dom';
+import axios from 'axios';
 import Navigation2 from '../../components/parts/Navigation2.jsx';
 import ProfileEditor from './Profile/ProfileEditor.jsx';
 import AccountEditor from './Account/AccountEditor.jsx';
