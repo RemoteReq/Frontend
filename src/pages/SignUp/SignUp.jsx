@@ -27,8 +27,7 @@ class SignUp extends Component {
 
     const body = {
       username: this.state.username,
-      firstname: this.state.firstName,
-      lastname: this.state.lastName,
+      fullName: this.state.fullName,
       password: this.state.password,
       email: this.state.email,
     };
@@ -36,8 +35,8 @@ class SignUp extends Component {
     console.log('registration firing away!', body);
 
     axios.post(`${backend}/api/signup`, body)
-      .then((response) => console.log(response))
-      .catch((err) => console.log(err));
+      .then((response) => { return console.log(response); })
+      .catch((err) => { return console.log(err); });
   }
 
   render() {
@@ -59,7 +58,7 @@ class SignUp extends Component {
 
       <form>
         <div>
-          <h3>Create your profile</h3>
+          <h3>Create your account</h3>
 
           <input
             tpye='text'
@@ -70,15 +69,9 @@ class SignUp extends Component {
           </input>
           <input
             type='text'
-            name='firstName'
+            name='fullName'
             onChange={ this.onChange }
-            placeholder='First Name'
-            required />
-          <input
-            type='text'
-            name='lastName'
-            onChange={ this.onChange }
-            placeholder='Last Name'
+            placeholder='Your Name'
             required />
           <input
             type='email'
