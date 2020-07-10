@@ -63,6 +63,7 @@ class Dashboard extends Component {
   }
 
   render() {
+    document.title = 'Dashboard';
     const { redirectToReferrer } = this.state;
     const { userDetails } = this.state;
 
@@ -73,6 +74,7 @@ class Dashboard extends Component {
     }
 
     return (
+
       <div>
         <Navigation
           showProfileMenu={ this.showProfileMenu }

@@ -54,6 +54,7 @@ class SignIn extends Component {
   }
 
   render() {
+    document.title = 'Sign In';
     const { redirectToReferrer } = this.state;
 
     if (redirectToReferrer === true) {

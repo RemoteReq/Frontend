@@ -40,6 +40,8 @@ class SignUp extends Component {
   }
 
   render() {
+    document.title = 'Sign Up with RemoteReq';
+
     return (
       <div className='registration'>
       <div className="left-side-signup">

@@ -9,6 +9,7 @@ import heroes from '#assets/images/pngs/find-talent-heroes.png';
 // import WebFooterRight from '#assets/images/svgs/RR-web-footer-right.svg';
 
 const FindTalent = () => {
+  document.title = 'Find Talent with Us';
   return (
   <div className="find-talent-page">
     <div className="find-talent-upper">
