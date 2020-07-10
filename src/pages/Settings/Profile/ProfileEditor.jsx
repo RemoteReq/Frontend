@@ -7,7 +7,6 @@ class ProfileEditor extends Component {
     this.userDetails = this.props.userDetails || '';
   }
 
-
   render() {
     document.title = 'Your Profile';
     const { userDetails } = this;
@@ -50,11 +49,14 @@ class ProfileEditor extends Component {
           <label>Personal URL</label>
           <input/>
 
-          <button className="button-1">Submit</button>
+          <button className="button-1">Update</button>
         </div>
 
-        <div>
-          Image Column
+        <div className="image-column">
+          <label>Profile Picture</label>
+          <div className="image-box">
+            <img></img>
+          </div>
         </div>
       </form>
 

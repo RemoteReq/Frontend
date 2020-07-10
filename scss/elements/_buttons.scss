@@ -11,6 +11,10 @@ button {
 
 button:hover { cursor: pointer; }
 
+button {
+  outline: none;
+}
+
 .button-1 {
   border: 4px;
   background: #0000ff;

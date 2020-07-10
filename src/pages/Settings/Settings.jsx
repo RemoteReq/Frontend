@@ -80,7 +80,14 @@ class Settings extends Component {
                       );
                     }}
                   />
-                  <Route path="/settings/account" component={AccountEditor} userDetails={userDetails}/>
+                  <Route path="/settings/account"
+                  render={(props) => {
+                    return (
+                      <AccountEditor {...props} userDetails={userDetails} />
+                    );
+                  }
+
+                  }/>
                   <Route path="/settings/jobPreference" component={JobPreferenceEditor} userDetails={userDetails}/>
                 </Switch>
               </div>
