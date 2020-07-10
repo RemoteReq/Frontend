@@ -38,7 +38,7 @@ const StatelessProfileCard = ({ userDetails }) => {
             </div>
           </div>
 
-          <Link to="/settings">
+          <Link to="/settings/profile">
             Edit
           </Link>
         </div>
