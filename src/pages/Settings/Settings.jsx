@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Redirect, Switch, Route } from 'react-router-dom';
+import Navigation2 from '../../components/parts/Navigation2.jsx';
+import ProfileEditor from './Profile/ProfileEditor.jsx';
+import AccountEditor from './Account/AccountEditor.jsx';
+import JobPreferenceEditor from './JobPreference/JobPreferenceEditor.jsx';
+import SettingsNav from './SettingsNav.jsx';
 import Auth from '../../components/Auth/Auth.jsx';
 
 const backend = 'http://3.21.186.204:3030';
@@ -27,10 +33,17 @@ class Settings extends Component {
             redirectToReferrer: true,
             userDetails: response.data,
           });
-          console.log('user details retrieved!', response);
         })
         .catch((error) => { return console.log(error); });
     }
+  }
+
+  updateRedirect() {
+    this.setState({
+      redirectToReferrer: false,
+    }, () => {
+      console.log('Signing you out... See you next time!');
+    });
   }
 
   onSubmit() {
@@ -38,32 +51,45 @@ class Settings extends Component {
   }
 
   render() {
+    const { redirectToReferrer } = this.state;
+    const { userDetails } = this.state;
+
+    if (redirectToReferrer === false) {
+      return (
+        <Redirect to='signin'/>
+      );
+    }
+
     return (
-    /*
-        Pseudo Design:
+      userDetails
 
-        <SettingsNav /> // Displays the routes you can take to edit different parts of your profile
+        ? <div className="settings-page">
+            <Navigation2 />
 
-        <Switch>
-          <ProfileEditor   exact route="/profile"/> // Should find a way to default '/settings to '/settings/profile
-          <JobFinderEditor exact route="/jobFinder"/>
-          <AccountEditor   exact route="/account"/>
-        <Switch />
-      */
-
-      <div>
-        Edit Profile
+            <div className="settings-container">
+              <SettingsNav />
 
 
-        <form>
-          <input></input>
+              <div className="settings-selection">
+                <Switch>
+                  <Route
+                    path="/settings/profile"
+                    render={(props) => {
+                      return (
+                      <ProfileEditor {...props} userDetails={userDetails} />
+                      );
+                    }}
+                  />
+                  <Route path="/settings/account" component={AccountEditor} userDetails={userDetails}/>
+                  <Route path="/settings/jobPreference" component={JobPreferenceEditor} userDetails={userDetails}/>
+                </Switch>
+              </div>
+            </div>
 
-          <input></input>
-
-
-          <button className="button-1">Submit Changes</button>
-        </form>
-      </div>
+          </div>
+        : <div className="settings-page">
+            Loading...
+          </div>
     );
   }
 }

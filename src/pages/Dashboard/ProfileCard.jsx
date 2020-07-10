@@ -74,8 +74,8 @@ class ProfileCard extends Component {
 
         </div>
 
-        <Link to="/settings">
-          Edit
+        <Link to="/settings/profile">
+
         </Link>
 
       </div>
