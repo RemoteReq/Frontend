@@ -26,8 +26,6 @@ class VerifyPoster extends Component {
   }
 
   componentDidMount() {
-    console.log('making verify request', this.props.verifyID);
-
     Auth.verify(this.props.verifyID,
       () => {
         setTimeout(() => {
