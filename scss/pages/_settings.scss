@@ -1,0 +1,21 @@
+.settings-page {
+  display: flex;
+  background-color: $BackgroundColor;
+  justify-content: space-evenly;
+
+  .settings-container {
+    margin: 4vh 0 4vh 0;
+    box-shadow: 4px 4px 20px #e2e2e2;
+    background-color: #fff;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    
+    .settings-selection {
+      // border: 1px dotted gray;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+}

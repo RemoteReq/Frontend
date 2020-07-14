@@ -21,7 +21,7 @@ import Page404 from '../pages/Page404.jsx';
 import ForgotPassword from '../pages/ForgotPassword/ForgotPassord.jsx';
 import ResetPassword from '../pages/ResetPassword/ResetPassword.jsx';
 import Employer from '../pages/Employer/Employer.jsx';
-
+import Verify from '../pages/Verify/Verify.jsx';
 
 class App extends Component {
   render() {
@@ -39,9 +39,10 @@ class App extends Component {
               <Route path="/findTalent" component={FindTalent} />
               <Route path="/forgotPassword" component={ForgotPassword} />
               <Route path="/resetPassword" component={ResetPassword} />
+              <Route path="/userEmailVerify" component={Verify} />
               <ProtectedRoute path="/settings" component={Settings} />
               <ProtectedRoute path="/dashboard" component={Dashboard} />
-              {/* <Route component={Page404} /> */}
+              <Route component={Page404} />
             </Switch>
           <Footer/>
         </ScrollToTop>

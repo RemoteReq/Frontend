@@ -25,6 +25,8 @@
 @import './pages/_signUp.scss';
 @import './pages/_forgotPassword.scss';
 @import './pages/_resetPassword.scss';
+@import './pages/_settings.scss';
+@import './pages/_verify.scss';
 
 // landing page is currently split, will refactor this section soon //
 @import './pages/landing-page/_landingPageHeader.scss';
@@ -45,6 +47,10 @@
 @import './parts/_webFooter.scss';
 @import './parts/_footer.scss';
 @import './parts/_rnpModule.scss';
+@import './parts/_sideNav.scss';
+@import './parts/_profileEditor.scss';
+@import './parts/_notice.scss';
+@import './parts/_accountEditor.scss';
 
 // import employer side components
 @import './pages/employer/_eSignUp.scss';
@@ -58,6 +64,9 @@
 @import './elements/_inputs.scss';
 @import './elements/_sections.scss/';
 @import './elements/_forms.scss';
+@import './elements/_lists.scss';
+@import './elements/_labels.scss';
+@import './elements/_textarea.scss';
 
 /* ---------------------------------------------------------------------
   Below is responsive styling files

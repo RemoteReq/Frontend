@@ -1,0 +1,22 @@
+.account-editor {
+
+  h3 {
+    padding: 0 40px;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+
+    input {
+      padding: 10px 15px;
+      font-size: 1rem;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}

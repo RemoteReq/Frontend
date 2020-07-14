@@ -30,7 +30,7 @@ class ProfileCard extends Component {
           });
           console.log('user details retrieved!', response);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => { return console.log(error); });
     }
   }
 
@@ -45,7 +45,7 @@ class ProfileCard extends Component {
 
           <div className="profile-card-picture"></div>
 
-          <h3 className="profile-card-name">{`${userDetails.firstName} ${userDetails.lastName}`}</h3>
+          <h3 className="profile-card-name">{`${userDetails.fullName}`}</h3>
           <h4>{userDetails.jobRole || ''}</h4>
 
           <div className="profile-card-bio">
@@ -56,7 +56,7 @@ class ProfileCard extends Component {
             <p className="small-paragraph">{userDetails.cause || ''}</p>
 
             <h5>Education</h5>
-            {userDetails.education.map((item, key) => <p className="small-paragraph" key={key}>{item || ''}</p>)}
+            {userDetails.education.map((item, key) => { return <p className="small-paragraph" key={key}>{item || ''}</p>; })}
 
             <h5>Phone #</h5>
             <p className="small-paragraph">{userDetails.mobileNum || ''}</p>
@@ -66,7 +66,7 @@ class ProfileCard extends Component {
 
             <h5>Skills</h5>
             <ul>
-              {userDetails.keySkills.map((item, key) => <li key={key}>{item || 'user skill item here'}</li>)}
+              {userDetails.keySkills.map((item, key) => { return <li key={key}>{item || 'user skill item here'}</li>; })}
             </ul>
 
             <button className="button-2">Upload Resume</button>
@@ -74,8 +74,8 @@ class ProfileCard extends Component {
 
         </div>
 
-        <Link to="/settings">
-          Edit
+        <Link to="/settings/profile">
+
         </Link>
 
       </div>

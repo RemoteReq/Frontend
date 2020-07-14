@@ -6,6 +6,7 @@ import CallToAction from './CallToAction.jsx';
 
 class LandingPage extends Component {
   render() {
+    document.title = 'RemoteReq | Home';
     return (
         <div className='landingPage'>
           <LPHeader />
