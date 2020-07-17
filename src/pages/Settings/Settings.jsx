@@ -71,6 +71,7 @@ class Settings extends Component {
       });
   }
 
+
   handleChange(e) {
     e.preventDefault();
 

@@ -40,7 +40,9 @@ const StatelessAccountEditor = ({ userDetails, handleChange, handleSubmit }) => 
         Like adding an OTP or something
       </p>
       <br/>
-      <button>Delete</button>
+      <button
+
+      >Delete</button>
       <br/>
     </div>
 
