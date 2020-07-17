@@ -1,6 +1,8 @@
 import React from 'react';
 
-const StatelessAccountEditor = ({ userDetails, handleChange, handleSubmit }) => {
+const StatelessAccountEditor = ({
+  userDetails, handleChange, handleSubmit, handleDeleteAccount, handleConfirmUsername,
+}) => {
   document.title = 'Account Settings';
 
   return (
@@ -34,14 +36,22 @@ const StatelessAccountEditor = ({ userDetails, handleChange, handleSubmit }) => 
         >Submit</button>
 
       <br/>
+
+
       <label>Delete Account</label>
       <p className="small-paragraph">
-        Figure out a safe order of operations to delete a User Account before submitting a delete request.
-        Like adding an OTP or something
+        Delete your account by typing in your RemoteReq Username (Case Sensitive) and
+        confirm that you would like to delete your account.
       </p>
       <br/>
-      <button
 
+      <label>Confirm Username</label>
+      <input
+        onChange={(e) => { handleConfirmUsername(e); }}
+      />
+
+      <button
+        onClick={(e) => { handleDeleteAccount(e); }}
       >Delete</button>
       <br/>
     </div>

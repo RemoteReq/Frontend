@@ -16,10 +16,14 @@ class Settings extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      confirmUsername: '',
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDeleteAccount = this.handleDeleteAccount.bind(this);
+    this.handleConfirmUsername = this.handleConfirmUsername.bind(this);
   }
 
   componentDidMount() {
@@ -56,7 +60,7 @@ class Settings extends Component {
 
     const body = this.state.userDetails;
 
-    console.log('Here is the data you are about to send', JSON.stringify(body));
+    console.log('Here is the data you are about to send', body);
 
     axios({
       url: `${backend}/api/user/updateUserProfile`,
@@ -71,6 +75,44 @@ class Settings extends Component {
       });
   }
 
+  handleDeleteAccount(e) {
+    e.preventDefault();
+
+    const { confirmUsername } = this.state;
+    const { username } = this.state.userDetails;
+
+    if (confirmUsername === username) {
+      const result = window.confirm('are you sure you want to delete your account?');
+
+      if (result === true) {
+        console.log('Goodbye!');
+
+        axios({
+          url: `${backend}/api/user/deleteAccount`,
+          method: 'post',
+          headers: {
+            token: localStorage.getItem('session'),
+          },
+        })
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+    } else {
+      console.log('usernames do not match. Cannot delete account');
+    }
+  }
+
+  handleConfirmUsername(e) {
+    e.preventDefault();
+
+    this.setState({
+      confirmUsername: e.target.value,
+    }, () => { console.log(this.state); });
+  }
 
   handleChange(e) {
     e.preventDefault();
@@ -128,6 +170,8 @@ class Settings extends Component {
                         userDetails={userDetails}
                         handleChange={this.handleChange}
                         handleSubmit={this.handleSubmit}
+                        handleDeleteAccount={this.handleDeleteAccount}
+                        handleConfirmUsername={this.handleConfirmUsername}
                       />
                     );
                   }

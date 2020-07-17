@@ -19,16 +19,17 @@ const StatelessProfileEditor = ({ userDetails, handleChange, handleSubmit }) => 
           <label>About</label>
           <div className="textarea-div">
             <textarea
-            name="aboutMe"
-              defaultValue={`${userDetails.aboutMe || ''}`}
+              name="aboutMe"
+              defaultValue={`${userDetails.aboutMe}` || ''}
+              onChange={(e) => { handleChange(e); }}
               />
           </div>
 
-          <label>Education</label>
+          {/* <label>Education</label>
           <input
             name=""
             onChange={(e) => { handleChange(e); }}
-          />
+          /> */}
 
           <label>Current Company</label>
           <input
@@ -38,15 +39,15 @@ const StatelessProfileEditor = ({ userDetails, handleChange, handleSubmit }) => 
 
           <label>LinkedIn URL</label>
           <input
-            defaultValue={`${userDetails.linkedInURL}`}
             name="linkedInURL"
+            defaultValue={`${userDetails.linkedInURL}`}
             onChange={(e) => { handleChange(e); }}
           />
 
           <label>Github URL</label>
           <input
-            defaultValue={`${userDetails.githubURL}`}
             name="githubURL"
+            defaultValue={`${userDetails.githubURL}`}
             onChange={(e) => { handleChange(e); }}
           />
 
@@ -58,8 +59,8 @@ const StatelessProfileEditor = ({ userDetails, handleChange, handleSubmit }) => 
 
           <label>Personal URL</label>
           <input
-            defaultValue={`${userDetails.personalURL}`}
             name="personalURL"
+            defaultValue={`${userDetails.personalURL}`}
             onChange={(e) => { handleChange(e); }}
           />
 
