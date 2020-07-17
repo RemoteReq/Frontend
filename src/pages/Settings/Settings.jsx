@@ -24,6 +24,7 @@ class Settings extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDeleteAccount = this.handleDeleteAccount.bind(this);
     this.handleConfirmUsername = this.handleConfirmUsername.bind(this);
+    this.handleFileUpload = this.handleFileUpload.bind(this);
   }
 
   componentDidMount() {
@@ -72,6 +73,40 @@ class Settings extends Component {
     })
       .then((response) => {
         console.log('reponse after posting from settings', response);
+      })
+      .then(() => {
+        window.location.reload();
+      });
+  }
+
+  handleFileUpload(e) {
+    e.preventDefault();
+
+    console.log(e.target.value);
+
+    const formData = new FormData();
+
+    formData.append('userImage', e.target.files[0]);
+
+    // to check formData contents
+
+    // for (const key of formData.entries()) {
+    //   console.log(`${key[0]}, ${key[1]}`);
+    // }
+
+    axios({
+      url: `${backend}/api/user/updateProfileDataWithImage`,
+      method: 'post',
+      headers: {
+        token: localStorage.getItem('session'),
+      },
+      data: formData,
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .then(() => {
+        window.location.reload();
       });
   }
 
@@ -158,6 +193,7 @@ class Settings extends Component {
                         userDetails={userDetails}
                         handleChange={this.handleChange}
                         handleSubmit={this.handleSubmit}
+                        handleFileUpload={this.handleFileUpload}
                         />
                       );
                     }}

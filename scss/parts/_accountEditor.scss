@@ -6,7 +6,8 @@
 
   form {
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    border: none;
+    grid-template-columns: 1fr 1fr;
 
     input {
       padding: 10px 15px;

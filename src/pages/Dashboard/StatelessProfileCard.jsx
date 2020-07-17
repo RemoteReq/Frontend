@@ -8,7 +8,9 @@ const StatelessProfileCard = ({ userDetails }) => {
       ? <div className="profile-card">
           <div className="profile-card-contents">
 
-            <div className="profile-card-picture"></div>
+            <div className="profile-card-picture">
+              <img src={userDetails.profilePicUrl}/>
+            </div>
 
             <h3 className="profile-card-name">{`${userDetails.fullName}`}</h3>
             <h4>{userDetails.jobRole || ''}</h4>

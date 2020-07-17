@@ -8,36 +8,65 @@ const StatelessAccountEditor = ({
 
   return (
     <div className="account-editor">
-  <h3>Your Account</h3>
+      <h3>Your Account</h3>
 
-  <form>
-    <div>
-      <label>Email</label>
-      <input
-        readOnly
-        defaultValue={`${userDetails.email}`}
-        />
+      <Divider/>
 
-      <label>Username</label>
-      <input
-        readOnly
-        defaultValue={`${userDetails.username}`}
-        />
+      <form>
+        <div>
+          <label>Username</label>
+          <input
+            readOnly
+            defaultValue={`${userDetails.username}`}
+            />
 
-      <label>Phone Number</label>
-      <input
-        name="mobileNum"
-        defaultValue={`${userDetails.mobileNum}`}
-        onChange={(e) => { handleChange(e); }}
-        />
+          <label>Email</label>
+          <input
+            readOnly
+            defaultValue={`${userDetails.email}`}
+            />
 
-      <button
-        className="button-1"
-        onClick={(e) => { handleSubmit(e); }}
-        >Update</button>
+          <label>Phone Number</label>
+          <input
+            name="mobileNum"
+            defaultValue={`${userDetails.mobileNum}`}
+            onChange={(e) => { handleChange(e); }}
+            />
 
-      <br/>
-      </div>
+          <button
+            className="button-1"
+            onClick={(e) => { handleSubmit(e); }}
+            >Update</button>
+
+        </div>
+      </form>
+
+      <Divider />
+
+      <h3>Password</h3>
+
+      <form>
+        <div>
+
+          <label>Old password</label>
+          <input
+            type="password"
+          />
+
+          <label>New Password</label>
+          <input
+            type="password"
+          />
+
+          <label>Confirm new password</label>
+          <input
+            type="password"
+          />
+
+          <button
+            className="button-1"
+          >Update</button>
+        </div>
       </form>
 
       <Divider />
@@ -46,7 +75,6 @@ const StatelessAccountEditor = ({
 
       <form>
         <div>
-
           <p className="small-paragraph">
             Delete your account by typing in your RemoteReq Username (Case Sensitive) and
             confirm that you would like to delete your account.
@@ -64,7 +92,7 @@ const StatelessAccountEditor = ({
         </div>
       </form>
 
-</div>
+    </div>
   );
 };
 

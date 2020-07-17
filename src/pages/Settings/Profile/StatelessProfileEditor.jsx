@@ -1,11 +1,16 @@
 import React from 'react';
+import Divider from '../../../components/parts/Divider.jsx';
 
-const StatelessProfileEditor = ({ userDetails, handleChange, handleSubmit }) => {
+const StatelessProfileEditor = ({
+  userDetails, handleChange, handleSubmit, handleFileUpload,
+}) => {
   document.title = 'Your Profile';
 
   return (
     <div className="profile-editor">
       <h3>Your Profile</h3>
+
+      <Divider />
 
       <form>
         <div>
@@ -31,11 +36,11 @@ const StatelessProfileEditor = ({ userDetails, handleChange, handleSubmit }) => 
             onChange={(e) => { handleChange(e); }}
           /> */}
 
-          <label>Current Company</label>
+          {/* <label>Current Company</label>
           <input
             name=""
             onChange={(e) => { handleChange(e); }}
-          />
+          /> */}
 
           <label>LinkedIn URL</label>
           <input
@@ -71,10 +76,18 @@ const StatelessProfileEditor = ({ userDetails, handleChange, handleSubmit }) => 
         </div>
 
         <div className="image-column">
+
           <label>Profile Picture</label>
           <div className="image-box">
-            <img></img>
+            <img src={userDetails.profilePicUrl}/>
           </div>
+
+          <input
+            className="button-1"
+            type="file"
+            accept="image/png, image/jpeg"
+            onChange={(e) => { return handleFileUpload(e); }}
+          />
         </div>
       </form>
 
