@@ -15,7 +15,7 @@ const StatelessProfileCard = ({ userDetails }) => {
 
             <div className="profile-card-bio">
               <h5>About</h5>
-              <p className="small-paragraph">{userDetails.about || ''}</p>
+              <p className="small-paragraph">{userDetails.aboutMe}</p>
 
               <h5>Cause</h5>
               <p className="small-paragraph">{userDetails.cause || ''}</p>

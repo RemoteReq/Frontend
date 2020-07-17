@@ -1,4 +1,5 @@
 import React from 'react';
+import Divider from '../../../components/parts/Divider.jsx';
 
 const StatelessAccountEditor = ({
   userDetails, handleChange, handleSubmit, handleDeleteAccount, handleConfirmUsername,
@@ -33,30 +34,36 @@ const StatelessAccountEditor = ({
       <button
         className="button-1"
         onClick={(e) => { handleSubmit(e); }}
-        >Submit</button>
+        >Update</button>
 
       <br/>
+      </div>
+      </form>
 
+      <Divider />
 
-      <label>Delete Account</label>
-      <p className="small-paragraph">
-        Delete your account by typing in your RemoteReq Username (Case Sensitive) and
-        confirm that you would like to delete your account.
-      </p>
-      <br/>
+      <h3>Delete Account</h3>
 
-      <label>Confirm Username</label>
-      <input
-        onChange={(e) => { handleConfirmUsername(e); }}
-      />
+      <form>
+        <div>
 
-      <button
-        onClick={(e) => { handleDeleteAccount(e); }}
-      >Delete</button>
-      <br/>
-    </div>
+          <p className="small-paragraph">
+            Delete your account by typing in your RemoteReq Username (Case Sensitive) and
+            confirm that you would like to delete your account.
+          </p>
 
-  </form>
+          <label>Confirm Username</label>
+          <input
+            onChange={(e) => { handleConfirmUsername(e); }}
+            />
+
+          <button
+            onClick={(e) => { handleDeleteAccount(e); }}
+          >Delete</button>
+
+        </div>
+      </form>
+
 </div>
   );
 };
