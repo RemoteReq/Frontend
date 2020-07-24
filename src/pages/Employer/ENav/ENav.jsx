@@ -8,7 +8,7 @@ const ENav = (props) => {
     <nav className='dashboard-navBar'>
       <Link className='dashboard-home stealth-link' to="/employer/dashboard">
         <img src={ RemoteReq } className='remotereq-name' alt='remote' />
-        <p>Job Board</p>
+        <p>Dashboard</p>
       </Link>
 
       <div className='dashboard-links'>
