@@ -36,8 +36,8 @@ class SignUp extends Component {
     console.log('registration firing away!', body);
 
     axios.post(`${backend}/api/signup`, body)
-      .then((response) => console.log(response))
-      .catch((err) => console.log(err));
+      .then((response) => { return console.log(response); })
+      .catch((err) => { return console.log(err); });
   }
 
   render() {

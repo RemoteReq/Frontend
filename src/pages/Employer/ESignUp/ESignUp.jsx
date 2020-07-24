@@ -1,11 +1,43 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { Link, useRouteMatch } from 'react-router-dom';
+
+const backend = 'http://3.21.186.204:3030';
 
 class ESignUp extends Component {
   constructor(props) {
     super(props);
 
     this.state = {};
+
+    this.onChange = this.onChange.bind(this);
+    this.signUp = this.signUp.bind(this);
+  }
+
+  onChange(e) {
+    e.preventDefault();
+
+    this.setState({
+      [`${e.target.name}`]: e.target.value,
+    });
+  }
+
+  signUp(e) {
+    e.preventDefault();
+
+    const body = {
+      username: this.state.username,
+      firstname: this.state.firstName,
+      lastname: this.state.lastName,
+      password: this.state.password,
+      email: this.state.email,
+    };
+
+    console.log('registration firing away!', body);
+
+    axios.post(`${backend}/api/signup`, body)
+      .then((response) => { return console.log(response); })
+      .catch((err) => { return console.log(err); });
   }
 
   render() {
@@ -41,12 +73,6 @@ class ESignUp extends Component {
             name='firstName'
             onChange={ this.onChange }
             placeholder='First Name'
-            required />
-          <input
-            type='text'
-            name='lastName'
-            onChange={ this.onChange }
-            placeholder='Last Name'
             required />
           <input
             type='email'
