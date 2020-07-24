@@ -25,6 +25,7 @@ class Settings extends Component {
     this.handleDeleteAccount = this.handleDeleteAccount.bind(this);
     this.handleConfirmUsername = this.handleConfirmUsername.bind(this);
     this.handleFileUpload = this.handleFileUpload.bind(this);
+    this.updateKeySkills = this.updateKeySkills.bind(this);
   }
 
   componentDidMount() {
@@ -162,6 +163,19 @@ class Settings extends Component {
     );
   }
 
+  updateKeySkills(e, skill) {
+    e.preventDefault();
+
+    this.setState({
+      userDetails: {
+        ...this.state.userDetails,
+        keySkills: this.state.userDetails.keySkills.concat(skill),
+      },
+    }, () => {
+      console.log(this.state.userDetails);
+    });
+  }
+
   render() {
     const { redirectToReferrer } = this.state;
     const { userDetails } = this.state;
@@ -213,7 +227,18 @@ class Settings extends Component {
                   }
 
                   }/>
-                  <Route path="/settings/jobPreference" component={JobPreferenceEditor} userDetails={userDetails}/>
+                  <Route path="/settings/jobPreference"
+                    render={(props) => {
+                      return (
+                      <JobPreferenceEditor
+                        {...props}
+                        userDetails={userDetails}
+                        updateKeySkills={this.updateKeySkills}
+                        handleSubmit={this.handleSubmit}
+                      />
+                      );
+                    }}
+                  />
                 </Switch>
               </div>
             </div>

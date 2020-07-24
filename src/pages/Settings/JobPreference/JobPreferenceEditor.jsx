@@ -1,7 +1,8 @@
 import React from 'react';
 import Divider from '../../../components/parts/Divider.jsx';
+import SkillsList from '../../../components/parts/SkillsList.jsx';
 
-const JobPrefenceEditor = () => {
+const JobPrefenceEditor = ({ userDetails, updateKeySkills }) => {
   document.title = 'Job Preferences';
   return (
     <div className="job-preference-editor">
@@ -24,6 +25,12 @@ const JobPrefenceEditor = () => {
 
           <label>Location</label>
           <input/>
+
+          <label>Skills</label>
+          <SkillsList
+            skills={userDetails.keySkills}
+            updateKeySkills={updateKeySkills}
+          />
 
           <button
             className="button-1"
