@@ -22,6 +22,7 @@ import ForgotPassword from '../pages/ForgotPassword/ForgotPassord.jsx';
 import ResetPassword from '../pages/ResetPassword/ResetPassword.jsx';
 import Employer from '../pages/Employer/Employer.jsx';
 import Verify from '../pages/Verify/Verify.jsx';
+import EVerify from '../pages/Employer/EVerify/EVerify.jsx';
 
 class App extends Component {
   render() {
@@ -40,6 +41,7 @@ class App extends Component {
               <Route path="/forgotPassword" component={ForgotPassword} />
               <Route path="/resetPassword" component={ResetPassword} />
               <Route path="/userEmailVerify" component={Verify} />
+              <Route path="/employerEmailVerify" component={EVerify} />
               <ProtectedRoute path="/settings" component={Settings} />
               <ProtectedRoute path="/dashboard" component={Dashboard} />
               <Route component={Page404} />

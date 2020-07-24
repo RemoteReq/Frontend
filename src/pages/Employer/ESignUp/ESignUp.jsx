@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link, useRouteMatch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const backend = 'http://3.21.186.204:3030';
 
@@ -27,15 +27,15 @@ class ESignUp extends Component {
 
     const body = {
       username: this.state.username,
-      firstname: this.state.firstName,
-      lastname: this.state.lastName,
+      fullName: this.state.fullName,
       password: this.state.password,
       email: this.state.email,
+      companyName: this.state.companyName,
     };
 
     console.log('registration firing away!', body);
 
-    axios.post(`${backend}/api/signup`, body)
+    axios.post(`${backend}/api/signup/employerSignUp`, body)
       .then((response) => { return console.log(response); })
       .catch((err) => { return console.log(err); });
   }
@@ -70,9 +70,15 @@ class ESignUp extends Component {
           </input>
           <input
             type='text'
-            name='firstName'
+            name='fullName'
             onChange={ this.onChange }
-            placeholder='First Name'
+            placeholder='Name'
+            required />
+          <input
+            type='text'
+            name='companyName'
+            onChange={ this.onChange }
+            placeholder='Name of your company'
             required />
           <input
             type='email'

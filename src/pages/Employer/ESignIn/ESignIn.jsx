@@ -1,14 +1,62 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import EAuth from '../EAuth/EAuth.jsx';
 
 class ESignIn extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      username: '',
+      password: '',
+      redirectToReferrer: false,
+    };
+
+    this.updateInfoOnChange = this.updateInfoOnChange.bind(this);
+    this.login = this.login.bind(this);
+  }
+
+  componentDidMount() {
+    console.log(EAuth.isAuthenticated());
+    if (EAuth.isAuthenticated()) {
+      this.setState({
+        redirectToReferrer: true,
+      });
+    }
+  }
+
+  login(e) {
+    e.preventDefault();
+
+    const body = {
+      emailOrUserName: this.state.username,
+      password: this.state.password,
+    };
+
+    EAuth.login(body, () => {
+      this.setState({
+        redirectToReferrer: true,
+      });
+    });
+  }
+
+  updateInfoOnChange(e) {
+    e.preventDefault();
+
+    this.setState({
+      [`${e.target.name}`]: e.target.value,
+    });
   }
 
   render() {
+    const { redirectToReferrer } = this.state;
+
+    if (redirectToReferrer === true) {
+      return (
+        <Redirect to="dashboard" />
+      );
+    }
+
     return (
       <div className="e-signin">
       <div className="e-signin-container" >
@@ -18,20 +66,6 @@ class ESignIn extends Component {
           and
           &nbsp;<Link to="#"className="small-link">Our Privacy Policy</Link>.
         </p>
-        <div className="e-signin-fb-google">
-          {/*
-
-          // commented out until this can be implemented
-          <GoogleLogin
-          clientId="1005468463474-snfb80jfo4sg40fdapbcguuoa6uvbqq1.apps.googleusercontent.com"
-            buttonText="Sign In with Google"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
-            cookiePolicy={'single_host_origin'}
-            />
-
-          */}
-        </div>
 
         <form className="e-signin-form" >
           <input
