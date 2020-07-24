@@ -2,14 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LandingPageGraphic from '#assets/images/pngs/landing-page-graphic.png';
 
-const LPHeader = () => (
+const LPHeader = () => {
+  return (
   <div className='landingPage-header'>
 
     <div className='landingPage-heading-btns'>
       <div className='heading'>
         <h1>Find remote work with greater purpose.</h1>
         { window.innerWidth > 767
-          ? <p>We connect highly-skilled, remote professionals with nonprofit and for-profit companies working for the greater good. Find a part-time gig, or full-time, today.</p>
+          ? <p>RemoteReq connects highly skilled remote job seekers with mission-focused organizations looking for passionate team members, allowing remote workers to do meaningful work anywhere.</p>
           : <p>We connect highly-skilled, remote professionals with companies working for the greater good.</p>
         }
       </div>
@@ -33,6 +34,7 @@ const LPHeader = () => (
     <img src={LandingPageGraphic}/>
 
   </div>
-);
+  );
+};
 
 export default LPHeader;

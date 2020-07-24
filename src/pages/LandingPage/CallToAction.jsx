@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import WebFooter from '../../components/parts/WebFooter.jsx';
 
-const CallToAction = () => (
-  <WebFooter 
-  header={"Don't just work, do something greater"}
+const CallToAction = () => {
+  return (
+  <WebFooter
+  header={'Where remotes make their impact'}
   graphics={true}
   component={
     <div>
@@ -18,6 +19,7 @@ const CallToAction = () => (
     </div>
   }
   />
-);
+  );
+};
 
 export default CallToAction;

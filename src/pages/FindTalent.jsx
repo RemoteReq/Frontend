@@ -36,22 +36,22 @@ const FindTalent = () => {
       <div className="mid-triplet">
         <img className="triplet-icon" src={triplet1}></img>
 
-        <h3>Submit a Job Req</h3>
-        <p>Share your scope of work and the profile of your ideal hire.</p>
+        <h3>Create an employer profile</h3>
+        <p>Tells us about your organization and the difference you are making.</p>
       </div>
 
       <div className="mid-triplet">
           <img className="triplet-icon" src={triplet2}></img>
 
-          <h3>Get Matched</h3>
+          <h3>Get matched to remote talent</h3>
           <p>Our recruiting algorithm will review thousands of remote professioanls to find your "best fit" matches.</p>
       </div>
 
       <div className="mid-triplet">
         <img className="triplet-icon" src={triplet3}></img>
 
-          <h3>Interview and hire</h3>
-          <p>Review your "best fit" matches to find your remote unicorn.</p>
+          <h3>Grow your impact</h3>
+          <p>Interview who excites you. Hire a passionate new team member. Do more good.</p>
       </div>
     </div>
 
@@ -73,7 +73,9 @@ const FindTalent = () => {
             <p>Negotioable hourly rates</p>
           </div>
 
+          <Link to="/employer">
           <button className="button-1">Submit a Job Req</button>
+        </Link>
         </div>
 
         <div className="pricing-card">
@@ -90,7 +92,9 @@ const FindTalent = () => {
           </div>
 
 
-            <button className="button-1">Submit a Job Req</button>
+          <Link to="/employer">
+          <button className="button-1">Submit a Job Req</button>
+        </Link>
 
         </div>
       </div>
@@ -100,7 +104,9 @@ const FindTalent = () => {
     header={'Build your remote team.'}
     graphics={true}
     component={
+      <Link to="/employer">
       <button className="button-1">Submit a Job Req</button>
+    </Link>
     }
     />
 
