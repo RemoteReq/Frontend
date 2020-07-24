@@ -27,8 +27,7 @@ class SignUp extends Component {
 
     const body = {
       username: this.state.username,
-      firstname: this.state.firstName,
-      lastname: this.state.lastName,
+      fullName: this.state.fullName,
       password: this.state.password,
       email: this.state.email,
     };
@@ -41,6 +40,8 @@ class SignUp extends Component {
   }
 
   render() {
+    document.title = 'Sign Up with RemoteReq';
+
     return (
       <div className='registration'>
       <div className="left-side-signup">
@@ -59,7 +60,7 @@ class SignUp extends Component {
 
       <form>
         <div>
-          <h3>Create your profile</h3>
+          <h3>Create your account</h3>
 
           <input
             tpye='text'
@@ -70,15 +71,9 @@ class SignUp extends Component {
           </input>
           <input
             type='text'
-            name='firstName'
+            name='fullName'
             onChange={ this.onChange }
-            placeholder='First Name'
-            required />
-          <input
-            type='text'
-            name='lastName'
-            onChange={ this.onChange }
-            placeholder='Last Name'
+            placeholder='Your Name'
             required />
           <input
             type='email'

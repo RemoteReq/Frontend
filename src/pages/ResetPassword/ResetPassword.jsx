@@ -1,4 +1,20 @@
 import React, { Component } from 'react';
+import { useParams, useLocation } from 'react-router-dom';
+import axios from 'axios';
+
+const backend = 'http://3.21.186.204:3030';
+
+const ResetPasswordQuery = () => {
+  return new URLSearchParams(useLocation().search);
+};
+
+const ResetPasswordWrapper = () => {
+  const query = ResetPasswordQuery();
+
+  return (
+    <ResetPassword resetPasswordID={query.get('resetToken')} />
+  );
+};
 
 class ResetPassword extends Component {
   constructor(props) {
@@ -32,6 +48,18 @@ class ResetPassword extends Component {
     if (password === confirmPassword) {
       // Request should only be sent if the passwords match
       console.log('Sending password reset request');
+
+      const body = {
+        newPassword: confirmPassword,
+      };
+
+      axios.post(`${backend}/api/signin/resetPassword?resetToken=${this.props.resetPasswordID}`, body)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     } else {
       // When they passwords do no match, highlight the inputs in red
       console.log('Passwords do not match');
@@ -73,4 +101,4 @@ class ResetPassword extends Component {
   }
 }
 
-export default ResetPassword;
+export default ResetPasswordWrapper;

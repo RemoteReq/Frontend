@@ -1,0 +1,33 @@
+.profile-editor {
+
+  h3 {
+    padding: 0 40px;
+  }
+
+  form {
+    display: grid;
+    border: none;
+    grid-template-columns: 3fr 2fr;
+
+    input {
+      padding: 10px 15px;
+      font-size: 1rem;
+    }
+
+    .image-column {
+      margin: 10px 25px;
+
+      .image-box {
+        height: 250px;
+        width: 250px;
+        background-color: #ebebeb;
+
+        img {
+          max-height: 100%;
+          max-width: 100%;
+          // border-radius: 250px;
+        }
+      }
+    }
+  }
+}
