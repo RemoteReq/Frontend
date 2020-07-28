@@ -9,7 +9,7 @@ const Footer = () => {
   return (
   <div className='footer'>
     <ul className='footerLinks'>
-      <li><Link to="/mission" className="small-link">Our Mission</Link></li>
+      <li><Link to="/about" className="small-link">About Us</Link></li>
       <li><Link to="/signup" className="small-link">Find Jobs</Link></li>
       <li><Link to="/findTalent" className="small-link">Find Talent</Link></li>
       <li><Link to="/privacy-policy" className="small-link">Our Privacy Policy</Link></li>

@@ -4,7 +4,7 @@ import PinkLine from '#assets/images/svgs/pink-line.svg';
 import WebFooter from '../../components/parts/WebFooter.jsx';
 
 const Mission = () => {
-  document.title = 'RemoteReq | Our Mission';
+  document.title = 'RemoteReq | About Us';
 
   return (
   <div>
@@ -17,20 +17,29 @@ const Mission = () => {
           <div className="mission-statement">
             <div className="mission-statement-upper">
               <h2>
-                On behalf of remotes,
-                <br/>
-                created by remotes.
+                About Us
               </h2>
             </div>
 
             <div className="mission-statement-lower">
-              <p>
-                We are the creatives, and the builders, <br/>
-                With the skills and expertise, <br/>
-                The special-ops forces of mission-driven businesses, <br/>
-                Strengthening the ranks of small business and nonprofits, <br/>
-                A thousand strong, and growing, <br/>
-                Commited, professional, and proven.
+              <p className="small-paragraph">
+                RemoteReq is a group of passionate digital nomads driven by work that matters.
+                We know what an incredible opportunity it is to work from home and change the world at the same time, and we believe more people should be able to have the same experience.
+                We also know remote workers are enormous assets to the companies they serve, but historically, nonprofits and other mission-driven organizations have not had the same level of access as other industries to this kind of talent.
+                We believe remote workers and mission-driven organizations should have more opportunities to connect and make a difference together.
+              </p>
+
+              <br/>
+
+              <p className="small-paragraph">
+                We’re built on a decade of executive recruiting experience and talent consulting in the nonprofit world and 15 years of collective experience working remotely, so we know what it takes to find a great fit.
+              </p>
+
+              <br/>
+
+              <p className="small-paragraph">
+                RemoteReq allows job seekers to create a profile for free and instantly matches them with available positions, sending their resumés to the hiring organization. Organizations can post their remote positions, then visit their dashboard to view resumes of matched candidates and reach out to them directly.
+                Through RemoteReq, you can use your skillset to change the world, no matter what part of it you live in.
               </p>
             </div>
           </div>
