@@ -66,26 +66,6 @@ class SignIn extends Component {
     return (
         <div className="login-form-page">
         <div className="login-container" >
-          <p className="small-paragraph">
-            By continuing, you agree to our
-            &nbsp;<Link to="#" className="small-link">Terms of Use</Link> &nbsp;
-            and
-            &nbsp;<Link to="#"className="small-link">Our Privacy Policy</Link>.
-          </p>
-          <div className="login-fb-google">
-            {/*
-
-            // commented out until this can be implemented
-            <GoogleLogin
-            clientId="1005468463474-snfb80jfo4sg40fdapbcguuoa6uvbqq1.apps.googleusercontent.com"
-              buttonText="Sign In with Google"
-              onSuccess={responseGoogle}
-              onFailure={responseGoogle}
-              cookiePolicy={'single_host_origin'}
-              />
-
-            */}
-          </div>
 
           <form className="login-form" >
             <input
@@ -112,6 +92,10 @@ class SignIn extends Component {
 
             <p className="small-paragraph">
               <Link to="/forgotPassword">Forgot your password?</Link>
+            </p>
+
+            <p className="small-paragraph">
+              Are you an Employer? <Link to="/employer/signin">Sign In Here</Link>
             </p>
           </form>
         </div>

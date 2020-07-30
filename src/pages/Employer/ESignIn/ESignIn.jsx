@@ -60,12 +60,6 @@ class ESignIn extends Component {
     return (
       <div className="e-signin">
       <div className="e-signin-container" >
-        <p className="small-paragraph">
-          By continuing, you agree to our
-          &nbsp;<Link to="#" className="small-link">Terms of Use</Link> &nbsp;
-          and
-          &nbsp;<Link to="#"className="small-link">Our Privacy Policy</Link>.
-        </p>
 
         <form className="e-signin-form" >
           <input
@@ -92,6 +86,10 @@ class ESignIn extends Component {
 
           <p className="small-paragraph">
             <Link to="/forgotPassword">Forgot your password?</Link>
+          </p>
+
+          <p className="small-paragraph">
+            Are you a job seeker? <Link to="/signin">Sign in here</Link>
           </p>
         </form>
       </div>

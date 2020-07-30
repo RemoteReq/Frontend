@@ -102,6 +102,13 @@ class ESignUp extends Component {
 
         <p className="password-note">Password must be at least 8 characters *</p>
 
+        <p className="small-paragraph">
+          By continuing, you agree to our
+          &nbsp;<Link to="#" className="small-link">Terms of Use</Link> &nbsp;
+          and
+          &nbsp;<Link to="#"className="small-link">Our Privacy Policy</Link>.
+        </p>
+
         <button
           type='submit'
           className='e-button'
