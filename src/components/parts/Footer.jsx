@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import RRLogo from '#assets/images/pngs/RR-cobalt.png';
 import Divider from './Divider.jsx';
+import SubscribeEmail from './SubscribeEmail.jsx';
 import FacebookIcon from '#assets/icons/pngs/001-facebook.png';
 import LinkedinIcon from '#assets/icons/pngs/010-linkedin.png';
 import TwitterIcon from '#assets/icons/pngs/013-twitter.png';
@@ -45,8 +46,7 @@ const Footer = () => {
           <li><Link><img src={LinkedinIcon}/></Link></li>
         </ul>
 
-          <input/>
-          <button className='button-1'>Subscribe</button>
+          <SubscribeEmail />
       </div>
     </div>
   </div>
