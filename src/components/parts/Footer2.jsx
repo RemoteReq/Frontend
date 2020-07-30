@@ -8,13 +8,14 @@ import RRLogo from '#assets/images/pngs/RR-cobalt.png';
 const Footer = () => {
   return (
   <div className='footer'>
-    <ul className='footerLinks'>
+    {/* <ul className='footerLinks'>
       <li><Link to="/about" className="small-link">About Us</Link></li>
       <li><Link to="/signup" className="small-link">Find Jobs</Link></li>
       <li><Link to="/findTalent" className="small-link">Find Talent</Link></li>
       <li><Link to="/privacyPolicy" className="small-link">Our Privacy Policy</Link></li>
       <li><Link to="termsOfUse" className="small-link">Terms of Use</Link></li>
-    </ul>
+    </ul> */}
+
   </div>
   );
 };
