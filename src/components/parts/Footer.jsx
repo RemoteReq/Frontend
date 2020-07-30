@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import RRLogo from '#assets/images/pngs/RR-cobalt.png';
 import Divider from './Divider.jsx';
-// import FaceBookIcon from '#assets/img/facebook.png';
-// import LinkedinIcon from '#assets/img/linkedin.png';
-// import TwitterIcon from '#assets/img/twitter.png';
+import FacebookIcon from '#assets/icons/pngs/001-facebook.png';
+import LinkedinIcon from '#assets/icons/pngs/010-linkedin.png';
+import TwitterIcon from '#assets/icons/pngs/013-twitter.png';
+import InstagramIcon from '#assets/icons/pngs/011-instagram.png';
 
 const Footer = () => {
   return (
@@ -16,15 +17,11 @@ const Footer = () => {
         <li><Link to="/findTalent" className="small-link">Find Talent</Link></li>
       </ul>
 
-      <div className="medias">
-        <ul className='social-media-list'>
-          <li>Facebook</li>
-          <li>Instagram</li>
-          <li>LinkedIn</li>
-        </ul>
 
-          <input/>
-      </div>
+      <ul>
+        <li><Link to="/privacyPolicy" className="small-link">Our Privacy Policy</Link></li>
+        <li><Link to="termsOfUse" className="small-link">Terms of Use</Link></li>
+      </ul>
     </div>
 
     <Divider />
@@ -41,10 +38,16 @@ const Footer = () => {
       </span>
 
 
-      <ul>
-        <li><Link to="/privacyPolicy" className="small-link">Our Privacy Policy</Link></li>
-        <li><Link to="termsOfUse" className="small-link">Terms of Use</Link></li>
-      </ul>
+      <div className="medias">
+        <ul className='social-media-list'>
+          <li><Link><img src={FacebookIcon}/></Link></li>
+          <li><Link><img src={InstagramIcon}/></Link></li>
+          <li><Link><img src={LinkedinIcon}/></Link></li>
+        </ul>
+
+          <input/>
+          <button className='button-1'>Subscribe</button>
+      </div>
     </div>
   </div>
   );

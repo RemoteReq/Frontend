@@ -11,14 +11,7 @@
     justify-content: space-between;
     height: 50%;
 
-    .medias {
-      display: flex;
-      align-items: center;
 
-      input {
-        height: 20px;
-      }
-    }
   }
 
   .divider {
@@ -37,6 +30,21 @@
 
       p {
         margin: 0 40px;
+        font-size: 14pt;
+      }
+    }
+
+    .medias {
+      display: flex;
+
+      input {
+        padding: 0 10px;
+        font-size: 14pt;
+      }
+      
+      button{
+        height: 40px;
+        padding: 0 10px;
         font-size: 14pt;
       }
     }
