@@ -99,7 +99,7 @@ class SignUp extends Component {
 
         <p className="small-paragraph">
             By continuing, you agree to our
-            &nbsp;<Link to="#" className="small-link">Terms of Use</Link> &nbsp;
+            &nbsp;<Link to="#" className="small-link">Terms of Use</Link>&nbsp;
             and
             &nbsp;<Link to="#"className="small-link">Our Privacy Policy</Link>.
         </p>
