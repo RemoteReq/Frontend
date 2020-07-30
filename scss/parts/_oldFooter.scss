@@ -1,0 +1,39 @@
+.footer {
+  align-items: center;
+  display: flex;
+  height: 15vh;
+  justify-content: space-between;
+  margin: 0 10vw 0 10vw;
+
+  a {
+    text-decoration: none;
+    color: #595959;
+  }
+
+  ul{
+    list-style: none;
+
+    li {
+      padding: 4px 0;
+      font-family: $SecondaryFont;
+    }
+  }
+  
+  .footer-sections {
+    display: flex;
+
+    p {
+      border-bottom: 1px solid #dbdbdb;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+    }
+
+    .footer-section {
+      margin-right: 80px;
+    }
+}
+
+  img {
+    width: 40px;
+  }
+}
