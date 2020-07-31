@@ -29,20 +29,22 @@ class EDashboard extends Component {
     if (EAuth.isAuthenticated()) {
       // request user details based off token
 
-      console.log('retrieving user details... ');
+      console.log('retrieving employer details... ');
 
       axios({
-        url: `${backend}/api/user/getSingleUserDetails`,
+        url: `${backend}/api/employers/getSingleEmployer`,
         method: 'post',
         headers: {
-          token: localStorage.getItem('session'),
+          token: localStorage.getItem('e-session'),
         },
       })
         .then((response) => {
+          console.log(response);
+
           this.setState({
             redirectToReferrer: true,
             userDetails: response.data,
-          }, () => { return console.log('user details retrieved!', this.state); });
+          }, () => { return console.log('employer details retrieved!', this.state); });
         })
         .catch((error) => { return console.log(error); });
     }
@@ -83,12 +85,12 @@ class EDashboard extends Component {
           <StatelessProfileCard userDetails={userDetails}/>
 
           <Switch>
-            <Route
+            {/* <Route
               path='/joblist'
               render={
                 () => { return <JobList jobs={this.state.jobListing}/>; }
               }
-            />
+            /> */}
 
           </Switch>
         </div>
