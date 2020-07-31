@@ -57,6 +57,10 @@ module.exports = {
         test: /\.svg$/,
         loader: 'react-svg-loader',
       },
+      // {
+      //   test: /\.svg$/,
+      //   use: ['@svgr/webpack'],
+      // },
     ],
   },
   plugins: [
