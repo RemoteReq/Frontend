@@ -11,7 +11,7 @@ const AboutMain = () => {
 
     <section>
       <div className="section-desc">
-        <h2>Hire smarter &amp; faster</h2>
+        <h1>Hire smarter &amp; faster</h1>
         <p>Whether you’re looking for a job or looking for a candidate, we do all the hard work for you, using our finely-tuned algorithm to instantly match highly skilled candidates to positions relevant to issues they care most about.</p>
         <Link to={'/signup'} className="large-link">Get Started</Link>
       </div>
@@ -25,7 +25,7 @@ const AboutMain = () => {
 
 
     <section className="middle-section">
-      <h2>Remote + Purposeful</h2>
+      <h1>Remote + Purposeful</h1>
       <p>Finally, a central location for remote job seekers to find meaningful work at organizations making a difference.</p>
       <p>Create a free profile to use your talents to make an impact.</p>
 
@@ -35,7 +35,7 @@ const AboutMain = () => {
 
     <section className="reverse-section">
       <div className="section-desc">
-        <h2>The best talent anywhere</h2>
+        <h1>The best talent anywhere</h1>
         <p>Through RemoteReq, remote workers can use their skills and passions to change the world from any corner of it, whether that’s a kitchen table in Texas or a flat in London.</p>
         <Link to="/signup" className="large-link">Find your job</Link>
       </div>

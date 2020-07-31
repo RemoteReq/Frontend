@@ -1,7 +1,8 @@
 .landingPage-header {
   background: #fbf9f4;
-  padding: 50px 10vw 50px 10vw;
+  padding: 4% 10%;
   display: flex;
+  justify-content: space-between;
   position: relative;
 
   .landingPage-heading-btns {
@@ -10,10 +11,12 @@
     .heading {
 
       h1 {
+        font-size: 48pt;
         margin-bottom: 37px;
       }
       
       p {
+        font-size: 16pt;
         padding-bottom: 37px;
       }
 
@@ -29,9 +32,11 @@
   }
 
   img {
+    z-index: 0;
     position: absolute;
     right: 0;
     bottom: 0;
     height: 100%;
+    width: 50%;
   }
 }

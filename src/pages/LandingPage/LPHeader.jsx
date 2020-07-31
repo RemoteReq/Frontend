@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LandingPageGraphic from '#assets/images/pngs/landing-page-graphic.png';
+import LandingPageGraphic from '#assets/images/pngs/landing-page-graphic-2.png';
 
 const LPHeader = () => {
   return (
@@ -31,7 +31,10 @@ const LPHeader = () => {
       </div>
     </div>
 
-    <img src={LandingPageGraphic}/>
+    <img
+      src={LandingPageGraphic}
+      draggable="false"
+    />
 
   </div>
   );

@@ -2,12 +2,13 @@
 
   .find-talent-upper {
     display: flex;
+    justify-content: space-between;
     background-color: $BackgroundColor;
-    padding: 4% 0% 4% 8%;
+    padding: 4% 10%;
 
     .find-talent-upper-left {
       width: 50%;
-      padding: 0 4% 0 4%;
+      padding: 0 4% 0 0;
 
       h1 {
         font-family: $MainFont;
@@ -24,6 +25,7 @@
     }
 
     .find-talent-graphics {
+      right: 0;
       width: 50%;
     }
   }

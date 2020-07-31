@@ -11,11 +11,13 @@ const AboutHeader = () => {
       <h3>Create a profile</h3>
       <p>Tell us about you, what you do, and the causes most personal to you.</p>
     </div>
+
     <div className='box get-matched'>
       <img src={ Connect } alt='connect icon'/>
       <h3>Get Matched</h3>
       <p>Our recruiting algorithm finds your best fit remote matches. Think of us as your personal recruiter.</p>
     </div>
+
     <div className='box pay-forward'>
       <img src={ Forward } alt='forward icon'/>
       <h3>Pay it forward</h3>

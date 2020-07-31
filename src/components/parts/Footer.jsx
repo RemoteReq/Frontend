@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 import RRLogo from '#assets/images/pngs/RR-cobalt.png';
 import Divider from './Divider.jsx';
 import SubscribeEmail from './SubscribeEmail.jsx';
-import FacebookIcon from '#assets/icons/pngs/001-facebook.png';
-import LinkedinIcon from '#assets/icons/pngs/010-linkedin.png';
-import TwitterIcon from '#assets/icons/pngs/013-twitter.png';
-import InstagramIcon from '#assets/icons/pngs/011-instagram.png';
+import FacebookIcon from '#assets/icons/pngs/flaticon/facebook.png';
+import LinkedinIcon from '#assets/icons/pngs/flaticon/linkedin.png';
+import TwitterIcon from '#assets/icons/pngs/flaticon/twitter.png';
+import InstagramIcon from '#assets/icons/pngs/flaticon/instagram.png';
 
 const Footer = () => {
   return (
   <div className='footer'>
     <div className='upper-footer'>
       <ul className='footer-links'>
-        <li><Link to="/about" className="small-link">About Us</Link></li>
         <li><Link to="/signup" className="small-link">Find Jobs</Link></li>
         <li><Link to="/findTalent" className="small-link">Find Talent</Link></li>
+        <li><Link to="/about" className="small-link">About Us</Link></li>
       </ul>
 
 
@@ -41,6 +41,7 @@ const Footer = () => {
 
       <div className="medias">
         <ul className='social-media-list'>
+          <li><Link><img src={TwitterIcon}/></Link></li>
           <li><Link><img src={FacebookIcon}/></Link></li>
           <li><Link><img src={InstagramIcon}/></Link></li>
           <li><Link><img src={LinkedinIcon}/></Link></li>

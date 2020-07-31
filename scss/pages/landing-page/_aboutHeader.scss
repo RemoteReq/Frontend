@@ -1,17 +1,28 @@
 .about-header {
   display: flex;
-  padding: 10vh 10vw 0 10vw;
-  margin-bottom: 37px;
+  justify-content: space-evenly;
+  padding: 0 10% 0 10%;
 
   .box {
-    padding-right: 75px;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    padding: 8% 0 8% 0;
 
     img {
-      width: 60px;
+      height: 40px;
+      max-width: 40px;
     }
 
     h3 {
-      margin: 34px 0;
+      font-family: $SecondaryFont;
+      font-size: 18pt;
+    }
+    
+    p {
+      font-family: $SecondaryFont;
+      font-size: 14pt;
+      color: $SecondaryFontColor;
     }
 
   }
