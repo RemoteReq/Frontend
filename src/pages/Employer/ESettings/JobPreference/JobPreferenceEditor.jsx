@@ -1,5 +1,5 @@
 import React from 'react';
-import Divider from '../../../components/parts/Divider.jsx';
+import Divider from '#parts/Divider.jsx';
 
 const JobPrefenceEditor = () => {
   document.title = 'Job Preferences';

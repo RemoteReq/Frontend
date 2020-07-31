@@ -1,5 +1,5 @@
 import React from 'react';
-import Divider from '../../../components/parts/Divider.jsx';
+import Divider from '#parts/Divider.jsx';
 
 const StatelessAccountEditor = ({
   userDetails, handleChange, handleSubmit, handleDeleteAccount, handleConfirmUsername,
@@ -17,19 +17,19 @@ const StatelessAccountEditor = ({
           <label>Username</label>
           <input
             readOnly
-            defaultValue={`${userDetails.username}`}
+            defaultValue={`${userDetails.username}` || ''}
             />
 
           <label>Email</label>
           <input
             readOnly
-            defaultValue={`${userDetails.email}`}
+            defaultValue={`${userDetails.email}` || ''}
             />
 
           <label>Phone Number</label>
           <input
             name="mobileNum"
-            defaultValue={`${userDetails.mobileNum}`}
+            // defaultValue={`${userDetails.mobileNum}` || ''}
             onChange={(e) => { handleChange(e); }}
             />
 

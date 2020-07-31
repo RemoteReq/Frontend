@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom';
 const SettingsNav = () => {
   return (
     <div className="sideNav">
-      <Link to="/settings/profile">
+      <Link to="/employer/settings/profile">
         <button>
             Profile
         </button>
       </Link>
 
-      <Link to="/settings/account">
+      <Link to="/employer/settings/account">
         <button>
             Account
         </button>
       </Link>
 
-      <Link to="/settings/jobPreference">
+      <Link to="/employer/settings/jobPreference">
         <button>
             Job Preference
         </button>

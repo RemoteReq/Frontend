@@ -1,5 +1,5 @@
 import React from 'react';
-import Divider from '../../../components/parts/Divider.jsx';
+import Divider from '#parts/Divider.jsx';
 
 const StatelessProfileEditor = ({
   userDetails, handleChange, handleSubmit, handleFileUpload,
@@ -17,7 +17,7 @@ const StatelessProfileEditor = ({
           <label>Name</label>
           <input
             name="fullName"
-            defaultValue={`${userDetails.fullName || ''}`}
+            // defaultValue={`${userDetails.fullName || ''}`}
             onChange={(e) => { handleChange(e); }}
           />
 
@@ -25,7 +25,7 @@ const StatelessProfileEditor = ({
           <div className="textarea-div">
             <textarea
               name="aboutMe"
-              defaultValue={`${userDetails.aboutMe}` || ''}
+              // defaultValue={`${userDetails.aboutMe}` || ''}
               onChange={(e) => { handleChange(e); }}
               />
           </div>
@@ -33,14 +33,14 @@ const StatelessProfileEditor = ({
           <label>LinkedIn URL</label>
           <input
             name="linkedInURL"
-            defaultValue={`${userDetails.linkedInURL}`}
+            // defaultValue={`${userDetails.linkedInURL}`}
             onChange={(e) => { handleChange(e); }}
           />
 
           <label>Github URL</label>
           <input
             name="githubURL"
-            defaultValue={`${userDetails.githubURL}`}
+            // defaultValue={`${userDetails.githubURL}`}
             onChange={(e) => { handleChange(e); }}
           />
 
@@ -53,7 +53,7 @@ const StatelessProfileEditor = ({
           <label>Personal URL</label>
           <input
             name="personalURL"
-            defaultValue={`${userDetails.personalURL}`}
+            // defaultValue={`${userDetails.personalURL}`}
             onChange={(e) => { handleChange(e); }}
           />
 

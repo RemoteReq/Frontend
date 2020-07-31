@@ -6,6 +6,7 @@ import ESignIn from './ESignIn/ESignIn.jsx';
 import ESignUp from './ESignUp/ESignUp.jsx';
 import EVerify from './EVerify/EVerify.jsx';
 import EDashboard from './EDashboard/EDashboard.jsx';
+import ESettings from './ESettings/ESettings.jsx';
 
 const Employer = () => {
   const { path, url } = useRouteMatch();
@@ -23,7 +24,8 @@ const Employer = () => {
 
         <Route exact path={`${path}/signIn`} component={ESignIn}/>
         <Route path={`${path}/signUp`} component={ESignUp} />
-        {/* <Route path={`${path}/employerEmailVerify`} component={EVerify} /> */}
+        <Route path={`${path}/employerEmailVerify`} component={EVerify} />
+        <Route path={`${path}/settings`} component={ESettings}/>
         <Route path={`${path}/dashboard`} component={EDashboard} />
       </Switch>
     </div>

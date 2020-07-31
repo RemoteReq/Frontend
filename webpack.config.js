@@ -11,6 +11,8 @@ module.exports = {
   },
   resolve: {
     alias: {
+      '#auth': path.join(__dirname, 'src/components/Auth/'),
+      '#parts': path.join(__dirname, 'src/components/parts/'),
       '#scss': path.join(__dirname, 'scss/'),
       '#assets': path.join(__dirname, 'assets/'),
     },
