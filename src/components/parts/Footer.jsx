@@ -41,10 +41,10 @@ const Footer = () => {
 
       <div className="medias">
         <ul className='social-media-list'>
-          <li><Link><img src={TwitterIcon}/></Link></li>
-          <li><Link><img src={FacebookIcon}/></Link></li>
-          <li><Link><img src={InstagramIcon}/></Link></li>
-          <li><Link><img src={LinkedinIcon}/></Link></li>
+          <li><a target="_blank" rel="noopener noreferrer" href="https://www.twitter.com/RemoteReq/"><img src={TwitterIcon}/></a></li>
+          <li><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/RemoteReq/" ><img src={FacebookIcon}/></a></li>
+          <li><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/remotereqinc/"><img src={InstagramIcon}/></a></li>
+          <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/remotereq/"><img src={LinkedinIcon}/></a></li>
         </ul>
 
           <SubscribeEmail />
