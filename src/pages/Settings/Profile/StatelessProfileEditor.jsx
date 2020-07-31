@@ -30,18 +30,6 @@ const StatelessProfileEditor = ({
               />
           </div>
 
-          {/* <label>Education</label>
-          <input
-            name=""
-            onChange={(e) => { handleChange(e); }}
-          /> */}
-
-          {/* <label>Current Company</label>
-          <input
-            name=""
-            onChange={(e) => { handleChange(e); }}
-          /> */}
-
           <label>LinkedIn URL</label>
           <input
             name="linkedInURL"
