@@ -36,7 +36,18 @@ class ESignUp extends Component {
     console.log('registration firing away!', body);
 
     axios.post(`${backend}/api/signup/employerSignUp`, body)
-      .then((response) => { return console.log(response); })
+      .then((response) => {
+        console.log(response);
+
+        return response.status;
+      })
+      .then((status) => {
+        if (status === 200) {
+          this.props.history.push('/employer/signin');
+        } else {
+          console.log('Account taken!');
+        }
+      })
       .catch((err) => { return console.log(err); });
   }
 
