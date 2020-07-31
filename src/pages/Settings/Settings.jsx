@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
+import Croppie from 'croppie';
 import Navigation2 from '../../components/parts/Navigation2.jsx';
 // import ProfileEditor from './Profile/ProfileEditor.jsx';
 import ProfileEditor from './Profile/StatelessProfileEditor.jsx';
@@ -81,8 +82,10 @@ class Settings extends Component {
 
   handleFileUpload(e) {
     e.preventDefault();
-
     console.log(e.target.value);
+
+    // const c = new Croppie(document.getElementById('upload-profile-pic'));
+    // c.croppie();
 
     const formData = new FormData();
 
@@ -94,20 +97,20 @@ class Settings extends Component {
     //   console.log(`${key[0]}, ${key[1]}`);
     // }
 
-    axios({
-      url: `${backend}/api/user/updateProfileDataWithImage`,
-      method: 'post',
-      headers: {
-        token: localStorage.getItem('session'),
-      },
-      data: formData,
-    })
-      .then((res) => {
-        console.log(res);
-      })
-      .then(() => {
-        window.location.reload();
-      });
+    // axios({
+    //   url: `${backend}/api/user/updateProfileDataWithImage`,
+    //   method: 'post',
+    //   headers: {
+    //     token: localStorage.getItem('session'),
+    //   },
+    //   data: formData,
+    // })
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .then(() => {
+    //     window.location.reload();
+    //   });
   }
 
   handleDeleteAccount(e) {

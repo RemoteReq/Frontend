@@ -1,4 +1,5 @@
 import React from 'react';
+import Cropper from '../../../components/parts/Cropper.jsx';
 import Divider from '../../../components/parts/Divider.jsx';
 
 const StatelessProfileEditor = ({
@@ -66,16 +67,19 @@ const StatelessProfileEditor = ({
         <div className="image-column">
 
           <label>Profile Picture</label>
-          <div className="image-box">
+          <div className="image-box" id="profile-pic-url">
             <img src={userDetails.profilePicUrl}/>
           </div>
 
           <input
+            id="upload-profile-pic"
             className="button-1"
             type="file"
             accept="image/png, image/jpeg"
             onChange={(e) => { return handleFileUpload(e); }}
           />
+
+          {/* <Cropper /> */}
         </div>
       </form>
 
