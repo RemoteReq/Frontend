@@ -1,7 +1,7 @@
 // Going by the style guide, all <p/> tags share the same style. If anything goes south refer here
 p {
   font-family: 'Open Sans', serif;
-  font-size: 20pt;
+  font-size: 18pt;
   line-height: 35px;
   color: #595959;
   font-weight: normal;
@@ -9,4 +9,8 @@ p {
 
 .small-paragraph {
   font-size: 12pt;
+}
+
+.smaller-paragraph{
+  font-size: 10pt;
 }

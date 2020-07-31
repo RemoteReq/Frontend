@@ -108,11 +108,11 @@ class SignUp extends Component {
 
         <p className="password-note">Password must be at least 8 characters *</p>
 
-        <p className="small-paragraph">
+        <p className="smaller-paragraph">
             By continuing, you agree to our
-            &nbsp;<Link to="#" className="small-link">Terms of Use</Link>&nbsp;
+            &nbsp;<Link to="#" className="smaller-link">Terms of Use</Link>&nbsp;
             and
-            &nbsp;<Link to="#"className="small-link">Our Privacy Policy</Link>.
+            &nbsp;<Link to="#"className="smaller-link">Our Privacy Policy</Link>.
         </p>
 
         <button
