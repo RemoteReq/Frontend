@@ -17,3 +17,14 @@ input:read-only {
 input {
   outline: none;
 }
+
+.radios {
+  display: flex;
+  align-items: center;
+
+  input {
+    margin: 20px;
+    height: initial;
+    width: initial;
+  }
+}

@@ -8,6 +8,7 @@ import Navigation from '../../components/parts/Navigation2.jsx';
 import StatelessProfileCard from './StatelessProfileCard.jsx';
 import JobList from './jobList/JobList.jsx';
 import Reminder from './Reminder.jsx';
+import QnA from '../QnA/QnA.jsx';
 import auth from '../../components/Auth/Auth.jsx';
 
 const backend = 'http://3.21.186.204:3030';

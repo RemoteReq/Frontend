@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Reminder = () => (
+const Reminder = () => {
+  return (
     <div className="reminder">
 
       <div>
@@ -18,7 +19,7 @@ const Reminder = () => (
           and interests so we can match you.
         </p>
 
-        <Link to="/questionnaire">
+        <Link to="/QnA/basics">
           <button className="button-1">
             Start Questionnaire
           </button>
@@ -27,6 +28,7 @@ const Reminder = () => (
       </div>
 
     </div>
-);
+  );
+};
 
 export default Reminder;

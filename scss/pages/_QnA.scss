@@ -1,0 +1,38 @@
+.QnA {
+  padding: 5vh 0 10vh 0;
+  background-color: $BackgroundColor;
+  
+  h3 {
+    margin: 0 15%;
+    font-size: 24pt;
+  }
+  
+  p {
+    margin: 0 15%;
+    font-size: 12pt;
+  }
+  
+  form {
+    margin: 0 15%;
+    box-shadow: 4px 4px 20px #e2e2e2;
+    background-color: white;
+  }
+
+  .radios {
+    margin-left: 10%;
+  }
+
+  select {
+    margin-left: 10%;
+  }
+
+  .form-nav {
+    margin: 50px 0 0 0;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.QnA-page {
+  padding: 0;
+}

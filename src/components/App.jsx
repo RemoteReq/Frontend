@@ -37,15 +37,14 @@ class App extends Component {
               <Route path="/signin" component={SignIn} />
               <Route path="/signup" component={SignUp} />
               <Route path="/employer" component={Employer} />
-              <Route path="/QnA" component="questionnaire" />
               <Route path="/about" component={Mission} />
               <Route path="/findTalent" component={FindTalent} />
               <Route path="/forgotPassword" component={ForgotPassword} />
               <Route path="/resetPassword" component={ResetPassword} />
               <Route path="/userEmailVerify" component={Verify} />
-              <Route path="/QnA" component={QnA} />
               <Route path="/employerEmailVerify" component={EVerify} />
               <Route path="/privacyPolicy" component={PrivacyPolicy} />
+              <ProtectedRoute path="/QnA" component={QnA} />
               <ProtectedRoute path="/settings" component={Settings} />
               <ProtectedRoute path="/dashboard" component={Dashboard} />
               <Route component={Page404} />
