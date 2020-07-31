@@ -25,6 +25,7 @@ import Verify from '../pages/Verify/Verify.jsx';
 import QnA from '../pages/QnA/QnA.jsx';
 import EVerify from '../pages/Employer/EVerify/EVerify.jsx';
 import PrivacyPolicy from '../pages/PrivacyPolicy.jsx';
+import TermsOfUse from '../pages/TermsOfUse.jsx';
 
 class App extends Component {
   render() {
@@ -44,6 +45,7 @@ class App extends Component {
               <Route path="/userEmailVerify" component={Verify} />
               <Route path="/employerEmailVerify" component={EVerify} />
               <Route path="/privacyPolicy" component={PrivacyPolicy} />
+              <Route path="/termsOfUse" component={TermsOfUse} />
               <ProtectedRoute path="/QnA" component={QnA} />
               <ProtectedRoute path="/settings" component={Settings} />
               <ProtectedRoute path="/dashboard" component={Dashboard} />
