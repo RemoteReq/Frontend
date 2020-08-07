@@ -1,6 +1,8 @@
 import React from 'react';
 
 const TermsOfUse = () => {
+  document.title = 'Terms of Service';
+
   return (
     <div className="terms-of-use">
       <form>

@@ -1,6 +1,8 @@
 import React from 'react';
 
 const PrivacyPolicy = () => {
+  document.title = 'Privacy Policy';
+
   return (
     <div className="privacy-policy">
       <form>
