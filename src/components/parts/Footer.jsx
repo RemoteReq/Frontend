@@ -34,7 +34,7 @@ const Footer = () => {
         </Link>
 
         <p>
-          Slogan || copyright
+          Work from Anywhere. Change the World.
         </p>
       </span>
 
