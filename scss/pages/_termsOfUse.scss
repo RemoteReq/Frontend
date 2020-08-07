@@ -1,3 +1,14 @@
 .terms-of-use {
-  
+  margin: 0 25vw;
+
+  p {
+    line-height: initial;
+    font-size: 10pt;
+  }
+
+  .table {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+  }
 }
