@@ -338,7 +338,7 @@ const PrivacyPolicy = () => {
         <br/>
 
         <ul>
-          <li>remotereq@gmail.com</li>
+          <li><a>remotereq@gmail.com</a></li>
         </ul>
       </form>
     </div>
