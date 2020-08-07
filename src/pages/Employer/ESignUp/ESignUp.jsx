@@ -115,9 +115,9 @@ class ESignUp extends Component {
 
         <p className="smaller-paragraph">
           By continuing, you agree to our
-          &nbsp;<Link to="#" className="smaller-link">Terms of Use</Link>&nbsp;
+          &nbsp;<Link to="/termsOfUse" className="smaller-link">Terms of Use</Link>&nbsp;
           and
-          &nbsp;<Link to="#"className="smaller-link">Our Privacy Policy</Link>.
+          &nbsp;<Link to="/privacyPolicy"className="smaller-link">Our Privacy Policy</Link>.
         </p>
 
         <button
