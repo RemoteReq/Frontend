@@ -7,7 +7,7 @@ class Auth {
     this.authState = false;
   }
 
-  login(credentials, cb) {
+  login(credentials, cb, err) {
     axios.post(`${backend}/api/signin`, credentials)
       .then((response) => {
         if (response.status === 200) {
@@ -15,7 +15,8 @@ class Auth {
           this.authState = true;
           cb();
         }
-      });
+      })
+      .catch(err());
   }
 
   logout(cb) {

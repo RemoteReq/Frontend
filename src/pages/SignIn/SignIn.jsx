@@ -26,6 +26,7 @@ class SignIn extends Component {
     if (auth.isAuthenticated()) {
       this.setState({
         redirectToReferrer: true,
+        loginFailed: '',
       });
     }
   }
@@ -41,6 +42,11 @@ class SignIn extends Component {
     auth.login(body, () => {
       this.setState({
         redirectToReferrer: true,
+      });
+    },
+    () => {
+      this.setState({
+        loginFailed: true,
       });
     });
   }
@@ -73,7 +79,7 @@ class SignIn extends Component {
               autoComplete="current-username"
               className="login-email"
               onChange={ this.updateInfoOnChange }
-              placeholder="Username" />
+              placeholder="Username or Email" />
             <input
               type="password"
               name="password"
@@ -81,6 +87,13 @@ class SignIn extends Component {
               className="login-password"
               onChange={ this.updateInfoOnChange }
               placeholder="Password" />
+
+            <p className={
+              `${this.state.loginFailed ? 'error' : 'hide'}`
+            }>
+              Incorrect Username/Email OR Password
+            </p>
+
             <button onClick={ this.login }
                     className="button-1"
             >Sign in
