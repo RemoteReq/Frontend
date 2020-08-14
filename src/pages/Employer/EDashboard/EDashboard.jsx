@@ -84,15 +84,7 @@ class EDashboard extends Component {
         <div className='dashboard'>
           <StatelessProfileCard userDetails={userDetails}/>
 
-          <Switch>
-            {/* <Route
-              path='/joblist'
-              render={
-                () => { return <JobList jobs={this.state.jobListing}/>; }
-              }
-            /> */}
-
-          </Switch>
+          <JobList />
         </div>
       </div>
     );

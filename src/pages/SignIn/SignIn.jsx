@@ -85,7 +85,11 @@ class SignIn extends Component {
                     className="button-1"
             >Sign in
             </button>
-            {/* <Link to="#">Forgot your Password?</Link> */}
+
+            <p className="small-paragraph">
+              Are you an Employer? <Link to="/employer/signin">Sign In Here</Link>
+            </p>
+
             <p className="small-paragraph">
               Don&apos;t have an account? <Link to="/signup" className="small-link">Sign Up</Link>
             </p>
@@ -94,9 +98,6 @@ class SignIn extends Component {
               <Link to="/forgotPassword">Forgot your password?</Link>
             </p>
 
-            <p className="small-paragraph">
-              Are you an Employer? <Link to="/employer/signin">Sign In Here</Link>
-            </p>
           </form>
         </div>
       </div>

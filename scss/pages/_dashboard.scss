@@ -1,5 +1,10 @@
 .dashboard {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  // justify-content: space-between;
+  padding: 5vh 15vw;
+  min-height: 80vh;
+  grid-template-columns: 1fr 2fr;
+  min-width: auto;
+  grid-gap: 100px;
   background-color: $BackgroundColor;
 }

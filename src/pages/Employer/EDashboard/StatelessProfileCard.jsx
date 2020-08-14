@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SettingsIcon from '#assets/icons/pngs/flaticon/settings.png';
 
 const StatelessProfileCard = ({ userDetails }) => {
   return (
@@ -26,7 +27,7 @@ const StatelessProfileCard = ({ userDetails }) => {
           </div>
 
           <Link to="/employer/settings/profile">
-            Edit
+            <img src={SettingsIcon} className="settings-icon"/>
           </Link>
         </div>
 

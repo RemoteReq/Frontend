@@ -1,11 +1,12 @@
 .jobList {
   background-color: $PrimaryColor;
   font-family: $SecondaryFont;
-  // position: fixed;
-  margin: 20vh 18vw 0 0;
-  right: 0;
   padding: 2% 4%;
   box-shadow: 4px 4px 20px  #e2e2e2;
-  width: 40%;
-  height: 80vh;
+
+  .job-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

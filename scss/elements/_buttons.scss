@@ -15,6 +15,13 @@ button {
   outline: none;
 }
 
+.small-button {
+  font-size: 12pt;
+  padding: 0 20px;
+  height: 40px;
+  letter-spacing: initial;
+}
+
 .button-1 {
   border: 4px;
   background: #0000ff;
