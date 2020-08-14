@@ -94,6 +94,7 @@ class ESignUp extends Component {
           <input
             type='email'
             name='email'
+            className="email"
             onChange={ this.onChange }
             placeholder='Email'
             required />
@@ -127,8 +128,8 @@ class ESignUp extends Component {
           >Create Your Profile
         </button>
 
-        <p className="small-paragraph">Already have an account?
-          <Link className="small-link" to={'/employer/signIn'}>Sign In</Link>
+        <p className="small-paragraph">
+          Already have an account? <Link className="small-link" to={'/employer/signIn'}>Sign In</Link>
         </p>
       </form>
     </div>

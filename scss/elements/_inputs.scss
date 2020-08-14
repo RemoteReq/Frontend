@@ -28,3 +28,8 @@ input {
     width: initial;
   }
 }
+
+.email:invalid {
+  background-color: pink;
+  border: 1px solid red;
+}

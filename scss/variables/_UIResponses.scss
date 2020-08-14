@@ -1,0 +1,21 @@
+.input-error{
+  background-color: pink;
+  border: 2px solid red;
+}
+
+.error {
+  font-family: $SecondaryFont;
+  font-size: 10pt;
+  color: red;
+  line-height: initial;
+}
+
+// 
+
+.display {
+  display: initial;
+}
+
+.hide {
+  display: none;
+}

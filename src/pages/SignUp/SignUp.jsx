@@ -8,10 +8,14 @@ class SignUp extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      isEmailValid: true,
+      doPasswordsMatch: true,
+    };
 
     this.onChange = this.onChange.bind(this);
     this.signUp = this.signUp.bind(this);
+    this.confirmPasswords = this.confirmPasswords.bind(this);
   }
 
   onChange(e) {
@@ -22,33 +26,48 @@ class SignUp extends Component {
     });
   }
 
+  confirmPasswords() {
+    if (this.state.password === this.state.confirmPassword) {
+      this.setState({
+        doPasswordsMatch: true,
+      });
+    } else {
+      this.setState({
+        doPasswordsMatch: false,
+      });
+    }
+  }
+
   signUp(e) {
     e.preventDefault();
+    this.confirmPasswords();
 
-    const body = {
-      username: this.state.username,
-      fullName: this.state.fullName,
-      password: this.state.password,
-      email: this.state.email,
-    };
+    if (this.state.doPasswordsMatch) {
+      const body = {
+        username: this.state.username,
+        fullName: this.state.fullName,
+        password: this.state.password,
+        email: this.state.email,
+      };
 
-    console.log('registration firing away!', body);
+      axios.post(`${backend}/api/signup`, body)
+        .then((response) => {
+          console.log(response);
 
-    axios.post(`${backend}/api/signup`, body)
-      .then((response) => {
-        console.log(response);
-
-        return response.status;
-      })
-      .then((status) => {
-        if (status === 200) {
-          // also subscribe them to our DB
-          this.props.history.push('/signin');
-        } else {
-          console.log('Account taken!');
-        }
-      })
-      .catch((err) => { return console.log(err); });
+          return response.status;
+        })
+        .then((status) => {
+          if (status === 200) {
+            // also subscribe them to our DB
+            this.props.history.push('/signin');
+          } else {
+            console.log('Account taken!');
+          }
+        })
+        .catch((err) => { return console.log(err); });
+    } else {
+      console.log('passwords do not match');
+    }
   }
 
   render() {
@@ -100,11 +119,19 @@ class SignUp extends Component {
             placeholder='Create your password'
             required />
           <input
+            className={
+              `${this.state.doPasswordsMatch ? '' : 'input-error'}`
+            }
             type='password'
-            name='regPassTwo'
+            name='confirmPassword'
             onChange={ this.onChange }
             placeholder='Confirm your password'
             required />
+            <p className={
+              `${this.state.doPasswordsMatch ? 'error hide' : 'error'}`
+            }>
+              Passwords do not match
+            </p>
         </div>
 
         <p className="password-note">Password must be at least 8 characters *</p>
