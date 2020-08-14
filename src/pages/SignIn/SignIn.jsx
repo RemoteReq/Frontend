@@ -105,7 +105,7 @@ class SignIn extends Component {
             </button>
 
             <p className="small-paragraph">
-              Are you an Employer? <Link to="/employer/signin">Sign In Here</Link>
+              Are you an employer? <Link to="/employer/signin">Sign In Here</Link>
             </p>
 
             <p className="small-paragraph">

@@ -5,7 +5,7 @@ import {
 import axios from 'axios';
 import Navigation from '../../components/parts/Navigation2.jsx';
 // import ProfileCard from './ProfileCard.jsx';
-import StatelessProfileCard from './StatelessProfileCard.jsx';
+import ProfileCard from './ProfileCard.jsx';
 import JobList from './jobList/JobList.jsx';
 import Reminder from './Reminder.jsx';
 import QnA from '../QnA/QnA.jsx';
@@ -83,7 +83,7 @@ class Dashboard extends Component {
         />
 
         <div className='dashboard'>
-          <StatelessProfileCard userDetails={userDetails}/>
+          <ProfileCard userDetails={userDetails}/>
 
           <Switch>
             <Route

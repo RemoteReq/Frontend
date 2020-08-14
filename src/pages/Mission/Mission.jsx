@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import RedLine from '#assets/images/svgs/red-line.svg';
 import PinkLine from '#assets/images/svgs/pink-line.svg';
 import WebFooter from '../../components/parts/WebFooter.jsx';
@@ -16,9 +17,9 @@ const Mission = () => {
 
           <div className="mission-statement">
             <div className="mission-statement-upper">
-              <h2>
+              <h1>
                 About Us
-              </h2>
+              </h1>
             </div>
 
             <div className="mission-statement-lower">
@@ -54,9 +55,9 @@ const Mission = () => {
       header={'Put our network to work for your cause.'}
       graphics={false}
       component={
-        <button className="button-1">
-          Submit a Job Req
-        </button>
+        <Link to="/employer">
+        <button className="button-1">Submit a Job Req</button>
+        </Link>
       }
       />
   </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SettingsIcon from '#assets/icons/pngs/flaticon/settings.png';
 
-const StatelessProfileCard = ({ userDetails }) => {
+const ProfileCard = ({ userDetails }) => {
   return (
     userDetails
 
@@ -50,4 +50,4 @@ const StatelessProfileCard = ({ userDetails }) => {
   );
 };
 
-export default StatelessProfileCard;
+export default ProfileCard;
