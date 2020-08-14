@@ -7,15 +7,16 @@ class Auth {
     this.authState = false;
   }
 
-  login(credentials, cb) {
-    axios.post(`${backend}/api/signin/employerSignIn`, credentials)
+  login(credentials, cb, err) {
+    axios.post(`${backend}/api/signin`, credentials)
       .then((response) => {
         if (response.status === 200) {
-          localStorage.setItem('e-session', response.data.token);
+          localStorage.setItem('session', response.data.token);
           this.authState = true;
           cb();
         }
-      });
+      })
+      .catch(err());
   }
 
   logout(cb) {

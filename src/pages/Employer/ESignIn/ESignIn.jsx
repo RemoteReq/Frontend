@@ -37,6 +37,10 @@ class ESignIn extends Component {
       this.setState({
         redirectToReferrer: true,
       });
+    }, () => {
+      this.setState({
+        loginFailed: true,
+      });
     });
   }
 
@@ -67,7 +71,7 @@ class ESignIn extends Component {
             autoComplete="current-username"
             className="e-signin-email"
             onChange={ this.updateInfoOnChange }
-            placeholder="Username" />
+            placeholder="Username or Email" />
           <input
             type="password"
             name="password"
@@ -75,6 +79,12 @@ class ESignIn extends Component {
             className="login-password"
             onChange={ this.updateInfoOnChange }
             placeholder="Password" />
+
+          <p className={
+              `${this.state.loginFailed ? 'error' : 'hide'}`
+            }>
+              Incorrect Username/Email OR Password
+          </p>
           <button onClick={ this.login }
                   className="e-button"
           >Sign in
