@@ -56,6 +56,7 @@ class SignIn extends Component {
 
     this.setState({
       [`${e.target.name}`]: e.target.value,
+      loginFailed: false,
     });
   }
 
@@ -74,6 +75,10 @@ class SignIn extends Component {
         <div className="login-container" >
 
           <form className="login-form" >
+            <h3>Job Seeker Sign In</h3>
+
+            <br/>
+
             <input
               name="username"
               autoComplete="current-username"

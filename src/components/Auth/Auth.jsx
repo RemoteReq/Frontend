@@ -16,7 +16,9 @@ class Auth {
           cb();
         }
       })
-      .catch(err());
+      .catch(() => {
+        err();
+      });
   }
 
   logout(cb) {
