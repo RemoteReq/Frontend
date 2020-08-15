@@ -30,7 +30,7 @@ class QnA extends Component {
           token: localStorage.getItem('session'),
         },
       })
-        .then((response) => {
+        .then(() => {
           this.setState({
             redirectToReferrer: true,
           }, () => { console.log(this.state); });
@@ -63,9 +63,9 @@ class QnA extends Component {
 
 
         <form>
-          <p>
+          <div className="QnA-map">
             This is a nav for the rest of the form..
-          </p>
+          </div>
 
           <Switch>
             <Route path="/QnA/basics" component={QnABasics}/>
@@ -131,7 +131,10 @@ const QnABasics = () => {
       </select>
 
       <div className="form-nav">
-        <button>Back</button>
+        <Link to="/Dashboard">
+          <button>Back</button>
+        </Link>
+
         <Link to="/QnA/causes">
           <button className="button-1">Next</button>
         </Link>
@@ -148,7 +151,10 @@ const QnACauses = () => {
       </p>
 
       <div className="form-nav">
-        <button>Prev</button>
+        <Link to="/QnA/basics">
+          <button>Prev</button>
+        </Link>
+
         <Link to="/QnA/experience">
           <button className="button-1">Next</button>
         </Link>
@@ -165,7 +171,10 @@ const QnAExperience = () => {
       </p>
 
       <div className="form-nav">
-        <button>Prev</button>
+        <Link to="/QnA/casuses">
+          <button>Prev</button>
+        </Link>
+
         <Link to="/QnA/expectations">
           <button className="button-1">Next</button>
         </Link>
@@ -182,10 +191,9 @@ const QnAExpectations = () => {
       </p>
 
       <div className="form-nav">
-        <button>Prev</button>
-        <Link to="/QnA/causes">
-          <button className="button-1">Next</button>
-        </Link>
+        <button></button>
+
+        <button className="button-1">Submit</button>
       </div>
     </div>
   );

@@ -37,7 +37,13 @@ const ProfileCard = ({ userDetails }) => {
                 {userDetails.keySkills.map((item, key) => { return <li key={key}>{item || 'user skill item here'}</li>; })}
               </ul>
 
-              <button className="button-2">Upload Resume</button>
+              <input
+                type="file"
+                name="resume"
+                className="input-file"
+              />
+              <label htmlFor="resume">Upload a resume</label>
+
             </div>
           </div>
 
