@@ -16,9 +16,9 @@ const SettingsNav = () => {
         </button>
       </Link>
 
-      <Link to="/employer/settings/jobPreference">
+      <Link to="/employer/settings/jobReqNotifications">
         <button>
-            Job Preference
+            Job Req Notifications
         </button>
       </Link>
     </div>

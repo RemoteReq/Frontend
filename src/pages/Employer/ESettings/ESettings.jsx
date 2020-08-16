@@ -6,7 +6,7 @@ import ENav from '../ENav/ENav.jsx';
 import ProfileEditor from './Profile/StatelessProfileEditor.jsx';
 // import AccountEditor from './Account/AccountEditor.jsx';
 import AccountEditor from './Account/StatelessAccountEditor.jsx';
-import JobPreferenceEditor from './JobPreference/JobPreferenceEditor.jsx';
+import JobReqNotifications from './JobReqNotifications/JobReqNotifications.jsx';
 import SettingsNav from './ESettingsNav.jsx';
 import EAuth from '../EAuth/EAuth.jsx';
 
@@ -217,7 +217,7 @@ class ESettings extends Component {
                   }
 
                   }/>
-                  <Route path="/employer/settings/jobPreference" component={JobPreferenceEditor} userDetails={userDetails}/>
+                  <Route path="/employer/settings/jobReqNotifications" component={JobReqNotifications} userDetails={userDetails}/>
                 </Switch>
               </div>
             </div>
