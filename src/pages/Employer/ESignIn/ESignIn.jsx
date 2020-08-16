@@ -49,6 +49,7 @@ class ESignIn extends Component {
 
     this.setState({
       [`${e.target.name}`]: e.target.value,
+      loginFailed: false,
     });
   }
 

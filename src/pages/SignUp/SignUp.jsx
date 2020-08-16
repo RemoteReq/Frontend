@@ -23,30 +23,36 @@ class SignUp extends Component {
 
     this.setState({
       [`${e.target.name}`]: e.target.value,
+      signUpFailed: false,
     });
   }
 
-  confirmPasswords() {
+  confirmPasswords(authFunction) {
     if (this.state.password === this.state.confirmPassword) {
       this.setState({
         doPasswordsMatch: true,
+      }, () => {
+        console.log('lets get you signed up!');
+
+        authFunction();
       });
     } else {
       this.setState({
         doPasswordsMatch: false,
+      }, () => {
+        console.log('sorry, your passwords do no match in signup');
       });
     }
   }
 
   signUp(e) {
     e.preventDefault();
-    this.confirmPasswords();
 
-    if (this.state.doPasswordsMatch) {
+    this.confirmPasswords(() => {
       const body = {
         username: this.state.username,
         fullName: this.state.fullName,
-        password: this.state.password,
+        password: this.state.confirmPassword,
         email: this.state.email,
       };
 
@@ -58,16 +64,14 @@ class SignUp extends Component {
         })
         .then((status) => {
           if (status === 200) {
-            // also subscribe them to our DB
+          // also subscribe them to our DB
             this.props.history.push('/signin');
           } else {
             console.log('Account taken!');
           }
         })
         .catch((err) => { return console.log(err); });
-    } else {
-      console.log('passwords do not match');
-    }
+    });
   }
 
   render() {
@@ -128,7 +132,7 @@ class SignUp extends Component {
             placeholder='Confirm your password'
             required />
             <p className={
-              `${this.state.doPasswordsMatch ? 'error hide' : 'error'}`
+              `error ${this.state.doPasswordsMatch ? 'hide' : 'show'}`
             }>
               Passwords do not match
             </p>

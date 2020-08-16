@@ -131,12 +131,9 @@ const QnABasics = () => {
       </select>
 
       <div className="form-nav">
-        <Link to="/Dashboard">
-          <button>Back</button>
-        </Link>
-
+        <div></div>
         <Link to="/QnA/causes">
-          <button className="button-1">Next</button>
+          <button className="button-next">Next &raquo;</button>
         </Link>
       </div>
     </div>
@@ -152,11 +149,11 @@ const QnACauses = () => {
 
       <div className="form-nav">
         <Link to="/QnA/basics">
-          <button>Prev</button>
+          <button className="button-prev">&laquo; Prev</button>
         </Link>
 
         <Link to="/QnA/experience">
-          <button className="button-1">Next</button>
+          <button className="button-next">Next &raquo;</button>
         </Link>
       </div>
     </div>
@@ -171,12 +168,12 @@ const QnAExperience = () => {
       </p>
 
       <div className="form-nav">
-        <Link to="/QnA/casuses">
-          <button>Prev</button>
+        <Link to="/QnA/causes">
+          <button className="button-prev">&laquo; Prev</button>
         </Link>
 
         <Link to="/QnA/expectations">
-          <button className="button-1">Next</button>
+          <button className="button-next">Next &raquo;</button>
         </Link>
       </div>
     </div>
@@ -191,9 +188,11 @@ const QnAExpectations = () => {
       </p>
 
       <div className="form-nav">
-        <button></button>
+        <Link to="/QnA/experience">
+          <button className="button-prev">&laquo; Prev</button>
+        </Link>
 
-        <button className="button-1">Submit</button>
+        <button className="button-next">Submit</button>
       </div>
     </div>
   );
