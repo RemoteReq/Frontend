@@ -8,10 +8,10 @@ class Auth {
   }
 
   login(credentials, cb, err) {
-    axios.post(`${backend}/api/signin`, credentials)
+    axios.post(`${backend}/api/signin/employerSignIn`, credentials)
       .then((response) => {
         if (response.status === 200) {
-          localStorage.setItem('session', response.data.token);
+          localStorage.setItem('e-session', response.data.token);
           this.authState = true;
           cb();
         }

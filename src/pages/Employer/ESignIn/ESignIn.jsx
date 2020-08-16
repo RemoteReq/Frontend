@@ -86,7 +86,7 @@ class ESignIn extends Component {
             placeholder="Password" />
 
           <p className={
-              `${this.state.loginFailed ? 'error' : 'hide'}`
+              `error ${this.state.loginFailed ? 'show' : 'hide'}`
             }>
               Incorrect Username/Email OR Password
           </p>
