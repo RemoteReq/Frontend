@@ -17,6 +17,7 @@ class QnA extends Component {
     };
 
     this.updateRedirect = this.updateRedirect.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -47,6 +48,22 @@ class QnA extends Component {
     });
   }
 
+  handleChange(e) {
+    e.preventDefault();
+
+    this.setState({
+      [e.target.name]: e.target.value,
+    }, () => { console.log(this.state); });
+  }
+
+  isChecked(e) {
+    e.preventDefault();
+
+    this.setState({
+      [e.target.name]: e.target.checked,
+    });
+  }
+
   render() {
     return (
     <div>
@@ -63,15 +80,39 @@ class QnA extends Component {
 
 
         <form>
-          <div className="QnA-map">
+          {/* <div className="QnA-map">
             This is a nav for the rest of the form..
-          </div>
+          </div> */}
 
           <Switch>
-            <Route path="/QnA/basics" component={QnABasics}/>
-            <Route path="/QnA/causes" component={QnACauses}/>
-            <Route path="/QnA/experience" component={QnAExperience}/>
-            <Route path="/QnA/expectations" component={QnAExpectations}/>
+            <Route path="/QnA/basics" render={(props) => {
+              return (
+                <QnABasics {...props}
+                  handleChange={this.handleChange}
+                />
+              );
+            }}/>
+            <Route path="/QnA/causes" render={(props) => {
+              return (
+                <QnACauses {...props}
+                  handleChange={this.handleChange}
+                />
+              );
+            }} />
+            <Route path="/QnA/experience" render={(props) => {
+              return (
+                <QnAExperience {...props}
+                  handleChange={this.handleChange}
+                />
+              );
+            }} />
+            <Route path="/QnA/expectations" render={(props) => {
+              return (
+                <QnAExpectations {...props}
+                  handleChange={this.handleChange}
+                />
+              );
+            }} />
           </Switch>
         </form>
       </div>
@@ -80,35 +121,41 @@ class QnA extends Component {
   }
 }
 
-const Radio = ({ value, label, name }) => {
+const Radio = ({
+  value, label, name, handler,
+}) => {
   return (
     <div className="radio">
       <input
         type="radio"
         value={value}
         name={name}
+        onChange={(e) => { return handler(e); }}
         />
       <label>{label}</label>
     </div>
   );
 };
 
-const QnABasics = () => {
+const QnABasics = ({ handleChange }) => {
   return (
     <div className="QnA-page">
       <p>
         Are you eligible to work in the United States?
       </p>
       <div className="radios">
-        <Radio value="yes" label="yes" name="eligibleToWorkInUS"/>
+        <Radio value={true} label="yes" name="eligibleToWorkInUS" handler={handleChange}/>
 
-        <Radio value="no" label="no" name="eligibleToWorkInUS"/>
+        <Radio value={false} label="no" name="eligibleToWorkInUS" handler={handleChange}/>
       </div>
 
       <p>
         What is your highest level of education?
       </p>
-      <select>
+      <select
+        onChange={handleChange}
+        name="education"
+        >
         <option value="College">College</option>
         <option value="University">University</option>
       </select>
@@ -118,8 +165,8 @@ const QnABasics = () => {
       </p>
 
       <div className="radios">
-        <Radio value="yes" label="yes" name="fluentInEnglish"/>
-        <Radio value="no" label="no" name="fluentInEnglish"/>
+        <Radio value={true} label="yes" name="fluentInEnglish" handler={handleChange}/>
+        <Radio value={false} label="no" name="fluentInEnglish" handler={handleChange}/>
       </div>
 
       <p>
@@ -142,10 +189,45 @@ const QnABasics = () => {
 
 const QnACauses = () => {
   return (
-    <div>
+    <div className="QnA-page">
       <p>
         Selections of Causes here
       </p>
+      <select>
+        <option>Educational Equity (K-12)</option>
+        <option>Immigrant Rights</option>
+        <option>Voting Rights</option>
+        <option>Youth Extracurriculars (sports, band, etc.)</option>
+        <option>Environmental Rights</option>
+        <option>Animal Rights</option>
+        <option>US Military Veterans</option>
+        <option>LGBTQ rights </option>
+        <option>Health and Medical Care</option>
+        <option>Women’s Rights </option>
+        <option>Community Development </option>
+        <option>Criminal Justice Reform</option>
+        <option>Food Insecurity</option>
+        <option>Water and Sanitation</option>
+        <option>Arts and Culture </option>
+        <option>Religion</option>
+      </select>
+
+      <p>
+        Why do you want to work on these causes? (Optional 250 words or less)
+      </p>
+
+      <div className="textarea-div">
+        <textarea/>
+      </div>
+
+      <p>
+        Are you looking for full-time or part time remote work?
+      </p>
+
+      <div>
+        <Radio />
+        <Radio />
+      </div>
 
       <div className="form-nav">
         <Link to="/QnA/basics">
@@ -162,7 +244,7 @@ const QnACauses = () => {
 
 const QnAExperience = () => {
   return (
-    <div>
+    <div className="QnA-page">
       <p>
         Form of Experience Here
       </p>
@@ -182,7 +264,7 @@ const QnAExperience = () => {
 
 const QnAExpectations = () => {
   return (
-    <div>
+    <div className="QnA-page">
       <p>
         Form of Expectations Here
       </p>
