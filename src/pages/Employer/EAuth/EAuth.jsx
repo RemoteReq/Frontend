@@ -12,6 +12,7 @@ class Auth {
       .then((response) => {
         if (response.status === 200) {
           localStorage.setItem('e-session', response.data.token);
+          localStorage.setItem('clientId', response.data.clientIdOfPaymentGateway);
           this.authState = true;
           cb();
         }
@@ -23,6 +24,7 @@ class Auth {
 
   logout(cb) {
     localStorage.removeItem('e-session');
+    localStorage.removeItem('clientId');
     this.authState = false;
     cb();
   }
@@ -43,6 +45,28 @@ class Auth {
       .catch((err) => {
         console.log('error in verification request', err);
       });
+  }
+
+  generateClientToken() {
+    const clientId = localStorage.getItem('clientId');
+    const session = localStorage.getItem('e-session');
+
+    axios.post(`${backend}/api/jobs/client_token_for_payment`, { clientId }, {
+      headers: {
+        token: session,
+      },
+    })
+      .then((response) => {
+        console.log(response);
+        localStorage.setItem('clientToken', response.data);
+      })
+      .catch((err) => {
+        console.log('error genereating tokenId', err);
+      });
+  }
+
+  destroyClientToken() {
+    localStorage.removeItem('clientToken');
   }
 }
 

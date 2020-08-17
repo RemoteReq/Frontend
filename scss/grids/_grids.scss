@@ -1,0 +1,15 @@
+// below are a list of frequently used grid templates that can be used as classNames
+
+.grid-2fr-1fr{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.grid-1fr-1fr {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.spaced {
+  grid-gap: 30px;
+}
