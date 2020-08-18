@@ -1,0 +1,17 @@
+.first-payment {
+  background-color: $BackgroundColor;
+  justify-content: space-evenly;
+  display: flex;
+
+  form {
+    width: 50%;
+    margin: 4vh 0;
+    background-color: white;
+  }
+
+  .form-handler {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
