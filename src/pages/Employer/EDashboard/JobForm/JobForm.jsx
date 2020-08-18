@@ -56,7 +56,7 @@ class JobForm extends Component {
             token: localStorage.getItem('e-session'),
           },
           data: {
-            amount: 5.20,
+            amount: 100.00,
             paymentMethodNonce: response.nonce,
           },
         })
@@ -179,8 +179,9 @@ class JobForm extends Component {
             </div>
           </div>
 
-          <h4>Checkout</h4>
+          <h3>Checkout</h3>
 
+          <h3>Total: $100.00</h3>
           {
             this.state.clientToken
               ? <div>

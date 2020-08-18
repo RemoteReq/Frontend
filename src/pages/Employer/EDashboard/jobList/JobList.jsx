@@ -17,6 +17,11 @@ const JobList = ({ jobs }) => {
           +
         </button>
       </Link>
+
+    </div>
+
+    <div>
+      <p>This is where my list of jobs would go after I post them.</p>
     </div>
 
   </div>
