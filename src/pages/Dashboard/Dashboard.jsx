@@ -63,6 +63,37 @@ class Dashboard extends Component {
     });
   }
 
+  handleFileUpload(e) {
+    e.preventDefault();
+
+    console.log(e.target.value);
+
+    const formData = new FormData();
+
+    formData.append('uploadResume', e.target.files[0]);
+
+    // to check formData contents
+
+    // for (const key of formData.entries()) {
+    //   console.log(`${key[0]}, ${key[1]}`);
+    // }
+
+    axios({
+      url: `${backend}/api/user/uploadResume`,
+      method: 'post',
+      headers: {
+        token: localStorage.getItem('session'),
+      },
+      data: formData,
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .then(() => {
+        window.location.reload();
+      });
+  }
+
   render() {
     document.title = 'Dashboard';
     const { redirectToReferrer } = this.state;
@@ -83,7 +114,7 @@ class Dashboard extends Component {
         />
 
         <div className='dashboard'>
-          <ProfileCard userDetails={userDetails}/>
+          <ProfileCard userDetails={userDetails} handleFileUpload={this.handleFileUpload}/>
 
           <Switch>
             <Route

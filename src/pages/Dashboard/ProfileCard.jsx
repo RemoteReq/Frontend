@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SettingsIcon from '#assets/icons/pngs/flaticon/settings.png';
 
-const ProfileCard = ({ userDetails }) => {
+const ProfileCard = ({ userDetails, handleFileUpload }) => {
   return (
     userDetails
 
@@ -37,10 +37,17 @@ const ProfileCard = ({ userDetails }) => {
                 {userDetails.keySkills.map((item, key) => { return <li key={key}>{item || 'user skill item here'}</li>; })}
               </ul>
 
+              <h5>Current resume:</h5>
+              <p className="small-paragraph">
+                {userDetails.resumePath}
+              </p>
+
               <input
                 type="file"
                 name="resume"
-                className="input-file"
+                accept="application/pdf,application/vnd.ms-excel"
+                className="button-1"
+                onChange={(e) => { return handleFileUpload(e); }}
               />
               <label htmlFor="resume">Upload a resume</label>
 
