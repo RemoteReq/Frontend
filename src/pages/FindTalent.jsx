@@ -104,9 +104,15 @@ const FindTalent = () => {
     header={'Build your remote team.'}
     graphics={true}
     component={
+      <div>
       <Link to="/employer">
-      <button className="button-1">Submit a Job Req</button>
-    </Link>
+        <button className="button-1">Submit a Job Req</button>
+      </Link>
+
+      <Link to="howItWorks">
+        <button className="button-2">How it works</button>
+      </Link>
+    </div>
     }
     />
 

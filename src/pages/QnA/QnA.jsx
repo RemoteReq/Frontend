@@ -191,7 +191,7 @@ const QnACauses = () => {
   return (
     <div className="QnA-page">
       <p>
-        Selections of Causes here
+        Causes
       </p>
       <select>
         <option>Educational Equity (K-12)</option>
@@ -225,8 +225,10 @@ const QnACauses = () => {
       </p>
 
       <div>
-        <Radio />
-        <Radio />
+        <div className="radios">
+        <Radio value="Full" label="Full-Time" name="jobType"/>
+        <Radio value="Part" label="Part-Time" name="jobType"/>
+        </div>
       </div>
 
       <div className="form-nav">
@@ -245,9 +247,12 @@ const QnACauses = () => {
 const QnAExperience = () => {
   return (
     <div className="QnA-page">
-      <p>
-        Form of Experience Here
-      </p>
+      <p>Your experience</p>
+      <p>What is the most recent industry you were working in?</p>
+      <input/>
+
+      <p>How many years have you worked the industry you mentioned above?</p>
+      <input />
 
       <div className="form-nav">
         <Link to="/QnA/causes">
@@ -266,8 +271,17 @@ const QnAExpectations = () => {
   return (
     <div className="QnA-page">
       <p>
-        Form of Expectations Here
+        Where are you going from here?
       </p>
+
+      <p>Are you looking to change industries?</p>
+      <div className="radios">
+        <Radio label="yes" value={true} name="changingIndustries"/>
+        <Radio label="no" value ={false} name="changingIndustries" />
+      </div>
+
+      <p>What industry would you like to work in next?</p>
+      <select/>
 
       <div className="form-nav">
         <Link to="/QnA/experience">

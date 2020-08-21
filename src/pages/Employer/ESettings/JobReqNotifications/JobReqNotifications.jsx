@@ -10,7 +10,7 @@ const JobReqNotifications = () => {
       <Divider/>
 
       <form>
-        <div>
+        {/* <div>
           <h4>Notify me when:</h4>
 
 
@@ -36,7 +36,7 @@ const JobReqNotifications = () => {
             className="button-1"
           >Update</button>
 
-        </div>
+        </div> */}
       </form>
     </div>
   );

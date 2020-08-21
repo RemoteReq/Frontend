@@ -17,17 +17,18 @@
     .image-column {
       margin: 10px 25px;
 
-      .image-box {
-        height: 250px;
-        width: 250px;
-        background-color: #ebebeb;
-
-        img {
-          max-height: 100%;
-          max-width: 100%;
-          // border-radius: 250px;
-        }
+      img {
+        max-height: 100%;
+        max-width: 100%;
+        // border-radius: 250px;
       }
     }
   }
+}
+
+.image-box {
+  height: 250px;
+  width: 100%;
+  background-color: #ebebeb;
+
 }

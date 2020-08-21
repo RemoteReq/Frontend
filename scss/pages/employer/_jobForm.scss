@@ -15,7 +15,8 @@
   }
 
   .form-handler {
+    margin-top: 10%;
     display: flex;
-    right: 0;
+    flex-direction: row-reverse;
   }
 }

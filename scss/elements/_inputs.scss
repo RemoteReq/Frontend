@@ -59,3 +59,10 @@ input {
 	outline: 1px dotted #000;
 	outline: -webkit-focus-ring-color auto 5px;
 }
+
+.slider {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-gap: 50px;
+
+}

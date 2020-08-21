@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import DropIn from 'braintree-web-drop-in-react';
 import axios from 'axios';
 import Eauth from '../../EAuth/EAuth.jsx';
@@ -10,8 +11,9 @@ class FirstPayment extends Component {
     super(props);
 
     this.state = {
-
+      jobReqPurchased: false,
     };
+
     this.purchase = this.purchase.bind(this);
   }
 
@@ -44,8 +46,12 @@ class FirstPayment extends Component {
           },
         })
           .then((result) => {
-            console.log(result);
-          // then on success, redirect Employer to JobForm
+            console.log('after purchase', result);
+            // then on success, redirect Employer to JobForm
+            this.setState({
+              jobReqPurchased: true,
+              transactionId: result.data.transactionId,
+            });
           })
           .catch((error) => {
             console.log(error);
@@ -55,6 +61,26 @@ class FirstPayment extends Component {
   }
 
   render() {
+    const { jobReqPurchased } = this.state;
+    const { transactionId } = this.state;
+
+    // If it has been paid then take them to the addJob form
+
+    if (jobReqPurchased) {
+      return (
+        <div>
+          <Redirect
+            to={{
+              pathname: '/employer/addJob',
+              state: {
+                transactionId,
+              },
+            }}
+          />
+        </div>
+      );
+    }
+
     // Drop In
     return (
       <div className="first-payment">
@@ -64,6 +90,9 @@ class FirstPayment extends Component {
           <h3>Checkout</h3>
 
           <h3>Total: $100.00</h3>
+          <p className="small-paragraph">
+            After purchasing a Job Req you will be redirected to our job posting form.
+          </p>
           {
             this.state.clientToken
               ? <div>
@@ -81,7 +110,7 @@ class FirstPayment extends Component {
                   </div>
                 </div>
               : <div>Loading Drop In ...</div>
-}
+          }
         </form>
       </div>
     );

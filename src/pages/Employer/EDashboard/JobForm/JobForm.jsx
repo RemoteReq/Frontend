@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import DropIn from 'braintree-web-drop-in-react';
-import axios from 'axios';
+import Axios from 'axios';
+import EAuth from '../../EAuth/EAuth.jsx';
 import ENav from '../../ENav/ENav.jsx';
-import Eauth from '../../EAuth/EAuth.jsx';
-import Divider from '#parts/Divider.jsx';
+
 
 class JobForm extends Component {
   constructor(props) {
     super(props);
-
-    this.instance;
 
     this.state = {
       title: '',
@@ -24,52 +21,31 @@ class JobForm extends Component {
       location: '',
       numberOfCandidates: 0,
       percentageMatch: 0,
-      transactionIdForAddJob: '',
-      clientToken: null,
     };
 
-    this.purchase = this.purchase.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.addJob = this.addJob.bind(this);
   }
 
   componentDidMount() {
-    Eauth.generateClientToken();
-
-    const newToken = localStorage.getItem('clientToken');
-
-    this.setState({
-      clientToken: newToken,
-    });
+    // this.setState({
+    //   transactionId: this.props.location.state
+    // })
   }
 
-  purchase(e) {
-    e.preventDefault();
+  // handleFileUpload(e) {
+  //   e.preventDefault();
 
-    this.instance.requestPaymentMethod()
-      .then((response) => {
-        console.log(response);
+  //   console.log('Your image', e.target.value);
 
-        axios({
-          url: 'http://3.21.186.204:3030/api/jobs/checkoutForAddjob',
-          method: 'POST',
-          headers: {
-            token: localStorage.getItem('e-session'),
-          },
-          data: {
-            amount: 100.00,
-            paymentMethodNonce: response.nonce,
-          },
-        })
-          .then((result) => {
-            console.log(result);
-          // then on success, use addJob API
-          })
-          .catch((error) => {
-            console.log(error);
-          // catch; error status message
-          });
-      });
-  }
+  //   const formData = new FormData();
+
+  //   formData.append('empCompanyLogo', e.target.files[0]);
+
+  //   // Axios.post({
+  //   //   url: `${EAuth.backend}/`
+  //   // });
+  // }
 
   handleChange(e) {
     e.preventDefault();
@@ -81,15 +57,57 @@ class JobForm extends Component {
 
   addJob(e) {
     e.preventDefault();
+
+    const addJobForm = new FormData();
+
+    // addJobForm.append('companyLogo', 'jpeg.jpeg');
+    // addJobForm.append('jobDescription', 'pdf.pdf');
+    addJobForm.append('title', this.state.jobTitle);
+    addJobForm.append('companyName', this.state.companyName);
+    // addJobForm.append('companyWebsiteUrl', this.state.comapnyURL);
+    addJobForm.append('industryType', this.state.industryType);
+    addJobForm.append('jobDetails', this.state.jobDetails);
+    addJobForm.append('keySkills', ['Have 2 legs', 'Have 2 arms']);
+    addJobForm.append('ctc', this.state.ctc);
+    addJobForm.append('minExperience', this.state.minExperience);
+    addJobForm.append('maxExperience', this.state.maxExperience);
+    addJobForm.append('location', this.state.location);
+    addJobForm.append('numberOfCandidate', this.state.numberOfCandidates);
+    addJobForm.append('percentageMatch', this.state.percentageMatch);
+    addJobForm.append('transactionIdForAddJob', this.props.location.state.transactionId);
+
+    for (const value of addJobForm.values()) {
+      console.log(value);
+    }
+
+    Axios({
+      url: `${EAuth.backend}/api/jobs/add`,
+      method: 'post',
+      headers: {
+        token: localStorage.getItem('e-session'),
+      },
+      data: addJobForm,
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   render() {
+    const { transactionId } = this.props.location.state;
+    console.log(transactionId);
+
     return (
       <div className="add-job">
         <ENav />
 
         <form className="job-form">
           <h4>Add Job</h4>
+
+        <h4>Transaction ID: {transactionId}</h4>
 
           <div className="grid-1fr-1fr spaced">
 
@@ -130,32 +148,50 @@ class JobForm extends Component {
 
               <label>Key Skills</label>
               <input
-                name=""
+                name="keySkills"
                 onChange={(e) => { return this.handleChange(e); }}
               />
+
+              <button
+                className="button-2"
+              >
+                Upload Description
+              </button>
             </div>
 
             <div>
-              <label>CTC</label>
+
+              <label>Company Logo</label>
+              <div className="image-box">
+                <img />
+              </div>
+              <input
+                type="file"
+                className="button-1"
+                />
+
+              <label>Salary</label>
               <input
                 type="number"
                 name="ctc"
                 onChange={(e) => { return this.handleChange(e); }}
               />
 
-              <label>Minimum Years of Experience</label>
-              <input
-                type="number"
-                name="minExperience"
-                onChange={(e) => { return this.handleChange(e); }}
-              />
+              <div className="range">
+                <label>Minimum Years of Experience</label>
+                <input
+                  type="number"
+                  name="minExperience"
+                  onChange={(e) => { return this.handleChange(e); }}
+                  />
 
-              <label>Maximum Years of Experience</label>
-              <input
-                type="number"
-                name="maxExperience"
-                onChange={(e) => { return this.handleChange(e); }}
-              />
+                <label>Maximum Years of Experience</label>
+                <input
+                  type="number"
+                  name="maxExperience"
+                  onChange={(e) => { return this.handleChange(e); }}
+                  />
+              </div>
 
               <label>Location</label>
               <input
@@ -163,44 +199,58 @@ class JobForm extends Component {
                 onChange={(e) => { return this.handleChange(e); }}
               />
 
-              <label>Number of Candidates</label>
-              <input
-                type="number"
-                name="numberOfCandidates"
-                onChange={(e) => { return this.handleChange(e); }}
-              />
+              <div className="notification-settings">
+                <h3>Notification Settings</h3>
+                <p className="small-paragraph">
+                  We'll send you e-mail notifcations around these candidate-matching parameters.
+                </p>
 
-              <label>Percentage Match</label>
-              <input
-                type="number"
-                name="percentageMatch"
-                onChange={(e) => { return this.handleChange(e); }}
-              />
+                <div className="sliders">
+                  <label>Number of Candidates</label>
+                  <div className="slider">
+                    <input
+                      type="range"
+                      min="1"
+                      max="10"
+                      step="1"
+                      name="numberOfCandidate"
+                      defaultValue="1"
+                      onChange={(e) => { return this.handleChange(e); }}
+                      />
+                    <input
+                      value={this.state.numberOfCandidate}
+                      readOnly
+                      />
+                  </div>
+
+                  <label>Percentage Match</label>
+                  <div className="slider">
+                  <input
+                    type="range"
+                    min="20"
+                    max="100"
+                    step="1"
+                    name="percentageMatch"
+                    defaultValue="20"
+                    onChange={(e) => { return this.handleChange(e); }}
+                    />
+                  <input
+                    value={`${this.state.percentageMatch} %`}
+                    readOnly
+                    />
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
 
-          <h3>Checkout</h3>
-
-          <h3>Total: $100.00</h3>
-          {
-            this.state.clientToken
-              ? <div>
-                  <DropIn
-                    options={{ authorization: this.state.clientToken, vaultManager: true }}
-                    onInstance={(instance) => { return this.instance = instance; } }
-                    />
-
-                  <div className="form-handler">
-                    <button
-                      className="button-1"
-                      onClick={(e) => { return this.purchase(e); }}
-                      >Submit job Req
-                    </button>
-                  </div>
-                </div>
-              : <div>Loading Drop In ...</div>
-          }
-
+          <div className="form-handler">
+            <button
+              className="button-1"
+              onClick={(e) => { return this.addJob(e); }}
+            >Submit job Req</button>
+          </div>
         </form>
       </div>
     );

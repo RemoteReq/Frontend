@@ -1,14 +1,15 @@
 import axios from 'axios';
 
-const backend = 'http://3.21.186.204:3030';
+// const backend = 'http://3.21.186.204:3030';
 
 class Auth {
   constructor() {
     this.authState = false;
+    this.backend = 'http://3.21.186.204:3030';
   }
 
   login(credentials, cb, err) {
-    axios.post(`${backend}/api/signin/employerSignIn`, credentials)
+    axios.post(`${this.backend}/api/signin/employerSignIn`, credentials)
       .then((response) => {
         if (response.status === 200) {
           localStorage.setItem('e-session', response.data.token);
@@ -36,7 +37,7 @@ class Auth {
   }
 
   verify(id, cb) {
-    axios.post(`${backend}/api/signup/employerEmailVerify?id=${id}`)
+    axios.post(`${this.backend}/api/signup/employerEmailVerify?id=${id}`)
       .then((response) => {
         if (response.status === 200) {
           cb();
@@ -51,7 +52,7 @@ class Auth {
     const clientId = localStorage.getItem('clientId');
     const session = localStorage.getItem('e-session');
 
-    axios.post(`${backend}/api/jobs/client_token_for_payment`, { clientId }, {
+    axios.post(`${this.backend}/api/jobs/client_token_for_payment`, { clientId }, {
       headers: {
         token: session,
       },

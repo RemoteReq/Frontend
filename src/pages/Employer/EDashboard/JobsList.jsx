@@ -1,8 +1,10 @@
 import React from 'react';
 
-const JobsList = (props) => (
+const JobsList = (props) => {
+  return (
   <div className='jobs-list'>
-    {props.jobListing.map((data) => <div className="job-posting">
+    {props.jobListing.map((data) => {
+      return <div className="job-posting">
         <div className="jobs-company-job-title">
           <h2>{data.company}</h2>
           <h3>{data.jobTitle}</h3>
@@ -14,13 +16,15 @@ const JobsList = (props) => (
         <div className="jobs-skills">
           <h3>Required Skills</h3>
           <ul>
-            {data.skills.map((skill) => <li>{skill}</li>)}
+            {data.skills.map((skill) => { return <li>{skill}</li>; })}
           </ul>
         </div>
         <button className='jobs-apply-btn'>Apply</button>
         <button className='jobs-report-btn'>Report Post</button>
-      </div>)}
+      </div>;
+    })}
   </div>
-);
+  );
+};
 
 export default JobsList;

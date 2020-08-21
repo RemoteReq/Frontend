@@ -12,9 +12,9 @@ const JobList = ({ jobs }) => {
     <div className="job-list-header">
       <h3>Your Jobs</h3>
 
-      <Link to="/employer/addJob">
-        <button className="small-button">
-          +
+      <Link to="/employer/FirstPayment">
+        <button className="button-1 small-button">
+          Buy Job Post
         </button>
       </Link>
 
