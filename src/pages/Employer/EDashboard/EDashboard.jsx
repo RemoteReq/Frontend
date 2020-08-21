@@ -15,7 +15,7 @@ class EDashboard extends Component {
     super(props);
 
     this.state = {
-      jobListing: [],
+      jobReqs: [],
       profileMenuDropdown: false,
     };
 
@@ -47,6 +47,24 @@ class EDashboard extends Component {
           }, () => { return console.log('employer details retrieved!', this.state); });
         })
         .catch((error) => { return console.log(error); });
+
+      axios({
+        url: `${backend}/api/employers/joblistByEmployer`,
+        method: 'post',
+        headers: {
+          token: localStorage.getItem('e-session'),
+        },
+      })
+        .then((response) => {
+          console.log(response);
+
+          this.setState((prevState) => {
+            return {
+              ...prevState,
+              jobReqs: response.data,
+            };
+          }, () => { console.log(this.state); });
+        });
     }
   }
 
@@ -66,6 +84,7 @@ class EDashboard extends Component {
     document.title = 'Dashboard';
     const { redirectToReferrer } = this.state;
     const { userDetails } = this.state;
+    const { jobReqs } = this.state;
 
     if (redirectToReferrer === false) {
       return (
@@ -84,7 +103,7 @@ class EDashboard extends Component {
         <div className='dashboard'>
           <StatelessProfileCard userDetails={userDetails}/>
 
-          <JobList />
+          <JobList jobReqs={jobReqs}/>
         </div>
       </div>
     );

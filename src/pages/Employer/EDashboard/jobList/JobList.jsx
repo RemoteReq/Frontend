@@ -4,10 +4,10 @@ import JobListing from './JobListing.jsx';
 
 // From here, loop over the inherited data from App.jsx and render and JobListings
 
-const JobList = ({ jobs }) => {
+const JobList = ({ jobReqs }) => {
   return (
-
-  <div className='jobList'>
+    jobReqs
+      ? <div className='jobList'>
 
     <div className="job-list-header">
       <h3>Your Jobs</h3>
@@ -21,10 +21,18 @@ const JobList = ({ jobs }) => {
     </div>
 
     <div>
-      <p>This is where my list of jobs would go after I post them.</p>
+      {
+        jobReqs.map((jobReq, index) => {
+          return (
+            <JobListing job={jobReq} key={index} />
+          );
+        })
+      }
     </div>
 
   </div>
+
+      : <div>Getting job Reqs...</div>
 
   );
 };

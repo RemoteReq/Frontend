@@ -97,7 +97,15 @@ class FirstPayment extends Component {
             this.state.clientToken
               ? <div>
                   <DropIn
-                    options={{ authorization: this.state.clientToken, vaultManager: true }}
+                    options={{
+                      authorization: this.state.clientToken,
+                      vaultManager: true,
+                      paypal: {
+                        flow: 'vault',
+                        amount: '100.00',
+                        currency: 'USD',
+                      },
+                    }}
                     onInstance={(instance) => { return this.instance = instance; } }
                     />
 
