@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import locations from './locations.json';
 import EAuth from '../../EAuth/EAuth.jsx';
 import ENav from '../../ENav/ENav.jsx';
 
@@ -193,11 +194,20 @@ class JobForm extends Component {
                   />
               </div>
 
-              <label>Location</label>
-              <input
-                name="location"
-                onChange={(e) => { return this.handleChange(e); }}
-              />
+              <div className="select">
+                <label>Location</label>
+                <select name="location" onChange={(e) => { this.handleChange(e); }}>
+                  {
+                    locations.states.map((state, i) => {
+                      return (
+                        <option key={i} value={state}>
+                          {state}
+                        </option>
+                      );
+                    })
+                  }
+                </select>
+              </div>
 
               <div className="notification-settings">
                 <h3>Notification Settings</h3>

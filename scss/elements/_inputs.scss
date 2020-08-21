@@ -66,3 +66,12 @@ input {
   grid-gap: 50px;
 
 }
+
+.select {
+  display: flex;
+  flex-direction: column;
+
+  select {
+    width: 100%;
+  }
+}
