@@ -1,6 +1,8 @@
 import React from 'react';
 
 const JobListing = ({ job }) => {
+  console.log(job);
+
   return (
   <div className="job-listing">
 

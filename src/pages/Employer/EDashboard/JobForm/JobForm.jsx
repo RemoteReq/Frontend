@@ -63,7 +63,7 @@ class JobForm extends Component {
 
     // addJobForm.append('companyLogo', 'jpeg.jpeg');
     // addJobForm.append('jobDescription', 'pdf.pdf');
-    addJobForm.append('title', this.state.jobTitle);
+    addJobForm.append('title', this.state.title);
     addJobForm.append('companyName', this.state.companyName);
     // addJobForm.append('companyWebsiteUrl', this.state.comapnyURL);
     addJobForm.append('industryType', this.state.industryType);
