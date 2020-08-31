@@ -1,0 +1,45 @@
+.gig-select-page {
+  background-color: $BackgroundColor;
+  display: flex;
+  justify-content: space-evenly;
+
+  form {
+    background-color: white;
+    width: 50vw;
+    height: 50vh;
+    margin: 4vh 0;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      width: 48%;
+      height: 100%;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .gig-select-choice {
+      border: 1px solid lightgrey;
+      // box-shadow: 4px 4px 20px #e2e2e2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+
+      .gig-select-image {
+        background-color: gray;
+        height: 50%;
+      }
+      
+      p {
+        font-size: 12pt;
+      }
+    }
+
+    .gig-select-choice:hover {
+      box-shadow: 1px 1px 20px #e2e2e2;
+
+    }
+  }
+}

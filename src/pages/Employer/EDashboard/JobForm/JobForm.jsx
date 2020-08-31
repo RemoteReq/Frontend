@@ -4,7 +4,6 @@ import locations from './locations.json';
 import EAuth from '../../EAuth/EAuth.jsx';
 import ENav from '../../ENav/ENav.jsx';
 
-
 class JobForm extends Component {
   constructor(props) {
     super(props);
@@ -27,26 +26,6 @@ class JobForm extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.addJob = this.addJob.bind(this);
   }
-
-  componentDidMount() {
-    // this.setState({
-    //   transactionId: this.props.location.state
-    // })
-  }
-
-  // handleFileUpload(e) {
-  //   e.preventDefault();
-
-  //   console.log('Your image', e.target.value);
-
-  //   const formData = new FormData();
-
-  //   formData.append('empCompanyLogo', e.target.files[0]);
-
-  //   // Axios.post({
-  //   //   url: `${EAuth.backend}/`
-  //   // });
-  // }
 
   handleChange(e) {
     e.preventDefault();
@@ -77,9 +56,9 @@ class JobForm extends Component {
     addJobForm.append('percentageMatch', this.state.percentageMatch);
     addJobForm.append('transactionIdForAddJob', this.props.location.state.transactionId);
 
-    for (const value of addJobForm.values()) {
-      console.log(value);
-    }
+    // for (const value of addJobForm.values()) {
+    //   console.log(value);
+    // }
 
     Axios({
       url: `${EAuth.backend}/api/jobs/add`,
@@ -115,31 +94,36 @@ class JobForm extends Component {
             <div>
               <label>Job Title</label>
               <input
+                placeholder="ex: Looking for UX Developer"
                 name="title"
                 onChange={(e) => { return this.handleChange(e); }}
               />
 
               <label>Company Name</label>
               <input
+                placeholder="ex: Google"
                 name="companyName"
                 onChange={(e) => { return this.handleChange(e); }}
               />
 
               <label>Industry</label>
               <input
+                placeholder="ex: Software"
                 name="industryType"
                 onChange={(e) => { return this.handleChange(e); }}
               />
 
               <label>Role</label>
               <input
+                placeholder="UX Developer"
                 name="role"
                 onChange={(e) => { return this.handleChange(e); }}
               />
 
-              <label>Job Details</label>
+              <label>Job Details (0 / 255 characters)</label>
               <div className="textarea-div">
                 <textarea
+                  placeholder="ex: Google is looking for a new UX Developer to lead in creating a new UI for the newest version of Android"
                   className="aboutMe"
                   name="jobDetails"
                   onChange={(e) => { return this.handleChange(e); }}
@@ -149,6 +133,7 @@ class JobForm extends Component {
 
               <label>Key Skills</label>
               <input
+                placeholder="ex: Flutter, Dart, SASS, Go"
                 name="keySkills"
                 onChange={(e) => { return this.handleChange(e); }}
               />
@@ -208,6 +193,7 @@ class JobForm extends Component {
                   }
                 </select>
               </div>
+
 
               <div className="notification-settings">
                 <h3>Notification Settings</h3>

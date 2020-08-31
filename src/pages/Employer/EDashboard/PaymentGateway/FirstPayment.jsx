@@ -24,6 +24,7 @@ class FirstPayment extends Component {
 
     this.setState({
       clientToken: newToken,
+      ...this.props.location.state,
     });
   }
 
@@ -41,7 +42,7 @@ class FirstPayment extends Component {
             token: localStorage.getItem('e-session'),
           },
           data: {
-            amount: 100.00,
+            amount: this.state.price,
             paymentMethodNonce: response.nonce,
           },
         })
@@ -63,6 +64,9 @@ class FirstPayment extends Component {
   render() {
     const { jobReqPurchased } = this.state;
     const { transactionId } = this.state;
+    console.log(
+      this.props.location.state,
+    );
 
     // If it has been paid then take them to the addJob form
 
@@ -88,8 +92,8 @@ class FirstPayment extends Component {
 
         <form>
           <h3>Checkout</h3>
-
-          <h3>Total: $100.00</h3>
+    <h3>You are post a job req for a {this.props.location.state.gigType} job</h3>
+    <h3>Total: ${this.props.location.state.price}</h3>
           <p className="small-paragraph">
             After purchasing a Job Req you will be redirected to our job posting form.
           </p>

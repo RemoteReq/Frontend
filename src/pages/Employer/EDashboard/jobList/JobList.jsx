@@ -12,7 +12,7 @@ const JobList = ({ jobReqs }) => {
     <div className="job-list-header">
       <h3>Your Jobs</h3>
 
-      <Link to="/employer/FirstPayment">
+      <Link to="/employer/gigSelect">
         <button className="button-1 small-button">
           Buy Job Post
         </button>
