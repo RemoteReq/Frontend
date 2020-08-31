@@ -18,7 +18,7 @@ class Dashboard extends Component {
     super(props);
 
     this.state = {
-      jobListing: [],
+      jobListings: [],
       profileMenuDropdown: false,
     };
 
@@ -48,6 +48,20 @@ class Dashboard extends Component {
           }, () => { return console.log('user details retrieved!', this.state); });
         })
         .catch((error) => { return console.log(error); });
+
+      axios({
+        url: `${backend}/api/user/filterJobs`,
+        method: 'post',
+        headers: {
+          token: localStorage.getItem('session'),
+        },
+      })
+        .then((response) => {
+          console.log('job listings', response.data);
+          this.setState({
+            jobListings: response.data,
+          });
+        });
     }
   }
 

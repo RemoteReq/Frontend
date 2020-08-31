@@ -9,6 +9,7 @@ import AccountEditor from './Account/StatelessAccountEditor.jsx';
 import JobPreferenceEditor from './JobPreference/JobPreferenceEditor.jsx';
 import SettingsNav from './SettingsNav.jsx';
 import Auth from '../../components/Auth/Auth.jsx';
+import JobPrefenceEditor from './JobPreference/JobPreferenceEditor.jsx';
 
 const backend = 'http://3.21.186.204:3030';
 
@@ -213,7 +214,19 @@ class Settings extends Component {
                   }
 
                   }/>
-                  <Route path="/settings/jobPreference" component={JobPreferenceEditor} userDetails={userDetails}/>
+                  <Route path="/settings/jobPreference"
+                  render={(props) => {
+                    return (
+                      <JobPrefenceEditor
+                      {...props}
+                        userDetails={userDetails}
+                        handleChange={this.handleChange}
+                        handleSubmit={this.handleSubmit}
+                      />
+                    );
+                  }
+                  }
+                  />
                 </Switch>
               </div>
             </div>
