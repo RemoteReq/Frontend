@@ -33,15 +33,15 @@ const Mission = () => {
               <br/>
 
               <p className="small-paragraph">
-                We’re built on a decade of executive recruiting experience and talent consulting in the nonprofit world and 15 years of collective experience working remotely, so we know what it takes to find a great fit.
+                We’re built on a decade of executive recruiting experience and talent consulting in the nonprofit world and 15 years of collective experience working remotely. So we know what it takes to find a great fit.
               </p>
 
               <br/>
 
-              <p className="small-paragraph">
+              {/* <p className="small-paragraph">
                 RemoteReq allows job seekers to create a profile for free and instantly matches them with available positions, sending their resumés to the hiring organization. Organizations can post their remote positions, then visit their dashboard to view resumes of matched candidates and reach out to them directly.
                 Through RemoteReq, you can use your skillset to change the world, no matter what part of it you live in.
-              </p>
+              </p> */}
             </div>
           </div>
 

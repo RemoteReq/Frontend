@@ -73,6 +73,7 @@ class SignIn extends Component {
     return (
         <div className="login-form-page">
         <div className="login-container" >
+          <h4>Make an impact, remotely.</h4>
 
           <form className="login-form" >
             <h3>Job Seeker Sign In</h3>
