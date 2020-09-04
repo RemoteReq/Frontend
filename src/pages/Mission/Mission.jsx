@@ -33,7 +33,7 @@ const Mission = () => {
               <br/>
 
               <p className="small-paragraph">
-                We’re built on a decade of executive recruiting experience and talent consulting in the nonprofit world and 15 years of collective experience working remotely, so we know what it takes to find a great fit.
+                We’re built on a decade of executive recruiting experience and talent consulting in the nonprofit world and 15 years of collective experience working remotely. So we know what it takes to find a great fit.
               </p>
 
               <br/>
