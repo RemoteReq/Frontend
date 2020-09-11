@@ -8,7 +8,7 @@ const JobListing = ({ job }) => {
 
     <div>
       <div className="upper-job-listing">
-        <h3 className="job-listing-title">{job.title}</h3>
+        <h4 className="job-listing-title">{job.title}</h4>
         {/* <p>Hide Job X</p> */}
       </div>
 

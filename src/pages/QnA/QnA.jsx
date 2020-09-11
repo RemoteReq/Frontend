@@ -278,7 +278,7 @@ const FilterQnA = ({ handleChange }) => {
       </div>
 
       <p>
-        Are you able to communicate (orraly and in writing) in English at a native level?
+        Are you able to communicate (orally and in writing) in English at a native level?
       </p>
       <div className="radios">
         <Radio value={true} label="yes" name="fluentInEnglish" handler={handleChange}/>
@@ -495,11 +495,6 @@ const QnAExperience = ({ handleChange }) => {
         Provide a sample of your past relevant work (e.g. link to an online portfolio or image)
       </p>
       <input/>
-
-      <p>
-        Attach evidence of relevant Licenses/Certifications to the work you're seeking.
-      </p>
-      <input placeholder="may omit"/>
 
       <p>
         All of our jobs are remote. Do you have access to (e.g. a computer, internet connection, a telephone and a private space) to work remotely?

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Axios from 'axios';
 import locations from './locations.json';
 import EAuth from '../../EAuth/EAuth.jsx';
@@ -87,7 +88,7 @@ class JobForm extends Component {
         <form className="job-form">
           <h4>Add Job</h4>
 
-        <h4>Transaction ID: {transactionId}</h4>
+        {/* <h4>Transaction ID: {transactionId}</h4> */}
 
           <div className="grid-1fr-1fr spaced">
 
@@ -242,10 +243,12 @@ class JobForm extends Component {
           </div>
 
           <div className="form-handler">
-            <button
-              className="button-1"
-              onClick={(e) => { return this.addJob(e); }}
-            >Submit job Req</button>
+            <Link to="/employer/firstPayment">
+              <button
+                className="button-1"
+                onClick={(e) => { return this.addJob(e); }}
+                >Save job Req</button>
+            </Link>
           </div>
         </form>
       </div>

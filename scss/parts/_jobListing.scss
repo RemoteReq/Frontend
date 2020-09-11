@@ -15,12 +15,15 @@
     }
   }
 
-  h3 {
-    color: gray;
+  h4 {
+    color: $SecondaryColor;
+    font-weight: bold;
+    // text-decoration: underline;
     padding: 8px 24px 8px 24px;
   }
 
   h5 {
+    font-size: 16pt;
     padding: 8px 24px 8px 24px;
     color: lightgray;
   }
@@ -36,6 +39,10 @@
   .lower-job-listing {
     display: flex;
     justify-content: space-between;
+
+    p {
+      padding: 8px 24px; 
+    }
   }
 
   .match-rating {
