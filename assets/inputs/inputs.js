@@ -84,6 +84,15 @@ const timeZones = [
   { value: '+14:00', zone: '(GMT +14:00) Line Islands, Tokelau' },
 ];
 
+salaries = [
+  "-----",
+  "10,000",
+  "20,000",
+  "30,000",
+  "40,000",
+  "50,000"
+]
+
 module.exports = {
   locations,
   industries,

@@ -33,7 +33,21 @@ class JobViewer extends Component {
 
           <p>Description:</p>
           <p>{job.jobDetails}</p>
-          <p></p>
+
+          <br/>
+          <br/>
+
+          <p>Key Skills:</p>
+          <ul>
+            {
+              job.keySkills.map((skill, i) => {
+                return (
+                  <li key={i}>{skill}</li>
+                );
+              })
+            }
+          </ul>
+
 
           <br/>
           <br/>
