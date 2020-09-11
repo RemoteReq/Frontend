@@ -37,10 +37,6 @@ const causes = [
   'Religion',
 ];
 
-keySkills = [
-  ... list of skills
-]
-
 const timeZones = [
   { value: '-12:00', zone: '(GMT -12:00) Eniwetok, Kwajalein' },
   { value: '-11:00', zone: '(GMT -11:00) Midway Island, Samoa' },
@@ -84,18 +80,23 @@ const timeZones = [
   { value: '+14:00', zone: '(GMT +14:00) Line Islands, Tokelau' },
 ];
 
-salaries = [
-  "-----",
-  "10,000",
-  "20,000",
-  "30,000",
-  "40,000",
-  "50,000"
-]
+const salaries = [
+  '-----',
+  '10,000',
+  '20,000',
+  '30,000',
+  '40,000',
+  '50,000',
+  '60,000',
+  '70,000',
+  '80,000',
+  '90,000',
+];
 
 module.exports = {
   locations,
   industries,
   causes,
   timeZones,
+  salaries,
 };

@@ -5,6 +5,7 @@ import {
 import axios from 'axios';
 import Navigation2 from '../../components/parts/Navigation2.jsx';
 import Auth from '../../components/Auth/Auth.jsx';
+import { salaries } from '#assets/inputs/inputs.js';
 
 const backend = 'http://3.21.186.204:3030';
 
@@ -13,7 +14,7 @@ class QnA extends Component {
     super(props);
 
     this.state = {
-      workTypeSelect: '', // if part time, render part time QnA. if full time render full time QnA
+      typingWork: 'either', // if part time, render part time QnA. if full time render full time QnA
     };
 
     this.updateRedirect = this.updateRedirect.bind(this);
@@ -85,28 +86,29 @@ class QnA extends Component {
           </div> */}
 
           <Switch>
-            <Route path="/QnA/basics" render={(props) => {
+            <Route path="/QnA/1" render={(props) => {
               return (
                 <FilterQnA {...props}
                   handleChange={this.handleChange}
                 />
               );
             }}/>
-            <Route path="/QnA/causes" render={(props) => {
+            <Route path="/QnA/2" render={(props) => {
               return (
                 <QnACauses {...props}
                   handleChange={this.handleChange}
+                  typingWork={this.state.typingWork}
                 />
               );
             }} />
-            <Route path="/QnA/experience" render={(props) => {
+            <Route path="/QnA/3" render={(props) => {
               return (
                 <QnAExperience {...props}
                   handleChange={this.handleChange}
                 />
               );
             }} />
-            <Route path="/QnA/expectations" render={(props) => {
+            <Route path="/QnA/4" render={(props) => {
               return (
                 <QnAExpectations {...props}
                   handleChange={this.handleChange}
@@ -260,7 +262,8 @@ const FilterQnA = ({ handleChange }) => {
 
       <p>
         Are you seeking full-time work, part-time, or either?
-      </p>      <div className="radios">
+      </p>
+      <div className="radios">
         <Radio value="full-time" label="full-time" name="typingWork" handler={handleChange}/>
 
         <Radio value="part-time" label="part-time" name="typingWork" handler={handleChange}/>
@@ -288,7 +291,7 @@ const FilterQnA = ({ handleChange }) => {
 
       <div className="form-nav">
         <div></div>
-        <Link to="/QnA/causes">
+        <Link to="/QnA/2">
           <button className="button-next">Next &raquo;</button>
         </Link>
       </div>
@@ -342,7 +345,7 @@ const QnABasics = ({ handleChange }) => {
 
       <div className="form-nav">
         <div></div>
-        <Link to="/QnA/causes">
+        <Link to="/QnA/2">
           <button className="button-next">Next &raquo;</button>
         </Link>
       </div>
@@ -350,8 +353,9 @@ const QnABasics = ({ handleChange }) => {
   );
 };
 
-const QnACauses = ({ handleChange }) => {
+const QnACauses = ({ handleChange, typingWork }) => {
   return (
+
     <div className="QnA-page">
       <p>
         What is your highest level of education?
@@ -373,26 +377,40 @@ const QnACauses = ({ handleChange }) => {
       </p>
 
       <div className="day-of-week-select">
-        <label>Sunday</label>
-        <input type="checkbox" value="Sunday" />
+        <div className="input-pill">
+          <label>Sunday</label>
+          <input type="checkbox" value="Sunday" />
+        </div>
 
-        <label>Monday</label>
-        <input type="checkbox" value="Monday" />
+        <div className="input-pill">
+          <label>Monday</label>
+          <input type="checkbox" value="Monday" />
+        </div>
 
-        <label>Tuesday</label>
-        <input type="checkbox" value="Tuesday" />
+        <div className="input-pill">
+          <label>Tuesday</label>
+          <input type="checkbox" value="Tuesday" />
+        </div>
 
-        <label>Wednesday</label>
-        <input type="checkbox" value="Wednesday" />
+        <div className="input-pill">
+          <label>Wednesday</label>
+          <input type="checkbox" value="Wednesday" />
+        </div>
 
-        <label>Thursday</label>
-        <input type="checkbox" value="Thursday" />
+        <div className="input-pill">
+          <label>Thursday</label>
+          <input type="checkbox" value="Thursday" />
+        </div>
 
-        <label>Friday</label>
-        <input type="checkbox" value="Friday" />
+        <div className="input-pill">
+          <label>Friday</label>
+          <input type="checkbox" value="Friday" />
+        </div>
 
-        <label>Saturday</label>
-        <input type="checkbox" value="Saturday" />
+        <div className="input-pill">
+          <label>Saturday</label>
+          <input type="checkbox" value="Saturday" />
+        </div>
       </div>
 
       <p>
@@ -401,6 +419,7 @@ const QnACauses = ({ handleChange }) => {
 
       <div>
       <select name="timezone_offset" id="timezone-offset" className="span5">
+        <option>-----</option>
         <option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
         <option value="-11:00">(GMT -11:00) Midway Island, Samoa</option>
         <option value="-10:00">(GMT -10:00) Hawaii</option>
@@ -416,7 +435,7 @@ const QnACauses = ({ handleChange }) => {
         <option value="-03:00">(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
         <option value="-02:00">(GMT -2:00) Mid-Atlantic</option>
         <option value="-01:00">(GMT -1:00) Azores, Cape Verde Islands</option>
-        <option value="+00:00" selected="selected">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
+        <option value="+00:00">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
         <option value="+01:00">(GMT +1:00) Brussels, Copenhagen, Madrid, Paris</option>
         <option value="+02:00">(GMT +2:00) Kaliningrad, South Africa</option>
         <option value="+03:00">(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
@@ -463,15 +482,23 @@ const QnACauses = ({ handleChange }) => {
       </p>
       <div className="salary-input">
         <p>$</p>
-        <input type="number"/>
+        <select>
+          {salaries.map((salary, i) => {
+            return (
+              <option key={i}>
+                {salary}
+              </option>
+            );
+          })}
+        </select>
       </div>
 
       <div className="form-nav">
-        <Link to="/QnA/basics">
+        <Link to="/QnA/1">
           <button className="button-prev">&laquo; Prev</button>
         </Link>
 
-        <Link to="/QnA/experience">
+        <Link to="/QnA/3">
           <button className="button-next">Next &raquo;</button>
         </Link>
       </div>
@@ -507,11 +534,11 @@ const QnAExperience = ({ handleChange }) => {
       </div>
 
       <div className="form-nav">
-        <Link to="/QnA/causes">
+        <Link to="/QnA/2">
           <button className="button-prev">&laquo; Prev</button>
         </Link>
 
-        <Link to="/QnA/expectations">
+        <Link to="/QnA/4">
           <button className="button-next">Next &raquo;</button>
         </Link>
       </div>
@@ -538,7 +565,7 @@ const QnAExpectations = () => {
 
 
       <div className="form-nav">
-        <Link to="/QnA/experience">
+        <Link to="/QnA/3">
           <button className="button-prev">&laquo; Prev</button>
         </Link>
 
