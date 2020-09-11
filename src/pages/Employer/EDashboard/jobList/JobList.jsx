@@ -20,7 +20,7 @@ const JobList = ({ jobReqs }) => {
 
     </div>
 
-    <div>
+    <div className="jobs">
       {
         jobReqs.map((jobReq, index) => {
           return (
