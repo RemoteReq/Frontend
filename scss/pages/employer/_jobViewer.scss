@@ -1,0 +1,20 @@
+.job-viewer {
+  background-color: $BackgroundColor;
+  display:  flex;
+  justify-content: center;
+
+  form {
+    margin: 4vh 0;
+    width: 60%;
+    background-color: white;
+
+    .title-and-edit {
+      display: flex;
+      justify-content: space-between;
+
+      h3 {
+        color: $SecondaryColor;
+      }
+    }
+  }
+}

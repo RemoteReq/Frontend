@@ -10,6 +10,7 @@ import ESettings from './ESettings/ESettings.jsx';
 import JobForm from './EDashboard/JobForm/JobForm.jsx';
 import FirstPayment from './EDashboard/PaymentGateway/FirstPayment.jsx';
 import GigSelect from './EDashboard/PaymentGateway/GigSelect.jsx';
+import JobViewer from './EDashboard/JobViewer.jsx';
 
 const Employer = () => {
   const { path, url } = useRouteMatch();
@@ -33,6 +34,7 @@ const Employer = () => {
         <Route path={`${path}/addJob`} component={JobForm} />
         <Route path={`${path}/gigSelect`} component={GigSelect} />
         <Route path={`${path}/firstPayment`} component={FirstPayment} />
+        <Route path={`${path}/jobs/`} component={JobViewer}/>
       </Switch>
     </div>
   );
