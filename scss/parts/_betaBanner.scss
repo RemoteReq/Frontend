@@ -2,6 +2,9 @@
   background-color: $SecondaryColor;
   display: flex;
   justify-content: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 
   p {
     color: white;
