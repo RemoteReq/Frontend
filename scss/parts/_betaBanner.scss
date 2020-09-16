@@ -1,0 +1,11 @@
+.beta-banner {
+  background-color: $SecondaryColor;
+  display: flex;
+  justify-content: center;
+
+  p {
+    color: white;
+    font-size: 10pt;
+    line-height: initial;
+  }
+}

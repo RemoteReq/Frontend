@@ -26,12 +26,14 @@ import QnA from '../pages/QnA/QnA.jsx';
 import EVerify from '../pages/Employer/EVerify/EVerify.jsx';
 import PrivacyPolicy from '../pages/PrivacyPolicy.jsx';
 import TermsOfUse from '../pages/TermsOfUse.jsx';
+import BetaBanner from './parts/BetaBanner.jsx';
 
 class App extends Component {
   render() {
     return (
       <Router>
         <ScrollToTop>
+          <BetaBanner/>
           <Navigation/>
             <Switch>
               <Route exact path="/" component={LandingPage} />
