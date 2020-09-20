@@ -25,7 +25,7 @@ const Page2 = ({
       </select>
 
       <p>
-        (For part-time only) Which dats of the week are you available to work? (Select all that apply)
+        (For part-time only) Which days of the week are you available to work? (Select all that apply)
       </p>
 
       <div className="day-of-week-select">
@@ -70,7 +70,10 @@ const Page2 = ({
       </p>
 
       <div>
-        <select name="timezone_offset" id="timezone-offset" className="span5">
+        <select
+        name="selectTimeZone"
+          onChange={handleChange}
+        >
           <option>-----</option>
           {
             timeZones.map((timeZone, key) => {
@@ -83,7 +86,10 @@ const Page2 = ({
       </div>
 
       <div className="time-select">
-        <input type="time"/>
+        <input
+          name="availableWorkTime"
+          type="time"
+        />
       </div>
 
       <p>
@@ -92,7 +98,11 @@ const Page2 = ({
 
       <div className="wage-input">
         <p>$</p>
-        <input type="number"/>
+        <input
+          name="hourlyPayExpectation"
+          type="number"
+          onChange={handleChange}
+        />
         <p>/hr</p>
       </div>
 
@@ -101,7 +111,10 @@ const Page2 = ({
       </p>
       <div className="salary-input">
         <p>$</p>
-        <select>
+        <select
+          name="desireCTC"
+          onChange={handleChange}
+        >
           {salaries.map((salary, i) => {
             return (
               <option key={i}>
