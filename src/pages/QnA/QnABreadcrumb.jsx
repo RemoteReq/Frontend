@@ -6,31 +6,37 @@ const QnABreadCrumb = ({ progress, setProgress }) => {
     <div className="breadcrumbs">
       <Link to="/QnA/1">
         <button
-          className={`${progress > 0 ? 'complete' : 'incomplete'}`}
+          className={`small-button ${progress > 0 ? 'complete' : 'incomplete'}`}
           value={1}
           onClick={setProgress}
         >Basics</button>
       </Link>
 
+      <div className={`breadcrumb-bar ${progress > 1 ? 'complete' : 'incomplete'}`}></div>
+
       <Link to="/QnA/2">
         <button
-          className={`${progress > 1 ? 'complete' : 'incomplete'}`}
+          className={`small-button ${progress > 1 ? 'complete' : 'incomplete'}`}
           value={2}
           onClick={setProgress}
         >Availability</button>
       </Link>
 
+      <div className={`breadcrumb-bar ${progress > 2 ? 'complete' : 'incomplete'}`}></div>
+
       <Link to="/QnA/3">
         <button
-          className={`${progress > 2 ? 'complete' : 'incomplete'}`}
+          className={`small-button ${progress > 2 ? 'complete' : 'incomplete'}`}
           value={3}
           onClick={setProgress}
         >Experience</button>
       </Link>
 
+      <div className={`breadcrumb-bar ${progress > 3 ? 'complete' : 'incomplete'}`}></div>
+
       <Link to="/QnA/4">
         <button
-          className={`${progress > 3 ? 'complete' : 'incomplete'}`}
+          className={`small-button ${progress > 3 ? 'complete' : 'incomplete'}`}
           value={4}
           onClick={setProgress}
         >Location</button>
