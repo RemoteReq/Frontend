@@ -42,14 +42,15 @@ const ProfileCard = ({ userDetails, handleFileUpload }) => {
                 {userDetails.resumePath}
               </p>
 
-              <input
-                type="file"
-                name="resume"
-                accept="application/pdf,application/vnd.ms-excel"
-                className="button-1"
-                onChange={(e) => { return handleFileUpload(e); }}
-              />
-              <label htmlFor="resume">Upload a resume</label>
+              <div className="upload-button">
+                <button className="button-2">Upload a resume</button>
+                <input
+                  type="file"
+                  name="resume"
+                  accept="application/pdf,application/vnd.ms-excel"
+                  onChange={(e) => { return handleFileUpload(e); }}
+                  />
+              </div>
 
             </div>
           </div>
