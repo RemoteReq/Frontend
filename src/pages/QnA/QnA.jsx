@@ -29,6 +29,7 @@ class QnA extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.increaseProgress = this.increaseProgress.bind(this);
     this.decreaseProgress = this.decreaseProgress.bind(this);
+    this.setProgress = this.setProgress.bind(this);
   }
 
   componentDidMount() {
@@ -87,6 +88,12 @@ class QnA extends Component {
     });
   }
 
+  setProgress(e) {
+    this.setState({
+      progress: e.target.value,
+    });
+  }
+
   render() {
     return (
     <div>
@@ -103,7 +110,10 @@ class QnA extends Component {
 
 
         <form>
-          <QnABreadcrumb progress={this.state.progress}/>
+          <QnABreadcrumb
+            progress={this.state.progress}
+            setProgress={this.setProgress}
+          />
 
           <Switch>
             <Route path="/QnA/1" render={(props) => {

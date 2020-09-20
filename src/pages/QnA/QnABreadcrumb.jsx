@@ -1,30 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const QnABreadCrumb = ({ progress }) => {
+const QnABreadCrumb = ({ progress, setProgress }) => {
   return (
     <div className="breadcrumbs">
       <Link to="/QnA/1">
         <button
           className={`${progress > 0 ? 'complete' : 'incomplete'}`}
+          value={1}
+          onClick={setProgress}
         >Basics</button>
       </Link>
 
       <Link to="/QnA/2">
         <button
           className={`${progress > 1 ? 'complete' : 'incomplete'}`}
+          value={2}
+          onClick={setProgress}
         >Availability</button>
       </Link>
 
       <Link to="/QnA/3">
         <button
           className={`${progress > 2 ? 'complete' : 'incomplete'}`}
+          value={3}
+          onClick={setProgress}
         >Experience</button>
       </Link>
 
       <Link to="/QnA/4">
         <button
           className={`${progress > 3 ? 'complete' : 'incomplete'}`}
+          value={4}
+          onClick={setProgress}
         >Location</button>
       </Link>
     </div>
