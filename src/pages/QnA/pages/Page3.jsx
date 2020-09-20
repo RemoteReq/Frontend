@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Radio from '#parts/Radio.jsx';
 
-const Page3 = ({ handleChange }) => {
+const Page3 = ({ handleChange, keySkills }) => {
   return (
     <div className="QnA-page">
       <p>Your experience</p>
@@ -29,6 +29,16 @@ const Page3 = ({ handleChange }) => {
         <Radio value={false} label="no" name="" handler={handleChange}/>
       </div>
 
+      <select>
+        {
+          keySkills.map((skill, key) => {
+            return (
+            <option key={key}>{skill}</option>
+            );
+          })
+        }
+      </select>
+
       <div className="form-nav">
         <Link to="/QnA/2">
           <button className="button-prev">&laquo; Prev</button>
@@ -38,6 +48,8 @@ const Page3 = ({ handleChange }) => {
           <button className="button-next">Next &raquo;</button>
         </Link>
       </div>
+
+
     </div>
   );
 };

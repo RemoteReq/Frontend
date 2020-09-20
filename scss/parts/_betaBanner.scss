@@ -1,5 +1,5 @@
 .beta-banner {
-  background-color: $SecondaryColor;
+  background-color: black;
   display: flex;
   justify-content: center;
   position: fixed;
@@ -8,7 +8,8 @@
 
   p {
     color: white;
-    font-size: 10pt;
+    font-weight: bolder;
+    font-size: 14pt;
     line-height: initial;
   }
 }

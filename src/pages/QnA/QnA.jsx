@@ -11,7 +11,7 @@ import Page2 from './pages/Page2.jsx';
 import Page3 from './pages/Page3.jsx';
 import Page4 from './pages/Page4.jsx';
 import {
-  salaries, causes, degrees, timeZones,
+  salaries, causes, degrees, timeZones, keySkills,
 } from '#assets/inputs/inputs.js';
 
 const backend = 'http://3.21.186.204:3030';
@@ -22,7 +22,7 @@ class QnA extends Component {
 
     this.state = {
       typingWork: 'either', // if part time, render part time QnA. if full time render full time QnA
-      progress: 1, // the amount of questions answered
+      progress: 3, // the amount of questions answered
     };
 
     this.updateRedirect = this.updateRedirect.bind(this);
@@ -115,6 +115,7 @@ class QnA extends Component {
               return (
                 <Page3 {...props}
                   handleChange={this.handleChange}
+                  keySkills={keySkills}
                 />
               );
             }} />
