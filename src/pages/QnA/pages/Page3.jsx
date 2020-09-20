@@ -13,25 +13,31 @@ const Page3 = ({
       </p>
 
       <div className="textarea-div">
-        <textarea/>
+        <textarea
+          name="projectDescription"
+          onChange={handleChange}
+        />
       </div>
 
       <p>
         Provide a sample of your past relevant work (e.g. link to an online portfolio or image)
       </p>
-      <input/>
+      <input
+        name="smapleProjectLink"
+        onChange={handleChange}
+      />
 
       <p>
         All of our jobs are remote. Do you have access to (e.g. a computer, internet connection, a telephone and a private space) to work remotely?
       </p>
 
       <div className="radios">
-        <Radio value={true} label="yes" name="" handler={handleChange}/>
+        <Radio value={true} label="yes" name="isWorkRemotely" handler={handleChange}/>
 
-        <Radio value={false} label="no" name="" handler={handleChange}/>
+        <Radio value={false} label="no" name="isWorkRemotely" handler={handleChange}/>
       </div>
 
-      <select>
+      {/* <select>
         {
           keySkills.map((skill, key) => {
             return (
@@ -39,7 +45,7 @@ const Page3 = ({
             );
           })
         }
-      </select>
+      </select> */}
 
       <div className="form-nav">
         <Link to="/QnA/2">
