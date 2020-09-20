@@ -27,6 +27,7 @@ class QnA extends Component {
       cause2: '',
       cause3: '',
       keySkills: [],
+      availableDaysForWork: [],
     };
 
     this.updateRedirect = this.updateRedirect.bind(this);
@@ -66,15 +67,21 @@ class QnA extends Component {
   }
 
   handleChange(e) {
-    e.preventDefault();
+    // e.preventDefault();
 
     this.setState({
       [e.target.name]: e.target.value,
     }, () => { console.log(this.state); });
   }
 
-  addToList(e) {
+  submitAnswers(e) {
     e.preventDefault();
+
+    const submitForm = new FormData();
+  }
+
+  addToList(e) {
+    // e.preventDefault();
 
     let arrayToJoin = this.state[e.target.name];
 
@@ -158,6 +165,7 @@ class QnA extends Component {
                   increaseProgress={this.increaseProgress}
                   decreaseProgress={this.decreaseProgress}
                   handleChange={this.handleChange}
+                  addToList={this.addToList}
                   typingWork={this.state.typingWork}
                   salaries={salaries}
                   degrees={degrees}

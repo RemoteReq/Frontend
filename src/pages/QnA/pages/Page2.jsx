@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Page2 = ({
-  handleChange, typingWork, salaries, degrees, timeZones, increaseProgress, decreaseProgress,
+  handleChange, typingWork, salaries, degrees, timeZones, increaseProgress, decreaseProgress, addToList,
 }) => {
   return (
 
@@ -31,37 +31,72 @@ const Page2 = ({
       <div className="day-of-week-select">
         <div className="input-pill">
           <label>Sunday</label>
-          <input type="checkbox" value="Sunday" />
+          <input
+            type="checkbox"
+            name="availableDaysForWork"
+            onChange={addToList}
+            value="Sunday"
+          />
         </div>
 
         <div className="input-pill">
           <label>Monday</label>
-          <input type="checkbox" value="Monday" />
+          <input
+            type="checkbox"
+            name="availableDaysForWork"
+            onChange={addToList}
+            value="Monday"
+          />
         </div>
 
         <div className="input-pill">
           <label>Tuesday</label>
-          <input type="checkbox" value="Tuesday" />
+          <input
+            type="checkbox"
+            name="availableDaysForWork"
+            onChange={addToList}
+            value="Tuesday"
+          />
         </div>
 
         <div className="input-pill">
           <label>Wednesday</label>
-          <input type="checkbox" value="Wednesday" />
+          <input
+            type="checkbox"
+            name="availableDaysForWork"
+            onChange={addToList}
+            value="Wednesday"
+          />
         </div>
 
         <div className="input-pill">
           <label>Thursday</label>
-          <input type="checkbox" value="Thursday" />
+          <input
+            type="checkbox"
+            name="availableDaysForWork"
+            onChange={addToList}
+            value="Thursday"
+          />
         </div>
 
         <div className="input-pill">
           <label>Friday</label>
-          <input type="checkbox" value="Friday" />
+          <input
+            type="checkbox"
+            name="availableDaysForWork"
+            onChange={addToList}
+            value="Friday"
+          />
         </div>
 
         <div className="input-pill">
           <label>Saturday</label>
-          <input type="checkbox" value="Saturday" />
+          <input
+            type="checkbox"
+            name="availableDaysForWork"
+            onChange={addToList}
+            value="Saturday"
+          />
         </div>
       </div>
 
