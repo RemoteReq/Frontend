@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Page2 = ({
-  handleChange, typingWork, salaries, degrees, timeZones,
+  handleChange, typingWork, salaries, degrees, timeZones, increaseProgress, decreaseProgress,
 }) => {
   return (
 
@@ -114,11 +114,17 @@ const Page2 = ({
 
       <div className="form-nav">
         <Link to="/QnA/1">
-          <button className="button-prev">&laquo; Prev</button>
+          <button
+            className="button-prev"
+            onClick={decreaseProgress}
+          >&laquo; Prev</button>
         </Link>
 
         <Link to="/QnA/3">
-          <button className="button-next">Next &raquo;</button>
+          <button
+            className="button-next"
+            onClick={increaseProgress}
+          >Next &raquo;</button>
         </Link>
       </div>
     </div>

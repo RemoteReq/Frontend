@@ -12,7 +12,7 @@ import Page3 from './pages/Page3.jsx';
 import Page4 from './pages/Page4.jsx';
 import {
   salaries, causes, degrees, timeZones, keySkills,
-} from '#assets/inputs/inputs.js';
+} from '#assets/inputs/inputs';
 
 const backend = 'http://3.21.186.204:3030';
 
@@ -22,11 +22,13 @@ class QnA extends Component {
 
     this.state = {
       typingWork: 'either', // if part time, render part time QnA. if full time render full time QnA
-      progress: 3, // the amount of questions answered
+      progress: 1, // the amount of questions answered
     };
 
     this.updateRedirect = this.updateRedirect.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.increaseProgress = this.increaseProgress.bind(this);
+    this.decreaseProgress = this.decreaseProgress.bind(this);
   }
 
   componentDidMount() {
@@ -73,6 +75,18 @@ class QnA extends Component {
     });
   }
 
+  increaseProgress() {
+    this.setState({
+      progress: this.state.progress + 1,
+    });
+  }
+
+  decreaseProgress() {
+    this.setState({
+      progress: this.state.progress - 1,
+    });
+  }
+
   render() {
     return (
     <div>
@@ -95,6 +109,8 @@ class QnA extends Component {
             <Route path="/QnA/1" render={(props) => {
               return (
                 <Page1 {...props}
+                  increaseProgress={this.increaseProgress}
+                  decreaseProgress={this.decreaseProgress}
                   handleChange={this.handleChange}
                   causes={causes}
                 />
@@ -103,6 +119,8 @@ class QnA extends Component {
             <Route path="/QnA/2" render={(props) => {
               return (
                 <Page2 {...props}
+                  increaseProgress={this.increaseProgress}
+                  decreaseProgress={this.decreaseProgress}
                   handleChange={this.handleChange}
                   typingWork={this.state.typingWork}
                   salaries={salaries}
@@ -114,6 +132,8 @@ class QnA extends Component {
             <Route path="/QnA/3" render={(props) => {
               return (
                 <Page3 {...props}
+                  increaseProgress={this.increaseProgress}
+                  decreaseProgress={this.decreaseProgress}
                   handleChange={this.handleChange}
                   keySkills={keySkills}
                 />
@@ -122,6 +142,8 @@ class QnA extends Component {
             <Route path="/QnA/4" render={(props) => {
               return (
                 <Page4 {...props}
+                  increaseProgress={this.increaseProgress}
+                  decreaseProgress={this.decreaseProgress}
                   handleChange={this.handleChange}
                 />
               );

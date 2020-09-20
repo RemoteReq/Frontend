@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Page4 = () => {
+const Page4 = ({ decreaseProgress }) => {
   return (
     <div className="QnA-page">
       <p>
@@ -21,7 +21,10 @@ const Page4 = () => {
 
       <div className="form-nav">
         <Link to="/QnA/3">
-          <button className="button-prev">&laquo; Prev</button>
+          <button
+            className="button-prev"
+            onClick={decreaseProgress}
+          >&laquo; Prev</button>
         </Link>
 
         <Link to="/dashboard">

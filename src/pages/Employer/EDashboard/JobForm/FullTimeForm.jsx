@@ -139,11 +139,15 @@ class JobForm extends Component {
                 onChange={(e) => { return this.handleChange(e); }}
               />
 
-              <button
-                className="button-2"
-              >
-                Upload Description
-              </button>
+              <div className="upload-button">
+                <button className="button-2">Upload a resume</button>
+                <input
+                  type="file"
+                  name="resume"
+                  accept="application/pdf,application/vnd.ms-excel"
+                  onChange={(e) => { return handleFileUpload(e); }}
+                  />
+              </div>
             </div>
 
             <div>

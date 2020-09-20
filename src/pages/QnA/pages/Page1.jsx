@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Radio from '#parts/Radio.jsx';
 
-const Page1 = ({ handleChange, causes }) => {
+const Page1 = ({ handleChange, causes, increaseProgress }) => {
   return (
     <div className="QnA-page">
       <p>
@@ -91,7 +91,10 @@ const Page1 = ({ handleChange, causes }) => {
       <div className="form-nav">
         <div></div>
         <Link to="/QnA/2">
-          <button className="button-next">Next &raquo;</button>
+          <button
+            className="button-next"
+            onClick={increaseProgress}
+          >Next &raquo;</button>
         </Link>
       </div>
     </div>

@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Radio from '#parts/Radio.jsx';
 
-const Page3 = ({ handleChange, keySkills }) => {
+const Page3 = ({
+  handleChange, keySkills, increaseProgress, decreaseProgress,
+}) => {
   return (
     <div className="QnA-page">
       <p>Your experience</p>
@@ -41,11 +43,17 @@ const Page3 = ({ handleChange, keySkills }) => {
 
       <div className="form-nav">
         <Link to="/QnA/2">
-          <button className="button-prev">&laquo; Prev</button>
+          <button
+            className="button-prev"
+            onClick={decreaseProgress}
+          >&laquo; Prev</button>
         </Link>
 
         <Link to="/QnA/4">
-          <button className="button-next">Next &raquo;</button>
+          <button
+              className="button-next"
+              onClick={increaseProgress}
+            >Next &raquo;</button>
         </Link>
       </div>
 
