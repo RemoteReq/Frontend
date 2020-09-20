@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SkillBank from '#parts/SkillBank.jsx';
 
-const Page4 = ({ decreaseProgress }) => {
+const Page4 = ({
+  keySkills, myKeySkills, addToList, decreaseProgress,
+}) => {
   return (
     <div className="QnA-page">
       <p>
@@ -12,6 +15,8 @@ const Page4 = ({ decreaseProgress }) => {
       <p>
         Input all relevant skills you have to the kind of work you are seeking
       </p>
+
+      <SkillBank keySkills={keySkills} myKeySkills={myKeySkills} addToList={addToList}/>
 
       <p>
         Zip code (we use this to match you to opportunities working on causes your interested in within your local are)

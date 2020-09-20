@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Radio from '#parts/Radio.jsx';
 
 const Page3 = ({
-  handleChange, keySkills, increaseProgress, decreaseProgress,
+  handleChange, increaseProgress, decreaseProgress,
 }) => {
   return (
     <div className="QnA-page">
@@ -37,16 +37,6 @@ const Page3 = ({
         <Radio value={false} label="no" name="isWorkRemotely" handler={handleChange}/>
       </div>
 
-      {/* <select>
-        {
-          keySkills.map((skill, key) => {
-            return (
-            <option key={key}>{skill}</option>
-            );
-          })
-        }
-      </select> */}
-
       <div className="form-nav">
         <Link to="/QnA/2">
           <button
@@ -57,9 +47,9 @@ const Page3 = ({
 
         <Link to="/QnA/4">
           <button
-              className="button-next"
-              onClick={increaseProgress}
-            >Next &raquo;</button>
+            className="button-next"
+            onClick={increaseProgress}
+          >Next &raquo;</button>
         </Link>
       </div>
 

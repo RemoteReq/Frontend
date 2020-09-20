@@ -26,6 +26,7 @@ class QnA extends Component {
       cause1: '',
       cause2: '',
       cause3: '',
+      keySkills: [],
     };
 
     this.updateRedirect = this.updateRedirect.bind(this);
@@ -75,13 +76,17 @@ class QnA extends Component {
   addToList(e) {
     e.preventDefault();
 
-    const toJoin = this.state[e.target.name].concat(e.target.value);
+    let arrayToJoin = this.state[e.target.name];
 
-    console.log(toJoin);
+    if (!arrayToJoin.includes(e.target.value)) {
+      arrayToJoin = arrayToJoin.concat(e.target.value);
 
-    this.setState({
-      [e.target.name]: toJoin,
-    });
+      this.setState({
+        [e.target.name]: arrayToJoin,
+      }, () => {
+        console.log(this.state);
+      });
+    }
   }
 
   isChecked(e) {
@@ -167,14 +172,16 @@ class QnA extends Component {
                   increaseProgress={this.increaseProgress}
                   decreaseProgress={this.decreaseProgress}
                   handleChange={this.handleChange}
-                  keySkills={keySkills}
-                />
+                  />
               );
             }} />
             <Route path="/QnA/4" render={(props) => {
               return (
                 <Page4 {...props}
                   answered={answered}
+                  keySkills={keySkills}
+                  myKeySkills={this.state.keySkills}
+                  addToList={this.addToList}
                   increaseProgress={this.increaseProgress}
                   decreaseProgress={this.decreaseProgress}
                   handleChange={this.handleChange}
