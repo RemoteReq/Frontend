@@ -23,6 +23,9 @@ class QnA extends Component {
     this.state = {
       typingWork: 'either', // if part time, render part time QnA. if full time render full time QnA
       progress: 1, // the amount of questions answered
+      cause1: '',
+      cause2: '',
+      cause3: '',
     };
 
     this.updateRedirect = this.updateRedirect.bind(this);
@@ -30,6 +33,7 @@ class QnA extends Component {
     this.increaseProgress = this.increaseProgress.bind(this);
     this.decreaseProgress = this.decreaseProgress.bind(this);
     this.setProgress = this.setProgress.bind(this);
+    this.addToList = this.addToList.bind(this);
   }
 
   componentDidMount() {
@@ -68,6 +72,18 @@ class QnA extends Component {
     }, () => { console.log(this.state); });
   }
 
+  addToList(e) {
+    e.preventDefault();
+
+    const toJoin = this.state[e.target.name].concat(e.target.value);
+
+    console.log(toJoin);
+
+    this.setState({
+      [e.target.name]: toJoin,
+    });
+  }
+
   isChecked(e) {
     e.preventDefault();
 
@@ -95,6 +111,8 @@ class QnA extends Component {
   }
 
   render() {
+    const answered = this.state;
+
     return (
     <div>
       <Navigation2 />
@@ -119,9 +137,11 @@ class QnA extends Component {
             <Route path="/QnA/1" render={(props) => {
               return (
                 <Page1 {...props}
+                  answered={answered}
                   increaseProgress={this.increaseProgress}
                   decreaseProgress={this.decreaseProgress}
                   handleChange={this.handleChange}
+                  addToList={this.addToList}
                   causes={causes}
                 />
               );
@@ -129,6 +149,7 @@ class QnA extends Component {
             <Route path="/QnA/2" render={(props) => {
               return (
                 <Page2 {...props}
+                  answered={answered}
                   increaseProgress={this.increaseProgress}
                   decreaseProgress={this.decreaseProgress}
                   handleChange={this.handleChange}
@@ -142,6 +163,7 @@ class QnA extends Component {
             <Route path="/QnA/3" render={(props) => {
               return (
                 <Page3 {...props}
+                  answered={answered}
                   increaseProgress={this.increaseProgress}
                   decreaseProgress={this.decreaseProgress}
                   handleChange={this.handleChange}
@@ -152,6 +174,7 @@ class QnA extends Component {
             <Route path="/QnA/4" render={(props) => {
               return (
                 <Page4 {...props}
+                  answered={answered}
                   increaseProgress={this.increaseProgress}
                   decreaseProgress={this.decreaseProgress}
                   handleChange={this.handleChange}

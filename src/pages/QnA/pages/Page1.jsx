@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Radio from '#parts/Radio.jsx';
 
-const Page1 = ({ handleChange, causes, increaseProgress }) => {
+const Page1 = ({
+  handleChange, causes, increaseProgress, addToList,
+}) => {
   return (
     <div className="QnA-page">
       <p>
@@ -17,7 +19,9 @@ const Page1 = ({ handleChange, causes, increaseProgress }) => {
       <p>
         Which of the following causes would you like to work on? (Select up to 3)
       </p>
-      <select>
+      <select
+        name="cause1"
+        onChange={handleChange}>
         <option>-----</option>
         {
           causes.map((cause, key) => {
@@ -28,7 +32,9 @@ const Page1 = ({ handleChange, causes, increaseProgress }) => {
         }
       </select>
 
-      <select>
+      <select
+        name="cause2"
+        onChange={handleChange}>
       <option>-----</option>
       {
         causes.map((cause, key) => {
@@ -39,7 +45,9 @@ const Page1 = ({ handleChange, causes, increaseProgress }) => {
       }
       </select>
 
-      <select>
+      <select
+        name="cause3"
+        onChange={handleChange}>
       <option>-----</option>
         {
           causes.map((cause, key) => {
@@ -55,7 +63,9 @@ const Page1 = ({ handleChange, causes, increaseProgress }) => {
       </p>
 
       <div className="textarea-div">
-        <textarea/>
+        <textarea
+          name="whyWork"
+          onChange={handleChange}/>
       </div>
 
 
@@ -75,6 +85,8 @@ const Page1 = ({ handleChange, causes, increaseProgress }) => {
       </p>
       <div>
         <input
+          name="availableJoiningDate"
+          onChange={handleChange}
           type="date"
         />
       </div>
