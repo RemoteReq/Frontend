@@ -15,7 +15,7 @@ class JobForm extends Component {
       industryType: '',
       role: '',
       jobDetails: '',
-      keySkills: [''],
+      keySkills: [],
       ctc: '',
       minExperience: 0,
       maxExperience: 0,
@@ -26,6 +26,7 @@ class JobForm extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.addJob = this.addJob.bind(this);
+    this.addToList = this.addToList.bind(this);
   }
 
   handleChange(e) {
@@ -34,6 +35,22 @@ class JobForm extends Component {
     this.setState({
       [e.target.name]: e.target.value,
     }, () => { return console.log(this.state); });
+  }
+
+  addToList(e) {
+    // e.preventDefault();
+
+    let arrayToJoin = this.state[e.target.name];
+
+    if (!arrayToJoin.includes(e.target.value)) {
+      arrayToJoin = arrayToJoin.concat(e.target.value);
+
+      this.setState({
+        [e.target.name]: arrayToJoin,
+      }, () => {
+        console.log(this.state);
+      });
+    }
   }
 
   addJob(e) {
@@ -87,11 +104,13 @@ class JobForm extends Component {
       this.props.location.state.gigType === 'FULL TIME'
         ? <FullTimeFrom
         jobData={jobData}
+        addToList={this.addToList}
         handleChange={this.handleChange}
         addJob={this.addJob}/>
 
         : <PartTimeForm
         jobData={jobData}
+        addToList={this.addToList}
         handleChange={this.handleChange}
         addJob={this.addJob}/>
     );

@@ -1,8 +1,9 @@
 import React from 'react';
+import { keySkills } from '#assets/inputs/inputs';
 
-const SkillBank = ({ keySkills, myKeySkills, addToList }) => {
+const SkillBank = ({ myKeySkills, addToList }) => {
   return (
-    <div>
+    <div className="skill-bank">
       <select name="keySkills" onChange={addToList}>
         <option>-----</option>
         {
@@ -14,8 +15,8 @@ const SkillBank = ({ keySkills, myKeySkills, addToList }) => {
         }
       </select>
 
-      <div>
-        My key skills:
+      <div className="skill-box">
+        <p className="small-paragraph">Skills: </p>
 
         <ul>
           {

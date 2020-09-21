@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { locations } from '#assets/inputs/inputs';
+import SkillBank from '#parts/SkillBank.jsx';
 import ENav from '../../ENav/ENav.jsx';
 
-const PartTimeForm = ({ jobData, handleChange, addJob }) => {
+const PartTimeForm = ({
+  jobData, handleChange, addJob, addToList,
+}) => {
   return (
     <div className="add-job">
       <ENav />
@@ -56,11 +59,12 @@ const PartTimeForm = ({ jobData, handleChange, addJob }) => {
 
 
             <label>Key Skills</label>
-            <input
+            <SkillBank addToList={addToList} myKeySkills={jobData.keySkills}/>
+            {/* <input
               placeholder="ex: Flutter, Dart, SASS, Go"
               name="keySkills"
               onChange={handleChange}
-            />
+            /> */}
 
               <div className="upload-button">
                 <button className="button-2">Upload a job description</button>
