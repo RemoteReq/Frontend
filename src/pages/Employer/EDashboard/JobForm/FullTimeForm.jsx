@@ -106,14 +106,14 @@ const FullTimeForm = ({
             </select>
 
           <div className="range">
-            <label>Minimum Years of Experience</label>
+            <label>Minimum Years of Experience Required</label>
             <input
               type="number"
               name="minExperience"
               onChange={handleChange}
               />
 
-            <label>Maximum Years of Experience</label>
+            <label>Maximum Years of Experience Required</label>
             <input
               type="number"
               name="maxExperience"

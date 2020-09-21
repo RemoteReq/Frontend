@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SkillBank from '#parts/SkillBank.jsx';
+import { locations } from '#assets/inputs/inputs';
 
 const Page4 = ({
   keySkills, myKeySkills, addToList, decreaseProgress,
@@ -19,9 +20,20 @@ const Page4 = ({
       <SkillBank keySkills={keySkills} myKeySkills={myKeySkills} addToList={addToList}/>
 
       <p>
-        Zip code (we use this to match you to opportunities working on causes your interested in within your local are)
+        Zip code and State (we use this to match you to opportunities working on causes your interested in within your local are)
       </p>
       <input type="number" min="0" max="99999"/>
+
+      <select>
+        <option>-----</option>
+        {
+          locations.map((location, key) => {
+            return (
+            <option key={key} value={location}>{location}</option>
+            );
+          })
+        }
+      </select>
 
 
       <div className="form-nav">
