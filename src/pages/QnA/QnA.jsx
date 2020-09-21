@@ -36,6 +36,7 @@ class QnA extends Component {
     this.decreaseProgress = this.decreaseProgress.bind(this);
     this.setProgress = this.setProgress.bind(this);
     this.addToList = this.addToList.bind(this);
+    this.submitAnswers = this.submitAnswers.bind(this);
   }
 
   componentDidMount() {
@@ -74,10 +75,47 @@ class QnA extends Component {
     }, () => { console.log(this.state); });
   }
 
-  submitAnswers(e) {
-    e.preventDefault();
+  submitAnswers() {
+    // e.preventDefault();
+    const answers = this.state;
 
-    const submitForm = new FormData();
+    const myCauses = [answers.cause1, answers.cause2, answers.cause3];
+
+    const myAnswers = {
+      eligibleToWorkInUS: answers.eligibleToWorkInUS,
+      causesLikeToWorkOn: myCauses,
+      typeOfWork: answers.typingWork,
+      availableJoiningDate: answers.availableDaysForWork,
+      fluentInEnglish: answers.fluentInEnglish,
+      highestEducationLevel: answers.highestEducationLevel,
+      jobChangeReason: answers.jobChangeReason,
+      availableDaysForWork: answers.availableDaysForWork,
+      availableWorkTime: answers.availableWorkTime,
+      selectTimeZone: answers.selectTimeZone,
+      hourlyPayExpectation: answers.hourlyPayExpectation,
+      desireCTC: answers.desireCTC,
+      projectDescription: answers.projectDescription,
+      sampleProjectLink: answers.sampleProjectLink,
+      relavantCertificates: answers.relavantCertificates,
+      isWorkRemotely: answers.isWorkRemotely,
+      descProfessionalGoal: answers.descProfessionalGoal,
+      totalExperience: answers.totalExperience,
+      desireLocation: answers.desireLocation,
+      desireKeySkills: answers.desireKeySkills,
+    };
+
+    console.log(myAnswers);
+
+    axios({
+      url: `${backend}/api/user/updateUserProfile`,
+      method: 'POST',
+      headers: {
+        token: localStorage.getItem('session'),
+      },
+      data: {
+        myAnswers,
+      },
+    }, () => { console.log('answers submitted successfully'); });
   }
 
   addToList(e) {
@@ -107,7 +145,7 @@ class QnA extends Component {
   increaseProgress() {
     this.setState({
       progress: this.state.progress + 1,
-    });
+    }, () => { this.submitAnswers(); });
   }
 
   decreaseProgress() {

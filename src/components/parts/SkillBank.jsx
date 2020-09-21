@@ -4,6 +4,7 @@ const SkillBank = ({ keySkills, myKeySkills, addToList }) => {
   return (
     <div>
       <select name="keySkills" onChange={addToList}>
+        <option>-----</option>
         {
           keySkills.map((keySkill, key) => {
             return (

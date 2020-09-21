@@ -1,263 +1,185 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import Axios from 'axios';
-import locations from './locations.json';
-import EAuth from '../../EAuth/EAuth.jsx';
+import { locations } from '#assets/inputs/inputs';
 import ENav from '../../ENav/ENav.jsx';
 
-class JobForm extends Component {
-  constructor(props) {
-    super(props);
+const FullTimeForm = ({ jobData, handleChange, addJob }) => {
+  return (
+    <div className="add-job">
+    <ENav />
 
-    this.state = {
-      title: '',
-      companyName: '',
-      industryType: '',
-      role: '',
-      jobDetails: '',
-      keySkills: [''],
-      ctc: '',
-      minExperience: 0,
-      maxExperience: 0,
-      location: '',
-      numberOfCandidates: 0,
-      percentageMatch: 0,
-    };
+    <form className="job-form">
+      <h4>Add Job</h4>
 
-    this.handleChange = this.handleChange.bind(this);
-    this.addJob = this.addJob.bind(this);
-  }
+    {/* <h4>Transaction ID: {transactionId}</h4> */}
 
-  handleChange(e) {
-    e.preventDefault();
+      <div className="grid-1fr-1fr spaced">
 
-    this.setState({
-      [e.target.name]: e.target.value,
-    }, () => { return console.log(this.state); });
-  }
+        <div>
+          <label>Job Title</label>
+          <input
+            placeholder="ex: Looking for UX Developer"
+            name="title"
+            onChange={handleChange}
+          />
 
-  addJob(e) {
-    e.preventDefault();
+          <label>Company Name</label>
+          <input
+            placeholder="ex: Google"
+            name="companyName"
+            onChange={handleChange}
+          />
 
-    const addJobForm = new FormData();
+          <label>Industry</label>
+          <input
+            placeholder="ex: Software"
+            name="industryType"
+            onChange={handleChange}
+          />
 
-    // addJobForm.append('companyLogo', 'jpeg.jpeg');
-    // addJobForm.append('jobDescription', 'pdf.pdf');
-    addJobForm.append('title', this.state.title);
-    addJobForm.append('companyName', this.state.companyName);
-    // addJobForm.append('companyWebsiteUrl', this.state.comapnyURL);
-    addJobForm.append('industryType', this.state.industryType);
-    addJobForm.append('jobDetails', this.state.jobDetails);
-    addJobForm.append('keySkills', ['Have 2 legs', 'Have 2 arms']);
-    addJobForm.append('ctc', this.state.ctc);
-    addJobForm.append('minExperience', this.state.minExperience);
-    addJobForm.append('maxExperience', this.state.maxExperience);
-    addJobForm.append('location', this.state.location);
-    addJobForm.append('numberOfCandidate', this.state.numberOfCandidates);
-    addJobForm.append('percentageMatch', this.state.percentageMatch);
-    addJobForm.append('transactionIdForAddJob', this.props.location.state.transactionId);
+          <label>Role</label>
+          <input
+            placeholder="UX Developer"
+            name="role"
+            onChange={handleChange}
+          />
 
-    // for (const value of addJobForm.values()) {
-    //   console.log(value);
-    // }
+          <label>Job Details (0 / 255 characters)</label>
+          <div className="textarea-div">
+            <textarea
+              placeholder="ex: Google is looking for a new UX Developer to lead in creating a new UI for the newest version of Android"
+              className="aboutMe"
+              name="jobDetails"
+              onChange={handleChange}
+            />
+          </div>
 
-    Axios({
-      url: `${EAuth.backend}/api/jobs/add`,
-      method: 'post',
-      headers: {
-        token: localStorage.getItem('e-session'),
-      },
-      data: addJobForm,
-    })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
 
-  render() {
-    const { transactionId } = this.props.location.state;
-    console.log(transactionId);
+          <label>Key Skills</label>
+          <input
+            placeholder="ex: Flutter, Dart, SASS, Go"
+            name="keySkills"
+            onChange={handleChange}
+          />
 
-    return (
-      <div className="add-job">
-        <ENav />
+          <div className="upload-button">
+            <button className="button-2">Upload a job description</button>
+            <input
+              type="file"
+              name="resume"
+              accept="application/pdf,application/vnd.ms-excel"
+              onChange={(e) => { return handleFileUpload(e); }}
+              />
+          </div>
+        </div>
 
-        <form className="job-form">
-          <h4>Add Job</h4>
+        <div>
 
-        {/* <h4>Transaction ID: {transactionId}</h4> */}
+          <label>Company Logo</label>
+          <div className="image-box">
+            <img />
+          </div>
+          <input
+            type="file"
+            className="button-1"
+            />
 
-          <div className="grid-1fr-1fr spaced">
+          <label>Salary</label>
+            <input
+            type="number"
+            name="ctc"
+            onChange={handleChange}
+            />
 
-            <div>
-              <label>Job Title</label>
-              <input
-                placeholder="ex: Looking for UX Developer"
-                name="title"
-                onChange={(e) => { return this.handleChange(e); }}
+          <div className="range">
+            <label>Minimum Years of Experience</label>
+            <input
+              type="number"
+              name="minExperience"
+              onChange={handleChange}
               />
 
-              <label>Company Name</label>
-              <input
-                placeholder="ex: Google"
-                name="companyName"
-                onChange={(e) => { return this.handleChange(e); }}
+            <label>Maximum Years of Experience</label>
+            <input
+              type="number"
+              name="maxExperience"
+              onChange={handleChange}
               />
+          </div>
 
-              <label>Industry</label>
-              <input
-                placeholder="ex: Software"
-                name="industryType"
-                onChange={(e) => { return this.handleChange(e); }}
-              />
-
-              <label>Role</label>
-              <input
-                placeholder="UX Developer"
-                name="role"
-                onChange={(e) => { return this.handleChange(e); }}
-              />
-
-              <label>Job Details (0 / 255 characters)</label>
-              <div className="textarea-div">
-                <textarea
-                  placeholder="ex: Google is looking for a new UX Developer to lead in creating a new UI for the newest version of Android"
-                  className="aboutMe"
-                  name="jobDetails"
-                  onChange={(e) => { return this.handleChange(e); }}
-                />
-              </div>
+          <div className="select">
+            <label>Location</label>
+            <select name="location" onChange={handleChange}>
+              {
+                locations.map((state, i) => {
+                  return (
+                    <option key={i} value={state}>
+                      {state}
+                    </option>
+                  );
+                })
+              }
+            </select>
+          </div>
 
 
-              <label>Key Skills</label>
-              <input
-                placeholder="ex: Flutter, Dart, SASS, Go"
-                name="keySkills"
-                onChange={(e) => { return this.handleChange(e); }}
-              />
+          <div className="notification-settings">
+            <h3>Notification Settings</h3>
+            <p className="small-paragraph">
+              We'll send you e-mail notifcations based on these candidate-matching parameters.
+            </p>
 
-              <div className="upload-button">
-                <button className="button-2">Upload a resume</button>
+            <div className="sliders">
+              <label>Number of Candidates</label>
+              <div className="slider">
                 <input
-                  type="file"
-                  name="resume"
-                  accept="application/pdf,application/vnd.ms-excel"
-                  onChange={(e) => { return handleFileUpload(e); }}
+                  type="range"
+                  min="1"
+                  max="10"
+                  step="1"
+                  name="numberOfCandidate"
+                  defaultValue="1"
+                  onChange={handleChange}
                   />
-              </div>
-            </div>
-
-            <div>
-
-              <label>Company Logo</label>
-              <div className="image-box">
-                <img />
-              </div>
-              <input
-                type="file"
-                className="button-1"
-                />
-
-              <label>Salary</label>
                 <input
-                type="number"
-                name="ctc"
-                onChange={(e) => { return this.handleChange(e); }}
-                />
-
-              <div className="range">
-                <label>Minimum Years of Experience</label>
-                <input
-                  type="number"
-                  name="minExperience"
-                  onChange={(e) => { return this.handleChange(e); }}
-                  />
-
-                <label>Maximum Years of Experience</label>
-                <input
-                  type="number"
-                  name="maxExperience"
-                  onChange={(e) => { return this.handleChange(e); }}
+                  value={jobData.numberOfCandidate}
+                  readOnly
                   />
               </div>
 
-              <div className="select">
-                <label>Location</label>
-                <select name="location" onChange={(e) => { this.handleChange(e); }}>
-                  {
-                    locations.states.map((state, i) => {
-                      return (
-                        <option key={i} value={state}>
-                          {state}
-                        </option>
-                      );
-                    })
-                  }
-                </select>
+              <label>Percentage Match</label>
+              <div className="slider">
+              <input
+                type="range"
+                min="20"
+                max="100"
+                step="1"
+                name="percentageMatch"
+                defaultValue="20"
+                onChange={handleChange}
+                />
+              <input
+                value={`${jobData.percentageMatch} %`}
+                readOnly
+                />
               </div>
-
-
-              <div className="notification-settings">
-                <h3>Notification Settings</h3>
-                <p className="small-paragraph">
-                  We'll send you e-mail notifcations around these candidate-matching parameters.
-                </p>
-
-                <div className="sliders">
-                  <label>Number of Candidates</label>
-                  <div className="slider">
-                    <input
-                      type="range"
-                      min="1"
-                      max="10"
-                      step="1"
-                      name="numberOfCandidate"
-                      defaultValue="1"
-                      onChange={(e) => { return this.handleChange(e); }}
-                      />
-                    <input
-                      value={this.state.numberOfCandidate}
-                      readOnly
-                      />
-                  </div>
-
-                  <label>Percentage Match</label>
-                  <div className="slider">
-                  <input
-                    type="range"
-                    min="20"
-                    max="100"
-                    step="1"
-                    name="percentageMatch"
-                    defaultValue="20"
-                    onChange={(e) => { return this.handleChange(e); }}
-                    />
-                  <input
-                    value={`${this.state.percentageMatch} %`}
-                    readOnly
-                    />
-                  </div>
-                </div>
-              </div>
-
             </div>
           </div>
 
-          <div className="form-handler">
-            <Link to="/employer/firstPayment">
-              <button
-                className="button-1"
-                onClick={(e) => { return this.addJob(e); }}
-                >Save job Req</button>
-            </Link>
-          </div>
-        </form>
+        </div>
       </div>
-    );
-  }
-}
 
-export default JobForm;
+      <div className="form-handler">
+        <Link to="/employer/firstPayment">
+          <button
+            className="button-1"
+            onClick={addJob}
+            >Save job Req</button>
+        </Link>
+      </div>
+    </form>
+  </div>
+  );
+};
+
+export default FullTimeForm;

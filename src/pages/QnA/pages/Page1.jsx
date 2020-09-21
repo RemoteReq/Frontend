@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Radio from '#parts/Radio.jsx';
 
 const Page1 = ({
-  handleChange, causes, increaseProgress, addToList,
+  handleChange, causes, increaseProgress, addToList, answered,
 }) => {
   return (
     <div className="QnA-page">
