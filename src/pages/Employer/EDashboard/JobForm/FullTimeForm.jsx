@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { locations } from '#assets/inputs/inputs';
+import { locations, salaries } from '#assets/inputs/inputs';
 import ENav from '../../ENav/ENav.jsx';
 
 const FullTimeForm = ({ jobData, handleChange, addJob }) => {
@@ -85,11 +85,20 @@ const FullTimeForm = ({ jobData, handleChange, addJob }) => {
             />
 
           <label>Salary</label>
-            <input
+            <select
             type="number"
             name="ctc"
             onChange={handleChange}
-            />
+            >
+              <option>-----</option>
+              {
+                salaries.map((salary, key) => {
+                  return (
+                   <option key={key}>{salary}</option>
+                  );
+                })
+              }
+            </select>
 
           <div className="range">
             <label>Minimum Years of Experience</label>
@@ -110,6 +119,7 @@ const FullTimeForm = ({ jobData, handleChange, addJob }) => {
           <div className="select">
             <label>Location</label>
             <select name="location" onChange={handleChange}>
+              <option>-----</option>
               {
                 locations.map((state, i) => {
                   return (

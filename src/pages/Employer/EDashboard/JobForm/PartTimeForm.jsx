@@ -117,6 +117,7 @@ const PartTimeForm = ({ jobData, handleChange, addJob }) => {
             <div className="select">
               <label>Location</label>
               <select name="location" onChange={handleChange}>
+                <option>-----</option>
                 {
                   locations.map((state, i) => {
                     return (
