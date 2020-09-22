@@ -70,7 +70,7 @@ const PartTimeForm = ({
                 <button className="button-2">Upload a job description</button>
                 <input
                   type="file"
-                  name="resume"
+                  name="jobDesc"
                   accept="application/pdf,application/vnd.ms-excel"
                   onChange={(e) => { return handleFileUpload(e); }}
                   />
