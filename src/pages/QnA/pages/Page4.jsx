@@ -4,14 +4,14 @@ import SkillBank from '#parts/SkillBank.jsx';
 import { locations } from '#assets/inputs/inputs';
 
 const Page4 = ({
-  keySkills, myKeySkills, addToList, decreaseProgress,
+  handleChange, keySkills, myKeySkills, addToList, increaseProgress, decreaseProgress,
 }) => {
   return (
     <div className="QnA-page">
       <p>
         How many years of relevant work experience do you have for the kind of work you're seeking?
       </p>
-      <input type="number"/>
+      <input type="number" name="totalExperience" onChange={handleChange}/>
 
       <p>
         Input all relevant skills you have to the kind of work you are seeking
@@ -22,9 +22,9 @@ const Page4 = ({
       <p>
         Zip code and State (we use this to match you to opportunities working on causes your interested in within your local are)
       </p>
-      <input type="number" min="0" max="99999"/>
+      <input type="number" min="0" max="99999" onChange={handleChange} name="address"/>
 
-      <select>
+      <select name="location" onChange={handleChange}>
         <option>-----</option>
         {
           locations.map((location, key) => {
@@ -44,8 +44,8 @@ const Page4 = ({
           >&laquo; Prev</button>
         </Link>
 
-        <Link to="/dashboard">
-          <button className="button-next">Submit</button>
+        <Link to="/QnA/5">
+          <button className="button-next" onClick={increaseProgress}>Next &raquo;</button>
         </Link>
       </div>
     </div>

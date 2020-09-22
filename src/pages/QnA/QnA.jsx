@@ -10,6 +10,7 @@ import Page1 from './pages/Page1.jsx';
 import Page2 from './pages/Page2.jsx';
 import Page3 from './pages/Page3.jsx';
 import Page4 from './pages/Page4.jsx';
+import Page5 from './pages/Page5.jsx';
 import {
   salaries, causes, degrees, timeZones, keySkills,
 } from '#assets/inputs/inputs';
@@ -21,13 +22,39 @@ class QnA extends Component {
     super(props);
 
     this.state = {
-      typingWork: 'either', // if part time, render part time QnA. if full time render full time QnA
+      jobType: 'either', // if part time, render part time QnA. if full time render full time QnA
       progress: 1, // the amount of questions answered
       cause1: '',
       cause2: '',
       cause3: '',
       keySkills: [],
-      availableDaysForWork: [],
+      eligibleToWorkInUS: '',
+      soonestJoinDate: '',
+      fluentInEnglish: '',
+      highestEducationLevel: '',
+      jobChangeReason: '',
+      availableWorkDays: [],
+      availableWorkHours: '',
+      timeZone: '',
+      hourlyWage: '',
+      salary: '',
+      projectDescription: '',
+      sampleProjectLink: '',
+      relavantCertificates: '',
+      isWorkRemotely: '',
+      descProfessionalGoal: '',
+      totalExperience: '',
+      linkedInURL: '',
+      personalURL: '',
+      mobileNum: '',
+      howLongWorkingRemotely: '',
+      otherLanguages: [],
+      refferedBy: '',
+      gender: '',
+      race: '',
+      veteranStatus: '',
+      dob: '',
+      desireIndustryType: '',
     };
 
     this.updateRedirect = this.updateRedirect.bind(this);
@@ -75,36 +102,48 @@ class QnA extends Component {
     }, () => { console.log(this.state); });
   }
 
-  submitAnswers() {
-    // e.preventDefault();
+  submitAnswers(e) {
+    e.preventDefault();
     const answers = this.state;
 
     const myCauses = [answers.cause1, answers.cause2, answers.cause3];
 
-    const myAnswers = {
+    const data = {
       eligibleToWorkInUS: answers.eligibleToWorkInUS,
       causesLikeToWorkOn: myCauses,
-      typeOfWork: answers.typingWork,
-      availableJoiningDate: answers.availableDaysForWork,
+      typeOfWork: answers.jobType,
+      availableJoiningDate: answers.soonestJoinDate,
       fluentInEnglish: answers.fluentInEnglish,
       highestEducationLevel: answers.highestEducationLevel,
       jobChangeReason: answers.jobChangeReason,
-      availableDaysForWork: answers.availableDaysForWork,
-      availableWorkTime: answers.availableWorkTime,
-      selectTimeZone: answers.selectTimeZone,
-      hourlyPayExpectation: answers.hourlyPayExpectation,
-      desireCTC: answers.desireCTC,
+      availableWorkDays: answers.availableWorkDays,
+      availableWorkHours: answers.availableWorkHours,
+      timeZone: answers.timeZone,
+      hourlyWage: answers.hourlyWage,
+      salary: answers.salary,
       projectDescription: answers.projectDescription,
       sampleProjectLink: answers.sampleProjectLink,
       relavantCertificates: answers.relavantCertificates,
       isWorkRemotely: answers.isWorkRemotely,
-      descProfessionalGoal: answers.descProfessionalGoal,
+      descProfessionalGoals: answers.descProfessionalGoals,
       totalExperience: answers.totalExperience,
-      desireLocation: answers.desireLocation,
-      desireKeySkills: answers.desireKeySkills,
+      desireLocation: answers.location,
+      desireKeySkills: answers.keySkills,
+      linkedInURL: answers.linkedInURL,
+      personalURL: answers.personalURL,
+      mobileNum: answers.mobileNum,
+      howLongWorkingRemotely: answers.howLongWorkingRemotely,
+      otherLanguages: answers.otherLanguages,
+      refferedBy: answers.refferedBy,
+      gender: answers.gender,
+      descProfessionalGoal: answers.descProfessionalGoal,
+      race: answers.race,
+      veteranStatus: answers.veteranStatus,
+      dob: answers.dob,
+      desireIndustryType: answers.desireIndustryType,
     };
 
-    console.log(myAnswers);
+    // console.log(myAnswers);
 
     axios({
       url: `${backend}/api/user/updateUserProfile`,
@@ -112,10 +151,14 @@ class QnA extends Component {
       headers: {
         token: localStorage.getItem('session'),
       },
-      data: {
-        myAnswers,
-      },
-    }, () => { console.log('answers submitted successfully'); });
+      data,
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   addToList(e) {
@@ -145,7 +188,7 @@ class QnA extends Component {
   increaseProgress() {
     this.setState({
       progress: this.state.progress + 1,
-    }, () => { this.submitAnswers(); });
+    });
   }
 
   decreaseProgress() {
@@ -231,6 +274,22 @@ class QnA extends Component {
                   increaseProgress={this.increaseProgress}
                   decreaseProgress={this.decreaseProgress}
                   handleChange={this.handleChange}
+                  // submitAnswers={this.submitAnswers}
+                />
+              );
+            }} />
+
+            <Route path="/QnA/5" render={(props) => {
+              return (
+                <Page5 {...props}
+                  answered={answered}
+                  keySkills={keySkills}
+                  myKeySkills={this.state.keySkills}
+                  addToList={this.addToList}
+                  increaseProgress={this.increaseProgress}
+                  decreaseProgress={this.decreaseProgress}
+                  handleChange={this.handleChange}
+                  submitAnswers={this.submitAnswers}
                 />
               );
             }} />

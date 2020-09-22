@@ -64,7 +64,7 @@ const Page1 = ({
 
       <div className="textarea-div">
         <textarea
-          name="whyWork"
+          name="jobChangeReason"
           onChange={handleChange}/>
       </div>
 
@@ -73,11 +73,11 @@ const Page1 = ({
         Are you seeking full-time work, part-time, or either?
       </p>
       <div className="radios">
-        <Radio value="full-time" label="full-time" name="typingWork" handler={handleChange}/>
+        <Radio value="full-time" label="Full Time" name="jobType" handler={handleChange}/>
 
-        <Radio value="part-time" label="part-time" name="typingWork" handler={handleChange}/>
+        <Radio value="part-time" label="Part Time" name="jobType" handler={handleChange}/>
 
-        <Radio value="either" label="either" name="typingWork" handler={handleChange}/>
+        <Radio value="either" label="either" name="jobType" handler={handleChange}/>
       </div>
 
       <p>
@@ -85,7 +85,7 @@ const Page1 = ({
       </p>
       <div>
         <input
-          name="availableJoiningDate"
+          name="soonestJoinDate"
           onChange={handleChange}
           type="date"
         />

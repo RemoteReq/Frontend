@@ -12,13 +12,13 @@ const Page2 = ({
       </p>
       <select
         onChange={handleChange}
-        name="education"
+        name="highestEducationLevel"
         >
         <option>-----</option>
         {
           degrees.map((degree, key) => {
             return (
-              <option value={`${degree}`} key={key}>{degree}</option>
+              <option value={degree} key={key}>{degree}</option>
             );
           })
         }
@@ -33,7 +33,7 @@ const Page2 = ({
           <label>Sunday</label>
           <input
             type="checkbox"
-            name="availableDaysForWork"
+            name="availableWorkDays"
             onChange={addToList}
             value="Sunday"
           />
@@ -43,7 +43,7 @@ const Page2 = ({
           <label>Monday</label>
           <input
             type="checkbox"
-            name="availableDaysForWork"
+            name="availableWorkDays"
             onChange={addToList}
             value="Monday"
           />
@@ -53,7 +53,7 @@ const Page2 = ({
           <label>Tuesday</label>
           <input
             type="checkbox"
-            name="availableDaysForWork"
+            name="availableWorkDays"
             onChange={addToList}
             value="Tuesday"
           />
@@ -63,7 +63,7 @@ const Page2 = ({
           <label>Wednesday</label>
           <input
             type="checkbox"
-            name="availableDaysForWork"
+            name="availableWorkDays"
             onChange={addToList}
             value="Wednesday"
           />
@@ -73,7 +73,7 @@ const Page2 = ({
           <label>Thursday</label>
           <input
             type="checkbox"
-            name="availableDaysForWork"
+            name="availableWorkDays"
             onChange={addToList}
             value="Thursday"
           />
@@ -83,7 +83,7 @@ const Page2 = ({
           <label>Friday</label>
           <input
             type="checkbox"
-            name="availableDaysForWork"
+            name="availableWorkDays"
             onChange={addToList}
             value="Friday"
           />
@@ -93,7 +93,7 @@ const Page2 = ({
           <label>Saturday</label>
           <input
             type="checkbox"
-            name="availableDaysForWork"
+            name="availableWorkDays"
             onChange={addToList}
             value="Saturday"
           />
@@ -106,7 +106,7 @@ const Page2 = ({
 
       <div>
         <select
-        name="selectTimeZone"
+          name="timeZone"
           onChange={handleChange}
         >
           <option>-----</option>
@@ -122,7 +122,8 @@ const Page2 = ({
 
       <div className="time-select">
         <input
-          name="availableWorkTime"
+          name="availableWorkHours"
+          onChange={handleChange}
           type="time"
         />
       </div>
@@ -134,7 +135,7 @@ const Page2 = ({
       <div className="wage-input">
         <p>$</p>
         <input
-          name="hourlyPayExpectation"
+          name="hourlyWage"
           type="number"
           onChange={handleChange}
         />
@@ -147,9 +148,10 @@ const Page2 = ({
       <div className="salary-input">
         <p>$</p>
         <select
-          name="desireCTC"
+          name="salary"
           onChange={handleChange}
         >
+          <option>-----</option>
           {salaries.map((salary, i) => {
             return (
               <option key={i}>
