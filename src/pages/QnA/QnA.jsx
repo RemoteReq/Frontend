@@ -36,8 +36,8 @@ class QnA extends Component {
       availableWorkDays: [],
       availableWorkHours: '',
       timeZone: '',
-      hourlyWage: '',
-      salary: '',
+      hourlyWage: 0,
+      salary: 0,
       projectDescription: '',
       sampleProjectLink: '',
       relavantCertificates: '',
@@ -64,6 +64,7 @@ class QnA extends Component {
     this.setProgress = this.setProgress.bind(this);
     this.addToList = this.addToList.bind(this);
     this.submitAnswers = this.submitAnswers.bind(this);
+    this.handleNumber = this.handleNumber.bind(this);
   }
 
   componentDidMount() {
@@ -102,6 +103,17 @@ class QnA extends Component {
     }, () => { console.log(this.state); });
   }
 
+  handleNumber(e) {
+    e.preventDefault();
+
+    const numberToSet = parseFloat(e.target.value, 10);
+    console.log('handling the numbers!', numberToSet);
+
+    this.setState({
+      [e.target.name]: numberToSet,
+    });
+  }
+
   submitAnswers(e) {
     e.preventDefault();
     const answers = this.state;
@@ -114,10 +126,10 @@ class QnA extends Component {
       typeOfWork: answers.jobType,
       availableJoiningDate: answers.soonestJoinDate,
       fluentInEnglish: answers.fluentInEnglish,
-      highestEducationLevel: answers.highestEducationLevel,
+      highestEducationLevel: 3,
       jobChangeReason: answers.jobChangeReason,
       availableWorkDays: answers.availableWorkDays,
-      availableWorkHours: answers.availableWorkHours,
+      availableWorkHours: '5-9',
       timeZone: answers.timeZone,
       hourlyWage: answers.hourlyWage,
       salary: answers.salary,
@@ -143,7 +155,43 @@ class QnA extends Component {
       desireIndustryType: answers.desireIndustryType,
     };
 
-    // console.log(myAnswers);
+    // const data = {
+    //   eligibleToWorkInUS: true,
+    //   causesLikeToWorkOn: ['Food', 'Education'],
+    //   typeOfWork: 'Full Time',
+    //   availableJoiningDate: '2020-09-25',
+    //   fluentInEnglish: true,
+    //   highestEducationLevel: 3,
+    //   jobChangeReason: 'because I can',
+    //   availableWorkDays: ['Monday', 'Wednesday', 'Friday'],
+    //   availableWorkHours: '9-14',
+    //   timeZone: 'America/Texas',
+    //   hourlyWage: 20,
+    //   salary: 40000,
+    //   projectDescription: 'I worked on this project',
+    //   sampleProjectLink: 'sampleURL',
+    //   relavantCertificates: '',
+    //   isWorkRemotely: true,
+    //   descProfessionalGoal: 'to become a pro',
+    //   totalExperience: 3,
+    //   location: 'Texas',
+    //   desireKeySkills: ['Node Js', 'AWS', 'Marketing', 'CodingJava Script'],
+    //   linkedInURL: 'linkedinURL',
+    //   personalURL: 'myURL',
+    //   mobileNum: '555-555-5555',
+    //   howLongWorkingRemotely: 20,
+    //   otherLanguages: [],
+    //   refferedBy: '',
+    //   gender: 'Male',
+    //   race: 'A Race',
+    //   veteranStatus: false,
+    //   dob: '2020-06-25',
+    //   address: '55555',
+    //   desireIndustryType: 'IT Industry',
+    // };
+
+
+    console.log(data);
 
     axios({
       url: `${backend}/api/user/updateUserProfile`,
@@ -246,6 +294,7 @@ class QnA extends Component {
                   increaseProgress={this.increaseProgress}
                   decreaseProgress={this.decreaseProgress}
                   handleChange={this.handleChange}
+                  handleNumber={this.handleNumber}
                   addToList={this.addToList}
                   typingWork={this.state.typingWork}
                   salaries={salaries}

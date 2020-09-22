@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Page2 = ({
-  handleChange, typingWork, salaries, degrees, timeZones, increaseProgress, decreaseProgress, addToList,
+  handleChange, handleNumber, salaries, degrees, timeZones, increaseProgress, decreaseProgress, addToList,
 }) => {
   return (
 
@@ -137,7 +137,7 @@ const Page2 = ({
         <input
           name="hourlyWage"
           type="number"
-          onChange={handleChange}
+          onChange={handleNumber}
         />
         <p>/hr</p>
       </div>
@@ -147,19 +147,24 @@ const Page2 = ({
       </p>
       <div className="salary-input">
         <p>$</p>
-        <select
+        <input
           name="salary"
-          onChange={handleChange}
+          onChange={handleNumber}
+        />
+        {/* <select
+          name="salary"
+          onChange={handleNumber}
         >
           <option>-----</option>
           {salaries.map((salary, i) => {
             return (
               <option key={i}>
-                {salary}
+                {salary.option}
               </option>
             );
           })}
-        </select>
+        </select> */}
+        <p>/year</p>
       </div>
 
       <div className="form-nav">
