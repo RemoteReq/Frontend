@@ -5,7 +5,7 @@ import SkillBank from '#parts/SkillBank.jsx';
 import ENav from '../../ENav/ENav.jsx';
 
 const FullTimeForm = ({
-  jobData, handleChange, addJob, addToList,
+  jobData, handleChange, addJob, addToList, handleFileUpload,
 }) => {
   return (
     <div className="add-job">

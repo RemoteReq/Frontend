@@ -11,7 +11,7 @@ const GigSelect = () => {
           <Link
             to={{
               pathname: '/employer/addJob',
-              state: { price: 100.00, afterHirePrice: 2500.00, gigType: 'FULL TIME' },
+              state: { price: 100.00, afterHirePrice: 2500.00, jobType: 'Full Time' },
             }}
           >
             <div className="gig-select-choice">
@@ -27,7 +27,7 @@ const GigSelect = () => {
           <Link
             to={{
               pathname: '/employer/addJob',
-              state: { price: 100.00, afterHirePrice: 1000.00, gigType: 'PART TIME' },
+              state: { price: 100.00, afterHirePrice: 1000.00, jobType: 'Part Time' },
             }}
           >
             <div className="gig-select-choice">

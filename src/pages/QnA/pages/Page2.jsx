@@ -18,7 +18,7 @@ const Page2 = ({
         {
           degrees.map((degree, key) => {
             return (
-              <option value={degree} key={key}>{degree}</option>
+              <option value={degree.value} key={key}>{degree.name}</option>
             );
           })
         }

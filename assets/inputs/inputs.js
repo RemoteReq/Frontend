@@ -18,13 +18,50 @@ const industries = [
   'software', 'electronics', 'food', 'banking', 'construction',
 ];
 
+// const degrees = [
+//   'G.E.D.',
+//   'High School',
+//   'Associates',
+//   'Bachelors',
+//   'Masters',
+//   'Ph. D.',
+// ];
+
 const degrees = [
-  'G.E.D.',
-  'High School',
-  'Associates',
-  'Bachelors',
-  'Masters',
-  'Ph. D.',
+  {
+    name: 'G.E.D',
+    value: 0,
+  },
+  {
+    name: 'High School',
+    value: 1,
+  },
+  {
+    name: 'Associates',
+    value: 2,
+  },
+  {
+    name: 'Bachelors',
+    value: 3,
+  },
+  {
+    name: 'Masters',
+    value: 4,
+  },
+  {
+    name: 'Ph. D.',
+    value: 5,
+  },
+];
+
+const daysOfWeek = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
 ];
 
 const causes = [
