@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { locations, salaries } from '#assets/inputs/inputs';
 import SkillBank from '#parts/SkillBank.jsx';
+import EducationSelector from '#parts/EducationSelector.jsx';
 import ENav from '../../ENav/ENav.jsx';
 
 const FullTimeForm = ({
@@ -61,12 +62,6 @@ const FullTimeForm = ({
           <label>Key Skills</label>
           <SkillBank addToList={addToList} myKeySkills={jobData.keySkills}/>
 
-          {/* <input
-            placeholder="ex: Flutter, Dart, SASS, Go"
-            name="keySkills"
-            onChange={handleChange}
-          /> */}
-
           <div className="upload-button">
             <button className="button-2">Upload a job description</button>
             <input
@@ -90,20 +85,22 @@ const FullTimeForm = ({
             />
 
           <label>Salary</label>
+          <div className="select">
             <select
             type="number"
-            name="ctc"
+            name="salary"
             onChange={handleChange}
             >
               <option>-----</option>
-              {
-                salaries.map((salary, key) => {
-                  return (
-                   <option key={key}>{salary}</option>
-                  );
-                })
-              }
+                {
+                  salaries.map((salary, key) => {
+                    return (
+                      <option value={salary.value} key={key}>{salary.option}</option>
+                    );
+                  })
+                }
             </select>
+          </div>
 
           <div className="range">
             <label>Minimum Years of Experience Required</label>
@@ -120,6 +117,8 @@ const FullTimeForm = ({
               onChange={handleChange}
               />
           </div>
+
+          <EducationSelector name="requiredEducationlevel" handleChange={handleChange}/>
 
           <div className="select">
             <label>Location</label>
@@ -139,47 +138,63 @@ const FullTimeForm = ({
 
 
           <div className="notification-settings">
-            <h3>Notification Settings</h3>
-            <p className="small-paragraph">
-              We'll send you e-mail notifcations based on these candidate-matching parameters.
-            </p>
+              <h3>Notification Settings</h3>
+              <p className="small-paragraph">
+                We'll send you e-mail notifcations around these candidate-matching parameters.
+              </p>
 
-            <div className="sliders">
-              <label>Number of Candidates</label>
-              <div className="slider">
+              <div className="sliders">
+                <label>Number of Candidates</label>
+                <div className="slider">
+                  <input
+                    type="range"
+                    min="1"
+                    max="10"
+                    step="1"
+                    name="numberOfCandidate"
+                    defaultValue="1"
+                    onChange={handleChange}
+                    />
+                  <input
+                    value={jobData.numberOfCandidate}
+                    readOnly
+                    />
+                </div>
+
+                <label>Percentage Match</label>
+                <div className="slider">
                 <input
                   type="range"
-                  min="1"
-                  max="10"
+                  min="20"
+                  max="100"
                   step="1"
-                  name="numberOfCandidate"
-                  defaultValue="1"
+                  name="percentageMatch"
+                  defaultValue="20"
                   onChange={handleChange}
                   />
                 <input
-                  value={jobData.numberOfCandidate}
+                  value={`${jobData.percentageMatch} %`}
                   readOnly
                   />
-              </div>
 
-              <label>Percentage Match</label>
-              <div className="slider">
-              <input
-                type="range"
-                min="20"
-                max="100"
-                step="1"
-                name="percentageMatch"
-                defaultValue="20"
-                onChange={handleChange}
+                <label>Show candidates that are eligible to work in the United States</label>
+                <input
+                  type="checkbox"
+                  name="eligibleToWorkInUS"
+                  value={true}
+                  onChange={handleChange}
                 />
-              <input
-                value={`${jobData.percentageMatch} %`}
-                readOnly
+
+                <label>Show candidates that are fluent in English</label>
+                <input
+                  type="checkbox"
+                  name="fluentInEnglish"
+                  value={true}
+                  onChange={handleChange}
                 />
+                </div>
               </div>
             </div>
-          </div>
 
         </div>
       </div>

@@ -8,7 +8,7 @@ const Page2 = ({
 
     <div className="QnA-page">
       <p>
-        What is your highest level of education?
+        What is the highest level of education you have successfully completed?
       </p>
       <select
         onChange={handleChange}
@@ -24,7 +24,7 @@ const Page2 = ({
         }
       </select>
 
-      <p>
+      {/* <p>
         (For part-time only) Which days of the week are you available to work? (Select all that apply)
       </p>
 
@@ -98,10 +98,10 @@ const Page2 = ({
             value="Saturday"
           />
         </div>
-      </div>
+      </div> */}
 
       <p>
-        (For part-time only) What time of day are you available to work?
+        What time zone are you working from?
       </p>
 
       <div>
@@ -120,13 +120,13 @@ const Page2 = ({
         </select>
       </div>
 
-      <div className="time-select">
+      {/* <div className="time-select">
         <input
           name="availableWorkHours"
           onChange={handleChange}
           type="time"
         />
-      </div>
+      </div> */}
 
       <p>
         (For part-time only) What are your hourly pay expectations?

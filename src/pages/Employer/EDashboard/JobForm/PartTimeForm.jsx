@@ -25,7 +25,7 @@ const PartTimeForm = ({
           <div>
             <label>Job Title</label>
             <input
-              placeholder="ex: Looking for UX Developer"
+              placeholder="ex: UX Developer"
               name="title"
               onChange={handleChange}
             />
@@ -37,19 +37,19 @@ const PartTimeForm = ({
               onChange={handleChange}
             />
 
-            <label>Industry</label>
+            {/* <label>Industry</label>
             <input
               placeholder="ex: Software"
               name="industryType"
               onChange={handleChange}
-            />
+            /> */}
 
-            <label>Role</label>
+            {/* <label>Role</label>
             <input
               placeholder="UX Developer"
               name="role"
               onChange={handleChange}
-            />
+            /> */}
 
             <label>What cause does your company work on?</label>
             <CauseSelector name="cause" handleChange={handleChange}/>
@@ -75,8 +75,8 @@ const PartTimeForm = ({
               type="date"
             /> */}
             <br/>
-            <label>Work Days</label>
-            <DaySelector addToList={addToList} />
+            {/* <label>Work Days</label>
+            <DaySelector addToList={addToList} /> */}
 
 
               <div className="upload-button">
@@ -108,7 +108,7 @@ const PartTimeForm = ({
               onChange={handleChange}
             />
 
-            <label>Number of Hours</label>
+            <label>Number of Hours Desired per Week</label>
             <input
               type="number"
               name="numberOfHours"
@@ -134,7 +134,7 @@ const PartTimeForm = ({
             <EducationSelector handleChange={handleChange} name="requiredEducationLevel"/>
 
             <div className="select">
-              <label>Location</label>
+              <label>State</label>
               <select name="location" onChange={handleChange}>
                 <option>-----</option>
                 {
@@ -151,11 +151,10 @@ const PartTimeForm = ({
 
             <TimeZoneSelector handleChange={handleChange}/>
 
-
             <div className="notification-settings">
               <h3>Notification Settings</h3>
               <p className="small-paragraph">
-                We'll send you e-mail notifcations around these candidate-matching parameters.
+                We will email you when your matching criteria is met. Let us know, when you would like to hear from us.
               </p>
 
               <div className="sliders">

@@ -7,7 +7,7 @@ const Page5 = ({
 }) => {
   return (
     <div className="QnA-page">
-      <p>
+      {/* <p>
         Describe your Professional Goals
       </p>
 
@@ -15,9 +15,9 @@ const Page5 = ({
         <textarea
           name="descProfessionalGoal"
           onChange={handleChange}/>
-      </div>
+      </div> */}
 
-      <p>Provide us your LinkedInURL</p>
+      {/* <p>Provide us your LinkedInURL</p>
       <input
         name="linkedInURL"
         onChange={handleChange}
@@ -33,7 +33,7 @@ const Page5 = ({
       <input
         name="mobileNum"
         onChange={handleChange}
-      />
+      /> */}
 
       <p>Provide us your DoB</p>
       <input
@@ -74,6 +74,7 @@ const Page5 = ({
         <option value="Industry2">Industry 2</option>
         <option value="Industry3">Industry 3</option>
         <option value="Industry4">Industry 4</option>
+        <option value="Software">Software</option>
       </select>
 
       <div className="form-nav">

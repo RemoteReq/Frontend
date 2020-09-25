@@ -9,7 +9,7 @@ const Page3 = ({
     <div className="QnA-page">
       <p>Your experience</p>
       <p>
-        Give a brief description of a project you have worked on that are relevant to this position.
+        Briefly describe a project you have worked on that is relevant to your desired work interests.
       </p>
 
       <div className="textarea-div">
@@ -20,7 +20,7 @@ const Page3 = ({
       </div>
 
       <p>
-        Provide a sample of your past relevant work (e.g. link to an online portfolio or image)
+        Provide a sample of your past relevant work (e.g. link to an online portfolio)
       </p>
       <input
         name="sampleProjectLink"
@@ -32,9 +32,9 @@ const Page3 = ({
       </p>
 
       <div className="radios">
-        <Radio value={true} label="yes" name="isWorkRemotely" handler={handleChange}/>
+        <Radio value={true} label="Yes" name="isWorkRemotely" handler={handleChange}/>
 
-        <Radio value={false} label="no" name="isWorkRemotely" handler={handleChange}/>
+        <Radio value={false} label="No" name="isWorkRemotely" handler={handleChange}/>
       </div>
 
       <div className="form-nav">

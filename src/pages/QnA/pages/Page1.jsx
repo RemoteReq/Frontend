@@ -11,9 +11,9 @@ const Page1 = ({
         Are you eligible to work in the United States?
       </p>
       <div className="radios">
-        <Radio value={true} label="yes" name="eligibleToWorkInUS" handler={handleChange}/>
+        <Radio value={true} label="Yes" name="eligibleToWorkInUS" handler={handleChange}/>
 
-        <Radio value={false} label="no" name="eligibleToWorkInUS" handler={handleChange}/>
+        <Radio value={false} label="No" name="eligibleToWorkInUS" handler={handleChange}/>
       </div>
 
       <p>
@@ -70,14 +70,14 @@ const Page1 = ({
 
 
       <p>
-        Are you seeking full-time work, part-time, or either?
+        Are you seeking work on a full-time, or part-time basis? Or, are you open to either?
       </p>
       <div className="radios">
         <Radio value="full-time" label="Full Time" name="jobType" handler={handleChange}/>
 
         <Radio value="part-time" label="Part Time" name="jobType" handler={handleChange}/>
 
-        <Radio value="either" label="either" name="jobType" handler={handleChange}/>
+        <Radio value="either" label="Either" name="jobType" handler={handleChange}/>
       </div>
 
       <p>
@@ -95,9 +95,9 @@ const Page1 = ({
         Are you able to communicate (orally and in writing) in English at a native level?
       </p>
       <div className="radios">
-        <Radio value={true} label="yes" name="fluentInEnglish" handler={handleChange}/>
+        <Radio value={true} label="Yes" name="fluentInEnglish" handler={handleChange}/>
 
-        <Radio value={false} label="no" name="fluentInEnglish" handler={handleChange}/>
+        <Radio value={false} label="No" name="fluentInEnglish" handler={handleChange}/>
       </div>
 
       <div className="form-nav">

@@ -14,26 +14,30 @@ const Page4 = ({
       <input type="number" name="totalExperience" onChange={handleChange}/>
 
       <p>
-        Input all relevant skills you have to the kind of work you are seeking
+        Select all relevant skills you have to the kind of work you are seeking
       </p>
 
       <SkillBank keySkills={keySkills} myKeySkills={myKeySkills} addToList={addToList}/>
 
       <p>
-        Zip code and State (we use this to match you to opportunities working on causes your interested in within your local are)
+        Zip Code
       </p>
       <input type="number" min="0" max="99999" onChange={handleChange} name="address"/>
+
+      <p>State</p>
+      <div className="select">
 
       <select name="location" onChange={handleChange}>
         <option>-----</option>
         {
           locations.map((location, key) => {
             return (
-            <option key={key} value={location}>{location}</option>
+              <option key={key} value={location}>{location}</option>
             );
           })
-        }
+          }
       </select>
+      </div>
 
 
       <div className="form-nav">

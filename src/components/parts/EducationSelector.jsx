@@ -4,7 +4,7 @@ import { degrees } from '#assets/inputs/inputs';
 const EducationSelector = ({ handleChange, name }) => {
   return (
     <div className="select">
-      <label>Minimum Education Required</label>
+      <label>Minimum Education Level Required</label>
       <select
         onChange={handleChange}
         name={`${name || 'highestEducationLevel'}`}

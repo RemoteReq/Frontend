@@ -94,7 +94,6 @@ class JobForm extends Component {
     addJobForm.append('minExperience', this.state.minExperience);
     addJobForm.append('maxExperience', this.state.maxExperience);
     addJobForm.append('location', this.state.location);
-    addJobForm.append('timeZone', this.state.timeZone);
     addJobForm.append('numberOfCandidate', this.state.numberOfCandidates);
     addJobForm.append('percentageMatch', this.state.percentageMatch);
     // addJobForm.append('transactionIdForAddJob', this.props.location.state.transactionId);
@@ -107,6 +106,7 @@ class JobForm extends Component {
 
     if (jobType === 'Part Time') {
       addJobForm.append('jobType', jobType);
+      addJobForm.append('timeZone', this.state.timeZone);
       addJobForm.append('hourlyWage', this.state.hourlyWage);
       addJobForm.append('workDays', this.state.availableWorkDays);
       addJobForm.append('workHours', '9-14');
@@ -114,6 +114,10 @@ class JobForm extends Component {
 
     if (jobType === 'Full Time') {
       addJobForm.append('jobType', jobType);
+      addJobForm.append('timeZone', '');
+      addJobForm.append('hourlyWage', '');
+      addJobForm.append('workDays', '');
+      addJobForm.append('workHours', '');
     }
 
     // View values before sending
@@ -144,7 +148,7 @@ class JobForm extends Component {
 
     return (
 
-      this.props.location.state.gigType === 'Full Time'
+      this.props.location.state.jobType === 'Full Time'
         ? <FullTimeFrom
         jobData={jobData}
         handleSelect={this.handleSelect}

@@ -40,32 +40,6 @@ const GigSelect = () => {
             </div>
           </Link>
         </div>
-
-        <div className="cause-select">
-
-        <p>
-          What cause does this job concern?
-        </p>
-          <select>
-            <option>-----</option>
-            <option>Educational Equity (K-12)</option>
-            <option>Immigrant Rights</option>
-            <option>Voting Rights</option>
-            <option>Youth Extracurriculars (sports, band, etc.)</option>
-            <option>Environmental Rights</option>
-            <option>Animal Rights</option>
-            <option>US Military Veterans</option>
-            <option>LGBTQ rights </option>
-            <option>Health and Medical Care</option>
-            <option>Women’s Rights </option>
-            <option>Community Development </option>
-            <option>Criminal Justice Reform</option>
-            <option>Food Insecurity</option>
-            <option>Water and Sanitation</option>
-            <option>Arts and Culture </option>
-            <option>Religion</option>
-          </select>
-        </div>
       </form>
 
     </div>
