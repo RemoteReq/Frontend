@@ -21,7 +21,7 @@ class JobForm extends Component {
       minExperience: 0,
       maxExperience: 0,
       location: '',
-      numberOfCandidates: 0,
+      numberOfCandidate: 0,
       percentageMatch: 0,
     };
 
@@ -29,6 +29,7 @@ class JobForm extends Component {
     this.addJob = this.addJob.bind(this);
     this.addToList = this.addToList.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
+    this.parseToNumber = this.parseToNumber.bind(this);
   }
 
   componentDidMount() {
@@ -44,6 +45,12 @@ class JobForm extends Component {
 
     this.setState({
       [e.target.name]: e.target.value,
+    }, () => { return console.log(this.state); });
+  }
+
+  parseToNumber(e) {
+    this.setState({
+      [e.target.name]: parseInt(e.target.value, 10),
     }, () => { return console.log(this.state); });
   }
 
@@ -95,7 +102,7 @@ class JobForm extends Component {
     addJobForm.append('maxExperience', this.state.maxExperience);
     addJobForm.append('location', this.state.location);
     addJobForm.append('timeZone', this.state.timeZone);
-    addJobForm.append('numberOfCandidate', this.state.numberOfCandidates);
+    addJobForm.append('numberOfCandidate', this.state.numberOfCandidate);
     addJobForm.append('percentageMatch', this.state.percentageMatch);
     // addJobForm.append('transactionIdForAddJob', this.props.location.state.transactionId);
     addJobForm.append('transactionIdForAddJob', 'sample job for testing');
@@ -154,6 +161,7 @@ class JobForm extends Component {
         addJob={this.addJob}/>
 
         : <PartTimeForm
+        handleNumber={this.parseToNumber}
         jobData={jobData}
         handleSelect={this.handleSelect}
         addToList={this.addToList}
