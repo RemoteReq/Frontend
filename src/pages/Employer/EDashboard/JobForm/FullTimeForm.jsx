@@ -48,7 +48,7 @@ const FullTimeForm = ({
             onChange={handleChange}
           />
 
-          <label>Job Details (0 / 255 characters)</label>
+          <label>Job Details</label>
           <div className="textarea-div">
             <textarea
               placeholder="ex: Google is looking for a new UX Developer to lead in creating a new UI for the newest version of Android"

@@ -10,10 +10,6 @@ import Page1 from './pages/Page1.jsx';
 import Page2 from './pages/Page2.jsx';
 import Page3 from './pages/Page3.jsx';
 import Page4 from './pages/Page4.jsx';
-import Page5 from './pages/Page5.jsx';
-import {
-  salaries, causes, degrees, timeZones, keySkills,
-} from '#assets/inputs/inputs';
 
 const backend = 'http://3.21.186.204:3030';
 
@@ -31,10 +27,12 @@ class QnA extends Component {
       eligibleToWorkInUS: '',
       soonestJoinDate: '',
       fluentInEnglish: '',
-      highestEducationLevel: '',
+      highestEducationLevel: 0,
       jobChangeReason: '',
       availableWorkDays: [],
       availableWorkHours: '',
+      availableHoursFrom: '',
+      availableHoursTo: '',
       timeZone: '',
       hourlyWage: 0,
       salary: 0,
@@ -119,6 +117,7 @@ class QnA extends Component {
     const answers = this.state;
 
     const myCauses = [answers.cause1, answers.cause2, answers.cause3];
+    const workHours = `${answers.availableHoursFrom}-${answers.availableHoursTo}`;
 
     const data = {
       eligibleToWorkInUS: answers.eligibleToWorkInUS,
@@ -126,10 +125,9 @@ class QnA extends Component {
       jobType: answers.jobType,
       availableJoiningDate: answers.soonestJoinDate,
       fluentInEnglish: answers.fluentInEnglish,
-      highestEducationLevel: 3,
+      highestEducationLevel: answers.highestEducationLevel,
       jobChangeReason: answers.jobChangeReason,
-      availableWorkDays: answers.availableWorkDays,
-      availableWorkHours: '5-9',
+      availableWorkHours: workHours,
       timeZone: answers.timeZone,
       hourlyWage: answers.hourlyWage,
       salary: answers.salary,
@@ -141,18 +139,20 @@ class QnA extends Component {
       totalExperience: answers.totalExperience,
       desireLocation: answers.location,
       desireKeySkills: answers.keySkills,
-      linkedInURL: answers.linkedInURL,
-      personalURL: answers.personalURL,
-      mobileNum: answers.mobileNum,
       howLongWorkingRemotely: answers.howLongWorkingRemotely,
-      otherLanguages: answers.otherLanguages,
-      refferedBy: answers.refferedBy,
-      gender: answers.gender,
-      descProfessionalGoal: answers.descProfessionalGoal,
-      race: answers.race,
-      veteranStatus: answers.veteranStatus,
-      dob: answers.dob,
-      desireIndustryType: answers.desireIndustryType,
+      // The following is hardcoded to comply with backend required fields, these MUST be removed on the backend
+      availableWorkDays: ['Monday', 'Wednesday', 'Friday'],
+      linkedInURL: 'LinkedInURL.com',
+      personalURL: 'myURL.com',
+      mobileNum: '555-555-5555',
+      otherLanguages: ['Japanese', 'Korean'],
+      refferedBy: 'Google Analytics',
+      gender: 'Male',
+      descProfessionalGoal: 'To become a pro!',
+      race: 'My Ethnicity',
+      veteranStatus: false,
+      dob: '1999-9-9',
+      desireIndustryType: 'Software',
     };
 
     // const data = {
@@ -210,8 +210,6 @@ class QnA extends Component {
   }
 
   addToList(e) {
-    // e.preventDefault();
-
     let arrayToJoin = this.state[e.target.name];
 
     if (!arrayToJoin.includes(e.target.value)) {
@@ -283,7 +281,6 @@ class QnA extends Component {
                   decreaseProgress={this.decreaseProgress}
                   handleChange={this.handleChange}
                   addToList={this.addToList}
-                  causes={causes}
                 />
               );
             }}/>
@@ -296,10 +293,6 @@ class QnA extends Component {
                   handleChange={this.handleChange}
                   handleNumber={this.handleNumber}
                   addToList={this.addToList}
-                  typingWork={this.state.typingWork}
-                  salaries={salaries}
-                  degrees={degrees}
-                  timeZones={timeZones}
                 />
               );
             }} />
@@ -307,6 +300,8 @@ class QnA extends Component {
               return (
                 <Page3 {...props}
                   answered={answered}
+                  myKeySkills={this.state.keySkills}
+                  addToList={this.addToList}
                   increaseProgress={this.increaseProgress}
                   decreaseProgress={this.decreaseProgress}
                   handleChange={this.handleChange}
@@ -317,24 +312,6 @@ class QnA extends Component {
               return (
                 <Page4 {...props}
                   answered={answered}
-                  keySkills={keySkills}
-                  myKeySkills={this.state.keySkills}
-                  addToList={this.addToList}
-                  increaseProgress={this.increaseProgress}
-                  decreaseProgress={this.decreaseProgress}
-                  handleChange={this.handleChange}
-                  // submitAnswers={this.submitAnswers}
-                />
-              );
-            }} />
-
-            <Route path="/QnA/5" render={(props) => {
-              return (
-                <Page5 {...props}
-                  answered={answered}
-                  keySkills={keySkills}
-                  myKeySkills={this.state.keySkills}
-                  addToList={this.addToList}
                   increaseProgress={this.increaseProgress}
                   decreaseProgress={this.decreaseProgress}
                   handleChange={this.handleChange}

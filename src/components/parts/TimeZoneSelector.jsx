@@ -1,10 +1,10 @@
 import React from 'react';
 import { timeZones } from '#assets/inputs/inputs';
 
-const TimeZoneSelector = ({ handleChange }) => {
+const TimeZoneSelector = ({ handleChange, label }) => {
   return (
     <div className="select">
-      <label>Time Zone</label>
+      <label>{label || 'Time Zone'}</label>
       <select
         name="timeZone"
         onChange={handleChange}

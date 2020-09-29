@@ -1,10 +1,10 @@
 import React from 'react';
 import { degrees } from '#assets/inputs/inputs';
 
-const EducationSelector = ({ handleChange, name }) => {
+const EducationSelector = ({ handleChange, name, label }) => {
   return (
     <div className="select">
-      <label>Minimum Education Level Required</label>
+      <label>{label || 'Minumum Education Level Required'}</label>
       <select
         onChange={handleChange}
         name={`${name || 'highestEducationLevel'}`}

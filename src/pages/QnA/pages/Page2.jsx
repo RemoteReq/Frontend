@@ -1,132 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Radio from '#parts/Radio.jsx';
+import TimeZoneSelector from '#parts/TimeZoneSelector.jsx';
+import AvailableHours from '#parts/AvailableHours.jsx';
+import SalarySelector from '#parts/SalarySelector.jsx';
 
 const Page2 = ({
-  handleChange, handleNumber, salaries, degrees, timeZones, increaseProgress, decreaseProgress, addToList,
+  handleChange, handleNumber, timeZones, increaseProgress, decreaseProgress,
 }) => {
   return (
 
     <div className="QnA-page">
-      <p>
-        What is the highest level of education you have successfully completed?
-      </p>
-      <select
-        onChange={handleChange}
-        name="highestEducationLevel"
-        >
-        <option>-----</option>
-        {
-          degrees.map((degree, key) => {
-            return (
-              <option value={degree.value} key={key}>{degree.name}</option>
-            );
-          })
-        }
-      </select>
-
-      {/* <p>
-        (For part-time only) Which days of the week are you available to work? (Select all that apply)
-      </p>
-
-      <div className="day-of-week-select">
-        <div className="input-pill">
-          <label>Sunday</label>
-          <input
-            type="checkbox"
-            name="availableWorkDays"
-            onChange={addToList}
-            value="Sunday"
-          />
-        </div>
-
-        <div className="input-pill">
-          <label>Monday</label>
-          <input
-            type="checkbox"
-            name="availableWorkDays"
-            onChange={addToList}
-            value="Monday"
-          />
-        </div>
-
-        <div className="input-pill">
-          <label>Tuesday</label>
-          <input
-            type="checkbox"
-            name="availableWorkDays"
-            onChange={addToList}
-            value="Tuesday"
-          />
-        </div>
-
-        <div className="input-pill">
-          <label>Wednesday</label>
-          <input
-            type="checkbox"
-            name="availableWorkDays"
-            onChange={addToList}
-            value="Wednesday"
-          />
-        </div>
-
-        <div className="input-pill">
-          <label>Thursday</label>
-          <input
-            type="checkbox"
-            name="availableWorkDays"
-            onChange={addToList}
-            value="Thursday"
-          />
-        </div>
-
-        <div className="input-pill">
-          <label>Friday</label>
-          <input
-            type="checkbox"
-            name="availableWorkDays"
-            onChange={addToList}
-            value="Friday"
-          />
-        </div>
-
-        <div className="input-pill">
-          <label>Saturday</label>
-          <input
-            type="checkbox"
-            name="availableWorkDays"
-            onChange={addToList}
-            value="Saturday"
-          />
-        </div>
-      </div> */}
+      <br/>
+      <br/>
 
       <p>
-        What time zone are you working from?
+        All of our jobs are remote. Do you have access to (e.g. a computer, internet connection, a telephone and a private space) to work remotely?
       </p>
 
-      <div>
-        <select
-          name="timeZone"
-          onChange={handleChange}
-        >
-          <option>-----</option>
-          {
-            timeZones.map((timeZone, key) => {
-              return (
-              <option value={timeZone.value} key={key}>{timeZone.zone}</option>
-              );
-            })
-          }
-        </select>
+      <div className="radios">
+        <Radio value={true} label="Yes" name="isWorkRemotely" handler={handleChange}/>
+
+        <Radio value={false} label="No" name="isWorkRemotely" handler={handleChange}/>
       </div>
 
-      {/* <div className="time-select">
-        <input
-          name="availableWorkHours"
-          onChange={handleChange}
-          type="time"
-        />
-      </div> */}
+      <TimeZoneSelector handleChange={handleChange} label="What time zone are you working from?"/>
+
+      <br/>
+      <br/>
+
+      <p>What are your hours of availability?</p>
+      <AvailableHours handleChange={handleChange} />
+
+      <br/>
+      <br/>
 
       <p>
         (For part-time only) What are your hourly pay expectations?
@@ -142,28 +49,16 @@ const Page2 = ({
         <p>/hr</p>
       </div>
 
+      <br/>
+      <br/>
+
       <p>
         (For full-time only) what are your annual salary expectations?
       </p>
+
       <div className="salary-input">
         <p>$</p>
-        <input
-          name="salary"
-          onChange={handleNumber}
-        />
-        {/* <select
-          name="salary"
-          onChange={handleNumber}
-        >
-          <option>-----</option>
-          {salaries.map((salary, i) => {
-            return (
-              <option key={i}>
-                {salary.option}
-              </option>
-            );
-          })}
-        </select> */}
+        <SalarySelector handleChange={handleChange} name="salary"/>
         <p>/year</p>
       </div>
 

@@ -41,7 +41,7 @@ const QnABreadCrumb = ({ progress, setProgress }) => {
           onClick={setProgress}
         >Location</button>
       </Link>
-
+{/*
       <div className={`breadcrumb-bar ${progress > 4 ? 'complete' : 'incomplete'}`}></div>
 
       <Link to="/QnA/5">
@@ -50,7 +50,7 @@ const QnABreadCrumb = ({ progress, setProgress }) => {
           value={5}
           onClick={setProgress}
         >Other</button>
-      </Link>
+      </Link> */}
     </div>
   );
 };
