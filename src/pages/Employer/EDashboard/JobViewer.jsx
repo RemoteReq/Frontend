@@ -48,7 +48,7 @@ class JobViewer extends Component {
             <Link to="">Edit</Link>
           </div>
           <p>Company: {job.companyName}</p>
-          <p>Salary: {job.salary}</p>
+          <p>Salary: ${job.salary}</p>
           <p>Job Type: {job.jobType}</p>
           <p>Hourly Wage: ${job.hourlyWage}/hr</p>
           <p>Industry: {job.industryType}</p>
