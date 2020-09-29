@@ -123,7 +123,7 @@ class QnA extends Component {
     const data = {
       eligibleToWorkInUS: answers.eligibleToWorkInUS,
       causesLikeToWorkOn: myCauses,
-      typeOfWork: answers.jobType,
+      jobType: answers.jobType,
       availableJoiningDate: answers.soonestJoinDate,
       fluentInEnglish: answers.fluentInEnglish,
       highestEducationLevel: 3,

@@ -9,7 +9,7 @@ import CauseSelector from '#parts/CauseSelector.jsx';
 import ENav from '../../ENav/ENav.jsx';
 
 const PartTimeForm = ({
-  jobData, handleChange, addJob, addToList, handleFileUpload,
+  jobData, handleChange, addJob, addToList, handleFileUpload, handleNumber,
 }) => {
   return (
     <div className="add-job">
@@ -167,7 +167,7 @@ const PartTimeForm = ({
                     step="1"
                     name="numberOfCandidate"
                     defaultValue="1"
-                    onChange={handleChange}
+                    onChange={handleNumber}
                     />
                   <input
                     value={jobData.numberOfCandidate}
@@ -184,7 +184,7 @@ const PartTimeForm = ({
                   step="1"
                   name="percentageMatch"
                   defaultValue="20"
-                  onChange={handleChange}
+                  onChange={handleNumber}
                   />
                 <input
                   value={`${jobData.percentageMatch} %`}
