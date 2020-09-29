@@ -22,12 +22,20 @@ class JobViewer extends Component {
     })
       .then((response) => {
         console.log('Retrieving candidate matches for job: ', response);
+
+        if (response.data.length > 0) {
+          this.setState({
+            matches: response.data,
+          });
+        }
       });
   }
 
   render() {
     const { job } = this.props.location.state;
-    console.log(job);
+    const { matches } = this.state;
+    console.log('job details', job);
+    console.log('you matches btw', matches);
 
     return (
       <div className="job-viewer">
@@ -73,7 +81,20 @@ class JobViewer extends Component {
           <br/>
 
           <p>Matches:</p>
-          <div></div>
+          <ul className="job-viewer-matches">
+            {
+              matches
+                ? matches.map((candidate, key) => {
+                  return (
+                  <li key={key}>
+                    {candidate.fullName}
+                  </li>
+                  );
+                })
+
+                : <li>You matches will appear here</li>
+            }
+          </ul>
         </form>
       </div>
     );
