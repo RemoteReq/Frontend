@@ -1,17 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ENav from '../../ENav/ENav.jsx';
 
 const GigSelect = () => {
   const cause = '';
 
   return (
     <div className="gig-select-page">
+      <ENav />
+
       <form>
         <div className="gig-select">
           <Link
             to={{
               pathname: '/employer/addJob',
-              state: { price: 100.00, afterHirePrice: 2500.00, gigType: 'FULL TIME' },
+              state: { price: 100.00, afterHirePrice: 2500.00, jobType: 'Full Time' },
             }}
           >
             <div className="gig-select-choice">
@@ -27,7 +30,7 @@ const GigSelect = () => {
           <Link
             to={{
               pathname: '/employer/addJob',
-              state: { price: 100.00, afterHirePrice: 1000.00, gigType: 'PART TIME' },
+              state: { price: 100.00, afterHirePrice: 1000.00, jobType: 'Part Time' },
             }}
           >
             <div className="gig-select-choice">
@@ -39,32 +42,6 @@ const GigSelect = () => {
               <p>$1000 upon successful hire</p>
             </div>
           </Link>
-        </div>
-
-        <div className="cause-select">
-
-        <p>
-          What cause does this job concern?
-        </p>
-          <select>
-            <option>-----</option>
-            <option>Educational Equity (K-12)</option>
-            <option>Immigrant Rights</option>
-            <option>Voting Rights</option>
-            <option>Youth Extracurriculars (sports, band, etc.)</option>
-            <option>Environmental Rights</option>
-            <option>Animal Rights</option>
-            <option>US Military Veterans</option>
-            <option>LGBTQ rights </option>
-            <option>Health and Medical Care</option>
-            <option>Women’s Rights </option>
-            <option>Community Development </option>
-            <option>Criminal Justice Reform</option>
-            <option>Food Insecurity</option>
-            <option>Water and Sanitation</option>
-            <option>Arts and Culture </option>
-            <option>Religion</option>
-          </select>
         </div>
       </form>
 

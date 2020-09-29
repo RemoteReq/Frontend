@@ -24,7 +24,7 @@ const ProfileCard = ({ userDetails, handleFileUpload }) => {
               <p className="small-paragraph">{userDetails.cause || ''}</p>
 
               <h5>Education</h5>
-              {userDetails.education.map((item, key) => { return <p className="small-paragraph" key={key}>{item || ''}</p>; })}
+              {/* {userDetails.education.map((item, key) => { return <p className="small-paragraph" key={key}>{item || ''}</p>; })} */}
 
               <h5>Phone #</h5>
               <p className="small-paragraph">{userDetails.mobileNum || ''}</p>
@@ -34,12 +34,12 @@ const ProfileCard = ({ userDetails, handleFileUpload }) => {
 
               <h5>Skills</h5>
               <ul>
-                {userDetails.keySkills.map((item, key) => { return <li key={key}>{item || 'user skill item here'}</li>; })}
+                {userDetails.desireKeySkills.map((item, key) => { return <li key={key}>{item || 'user skill item here'}</li>; })}
               </ul>
 
               <h5>Current resume:</h5>
               <p className="small-paragraph">
-                {userDetails.resumePath}
+                {userDetails.resumePath || ''}
               </p>
 
               <div className="upload-button">

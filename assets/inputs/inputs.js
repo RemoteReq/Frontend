@@ -18,13 +18,50 @@ const industries = [
   'software', 'electronics', 'food', 'banking', 'construction',
 ];
 
+// const degrees = [
+//   'G.E.D.',
+//   'High School',
+//   'Associates',
+//   'Bachelors',
+//   'Masters',
+//   'Ph. D.',
+// ];
+
 const degrees = [
-  'G.E.D.',
-  'High School',
-  'Associates',
-  'Bachelors',
-  'Masters',
-  'Ph. D.',
+  {
+    name: 'G.E.D',
+    value: 0,
+  },
+  {
+    name: 'High School',
+    value: 1,
+  },
+  {
+    name: 'Associates',
+    value: 2,
+  },
+  {
+    name: 'Bachelors',
+    value: 3,
+  },
+  {
+    name: 'Masters',
+    value: 4,
+  },
+  {
+    name: 'Ph. D.',
+    value: 5,
+  },
+];
+
+const daysOfWeek = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
 ];
 
 const causes = [
@@ -90,21 +127,20 @@ const timeZones = [
 ];
 
 const salaries = [
-  '10,000',
-  '20,000',
-  '30,000',
-  '40,000',
-  '50,000',
-  '60,000',
-  '70,000',
-  '80,000',
-  '90,000',
-  '100,000',
-  '110,000',
-  '120,000',
-  '130,000',
-  '140,000',
-  '150,000',
+  { value: 10000, option: '10,000' },
+  { value: 20000, option: '20,000' },
+  { value: 30000, option: '30,000' },
+  { value: 40000, option: '40,000' },
+  { value: 50000, option: '50,000' },
+  { value: 60000, option: '60,000' },
+  { value: 70000, option: '70,000' },
+  { value: 80000, option: '80,000' },
+  { value: 90000, option: '90,000' },
+  { value: 100000, option: '100,000' },
+  { value: 110000, option: '110,000' },
+  { value: 120000, option: '120,000' },
+  { value: 130000, option: '130,000' },
+  { value: 140000, option: '140,000' },
 ];
 
 const keySkills = [

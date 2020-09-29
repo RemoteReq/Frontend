@@ -2,10 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { locations } from '#assets/inputs/inputs';
 import SkillBank from '#parts/SkillBank.jsx';
+import AvailableHours from '#parts/AvailableHours.jsx';
+import TimeZoneSelector from '#parts/TimeZoneSelector.jsx';
+import EducationSelector from '#parts/EducationSelector.jsx';
+import CauseSelector from '#parts/CauseSelector.jsx';
 import ENav from '../../ENav/ENav.jsx';
 
 const PartTimeForm = ({
-  jobData, handleChange, addJob, addToList,
+  jobData, handleChange, addJob, addToList, handleFileUpload, handleNumber,
 }) => {
   return (
     <div className="add-job">
@@ -21,50 +25,63 @@ const PartTimeForm = ({
           <div>
             <label>Job Title</label>
             <input
-              placeholder="ex: Looking for UX Developer"
+              placeholder="ex: UX Developer"
               name="title"
               onChange={handleChange}
             />
 
             <label>Company Name</label>
             <input
-              placeholder="ex: Google"
+              placeholder="ex: RemoteReq"
               name="companyName"
               onChange={handleChange}
             />
 
-            <label>Industry</label>
+            {/* <label>Industry</label>
             <input
               placeholder="ex: Software"
               name="industryType"
               onChange={handleChange}
-            />
+            /> */}
 
-            <label>Role</label>
+            {/* <label>Role</label>
             <input
               placeholder="UX Developer"
               name="role"
               onChange={handleChange}
-            />
+            /> */}
 
-            <label>Job Details (0 / 255 characters)</label>
+            <label>What cause does your company work on?</label>
+            <CauseSelector name="cause" handleChange={handleChange}/>
+
+            <label>Job Details</label>
             <div className="textarea-div">
               <textarea
-                placeholder="ex: Google is looking for a new UX Developer to lead in creating a new UI for the newest version of Android"
+                placeholder="ex: RemoteReq is looking for a new UX Developer to lead in creating a responsive mobile app for RemoteReq.com!"
                 className="aboutMe"
                 name="jobDetails"
                 onChange={handleChange}
-              />
-            </div>
+                />
+              </div>
 
 
             <label>Key Skills</label>
             <SkillBank addToList={addToList} myKeySkills={jobData.keySkills}/>
-            {/* <input
-              placeholder="ex: Flutter, Dart, SASS, Go"
-              name="keySkills"
+
+            <label>Soonest Join Date for Job</label>
+            <br/>
+            <input
+              name="soonestJoinDate"
               onChange={handleChange}
-            /> */}
+              type="date"
+            />
+            <br/>
+            {/* <label>Work Days</label>
+            <DaySelector addToList={addToList} /> */}
+
+            <label>Available work hours</label>
+            <AvailableHours />
+
 
               <div className="upload-button">
                 <button className="button-2">Upload a job description</button>
@@ -91,15 +108,15 @@ const PartTimeForm = ({
             <label>Hourly Wage</label>
             <input
               type="number"
-              name="ctc"
-              onChange={handleChange}
+              name="hourlyWage"
+              onChange={handleNumber}
             />
 
-            <label>Number of Hours</label>
+            <label>Number of Hours Desired per Week</label>
             <input
               type="number"
               name="numberOfHours"
-              onChange={handleChange}
+              onChange={handleNumber}
             />
 
             <div className="range">
@@ -107,19 +124,21 @@ const PartTimeForm = ({
               <input
                 type="number"
                 name="minExperience"
-                onChange={handleChange}
+                onChange={handleNumber}
                 />
 
               <label>Maximum Years of Experience Required</label>
               <input
                 type="number"
                 name="maxExperience"
-                onChange={handleChange}
+                onChange={handleNumber}
                 />
             </div>
 
+            <EducationSelector handleChange={handleNumber} name="requiredEducationLevel"/>
+
             <div className="select">
-              <label>Location</label>
+              <label>State</label>
               <select name="location" onChange={handleChange}>
                 <option>-----</option>
                 {
@@ -134,11 +153,12 @@ const PartTimeForm = ({
               </select>
             </div>
 
+            <TimeZoneSelector handleChange={handleChange}/>
 
             <div className="notification-settings">
               <h3>Notification Settings</h3>
               <p className="small-paragraph">
-                We'll send you e-mail notifcations around these candidate-matching parameters.
+                We will email you when your matching criteria is met. Let us know, when you would like to hear from us.
               </p>
 
               <div className="sliders">
@@ -151,7 +171,7 @@ const PartTimeForm = ({
                     step="1"
                     name="numberOfCandidate"
                     defaultValue="1"
-                    onChange={handleChange}
+                    onChange={handleNumber}
                     />
                   <input
                     value={jobData.numberOfCandidate}
@@ -168,12 +188,28 @@ const PartTimeForm = ({
                   step="1"
                   name="percentageMatch"
                   defaultValue="20"
-                  onChange={handleChange}
+                  onChange={handleNumber}
                   />
                 <input
                   value={`${jobData.percentageMatch} %`}
                   readOnly
                   />
+
+                <label>Show candidates that are eligible to work in the United States</label>
+                <input
+                  type="checkbox"
+                  name="eligibleToWorkInUS"
+                  value={true}
+                  onChange={handleChange}
+                />
+
+                <label>Show candidates that are fluent in English</label>
+                <input
+                  type="checkbox"
+                  name="fluentInEnglish"
+                  value={true}
+                  onChange={handleChange}
+                />
                 </div>
               </div>
             </div>

@@ -1,39 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SkillBank from '#parts/SkillBank.jsx';
 import { locations } from '#assets/inputs/inputs';
 
 const Page4 = ({
-  keySkills, myKeySkills, addToList, decreaseProgress,
+  handleChange, submitAnswers, decreaseProgress,
 }) => {
   return (
     <div className="QnA-page">
-      <p>
-        How many years of relevant work experience do you have for the kind of work you're seeking?
-      </p>
-      <input type="number"/>
+      <br/>
+      <br/>
 
       <p>
-        Input all relevant skills you have to the kind of work you are seeking
+        Zip Code
       </p>
+      <input type="number" min="0" max="99999" onChange={handleChange} name="address"/>
 
-      <SkillBank keySkills={keySkills} myKeySkills={myKeySkills} addToList={addToList}/>
+      <br/>
+      <br/>
 
-      <p>
-        Zip code and State (we use this to match you to opportunities working on causes your interested in within your local are)
-      </p>
-      <input type="number" min="0" max="99999"/>
+      <p>State</p>
+      <div className="select">
 
-      <select>
+      <select name="location" onChange={handleChange}>
         <option>-----</option>
         {
           locations.map((location, key) => {
             return (
-            <option key={key} value={location}>{location}</option>
+              <option key={key} value={location}>{location}</option>
             );
           })
-        }
+          }
       </select>
+      </div>
 
 
       <div className="form-nav">
@@ -44,8 +42,8 @@ const Page4 = ({
           >&laquo; Prev</button>
         </Link>
 
-        <Link to="/dashboard">
-          <button className="button-next">Submit</button>
+        <Link to="/QnA/5">
+          <button className="button-next" onClick={submitAnswers}>Submit</button>
         </Link>
       </div>
     </div>
