@@ -85,9 +85,11 @@ class JobViewer extends Component {
             {
               matches
                 ? matches.map((candidate, key) => {
+                  // const initial = candidate.fullName[0];
                   return (
-                  <li key={key}>
-                    {candidate.fullName}
+
+                  <li className="hidden-match" key={key}>
+                    {`${candidate.fullName} ${candidate.matchingPercentage}%`}
                   </li>
                   );
                 })

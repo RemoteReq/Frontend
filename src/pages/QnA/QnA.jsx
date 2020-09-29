@@ -18,7 +18,7 @@ class QnA extends Component {
     super(props);
 
     this.state = {
-      jobType: 'either', // if part time, render part time QnA. if full time render full time QnA
+      jobType: '', // if part time, render part time QnA. if full time render full time QnA
       progress: 1, // the amount of questions answered
       cause1: '',
       cause2: '',

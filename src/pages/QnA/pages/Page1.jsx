@@ -91,7 +91,7 @@ const Page1 = ({
 
         <Radio value="Part Time" label="Part Time" name="jobType" handler={handleChange}/>
 
-        <Radio value="Either" label="Either" name="jobType" handler={handleChange}/>
+        {/* <Radio value="Either" label="Either" name="jobType" handler={handleChange}/> */}
       </div>
 
       <br/>
