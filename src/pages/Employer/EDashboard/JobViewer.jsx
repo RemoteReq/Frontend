@@ -21,7 +21,7 @@ class JobViewer extends Component {
       },
     })
       .then((response) => {
-        console.log(response);
+        console.log('Retrieving candidate matches for job: ', response);
       });
   }
 

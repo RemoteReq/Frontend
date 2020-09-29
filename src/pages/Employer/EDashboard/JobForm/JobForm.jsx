@@ -17,19 +17,21 @@ class JobForm extends Component {
       jobDetails: '',
       keySkills: [],
       availableWorkDays: [],
+      availableHoursFrom: '',
+      availableHoursTo: '',
       salary: 0,
       minExperience: 0,
       maxExperience: 0,
       location: '',
-      numberOfCandidate: 0,
-      percentageMatch: 0,
+      numberOfCandidate: 1,
+      percentageMatch: 20,
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.addJob = this.addJob.bind(this);
     this.addToList = this.addToList.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
-    this.parseToNumber = this.parseToNumber.bind(this);
+    this.handleNumber = this.handleNumber.bind(this);
   }
 
   componentDidMount() {
@@ -48,7 +50,7 @@ class JobForm extends Component {
     }, () => { return console.log(this.state); });
   }
 
-  parseToNumber(e) {
+  handleNumber(e) {
     this.setState({
       [e.target.name]: parseInt(e.target.value, 10),
     }, () => { return console.log(this.state); });
@@ -85,39 +87,44 @@ class JobForm extends Component {
     const addJobForm = new FormData();
 
     const { jobType } = this.state;
+    const workHours = `${this.state.availableHoursFrom}-${this.state.availableHoursTo}`;
 
+    addJobForm.append('transactionIdForAddJob', 'sample job for testing');
+    // addJobForm.append('transactionIdForAddJob', this.props.location.state.transactionId);
     // addJobForm.append('companyLogo', 'jpeg.jpeg');
     // addJobForm.append('jobDescription', 'pdf.pdf');
+    // addJobForm.append('companyWebsiteUrl', this.state.comapnyURL);
+
     addJobForm.append('title', this.state.title);
     addJobForm.append('companyName', this.state.companyName);
-    // addJobForm.append('companyWebsiteUrl', this.state.comapnyURL);
-    addJobForm.append('industryType', this.state.industryType);
     addJobForm.append('cause', this.state.cause);
     addJobForm.append('jobDetails', this.state.jobDetails);
     addJobForm.append('keySkills', this.state.keySkills);
     addJobForm.append('requiredEducationLevel', this.state.requiredEducationLevel);
-    // addJobForm.append('ctc', this.state.ctc);
-    addJobForm.append('soonestJoinDate', this.state.soonestJoinDate);
     addJobForm.append('minExperience', this.state.minExperience);
     addJobForm.append('maxExperience', this.state.maxExperience);
     addJobForm.append('location', this.state.location);
-    addJobForm.append('timeZone', this.state.timeZone);
+    addJobForm.append('soonestJoinDate', this.state.soonestJoinDate);
+    addJobForm.append('otherLanguages', ['language1', 'language2']);
+
+    // This field shouldn't be required either, since the form may or may not be full time
+    addJobForm.append('salary', this.state.salary);
+
+    // --- !! This field must be deleted on the backend !! --
+    addJobForm.append('industryType', 'Software');
+
+    // notification settings
     addJobForm.append('numberOfCandidate', this.state.numberOfCandidate);
     addJobForm.append('percentageMatch', this.state.percentageMatch);
-    // addJobForm.append('transactionIdForAddJob', this.props.location.state.transactionId);
-    addJobForm.append('transactionIdForAddJob', 'sample job for testing');
     addJobForm.append('eligibleToWorkInUS', this.state.eligibleToWorkInUS);
     addJobForm.append('fluentInEnglish', this.state.fluentInEnglish);
-    addJobForm.append('soonestJoinDate', '2020-9-30');
-    addJobForm.append('otherLanguages', 'language1,language2');
-    addJobForm.append('salary', this.state.salary);
 
     if (jobType === 'Part Time') {
       addJobForm.append('jobType', jobType);
       addJobForm.append('timeZone', this.state.timeZone);
       addJobForm.append('hourlyWage', this.state.hourlyWage);
-      addJobForm.append('workDays', this.state.availableWorkDays);
-      addJobForm.append('workHours', '9-14');
+      addJobForm.append('workDays', ['Monday', 'Wednesday', 'Friday']);
+      addJobForm.append('workHours', workHours);
     }
 
     if (jobType === 'Full Time') {
@@ -143,6 +150,15 @@ class JobForm extends Component {
     })
       .then((response) => {
         console.log(response);
+
+        return response.status;
+      })
+      .then((status) => {
+        if (status === 200) {
+          this.props.history.push('/employer/dashboard');
+        } else {
+          console.log('fields are missing answers!');
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -159,6 +175,7 @@ class JobForm extends Component {
       this.props.location.state.jobType === 'Full Time'
         ? <FullTimeFrom
         jobData={jobData}
+        handleNumber={this.handleNumber}
         handleSelect={this.handleSelect}
         addToList={this.addToList}
         handleChange={this.handleChange}
@@ -166,8 +183,8 @@ class JobForm extends Component {
         addJob={this.addJob}/>
 
         : <PartTimeForm
-        handleNumber={this.parseToNumber}
         jobData={jobData}
+        handleNumber={this.handleNumber}
         handleSelect={this.handleSelect}
         addToList={this.addToList}
         handleChange={this.handleChange}

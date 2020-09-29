@@ -121,9 +121,9 @@ class QnA extends Component {
 
     const data = {
       eligibleToWorkInUS: answers.eligibleToWorkInUS,
-      causesLikeToWorkOn: myCauses,
+      causes: myCauses,
       jobType: answers.jobType,
-      availableJoiningDate: answers.soonestJoinDate,
+      soonestJoinDate: answers.soonestJoinDate,
       fluentInEnglish: answers.fluentInEnglish,
       highestEducationLevel: answers.highestEducationLevel,
       jobChangeReason: answers.jobChangeReason,
@@ -142,54 +142,19 @@ class QnA extends Component {
       howLongWorkingRemotely: answers.howLongWorkingRemotely,
       // The following is hardcoded to comply with backend required fields, these MUST be removed on the backend
       availableWorkDays: ['Monday', 'Wednesday', 'Friday'],
-      linkedInURL: 'LinkedInURL.com',
-      personalURL: 'myURL.com',
-      mobileNum: '555-555-5555',
-      otherLanguages: ['Japanese', 'Korean'],
-      refferedBy: 'Google Analytics',
-      gender: 'Male',
+      otherLanguages: ['language1', 'language2'],
       descProfessionalGoal: 'To become a pro!',
       race: 'My Ethnicity',
       veteranStatus: false,
       dob: '1999-9-9',
       desireIndustryType: 'Software',
+      gender: 'Male',
+      // OR instead, must be part of a different schema
+      linkedInURL: 'LinkedInURL.com',
+      personalURL: 'myURL.com',
+      mobileNum: '555-555-5555',
+      refferedBy: 'Google Analytics',
     };
-
-    // const data = {
-    //   eligibleToWorkInUS: true,
-    //   causesLikeToWorkOn: ['Food', 'Education'],
-    //   typeOfWork: 'Full Time',
-    //   availableJoiningDate: '2020-09-25',
-    //   fluentInEnglish: true,
-    //   highestEducationLevel: 3,
-    //   jobChangeReason: 'because I can',
-    //   availableWorkDays: ['Monday', 'Wednesday', 'Friday'],
-    //   availableWorkHours: '9-14',
-    //   timeZone: 'America/Texas',
-    //   hourlyWage: 20,
-    //   salary: 40000,
-    //   projectDescription: 'I worked on this project',
-    //   sampleProjectLink: 'sampleURL',
-    //   relavantCertificates: '',
-    //   isWorkRemotely: true,
-    //   descProfessionalGoal: 'to become a pro',
-    //   totalExperience: 3,
-    //   location: 'Texas',
-    //   desireKeySkills: ['Node Js', 'AWS', 'Marketing', 'CodingJava Script'],
-    //   linkedInURL: 'linkedinURL',
-    //   personalURL: 'myURL',
-    //   mobileNum: '555-555-5555',
-    //   howLongWorkingRemotely: 20,
-    //   otherLanguages: [],
-    //   refferedBy: '',
-    //   gender: 'Male',
-    //   race: 'A Race',
-    //   veteranStatus: false,
-    //   dob: '2020-06-25',
-    //   address: '55555',
-    //   desireIndustryType: 'IT Industry',
-    // };
-
 
     console.log(data);
 
@@ -203,6 +168,15 @@ class QnA extends Component {
     })
       .then((response) => {
         console.log(response);
+
+        return response.status;
+      })
+      .then((status) => {
+        if (status === 200) {
+          this.props.history.push('/dashboard');
+        } else {
+          console.log('fields are missing answers!');
+        }
       })
       .catch((error) => {
         console.log(error);

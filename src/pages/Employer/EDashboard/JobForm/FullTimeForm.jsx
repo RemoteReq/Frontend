@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import { locations, salaries } from '#assets/inputs/inputs';
 import SkillBank from '#parts/SkillBank.jsx';
 import EducationSelector from '#parts/EducationSelector.jsx';
+import CauseSelector from '#parts/CauseSelector.jsx';
+
 import ENav from '../../ENav/ENav.jsx';
 
 const FullTimeForm = ({
-  jobData, handleChange, addJob, addToList, handleFileUpload,
+  jobData, handleChange, addJob, addToList, handleFileUpload, handleNumber,
 }) => {
   return (
     <div className="add-job">
@@ -22,19 +24,19 @@ const FullTimeForm = ({
         <div>
           <label>Job Title</label>
           <input
-            placeholder="ex: Looking for UX Developer"
+            placeholder="ex: UX Developer"
             name="title"
             onChange={handleChange}
           />
 
           <label>Company Name</label>
           <input
-            placeholder="ex: Google"
+            placeholder="ex: RemoteReq"
             name="companyName"
             onChange={handleChange}
           />
 
-          <label>Industry</label>
+          {/* <label>Industry</label>
           <input
             placeholder="ex: Software"
             name="industryType"
@@ -46,12 +48,15 @@ const FullTimeForm = ({
             placeholder="UX Developer"
             name="role"
             onChange={handleChange}
-          />
+          /> */}
+
+          <label>What cause does your company work on?</label>
+          <CauseSelector name="cause" handleChange={handleChange}/>
 
           <label>Job Details</label>
           <div className="textarea-div">
             <textarea
-              placeholder="ex: Google is looking for a new UX Developer to lead in creating a new UI for the newest version of Android"
+              placeholder="ex: RemoteReq is looking for a new UX Developer to lead in creating a responsive mobile app for RemoteReq.com!"
               className="aboutMe"
               name="jobDetails"
               onChange={handleChange}
@@ -61,6 +66,14 @@ const FullTimeForm = ({
 
           <label>Key Skills</label>
           <SkillBank addToList={addToList} myKeySkills={jobData.keySkills}/>
+
+          <label>Soonest Join Date for Job</label>
+            <br/>
+            <input
+              name="soonestJoinDate"
+              onChange={handleChange}
+              type="date"
+            />
 
           <div className="upload-button">
             <button className="button-2">Upload a job description</button>
@@ -107,21 +120,21 @@ const FullTimeForm = ({
             <input
               type="number"
               name="minExperience"
-              onChange={handleChange}
+              onChange={handleNumber}
               />
 
             <label>Maximum Years of Experience Required</label>
             <input
               type="number"
               name="maxExperience"
-              onChange={handleChange}
+              onChange={handleNumber}
               />
           </div>
 
-          <EducationSelector name="requiredEducationlevel" handleChange={handleChange}/>
+          <EducationSelector handleChange={handleNumber} name="requiredEducationLevel"/>
 
           <div className="select">
-            <label>Location</label>
+            <label>State</label>
             <select name="location" onChange={handleChange}>
               <option>-----</option>
               {
@@ -135,7 +148,6 @@ const FullTimeForm = ({
               }
             </select>
           </div>
-
 
           <div className="notification-settings">
               <h3>Notification Settings</h3>
@@ -153,7 +165,7 @@ const FullTimeForm = ({
                     step="1"
                     name="numberOfCandidate"
                     defaultValue="1"
-                    onChange={handleChange}
+                    onChange={handleNumber}
                     />
                   <input
                     value={jobData.numberOfCandidate}
@@ -170,7 +182,7 @@ const FullTimeForm = ({
                   step="1"
                   name="percentageMatch"
                   defaultValue="20"
-                  onChange={handleChange}
+                  onChange={handleNumber}
                   />
                 <input
                   value={`${jobData.percentageMatch} %`}

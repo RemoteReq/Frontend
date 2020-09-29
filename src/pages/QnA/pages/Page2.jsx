@@ -35,6 +35,13 @@ const Page2 = ({
       <br/>
       <br/>
 
+      <p>How many hours are you available to work weekly?</p>
+      <input
+        name="howLongWorkingRemotely"
+        type="number"
+        onChange={handleNumber}
+      />
+
       <p>
         (For part-time only) What are your hourly pay expectations?
       </p>

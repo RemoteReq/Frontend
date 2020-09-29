@@ -6,14 +6,14 @@ const AvailableHours = ({ handleChange, label }) => {
       <label>{label}</label>
 
       <div className="available-hours">
-        <p>From</p>
+        <label>From</label>
         <input
           type="time"
           onChange={handleChange}
           name="availableHoursFrom"
         />
 
-        <p>To</p>
+        <label>To</label>
         <input
           type="time"
           onChange={handleChange}

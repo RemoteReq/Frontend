@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { locations } from '#assets/inputs/inputs';
 import SkillBank from '#parts/SkillBank.jsx';
-import DaySelector from '#parts/DaySelector.jsx';
+import AvailableHours from '#parts/AvailableHours.jsx';
 import TimeZoneSelector from '#parts/TimeZoneSelector.jsx';
 import EducationSelector from '#parts/EducationSelector.jsx';
 import CauseSelector from '#parts/CauseSelector.jsx';
@@ -32,7 +32,7 @@ const PartTimeForm = ({
 
             <label>Company Name</label>
             <input
-              placeholder="ex: Google"
+              placeholder="ex: RemoteReq"
               name="companyName"
               onChange={handleChange}
             />
@@ -57,7 +57,7 @@ const PartTimeForm = ({
             <label>Job Details</label>
             <div className="textarea-div">
               <textarea
-                placeholder="ex: Google is looking for a new UX Developer to lead in creating a new UI for the newest version of Android"
+                placeholder="ex: RemoteReq is looking for a new UX Developer to lead in creating a responsive mobile app for RemoteReq.com!"
                 className="aboutMe"
                 name="jobDetails"
                 onChange={handleChange}
@@ -68,15 +68,19 @@ const PartTimeForm = ({
             <label>Key Skills</label>
             <SkillBank addToList={addToList} myKeySkills={jobData.keySkills}/>
 
-            {/* <label>Soonest Join Date for Job</label>
+            <label>Soonest Join Date for Job</label>
+            <br/>
             <input
               name="soonestJoinDate"
               onChange={handleChange}
               type="date"
-            /> */}
+            />
             <br/>
             {/* <label>Work Days</label>
             <DaySelector addToList={addToList} /> */}
+
+            <label>Available work hours</label>
+            <AvailableHours />
 
 
               <div className="upload-button">
@@ -105,14 +109,14 @@ const PartTimeForm = ({
             <input
               type="number"
               name="hourlyWage"
-              onChange={handleChange}
+              onChange={handleNumber}
             />
 
             <label>Number of Hours Desired per Week</label>
             <input
               type="number"
               name="numberOfHours"
-              onChange={handleChange}
+              onChange={handleNumber}
             />
 
             <div className="range">
@@ -120,18 +124,18 @@ const PartTimeForm = ({
               <input
                 type="number"
                 name="minExperience"
-                onChange={handleChange}
+                onChange={handleNumber}
                 />
 
               <label>Maximum Years of Experience Required</label>
               <input
                 type="number"
                 name="maxExperience"
-                onChange={handleChange}
+                onChange={handleNumber}
                 />
             </div>
 
-            <EducationSelector handleChange={handleChange} name="requiredEducationLevel"/>
+            <EducationSelector handleChange={handleNumber} name="requiredEducationLevel"/>
 
             <div className="select">
               <label>State</label>
