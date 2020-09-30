@@ -42,7 +42,7 @@ class ForgotPassword extends Component {
           console.log(`An email to reset your account password has been sent to: ${email} ${response.status}`);
 
           this.setState({
-            statusMessage: `An email to reset your account password has been sent to: ${email}}`,
+            statusMessage: `An email to reset your account password has been sent to: ${email}`,
             responseStatus: true,
           });
         }

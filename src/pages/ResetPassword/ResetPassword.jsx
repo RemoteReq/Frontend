@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation, Link } from 'react-router-dom';
 import axios from 'axios';
 
 const backend = 'http://3.21.186.204:3030';
@@ -23,14 +23,13 @@ class ResetPassword extends Component {
     this.state = {
       password: '',
       confirmPassword: '',
+      statusMessage: '',
+      responseStatus: false,
+      returnToSignIn: false,
     };
 
     this.onChange = this.onChange.bind(this);
     this.onClick = this.onClick.bind(this);
-  }
-
-  checkPasswordMatch() {
-
   }
 
   onChange(e) {
@@ -43,6 +42,7 @@ class ResetPassword extends Component {
 
   onClick(e) {
     e.preventDefault();
+
     const { password, confirmPassword } = this.state;
 
     if (password === confirmPassword) {
@@ -56,17 +56,37 @@ class ResetPassword extends Component {
       axios.post(`${backend}/api/signin/resetPassword?resetToken=${this.props.resetPasswordID}`, body)
         .then((res) => {
           console.log(res);
+
+          this.setState({
+            statusMessage: 'Password reset successfully!',
+            returnToSignIn: true,
+            responseStatus: true,
+          });
         })
         .catch((err) => {
           console.log(err);
+
+          this.setState({
+            statusMessage: 'Please enter new passwords',
+            responseStatus: true,
+          });
         });
     } else {
       // When they passwords do no match, highlight the inputs in red
       console.log('Passwords do not match');
+
+      this.setState({
+        statusMessage: 'Passwords do not match.',
+        responseStatus: true,
+      });
     }
   }
 
   render() {
+    const { statusMessage } = this.state;
+    const { responseStatus } = this.state;
+    const { returnToSignIn } = this.state;
+
     return (
       <div className="reset-password">
 
@@ -90,6 +110,14 @@ class ResetPassword extends Component {
             onChange={(e) => { this.onChange(e); }}
           >
           </input>
+
+          <p
+            className={`${responseStatus ? 'error' : 'hide'}`}
+          >{statusMessage}</p>
+
+          <p className={`small-paragraph ${returnToSignIn ? 'show' : 'hide'}`}>
+              Return to Sign In <Link to="/signin">Here</Link>
+          </p>
 
           <button
             className="button-1"
