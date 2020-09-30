@@ -9,6 +9,8 @@ class ForgotPassword extends Component {
 
     this.state = {
       email: '',
+      statusMessage: '',
+      responseStatus: false,
     };
 
     this.onChange = this.onChange.bind(this);
@@ -26,16 +28,48 @@ class ForgotPassword extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
+    const { email } = this.state;
+
     const body = {
-      email: this.state.email,
+      email,
     };
 
     axios.post(`${backend}/api/signin/forgotPassword`, body)
-      .then(() => { return console.log('sending email for passwordrecovery!'); })
-      .catch(() => { return console.log('unable to send email for password recovery'); });
+      .then((response) => {
+        console.log('sending email for password recovery!', response);
+
+        if (response.status === 200) {
+          console.log(`An email to reset your account password has been sent to: ${email} ${response.status}`);
+
+          this.setState({
+            statusMessage: `An email to reset your account password has been sent to: ${email}}`,
+            responseStatus: true,
+          });
+        }
+      })
+      .catch((error) => {
+        if (email) {
+          console.error('no such email');
+
+          this.setState({
+            statusMessage: 'The email your provided is not associated with an account in our records',
+            responseStatus: true,
+          });
+        } else {
+          console.error('no email');
+
+          this.setState({
+            statusMessage: 'Please provide an email',
+            responseStatus: true,
+          });
+        }
+      });
   }
 
   render() {
+    const { statusMessage } = this.state;
+    const { responseStatus } = this.state;
+
     return (
       <div className="forgot-password">
 
@@ -49,10 +83,15 @@ class ForgotPassword extends Component {
             onChange={(e) => { this.onChange(e); }}
           ></input>
 
+          <p
+            className={`${responseStatus ? 'error' : 'hide'}`}
+          >{statusMessage}</p>
+
           <button
             className="button-1"
             onClick={(e) => { this.handleSubmit(e); }}
           >Request Password Reset</button>
+
         </form>
       </div>
     );
