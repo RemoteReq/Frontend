@@ -15,12 +15,6 @@ const SettingsNav = () => {
             Account
         </button>
       </Link>
-
-      <Link to="/employer/settings/jobReqNotifications">
-        <button>
-            Job Req Notifications
-        </button>
-      </Link>
     </div>
   );
 };

@@ -15,12 +15,6 @@ const SettingsNav = () => {
             Account
         </button>
       </Link>
-
-      <Link to="/settings/jobPreference">
-        <button>
-            Job Preference
-        </button>
-      </Link>
     </div>
   );
 };
