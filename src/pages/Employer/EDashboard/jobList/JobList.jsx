@@ -14,7 +14,7 @@ const JobList = ({ jobReqs }) => {
 
       <Link to="/employer/gigSelect">
         <button className="button-1 small-button">
-          Buy Job Post
+          Submit A Job Req
         </button>
       </Link>
 
