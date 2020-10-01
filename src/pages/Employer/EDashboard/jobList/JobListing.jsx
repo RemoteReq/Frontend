@@ -25,7 +25,7 @@ const JobListing = ({ job }) => {
 
               ? <div className="match-counter">
               <p>
-                {1}
+                {job.matchesCandidateCount}
               </p>
             </div>
 
