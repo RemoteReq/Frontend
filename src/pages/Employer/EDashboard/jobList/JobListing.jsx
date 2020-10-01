@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 const JobListing = ({ job }) => {
   console.log(job);
-  const previewDetails = job.jobDetails.substring(0, 128).concat('...');
+
+  const previewDetails = job.jobDetails.substring(0, 128);
 
   return (
   <div className="employer-job-listing">

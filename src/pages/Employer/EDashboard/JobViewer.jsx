@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ENav from '../ENav/ENav.jsx';
+import MatchIcon from './MatchIcon.jsx';
 
 const backend = 'http://3.21.186.204:3030';
 
@@ -9,7 +10,9 @@ class JobViewer extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      secondPaymentStatus: true,
+    };
   }
 
   componentDidMount() {
@@ -34,6 +37,7 @@ class JobViewer extends Component {
   render() {
     const { job } = this.props.location.state;
     const { matches } = this.state;
+    const { secondPaymentStatus } = this.state;
     console.log('job details', job);
     console.log('you matches btw', matches);
 
@@ -60,7 +64,7 @@ class JobViewer extends Component {
           <p>Cause: {job.cause}</p>
 
           <p>Description:</p>
-          <p>{job.jobDetails}</p>
+          <p className="small-paragraph" style={{ lineHeight: '14pt' }}>{job.jobDetails}</p>
 
           <br/>
           <br/>
@@ -81,22 +85,18 @@ class JobViewer extends Component {
           <br/>
 
           <p>Matches:</p>
-          <ul className="job-viewer-matches">
+          <div className="job-viewer-match-list">
             {
               matches
                 ? matches.map((candidate, key) => {
-                  // const initial = candidate.fullName[0];
                   return (
-
-                  <li className="hidden-match" key={key}>
-                    {`${candidate.fullName} ${candidate.matchingPercentage}%`}
-                  </li>
+                    <MatchIcon candidate={candidate} key={key}/>
                   );
                 })
 
                 : <li>You matches will appear here</li>
             }
-          </ul>
+          </div>
         </form>
       </div>
     );
