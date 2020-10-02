@@ -2,6 +2,7 @@
   border: 1px solid lightgray;
   border-radius: 5px;
   margin: 20px 0 20px 0;
+  padding: 10px 0 20px 0;
   height: 15%;
 
   a {
@@ -12,6 +13,7 @@
     color: lightgray;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     p {
       padding-top: 8px;
@@ -47,19 +49,25 @@
     p {
       padding: 8px 24px; 
     }
+    
+    a {
+      margin-left: 25px;
+    }
   }
 
   .match-rating {
     display: flex;
+    margin-top: 5px;
     padding-right: 24px;
   }
 
   .percentage-circle {
-    height: 25px;
-    width: 25px;
-    border: 4px solid $SecondaryColor;
+    height: 20px;
+    width: 20px;
+    border: 3px solid $SecondaryColor;
     border-radius: 50%;
   }
+
 
   .percentage-match {
     padding-left: 8px;

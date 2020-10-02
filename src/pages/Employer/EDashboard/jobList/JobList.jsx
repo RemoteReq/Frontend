@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import JobListing from './JobListing.jsx';
 
-// From here, loop over the inherited data from App.jsx and render and JobListings
-
 const JobList = ({ jobReqs }) => {
   return (
     jobReqs

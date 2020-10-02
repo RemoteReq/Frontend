@@ -109,9 +109,9 @@ const FindTalent = () => {
         <button className="button-1">Submit a Job Req</button>
       </Link>
 
-      <Link to="howItWorks">
+      {/* <Link to="howItWorks">
         <button className="button-2">How it works</button>
-      </Link>
+      </Link> */}
     </div>
     }
     />

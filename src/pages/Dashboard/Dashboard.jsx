@@ -6,9 +6,7 @@ import axios from 'axios';
 import Navigation from '../../components/parts/Navigation2.jsx';
 // import ProfileCard from './ProfileCard.jsx';
 import ProfileCard from './ProfileCard.jsx';
-import JobList from './jobList/JobList.jsx';
-import Reminder from './Reminder.jsx';
-import QnA from '../QnA/QnA.jsx';
+import SwitchWindow from './SwitchWindow.jsx';
 import auth from '../../components/Auth/Auth.jsx';
 
 const backend = 'http://3.21.186.204:3030';
@@ -18,7 +16,6 @@ class Dashboard extends Component {
     super(props);
 
     this.state = {
-      jobListing: [],
       profileMenuDropdown: false,
     };
 
@@ -48,6 +45,21 @@ class Dashboard extends Component {
           }, () => { return console.log('user details retrieved!', this.state); });
         })
         .catch((error) => { return console.log(error); });
+
+      axios({
+        url: `${backend}/api/user/filterJobs`,
+        method: 'POST',
+        headers: {
+          token: localStorage.getItem('session'),
+        },
+      })
+        .then((response) => {
+          console.log('response from getting jobs', response);
+
+          this.setState({
+            jobs: response.data,
+          }, () => { console.log('after getting Jobs data', this.state); });
+        });
     }
   }
 
@@ -98,6 +110,7 @@ class Dashboard extends Component {
     document.title = 'Dashboard';
     const { redirectToReferrer } = this.state;
     const { userDetails } = this.state;
+    const { jobs } = this.state;
 
     if (redirectToReferrer === false) {
       return (
@@ -106,7 +119,6 @@ class Dashboard extends Component {
     }
 
     return (
-
       <div>
         <Navigation
           showProfileMenu={ this.showProfileMenu }
@@ -116,7 +128,9 @@ class Dashboard extends Component {
         <div className='dashboard'>
           <ProfileCard userDetails={userDetails} handleFileUpload={this.handleFileUpload}/>
 
-          <Switch>
+          <SwitchWindow userDetails={userDetails} jobs={jobs}/>
+
+          {/* <Switch>
             <Route
               path='/joblist'
               render={
@@ -128,7 +142,7 @@ class Dashboard extends Component {
               path='/dashboard'
               component={Reminder}
             />
-          </Switch>
+          </Switch> */}
         </div>
       </div>
     );
