@@ -50,7 +50,7 @@ const StatelessProfileEditor = ({
             onChange={(e) => { handleChange(e); }}
           /> */}
 
-          <label>Personal URL</label>
+          <label>Employer URL</label>
           <input
             name="personalURL"
             // defaultValue={`${userDetails.personalURL}`}
