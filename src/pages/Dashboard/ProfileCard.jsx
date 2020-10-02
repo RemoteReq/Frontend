@@ -39,8 +39,12 @@ const ProfileCard = ({ userDetails, handleFileUpload }) => {
 
               <h5>Current resume:</h5>
               <p className="small-paragraph">
-                {userDetails.resumePath || ''}
+                {
+                  userDetails.resumePath.replace(/^.*[\\\/]/, '') || ''
+                }
               </p>
+
+              <br/>
 
               <div className="upload-button">
                 <button className="button-2">Upload a resume</button>

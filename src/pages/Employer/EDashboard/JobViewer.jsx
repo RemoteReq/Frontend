@@ -48,8 +48,6 @@ class JobViewer extends Component {
         <form>
           <div className="title-and-edit">
             <h3>{job.title}</h3>
-
-            <Link to="">Edit</Link>
           </div>
           <p>Company: {job.companyName}</p>
           <p>Salary: ${job.salary}</p>
