@@ -13,7 +13,7 @@ const JobListing = ({ job }) => {
         <h4 className="job-listing-title">{job.title}</h4>
         <div className="match-rating">
           <div className="percentage-circle"></div>
-          <div className="percentage-match">{job.percentageMatch} % MATCH</div>
+          <div className="percentage-match">{job.matchingPercentage}% MATCH</div>
         </div>
       </div>
 
