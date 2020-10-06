@@ -59,18 +59,20 @@
     display: flex;
     margin-top: 5px;
     padding-right: 24px;
+    align-items: center;
   }
 
-  .percentage-circle {
-    height: 20px;
-    width: 20px;
-    border: 3px solid $SecondaryColor;
-    border-radius: 50%;
-  }
+  // .percentage-circle {
+  //   height: 20px;
+  //   width: 20px;
+  //   border: 3px solid $SecondaryColor;
+  //   border-radius: 50%;
+  // }
 
 
   .percentage-match {
     padding-left: 8px;
+    line-height: unset;
     color: $SecondaryColor;
   }
 }
