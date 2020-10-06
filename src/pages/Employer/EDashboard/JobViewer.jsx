@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ENav from '../ENav/ENav.jsx';
+import EMatchRating from '#parts/EMatchRating.jsx';
 import MatchIcon from './MatchIcon.jsx';
 
 const backend = 'http://3.21.186.204:3030';
@@ -56,7 +57,7 @@ class JobViewer extends Component {
               matches
                 ? matches.map((candidate, key) => {
                   return (
-                    <MatchIcon candidate={candidate} key={key}/>
+                    <EMatchRating percent={candidate.matchingPercentage} candidate={candidate} key={key}/>
                   );
                 })
 

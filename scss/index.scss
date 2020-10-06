@@ -9,14 +9,15 @@
 
 */
 
-// import vendors
-@import './vendors/_fontsList.scss';
-@import './vendors/_match-rating.scss';
 
 // import variables partial files
 @import './variables/_variables.scss';
 @import './variables/_defaults.scss';
 @import './variables/_UIResponses.scss';
+
+// import vendors
+@import './vendors/_fontsList.scss';
+@import './vendors/_match-rating.scss';
 
 // import pages
 @import './pages/_loginPage.scss'; 
@@ -79,12 +80,13 @@
 @import './elements/_links.scss';
 @import './elements/_paragraphs.scss';
 @import './elements/_inputs.scss';
-@import './elements/_sections.scss/';
+@import './elements/_sections.scss';
 @import './elements/_forms.scss';
 @import './elements/_lists.scss';
 @import './elements/_labels.scss';
 @import './elements/_textarea.scss';
-@import './elements/_select.scss';
+@import './elements/_selects.scss';
+@import './elements/_spans.scss';
 
 // grids
 @import './grids/_grids.scss';
