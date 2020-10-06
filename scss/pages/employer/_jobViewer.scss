@@ -22,9 +22,14 @@
     }
   }
 
+
+  a {
+    text-decoration: none;
+  }
+
   .match-icon {
     border-radius: 50%;
-    background-color: gray;
+    border: 6px solid $SecondaryColor;
     width: 80px;
     height: 80px;
     display: flex;
@@ -32,7 +37,7 @@
     align-items: center;
     
     p {
-      color: white; 
+      color: $SecondaryColor; 
     }
   }
 }

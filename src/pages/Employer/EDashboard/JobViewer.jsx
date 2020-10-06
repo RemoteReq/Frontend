@@ -49,6 +49,24 @@ class JobViewer extends Component {
           <div className="title-and-edit">
             <h3>{job.title}</h3>
           </div>
+
+          <p>Matches:</p>
+          <div className="job-viewer-match-list">
+            {
+              matches
+                ? matches.map((candidate, key) => {
+                  return (
+                    <MatchIcon candidate={candidate} key={key}/>
+                  );
+                })
+
+                : <li>You matches will appear here</li>
+            }
+          </div>
+
+            <br/>
+            <br/>
+
           <p>Company: {job.companyName}</p>
           <p>Salary: ${job.salary}</p>
           <p>Job Type: {job.jobType}</p>
@@ -56,17 +74,11 @@ class JobViewer extends Component {
           <p>Industry: {job.industryType}</p>
           <p>Location: {job.location}</p>
 
-          <br/>
-          <br/>
 
           <p>Cause: {job.cause}</p>
 
           <p>Description:</p>
           <p className="small-paragraph" style={{ lineHeight: '14pt' }}>{job.jobDetails}</p>
-
-          <br/>
-          <br/>
-
           <p>Skills required for this job:</p>
           <ul>
             {
@@ -82,19 +94,7 @@ class JobViewer extends Component {
           <br/>
           <br/>
 
-          <p>Matches:</p>
-          <div className="job-viewer-match-list">
-            {
-              matches
-                ? matches.map((candidate, key) => {
-                  return (
-                    <MatchIcon candidate={candidate} key={key}/>
-                  );
-                })
 
-                : <li>You matches will appear here</li>
-            }
-          </div>
         </form>
       </div>
     );
