@@ -68,7 +68,7 @@ class ESettings extends Component {
     console.log('Here is the data you are about to send', body);
 
     axios({
-      url: `${backend}/api/employer/getSingleEmployer`,
+      url: `${backend}/api/employers/updateEmployerProfile`,
       method: 'post',
       headers: {
         token: localStorage.getItem('e-session'),

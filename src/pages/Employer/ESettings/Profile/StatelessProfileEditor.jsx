@@ -17,32 +17,39 @@ const StatelessProfileEditor = ({
           <label>Name</label>
           <input
             name="fullName"
-            // defaultValue={`${userDetails.fullName || ''}`}
+            defaultValue={`${userDetails.fullName || ''}`}
             onChange={(e) => { handleChange(e); }}
           />
 
-          <label>About</label>
+          <label>Company</label>
+          <input
+            name="companyName"
+            defaultValue={`${userDetails.companyName}`}
+            onChange={(e) => { handleChange(e); }}
+          />
+
+          {/* <label>About</label>
           <div className="textarea-div">
             <textarea
               name="aboutMe"
               // defaultValue={`${userDetails.aboutMe}` || ''}
               onChange={(e) => { handleChange(e); }}
               />
-          </div>
+          </div> */}
 
           <label>LinkedIn URL</label>
           <input
-            name="linkedInURL"
-            // defaultValue={`${userDetails.linkedInURL}`}
+            name="companyLinkedinURL"
+            defaultValue={`${userDetails.companyLinkedinURL || ''}`}
             onChange={(e) => { handleChange(e); }}
           />
 
-          <label>Github URL</label>
+          {/* <label>Github URL</label>
           <input
             name="githubURL"
-            // defaultValue={`${userDetails.githubURL}`}
+            defaultValue={`${userDetails.githubURL}`}
             onChange={(e) => { handleChange(e); }}
-          />
+          /> */}
 
           {/* <label>Twitter Handle</label>
           <input
@@ -52,8 +59,8 @@ const StatelessProfileEditor = ({
 
           <label>Employer URL</label>
           <input
-            name="personalURL"
-            // defaultValue={`${userDetails.personalURL}`}
+            name="companyWebsite"
+            defaultValue={`${userDetails.companyWebsite || ''}`}
             onChange={(e) => { handleChange(e); }}
           />
 

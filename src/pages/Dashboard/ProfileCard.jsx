@@ -20,8 +20,9 @@ const ProfileCard = ({ userDetails, handleFileUpload }) => {
               <h5>About</h5>
               <p className="small-paragraph">{userDetails.aboutMe}</p>
 
-              <h5>Cause</h5>
-              <p className="small-paragraph">{userDetails.cause || ''}</p>
+              <h5>Causes</h5>
+              {/* <p className="small-paragraph">{userDetails.cause || ''}</p> */}
+              <ul>{userDetails.causes.map((cause, key) => { return <li key={key}>{cause}</li>; })}</ul>
 
               <h5>Education</h5>
               {/* {userDetails.education.map((item, key) => { return <p className="small-paragraph" key={key}>{item || ''}</p>; })} */}
