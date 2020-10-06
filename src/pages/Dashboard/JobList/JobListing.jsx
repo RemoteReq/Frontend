@@ -20,7 +20,17 @@ const JobListing = ({ job }) => {
       <h5>{job.companyName}</h5>
 
   <div className="lower-job-listing">
-      <a className="see-job">See Job</a>
+      <Link
+        className="see-job"
+        to={{
+          pathname: `/job/${job._id}`,
+          state: {
+            job,
+          },
+        }}
+      >
+        See Job
+      </Link>
     </div>
   </div>
 
