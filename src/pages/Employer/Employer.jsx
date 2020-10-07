@@ -10,7 +10,7 @@ import ESettings from './ESettings/ESettings.jsx';
 import JobForm from './EDashboard/JobForm/JobForm.jsx';
 import FirstPayment from './EDashboard/PaymentGateway/FirstPayment.jsx';
 import GigSelect from './EDashboard/PaymentGateway/GigSelect.jsx';
-import JobViewer from './EDashboard/JobViewer.jsx';
+import JobViewer from './EDashboard/JobViewer/JobViewer.jsx';
 import MatchViewer from './EDashboard/MatchViewer/MatchViewer.jsx';
 
 const Employer = () => {
