@@ -3,10 +3,6 @@
   display: flex;
   justify-content: center;
 
-  .job-viewer-match-list {
-    display: flex;
-  }
-
   form {
     margin: 4vh 0;
     width: 60%;
@@ -20,8 +16,32 @@
         color: $SecondaryColor;
       }
     }
-  }
 
+    .job-viewer-match-list {
+      display: flex;
+    }
+
+    .job-headline {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      // border: 1px solid lightgray;
+
+      div {
+        border: 1px solid lightgray;
+        padding: 0 12px 12px 12px;
+        margin: 24px 0;
+        
+        label {
+          font-size: 16pt;
+          font-weight: bold;
+        }
+
+        p {
+          font-size: 12pt;
+        }
+      }
+    }
+  }
 
   a {
     text-decoration: none;
