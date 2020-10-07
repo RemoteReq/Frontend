@@ -9,26 +9,43 @@ const StatelessJobViewer = (props) => {
     <div className="job-viewer">
       <Navigation />
 
-        <form>
+      <form>
           <div className="title-and-edit">
             <h3>{job.title}</h3>
           </div>
+          <h4>{job.companyName}</h4>
 
-          <br/>
-          <br/>
+          <div className="job-headline">
 
-          <p>Company: {job.companyName}</p>
-          <p>Salary: ${job.salary}</p>
-          <p>Job Type: {job.jobType}</p>
-          <p>Hourly Wage: ${job.hourlyWage}/hr</p>
-          <p>Industry: {job.industryType}</p>
-          <p>Location: {job.location}</p>
+            <div>
+              <label>Job</label>
+              <li>{job.jobType}</li>
+              <li>
+                {
+                  job.jobType === 'Part Time' ? `$${job.hourlyWage} / Hour` : `$${job.salary} / Year`
+                }
+              </li>
+            </div>
 
+            <div>
+              <label>Causes they work on</label>
+              <li>{job.cause}</li>
+            </div>
 
-          <p>Cause: {job.cause}</p>
+            <div>
+              <label>Location</label>
+            <li>{job.location}</li>
+            <li>Time Zone: GMT ({job.timeZone})</li>
+            </div>
+
+          </div>
 
           <p>Description:</p>
           <p className="small-paragraph" style={{ lineHeight: '14pt' }}>{job.jobDetails}</p>
+
+          <br/>
+          <br/>
+
           <p>Skills required for this job:</p>
           <ul>
             {
