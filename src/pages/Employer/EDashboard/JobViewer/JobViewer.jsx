@@ -11,7 +11,9 @@ class JobViewer extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      transactionId: '',
+    };
   }
 
   componentDidMount() {
@@ -29,6 +31,7 @@ class JobViewer extends Component {
           this.setState({
             matches: response.data,
             job: this.props.location.state.job,
+            transactionId: this.props.location.state.job.transactionDetails.transactionIdForAddJob.transactionId,
           });
         }
       });
@@ -39,7 +42,7 @@ class JobViewer extends Component {
     const { matches } = this.state;
     const { firstPaymentStatus } = job;
     const { secondPaymentStatus } = job;
-    // const { transactionId } = job.transactionDetails.transactionIdForAddJob;
+    const { transactionId } = this.state;
     const expireDate = new Date(job.expireDate);
 
     console.log('job details', job);
@@ -54,6 +57,7 @@ class JobViewer extends Component {
         <form>
           <div className="title-and-edit">
             <h3>{job.title}</h3>
+            <p className="small-paragraph">{transactionId ? `Transaction ID:${transactionId}` : ''}</p>
           </div>
           <h4>{job.companyName}</h4>
 
@@ -63,7 +67,6 @@ class JobViewer extends Component {
           <MatchWindow firstPaymentStatus={firstPaymentStatus} matches={matches} job={job}/>
 
           <p className="small-paragraph">Matches expire on: {expireDate.toDateString()}</p>
-          {/* <p className="small-paragraph">Transaction ID: {transactionId}</p> */}
 
           <br/>
           <br/>
