@@ -30,12 +30,12 @@
 
 .c100 {
   position: relative;
-  font-size: 80px;
+  font-size: 100px;
   width: 1em;
   height: 1em;
   border-radius: 50%;
   float: left;
-  margin: 0 0.1em 0.1em 0;
+  margin: 25px 0;
   background-color: #ccc;
 }
 .c100 *, .c100 *:before, .c100 *:after {
@@ -55,6 +55,7 @@
 }
 .c100 > span {
   position: absolute;
+  font-family: $SecondaryFont;
   width: 100%;
   z-index: 1;
   left: 0;
@@ -62,10 +63,11 @@
   width: 5em;
   line-height: 5em;
   font-size: 0.2em;
-  color: #ccc;
+  // color: #ccc;
   display: block;
   text-align: center;
-  white-space: nowrap;
+  white-space: pre;
+  // word-wrap: break-word;
   -moz-transition-property: all;
   -o-transition-property: all;
   -webkit-transition-property: all;
@@ -80,16 +82,26 @@
   transition-timing-function: ease-out;
 }
 
+// span contents (the label)
+.match-label {
+  margin-top: 22px;
+
+  p {
+    font-size: 0.9em;
+    line-height: 25px;
+  }
+}
+
 // Modify thickness here
 .c100:after {
   // top: 0.04em;
   // left: 0.04em;
   // width: 0.92em;
   // height: 0.92em;
-  top: 0.14em;
-  left: 0.14em;
-  width: 0.72em;
-  height: 0.72em;
+  top: 0.11em;
+  left: 0.11em;
+  width: 0.78em;
+  height: 0.78em;
   position: absolute;
   display: block;
   content: " ";

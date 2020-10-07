@@ -14,7 +14,12 @@ const EMatchRating = ({ percent, candidate }) => {
       }}
     >
       <div className={`c100 p${percent}`}>
-        <span>{candidateInitials}</span>
+        <span>
+          <div className="match-label">
+            <p>{candidateInitials}</p>
+            <p>{percent}%</p>
+          </div>
+        </span>
         <div className="slice">
             <div className="bar"></div>
             <div className="fill"></div>
