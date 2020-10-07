@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import ENav from '../../ENav/ENav.jsx';
 
 const GigSelect = () => {
-  const cause = '';
-
   return (
     <div className="gig-select-page">
       <ENav />

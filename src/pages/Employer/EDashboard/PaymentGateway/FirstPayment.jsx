@@ -5,7 +5,6 @@ import axios from 'axios';
 import Eauth from '../../EAuth/EAuth.jsx';
 import ENav from '../../ENav/ENav.jsx';
 
-
 class FirstPayment extends Component {
   constructor(props) {
     super(props);
@@ -44,15 +43,15 @@ class FirstPayment extends Component {
           data: {
             amount: this.state.price,
             paymentMethodNonce: response.nonce,
+            jobId: this.state.jobId,
           },
         })
           .then((result) => {
             console.log('after purchase', result);
             // then on success, redirect Employer to JobForm
-            this.setState({
-              jobReqPurchased: true,
-              transactionId: result.data.transactionId,
-            });
+            if (result.status) {
+              this.props.history.push('/employer/dashboard');
+            }
           })
           .catch((error) => {
             console.log(error);
@@ -62,28 +61,29 @@ class FirstPayment extends Component {
   }
 
   render() {
-    const { jobReqPurchased } = this.state;
-    const { transactionId } = this.state;
     console.log(
       this.props.location.state,
+      this.state,
     );
+
+    const { jobId } = this.state;
 
     // If it has been paid then take them to the addJob form
 
-    if (jobReqPurchased) {
-      return (
-        <div>
-          <Redirect
-            to={{
-              pathname: '/employer/addJob',
-              state: {
-                transactionId,
-              },
-            }}
-          />
-        </div>
-      );
-    }
+    // if (jobReqPurchased) {
+    //   return (
+    //     <div>
+    //       <Redirect
+    //         to={{
+    //           pathname: '/employer/addJob',
+    //           state: {
+    //             transactionId,
+    //           },
+    //         }}
+    //       />
+    //     </div>
+    //   );
+    // }
 
     // Drop In
     return (
@@ -92,10 +92,9 @@ class FirstPayment extends Component {
 
         <form>
           <h3>Checkout</h3>
-    <h3>You are post a job req for a {this.props.location.state.gigType} job</h3>
-    <h3>Total: ${this.props.location.state.price}</h3>
+          <h3>Total: ${this.props.location.state.price}</h3>
           <p className="small-paragraph">
-            After purchasing a Job Req you will be redirected to our job posting form.
+            After purchasing out algorithm will begin matching your Job Req to well suited candidates.
           </p>
           {
             this.state.clientToken

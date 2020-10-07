@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ENav from '../../ENav/ENav.jsx';
 import EMatchRating from '#parts/EMatchRating.jsx';
+import MatchWindow from './MatchWindow.jsx';
 
 const backend = 'http://3.21.186.204:3030';
 
@@ -9,9 +11,7 @@ class JobViewer extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      secondPaymentStatus: true,
-    };
+    this.state = {};
   }
 
   componentDidMount() {
@@ -28,6 +28,7 @@ class JobViewer extends Component {
         if (response.data.length > 0) {
           this.setState({
             matches: response.data,
+            job: this.props.location.state.job,
           });
         }
       });
@@ -36,9 +37,15 @@ class JobViewer extends Component {
   render() {
     const { job } = this.props.location.state;
     const { matches } = this.state;
-    const { secondPaymentStatus } = this.state;
+    const { firstPaymentStatus } = job;
+    const { secondPaymentStatus } = job;
+    // const { transactionId } = job.transactionDetails.transactionIdForAddJob;
+    const expireDate = new Date(job.expireDate);
+
     console.log('job details', job);
     console.log('you matches btw', matches);
+    console.log('firstPaymentStatus', firstPaymentStatus);
+    console.log('job viewer state', this.state);
 
     return (
       <div className="job-viewer">
@@ -47,26 +54,16 @@ class JobViewer extends Component {
         <form>
           <div className="title-and-edit">
             <h3>{job.title}</h3>
-            <button className="button-1 small-button">Start Matching</button>
           </div>
           <h4>{job.companyName}</h4>
 
           <br/>
           <br/>
 
-          <p>Candidates best suited for this job:</p>
-          <div className="job-viewer-match-list">
-            {
-              matches
-                ? matches.map((candidate, key) => {
-                  return (
-                    <EMatchRating percent={candidate.matchingPercentage} candidate={candidate} key={key}/>
-                  );
-                })
+          <MatchWindow firstPaymentStatus={firstPaymentStatus} matches={matches} job={job}/>
 
-                : <li>You matches will appear here</li>
-            }
-          </div>
+          <p className="small-paragraph">Matches expire on: {expireDate.toDateString()}</p>
+          {/* <p className="small-paragraph">Transaction ID: {transactionId}</p> */}
 
           <br/>
           <br/>
@@ -91,7 +88,7 @@ class JobViewer extends Component {
             <div>
               <label>Location</label>
             <li>{job.location}</li>
-            <li>Time Zone: GMT({job.timeZone})</li>
+            <li>Time Zone: GMT ({job.timeZone})</li>
             </div>
 
           </div>
