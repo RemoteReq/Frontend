@@ -37,10 +37,10 @@ const StatelessProfileEditor = ({
             onChange={(e) => { handleChange(e); }}
           />
 
-          <label>Github URL</label>
+          <label>Sample Project Link</label>
           <input
-            name="githubURL"
-            defaultValue={`${userDetails.githubURL}`}
+            name="sampleProjectLink"
+            defaultValue={`${userDetails.sampleProjectLink}`}
             onChange={(e) => { handleChange(e); }}
           />
 
