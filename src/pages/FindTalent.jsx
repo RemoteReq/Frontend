@@ -74,7 +74,7 @@ const FindTalent = () => {
           </div>
 
           <Link to="/employer">
-          <button className="button-1">Submit a Job Req</button>
+          <button className="button-1">Submit a Part Time Job Req</button>
         </Link>
         </div>
 
@@ -93,7 +93,7 @@ const FindTalent = () => {
 
 
           <Link to="/employer">
-          <button className="button-1">Submit a Job Req</button>
+          <button className="button-1">Submit a Full Time Job Req</button>
         </Link>
 
         </div>

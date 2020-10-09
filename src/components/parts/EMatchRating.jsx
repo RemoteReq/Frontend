@@ -7,7 +7,7 @@ const EMatchRating = ({ percent, candidate }) => {
   return (
     <Link
       to={{
-        pathname: `/employer/match/${candidate._id}`,
+        pathname: `/employer/match/${candidate.candidateId}`,
         state: {
           candidate,
         },

@@ -99,10 +99,10 @@ class ESettings extends Component {
     // }
 
     axios({
-      url: `${backend}/api/employers/updateProfileDataWithImage`,
+      url: `${backend}/api/employers/uploadCompanyLogo`,
       method: 'post',
       headers: {
-        token: localStorage.getItem('session'),
+        token: localStorage.getItem('e-session'),
       },
       data: formData,
     })

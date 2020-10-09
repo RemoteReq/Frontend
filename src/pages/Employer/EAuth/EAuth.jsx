@@ -48,6 +48,24 @@ class Auth {
       });
   }
 
+  getJobHireStatus(hireStatus, jobId, cb) {
+    axios.post(`${this.backend}/api/scheduleJob/isHired?status=${hireStatus}&jobId=${jobId}`)
+      .then((response) => {
+        if (response.status === 200) {
+          cb();
+        }
+      })
+      .catch((error) => {
+        console.log('error updating job hiring status', error);
+      });
+  }
+
+
+  // Required to get a job type to charge the employer based on the type of Job Req they posted
+  getJobTypeFromId(jobId, cb) {
+    axios.post(`${this.backend}/api/`);
+  }
+
   generateClientToken() {
     const clientId = localStorage.getItem('clientId');
     const session = localStorage.getItem('e-session');

@@ -26,6 +26,19 @@ class MatchViewer extends Component {
           <br/>
           <br/>
 
+          <p>Contact Information:</p>
+          <p className="small-paragraph">Phone #: &nbsp;{`${candidate.mobileNum}`}</p>
+          <p className="small-paragraph">Email: &nbsp;{`${candidate.email}`}</p>
+          <p className="small-paragraph">LinkedIn URL: &nbsp;
+            <a href={`${candidate.linkedInURL}`}>{`${candidate.linkedInURL}`}</a>
+          </p>
+          <p className="small-paragraph">Personal URL: &nbsp;
+            <a href={`${candidate.personalURL}`}>{`${candidate.personalURL}`}</a>
+          </p>
+
+          <br/>
+          <br/>
+
           <p>About:</p>
           <p className="small-paragraph">Their aboutMe would go here</p>
 
@@ -83,16 +96,6 @@ class MatchViewer extends Component {
 
           <br/>
           <br/>
-
-          <p>Contact Information:</p>
-          <p className="small-paragraph">Phone #: &nbsp;{`${candidate.mobileNum}`}</p>
-          <p className="small-paragraph">Email: &nbsp;{`${candidate.email}`}</p>
-          <p className="small-paragraph">LinkedIn URL: &nbsp;
-            <a href={`${candidate.linkedInURL}`}>{`${candidate.linkedInURL}`}</a>
-          </p>
-          <p className="small-paragraph">Personal URL: &nbsp;
-            <a href={`${candidate.personalURL}`}>{`${candidate.personalURL}`}</a>
-          </p>
 
 
         </form>
