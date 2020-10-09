@@ -74,7 +74,7 @@ const StatelessProfileEditor = ({
 
           <label>Profile Picture</label>
           <div className="image-box">
-            <img src={userDetails.profilePicUrl}/>
+            <img src={userDetails.companyLogo}/>
           </div>
 
           <input

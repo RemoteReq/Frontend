@@ -90,7 +90,7 @@ class ESettings extends Component {
 
     const formData = new FormData();
 
-    formData.append('userImage', e.target.files[0]);
+    formData.append('empCompanyLogo', e.target.files[0]);
 
     // to check formData contents
 
