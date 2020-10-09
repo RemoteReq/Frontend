@@ -13,16 +13,16 @@ class SecondPayment extends Component {
     super(props);
 
     this.state = {
-      jobReqPurchased: false,
+      // jobReqPurchased: false,
     };
 
     this.purchase = this.purchase.bind(this);
   }
 
   componentDidMount() {
-    Eauth.generateClientToken();
+    Eauth.generateSecondClientToken();
 
-    const newToken = localStorage.getItem('clientToken');
+    const newToken = localStorage.getItem('secondClientToken');
 
     this.setState({
       clientToken: newToken,
@@ -44,14 +44,13 @@ class SecondPayment extends Component {
             token: localStorage.getItem('e-session'),
           },
           data: {
-            amount: this.state.price,
+            amount: 1000,
             paymentMethodNonce: response.nonce,
-            jobId: this.state.jobId,
+            jobId: this.props.location.state.jobId,
           },
         })
           .then((result) => {
             console.log('after purchase', result);
-            // then on success, redirect Employer to JobForm
             if (result.status) {
               this.props.history.push('/employer/dashboard');
             }
@@ -102,7 +101,7 @@ class SecondPayment extends Component {
                     <button
                       className="button-1"
                       onClick={(e) => { return this.purchase(e); }}
-                      >Buy Job Req
+                      >Pay Placement Fee
                     </button>
                   </div>
                 </div>

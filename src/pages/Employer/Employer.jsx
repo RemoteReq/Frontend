@@ -40,7 +40,7 @@ const Employer = () => {
         <Route path={`${path}/secondPayment`} component={SecondPayment} />
         <Route path={`${path}/jobs/`} component={JobViewer}/>
         <Route path={`${path}/match/`} component={MatchViewer} />
-        <Route path={`${path}/isHired`} component={IsHired} />
+        {/* <Route path={`${path}/isHired`} component={IsHired} /> */}
       </Switch>
     </div>
   );

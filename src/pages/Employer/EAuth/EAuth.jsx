@@ -84,6 +84,24 @@ class Auth {
       });
   }
 
+  generateSecondClientToken() {
+    const clientId = localStorage.getItem('clientId');
+    const session = localStorage.getItem('e-session');
+
+    axios.post(`${this.backend}/api/jobs/client_token_for_payment`, { clientId }, {
+      headers: {
+        token: session,
+      },
+    })
+      .then((response) => {
+        console.log(response);
+        localStorage.setItem('secondClientToken', response.data);
+      })
+      .catch((err) => {
+        console.log('error genereating tokenId', err);
+      });
+  }
+
   destroyClientToken() {
     localStorage.removeItem('clientToken');
   }
