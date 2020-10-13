@@ -20,9 +20,9 @@ class SecondPayment extends Component {
   }
 
   componentDidMount() {
-    Eauth.generateSecondClientToken();
+    Eauth.generateClientToken();
 
-    const newToken = localStorage.getItem('secondClientToken');
+    const newToken = localStorage.getItem('clientToken');
 
     this.setState({
       clientToken: newToken,
