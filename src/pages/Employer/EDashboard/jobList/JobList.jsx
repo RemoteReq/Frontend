@@ -20,25 +20,6 @@ const JobList = ({ jobReqs }) => {
   );
 };
 
-const EReminder = () => {
-  return (
-    <div className='jobList'>
-
-    <div className="job-list-header">
-      <h3>Your Jobs</h3>
-
-      <Link to="/employer/gigSelect">
-        <button className="button-1 small-button">
-          Submit A Job Req
-        </button>
-      </Link>
-
-    </div>
-      Get matches by submitting job reqs!
-    </div>
-  );
-};
-
 const MappedReqs = ({ jobReqs }) => {
   return (
     <div className='jobList'>
@@ -66,5 +47,39 @@ const MappedReqs = ({ jobReqs }) => {
     </div>
   );
 };
+
+const EReminder = () => {
+  return (
+    <div className='jobList'>
+
+    <div className="job-list-header">
+      <h3>Your Jobs</h3>
+
+      <Link to="/employer/gigSelect">
+        <button className="button-1 small-button">
+          Submit A Job Req
+        </button>
+      </Link>
+
+    </div>
+
+    <div className="await-jobReqs">
+
+      <div className="await-jobReqs-icon">
+        <img />
+      </div>
+
+      <h4>
+        Get started by submitting Job Reqs!
+      </h4>
+
+      <p className="small-paragraph">
+        The sooner your post job reqs, the sooner we can match you to your ideal job candidate!
+      </p>
+    </div>
+  </div>
+  );
+};
+
 
 export default JobList;
