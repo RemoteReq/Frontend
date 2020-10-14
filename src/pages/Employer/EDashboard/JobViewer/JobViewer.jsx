@@ -66,7 +66,7 @@ class JobViewer extends Component {
 
           <MatchWindow firstPaymentStatus={firstPaymentStatus} matches={matches} job={job}/>
 
-          <p className="small-paragraph">Matches expire on: {expireDate.toDateString()}</p>
+    <p className="small-paragraph">{firstPaymentStatus ? `Matches expire on: ${expireDate.toDateString()}` : ''}</p>
 
           <br/>
           <br/>
