@@ -28,14 +28,14 @@ const StatelessProfileEditor = ({
             onChange={(e) => { handleChange(e); }}
           />
 
-          {/* <label>About</label>
+          <label>About</label>
           <div className="textarea-div">
             <textarea
-              name="aboutMe"
+              name="location"
               // defaultValue={`${userDetails.aboutMe}` || ''}
               onChange={(e) => { handleChange(e); }}
               />
-          </div> */}
+          </div>
 
           <label>LinkedIn URL</label>
           <input
@@ -72,7 +72,7 @@ const StatelessProfileEditor = ({
 
         <div className="image-column">
 
-          <label>Profile Picture</label>
+          <label>Company Logo</label>
           <div className="image-box">
             <img src={userDetails.companyLogo}/>
           </div>

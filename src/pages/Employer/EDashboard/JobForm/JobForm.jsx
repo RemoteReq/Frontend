@@ -4,6 +4,8 @@ import EAuth from '../../EAuth/EAuth.jsx';
 import PartTimeForm from './PartTimeForm.jsx';
 import FullTimeFrom from './FullTimeForm.jsx';
 
+const backend = 'http://3.21.186.204:3030';
+
 class JobForm extends Component {
   constructor(props) {
     super(props);
@@ -37,9 +39,20 @@ class JobForm extends Component {
   componentDidMount() {
     const { jobType } = this.props.location.state;
 
-    this.setState({
-      jobType,
-    }, () => { console.log(this.state); });
+    Axios({
+      url: `${backend}/api/employers/getSingleEmployer`,
+      method: 'post',
+      headers: {
+        token: localStorage.getItem('e-session'),
+      },
+    })
+      .then((response) => {
+        console.log(response);
+        this.setState({
+          jobType,
+          companyLogo: response.data.companyLogo,
+        }, () => { console.log(this.state); });
+      });
   }
 
   handleChange(e) {
@@ -91,7 +104,7 @@ class JobForm extends Component {
 
     addJobForm.append('transactionIdForAddJob', 'sample job for testing');
     // addJobForm.append('transactionIdForAddJob', this.props.location.state.transactionId);
-    // addJobForm.append('companyLogo', 'jpeg.jpeg');
+    addJobForm.append('companyLogo', this.state.companyLogo);
     // addJobForm.append('jobDescription', 'pdf.pdf');
     // addJobForm.append('companyWebsiteUrl', this.state.comapnyURL);
 
@@ -178,6 +191,7 @@ class JobForm extends Component {
         handleNumber={this.handleNumber}
         handleSelect={this.handleSelect}
         addToList={this.addToList}
+        companyLogo={this.state.companyLogo}
         handleChange={this.handleChange}
         handleFileUpload={this.handleFileUpload}
         addJob={this.addJob}/>
@@ -187,6 +201,7 @@ class JobForm extends Component {
         handleNumber={this.handleNumber}
         handleSelect={this.handleSelect}
         addToList={this.addToList}
+        companyLogo={this.state.companyLogo}
         handleChange={this.handleChange}
         handleFileUpload={this.handleFileUpload}
         addJob={this.addJob}/>

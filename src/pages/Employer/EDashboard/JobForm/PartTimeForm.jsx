@@ -9,7 +9,7 @@ import CauseSelector from '#parts/CauseSelector.jsx';
 import ENav from '../../ENav/ENav.jsx';
 
 const PartTimeForm = ({
-  jobData, handleChange, addJob, addToList, handleFileUpload, handleNumber,
+  jobData, handleChange, addJob, addToList, handleFileUpload, handleNumber, companyLogo,
 }) => {
   return (
     <div className="add-job">
@@ -98,12 +98,12 @@ const PartTimeForm = ({
 
             <label>Company Logo</label>
             <div className="image-box">
-              <img />
+              <img src={companyLogo || ''}/>
             </div>
-            <input
+            {/* <input
               type="file"
               className="button-1"
-              />
+              /> */}
 
             <label>Hourly Wage</label>
             <input
