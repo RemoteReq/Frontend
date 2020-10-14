@@ -3,6 +3,7 @@
   font-family: $SecondaryFont;
   padding: 2% 4%;
   box-shadow: 4px 4px 20px  #e2e2e2;
+  max-height: 100%;
   
   .job-list-header {
     display: flex;
@@ -12,8 +13,33 @@
   
   .jobs {
     padding: 0 2%;
-    max-height: 100vh;
     overflow: scroll;
     overflow-x: hidden;
+  }
+
+  .await-jobs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+
+    .await-jobs-icon {
+      background-color: lightgray;
+      width: 50%;
+      height: 50%;
+      margin: 5% 0;
+    }
+
+    h4 {
+      font-weight: bolder;
+    }
+
+    p {
+      margin: 0 20%;
+      text-align: center;
+    }
+    
   }
 }
