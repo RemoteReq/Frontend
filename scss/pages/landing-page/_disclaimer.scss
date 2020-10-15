@@ -1,0 +1,42 @@
+.disclaimer {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modal {
+    background-color: white;
+    height: 50vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      color: $SecondaryColor;
+    }
+
+    .disclaimer-box {
+      border: 1px solid $SecondaryColor;
+      // width: 100%;
+      padding: 8px;
+      margin: 8px;
+    }
+
+    .accept {
+      display: inline-block;
+      padding-right: 10px;
+      white-space: nowrap;
+
+      input {
+        vertical-align: middle;
+      }
+    }
+  }
+}
