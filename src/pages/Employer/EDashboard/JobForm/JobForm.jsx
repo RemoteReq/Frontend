@@ -128,6 +128,12 @@ class JobForm extends Component {
   handleNumber(e) {
     this.setState({
       [e.target.name]: parseInt(e.target.value, 10),
+      fields: {
+        ...this.state.fields,
+        [e.target.name]: {
+          isFilled: !!e.target.value,
+        },
+      },
     }, () => { return console.log(this.state); });
   }
 
