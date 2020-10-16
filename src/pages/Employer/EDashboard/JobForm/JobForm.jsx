@@ -27,6 +27,62 @@ class JobForm extends Component {
       location: '',
       numberOfCandidate: 1,
       percentageMatch: 20,
+      fields: {
+        // Side 1
+        title: {
+          isFilled: false,
+        },
+        companyName: {
+          isFilled: false,
+        },
+        cause: {
+          isFilled: false,
+        },
+        jobDetails: {
+          isFilled: false,
+        },
+        keySkills: {
+          isFilled: false,
+        },
+        soonestJoinDate: {
+          isFilled: false,
+        },
+        // Side 2
+        hourlyWage: {
+          isFilled: false,
+        },
+        numberOfHours: {
+          isFilled: false,
+        },
+        minExperience: {
+          isFilled: false,
+        },
+        maxExperience: {
+          isFilled: false,
+        },
+        requiredEducationLevel: {
+          isFilled: false,
+        },
+        location: {
+          isFilled: false,
+        },
+        timeZone: {
+          isFilled: false,
+        },
+        // notifcation settings
+        numberOfCandidate: {
+          isFilled: false,
+        },
+        percentageMatch: {
+          isFilled: false,
+        },
+        eligibleToWorkInUS: {
+          isFilled: false,
+        },
+        fluentInEnglish: {
+          isFilled: false,
+        },
+      },
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -60,6 +116,12 @@ class JobForm extends Component {
 
     this.setState({
       [e.target.name]: e.target.value,
+      fields: {
+        ...this.state.fields,
+        [e.target.name]: {
+          isFilled: !!e.target.value,
+        },
+      },
     }, () => { return console.log(this.state); });
   }
 
@@ -92,6 +154,11 @@ class JobForm extends Component {
         console.log(this.state);
       });
     }
+  }
+
+  // Should be fired before addJob's post request
+  checkFields() {
+
   }
 
   addJob(e) {
@@ -180,6 +247,7 @@ class JobForm extends Component {
 
   render() {
     // const { transactionId } = this.props.location.state;
+    const { fields } = this.state;
     const jobData = this.state;
     // console.log(transactionId);
 
@@ -198,6 +266,7 @@ class JobForm extends Component {
 
         : <PartTimeForm
         jobData={jobData}
+        fields={fields}
         handleNumber={this.handleNumber}
         handleSelect={this.handleSelect}
         addToList={this.addToList}

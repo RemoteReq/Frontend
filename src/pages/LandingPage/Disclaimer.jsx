@@ -38,7 +38,11 @@ class Disclaimer extends Component {
 
           <div className="disclaimer-box">
             <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium dictum nisl, et sollicitudin nulla efficitur quis. Donec luctus quis ipsum eu pharetra. Nullam gravida lacus nec arcu iaculis, fringilla suscipit turpis egestas. In pellentesque hendrerit orci, sed feugiat erat vulputate eget. Morbi ultricies volutpat massa et rutrum. Suspendisse tempor elementum mi, sit amet hendrerit tellus tempor non. In hac habitasse platea dictumst. Nunc pellentesque dolor ut mollis varius. Nullam iaculis aliquet metus, tincidunt ultrices felis maximus venenatis.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium dictum nisl, et sollicitudin nulla efficitur quis.
+            Donec luctus quis ipsum eu pharetra. Nullam gravida lacus nec arcu iaculis, fringilla suscipit turpis egestas.
+            In pellentesque hendrerit orci, sed feugiat erat vulputate eget. Morbi ultricies volutpat massa et rutrum. Suspendisse tempor elementum mi,
+            sit amet hendrerit tellus tempor non. In hac habitasse platea dictumst. Nunc pellentesque dolor ut mollis varius. Nullam iaculis aliquet metus,
+            tincidunt ultrices felis maximus venenatis.
             </p>
           </div>
 

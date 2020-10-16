@@ -9,8 +9,10 @@ import CauseSelector from '#parts/CauseSelector.jsx';
 import ENav from '../../ENav/ENav.jsx';
 
 const PartTimeForm = ({
-  jobData, handleChange, addJob, addToList, handleFileUpload, handleNumber, companyLogo,
+  jobData, handleChange, addJob, addToList, handleFileUpload, handleNumber, companyLogo, fields,
 }) => {
+  console.log(fields);
+
   return (
     <div className="add-job">
       <ENav />
@@ -27,15 +29,20 @@ const PartTimeForm = ({
             <input
               placeholder="ex: UX Developer"
               name="title"
+              className={`${fields.title.isFilled ? '' : 'input-error'}`}
               onChange={handleChange}
             />
+            <p className={`${fields.title.isFilled ? '' : 'error'}`}>This is a required field.</p>
+
 
             <label>Company Name</label>
             <input
               placeholder="ex: RemoteReq"
               name="companyName"
+              className={`${fields.companyName.isFilled ? '' : 'input-error'}`}
               onChange={handleChange}
             />
+            <p className={`${fields.companyName.isFilled ? '' : 'error'}`}>This is a required field.</p>
 
             {/* <label>Industry</label>
             <input
@@ -53,6 +60,7 @@ const PartTimeForm = ({
 
             <label>What cause does your company work on?</label>
             <CauseSelector name="cause" handleChange={handleChange}/>
+            {/* <p className={`${fields.cause.isFilled ? '' : 'error'}`}>This is a required field.</p> */}
 
             <label>Job Details</label>
             <div className="textarea-div">
@@ -62,8 +70,8 @@ const PartTimeForm = ({
                 name="jobDetails"
                 onChange={handleChange}
                 />
-              </div>
-
+            </div>
+            {/* <p className={`${fields.companyName.jobDetails ? '' : 'error'}`}>This is a required field.</p> */}
 
             <label>Key Skills</label>
             <SkillBank addToList={addToList} myKeySkills={jobData.keySkills}/>
@@ -73,8 +81,10 @@ const PartTimeForm = ({
             <input
               name="soonestJoinDate"
               onChange={handleChange}
+              className={`${fields.soonestJoinDate.isFilled ? '' : 'input-error'}`}
               type="date"
             />
+            <p className={`${fields.soonestJoinDate.isFilled ? '' : 'error'}`}>This is a required field.</p>
             <br/>
             {/* <label>Work Days</label>
             <DaySelector addToList={addToList} /> */}
@@ -109,33 +119,42 @@ const PartTimeForm = ({
             <input
               type="number"
               name="hourlyWage"
+              className={`${fields.hourlyWage.isFilled ? '' : 'input-error'}`}
               onChange={handleNumber}
             />
+            <p className={`${fields.hourlyWage.isFilled ? '' : 'error'}`}>This is a required field.</p>
 
             <label>Number of Hours Desired per Week</label>
             <input
               type="number"
               name="numberOfHours"
+              className={`${fields.numberOfHours.isFilled ? '' : 'input-error'}`}
               onChange={handleNumber}
             />
+            <p className={`${fields.numberOfHours.isFilled ? '' : 'error'}`}>This is a required field.</p>
 
             <div className="range">
               <label>Minimum Years of Experience Required</label>
               <input
                 type="number"
                 name="minExperience"
+                className={`${fields.minExperience.isFilled ? '' : 'input-error'}`}
                 onChange={handleNumber}
-                />
+              />
+              <p className={`${fields.minExperience.isFilled ? '' : 'error'}`}>This is a required field.</p>
 
               <label>Maximum Years of Experience Required</label>
               <input
                 type="number"
                 name="maxExperience"
+                className={`${fields.maxExperience.isFilled ? '' : 'input-error'}`}
                 onChange={handleNumber}
-                />
+              />
+              <p className={`${fields.maxExperience.isFilled ? '' : 'error'}`}>This is a required field.</p>
             </div>
 
             <EducationSelector handleChange={handleNumber} name="requiredEducationLevel"/>
+            {/* <p className={`${fields.requiredEducationLevel.isFilled ? '' : 'error'}`}>This is a required field.</p> */}
 
             <div className="select">
               <label>State</label>
@@ -151,9 +170,11 @@ const PartTimeForm = ({
                   })
                 }
               </select>
+              {/* <p className={`${fields.location.isFilled ? '' : 'error'}`}>This is a required field.</p> */}
             </div>
 
             <TimeZoneSelector handleChange={handleChange}/>
+            {/* <p className={`${fields.timeZone.isFilled ? '' : 'error'}`}>This is a required field.</p> */}
 
             <div className="notification-settings">
               <h3>Notification Settings</h3>

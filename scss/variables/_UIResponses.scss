@@ -1,17 +1,19 @@
 .input-error{
-  background-color: pink;
+  // background-color: pink;
   border: 2px solid red;
 }
 
+// Need errors for textarea, radio, checkbox, select
+
+// message paragraph (explains error)
 .error {
   font-family: $SecondaryFont;
-  font-size: 10pt;
+  font-size: 8pt;
   color: red;
-  // line-height: initial;
+  line-height: initial;
 }
 
-// 
-
+// Toggles
 .display {
   display: initial;
 }
