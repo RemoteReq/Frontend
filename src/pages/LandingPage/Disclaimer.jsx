@@ -15,7 +15,7 @@ class Disclaimer extends Component {
     localStorage.setItem('showModal', true);
 
     // Prevent scrolling while Disclaimer is mounted
-    document.body.style.overflow = 'hidden';
+    // document.body.style.overflow = 'hidden';
   }
 
   acceptModal() {
@@ -24,7 +24,7 @@ class Disclaimer extends Component {
     this.setState({
       showStatus: false,
     }, () => {
-      document.body.style.overflow = 'unset';
+      // document.body.style.overflow = 'unset';
     });
   }
 
