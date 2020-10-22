@@ -38,16 +38,24 @@ class Disclaimer extends Component {
 
           <div className="disclaimer-box">
             <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium dictum nisl, et sollicitudin nulla efficitur quis.
-            Donec luctus quis ipsum eu pharetra. Nullam gravida lacus nec arcu iaculis, fringilla suscipit turpis egestas.
-            In pellentesque hendrerit orci, sed feugiat erat vulputate eget. Morbi ultricies volutpat massa et rutrum. Suspendisse tempor elementum mi,
-            sit amet hendrerit tellus tempor non. In hac habitasse platea dictumst. Nunc pellentesque dolor ut mollis varius. Nullam iaculis aliquet metus,
-            tincidunt ultrices felis maximus venenatis.
+              Thanks for visiting <a>RemoteReq.com</a>.
+              We are still in BETA mode.
+              For the next few weeks, we are putting the finishing touches on our platform,
+              so please give us some grace if you encounter anything out of the ordinary.
+              In fact, we could use your help.
+              If anything seems off, please email us at <a>kbryant@remotereq.com</a> to share your feedback.
+
+              <br/>
+              <br/>
+
+              <p>
+                Check the box below, if you understand what it means to be imperfect, but still working on yourself.
+              </p>
             </p>
           </div>
 
           <div className="accept">
-            <label>I accept</label>
+            <label>I Understand</label>
             <input
               onClick={this.acceptModal}
               type="checkbox"

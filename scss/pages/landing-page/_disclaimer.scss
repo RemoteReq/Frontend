@@ -29,6 +29,11 @@
       margin: 8px;
     }
 
+    a {
+      color: $SecondaryColor;
+      text-decoration: none;
+    }
+
     .accept {
       display: inline-block;
       padding-right: 10px;

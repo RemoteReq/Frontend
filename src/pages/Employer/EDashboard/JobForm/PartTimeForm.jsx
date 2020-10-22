@@ -32,7 +32,7 @@ const PartTimeForm = ({
               className={`${fields.title.isFilled ? '' : 'input-error'}`}
               onChange={handleChange}
             />
-            <p className={`${fields.title.isFilled ? '' : 'error'}`}>This is a required field.</p>
+            <p className={`${fields.title.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
 
             <label>Company Name</label>
@@ -42,7 +42,7 @@ const PartTimeForm = ({
               className={`${fields.companyName.isFilled ? '' : 'input-error'}`}
               onChange={handleChange}
             />
-            <p className={`${fields.companyName.isFilled ? '' : 'error'}`}>This is a required field.</p>
+            <p className={`${fields.companyName.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
             {/* <label>Industry</label>
             <input
@@ -60,7 +60,7 @@ const PartTimeForm = ({
 
             <label>What cause does your company work on?</label>
             <CauseSelector name="cause" handleChange={handleChange}/>
-            {/* <p className={`${fields.cause.isFilled ? '' : 'error'}`}>This is a required field.</p> */}
+            <p className={`${fields.cause.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
             <label>Job Details</label>
             <div className="textarea-div">
@@ -71,7 +71,7 @@ const PartTimeForm = ({
                 onChange={handleChange}
                 />
             </div>
-            {/* <p className={`${fields.companyName.jobDetails ? '' : 'error'}`}>This is a required field.</p> */}
+            <p className={`${fields.jobDetails.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
             <label>Key Skills</label>
             <SkillBank addToList={addToList} myKeySkills={jobData.keySkills}/>
@@ -84,7 +84,7 @@ const PartTimeForm = ({
               className={`${fields.soonestJoinDate.isFilled ? '' : 'input-error'}`}
               type="date"
             />
-            <p className={`${fields.soonestJoinDate.isFilled ? '' : 'error'}`}>This is a required field.</p>
+            <p className={`${fields.soonestJoinDate.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
             <br/>
             {/* <label>Work Days</label>
             <DaySelector addToList={addToList} /> */}
@@ -122,7 +122,7 @@ const PartTimeForm = ({
               className={`${fields.hourlyWage.isFilled ? '' : 'input-error'}`}
               onChange={handleNumber}
             />
-            <p className={`${fields.hourlyWage.isFilled ? '' : 'error'}`}>This is a required field.</p>
+            <p className={`${fields.hourlyWage.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
             <label>Number of Hours Desired per Week</label>
             <input
@@ -131,7 +131,7 @@ const PartTimeForm = ({
               className={`${fields.numberOfHours.isFilled ? '' : 'input-error'}`}
               onChange={handleNumber}
             />
-            <p className={`${fields.numberOfHours.isFilled ? '' : 'error'}`}>This is a required field.</p>
+            <p className={`${fields.numberOfHours.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
             <div className="range">
               <label>Minimum Years of Experience Required</label>
@@ -141,7 +141,7 @@ const PartTimeForm = ({
                 className={`${fields.minExperience.isFilled ? '' : 'input-error'}`}
                 onChange={handleNumber}
               />
-              <p className={`${fields.minExperience.isFilled ? '' : 'error'}`}>This is a required field.</p>
+              <p className={`${fields.minExperience.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
               <label>Maximum Years of Experience Required</label>
               <input
@@ -150,11 +150,11 @@ const PartTimeForm = ({
                 className={`${fields.maxExperience.isFilled ? '' : 'input-error'}`}
                 onChange={handleNumber}
               />
-              <p className={`${fields.maxExperience.isFilled ? '' : 'error'}`}>This is a required field.</p>
+              <p className={`${fields.maxExperience.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
             </div>
 
             <EducationSelector handleChange={handleNumber} name="requiredEducationLevel"/>
-            {/* <p className={`${fields.requiredEducationLevel.isFilled ? '' : 'error'}`}>This is a required field.</p> */}
+            {/* <p className={`${fields.requiredEducationLevel.isFilled ? 'hide' : 'error'}`}>This is a required field.</p> */}
 
             <div className="select">
               <label>State</label>
@@ -170,11 +170,11 @@ const PartTimeForm = ({
                   })
                 }
               </select>
-              {/* <p className={`${fields.location.isFilled ? '' : 'error'}`}>This is a required field.</p> */}
+              {/* <p className={`${fields.location.isFilled ? 'hide' : 'error'}`}>This is a required field.</p> */}
             </div>
 
             <TimeZoneSelector handleChange={handleChange}/>
-            {/* <p className={`${fields.timeZone.isFilled ? '' : 'error'}`}>This is a required field.</p> */}
+            {/* <p className={`${fields.timeZone.isFilled ? 'hide' : 'error'}`}>This is a required field.</p> */}
 
             <div className="notification-settings">
               <h3>Notification Settings</h3>
