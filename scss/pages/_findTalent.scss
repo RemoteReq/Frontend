@@ -25,8 +25,8 @@
     }
 
     .find-talent-graphics {
-      right: 0;
-      width: 50%;
+      // right: 0;
+      // width: 50%;
     }
   }
 
@@ -116,7 +116,47 @@
       font-size: 14pt;
       padding: 2% 0;
     }
-
-
   }  
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+  .find-talent-page {
+    flex-direction: column;
+    padding: 0;
+
+    .find-talent-upper {
+      flex-direction: column;
+
+      .find-talent-upper-left {
+        width: 100%;
+      }
+
+      .find-talent-upper-graphics {
+        display: none;
+      }
+    }
+
+    .find-talent-mid {
+      flex-direction: column;
+
+      .mid-triplet {
+        width: 100%;
+      }
+    }
+
+    .find-talent-pricing {
+      h1 {
+        text-align: center;
+      }
+
+      .card-container {
+        flex-direction: column;
+
+        .pricing-card {
+          margin: 4% 0;
+          width: 100%;
+        }
+      }
+    }
+  }
 }

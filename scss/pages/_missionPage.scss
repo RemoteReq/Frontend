@@ -6,24 +6,23 @@
     display: flex;
     justify-content: center;
     background-color: $Yellow;
-
+    
     .mission-graphics {
       position: relative;
       width: 100%;
       height: 100%;
+      z-index: 0;
 
       .red-line {
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 0;
       }
 
       .pink-line{
         position: absolute;
         bottom: 0;
         right: 0;
-        z-index: 0;
       }
     }
     
@@ -36,7 +35,7 @@
       .mission-statement-upper {
         padding-bottom: 50px;
       }
-
+      
       h1 {
         color: $BackgroundColor;
         font-size: 36pt;
@@ -45,8 +44,9 @@
       .small-paragraph {
         font-size: 16pt;
       }
-
+      
       p{
+        z-index: 2;
         color: $BackgroundColor;
         line-height: 24px;
         margin: 0 30%;
@@ -71,6 +71,29 @@
       display: flex;
       padding-top: 50px;
       padding-bottom: 50px;
+    }
+  }
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+  .mission{
+    .mission-block {
+      .mission-graphics {
+        .red-line {
+          display: none;
+        }
+
+        .pink-line {
+          display: none;
+        }
+      }
+
+      .mission-statement {
+        
+        p {
+          margin: 4% 10%;
+        }
+      }
     }
   }
 }
