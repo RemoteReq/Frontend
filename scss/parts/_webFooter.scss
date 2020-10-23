@@ -17,7 +17,7 @@
     }
 
     .webfooter-content {
-      width: 60%;
+      width: 80%;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -48,8 +48,26 @@
   }
 }
 
-@media screen and (min-aspect-ratio: 8/5) {
-  .webfooter{
+@media screen and (max-aspect-ratio: 1/1) {
+  .webfooter {
 
+    .webfooter-graphics {
+      width: auto;
+      height: auto;
+      
+        .webfooter-left {
+        display: none;
+      }
+      
+      .webfooter-content{
+        width: 90%;
+        padding: 50px;
+        border: 1px solid red;
+      }
+      
+      .webfooter-right {
+        display: none;
+      }
+    }
   }
 }
