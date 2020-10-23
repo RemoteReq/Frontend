@@ -36,3 +36,20 @@
     }
   }
 }
+
+@media screen and (max-aspect-ratio: 3/2) {
+  .registration{
+    flex-direction: column;
+    padding: 0;
+
+    .left-side-signup {
+      width: 100%;
+      padding: 50px 10vw;
+    }
+
+    form {
+      width: auto;
+      margin: 0 10vw 50px 10vw;
+    }
+  }
+}

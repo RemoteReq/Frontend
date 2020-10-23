@@ -43,7 +43,8 @@ const cubelets = [
   },
 ];
 
-const CubeletView = ({ icon, label }) => (
+const CubeletView = ({ icon, label }) => {
+  return (
     <div className="cubelet">
         <img src={icon || 'noneya'}/>
 
@@ -51,16 +52,21 @@ const CubeletView = ({ icon, label }) => (
         {label || 'I am a cubelet!!'}
       </p>
     </div>
-);
+  );
+};
 
-const RnPModule = () => (
+const RnPModule = () => {
+  return (
     <div className="rnp-module">
       {
-        cubelets.map((cubelet, key) => (
+        cubelets.map((cubelet, key) => {
+          return (
             <CubeletView icon={cubelet.icon} label={cubelet.label} key={key}/>
-        ))
+          );
+        })
       }
     </div>
-);
+  );
+};
 
 export default RnPModule;

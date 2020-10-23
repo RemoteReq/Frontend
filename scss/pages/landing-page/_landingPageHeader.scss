@@ -41,7 +41,7 @@
   }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-aspect-ratio: 3/2) {
   .landingPage-header {
     .landingPage-heading-btns {
       width: 100%;

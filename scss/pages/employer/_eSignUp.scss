@@ -4,7 +4,7 @@
   padding-top: 8vh;
   background-color: $BackgroundColor;
 
-  .left-side-signup {
+  .left-side-esignup {
     width: 40vw;
 
     h1 {
@@ -33,6 +33,23 @@
 
     p.small-paragraph {
       align-self: center;
+    }
+  }
+}
+
+@media screen and (max-aspect-ratio: 3/2) {
+  .e-signup{
+    flex-direction: column;
+    padding: 0;
+
+    .left-side-esignup {
+      width: 100%;
+      padding: 50px 10vw;
+    }
+
+    form {
+      width: auto;
+      margin: 0 10vw 50px 10vw;
     }
   }
 }

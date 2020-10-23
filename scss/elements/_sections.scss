@@ -39,3 +39,21 @@ section {
 .reverse-section {
   flex-direction: row-reverse;
 }
+
+@media screen and (max-width: 960px) {
+  section {
+    flex-direction: column;
+
+    .section-desc {
+      width: 100%;
+    }
+
+    .section-graphic {
+      width: 100%;
+    }
+  }
+
+  .reverse-section {
+    flex-direction: column;
+  }
+}

@@ -2,10 +2,10 @@ import React from 'react';
 import WebFooterLeft from '#assets/images/svgs/RR-web-footer-left.svg';
 import WebFooterRight from '#assets/images/svgs/RR-web-footer-right.svg';
 
-const WebFooter = ({ header, graphics, component}) => {
-  return graphics ? 
+const WebFooter = ({ header, graphics, component }) => {
+  return graphics
 
-    <div className="webfooter">
+    ? <div className="webfooter">
       <div className="webfooter-graphics">
         <WebFooterLeft className="webfooter-left" width={500}/>
 
@@ -20,9 +20,7 @@ const WebFooter = ({ header, graphics, component}) => {
       </div>
     </div>
 
-  :
-
-  <div className="webfooter">
+    : <div className="webfooter">
     <div className="webfooter-graphics">
 
       <div className="webfooter-content">
@@ -33,7 +31,7 @@ const WebFooter = ({ header, graphics, component}) => {
       </div>
 
     </div>
-  </div>
-}
+  </div>;
+};
 
 export default WebFooter;
