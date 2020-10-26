@@ -29,6 +29,15 @@
   }
 }
 
+.hamburger-menu {
+  display: flex;
+  align-items: center;
+
+  a {
+    margin-left: 20px;
+  }
+}
+
 @media screen and (max-aspect-ratio: 1/1) {
   .navigation-1 {
     position: fixed;
@@ -44,11 +53,15 @@
     display: initial;
   }
 
+  .navigation-1-links {
+    display: none;
+  }
+
   .hamburger-menu-icon {
     display: initial;
   }
 
-  .navigation-1-links {
+  .hamburger-menu {
     background-color: white;
     display: flex;
     flex-direction: column;

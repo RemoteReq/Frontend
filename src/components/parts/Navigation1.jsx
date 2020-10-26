@@ -48,7 +48,7 @@ class Navigation1 extends Component {
           <p className={`${showHamburgerMenu ? 'show' : 'hide'}`}>x</p>
         </div>
 
-        <div className={`navigation-1-links ${showHamburgerMenu ? 'show' : 'hide'}`}>
+        <div className="navigation-1-links">
           <Link to="/findTalent">
             <button className='button-2'>find talent</button>
           </Link>
@@ -58,18 +58,20 @@ class Navigation1 extends Component {
           </Link>
         </div>
 
+        <div className={`hamburger-menu ${showHamburgerMenu ? 'show' : 'hide'}`}>
+          <Link to="/findTalent">
+            <button className='button-2'>find talent</button>
+          </Link>
+
+          <Link to='/signin'>
+            <button className='button-1'>find jobs</button>
+          </Link>
+        </div>
 
     </nav>
     );
   }
 }
 
-const ResponsiveNavMenu1 = () => {
-  return (
-    <div>
-
-    </div>
-  );
-};
 
 export default Navigation1;
