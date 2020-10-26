@@ -74,6 +74,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding: 25px 0;
 
         li {
           margin: 5px 0;
@@ -86,10 +87,19 @@
 
       .the-r {
         flex-direction: column;
+
+        img {
+          padding: 25px 0;
+        }
       }
 
       .medias {
         flex-direction: column;
+        padding: 0 0 25px 0;
+
+        .social-media-list {
+          padding: 25px 0;
+        }
       }
     }
   
