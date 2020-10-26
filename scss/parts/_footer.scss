@@ -1,8 +1,5 @@
 .footer {
-  // align-items: center;
-  // display: flex;
   height: 24vh;
-  // justify-content: space-between;
   margin: 0 10vw 0 10vw;
 
   .upper-footer {
@@ -66,8 +63,35 @@
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-aspect-ratio: 1/1) {
   .footer{
-    // background-color: black;
+
+    .upper-footer {
+      flex-direction: column;
+      height: auto;
+
+      ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        li {
+          margin: 5px 0;
+        }
+      }
+    }
+    
+    .lower-footer {
+      flex-direction: column;
+
+      .the-r {
+        flex-direction: column;
+      }
+
+      .medias {
+        flex-direction: column;
+      }
+    }
+  
   }
 }
