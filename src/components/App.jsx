@@ -58,7 +58,7 @@ class App extends Component {
               <ProtectedRoute path="/dashboard" component={Dashboard} />
               <Route component={Page404} />
             </Switch>
-          <Footer/>
+          {/* <Footer/> */}
         </ScrollToTop>
       </Router>
     );

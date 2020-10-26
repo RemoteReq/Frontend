@@ -13,7 +13,8 @@
   .modal {
     background-color: white;
     height: auto;
-    width: 45vw;
+    width: auto;
+    margin: 0 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,12 +47,20 @@
   }
 }
 
-@media screen and (max-aspect-ratio: 9/16) {
+@media screen and (max-aspect-ratio: 1/1) {
   .disclaimer{
     // display: none;
 
+    .disclaimer-box {
+      p {
+        font-size: 12pt;
+        line-height: initial;
+      }
+    }
+
     .modal {
       width: 80vw;
+      margin: 0 2%;
     }
   }
 }

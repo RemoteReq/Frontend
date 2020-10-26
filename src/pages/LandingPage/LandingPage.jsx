@@ -10,7 +10,7 @@ class LandingPage extends Component {
     document.title = 'RemoteReq | Home';
     return (
         <div className='landingPage'>
-          <Disclaimer />
+          {/* <Disclaimer /> */}
           <LPHeader />
           <AboutHeader />
           <AboutMain />

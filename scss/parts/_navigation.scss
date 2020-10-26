@@ -1,4 +1,4 @@
-.landingPage-navBar {
+.navigation-1 {
   align-items: center;
   background: #fff;
   display: flex;
@@ -9,14 +9,18 @@
   z-index: 1;
 }
 
-.landingPage-name-menu {
+.remotereq-name { width: 300px; }
 
-  .remotereq-name { width: 300px; }
-
-  .hamburgerMenu { display: none; }
+.rr-logo { 
+  display: none;
+  width: 30px; 
 }
 
-.landingPage-navBar-links {
+.hamburger-menu-icon {
+  display: none;
+}
+
+.navigation-1-links {
   display: flex;
   align-items: center;
 
@@ -25,9 +29,41 @@
   }
 }
 
-@media screen and (min-aspect-ratio: 8/5) {
-  .landingPage-navBar {
-    // background-color: black;
-    // display: none;
+@media screen and (max-aspect-ratio: 1/1) {
+  .navigation-1 {
+    position: fixed;
+    padding: 40px 10vw 10px 10vw;
+    z-index: 2;
+  }
+
+  .remotereq-name {
+    display: none;
+  }
+
+  .rr-logo {
+    display: initial;
+  }
+
+  .hamburger-menu-icon {
+    display: initial;
+  }
+
+  .navigation-1-links {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 90px;
+    height: auto;
+    width: 100%;
+
+    button {
+      margin: 10px 0;
+    }
+
+    a {
+      margin: none;
+    }
   }
 }
