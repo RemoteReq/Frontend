@@ -40,16 +40,17 @@
 @media screen and (max-aspect-ratio: 3/2) {
   .registration{
     flex-direction: column;
-    padding: 0;
+    padding: 100px 0;
 
     .left-side-signup {
       width: 100%;
-      padding: 50px 10vw;
+      padding: 50px 5vw;
     }
 
     form {
       width: auto;
-      margin: 0 10vw 50px 10vw;
+      margin: 0 5vw 50px 5vw;
+      padding: 50px 5vw;
     }
   }
 }

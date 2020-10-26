@@ -1,6 +1,7 @@
 .login-form-page {
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 70vh;
   width: 100%;
 
@@ -67,5 +68,11 @@
         font-size: 24pt;
       }
     }
+  }
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+  .login-form-page {
+    padding: 100px 0;
   }
 }

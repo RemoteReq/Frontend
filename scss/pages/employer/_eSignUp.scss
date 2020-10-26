@@ -37,10 +37,10 @@
   }
 }
 
-@media screen and (max-aspect-ratio: 3/2) {
+@media screen and (max-aspect-ratio: 1/1) {
   .e-signup{
     flex-direction: column;
-    padding: 0;
+    padding: 100px 0;
 
     .left-side-esignup {
       width: 100%;
