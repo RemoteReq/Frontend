@@ -17,7 +17,7 @@ const FindTalent = () => {
         <h1>Make a greater impact with remote talent.</h1>
 
         <p>
-          Our network of remote professional are ready to help you do more good. Let us do the work for you.
+          Our network of remote professionals are ready to help you do more good. Let us do the work for you.
           We will find, vet, and connect you with the remote talent you need.
           Submit a job req to get started. Pay only for the candidates you choose to engage.
         </p>

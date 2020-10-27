@@ -90,7 +90,7 @@ class SecondPayment extends Component {
                       vaultManager: true,
                       paypal: {
                         flow: 'vault',
-                        amount: '1000.00',
+                        amount: `${this.props.location.state.price || '2500'}`,
                         currency: 'USD',
                       },
                     }}

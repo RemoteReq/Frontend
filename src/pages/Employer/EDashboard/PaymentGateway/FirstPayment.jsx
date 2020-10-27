@@ -68,24 +68,6 @@ class FirstPayment extends Component {
 
     const { jobId } = this.state;
 
-    // If it has been paid then take them to the addJob form
-
-    // if (jobReqPurchased) {
-    //   return (
-    //     <div>
-    //       <Redirect
-    //         to={{
-    //           pathname: '/employer/addJob',
-    //           state: {
-    //             transactionId,
-    //           },
-    //         }}
-    //       />
-    //     </div>
-    //   );
-    // }
-
-    // Drop In
     return (
       <div className="first-payment">
         <ENav />
@@ -94,7 +76,7 @@ class FirstPayment extends Component {
           <h3>Checkout</h3>
           <h3>Total: ${this.props.location.state.price}</h3>
           <p className="small-paragraph">
-            After purchasing out algorithm will begin matching your Job Req to well suited candidates.
+            After purchasing, our algorithm will begin matching your Job Req to well suited candidates.
           </p>
           {
             this.state.clientToken
