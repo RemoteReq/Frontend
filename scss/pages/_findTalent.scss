@@ -153,8 +153,14 @@
         flex-direction: column;
 
         .pricing-card {
+          padding: 0;
           margin: 4% 0;
           width: 100%;
+        }
+        
+        .button-1 {
+          margin: 10px 0;
+          font-size: 12pt;
         }
       }
     }
