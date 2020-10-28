@@ -41,13 +41,28 @@
 
 @media screen and (max-aspect-ratio: 8/5) {
   .dashboard-navBar {
-    // display: flex;
     padding: 0 8vw;
   }
 }
 
 @media screen and (max-aspect-ratio: 1/1) {
   .dashboard-navBar {
-    display: none;
+    position: fixed;
+    height: initial;
+    padding: 15px 8vw 20px 8vw;
+    box-shadow: 1px 1px 20px #c9c9c9;
+    z-index: 2;
+
+    .dashboard-home {
+      p {
+        padding-left: 0;
+      }
+    }
+  }
+
+  .dashboard-links {
+    a {
+      display: none;
+    }
   }
 }

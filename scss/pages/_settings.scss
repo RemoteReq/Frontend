@@ -2,12 +2,13 @@
   display: flex;
   background-color: $BackgroundColor;
   justify-content: space-evenly;
+  padding: 0 15vw;
 
   .settings-container {
-    margin: 4vh 0 4vh 0;
+    margin: 4vh 0;
     box-shadow: 4px 4px 20px #e2e2e2;
     background-color: #fff;
-    width: 70%;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 4fr;
     
@@ -17,5 +18,16 @@
       height: auto;
     }
   }
+}
 
+@media screen and (max-aspect-ratio: 8/5) {
+  .settings-page {
+    padding: 0 8vw;
+  }
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+  .settings-page {
+    padding: 120px 8vw;
+  }
 }
