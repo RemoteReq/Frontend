@@ -57,12 +57,12 @@ class Navigation2 extends Component {
 
         <div className={`hamburger-menu ${showHamburgerMenu ? 'show' : 'hide'}`}>
           <Link to="/settings/profile">
-            <button className='button-2'>Settings</button>
+            <button className='button-1'>Settings</button>
           </Link>
 
-          <a className="large-link"
+          <button className="button-1"
             onClick={(e) => { this.signOut(e); }}
-          >Sign out</a>
+          >Sign out</button>
         </div>
 
         <div
