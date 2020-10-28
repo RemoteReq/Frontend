@@ -38,3 +38,16 @@
     }
   }
 }
+
+@media screen and (max-aspect-ratio: 8/5) {
+  .dashboard-navBar {
+    // display: flex;
+    padding: 0 8vw;
+  }
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+  .dashboard-navBar {
+    display: none;
+  }
+}

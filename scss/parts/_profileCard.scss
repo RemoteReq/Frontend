@@ -3,6 +3,7 @@
   box-shadow: 4px 4px 20px #e2e2e2;
   display: flex;
   justify-content: space-between;
+  width: 100%;
 
   .profile-card-contents {
     padding: 40px;
@@ -39,5 +40,10 @@
     line-height: initial;
     max-width: 300px;
   }
+}
 
+@media screen and (max-aspect-ratio: 1/1) {
+  .profile-card {
+    display: none;
+  }
 }

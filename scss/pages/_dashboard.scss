@@ -8,3 +8,17 @@
   grid-gap: 80px;
   background-color: $BackgroundColor;
 }
+
+@media screen and (max-aspect-ratio: 8/5) {
+  .dashboard {
+    min-height: 100vh;
+    padding: 5vh 6vw;
+  }
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    padding: 120px 6vw;
+  }
+}

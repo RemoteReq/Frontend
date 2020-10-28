@@ -86,7 +86,7 @@ const FindTalent = () => {
 
           <div className="pricing-card-description">
             <p>Grow your team with a remote hire</p>
-            <p>Up to 10 "best fit" Candidates</p>
+            <p>Up to 10 "best fit" candidates</p>
             <p>Added capacity, skills, and expertise</p>
             <p>Negotiable pay and salary</p>
           </div>

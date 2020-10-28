@@ -97,3 +97,10 @@ button {
   height: 40px;
   letter-spacing: initial;
 }
+
+@media screen and (max-aspect-ratio: 3/2) {
+  button {
+    margin: 10px 0;
+    font-size: 12pt;
+  }
+}
