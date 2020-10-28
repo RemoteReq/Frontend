@@ -70,7 +70,7 @@ const FindTalent = () => {
             <p>For projects lasting 11 months or less</p>
             <p>Up to 10 "best fit" candidates</p>
             <p>Added capacity, skills, and expertise</p>
-            <p>Negotioable hourly rates</p>
+            <p>Negotiable hourly rates</p>
           </div>
 
           <Link to="/employer">
@@ -88,7 +88,7 @@ const FindTalent = () => {
             <p>Grow your team with a remote hire</p>
             <p>Up to 10 "best fit" Candidates</p>
             <p>Added capacity, skills, and expertise</p>
-            <p>Negotioable pay and salary</p>
+            <p>Negotiable pay and salary</p>
           </div>
 
 
