@@ -55,18 +55,20 @@ class Navigation2 extends Component {
           >Sign out</a>
         </div>
 
-        <div className={`hamburger-menu ${showHamburgerMenu ? 'show' : 'hide'}`}>
+        <div className={`dashboard-hamburger-menu ${showHamburgerMenu ? 'show' : 'hide'}`}>
           <Link to="/settings/profile">
             <button className='button-1'>Settings</button>
           </Link>
 
-          <button className="button-1"
-            onClick={(e) => { this.signOut(e); }}
-          >Sign out</button>
+          <a>
+            <button className="button-1"
+              onClick={(e) => { this.signOut(e); }}
+            >Sign out</button>
+          </a>
         </div>
 
         <div
-          className="hamburger-menu-icon"
+          className="dashboard-hamburger-menu-icon"
           onClick={(e) => { this.toggleHamburgerMenu(e); }}
         >
           <p className={`${showHamburgerMenu ? 'hide' : 'show'}`}>=</p>
