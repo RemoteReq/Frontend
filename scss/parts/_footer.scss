@@ -37,6 +37,14 @@
         height: 20px;
         width: 20px;
       }
+
+      .subscribe {
+
+        button {
+          background-color: $Yellow;
+          color: white;
+        }
+      }
     }
   }
 
@@ -63,8 +71,15 @@
   }
 }
 
-@media screen and (max-aspect-ratio: 1/1) {
+@media screen and (max-aspect-ratio: 3/2) {
   .footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 10px;
+    padding-top: 50vh;
+    z-index: -1;
 
     .upper-footer {
       flex-direction: column;
@@ -75,6 +90,7 @@
         justify-content: center;
         align-items: center;
         padding: 25px 0;
+        margin: 0;
 
         li {
           margin: 5px 0;
@@ -91,6 +107,10 @@
         img {
           padding: 25px 0;
         }
+
+        p {
+          text-align: center;
+        }
       }
 
       .medias {
@@ -99,6 +119,14 @@
 
         .social-media-list {
           padding: 25px 0;
+        }
+
+        .subscribe {
+          flex-direction: column;
+          
+          button {
+            // font-size: 10pt;
+          }
         }
       }
     }

@@ -34,7 +34,9 @@ const Footer = () => {
         </Link>
 
         <p>
-          Work from Anywhere. Change the World.
+          Work from Anywhere.
+          <br/>
+          Change the World.
         </p>
       </span>
 
