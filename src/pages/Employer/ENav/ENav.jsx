@@ -1,30 +1,107 @@
-import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, { Component } from 'react';
+import { Link, useHistory, withRouter } from 'react-router-dom';
 import RemoteReq from '#assets/images/pngs/RR-cobalt.png';
 import Eauth from '../EAuth/EAuth.jsx';
 
-const ENav = (props) => {
-  const history = useHistory();
+class ENav extends Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <nav className='dashboard-navBar'>
-      <Link className='dashboard-home stealth-link' to="/employer/dashboard">
-        <img src={ RemoteReq } className='remotereq-name' alt='remote' />
-        <p>Dashboard</p>
-      </Link>
+    this.state = {
+      showHamburgerMenu: false,
+    };
 
-      <div className='dashboard-links'>
+    this.toggleHamburgerMenu = this.toggleHamburgerMenu.bind(this);
+    this.signOut = this.signOut.bind(this);
+  }
 
-        <a className="large-link"
-          onClick={() => {
-            return Eauth.logout(() => {
-              history.push('/employer/signin');
-            });
-          }}
-        >Sign out</a>
-      </div>
+  signOut(e) {
+    e.preventDefault();
+
+    Eauth.logout(() => {
+      this.props.history.push('/employer/signin');
+    });
+  }
+
+  toggleHamburgerMenu(e) {
+    e.preventDefault();
+
+    const { showHamburgerMenu } = this.state;
+
+    if (showHamburgerMenu) {
+      this.setState({
+        showHamburgerMenu: false,
+      });
+    } else {
+      this.setState({
+        showHamburgerMenu: true,
+      });
+    }
+  }
+
+  render() {
+    const { showHamburgerMenu } = this.state;
+
+    return (
+      <nav className='dashboard-navBar'>
+        <Link to="/employer/dashboard" className="dashboard-home">
+          <img src={ RemoteReq } className='remotereq-name' alt=""/>
+          <p>Dashboard</p>
+        </Link>
+
+        <div className="dashboard-links">
+          <a className="large-link"
+            onClick={(e) => { this.signOut(e); }}
+          >Sign out</a>
+        </div>
+
+        <div className={`dashboard-hamburger-menu ${showHamburgerMenu ? 'show' : 'hide'}`}>
+          <Link to="/employer/settings/profile">
+            <button className='button-1'>Settings</button>
+          </Link>
+
+          <a>
+            <button className="button-1"
+              onClick={(e) => { this.signOut(e); }}
+            >Sign out</button>
+          </a>
+        </div>
+
+        <div
+          className="dashboard-hamburger-menu-icon"
+          onClick={(e) => { this.toggleHamburgerMenu(e); }}
+        >
+          <p className={`${showHamburgerMenu ? 'hide' : 'show'}`}>=</p>
+          <p className={`${showHamburgerMenu ? 'show' : 'hide'}`}>x</p>
+        </div>
+
     </nav>
-  );
-};
+    );
+  }
+}
 
-export default ENav;
+export default withRouter(ENav);
+
+// const ENav = (props) => {
+//   const history = useHistory();
+
+//   return (
+//     <nav className='dashboard-navBar'>
+//       <Link className='dashboard-home stealth-link' to="/employer/dashboard">
+//         <img src={ RemoteReq } className='remotereq-name' alt='remote' />
+//         <p>Dashboard</p>
+//       </Link>
+
+//       <div className='dashboard-links'>
+
+//         <a className="large-link"
+//           onClick={() => {
+//             return Eauth.logout(() => {
+//               history.push('/employer/signin');
+//             });
+//           }}
+//         >Sign out</a>
+//       </div>
+//     </nav>
+//   );
+// };
