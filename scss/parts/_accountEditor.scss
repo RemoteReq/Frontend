@@ -21,3 +21,19 @@
     }
   }
 }
+
+
+@media screen and (max-aspect-ratio: 8/5) {
+  .account-editor {
+    padding: 0;
+
+    form {
+      display: flex;
+      flex-direction: column-reverse;
+
+      .image-column {
+        margin: 0;
+      }
+    }
+  }
+}

@@ -47,9 +47,6 @@
   .dashboard-navBar {
     padding: 0 8vw;
   }
-  .dashboard-hamburger-menu-icon {
-    display: initial;
-  }
 
   .dashboard-hamburger-menu {
     background-color: white;
@@ -80,6 +77,10 @@
     padding: 15px 8vw 20px 8vw;
     box-shadow: 1px 1px 20px #c9c9c9;
     z-index: 2;
+
+    .dashboard-hamburger-menu-icon {
+      display: initial;
+    }
 
     .dashboard-home {
       p {
