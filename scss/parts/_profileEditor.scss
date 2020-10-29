@@ -30,5 +30,19 @@
   height: 250px;
   width: 100%;
   background-color: #ebebeb;
+}
 
+@media screen and (max-aspect-ratio: 8/5) {
+  .profile-editor {
+    padding: 0;
+
+    form {
+      display: flex;
+      flex-direction: column-reverse;
+
+      .image-column {
+        margin: 0;
+      }
+    }
+  }
 }
