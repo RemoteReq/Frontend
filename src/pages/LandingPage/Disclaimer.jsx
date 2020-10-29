@@ -43,7 +43,7 @@ class Disclaimer extends Component {
               For the next few weeks, we are putting the finishing touches on our platform,
               so please give us some grace if you encounter anything out of the ordinary.
               In fact, we could use your help.
-              If anything seems off, please email us at <a>kbryant@remotereq.com</a> to share your feedback.
+              If anything seems off, please email us at <a>remotereqinfo@gmail.com</a> to share your feedback.
 
               <br/>
               <br/>
