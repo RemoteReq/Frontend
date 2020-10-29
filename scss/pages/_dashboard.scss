@@ -1,9 +1,9 @@
 .dashboard {
-  display: grid;
   // justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   padding: 5vh 15vw;
   min-height: 80vh;
-  grid-template-columns: 1fr 2fr;
   min-width: auto;
   grid-gap: 80px;
   background-color: $BackgroundColor;

@@ -18,13 +18,14 @@
     overflow-x: hidden;
   }
 
+// This is job seeker side
   .await-jobs {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 50%;
 
     .await-jobs-icon {
       background-color: lightgray;
@@ -43,6 +44,8 @@
     }
   }
 
+
+// This is employer side
   .await-jobReqs {
     display: flex;
     flex-direction: column;
@@ -73,11 +76,22 @@
   .jobList {    
     // padding-top: 120px;
     // width: 100%;
-    min-height: 100vh;
+    // min-height: 100vh;
 
-    .await-jobReqs-icon {
-      width: 80%;
+    .await-jobs {
       height: 80%;
+
+      .await-jobs-icon {
+        width: 80%;
+      }
+    }
+
+    .await-jobReqs {
+      height: 80%;
+
+      .await-jobReqs-icon {
+        width: 80%;
+      }
     }
 
     h3 {
