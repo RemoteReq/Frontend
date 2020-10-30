@@ -17,3 +17,20 @@
     height: 5px;
   }
 }
+
+@media screen and (max-aspect-ratio: 8/5) {
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+  .breadcrumbs {
+    flex-direction: column;
+
+    button, a {
+      width: 100%;
+    }
+  }
+
+  .breadcrumb-bar {
+    display: none;
+  }
+}
