@@ -28,6 +28,11 @@
 
 @media screen and (max-aspect-ratio: 1/1) {
   .settings-page {
-    padding: 120px 8vw;
+    padding: 90px 4vw;
+
+    .settings-container {
+      display: flex;
+      flex-direction: column-reverse;
+    }
   }
 }
