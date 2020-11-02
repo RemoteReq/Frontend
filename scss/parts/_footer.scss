@@ -133,3 +133,9 @@
   
   }
 }
+
+@media Screen and (max-aspect-ratio: 1/1) {
+  .footer {
+    display: none;
+  }
+}
