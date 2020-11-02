@@ -2,12 +2,13 @@
   background-color: $BackgroundColor;
   justify-content: space-evenly;
   display: flex;
+  padding: 0 15vw;
 }
 
 .job-form {
   background-color: white;
   margin: 4vh 0;
-  width: 70%;
+  width: auto;
 
   input {
     padding: 10px 15px;
@@ -35,5 +36,42 @@
     margin-top: 10%;
     display: flex;
     flex-direction: row-reverse;
+  }
+}
+
+@media Screen and (max-aspect-ratio: 8/5) {
+  .add-job {
+    padding: 0 8vw;
+  }
+}
+
+@media Screen and (max-aspect-ratio: 1/1) {
+  .add-job {
+    padding: 120px 8vw;
+  }
+
+  .job-form {
+
+    .grid-1fr-1fr {
+      grid-template-columns: 1fr;
+    }
+
+    input[type=date] {
+      width: 100%;
+    }
+
+    .upload-button {
+      width: 100%;
+
+      button {
+        width: 100%;
+      }
+    }
+
+    .image-box {
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
   }
 }
