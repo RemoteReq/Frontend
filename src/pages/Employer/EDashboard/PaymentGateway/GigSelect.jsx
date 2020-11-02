@@ -10,12 +10,13 @@ const GigSelect = () => {
       <form>
         <div className="gig-select">
           <Link
+            className="gig-select-choice"
             to={{
               pathname: '/employer/addJob',
               state: { price: 100.00, afterHirePrice: 2500.00, jobType: 'Full Time' },
             }}
           >
-            <div className="gig-select-choice">
+            <div>
               <h3>Full Time</h3>
               <div className="gig-select-image">
                 {/* <img/> */}
@@ -26,12 +27,13 @@ const GigSelect = () => {
           </Link>
 
           <Link
+            className="gig-select-choice"
             to={{
               pathname: '/employer/addJob',
               state: { price: 100.00, afterHirePrice: 1000.00, jobType: 'Part Time' },
             }}
           >
-            <div className="gig-select-choice">
+            <div>
               <h3>Part Time</h3>
               <div className="gig-select-image">
                 {/* <img/> */}

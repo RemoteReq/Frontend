@@ -5,26 +5,37 @@
 
   form {
     background-color: white;
-    margin: 4vw 4vh;
+    margin: 4vh auto;
+    left: 0;
+    right: 0;
     
     .gig-select {
       display: flex;
-      width: 50vw;
-      height: 50vh;
       justify-content: space-between;
+      width: auto;
+      height: 50vh;
 
       .gig-select-choice {
         border: 1px solid lightgrey;
-        // box-shadow: 4px 4px 20px #e2e2e2;
         display: flex;
         flex-direction: column;
-        padding: 50px;
         align-items: center;
-        height: 80%;
+        padding: 50px;
+        height: 100%;
         width: 100%;
-  
+        
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+        }
+
         .gig-select-image {
-          background-color: gray;
+          background-color: lightgray;
+          width: 50%;
           height: 50%;
         }
         
@@ -53,6 +64,26 @@
 
     .gig-select-choice:hover {
       box-shadow: 1px 1px 20px #e2e2e2;
+
+    }
+  }
+}
+
+@media Screen and (max-aspect-ratio: 8/5) {
+  .gig-select {
+    width: 80vw !important;
+  }
+}
+
+@media Screen and (max-aspect-ratio: 1/1) {
+  .gig-select-page {
+    padding: 90px 0;
+  }
+
+  .gig-select {
+    flex-direction: column;
+
+    .gig-select-choice {
 
     }
   }
