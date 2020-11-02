@@ -19,7 +19,7 @@ const TermsOfUse = () => {
         the terms and conditions in these Terms of Service, the Privacy Policy (the “Privacy Policy”) available
         &nbsp;<a href="/privacyPolicy">here</a>,
         the Provider Terms (as applicable) and your representation that you are 18 years of age or older.
-        Email remotereq@gmail.com for more. If you object to anything in these Terms of Service,
+        Email remotereqinfo@gmail.com for more. If you object to anything in these Terms of Service,
         the Provider Terms or the Privacy Policy, you are not permitted to use the Service. The Provider Terms
         and the Privacy Policy are incorporated by reference into these Terms of Service and these
         Terms of Service, the Provider Terms and the Privacy Policy together are hereinafter referred to as this
@@ -56,7 +56,7 @@ const TermsOfUse = () => {
           (“Assignments”) and (b) individuals and/or businesses seeking Providers to provide perform such
           Assignments (“Clients”).  Clients and Providers together are hereinafter referred to as “Users.”
           Please note that all use of the Service by Providers is also governed by the Provider Terms of Service,
-          which is available upon request. Email <a>remotereq@gmail.com</a> for more.
+          which is available upon request. Email <a>remotereqinfo@gmail.com</a> for more.
           Subject to User’s full and continued compliance with this Agreement,
           Company grants User a non-exclusive, non-transferable, non-sublicensable, revocable, limited license
           to use the Service.
@@ -224,7 +224,7 @@ const TermsOfUse = () => {
         <br/>
 
         <p>By providing your mobile phone number and using the Service, you hereby affirmatively consent to our use of your mobile phone number for calls and texts in order to perform and improve upon the Service. Company will not assess any charges for calls or texts, but standard message charges or other charges from your wireless carrier may apply. You may opt-out of receiving text messages from us by modifying your account settings on the Site or Company’s mobile application, or by emailing
-          &nbsp;<a>remotereq@gmail.com</a>
+          &nbsp;<a>remotereqinfo@gmail.com</a>
         </p>
 
         <br/>
@@ -311,7 +311,7 @@ const TermsOfUse = () => {
           You acknowledge and agree that Company may access your e-mail address book associated with a
           Third Party Account and your contacts list stored on your mobile device or tablet computer solely
           for the purposes of identifying and informing you of those contacts who have also registered to use
-          the Service. At your request made via e-mail to &nbsp;<a>remotereq@gmail.com</a>, Company will deactivate the
+          the Service. At your request made via e-mail to &nbsp;<a>remotereqinfo@gmail.com</a>, Company will deactivate the
           connection between the Service and your Third Party Account and delete any information stored on
           Company’s servers that was obtained through such Third Party Account, except the username and profile
           picture that become associated with your account.
@@ -355,7 +355,7 @@ const TermsOfUse = () => {
 
         <h4>Copyright Complaints and Copyright Agent</h4>
 
-        <p>Company respects the intellectual property of others, and expects Users to do the same. If you believe, in good faith, that any materials provided on or in connection with the Service infringe upon your copyright or other intellectual property right, please send the following information to Company’s Copyright Agent at: &nbsp;<a>remotereq@gmail.com</a></p>
+        <p>Company respects the intellectual property of others, and expects Users to do the same. If you believe, in good faith, that any materials provided on or in connection with the Service infringe upon your copyright or other intellectual property right, please send the following information to Company’s Copyright Agent at: &nbsp;<a>remotereqinfo@gmail.com</a></p>
 
         <br/>
 
@@ -432,7 +432,7 @@ const TermsOfUse = () => {
 
         <h4>Dispute Resolution</h4>
 
-        <p>INFORMAL NEGOTIATIONS. To expedite resolution and reduce the cost of any dispute, controversy or claim related to this Agreement (“Dispute”), you and Company agree to first attempt to negotiate any Dispute (except those Disputes expressly excluded below) informally for at least thirty (30) days before initiating any arbitration or court proceeding. Such informal negotiations will commence upon written notice. Your address for such notices is your billing address, with an email copy to the email address you have provided to Company. Company’s email address for such notices is &nbsp;<a>remotereq@gmail.com</a>.</p>
+        <p>INFORMAL NEGOTIATIONS. To expedite resolution and reduce the cost of any dispute, controversy or claim related to this Agreement (“Dispute”), you and Company agree to first attempt to negotiate any Dispute (except those Disputes expressly excluded below) informally for at least thirty (30) days before initiating any arbitration or court proceeding. Such informal negotiations will commence upon written notice. Your address for such notices is your billing address, with an email copy to the email address you have provided to Company. Company’s email address for such notices is &nbsp;<a>remotereqinfo@gmail.com</a>.</p>
 
         <br/>
 

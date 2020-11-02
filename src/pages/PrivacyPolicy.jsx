@@ -79,7 +79,7 @@ const PrivacyPolicy = () => {
         <h4 className="underline">Information Collected Automatically</h4>
         <p className="smaller-paragraph">
           The Services use cookies and similar technologies such as pixel tags, web beacons, clear GIFs and JavaScript (collectively, “Cookies”) to enable our servers to recognize your web browser and tell us how and when you visit and use our Services, to analyze trends, learn about our user base and operate and improve our Services. Cookies are small pieces of data– usually text files – placed on your computer, tablet, phone or similar device when you use that device to access our Services. We may also supplement the information we collect from you with information received from third parties, including third parties that have placed their own Cookies on your device(s). Please note that because of our use of Cookies, the Services do not support “Do Not Track” requests sent from a browser at this time.
-          For more information about our use of cookies, please email us for our cookie policy. <a>remotereq@gmail.com</a>
+          For more information about our use of cookies, please email us for our cookie policy. <a>remotereqinfo@gmail.com</a>
         </p>
 
         <br/>
@@ -120,7 +120,7 @@ const PrivacyPolicy = () => {
           As noted in the list above, we may communicate with you if you’ve provided us the means to do so. For example, if you’ve given us your email address, we may send you promotional email offers or email you about your use of the Services.
           Also, we may receive a confirmation when you open an email from us, which helps us improve our Services.
           If you do not want to receive communications from us, please indicate your preference by emailing us at
-          <a>remotereq@gmail.com</a>
+          <a>remotereqinfo@gmail.com</a>
         </p>
 
         <br/>
@@ -227,7 +227,7 @@ const PrivacyPolicy = () => {
         <h4 className="underline">Personal Data of Children</h4>
         <p>
           As noted in the Terms of Use, we do not knowingly collect or solicit Personal Data about children under 16 years of age; if you are a child under the age of 16, please do not attempt to register for or otherwise use the Services or send us any Personal Data. If we learn we have collected Personal Data from a child under 16 years of age, we will delete that information as quickly as possible. If you believe that a child under 16 years of age may have provided Personal Data to us, please contact us at
-          <a>remotereq@gmail.com</a>
+          <a>remotereqinfo@gmail.com</a>
         </p>
 
         <br/>
@@ -237,7 +237,7 @@ const PrivacyPolicy = () => {
         <p>
           If you are a California resident, you have the rights set forth in this section. Please see the “Exercising Your Rights” section below for instructions regarding how to exercise these rights. Please note that we may process Personal Data of our customers’ end users or employees in connection with our provision of certain services to our customers. If we are processing your Personal Data as a service provider, you should contact the entity that collected your Personal Data in the first instance to address your rights with respect to such data.
           If there are any conflicts between this section and any other provision of this Privacy Policy and you are a California resident, the portion that is more protective of Personal Data shall control to the extent of such conflict. If you have any questions about this section or whether any of the following rights apply to you, please contact us at
-          &nbsp;<a>remotereq@gmail.com</a>
+          &nbsp;<a>remotereqinfo@gmail.com</a>
         </p>
 
         <br/>
@@ -260,7 +260,7 @@ const PrivacyPolicy = () => {
         <br/>
 
         <ul>
-          <li>Email us at: <a>remotereq@gmail.com</a></li>
+          <li>Email us at: <a>remotereqinfo@gmail.com</a></li>
         </ul>
 
         <br/>
@@ -297,7 +297,7 @@ const PrivacyPolicy = () => {
 
         <br/>
 
-        <p>You can also email us at: <a>remotereq@gmail.com</a></p>
+        <p>You can also email us at: <a>remotereqinfo@gmail.com</a></p>
 
         <br/>
 
@@ -313,7 +313,7 @@ const PrivacyPolicy = () => {
         <h4 className="underline italic">California Resident Rights</h4>
         <p>
           Under California Civil Code Sections 1798.83-1798.84, California residents are entitled to contact us to prevent disclosure of Personal Data to third parties for such third parties’ direct marketing purposes; in order to submit such a request, please contact us at
-          &nbsp;<a>remotereq@gmail.com</a>.
+          &nbsp;<a>remotereqinfo@gmail.com</a>.
         </p>
 
         <br/>
@@ -340,7 +340,7 @@ const PrivacyPolicy = () => {
         <br/>
 
         <ul>
-          <li><a>remotereq@gmail.com</a></li>
+          <li><a>remotereqinfo@gmail.com</a></li>
         </ul>
       </form>
     </div>
