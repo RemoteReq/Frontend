@@ -10,10 +10,22 @@ const StatelessJobViewer = (props) => {
       <Navigation />
 
       <form>
+
           <div className="title-and-edit">
-            <h3>{job.title}</h3>
+            <div className="title-cluster">
+              <div className="logo-box">
+                <img src={job.companyLogoPath ? job.companyLogoPath : ''}/>
+              </div>
+
+              <div className="title-and-company">
+                <h3>{job.title}</h3>
+                <h4>{job.companyName}</h4>
+              </div>
+            </div>
           </div>
-          <h4>{job.companyName}</h4>
+
+          <br/>
+          <br/>
 
           <div className="job-headline">
 
@@ -39,6 +51,9 @@ const StatelessJobViewer = (props) => {
             </div>
 
           </div>
+
+          <br/>
+          <br/>
 
           <p>Description:</p>
           <p className="small-paragraph" style={{ lineHeight: '14pt' }}>{job.jobDetails}</p>

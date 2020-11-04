@@ -55,18 +55,28 @@ class JobViewer extends Component {
         <ENav/>
 
         <form>
+
           <div className="title-and-edit">
-            <h3>{job.title}</h3>
+            <div className="title-cluster">
+              <div className="logo-box">
+                <img src={job.companyLogoPath ? job.companyLogoPath : ''}/>
+              </div>
+
+              <div className="title-and-company">
+                <h3>{job.title}</h3>
+                <h4>{job.companyName}</h4>
+              </div>
+            </div>
+
             <p className="small-paragraph">{transactionId ? `Transaction ID:${transactionId}` : ''}</p>
           </div>
-          <h4>{job.companyName}</h4>
 
           <br/>
           <br/>
 
           <MatchWindow firstPaymentStatus={firstPaymentStatus} matches={matches} job={job}/>
 
-    <p className="small-paragraph">{firstPaymentStatus ? `Matches expire on: ${expireDate.toDateString()}` : ''}</p>
+          <p className="small-paragraph">{firstPaymentStatus ? `Matches expire on: ${expireDate.toDateString()}` : ''}</p>
 
           <br/>
           <br/>

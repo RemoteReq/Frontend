@@ -177,9 +177,17 @@ class JobForm extends Component {
 
     addJobForm.append('transactionIdForAddJob', 'sample job for testing');
     // addJobForm.append('transactionIdForAddJob', this.props.location.state.transactionId);
-    addJobForm.append('companyLogo', this.state.companyLogo);
+
+
+    addJobForm.append('companyLogoPath', this.state.companyLogo);
     // addJobForm.append('jobDescription', 'pdf.pdf');
     // addJobForm.append('companyWebsiteUrl', this.state.comapnyURL);
+
+    // Comment and uncomment for testing
+    // addJobForm.append('companyLogoPath', 'test.jpg');
+    // addJobForm.append('jobDescription', 'pdf.pdf');
+    // addJobForm.append('companyWebsiteUrl', 'http://www.websiteURL.com');
+
 
     addJobForm.append('title', this.state.title);
     addJobForm.append('companyName', this.state.companyName);
@@ -222,8 +230,8 @@ class JobForm extends Component {
     }
 
     // View values before sending
-    for (const value of addJobForm.values()) {
-      console.log(value);
+    for (const pair of addJobForm.entries()) {
+      console.log(`${pair[0]}, ${pair[1]}`);
     }
 
     Axios({
