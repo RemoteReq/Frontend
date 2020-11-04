@@ -4,8 +4,26 @@
   justify-content: center;
 
   form {
-    margin: 4vh 0;
-    width: 60%;
+    margin: 4vh 16vw;
+    width: 100%;
     background-color: white;
+  }
+}
+
+@media Screen and (max-aspect-ratio: 8/5) {
+  .match-viewer {
+    
+    form {
+      margin: 4vh 8vw;
+    }
+  }
+}
+
+@media Screen and (max-aspect-ratio: 1/1) {
+  .match-viewer {
+
+    form {
+      margin: 120px 4vw;
+    }
   }
 }
