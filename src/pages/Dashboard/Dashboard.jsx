@@ -44,6 +44,13 @@ class Dashboard extends Component {
             userDetails: response.data,
           }, () => { return console.log('user details retrieved!', this.state); });
         })
+        .catch((error) => {
+          auth.logout(() => {
+            this.props.history.push('/signin');
+          });
+
+          return error;
+        })
         .catch((error) => { return console.log(error); });
 
       axios({

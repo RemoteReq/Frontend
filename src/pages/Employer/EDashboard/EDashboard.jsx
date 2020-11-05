@@ -46,6 +46,13 @@ class EDashboard extends Component {
             userDetails: response.data,
           }, () => { return console.log('employer details retrieved!', this.state); });
         })
+        .catch((error) => {
+          EAuth.logout(() => {
+            this.props.history.push('/signin');
+          });
+
+          return error;
+        })
         .catch((error) => { return console.log(error); });
 
       axios({
