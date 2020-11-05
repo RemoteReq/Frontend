@@ -48,7 +48,7 @@ class EDashboard extends Component {
         })
         .catch((error) => {
           EAuth.logout(() => {
-            this.props.history.push('/signin');
+            this.props.history.push('/employer/signin');
           });
 
           return error;
