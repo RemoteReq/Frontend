@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const backend = 'http://3.21.186.204:3030';
+const backend = 'http://18.191.219.131:3030';
 
 class SignUp extends Component {
   constructor(props) {

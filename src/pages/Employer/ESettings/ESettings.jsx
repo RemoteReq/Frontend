@@ -10,7 +10,7 @@ import JobReqNotifications from './JobReqNotifications/JobReqNotifications.jsx';
 import SettingsNav from './ESettingsNav.jsx';
 import EAuth from '../EAuth/EAuth.jsx';
 
-const backend = 'http://3.21.186.204:3030';
+const backend = 'http://18.191.219.131:3030';
 
 class ESettings extends Component {
   constructor(props) {

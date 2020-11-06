@@ -35,7 +35,7 @@ class FirstPayment extends Component {
         console.log(response);
 
         axios({
-          url: 'http://3.21.186.204:3030/api/jobs/checkoutForAddjob',
+          url: 'http://18.191.219.131:3030/api/jobs/checkoutForAddjob',
           method: 'POST',
           headers: {
             token: localStorage.getItem('e-session'),

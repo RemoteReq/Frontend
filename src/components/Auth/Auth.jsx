@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const backend = 'http://3.21.186.204:3030';
+const backend = 'http://18.191.219.131:3030';
 
 class Auth {
   constructor() {

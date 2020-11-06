@@ -11,7 +11,7 @@ import Page2 from './pages/Page2.jsx';
 import Page3 from './pages/Page3.jsx';
 import Page4 from './pages/Page4.jsx';
 
-const backend = 'http://3.21.186.204:3030';
+const backend = 'http://18.191.219.131:3030';
 
 class QnA extends Component {
   constructor(props) {

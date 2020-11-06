@@ -5,7 +5,7 @@ import ENav from '../../ENav/ENav.jsx';
 import EMatchRating from '#parts/EMatchRating.jsx';
 import MatchWindow from './MatchWindow.jsx';
 
-const backend = 'http://3.21.186.204:3030';
+const backend = 'http://18.191.219.131:3030';
 
 class JobViewer extends Component {
   constructor(props) {

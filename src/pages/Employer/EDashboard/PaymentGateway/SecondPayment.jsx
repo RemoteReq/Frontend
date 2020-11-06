@@ -38,7 +38,7 @@ class SecondPayment extends Component {
         console.log(response);
 
         axios({
-          url: 'http://3.21.186.204:3030/api/jobs/checkoutAfterHired',
+          url: 'http://18.191.219.131:3030/api/jobs/checkoutAfterHired',
           method: 'POST',
           headers: {
             token: localStorage.getItem('e-session'),
