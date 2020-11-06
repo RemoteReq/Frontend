@@ -32,7 +32,7 @@ const StatelessProfileEditor = ({
           <div className="textarea-div">
             <textarea
               name="location"
-              // defaultValue={`${userDetails.aboutMe}` || ''}
+              defaultValue={`${userDetails.location}` || ''}
               onChange={(e) => { handleChange(e); }}
               />
           </div>
