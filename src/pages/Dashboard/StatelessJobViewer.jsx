@@ -27,16 +27,15 @@ const StatelessJobViewer = (props) => {
           <br/>
           <br/>
 
-          <p>More about this Job:</p>
           {
-            job.companyWebsiteURL ? <p className="small-paragraph">Company Website: <a href={`http://${job.companyWebsiteURL}`}></a></p> : ''
           }
+          <p className="small-paragraph">Company Website: <a href={`http://${job.companyWebsiteURL}`}></a></p>
 
           {
-            job.jobDescriptionPath ? <button className="small-paragraph">Attached job Description: </button> : ''
           }
-          <p>Attached Job Description: </p>
-          <button className="button-2"><a href="cool"></a>Download Job Description</button>
+          {/* <button className="small-paragraph">Attached job Description: </button>
+          <p>Attached Job Description: </p> */}
+          <button className="button-2"><a href="cool"></a>Download Job Description (.pdf)</button>
 
           <div className="job-headline">
 
@@ -51,7 +50,7 @@ const StatelessJobViewer = (props) => {
             </div>
 
             <div>
-              <label>Causes they work on</label>
+              <label>Causes</label>
               <li>{job.cause}</li>
             </div>
 
