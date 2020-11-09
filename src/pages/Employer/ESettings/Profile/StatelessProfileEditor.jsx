@@ -44,19 +44,6 @@ const StatelessProfileEditor = ({
             onChange={(e) => { handleChange(e); }}
           />
 
-          {/* <label>Github URL</label>
-          <input
-            name="githubURL"
-            defaultValue={`${userDetails.githubURL}`}
-            onChange={(e) => { handleChange(e); }}
-          /> */}
-
-          {/* <label>Twitter Handle</label>
-          <input
-            name=""
-            onChange={(e) => { handleChange(e); }}
-          /> */}
-
           <label>Company URL</label>
           <input
             name="companyWebsite"
