@@ -51,6 +51,9 @@ class JobForm extends Component {
         hourlyWage: {
           isFilled: false,
         },
+        salary: {
+          isFilled: false,
+        },
         numberOfHours: {
           isFilled: false,
         },

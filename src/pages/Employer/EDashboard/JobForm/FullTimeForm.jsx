@@ -24,7 +24,6 @@ const FullTimeForm = ({
           <input
             placeholder="ex: UX Developer"
             name="title"
-            className={`${fields.title.isFilled ? '' : 'input-error'}`}
             onChange={handleChange}
           />
           <p className={`${fields.title.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
@@ -33,7 +32,6 @@ const FullTimeForm = ({
           <input
             placeholder="ex: RemoteReq"
             name="companyName"
-            className={`${fields.companyName.isFilled ? '' : 'input-error'}`}
             onChange={handleChange}
           />
           <p className={`${fields.companyName.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
@@ -77,7 +75,6 @@ const FullTimeForm = ({
         </div>
 
         <div>
-
           <label>Company Logo</label>
           <div className="image-box">
             <img src={companyLogo || ''}/>
@@ -99,6 +96,7 @@ const FullTimeForm = ({
                   })
                 }
             </select>
+            <p className={`${fields.salary.isFilled ? '' : 'error'}`}>This is a required field.</p>
           </div>
 
           <div className="range">
@@ -106,7 +104,6 @@ const FullTimeForm = ({
             <input
               type="number"
               name="minExperience"
-              className={`${fields.minExperience.isFilled ? '' : 'input-error'}`}
               onChange={handleNumber}
             />
             <p className={`${fields.minExperience.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
@@ -115,7 +112,6 @@ const FullTimeForm = ({
             <input
               type="number"
               name="maxExperience"
-              className={`${fields.maxExperience.isFilled ? '' : 'input-error'}`}
               onChange={handleNumber}
             />
             <p className={`${fields.maxExperience.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>

@@ -27,7 +27,6 @@ const PartTimeForm = ({
             <input
               placeholder="ex: UX Developer"
               name="title"
-              className={`${fields.title.isFilled ? '' : 'input-error'}`}
               onChange={handleChange}
             />
             <p className={`${fields.title.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
@@ -36,7 +35,6 @@ const PartTimeForm = ({
             <input
               placeholder="ex: RemoteReq"
               name="companyName"
-              className={`${fields.companyName.isFilled ? '' : 'input-error'}`}
               onChange={handleChange}
             />
             <p className={`${fields.companyName.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
@@ -64,7 +62,6 @@ const PartTimeForm = ({
             <input
               name="soonestJoinDate"
               onChange={handleChange}
-              className={`${fields.soonestJoinDate.isFilled ? '' : 'input-error'}`}
               type="date"
             />
             <p className={`${fields.soonestJoinDate.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
@@ -96,7 +93,6 @@ const PartTimeForm = ({
             <input
               type="number"
               name="hourlyWage"
-              className={`${fields.hourlyWage.isFilled ? '' : 'input-error'}`}
               onChange={handleNumber}
             />
             <p className={`${fields.hourlyWage.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
@@ -105,7 +101,6 @@ const PartTimeForm = ({
             <input
               type="number"
               name="numberOfHours"
-              className={`${fields.numberOfHours.isFilled ? '' : 'input-error'}`}
               onChange={handleNumber}
             />
             <p className={`${fields.numberOfHours.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
@@ -115,7 +110,6 @@ const PartTimeForm = ({
               <input
                 type="number"
                 name="minExperience"
-                className={`${fields.minExperience.isFilled ? '' : 'input-error'}`}
                 onChange={handleNumber}
               />
               <p className={`${fields.minExperience.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
@@ -124,7 +118,6 @@ const PartTimeForm = ({
               <input
                 type="number"
                 name="maxExperience"
-                className={`${fields.maxExperience.isFilled ? '' : 'input-error'}`}
                 onChange={handleNumber}
               />
               <p className={`${fields.maxExperience.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
