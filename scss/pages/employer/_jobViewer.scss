@@ -17,8 +17,8 @@
     }
 
     .logo-box {
-      width: 200px;
-      height: 200px;
+      width: 150px;
+      height: 150px;
       background-color: lightgray;
 
       img {
@@ -105,6 +105,10 @@
 
     form {
       margin: 120px 2vw;
+
+      .logo-box {
+        height: 100px;
+      }
     }
 
     .job-headline {

@@ -28,7 +28,7 @@ const StatelessProfileEditor = ({
             onChange={(e) => { handleChange(e); }}
           />
 
-          <label>About</label>
+          <label>Our Mission</label>
           <div className="textarea-div">
             <textarea
               name="location"
@@ -57,7 +57,7 @@ const StatelessProfileEditor = ({
             onChange={(e) => { handleChange(e); }}
           /> */}
 
-          <label>Employer URL</label>
+          <label>Company URL</label>
           <input
             name="companyWebsite"
             defaultValue={`${userDetails.companyWebsite || ''}`}

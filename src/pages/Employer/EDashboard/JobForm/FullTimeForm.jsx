@@ -81,7 +81,7 @@ const FullTimeForm = ({
               type="file"
               name="jobDesc"
               accept="application/pdf,application/vnd.ms-excel"
-              onChange={(e) => { return handleFileUpload(e); }}
+              onChange={(e) => { return handleChange(e); }}
               />
           </div>
         </div>
