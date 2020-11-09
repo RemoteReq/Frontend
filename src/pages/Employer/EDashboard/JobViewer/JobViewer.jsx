@@ -65,6 +65,13 @@ class JobViewer extends Component {
               <div className="title-and-company">
                 <h3>{job.title}</h3>
                 <h4>{job.companyName}</h4>
+
+                {
+                  job.companyWebsiteURL
+                    ? <p className="small-paragraph">Company Website: <a href={`http://${job.companyWebsiteURL}`}></a></p>
+
+                    : <p></p>
+                }
               </div>
             </div>
 
@@ -81,16 +88,8 @@ class JobViewer extends Component {
           <br/>
           <br/>
 
-          <p>More about this Job:</p>
-          {
-          }
-          <p className="small-paragraph">Company Website: <a href={`http://${job.companyWebsiteURL}`}></a></p>
-
-          {
-          }
-          <button className="small-paragraph">Attached job Description: </button>
-          <p>Attached Job Description: </p>
-          <button className="button-2"><a href="cool"></a>Download Job Description</button>
+          <p>Our Mission:</p>
+          <p className="small-paragraph">{job.ourMission || ''}</p>
 
           <br/>
           <br/>
@@ -125,6 +124,20 @@ class JobViewer extends Component {
 
           <br/>
           <br/>
+
+          {
+            job.jobDescriptionPath
+              ? <div>
+
+              <p>Attached Job Description: </p>
+              <button className="button-2"><a href="cool"></a>Download Job Description</button>
+              <br/>
+              <br/>
+            </div>
+
+              : <p></p>
+
+          }
 
           <p>Skills required for this job:</p>
           <ul>

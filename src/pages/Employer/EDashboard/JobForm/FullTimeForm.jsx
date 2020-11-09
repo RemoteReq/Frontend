@@ -8,7 +8,7 @@ import CauseSelector from '#parts/CauseSelector.jsx';
 import ENav from '../../ENav/ENav.jsx';
 
 const FullTimeForm = ({
-  jobData, handleChange, addJob, addToList, handleFileUpload, handleNumber, companyLogo,
+  jobData, fields, handleChange, addJob, addToList, handleFileUpload, handleNumber, companyLogo,
 }) => {
   return (
     <div className="add-job">
@@ -17,8 +17,6 @@ const FullTimeForm = ({
     <form className="job-form">
       <h4>Add Job</h4>
 
-    {/* <h4>Transaction ID: {transactionId}</h4> */}
-
       <div className="grid-1fr-1fr spaced">
 
         <div>
@@ -26,43 +24,34 @@ const FullTimeForm = ({
           <input
             placeholder="ex: UX Developer"
             name="title"
+            className={`${fields.title.isFilled ? '' : 'input-error'}`}
             onChange={handleChange}
           />
+          <p className={`${fields.title.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
           <label>Company Name</label>
           <input
             placeholder="ex: RemoteReq"
             name="companyName"
+            className={`${fields.companyName.isFilled ? '' : 'input-error'}`}
             onChange={handleChange}
           />
-
-          {/* <label>Industry</label>
-          <input
-            placeholder="ex: Software"
-            name="industryType"
-            onChange={handleChange}
-          />
-
-          <label>Role</label>
-          <input
-            placeholder="UX Developer"
-            name="role"
-            onChange={handleChange}
-          /> */}
+          <p className={`${fields.companyName.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
           <label>What cause does your company work on?</label>
           <CauseSelector name="cause" handleChange={handleChange}/>
+          <p className={`${fields.cause.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
           <label>Job Details</label>
           <div className="textarea-div">
-            <textarea
-              placeholder="ex: RemoteReq is looking for a new UX Developer to lead in creating a responsive mobile app for RemoteReq.com!"
-              className="aboutMe"
-              name="jobDetails"
-              onChange={handleChange}
+          <textarea
+            placeholder="ex: RemoteReq is looking for a new UX Developer to lead in creating a responsive mobile app for RemoteReq.com!"
+            className="aboutMe"
+            name="jobDetails"
+            onChange={handleChange}
             />
           </div>
-
+          <p className={`${fields.jobDetails.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
           <label>Key Skills</label>
           <SkillBank addToList={addToList} myKeySkills={jobData.keySkills}/>
@@ -75,15 +64,16 @@ const FullTimeForm = ({
               type="date"
             />
 
-          <div className="upload-button">
-            <button className="button-2">Upload a job description</button>
-            <input
-              type="file"
-              name="jobDesc"
-              accept="application/pdf,application/vnd.ms-excel"
-              onChange={(e) => { return handleFileUpload(e); }}
-              />
-          </div>
+            <p className="small-paragraph">{jobData.jobDescription ? jobData.jobDescription.name : ''}</p>
+            <div className="upload-button">
+              <button className="button-2">Upload a job description</button>
+              <input
+                type="file"
+                name="jobDescription"
+                accept="application/pdf,application/vnd.ms-excel"
+                onChange={(e) => { return handleFileUpload(e); }}
+                />
+            </div>
         </div>
 
         <div>
@@ -92,10 +82,6 @@ const FullTimeForm = ({
           <div className="image-box">
             <img src={companyLogo || ''}/>
           </div>
-          {/* <input
-            type="file"
-            className="button-1"
-            /> */}
 
           <label>Salary</label>
           <div className="select">
@@ -120,18 +106,23 @@ const FullTimeForm = ({
             <input
               type="number"
               name="minExperience"
+              className={`${fields.minExperience.isFilled ? '' : 'input-error'}`}
               onChange={handleNumber}
-              />
+            />
+            <p className={`${fields.minExperience.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
             <label>Maximum Years of Experience Required</label>
             <input
               type="number"
               name="maxExperience"
+              className={`${fields.maxExperience.isFilled ? '' : 'input-error'}`}
               onChange={handleNumber}
-              />
+            />
+            <p className={`${fields.maxExperience.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
           </div>
 
           <EducationSelector handleChange={handleNumber} name="requiredEducationLevel"/>
+          <p className={`${fields.requiredEducationLevel.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
           <div className="select">
             <label>State</label>
@@ -147,6 +138,7 @@ const FullTimeForm = ({
                 })
               }
             </select>
+            <p className={`${fields.location.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
           </div>
 
           <div className="notification-settings">

@@ -5,6 +5,7 @@
 
   form {
     background-color: white;
+    width: 60%;
     margin: 4vh auto;
     left: 0;
     right: 0;
@@ -34,7 +35,7 @@
         }
 
         .gig-select-image {
-          background-color: lightgray;
+          // background-color: lightgray;
           width: 50%;
           height: 50%;
         }
@@ -70,8 +71,11 @@
 }
 
 @media Screen and (max-aspect-ratio: 8/5) {
-  .gig-select {
-    width: 80vw !important;
+  .gig-select-page {
+
+    form {
+      width: 80vw !important;
+    }
   }
 }
 

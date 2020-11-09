@@ -20,7 +20,7 @@ const StatelessProfileCard = ({ userDetails }) => {
               <h5>Company</h5>
               <p className="small-paragraph">{userDetails.companyName || ''}</p>
 
-              <h5>About</h5>
+              <h5>Our Mission</h5>
               <p className="small-paragraph">{userDetails.location || ''}</p>
 
               <h5>Email</h5>

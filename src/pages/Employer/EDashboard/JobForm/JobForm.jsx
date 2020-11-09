@@ -90,6 +90,7 @@ class JobForm extends Component {
     this.addToList = this.addToList.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.handleNumber = this.handleNumber.bind(this);
+    this.handleFileUpload = this.handleFileUpload.bind(this);
   }
 
   componentDidMount() {
@@ -107,12 +108,13 @@ class JobForm extends Component {
         this.setState({
           jobType,
           companyLogo: response.data.companyLogo,
+          companyWebsiteURL: response.data.companyWebsite,
         }, () => { console.log(this.state); });
       });
   }
 
   handleChange(e) {
-    // e.preventDefault();
+    e.preventDefault();
 
     this.setState({
       [e.target.name]: e.target.value,
@@ -143,6 +145,22 @@ class JobForm extends Component {
     this.setState({
       [e.targe.name]: e.target.value
       ,
+    }, () => { return console.log(this.state); });
+  }
+
+  handleFileUpload(e) {
+    e.preventDefault(e);
+
+    console.log(e.target.files);
+
+    this.setState({
+      [e.target.name]: e.target.files[0],
+      fields: {
+        ...this.state.fields,
+        [e.target.name]: {
+          isFilled: !!e.target.value,
+        },
+      },
     }, () => { return console.log(this.state); });
   }
 
@@ -180,8 +198,8 @@ class JobForm extends Component {
 
 
     addJobForm.append('companyLogoPath', this.state.companyLogo);
-    // addJobForm.append('jobDescription', 'pdf.pdf');
-    // addJobForm.append('companyWebsiteUrl', this.state.comapnyURL);
+    addJobForm.append('jobDescription', this.state.jobDescription);
+    addJobForm.append('companyWebsiteUrl', this.state.companyWebsite);
 
     // Comment and uncomment for testing
     // addJobForm.append('companyLogoPath', 'test.jpg');
@@ -270,6 +288,7 @@ class JobForm extends Component {
       this.props.location.state.jobType === 'Full Time'
         ? <FullTimeFrom
         jobData={jobData}
+        fields={fields}
         handleNumber={this.handleNumber}
         handleSelect={this.handleSelect}
         addToList={this.addToList}

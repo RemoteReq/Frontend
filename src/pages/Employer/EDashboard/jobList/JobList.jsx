@@ -48,6 +48,14 @@ const MappedReqs = ({ jobReqs }) => {
   );
 };
 
+const CompleteProfileReminder = () => {
+  return (
+    <div className="jobList">
+
+    </div>
+  );
+};
+
 const EReminder = () => {
   return (
     <div className='jobList'>

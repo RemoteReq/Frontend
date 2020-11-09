@@ -20,8 +20,6 @@ const PartTimeForm = ({
       <form className="job-form">
         <h4>Add Job</h4>
 
-      {/* <h4>Transaction ID: {transactionId}</h4> */}
-
         <div className="grid-1fr-1fr spaced">
 
           <div>
@@ -34,7 +32,6 @@ const PartTimeForm = ({
             />
             <p className={`${fields.title.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
-
             <label>Company Name</label>
             <input
               placeholder="ex: RemoteReq"
@@ -43,20 +40,6 @@ const PartTimeForm = ({
               onChange={handleChange}
             />
             <p className={`${fields.companyName.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
-
-            {/* <label>Industry</label>
-            <input
-              placeholder="ex: Software"
-              name="industryType"
-              onChange={handleChange}
-            /> */}
-
-            {/* <label>Role</label>
-            <input
-              placeholder="UX Developer"
-              name="role"
-              onChange={handleChange}
-            /> */}
 
             <label>What cause does your company work on?</label>
             <CauseSelector name="cause" handleChange={handleChange}/>
@@ -86,22 +69,20 @@ const PartTimeForm = ({
             />
             <p className={`${fields.soonestJoinDate.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
             <br/>
-            {/* <label>Work Days</label>
-            <DaySelector addToList={addToList} /> */}
 
             <label>Available work hours</label>
             <AvailableHours />
 
-
-              <div className="upload-button">
-                <button className="button-2">Upload a job description</button>
-                <input
-                  type="file"
-                  name="jobDesc"
-                  accept="application/pdf,application/vnd.ms-excel"
-                  onChange={(e) => { return handleFileUpload(e); }}
-                  />
-              </div>
+            <p className="small-paragraph">{jobData.jobDescription ? jobData.jobDescription.name : ''}</p>
+            <div className="upload-button">
+              <button className="button-2">Upload a job description</button>
+              <input
+                type="file"
+                name="jobDescription"
+                accept="application/pdf,application/vnd.ms-excel"
+                onChange={(e) => { return handleFileUpload(e); }}
+                />
+            </div>
           </div>
 
           <div>
@@ -110,10 +91,6 @@ const PartTimeForm = ({
             <div className="image-box">
               <img src={companyLogo || ''}/>
             </div>
-            {/* <input
-              type="file"
-              className="button-1"
-              /> */}
 
             <label>Hourly Wage</label>
             <input
@@ -154,7 +131,7 @@ const PartTimeForm = ({
             </div>
 
             <EducationSelector handleChange={handleNumber} name="requiredEducationLevel"/>
-            {/* <p className={`${fields.requiredEducationLevel.isFilled ? 'hide' : 'error'}`}>This is a required field.</p> */}
+            <p className={`${fields.requiredEducationLevel.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
             <div className="select">
               <label>State</label>
@@ -170,11 +147,11 @@ const PartTimeForm = ({
                   })
                 }
               </select>
-              {/* <p className={`${fields.location.isFilled ? 'hide' : 'error'}`}>This is a required field.</p> */}
+              <p className={`${fields.location.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
             </div>
 
             <TimeZoneSelector handleChange={handleChange}/>
-            {/* <p className={`${fields.timeZone.isFilled ? 'hide' : 'error'}`}>This is a required field.</p> */}
+            <p className={`${fields.timeZone.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
             <div className="notification-settings">
               <h3>Notification Settings</h3>
