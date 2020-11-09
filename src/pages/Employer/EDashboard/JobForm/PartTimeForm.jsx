@@ -93,6 +93,7 @@ const PartTimeForm = ({
             <AvailableHours />
 
 
+              <p>{jobData.jobDescription.name || ''}</p>
               <div className="upload-button">
                 <button className="button-2">Upload a job description</button>
                 <input

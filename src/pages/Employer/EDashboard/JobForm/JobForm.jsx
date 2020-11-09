@@ -288,6 +288,7 @@ class JobForm extends Component {
       this.props.location.state.jobType === 'Full Time'
         ? <FullTimeFrom
         jobData={jobData}
+        fields={fields}
         handleNumber={this.handleNumber}
         handleSelect={this.handleSelect}
         addToList={this.addToList}
