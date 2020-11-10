@@ -1,7 +1,7 @@
 import React from 'react';
 import { keySkills } from '#assets/inputs/inputs';
 
-const SkillBank = ({ myKeySkills, addToList }) => {
+const SkillBank = ({ myKeySkills, addToList, removeFromList }) => {
   return (
     <div className="select">
       <div className="skill-bank">
@@ -23,7 +23,22 @@ const SkillBank = ({ myKeySkills, addToList }) => {
             {
               myKeySkills.map((myKeySkill, key) => {
                 return (
-                  <li key={key}>{myKeySkill}</li>
+                  <li key={key}>
+                    <div className="skill">
+                      <input
+                        readOnly
+                        value={myKeySkill}
+                        name="keySkills"
+                        onClick={(e) => { return removeFromList(e); }}
+                      />
+
+                      <p
+                        className="small-paragraph remove-icon"
+                      >
+                        X
+                      </p>
+                    </div>
+                  </li>
                 );
               })
               }

@@ -24,8 +24,8 @@ const StatelessProfileEditor = ({
           <label>About</label>
           <div className="textarea-div">
             <textarea
-              name="descProfessionalGoal"
-              defaultValue={`${userDetails.descProfessionalGoal}` || ''}
+              name="aboutMe"
+              defaultValue={`${userDetails.aboutMe}` || ''}
               onChange={(e) => { handleChange(e); }}
               />
           </div>

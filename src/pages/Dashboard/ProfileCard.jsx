@@ -18,7 +18,7 @@ const ProfileCard = ({ userDetails, handleFileUpload }) => {
 
             <div className="profile-card-bio">
               <h5>About</h5>
-              <p className="small-paragraph">{userDetails.descProfessionalGoal}</p>
+              <p className="small-paragraph">{userDetails.aboutMe}</p>
 
               <h5>Causes</h5>
               <ul>{userDetails.causes.map((cause, key) => { return <li key={key}>{cause}</li>; })}</ul>

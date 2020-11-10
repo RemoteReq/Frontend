@@ -9,7 +9,7 @@ import CauseSelector from '#parts/CauseSelector.jsx';
 import ENav from '../../ENav/ENav.jsx';
 
 const PartTimeForm = ({
-  jobData, handleChange, addJob, addToList, handleFileUpload, handleNumber, companyLogo, fields,
+  jobData, handleChange, addJob, addToList, removeFromList, handleFileUpload, handleNumber, companyLogo, fields,
 }) => {
   console.log(fields);
 
@@ -57,7 +57,7 @@ const PartTimeForm = ({
             <p className={`${fields.jobDetails.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
             <label>Key Skills</label>
-            <SkillBank addToList={addToList} myKeySkills={jobData.keySkills}/>
+            <SkillBank addToList={addToList} removeFromList={removeFromList} myKeySkills={jobData.keySkills}/>
 
             <label>Soonest Join Date for Job</label>
             <br/>
