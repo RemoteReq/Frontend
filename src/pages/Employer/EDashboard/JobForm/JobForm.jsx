@@ -109,7 +109,7 @@ class JobForm extends Component {
         this.setState({
           jobType,
           companyLogo: response.data.companyLogo,
-          companyWebsiteURL: response.data.companyWebsite || '',
+          companyWebsite: response.data.companyWebsite || '',
         }, () => { console.log(this.state); });
       });
   }
@@ -215,13 +215,12 @@ class JobForm extends Component {
 
     addJobForm.append('companyLogoPath', this.state.companyLogo);
     addJobForm.append('jobDescription', this.state.jobDescription);
-    addJobForm.append('companyWebsiteUrl', this.state.companyWebsiteURL);
+    addJobForm.append('companyWebsiteUrl', this.state.companyWebsite);
 
     // Comment and uncomment for testing
     // addJobForm.append('companyLogoPath', 'test.jpg');
     // addJobForm.append('jobDescription', 'pdf.pdf');
     // addJobForm.append('companyWebsiteUrl', 'http://www.websiteURL.com');
-
 
     addJobForm.append('title', this.state.title);
     addJobForm.append('companyName', this.state.companyName);

@@ -5,12 +5,16 @@
   }
 
   .skill {
+    position: relative;
     display: flex;
-    width: 80%;
+    width: 90%;
     justify-content: space-between;
 
     .remove-icon {
+      position: absolute;
       display: none;
+      height: 100%;
+      right: 20px;
     }
   }
 
@@ -21,3 +25,16 @@
     }
   }
 }
+
+@media Screen and (max-aspect-ratio: 1/1) {
+  .skill-bank {
+    
+    .skill {
+
+      .remove-icon{
+        display: initial;
+      }
+    }
+  }
+}
+

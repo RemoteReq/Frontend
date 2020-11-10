@@ -83,6 +83,12 @@ const FullTimeForm = ({
             <img src={companyLogo || ''}/>
           </div>
 
+          <label>Company Website</label>
+          <input
+              readOnly
+              defaultValue={jobData.companyWebsite}
+            />
+
           <label>Salary</label>
           <div className="select">
             <select

@@ -12,9 +12,9 @@ const StatelessProfileCard = ({ userDetails }) => {
 
             <div className="profile-card-picture">
               {
-                userDetails.profilePicUrl
+                userDetails.companyLogo
 
-                  ? <img src={userDetails.profilePicUrl}/>
+                  ? <img src={userDetails.companyLogo}/>
                   : <img className="placeholder" src={ProfilePlaceholder}/>
               }
             </div>

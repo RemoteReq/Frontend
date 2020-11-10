@@ -92,6 +92,12 @@ const PartTimeForm = ({
               <img src={companyLogo || ''}/>
             </div>
 
+            <label>Company Website</label>
+            <input
+              readOnly
+              defaultValue={jobData.companyWebsite}
+            />
+
             <label>Hourly Wage</label>
             <input
               type="number"

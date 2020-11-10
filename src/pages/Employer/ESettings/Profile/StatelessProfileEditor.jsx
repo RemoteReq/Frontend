@@ -63,9 +63,9 @@ const StatelessProfileEditor = ({
           <label>Company Logo</label>
           <div className="image-box">
             {
-              userDetails.profilePicUrl
+              userDetails.companyLogo
 
-                ? <img src={userDetails.profilePicUrl}/>
+                ? <img src={userDetails.companyLogo}/>
                 : <img src={ProfilePlaceholder} className="placeholder"/>
             }
           </div>

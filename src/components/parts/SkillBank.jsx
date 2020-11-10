@@ -32,11 +32,9 @@ const SkillBank = ({ myKeySkills, addToList, removeFromList }) => {
                         onClick={(e) => { return removeFromList(e); }}
                       />
 
-                      <p
-                        className="small-paragraph remove-icon"
-                      >
-                        X
-                      </p>
+                      <div className="remove-icon">
+                        <p className="small-paragraph">X</p>
+                      </div>
                     </div>
                   </li>
                 );
