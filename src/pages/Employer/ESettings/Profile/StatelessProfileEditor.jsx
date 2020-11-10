@@ -1,5 +1,6 @@
 import React from 'react';
 import Divider from '#parts/Divider.jsx';
+import ProfilePlaceholder from '#assets/icons/pngs/Profile.png';
 
 const StatelessProfileEditor = ({
   userDetails, handleChange, handleSubmit, handleFileUpload,
@@ -44,19 +45,6 @@ const StatelessProfileEditor = ({
             onChange={(e) => { handleChange(e); }}
           />
 
-          {/* <label>Github URL</label>
-          <input
-            name="githubURL"
-            defaultValue={`${userDetails.githubURL}`}
-            onChange={(e) => { handleChange(e); }}
-          /> */}
-
-          {/* <label>Twitter Handle</label>
-          <input
-            name=""
-            onChange={(e) => { handleChange(e); }}
-          /> */}
-
           <label>Company URL</label>
           <input
             name="companyWebsite"
@@ -74,7 +62,12 @@ const StatelessProfileEditor = ({
 
           <label>Company Logo</label>
           <div className="image-box">
-            <img src={userDetails.companyLogo}/>
+            {
+              userDetails.profilePicUrl
+
+                ? <img src={userDetails.profilePicUrl}/>
+                : <img src={ProfilePlaceholder} className="placeholder"/>
+            }
           </div>
 
           <input

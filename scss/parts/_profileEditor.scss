@@ -18,6 +18,8 @@
       margin: 10px 25px;
 
       img {
+        display: block;
+        margin: auto;
         max-height: 100%;
         max-width: 100%;
         // border-radius: 250px;
@@ -27,7 +29,7 @@
 }
 
 .image-box {
-  height: 250px;
+  // height: 250px;
   width: 100%;
   background-color: #ebebeb;
 }

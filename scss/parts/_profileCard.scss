@@ -11,12 +11,14 @@
 
   .profile-card-picture {
     width: 200px;
-    height: 200px;
+    // height: 200px;
     background-color: lightgray;
 
     img {
       max-height: 100%;
       max-width: 100%;
+      display: block;
+      margin: auto;
     }
   }
 

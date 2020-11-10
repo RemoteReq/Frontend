@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SettingsIcon from '#assets/icons/pngs/flaticon/settings.png';
+import ProfilePlaceholder from '#assets/icons/pngs/Profile.png';
 
 const ProfileCard = ({ userDetails, handleFileUpload }) => {
   return (
@@ -10,7 +11,12 @@ const ProfileCard = ({ userDetails, handleFileUpload }) => {
           <div className="profile-card-contents">
 
             <div className="profile-card-picture">
-              <img src={userDetails.profilePicUrl}/>
+              {
+                userDetails.profilePicUrl
+
+                  ? <img src={userDetails.profilePicUrl}/>
+                  : <img className="placeholder" src={ProfilePlaceholder}/>
+              }
             </div>
 
             <h3 className="profile-card-name">{`${userDetails.fullName}`}</h3>
