@@ -91,6 +91,7 @@ class JobForm extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.addJob = this.addJob.bind(this);
     this.addToList = this.addToList.bind(this);
+    this.removeFromList = this.removeFromList.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.handleNumber = this.handleNumber.bind(this);
     this.handleFileUpload = this.handleFileUpload.bind(this);
@@ -111,7 +112,7 @@ class JobForm extends Component {
         this.setState({
           jobType,
           companyLogo: response.data.companyLogo,
-          companyWebsiteURL: response.data.companyWebsite,
+          companyWebsite: response.data.companyWebsite || '',
         }, () => { console.log(this.state); });
       });
   }
@@ -178,9 +179,24 @@ class JobForm extends Component {
       this.setState({
         [e.target.name]: arrayToJoin,
       }, () => {
-        console.log(this.state);
+        console.log(this.state.keySkills);
       });
     }
+  }
+
+  removeFromList(e) {
+    const arrayToSplice = this.state.keySkills;
+    const index = arrayToSplice.indexOf(e.target.value);
+
+    arrayToSplice.splice(index, 1);
+
+    console.log(e.target.value, 'at index: ', index);
+
+    this.setState({
+      [e.target.name]: arrayToSplice,
+    }, () => {
+      console.log(this.state.keySkills);
+    });
   }
 
   // Should be fired before addJob's post request
@@ -208,7 +224,6 @@ class JobForm extends Component {
     // addJobForm.append('companyLogoPath', 'test.jpg');
     // addJobForm.append('jobDescription', 'pdf.pdf');
     // addJobForm.append('companyWebsiteUrl', 'http://www.websiteURL.com');
-
 
     addJobForm.append('title', this.state.title);
     addJobForm.append('companyName', this.state.companyName);
@@ -295,6 +310,7 @@ class JobForm extends Component {
         handleNumber={this.handleNumber}
         handleSelect={this.handleSelect}
         addToList={this.addToList}
+        removeFromList={this.removeFromList}
         companyLogo={this.state.companyLogo}
         handleChange={this.handleChange}
         handleFileUpload={this.handleFileUpload}
@@ -306,6 +322,7 @@ class JobForm extends Component {
         handleNumber={this.handleNumber}
         handleSelect={this.handleSelect}
         addToList={this.addToList}
+        removeFromList={this.removeFromList}
         companyLogo={this.state.companyLogo}
         handleChange={this.handleChange}
         handleFileUpload={this.handleFileUpload}

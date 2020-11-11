@@ -1,5 +1,6 @@
 import React from 'react';
 import Divider from '#parts/Divider.jsx';
+import ProfilePlaceholder from '#assets/icons/pngs/Profile.png';
 
 const StatelessProfileEditor = ({
   userDetails, handleChange, handleSubmit, handleFileUpload,
@@ -61,15 +62,22 @@ const StatelessProfileEditor = ({
 
           <label>Company Logo</label>
           <div className="image-box">
-            <img src={userDetails.companyLogo}/>
+            {
+              userDetails.companyLogo
+
+                ? <img src={userDetails.companyLogo}/>
+                : <img src={ProfilePlaceholder} className="placeholder"/>
+            }
           </div>
 
-          <input
-            className="button-1"
-            type="file"
-            accept="image/png, image/jpeg"
-            onChange={(e) => { return handleFileUpload(e); }}
-          />
+          <div className="upload-button">
+            <button className="button-1 small-button">Change Logo</button>
+            <input
+              type="file"
+              accept="image/png, image/jpeg, image/jpg"
+              onChange={(e) => { return handleFileUpload(e); }}
+              />
+            </div>
         </div>
       </form>
 

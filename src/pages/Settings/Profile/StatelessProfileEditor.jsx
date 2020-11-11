@@ -1,5 +1,6 @@
 import React from 'react';
 import Divider from '../../../components/parts/Divider.jsx';
+import ProfilePlaceholder from '#assets/icons/pngs/Profile.png';
 
 const StatelessProfileEditor = ({
   userDetails, handleChange, handleSubmit, handleFileUpload,
@@ -24,8 +25,8 @@ const StatelessProfileEditor = ({
           <label>About</label>
           <div className="textarea-div">
             <textarea
-              name="descProfessionalGoal"
-              defaultValue={`${userDetails.descProfessionalGoal}` || ''}
+              name="aboutMe"
+              defaultValue={`${userDetails.aboutMe}` || ''}
               onChange={(e) => { handleChange(e); }}
               />
           </div>
@@ -44,12 +45,6 @@ const StatelessProfileEditor = ({
             onChange={(e) => { handleChange(e); }}
           />
 
-          {/* <label>Twitter Handle</label>
-          <input
-            name=""
-            onChange={(e) => { handleChange(e); }}
-          /> */}
-
           <label>Personal URL</label>
           <input
             name="personalURL"
@@ -67,15 +62,22 @@ const StatelessProfileEditor = ({
 
           <label>Profile Picture</label>
           <div className="image-box">
-            <img src={userDetails.profilePicUrl}/>
+            {
+              userDetails.profilePicUrl
+
+                ? <img src={userDetails.profilePicUrl}/>
+                : <img src={ProfilePlaceholder} className="placeholder"/>
+            }
           </div>
 
-          <input
-            className="button-1"
-            type="file"
-            accept="image/png, image/jpeg"
-            onChange={(e) => { return handleFileUpload(e); }}
-          />
+          <div className="upload-button">
+            <button className="button-2 small-button">Change Profile Picture</button>
+            <input
+              type="file"
+              accept="image/png, image/jpeg, image/jpg"
+              onChange={(e) => { return handleFileUpload(e); }}
+              />
+            </div>
         </div>
       </form>
 

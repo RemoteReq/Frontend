@@ -8,7 +8,7 @@ import CauseSelector from '#parts/CauseSelector.jsx';
 import ENav from '../../ENav/ENav.jsx';
 
 const FullTimeForm = ({
-  jobData, fields, handleChange, addJob, addToList, handleFileUpload, handleNumber, companyLogo,
+  jobData, fields, handleChange, addJob, addToList, removeFromList, handleFileUpload, handleNumber, companyLogo,
 }) => {
   return (
     <div className="add-job">
@@ -52,7 +52,7 @@ const FullTimeForm = ({
           <p className={`${fields.jobDetails.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
           <label>Key Skills</label>
-          <SkillBank addToList={addToList} myKeySkills={jobData.keySkills}/>
+          <SkillBank addToList={addToList} removeFromList={removeFromList} myKeySkills={jobData.keySkills}/>
 
           <label>Soonest Join Date for Job</label>
             <br/>
@@ -79,6 +79,12 @@ const FullTimeForm = ({
           <div className="image-box">
             <img src={companyLogo || ''}/>
           </div>
+
+          <label>Company Website</label>
+          <input
+              readOnly
+              defaultValue={jobData.companyWebsite}
+            />
 
           <label>Salary</label>
           <div className="select">
