@@ -70,12 +70,14 @@ const StatelessProfileEditor = ({
             }
           </div>
 
-          <input
-            className="button-1"
-            type="file"
-            accept="image/png, image/jpeg"
-            onChange={(e) => { return handleFileUpload(e); }}
-          />
+          <div className="upload-button">
+            <button className="button-1 small-button">Change Logo</button>
+            <input
+              type="file"
+              accept="image/png, image/jpeg, image/jpg"
+              onChange={(e) => { return handleFileUpload(e); }}
+              />
+            </div>
         </div>
       </form>
 

@@ -63,6 +63,7 @@ class QnA extends Component {
     this.addToList = this.addToList.bind(this);
     this.submitAnswers = this.submitAnswers.bind(this);
     this.handleNumber = this.handleNumber.bind(this);
+    this.removeFromList = this.removeFromList.bind(this);
   }
 
   componentDidMount() {
@@ -141,19 +142,19 @@ class QnA extends Component {
       desireKeySkills: answers.keySkills,
       howLongWorkingRemotely: answers.howLongWorkingRemotely,
       // The following is hardcoded to comply with backend required fields, these MUST be removed on the backend
-      availableWorkDays: ['Monday', 'Wednesday', 'Friday'],
-      otherLanguages: ['language1', 'language2'],
+      // availableWorkDays: ['Monday', 'Wednesday', 'Friday'],
+      // otherLanguages: ['language1', 'language2'],
       descProfessionalGoal: 'To become a pro!',
-      race: 'My Ethnicity',
-      veteranStatus: false,
-      dob: '1999-9-9',
-      desireIndustryType: 'Software',
-      gender: 'Male',
+      // race: 'My Ethnicity',
+      // veteranStatus: false,
+      // dob: '1999-9-9',
+      // desireIndustryType: 'Software',
+      // gender: 'Male',
       // OR instead, must be part of a different schema
       linkedInURL: 'LinkedInURL.com',
       personalURL: 'myURL.com',
       mobileNum: '555-555-5555',
-      refferedBy: 'Google Analytics',
+      // refferedBy: 'Google Analytics',
     };
 
     console.log(data);
@@ -195,6 +196,21 @@ class QnA extends Component {
         console.log(this.state);
       });
     }
+  }
+
+  removeFromList(e) {
+    const arrayToSplice = this.state.keySkills;
+    const index = arrayToSplice.indexOf(e.target.value);
+
+    arrayToSplice.splice(index, 1);
+
+    console.log(e.target.value, 'at index: ', index);
+
+    this.setState({
+      [e.target.name]: arrayToSplice,
+    }, () => {
+      console.log(this.state.keySkills);
+    });
   }
 
   isChecked(e) {
@@ -276,6 +292,7 @@ class QnA extends Component {
                   answered={answered}
                   myKeySkills={this.state.keySkills}
                   addToList={this.addToList}
+                  removeFromList={this.removeFromList}
                   increaseProgress={this.increaseProgress}
                   decreaseProgress={this.decreaseProgress}
                   handleChange={this.handleChange}

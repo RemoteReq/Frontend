@@ -20,22 +20,19 @@ const StatelessJobViewer = (props) => {
               <div className="title-and-company">
                 <h3>{job.title}</h3>
                 <h4>{job.companyName}</h4>
+
+                {
+                  job.companyWebsiteUrl
+                    ? <p className="small-paragraph">Company Website: <a href={`http://${job.companyWebsiteUrl}`}>{job.companyWebsiteUrl}</a></p>
+
+                    : <p></p>
+                }
               </div>
             </div>
           </div>
 
           <br/>
           <br/>
-
-          {
-          }
-          <p className="small-paragraph">Company Website: <a href={`http://${job.companyWebsiteURL}`}></a></p>
-
-          {
-          }
-          {/* <button className="small-paragraph">Attached job Description: </button>
-          <p>Attached Job Description: </p> */}
-          <button className="button-2"><a href="cool"></a>Download Job Description (.pdf)</button>
 
           <div className="job-headline">
 
@@ -70,6 +67,19 @@ const StatelessJobViewer = (props) => {
 
           <br/>
           <br/>
+
+          {
+            job.jobDescriptionPath
+              ? <div>
+
+              <p>Download Job Description: </p>
+                <a href={`${job.jobDescriptionPath}`}>Link</a>
+              <br/>
+              <br/>
+            </div>
+
+              : <p></p>
+          }
 
           <p>Skills required for this job:</p>
           <ul>

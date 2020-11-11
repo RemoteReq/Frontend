@@ -4,7 +4,7 @@ import SkillBank from '#parts/SkillBank.jsx';
 import EducationSelector from '#parts/EducationSelector.jsx';
 
 const Page3 = ({
-  handleChange, increaseProgress, decreaseProgress, myKeySkills, addToList,
+  handleChange, increaseProgress, decreaseProgress, myKeySkills, addToList, removeFromList,
 }) => {
   return (
     <div className="QnA-page">
@@ -43,32 +43,13 @@ const Page3 = ({
       <br/>
 
       <label>Select all relevant skills you have to the kind of work you are seeking</label>
-      <SkillBank myKeySkills={myKeySkills} addToList={addToList}/>
-
+      <SkillBank myKeySkills={myKeySkills} removeFromList={removeFromList} addToList={addToList}/>
 
       <EducationSelector
         handleChange={handleChange}
         label="What is the highest level of education you have successfully completed?"
         name="highestEducationLevel"
       />
-
-      {/* <p>
-        What is the highest level of education you have successfully completed?
-      </p>
-      <select
-        onChange={handleChange}
-        name="highestEducationLevel"
-        >
-        <option>-----</option>
-        {
-          degrees.map((degree, key) => {
-            return (
-              <option value={degree.value} key={key}>{degree.name}</option>
-            );
-          })
-        }
-      </select> */}
-
 
       <div className="form-nav">
         <Link to="/QnA/2">

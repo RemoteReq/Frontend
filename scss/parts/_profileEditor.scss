@@ -22,7 +22,14 @@
         margin: auto;
         max-height: 100%;
         max-width: 100%;
-        // border-radius: 250px;
+      }
+      
+      .upload-button {
+        width: 100%;
+
+        button {
+          width: 100%;
+        }
       }
     }
   }
