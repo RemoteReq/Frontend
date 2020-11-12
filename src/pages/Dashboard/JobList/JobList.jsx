@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import JobListing from './JobListing.jsx';
 
 // From here, loop over the inherited data from App.jsx and render and JobListings
@@ -51,9 +52,9 @@ const AwaitingJobs = () => {
 
       <div className="await-jobs">
 
-        <div className="await-jobs-icon">
+        {/* <div className="await-jobs-icon">
           <img />
-        </div>
+        </div> */}
 
         <h4>
           We're working hard to match you with the best jobs!
@@ -62,6 +63,18 @@ const AwaitingJobs = () => {
         <p className="small-paragraph">
           Expect an email with your first matches, and then check back here for a list of jobs.
         </p>
+
+        <br/>
+
+        <p className="small-paragraph">
+          Feel free to update your questionnaire responses in the meantime.
+        </p>
+
+        <br/>
+
+        <Link to="/QnA/1">
+          <button className="button-1 small-button">Retake Questionnaire</button>
+        </Link>
       </div>
     </div>
   );
