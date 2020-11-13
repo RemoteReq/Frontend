@@ -65,7 +65,7 @@ class SignUp extends Component {
         .then((status) => {
           if (status === 200) {
           // also subscribe them to our DB
-            this.props.history.push('/signin');
+            this.props.history.push('/afterSignUp');
           } else {
             console.log('Account taken!');
           }

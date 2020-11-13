@@ -18,6 +18,7 @@ class Settings extends Component {
 
     this.state = {
       confirmUsername: '',
+      profileUpdateRequestStatus: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -73,9 +74,16 @@ class Settings extends Component {
     })
       .then((response) => {
         console.log('reponse after posting from settings', response);
+
+        return response.status;
       })
-      .then(() => {
-        window.location.reload();
+      .then((status) => {
+        if (status === 200) {
+          this.setState({
+            profileUpdateRequestStatus: true,
+          }, () => { return console.log(this.state); });
+        }
+        // window.location.reload();
       });
   }
 
@@ -165,6 +173,7 @@ class Settings extends Component {
   render() {
     const { redirectToReferrer } = this.state;
     const { userDetails } = this.state;
+    const { profileUpdateRequestStatus } = this.state;
 
     if (redirectToReferrer === false) {
       return (
@@ -194,6 +203,7 @@ class Settings extends Component {
                         handleChange={this.handleChange}
                         handleSubmit={this.handleSubmit}
                         handleFileUpload={this.handleFileUpload}
+                        profileUpdateRequestStatus={profileUpdateRequestStatus}
                         />
                       );
                     }}

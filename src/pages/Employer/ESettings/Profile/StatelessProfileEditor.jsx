@@ -3,7 +3,7 @@ import Divider from '#parts/Divider.jsx';
 import ProfilePlaceholder from '#assets/icons/pngs/Profile.png';
 
 const StatelessProfileEditor = ({
-  userDetails, handleChange, handleSubmit, handleFileUpload,
+  userDetails, handleChange, handleSubmit, handleFileUpload, profileUpdateRequestStatus,
 }) => {
   document.title = 'Your Profile';
 
@@ -52,10 +52,16 @@ const StatelessProfileEditor = ({
             onChange={(e) => { handleChange(e); }}
           />
 
-          <button
-            className="button-1"
-            onClick={(e) => { return handleSubmit(e); }}
-          >Update</button>
+          <div className="submit-button">
+            <button
+              className="button-1"
+              onClick={(e) => { return handleSubmit(e); }}
+              >Update</button>
+
+            <p className={`small-paragraph ${profileUpdateRequestStatus ? 'show' : 'hide'}`}>
+              Changes successfully saved!
+            </p>
+          </div>
         </div>
 
         <div className="image-column">

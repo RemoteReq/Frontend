@@ -66,7 +66,7 @@ class ESignUp extends Component {
         })
         .then((status) => {
           if (status === 200) {
-            this.props.history.push('/employer/signin');
+            this.props.history.push('/afterSignUp');
           } else {
             console.log('Account taken!');
           }
