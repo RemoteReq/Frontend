@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import EAuth from '../EAuth/EAuth.jsx';
+import Preloader from '#components/svgs/Preloader.jsx';
 
 class ESignIn extends Component {
   constructor(props) {
@@ -10,10 +11,12 @@ class ESignIn extends Component {
       username: '',
       password: '',
       redirectToReferrer: false,
+      signUpInProgress: false,
     };
 
     this.updateInfoOnChange = this.updateInfoOnChange.bind(this);
     this.login = this.login.bind(this);
+    this.enablePreloader = this.enablePreloader.bind(this);
   }
 
   componentDidMount() {
@@ -25,8 +28,22 @@ class ESignIn extends Component {
     }
   }
 
+  enablePreloader() {
+    this.setState({
+      signUpInProgress: true,
+    }, () => {
+      setTimeout(() => {
+        this.setState({
+          signUpInProgress: false,
+        });
+      }, 2000);
+    });
+  }
+
   login(e) {
     e.preventDefault();
+
+    this.enablePreloader();
 
     const body = {
       emailOrUserName: this.state.username,
@@ -54,6 +71,9 @@ class ESignIn extends Component {
   }
 
   render() {
+    document.title = 'Employer Sign In';
+
+    const { signUpInProgress } = this.state;
     const { redirectToReferrer } = this.state;
 
     if (redirectToReferrer === true) {
@@ -68,6 +88,12 @@ class ESignIn extends Component {
         <h4>Hire better with RemoteReq.</h4>
 
         <form className="e-signin-form" >
+          <div className={`form-preloader ${signUpInProgress ? 'show' : 'hide'}`}>
+            <Preloader color="yellow"/>
+
+            <p>Signing you in</p>
+          </div>
+
           <h3>Employer Sign In</h3>
 
           <br/>
