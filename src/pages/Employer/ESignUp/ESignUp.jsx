@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Preloader from '../../../components/svgs/Preloader.jsx';
 
 const backend = 'http://3.21.186.204:3030';
 
@@ -10,11 +11,13 @@ class ESignUp extends Component {
 
     this.state = {
       isEmailValid: true,
+      signUpInProgress: false,
       doPasswordsMatch: true,
     };
 
     this.onChange = this.onChange.bind(this);
     this.signUp = this.signUp.bind(this);
+    this.enablePreloader = this.enablePreloader.bind(this);
     this.confirmPasswords = this.confirmPasswords.bind(this);
   }
 
@@ -44,8 +47,22 @@ class ESignUp extends Component {
     }
   }
 
+  enablePreloader() {
+    this.setState({
+      signUpInProgress: true,
+    }, () => {
+      setTimeout(() => {
+        this.setState({
+          signUpInProgress: false,
+        });
+      }, 2000);
+    });
+  }
+
   signUp(e) {
     e.preventDefault();
+
+    this.enablePreloader();
 
     this.confirmPasswords(() => {
       const body = {
@@ -76,6 +93,8 @@ class ESignUp extends Component {
   }
 
   render() {
+    const { signUpInProgress } = this.state;
+
     return (
         <div className='e-signup'>
         <div className="left-side-esignup">
@@ -93,6 +112,12 @@ class ESignUp extends Component {
       </div>
 
       <form>
+        <div className={`form-preloader ${signUpInProgress ? 'show' : 'hide'}`}>
+          <Preloader color="yellow"/>
+
+          <p>Let's get you signed up!</p>
+        </div>
+
         <div>
           <h3>Create your profile</h3>
 
