@@ -26,6 +26,7 @@ class Auth {
   logout(cb) {
     localStorage.removeItem('e-session');
     localStorage.removeItem('clientId');
+    localStorage.removeItem('clientToken');
     this.authState = false;
     cb();
   }
@@ -51,6 +52,8 @@ class Auth {
   getJobHireStatus(hireStatus, jobId, cb) {
     axios.post(`${this.backend}/api/scheduleJob/isHired?status=${hireStatus}&jobId=${jobId}`)
       .then((response) => {
+        console.log(response);
+
         if (response.status === 200) {
           cb();
         }
@@ -66,40 +69,29 @@ class Auth {
     axios.post(`${this.backend}/api/`);
   }
 
-  generateClientToken() {
+  generateClientToken(cb) {
     const clientId = localStorage.getItem('clientId');
     const session = localStorage.getItem('e-session');
 
-    axios.post(`${this.backend}/api/jobs/client_token_for_payment`, { clientId }, {
-      headers: {
-        token: session,
-      },
-    })
-      .then((response) => {
-        console.log(response);
-        localStorage.setItem('clientToken', response.data);
-      })
-      .catch((err) => {
-        console.log('error genereating tokenId', err);
-      });
-  }
+    this.destroyClientToken();
 
-  generateSecondClientToken() {
-    const clientId = localStorage.getItem('clientId');
-    const session = localStorage.getItem('e-session');
-
-    axios.post(`${this.backend}/api/jobs/client_token_for_payment`, { clientId }, {
-      headers: {
-        token: session,
-      },
-    })
-      .then((response) => {
-        console.log(response);
-        localStorage.setItem('secondClientToken', response.data);
+    // Check if a clientToken currently exists in localStorage
+    if (localStorage.getItem('clientToken') === null) {
+      axios.post(`${this.backend}/api/jobs/client_token_for_payment`, { clientId }, {
+        headers: {
+          token: session,
+        },
       })
-      .catch((err) => {
-        console.log('error genereating tokenId', err);
-      });
+        .then((response) => {
+          console.log(response);
+          localStorage.setItem('clientToken', response.data);
+          cb();
+        })
+        .catch((err) => {
+          console.log('error genereating tokenId', err);
+          cb();
+        });
+    }
   }
 
   destroyClientToken() {
