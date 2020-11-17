@@ -9,7 +9,7 @@ import ProfileCard from './ProfileCard.jsx';
 import SwitchWindow from './SwitchWindow.jsx';
 import auth from '../../components/Auth/Auth.jsx';
 
-const backend = 'http://18.188.99.44:3030';
+const backend = 'http://3.21.186.204:3030';
 
 class Dashboard extends Component {
   constructor(props) {

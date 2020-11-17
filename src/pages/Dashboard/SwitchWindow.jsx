@@ -6,7 +6,7 @@ const SwitchWindow = ({ userDetails, jobs }) => {
   console.log('switch window', userDetails, jobs);
 
   if (userDetails) {
-    if (userDetails.questionSubmitStatus) {
+    if (userDetails.questionSubmitStatus || userDetails.profileCompleteStatus) {
       return (
         <JobList jobs={jobs}/>
       );
