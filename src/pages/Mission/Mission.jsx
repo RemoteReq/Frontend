@@ -47,7 +47,7 @@ const Mission = () => {
           </div>
 
           {/* <object type="image/svg+xml" data={PinkLine}>Pink Line</object> */}
-          <PinkLine className="pink-line"/>
+          <PinkLine className="pink-line"/>g
         </div>
       </div>
 
