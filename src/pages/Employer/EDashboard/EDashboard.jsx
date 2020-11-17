@@ -8,7 +8,7 @@ import StatelessProfileCard from './StatelessProfileCard.jsx';
 import JobList from './jobList/JobList.jsx';
 import EAuth from '../EAuth/EAuth.jsx';
 
-const backend = 'http://18.191.219.131:3030';
+const backend = 'http://18.188.99.44:3030';
 
 class EDashboard extends Component {
   constructor(props) {

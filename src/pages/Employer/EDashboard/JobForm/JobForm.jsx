@@ -4,7 +4,7 @@ import EAuth from '../../EAuth/EAuth.jsx';
 import PartTimeForm from './PartTimeForm.jsx';
 import FullTimeFrom from './FullTimeForm.jsx';
 
-const backend = 'http://18.191.219.131:3030';
+const backend = 'http://18.188.99.44:3030';
 
 class JobForm extends Component {
   constructor(props) {
