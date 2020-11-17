@@ -7,7 +7,7 @@ const WebFooter = ({ header, graphics, component }) => {
 
     ? <div className="webfooter">
       <div className="webfooter-graphics">
-        {/* <WebFooterLeft className="webfooter-left" width={500}/> */}
+        <WebFooterLeft className="webfooter-left" width={500}/>
         <object type="image/svg+xml" data={WebFooterLeft} />
 
         <div className="webfooter-content">
@@ -17,7 +17,7 @@ const WebFooter = ({ header, graphics, component }) => {
           </div>
         </div>
 
-        {/* <WebFooterRight className="webfooter-right" width={500}/> */}
+        <WebFooterRight className="webfooter-right" width={500}/>
         <object type="image/svg+xml" data={WebFooterRight} />
       </div>
     </div>

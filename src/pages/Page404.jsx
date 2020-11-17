@@ -1,4 +1,5 @@
 import React from 'react';
+import Preloader from '#components/svgs/Preloader.jsx';
 
 const Page404 = () => {
   return (
@@ -6,6 +7,8 @@ const Page404 = () => {
 
     <div className="message">
       <h1>404</h1>
+
+      <Preloader color="blue"/>
 
       <p>
         {"We're sorry but the URL you are trying to visit does not exist."}

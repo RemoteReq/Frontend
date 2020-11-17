@@ -8,19 +8,23 @@ const Preloader = ({ color }) => {
   switch (color) {
     case 'blue':
       return (
-        <object type="image/svg+xml" data={BluePreloader}>blue-preloader</object>
+        // <object type="image/svg+xml" data={BluePreloader}>blue-preloader</object>
+        <BluePreloader />
       );
     case 'white':
       return (
-        <object type="image/svg+xml" data={WhitePreloader}>blue-preloader</object>
+        // <object type="image/svg+xml" data={WhitePreloader}>white-preloader</object>
+        <WhitePreloader />
       );
     case 'yellow':
       return (
-        <object type="image/svg+xml" data={YellowPreloader}>blue-preloader</object>
+        // <object type="image/svg+xml" data={YellowPreloader}>yellow-preloader</object>
+        <YellowPreloader />
       );
     default:
       return (
-        <object type="image/svg+xml" data={DefaultPreloader}>default-preloader</object>
+        // <object type="image/svg+xml" data={DefaultPreloader}>default-preloader</object>
+        <DefaultPreloader />
       );
   }
 };

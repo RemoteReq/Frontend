@@ -48,7 +48,7 @@ module.exports = {
       },
       {
         // Feel free to change next line for when you need to support other file extensions
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
             loader: 'file-loader',
@@ -56,10 +56,10 @@ module.exports = {
         ],
       },
       // svg loader
-      // {
-      //   test: /\.svg$/,
-      //   loader: 'react-svg-loader',
-      // },
+      {
+        test: /\.svg$/,
+        loader: 'react-svg-loader',
+      },
       // {
       //   test: /\.svg$/,
       //   use: ['@svgr/webpack'],

@@ -13,8 +13,8 @@ const Mission = () => {
 
       <div className="mission-block">
         <div className="mission-graphics">
-          {/* <RedLine className="red-line"/> */}
-          <object type="image/svg+xml" data={RedLine}>Red Line</object>
+          <RedLine className="red-line"/>
+          {/* <object type="image/svg+xml" data={RedLine}>Red Line</object> */}
 
           <div className="mission-statement">
             <div className="mission-statement-upper">
@@ -46,8 +46,8 @@ const Mission = () => {
             </div>
           </div>
 
-          <object type="image/svg+xml" data={PinkLine}>Pink Line</object>
-          {/* <PinkLine className="pink-line"/> */}
+          {/* <object type="image/svg+xml" data={PinkLine}>Pink Line</object> */}
+          <PinkLine className="pink-line"/>
         </div>
       </div>
 
