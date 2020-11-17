@@ -35,12 +35,15 @@ class MatchViewer extends Component {
           <p className="small-paragraph">Personal URL: &nbsp;
             <a href={`${candidate.personalURL}`}>{`${candidate.personalURL}`}</a>
           </p>
+          <p className="small-paragraph">
+            <a href={candidate.resumePath || ''}>Resume</a>
+          </p>
 
           <br/>
           <br/>
 
           <p>About:</p>
-          <p className="small-paragraph">Their aboutMe would go here</p>
+          <p className="small-paragraph">{candidate.aboutMe}</p>
 
           <br/>
           <br/>
@@ -89,14 +92,6 @@ class MatchViewer extends Component {
           <p className="small-paragraph">&quot;{`${candidate.projectDescription}`}&quot;</p>
 
           <br/>
-
-          <p className="small-paragraph">
-            <a href={candidate.resumePath || ''}>Resume</a>
-          </p>
-
-          <br/>
-          <br/>
-
 
         </form>
       </div>

@@ -34,6 +34,7 @@ class IsHiredPoster extends Component {
       setTimeout(() => {
         this.setState({
           statusUpdateConfirmation: true,
+          hireStatus,
         });
       }, 2000);
     });
@@ -41,39 +42,56 @@ class IsHiredPoster extends Component {
 
   render() {
     const { statusUpdateConfirmation } = this.state;
+    const { hireStatus } = this.state;
 
-    return (
-      statusUpdateConfirmation
+    console.log(this.state);
 
-        ? <div>
-        <Redirect
-          to={{
-            pathname: '/employer/secondPayment',
-            state: {
-              jobId: this.props.jobId,
-            },
-          }}
-        />
-      </div>
+    if (statusUpdateConfirmation === true) {
+      if (hireStatus === true) {
+        return (
+            <div>
+              <Redirect
+                to={{
+                  pathname: '/employer/secondPayment',
+                  state: {
+                    jobId: this.props.jobId,
+                  },
+                }}
+              />
+            </div>
+        );
+      }
 
-        : <div className="verify-page">
-      <div className="notice">
-        <p className="small-paragraph">
-          Processing your hiring request . . .
-        </p>
-
+      return (
         <div>
-          <p className="small-paragraph">
-            If you&apos;re not redirected,&nbsp;
-            <Link to="/employer/dashboard">
-              Click Here
-            </Link>
-          </p>
+          <Redirect
+            to={{
+              pathname: '/employer/dashboard',
+            }}
+            />
         </div>
-      </div>
-    </div>
+      );
+    }
+    return (
+        <div className="verify-page">
+          <div className="notice">
+            <p className="small-paragraph">
+              Processing your hiring request . . .
+            </p>
+
+            <div>
+              <p className="small-paragraph">
+                If you&apos;re not redirected,&nbsp;
+                <Link to={{
+                  pathname: '/employer/dashboard',
+                }}>
+                  Click Here
+                </Link>
+              </p>
+            </div>
+          </div>
+        </div>
     );
   }
 }
-
 export default IsHired;

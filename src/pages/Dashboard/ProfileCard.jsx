@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SettingsIcon from '#assets/icons/pngs/flaticon/settings.png';
+import ProfilePlaceholder from '#assets/icons/pngs/Profile.png';
 
 const ProfileCard = ({ userDetails, handleFileUpload }) => {
   return (
@@ -10,7 +11,12 @@ const ProfileCard = ({ userDetails, handleFileUpload }) => {
           <div className="profile-card-contents">
 
             <div className="profile-card-picture">
-              <img src={userDetails.profilePicUrl}/>
+              {
+                userDetails.profilePicUrl
+
+                  ? <img src={userDetails.profilePicUrl}/>
+                  : <img className="placeholder" src={ProfilePlaceholder}/>
+              }
             </div>
 
             <h3 className="profile-card-name">{`${userDetails.fullName}`}</h3>
@@ -18,7 +24,7 @@ const ProfileCard = ({ userDetails, handleFileUpload }) => {
 
             <div className="profile-card-bio">
               <h5>About</h5>
-              <p className="small-paragraph">{userDetails.descProfessionalGoal}</p>
+              <p className="small-paragraph">{userDetails.aboutMe}</p>
 
               <h5>Causes</h5>
               <ul>{userDetails.causes.map((cause, key) => { return <li key={key}>{cause}</li>; })}</ul>

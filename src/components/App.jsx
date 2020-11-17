@@ -29,6 +29,7 @@ import TermsOfUse from '../pages/TermsOfUse.jsx';
 import BetaBanner from './parts/BetaBanner.jsx';
 import StatelessJobViewer from '../pages/Dashboard/StatelessJobViewer.jsx';
 import IsHired from '../pages/Employer/IsHired/IsHired.jsx';
+import ThankYou from '../pages/ThankYou/ThankYou.jsx';
 
 
 class App extends Component {
@@ -53,6 +54,7 @@ class App extends Component {
               <Route path="/termsOfUse" component={TermsOfUse} />
               <Route path="/job" component={StatelessJobViewer} />
               <Route path="/isHired" component={IsHired} />
+              <Route path="/afterSignUp" component={ThankYou} />
               <ProtectedRoute path="/QnA" component={QnA} />
               <ProtectedRoute path="/settings" component={Settings} />
               <ProtectedRoute path="/dashboard" component={Dashboard} />

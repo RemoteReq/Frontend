@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
 // import { GoogleLogin } from 'react-google-login';
 import auth from '../../components/Auth/Auth.jsx';
+import Preloader from '#components/svgs/Preloader.jsx';
 
 // const responseGoogle = (response) => {
 //   console.log(response);
@@ -15,10 +16,12 @@ class SignIn extends Component {
       username: '',
       password: '',
       redirectToReferrer: false,
+      signUpInProgress: false,
     };
 
     this.updateInfoOnChange = this.updateInfoOnChange.bind(this);
     this.login = this.login.bind(this);
+    this.enablePreloader = this.enablePreloader.bind(this);
   }
 
   componentDidMount() {
@@ -31,8 +34,22 @@ class SignIn extends Component {
     }
   }
 
+  enablePreloader() {
+    this.setState({
+      signUpInProgress: true,
+    }, () => {
+      setTimeout(() => {
+        this.setState({
+          signUpInProgress: false,
+        });
+      }, 2000);
+    });
+  }
+
   login(e) {
     e.preventDefault();
+
+    this.enablePreloader();
 
     const body = {
       emailOrUserName: this.state.username,
@@ -63,6 +80,7 @@ class SignIn extends Component {
   render() {
     document.title = 'Sign In';
     const { redirectToReferrer } = this.state;
+    const { signUpInProgress } = this.state;
 
     if (redirectToReferrer === true) {
       return (
@@ -76,6 +94,12 @@ class SignIn extends Component {
           <h4>Make an impact, remotely.</h4>
 
           <form className="login-form" >
+            <div className={`form-preloader ${signUpInProgress ? 'show' : 'hide'}`}>
+              <Preloader color="blue"/>
+
+              <p>Signing you in</p>
+            </div>
+
             <h3>Job Seeker Sign In</h3>
 
             <br/>

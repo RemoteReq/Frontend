@@ -13,6 +13,7 @@ module.exports = {
     alias: {
       '#auth': path.join(__dirname, 'src/components/Auth/'),
       '#parts': path.join(__dirname, 'src/components/parts/'),
+      '#components': path.join(__dirname, 'src/components'),
       '#scss': path.join(__dirname, 'scss/'),
       '#assets': path.join(__dirname, 'assets/'),
     },
@@ -47,7 +48,7 @@ module.exports = {
       },
       {
         // Feel free to change next line for when you need to support other file extensions
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
           {
             loader: 'file-loader',
@@ -55,10 +56,10 @@ module.exports = {
         ],
       },
       // svg loader
-      {
-        test: /\.svg$/,
-        loader: 'react-svg-loader',
-      },
+      // {
+      //   test: /\.svg$/,
+      //   loader: 'react-svg-loader',
+      // },
       // {
       //   test: /\.svg$/,
       //   use: ['@svgr/webpack'],

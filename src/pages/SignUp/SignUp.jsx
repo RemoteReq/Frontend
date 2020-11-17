@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Preloader from '../../components/svgs/Preloader.jsx';
 
 const backend = 'http://18.191.219.131:3030';
 
@@ -11,11 +12,13 @@ class SignUp extends Component {
     this.state = {
       isEmailValid: true,
       doPasswordsMatch: true,
+      signUpInProgress: false,
     };
 
     this.onChange = this.onChange.bind(this);
     this.signUp = this.signUp.bind(this);
     this.confirmPasswords = this.confirmPasswords.bind(this);
+    this.enablePreloader = this.enablePreloader.bind(this);
   }
 
   onChange(e) {
@@ -45,8 +48,22 @@ class SignUp extends Component {
     }
   }
 
+  enablePreloader() {
+    this.setState({
+      signUpInProgress: true,
+    }, () => {
+      setTimeout(() => {
+        this.setState({
+          signUpInProgress: false,
+        });
+      }, 2000);
+    });
+  }
+
   signUp(e) {
     e.preventDefault();
+
+    this.enablePreloader();
 
     this.confirmPasswords(() => {
       const body = {
@@ -58,24 +75,27 @@ class SignUp extends Component {
 
       axios.post(`${backend}/api/signup`, body)
         .then((response) => {
-          console.log(response);
+          console.log('in first promise', response);
 
           return response.status;
         })
         .then((status) => {
           if (status === 200) {
           // also subscribe them to our DB
-            this.props.history.push('/signin');
+            this.props.history.push('/afterSignUp');
           } else {
             console.log('Account taken!');
           }
         })
-        .catch((err) => { return console.log(err); });
+        .catch((err) => {
+          return console.log('catch', err);
+        });
     });
   }
 
   render() {
     document.title = 'Sign Up with RemoteReq';
+    const { signUpInProgress } = this.state;
 
     return (
       <div className='registration'>
@@ -94,6 +114,12 @@ class SignUp extends Component {
       </div>
 
       <form>
+        <div className={`form-preloader ${signUpInProgress ? 'show' : 'hide'}`}>
+          <Preloader color="blue"/>
+
+          <p>Let's get you signed up!</p>
+        </div>
+
         <div>
           <h3>Create your account</h3>
 

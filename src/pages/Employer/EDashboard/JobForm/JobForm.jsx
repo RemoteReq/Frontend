@@ -11,6 +11,7 @@ class JobForm extends Component {
     super(props);
 
     this.state = {
+      preloaderState: false,
       title: '',
       companyName: '',
       industryType: '',
@@ -51,6 +52,9 @@ class JobForm extends Component {
         hourlyWage: {
           isFilled: false,
         },
+        salary: {
+          isFilled: false,
+        },
         numberOfHours: {
           isFilled: false,
         },
@@ -88,8 +92,11 @@ class JobForm extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.addJob = this.addJob.bind(this);
     this.addToList = this.addToList.bind(this);
+    this.removeFromList = this.removeFromList.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.handleNumber = this.handleNumber.bind(this);
+    this.handleFileUpload = this.handleFileUpload.bind(this);
+    this.enablePreloader = this.enablePreloader.bind(this);
   }
 
   componentDidMount() {
@@ -107,12 +114,25 @@ class JobForm extends Component {
         this.setState({
           jobType,
           companyLogo: response.data.companyLogo,
+          companyWebsite: response.data.companyWebsite || '',
         }, () => { console.log(this.state); });
       });
   }
 
+  enablePreloader() {
+    this.setState({
+      signUpInProgress: true,
+    }, () => {
+      setTimeout(() => {
+        this.setState({
+          signUpInProgress: false,
+        });
+      }, 2000);
+    });
+  }
+
   handleChange(e) {
-    // e.preventDefault();
+    e.preventDefault();
 
     this.setState({
       [e.target.name]: e.target.value,
@@ -146,6 +166,22 @@ class JobForm extends Component {
     }, () => { return console.log(this.state); });
   }
 
+  handleFileUpload(e) {
+    e.preventDefault(e);
+
+    console.log(e.target.files);
+
+    this.setState({
+      [e.target.name]: e.target.files[0],
+      fields: {
+        ...this.state.fields,
+        [e.target.name]: {
+          isFilled: !!e.target.value,
+        },
+      },
+    }, () => { return console.log(this.state); });
+  }
+
   addToList(e) {
     // e.preventDefault();
 
@@ -157,9 +193,24 @@ class JobForm extends Component {
       this.setState({
         [e.target.name]: arrayToJoin,
       }, () => {
-        console.log(this.state);
+        console.log(this.state.keySkills);
       });
     }
+  }
+
+  removeFromList(e) {
+    const arrayToSplice = this.state.keySkills;
+    const index = arrayToSplice.indexOf(e.target.value);
+
+    arrayToSplice.splice(index, 1);
+
+    console.log(e.target.value, 'at index: ', index);
+
+    this.setState({
+      [e.target.name]: arrayToSplice,
+    }, () => {
+      console.log(this.state.keySkills);
+    });
   }
 
   // Should be fired before addJob's post request
@@ -180,14 +231,13 @@ class JobForm extends Component {
 
 
     addJobForm.append('companyLogoPath', this.state.companyLogo);
-    // addJobForm.append('jobDescription', 'pdf.pdf');
-    // addJobForm.append('companyWebsiteUrl', this.state.comapnyURL);
+    addJobForm.append('jobDescription', this.state.jobDescription);
+    addJobForm.append('companyWebsiteUrl', this.state.companyWebsite);
 
     // Comment and uncomment for testing
     // addJobForm.append('companyLogoPath', 'test.jpg');
     // addJobForm.append('jobDescription', 'pdf.pdf');
     // addJobForm.append('companyWebsiteUrl', 'http://www.websiteURL.com');
-
 
     addJobForm.append('title', this.state.title);
     addJobForm.append('companyName', this.state.companyName);
@@ -234,6 +284,8 @@ class JobForm extends Component {
       console.log(`${pair[0]}, ${pair[1]}`);
     }
 
+    this.enablePreloader();
+
     Axios({
       url: `${EAuth.backend}/api/jobs/add`,
       method: 'post',
@@ -270,9 +322,11 @@ class JobForm extends Component {
       this.props.location.state.jobType === 'Full Time'
         ? <FullTimeFrom
         jobData={jobData}
+        fields={fields}
         handleNumber={this.handleNumber}
         handleSelect={this.handleSelect}
         addToList={this.addToList}
+        removeFromList={this.removeFromList}
         companyLogo={this.state.companyLogo}
         handleChange={this.handleChange}
         handleFileUpload={this.handleFileUpload}
@@ -284,9 +338,11 @@ class JobForm extends Component {
         handleNumber={this.handleNumber}
         handleSelect={this.handleSelect}
         addToList={this.addToList}
+        removeFromList={this.removeFromList}
         companyLogo={this.state.companyLogo}
         handleChange={this.handleChange}
         handleFileUpload={this.handleFileUpload}
+        enablePreloader={this.enablePreloader}
         addJob={this.addJob}/>
     );
   }

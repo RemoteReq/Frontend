@@ -17,9 +17,10 @@
     }
 
     .logo-box {
-      width: 200px;
-      height: 200px;
-      background-color: lightgray;
+      // width: 150px;
+      height: 150px;
+      // background-color: lightgray;
+      border: 1px solid #ebebeb;
 
       img {
         max-width: 100%;
@@ -105,6 +106,10 @@
 
     form {
       margin: 120px 2vw;
+
+      .logo-box {
+        height: 100px;
+      }
     }
 
     .job-headline {

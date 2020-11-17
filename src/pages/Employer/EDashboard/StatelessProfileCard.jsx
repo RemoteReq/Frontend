@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SettingsIcon from '#assets/icons/pngs/flaticon/settings.png';
+import ProfilePlaceholder from '#assets/icons/pngs/Profile.png';
 
 const StatelessProfileCard = ({ userDetails }) => {
   return (
@@ -10,7 +11,12 @@ const StatelessProfileCard = ({ userDetails }) => {
           <div className="profile-card-contents">
 
             <div className="profile-card-picture">
-              <img src={userDetails.companyLogo || ''}/>
+              {
+                userDetails.companyLogo
+
+                  ? <img src={userDetails.companyLogo}/>
+                  : <img className="placeholder" src={ProfilePlaceholder}/>
+              }
             </div>
 
             <h3 className="profile-card-name">{`${userDetails.fullName || ''}`}</h3>
@@ -20,7 +26,7 @@ const StatelessProfileCard = ({ userDetails }) => {
               <h5>Company</h5>
               <p className="small-paragraph">{userDetails.companyName || ''}</p>
 
-              <h5>About</h5>
+              <h5>Our Mission</h5>
               <p className="small-paragraph">{userDetails.location || ''}</p>
 
               <h5>Email</h5>

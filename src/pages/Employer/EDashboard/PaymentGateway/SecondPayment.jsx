@@ -7,6 +7,7 @@ import DropIn from 'braintree-web-drop-in-react';
 import axios from 'axios';
 import Eauth from '../../EAuth/EAuth.jsx';
 import ENav from '../../ENav/ENav.jsx';
+import Preloader from '#components/svgs/Preloader.jsx';
 
 class SecondPayment extends Component {
   constructor(props) {
@@ -14,28 +15,43 @@ class SecondPayment extends Component {
 
     this.state = {
       // jobReqPurchased: false,
+      requestInProgress: false,
     };
 
     this.purchase = this.purchase.bind(this);
+    this.enablePreloader = this.enablePreloader.bind(this);
   }
 
   componentDidMount() {
-    Eauth.generateClientToken();
+    Eauth.generateClientToken(() => {
+      const newToken = localStorage.getItem('clientToken');
 
-    const newToken = localStorage.getItem('clientToken');
+      this.setState({
+        clientToken: newToken,
+        ...this.props.location.state,
+      });
+    });
+  }
 
+  enablePreloader() {
     this.setState({
-      clientToken: newToken,
-      ...this.props.location.state,
+      requestInProgress: true,
+    }, () => {
+      setTimeout(() => {
+        this.setState({
+          requestInProgress: false,
+        });
+      }, 2000);
     });
   }
 
   purchase(e) {
     e.preventDefault();
 
+
     this.instance.requestPaymentMethod()
       .then((response) => {
-        console.log(response);
+        console.log('first response in purchase', response);
 
         axios({
           url: 'http://18.191.219.131:3030/api/jobs/checkoutAfterHired',
@@ -69,13 +85,22 @@ class SecondPayment extends Component {
     );
 
     const { jobId } = this.state;
+    const { clientToken } = this.state;
+    const { requestInProgress } = this.state;
 
     // Drop In
     return (
       <div className="first-payment">
         <ENav />
 
-        <form>
+        {
+          clientToken
+            ? <form>
+          <div className={`form-preloader ${requestInProgress ? 'show' : 'hide'}`}>
+            <Preloader color="blue"/>
+
+            <p>Processing payment</p>
+          </div>
           <h3>Checkout</h3>
           <h3>Total: ${this.props.location.state.price || '2500'}</h3>
           <p className="small-paragraph">
@@ -86,7 +111,7 @@ class SecondPayment extends Component {
               ? <div>
                   <DropIn
                     options={{
-                      authorization: this.state.clientToken,
+                      authorization: clientToken,
                       vaultManager: true,
                       paypal: {
                         flow: 'vault',
@@ -94,20 +119,22 @@ class SecondPayment extends Component {
                         currency: 'USD',
                       },
                     }}
-                    onInstance={(instance) => { return this.instance = instance; } }
+                    onInstance={(instance) => { this.instance = instance; } }
                     />
 
                   <div className="form-handler">
                     <button
                       className="button-1"
                       onClick={(e) => { return this.purchase(e); }}
-                      >Pay Placement Fee
+                      >Submit Job Req Completion
                     </button>
                   </div>
                 </div>
               : <div>Loading Drop In ...</div>
           }
         </form>
+            : <div>Loading . . .</div>
+        }
       </div>
     );
   }

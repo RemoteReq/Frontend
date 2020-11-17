@@ -48,6 +48,14 @@ const MappedReqs = ({ jobReqs }) => {
   );
 };
 
+const CompleteProfileReminder = () => {
+  return (
+    <div className="jobList">
+
+    </div>
+  );
+};
+
 const EReminder = () => {
   return (
     <div className='jobList'>
@@ -65,9 +73,9 @@ const EReminder = () => {
 
     <div className="await-jobReqs">
 
-      <div className="await-jobReqs-icon">
+      {/* <div className="await-jobReqs-icon">
         <img />
-      </div>
+      </div> */}
 
       <h4>
         Get started by submitting Job Reqs!

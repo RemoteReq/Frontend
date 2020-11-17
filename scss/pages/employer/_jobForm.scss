@@ -16,13 +16,14 @@
   }
 
   .image-box {
-    width: 200px;
     height: 200px;
-    background-color: lightgray;
+    border: 1px solid #ebebeb;
 
     img {
       max-height: 100%;
       max-width: 100%;
+      display: block;
+      margin: auto;
     }
   }
 
@@ -36,6 +37,13 @@
     margin-top: 10%;
     display: flex;
     flex-direction: row-reverse;
+    position: relative;
+
+    .form-preloader {
+      // margin: 10px 0;
+      // padding: 0 40px;
+      // background-color: $SecondaryColor;
+    }
   }
 }
 

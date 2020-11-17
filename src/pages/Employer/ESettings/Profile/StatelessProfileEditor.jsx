@@ -1,8 +1,9 @@
 import React from 'react';
 import Divider from '#parts/Divider.jsx';
+import ProfilePlaceholder from '#assets/icons/pngs/Profile.png';
 
 const StatelessProfileEditor = ({
-  userDetails, handleChange, handleSubmit, handleFileUpload,
+  userDetails, handleChange, handleSubmit, handleFileUpload, profileUpdateRequestStatus,
 }) => {
   document.title = 'Your Profile';
 
@@ -28,11 +29,11 @@ const StatelessProfileEditor = ({
             onChange={(e) => { handleChange(e); }}
           />
 
-          <label>About</label>
+          <label>Our Mission</label>
           <div className="textarea-div">
             <textarea
               name="location"
-              // defaultValue={`${userDetails.aboutMe}` || ''}
+              defaultValue={`${userDetails.location}` || ''}
               onChange={(e) => { handleChange(e); }}
               />
           </div>
@@ -44,45 +45,45 @@ const StatelessProfileEditor = ({
             onChange={(e) => { handleChange(e); }}
           />
 
-          {/* <label>Github URL</label>
-          <input
-            name="githubURL"
-            defaultValue={`${userDetails.githubURL}`}
-            onChange={(e) => { handleChange(e); }}
-          /> */}
-
-          {/* <label>Twitter Handle</label>
-          <input
-            name=""
-            onChange={(e) => { handleChange(e); }}
-          /> */}
-
-          <label>Employer URL</label>
+          <label>Company URL</label>
           <input
             name="companyWebsite"
             defaultValue={`${userDetails.companyWebsite || ''}`}
             onChange={(e) => { handleChange(e); }}
           />
 
-          <button
-            className="button-1"
-            onClick={(e) => { return handleSubmit(e); }}
-          >Update</button>
+          <div className="submit-button">
+            <button
+              className="button-1"
+              onClick={(e) => { return handleSubmit(e); }}
+              >Update</button>
+
+            <p className={`small-paragraph ${profileUpdateRequestStatus ? 'show' : 'hide'}`}>
+              Changes successfully saved!
+            </p>
+          </div>
         </div>
 
         <div className="image-column">
 
           <label>Company Logo</label>
           <div className="image-box">
-            <img src={userDetails.companyLogo}/>
+            {
+              userDetails.companyLogo
+
+                ? <img src={userDetails.companyLogo}/>
+                : <img src={ProfilePlaceholder} className="placeholder"/>
+            }
           </div>
 
-          <input
-            className="button-1"
-            type="file"
-            accept="image/png, image/jpeg"
-            onChange={(e) => { return handleFileUpload(e); }}
-          />
+          <div className="upload-button">
+            <button className="button-1 small-button">Change Logo</button>
+            <input
+              type="file"
+              accept="image/png, image/jpeg, image/jpg"
+              onChange={(e) => { return handleFileUpload(e); }}
+              />
+            </div>
         </div>
       </form>
 
