@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Preloader from '../../../components/svgs/Preloader.jsx';
 
-const backend = 'http://3.21.186.204:3030';
+const backend = 'http://18.188.99.44:3030';
 
 class ESignUp extends Component {
   constructor(props) {
