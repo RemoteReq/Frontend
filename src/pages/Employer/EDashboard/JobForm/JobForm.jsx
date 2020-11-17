@@ -11,6 +11,7 @@ class JobForm extends Component {
     super(props);
 
     this.state = {
+      preloaderState: false,
       title: '',
       companyName: '',
       industryType: '',
@@ -95,6 +96,7 @@ class JobForm extends Component {
     this.handleSelect = this.handleSelect.bind(this);
     this.handleNumber = this.handleNumber.bind(this);
     this.handleFileUpload = this.handleFileUpload.bind(this);
+    this.enablePreloader = this.enablePreloader.bind(this);
   }
 
   componentDidMount() {
@@ -115,6 +117,18 @@ class JobForm extends Component {
           companyWebsite: response.data.companyWebsite || '',
         }, () => { console.log(this.state); });
       });
+  }
+
+  enablePreloader() {
+    this.setState({
+      signUpInProgress: true,
+    }, () => {
+      setTimeout(() => {
+        this.setState({
+          signUpInProgress: false,
+        });
+      }, 2000);
+    });
   }
 
   handleChange(e) {
@@ -270,6 +284,8 @@ class JobForm extends Component {
       console.log(`${pair[0]}, ${pair[1]}`);
     }
 
+    this.enablePreloader();
+
     Axios({
       url: `${EAuth.backend}/api/jobs/add`,
       method: 'post',
@@ -326,6 +342,7 @@ class JobForm extends Component {
         companyLogo={this.state.companyLogo}
         handleChange={this.handleChange}
         handleFileUpload={this.handleFileUpload}
+        enablePreloader={this.enablePreloader}
         addJob={this.addJob}/>
     );
   }

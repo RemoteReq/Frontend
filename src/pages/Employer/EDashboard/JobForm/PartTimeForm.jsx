@@ -7,9 +7,12 @@ import TimeZoneSelector from '#parts/TimeZoneSelector.jsx';
 import EducationSelector from '#parts/EducationSelector.jsx';
 import CauseSelector from '#parts/CauseSelector.jsx';
 import ENav from '../../ENav/ENav.jsx';
+import Preloader from '#components/svgs/Preloader.jsx';
+
 
 const PartTimeForm = ({
   jobData, handleChange, addJob, addToList, removeFromList, handleFileUpload, handleNumber, companyLogo, fields,
+  enablePreloader, preloaderState,
 }) => {
   console.log(fields);
 
@@ -215,12 +218,18 @@ const PartTimeForm = ({
         </div>
 
         <div className="form-handler">
-          <Link to="/employer/firstPayment">
-            <button
-              className="button-1"
-              onClick={addJob}
-              >Save job Req</button>
-          </Link>
+          <div className="button-preloader">
+            <div className={`form-preloader ${jobData.preloaderState ? 'show' : 'hide'}`}>
+              <Preloader color="white" />
+            </div>
+
+            <Link to="/employer/firstPayment">
+              <button
+                className="button-1"
+                onClick={addJob}
+                >Save job Req</button>
+            </Link>
+          </div>
         </div>
       </form>
     </div>
