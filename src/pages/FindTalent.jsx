@@ -44,7 +44,7 @@ const FindTalent = () => {
           <img className="triplet-icon" src={triplet2}></img>
 
           <h3>Get matched to remote talent</h3>
-          <p>Our recruiting algorithm will review thousands of remote professioanls to find your "best fit" matches.</p>
+          <p>Our recruiting algorithm will review thousands of remote professionals to find your "best fit" matches.</p>
       </div>
 
       <div className="mid-triplet">
