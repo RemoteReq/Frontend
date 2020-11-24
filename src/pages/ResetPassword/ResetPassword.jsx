@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { useParams, useLocation, Link } from 'react-router-dom';
 import axios from 'axios';
 
-const backend = 'http://18.188.99.44:3030';
+const backend = ' http://18.188.99.44:3030';
 
 const ResetPasswordQuery = () => {
   return new URLSearchParams(useLocation().search);

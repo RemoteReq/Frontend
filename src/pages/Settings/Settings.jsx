@@ -10,7 +10,7 @@ import JobPreferenceEditor from './JobPreference/JobPreferenceEditor.jsx';
 import SettingsNav from './SettingsNav.jsx';
 import Auth from '../../components/Auth/Auth.jsx';
 
-const backend = 'http://18.188.99.44:3030';
+const backend = ' http://18.188.99.44:3030';
 
 class Settings extends Component {
   constructor(props) {

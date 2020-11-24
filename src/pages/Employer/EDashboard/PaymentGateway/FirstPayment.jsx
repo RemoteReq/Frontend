@@ -134,7 +134,7 @@ class FirstPayment extends Component {
               : <div>Loading Drop In ...</div>
           }
         </form>
-            : <div>Loading ...</div>
+            : <div>Generating Client Token ...</div>
     }
       </div>
 
