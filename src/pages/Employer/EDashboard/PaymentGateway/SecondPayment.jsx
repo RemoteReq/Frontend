@@ -54,7 +54,7 @@ class SecondPayment extends Component {
         console.log('first response in purchase', response);
 
         axios({
-          url: ' http://18.188.99.44:3030/api/jobs/checkoutAfterHired',
+          url: ' https://api.remotereq.com/api/jobs/checkoutAfterHired',
           method: 'POST',
           headers: {
             token: localStorage.getItem('e-session'),

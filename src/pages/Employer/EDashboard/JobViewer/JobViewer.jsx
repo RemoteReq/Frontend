@@ -5,7 +5,7 @@ import ENav from '../../ENav/ENav.jsx';
 import EMatchRating from '#parts/EMatchRating.jsx';
 import MatchWindow from './MatchWindow.jsx';
 
-const backend = ' http://18.188.99.44:3030';
+const backend = ' https://api.remotereq.com';
 
 class JobViewer extends Component {
   constructor(props) {
