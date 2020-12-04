@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Preloader from '../../../components/svgs/Preloader.jsx';
@@ -97,6 +98,14 @@ class ESignUp extends Component {
 
     return (
         <div className='e-signup'>
+          <Helmet >
+            <title>Employer Sign-up | RemoteReq</title>
+            <meta
+              name="description"
+              content="Sign-up today to start your search for the best candidate, who shares your mission, and can help take your organization to the next level."
+            />
+          </Helmet>
+
         <div className="left-side-esignup">
         <h1>
           Recruit from home,

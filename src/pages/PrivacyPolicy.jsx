@@ -1,10 +1,17 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const PrivacyPolicy = () => {
-  document.title = 'Privacy Policy';
-
   return (
     <div className="privacy-policy">
+      <Helmet>
+        <title>Privacy Policy | RemoteReq</title>
+        <meta
+          name="description"
+          content="At RemoteReq, we take your privacy seriously. Please read this Privacy Policy to learn how we treat your personal information."
+        />
+      </Helmet>
+
       <form>
         <h3>Privacy Policy</h3>
 

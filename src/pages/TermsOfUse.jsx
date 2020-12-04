@@ -1,10 +1,17 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const TermsOfUse = () => {
-  document.title = 'Terms of Service';
-
   return (
     <div className="terms-of-use">
+      <Helmet>
+        <title>Terms of Use | RemoteReq</title>
+        <meta
+          name="description"
+          content="These Terms of Service govern the use of the services offered by RemoteReq Inc. (the “Company”) at the Company’s website (remotereq.com the “Site”) or mobile applications. "
+        />
+      </Helmet>
+
       <form>
         <h3>Terms of Service</h3>
 

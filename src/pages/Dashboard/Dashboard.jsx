@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import {
   Redirect, Switch, Route,
 } from 'react-router-dom';
@@ -114,7 +115,6 @@ class Dashboard extends Component {
   }
 
   render() {
-    document.title = 'Dashboard';
     const { redirectToReferrer } = this.state;
     const { userDetails } = this.state;
     const { jobs } = this.state;
@@ -127,6 +127,14 @@ class Dashboard extends Component {
 
     return (
       <div>
+        <Helmet>
+          <title>Dashboard | RemoteReq</title>
+          <meta
+            name="description"
+            content="Use the RemoteReq dashboard to navigate through your matches and find your best candidate. "
+          />
+        </Helmet>
+
         <Navigation
           showProfileMenu={ this.showProfileMenu }
           updateRedirect={this.updateRedirect}

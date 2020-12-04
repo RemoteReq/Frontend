@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Preloader from '../../components/svgs/Preloader.jsx';
@@ -94,11 +95,18 @@ class SignUp extends Component {
   }
 
   render() {
-    document.title = 'Sign Up with RemoteReq';
     const { signUpInProgress } = this.state;
 
     return (
       <div className='registration'>
+      <Helmet>
+        <title>Sign-Up | RemoteReq</title>
+        <meta
+          name="description"
+          content="Sign up with RemoteReq to match with organizations and jobs that fit your skillsets the best. Sign-up to find your next position today!"
+        />
+      </Helmet>
+
       <div className="left-side-signup">
         <h1>
           Work from home,

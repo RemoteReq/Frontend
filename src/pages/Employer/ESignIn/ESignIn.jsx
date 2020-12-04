@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link, Redirect } from 'react-router-dom';
 import EAuth from '../EAuth/EAuth.jsx';
 import Preloader from '#components/svgs/Preloader.jsx';
@@ -71,8 +72,6 @@ class ESignIn extends Component {
   }
 
   render() {
-    document.title = 'Employer Sign In';
-
     const { signUpInProgress } = this.state;
     const { redirectToReferrer } = this.state;
 
@@ -84,6 +83,14 @@ class ESignIn extends Component {
 
     return (
       <div className="e-signin">
+      <Helmet>
+        <title>Employer Sign-In | RemoteReq</title>
+        <meta
+          name="description"
+          content="Sign-in to see the best candidates that share your mission. Find out who your matches are!"
+        />
+      </Helmet>
+
       <div className="e-signin-container" >
         <h4>Hire better with RemoteReq.</h4>
 

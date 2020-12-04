@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import { Redirect, Link } from 'react-router-dom';
 // import { GoogleLogin } from 'react-google-login';
 import auth from '../../components/Auth/Auth.jsx';
@@ -78,7 +79,6 @@ class SignIn extends Component {
   }
 
   render() {
-    document.title = 'Sign In';
     const { redirectToReferrer } = this.state;
     const { signUpInProgress } = this.state;
 
@@ -90,6 +90,15 @@ class SignIn extends Component {
 
     return (
         <div className="login-form-page">
+
+        <Helmet>
+          <title>Job Seeker Sign In | Remote Req</title>
+          <meta
+            name="description"
+            content="Sign in to see your matches with organizations that have a similar mission. Find your next remote opportunity, now!"
+          />
+        </Helmet>
+
         <div className="login-container" >
           <h4>Make an impact, remotely.</h4>
 

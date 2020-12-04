@@ -1,15 +1,22 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import RedLine from '#assets/images/svgs/red-line.svg';
 import PinkLine from '#assets/images/svgs/pink-line.svg';
 import WebFooter from '../../components/parts/WebFooter.jsx';
 
 const Mission = () => {
-  document.title = 'RemoteReq | About Us';
-
   return (
   <div>
     <div className="mission">
+
+      <Helmet>
+        <title>About Mission-Focused Job Matching | RemoteReq</title>
+        <meta
+          name="description"
+          content="We’re built on a decade of executive recruiting experience and talent consulting in the nonprofit world and 15 years of collective experience working remotely. So we know what it takes to find a great fit."
+        />
+      </Helmet>
 
       <div className="mission-block">
         <div className="mission-graphics">

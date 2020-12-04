@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import triplet1 from '#assets/icons/pngs/Profile.png';
 import triplet2 from '#assets/icons/pngs/Matched.png';
@@ -9,9 +10,16 @@ import heroes from '#assets/images/pngs/find-talent-heroes.png';
 // import WebFooterRight from '#assets/images/svgs/RR-web-footer-right.svg';
 
 const FindTalent = () => {
-  document.title = 'Find Talent with Us';
   return (
   <div className="find-talent-page">
+    <Helmet>
+      <title>Find Talent | RemoteReq</title>
+      <meta
+        name="description"
+        content="Find the best prospects for your oganization. Using RemoteReq, we can match you with the best remote talent that fit the needs of your nonprofit. "
+      />
+    </Helmet>
+
     <div className="find-talent-upper">
       <div className="find-talent-upper-left">
         <h1>Make a greater impact with remote talent.</h1>
