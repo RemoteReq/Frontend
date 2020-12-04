@@ -81,6 +81,9 @@ const causes = [
   'Water and Sanitation',
   'Arts and Culture ',
   'Religion',
+  'Digital Privacy and Security',
+  'Homelessness',
+  'Poverty',
 ];
 
 const timeZones = [
@@ -91,8 +94,8 @@ const timeZones = [
   { value: '-09:00', zone: '(GMT -9:00) Alaska' },
   { value: '-08:00', zone: '(GMT -8:00) Pacific Time (US &amp; Canada)' },
   { value: '-07:00', zone: '(GMT -7:00) Mountain Time (US &amp; Canada)' },
-  { value: '-06:00', zone: '(GMT -6:00) Central Time (US &amp; Canada), Mexico City' },
-  { value: '-05:00', zone: '(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima' },
+  { value: '-06:00', zone: '(GMT -6:00) Central Time (US &amp; Canada), Chicago' },
+  { value: '-05:00', zone: '(GMT -5:00) Eastern Time (US &amp; Canada), New York City' },
   { value: '-04:50', zone: '(GMT -4:30) Caracas' },
   { value: '-04:00', zone: '(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz' },
   { value: '-03:50', zone: '(GMT -3:30) Newfoundland' },
