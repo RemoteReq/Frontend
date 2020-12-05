@@ -82,8 +82,7 @@ const causes = [
   'Arts and Culture ',
   'Religion',
   'Digital Privacy and Security',
-  'Homelessness',
-  'Poverty',
+  'Homelessness and Poverty',
 ];
 
 const timeZones = [
@@ -92,8 +91,8 @@ const timeZones = [
   { value: '-10:00', zone: '(GMT -10:00) Hawaii' },
   { value: '-09:50', zone: '(GMT -9:30) Taiohae' },
   { value: '-09:00', zone: '(GMT -9:00) Alaska' },
-  { value: '-08:00', zone: '(GMT -8:00) Pacific Time (US &amp; Canada)' },
-  { value: '-07:00', zone: '(GMT -7:00) Mountain Time (US &amp; Canada)' },
+  { value: '-08:00', zone: '(GMT -8:00) Pacific Time (US &amp; Canada), Los Angeles' },
+  { value: '-07:00', zone: '(GMT -7:00) Mountain Time (US &amp; Canada), Phoenix' },
   { value: '-06:00', zone: '(GMT -6:00) Central Time (US &amp; Canada), Chicago' },
   { value: '-05:00', zone: '(GMT -5:00) Eastern Time (US &amp; Canada), New York City' },
   { value: '-04:50', zone: '(GMT -4:30) Caracas' },
