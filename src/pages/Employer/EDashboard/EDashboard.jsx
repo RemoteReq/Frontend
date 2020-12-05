@@ -48,7 +48,7 @@ class EDashboard extends Component {
         })
         .catch((error) => {
           EAuth.logout(() => {
-            this.props.history.push('/employer/signin');
+            this.props.history.push('/employer/sign-in');
           });
 
           return error;
@@ -95,7 +95,7 @@ class EDashboard extends Component {
 
     if (redirectToReferrer === false) {
       return (
-        <Redirect to='signin'/>
+        <Redirect to='sign-in'/>
       );
     }
 

@@ -13,16 +13,16 @@ const Footer = () => {
   <div className='footer'>
     <div className='upper-footer'>
       <ul className='footer-links'>
-        <li><Link to="/signup" className="small-link">Find Jobs</Link></li>
-        <li><Link to="/findTalent" className="small-link">Find Talent</Link></li>
-        <li><Link to="/about" className="small-link">About Us</Link></li>
+        <li><Link to="/sign-up" className="small-link">Find Jobs</Link></li>
+        <li><Link to="/find-talent" className="small-link">Find Talent</Link></li>
+        <li><Link to="/about-us" className="small-link">About Us</Link></li>
         <li><a href="https://blog.remotereq.com" className="small-link">Blog</a></li>
       </ul>
 
 
       <ul>
-        <li><Link to="/privacyPolicy" className="small-link">Our Privacy Policy</Link></li>
-        <li><Link to="/termsOfUse" className="small-link">Terms of Use</Link></li>
+        <li><Link to="/privacy-policy" className="small-link">Our Privacy Policy</Link></li>
+        <li><Link to="/terms-of-use" className="small-link">Terms of Use</Link></li>
       </ul>
     </div>
 

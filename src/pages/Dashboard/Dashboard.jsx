@@ -47,7 +47,7 @@ class Dashboard extends Component {
         })
         .catch((error) => {
           auth.logout(() => {
-            this.props.history.push('/signin');
+            this.props.history.push('/sign-in');
           });
 
           return error;
@@ -121,7 +121,7 @@ class Dashboard extends Component {
 
     if (redirectToReferrer === false) {
       return (
-        <Redirect to='signin'/>
+        <Redirect to='sign-in'/>
       );
     }
 
@@ -131,7 +131,7 @@ class Dashboard extends Component {
           <title>Dashboard | RemoteReq</title>
           <meta
             name="description"
-            content="Use the RemoteReq dashboard to navigate through your matches and find your best candidate. "
+            content="Use the RemoteReq dashboard to navigate through your matches and find a job that best suits you!"
           />
         </Helmet>
 

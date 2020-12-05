@@ -130,11 +130,11 @@ class ESignIn extends Component {
           </button>
 
           <p className="small-paragraph">
-            Are you a job seeker? <Link to="/signin">Sign In Here</Link>
+            Are you a job seeker? <Link to="/sign-in">Sign In Here</Link>
           </p>
 
           <p className="small-paragraph">
-            Don&apos;t have an account? <Link to="/employer/signup" className="small-link">Sign Up</Link>
+            Don&apos;t have an account? <Link to="/employer/sign-up" className="small-link">Sign Up</Link>
           </p>
 
           <p className="small-paragraph">

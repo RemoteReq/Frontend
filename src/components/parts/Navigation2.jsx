@@ -19,7 +19,7 @@ class Navigation2 extends Component {
     e.preventDefault();
 
     auth.logout(() => {
-      this.props.history.push('/signin');
+      this.props.history.push('/sign-in');
     });
   }
 

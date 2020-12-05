@@ -9,11 +9,11 @@ const CallToAction = () => {
   graphics={true}
   component={
     <div>
-      <Link to="/signup">
+      <Link to="/sign-up">
         <button className='button-1'>Find Jobs</button>
       </Link>
 
-      <Link to="/findTalent">
+      <Link to="/find-talent">
         <button className='button-2'>Find Talent</button>
       </Link>
     </div>

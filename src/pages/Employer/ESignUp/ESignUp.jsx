@@ -181,9 +181,9 @@ class ESignUp extends Component {
 
         <p className="smaller-paragraph">
           By continuing, you agree to our
-          &nbsp;<Link to="/termsOfUse" className="smaller-link">Terms of Use</Link>&nbsp;
+          &nbsp;<Link to="/terms-of-Use" className="smaller-link">Terms of Use</Link>&nbsp;
           and
-          &nbsp;<Link to="/privacyPolicy"className="smaller-link">Our Privacy Policy</Link>.
+          &nbsp;<Link to="/privacy-policy"className="smaller-link">Our Privacy Policy</Link>.
         </p>
 
         <button
@@ -194,7 +194,7 @@ class ESignUp extends Component {
         </button>
 
         <p className="small-paragraph">
-          Already have an account? <Link className="small-link" to={'/employer/signIn'}>Sign In</Link>
+          Already have an account? <Link className="small-link" to={'/employer/sign-in'}>Sign In</Link>
         </p>
       </form>
     </div>

@@ -41,17 +41,17 @@ class App extends Component {
           <Navigation/>
             <Switch>
               <Route exact path="/" component={LandingPage} />
-              <Route path="/signin" component={SignIn} />
-              <Route path="/signup" component={SignUp} />
+              <Route path="/sign-in" component={SignIn} />
+              <Route path="/sign-up" component={SignUp} />
               <Route path="/employer" component={Employer} />
-              <Route path="/about" component={Mission} />
-              <Route path="/findTalent" component={FindTalent} />
+              <Route path="/about-us" component={Mission} />
+              <Route path="/find-talent" component={FindTalent} />
               <Route path="/forgotPassword" component={ForgotPassword} />
               <Route path="/resetPassword" component={ResetPassword} />
               <Route path="/userEmailVerify" component={Verify} />
               <Route path="/employerEmailVerify" component={EVerify} />
-              <Route path="/privacyPolicy" component={PrivacyPolicy} />
-              <Route path="/termsOfUse" component={TermsOfUse} />
+              <Route path="/privacy-policy" component={PrivacyPolicy} />
+              <Route path="/terms-of-Use" component={TermsOfUse} />
               <Route path="/job" component={StatelessJobViewer} />
               <Route path="/isHired" component={IsHired} />
               <Route path="/afterSignUp" component={ThankYou} />

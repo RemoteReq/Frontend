@@ -22,7 +22,7 @@ const abouts = [
 
 const finds = [
   {
-    to: '/signup',
+    to: '"/sign-up',
     text: 'Find Jobs',
   },
   {
@@ -36,7 +36,7 @@ const Footer = () => {
   <div className='footer'>
     {/* <ul className='footerLinks'>
       <li><Link to="/about" className="small-link">About Us</Link></li>
-      <li><Link to="/signup" className="small-link">Find Jobs</Link></li>
+      <li><Link to="/sign-up" className="small-link">Find Jobs</Link></li>
       <li><Link to="/findTalent" className="small-link">Find Talent</Link></li>
       <li><Link to="/privacyPolicy" className="small-link">Our Privacy Policy</Link></li>
       <li><Link to="termsOfUse" className="small-link">Terms of Use</Link></li>

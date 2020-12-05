@@ -19,7 +19,7 @@ class ENav extends Component {
     e.preventDefault();
 
     Eauth.logout(() => {
-      this.props.history.push('/employer/signin');
+      this.props.history.push('/employer/sign-in');
     });
   }
 
@@ -81,27 +81,3 @@ class ENav extends Component {
 }
 
 export default withRouter(ENav);
-
-// const ENav = (props) => {
-//   const history = useHistory();
-
-//   return (
-//     <nav className='dashboard-navBar'>
-//       <Link className='dashboard-home stealth-link' to="/employer/dashboard">
-//         <img src={ RemoteReq } className='remotereq-name' alt='remote' />
-//         <p>Dashboard</p>
-//       </Link>
-
-//       <div className='dashboard-links'>
-
-//         <a className="large-link"
-//           onClick={() => {
-//             return Eauth.logout(() => {
-//               history.push('/employer/signin');
-//             });
-//           }}
-//         >Sign out</a>
-//       </div>
-//     </nav>
-//   );
-// };

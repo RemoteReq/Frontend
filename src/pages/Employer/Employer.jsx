@@ -20,17 +20,13 @@ const Employer = () => {
 
   return (
     <div>
-      {/* <Link to={`${url}/signIn`}>
-        <button>Sign In</button>
-      </Link> */}
-
       <Switch>
         <Route exact path ={path}>
-          <Redirect to={`${path}/signIn`} />
+          <Redirect to={`${path}/sign-in`} />
         </Route>
 
-        <Route exact path={`${path}/signIn`} component={ESignIn}/>
-        <Route path={`${path}/signUp`} component={ESignUp} />
+        <Route exact path={`${path}/sign-in`} component={ESignIn}/>
+        <Route path={`${path}/sign-up`} component={ESignUp} />
         <Route path={`${path}/employerEmailVerify`} component={EVerify} />
         <Route path={`${path}/settings`} component={ESettings}/>
         <Route path={`${path}/dashboard`} component={EDashboard} />

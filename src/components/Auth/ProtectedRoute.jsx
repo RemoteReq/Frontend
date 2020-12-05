@@ -5,7 +5,8 @@ import auth from './Auth.jsx';
 const ProtectedRoute = ({
   component: Component,
   ...rest
-}) => (
+}) => {
+  return (
     <Route
       { ...rest }
       render={
@@ -14,7 +15,7 @@ const ProtectedRoute = ({
             return <Component { ...props } />;
           }
           return <Redirect to={ {
-            pathname: '/signin',
+            pathname: '/sign-in',
             state: {
               from: props.location,
             },
@@ -22,6 +23,7 @@ const ProtectedRoute = ({
         }
       }
     />
-);
+  );
+};
 
 export default ProtectedRoute;

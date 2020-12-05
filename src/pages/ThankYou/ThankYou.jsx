@@ -8,7 +8,7 @@ const ThankYou = () => {
       <p className="small-paragraph">
         Thank you for making an account with us.
         Please check your email to verify your account before&nbsp;
-            <Link to="/signIn">
+            <Link to="/sign-in">
               signing in
             </Link>
             !

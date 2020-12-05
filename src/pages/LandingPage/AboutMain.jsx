@@ -13,7 +13,7 @@ const AboutMain = () => {
       <div className="section-desc">
         <h1>Hire smarter &amp; faster</h1>
         <p>Whether you’re looking for a job or looking for a candidate, we do all the hard work for you, using our finely-tuned algorithm to instantly match highly skilled candidates to positions relevant to issues they care most about.</p>
-        <Link to={'/signup'} className="large-link">Get Started</Link>
+        <Link to={'/sign-up'} className="large-link">Get Started</Link>
       </div>
 
       <div className="section-graphic">
@@ -37,7 +37,7 @@ const AboutMain = () => {
       <div className="section-desc">
         <h1>The best talent anywhere</h1>
         <p>Through RemoteReq, remote workers can use their skills and passions to change the world from any corner of it, whether that’s a kitchen table in Texas or a flat in London.</p>
-        <Link to="/signup" className="large-link">Find your job</Link>
+        <Link to="/sign-up" className="large-link">Find your job</Link>
       </div>
 
       <div className="section-graphic">

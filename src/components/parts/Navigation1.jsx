@@ -49,21 +49,21 @@ class Navigation1 extends Component {
         </div>
 
         <div className="navigation-1-links">
-          <Link to="/findTalent">
+          <Link to="/find-talent">
             <button className='button-2'>find talent</button>
           </Link>
 
-          <Link to='/signin'>
+          <Link to='/sign-in'>
             <button className='button-1'>find jobs</button>
           </Link>
         </div>
 
         <div className={`hamburger-menu ${showHamburgerMenu ? 'show' : 'hide'}`}>
-          <Link to="/findTalent">
+          <Link to="/find-talent">
             <button className='button-2'>find talent</button>
           </Link>
 
-          <Link to='/signin'>
+          <Link to='/sign-in'>
             <button className='button-1'>find jobs</button>
           </Link>
         </div>

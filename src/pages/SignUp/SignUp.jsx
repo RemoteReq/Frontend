@@ -176,9 +176,9 @@ class SignUp extends Component {
 
         <p className="smaller-paragraph">
             By continuing, you agree to our
-            &nbsp;<Link to="/termsOfUse" className="smaller-link">Terms of Use</Link>&nbsp;
+            &nbsp;<Link to="/terms-of-use" className="smaller-link">Terms of Use</Link>&nbsp;
             and
-            &nbsp;<Link to="/privacyPolicy"className="smaller-link">Our Privacy Policy</Link>.
+            &nbsp;<Link to="/privacy-policy"className="smaller-link">Our Privacy Policy</Link>.
         </p>
 
         <button
@@ -188,7 +188,7 @@ class SignUp extends Component {
           >Create Your Profile
         </button>
 
-        <p className="small-paragraph">Already have an account? <Link className="small-link" to='/signin'>Sign In</Link></p>
+        <p className="small-paragraph">Already have an account? <Link className="small-link" to='/sign-in'>Sign In</Link></p>
       </form>
     </div>
     );

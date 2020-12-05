@@ -17,13 +17,13 @@ const LPHeader = () => {
 
       <div className="button-and-link">
         <div>
-          <Link to="/signup">
+          <Link to="/sign-up">
             <button className='button-1'>Create your Profile</button>
           </Link>
         </div>
 
         <div>
-          <Link to="/findTalent"
+          <Link to="/find-talent"
                 className="large-link"
                 >Find Talent
           </Link>
