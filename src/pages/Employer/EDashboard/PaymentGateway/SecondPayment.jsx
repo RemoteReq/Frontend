@@ -9,6 +9,8 @@ import Eauth from '../../EAuth/EAuth.jsx';
 import ENav from '../../ENav/ENav.jsx';
 import Preloader from '#components/svgs/Preloader.jsx';
 
+const backend = 'https://api.remotereq.com';
+
 class SecondPayment extends Component {
   constructor(props) {
     super(props);
@@ -54,7 +56,7 @@ class SecondPayment extends Component {
         console.log('first response in purchase', response);
 
         axios({
-          url: ' https://api.remotereq.com/api/jobs/checkoutAfterHired',
+          url: `${backend}/api/jobs/checkoutAfterHired`,
           method: 'POST',
           headers: {
             token: localStorage.getItem('e-session'),

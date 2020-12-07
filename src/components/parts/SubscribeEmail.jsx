@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-const backend = ' https://api.remotereq.com';
+const backend = 'https://api.remotereq.com';
 
 class SubscribeEmail extends Component {
   constructor(props) {
