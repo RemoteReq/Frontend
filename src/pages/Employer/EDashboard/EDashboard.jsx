@@ -8,7 +8,7 @@ import StatelessProfileCard from './StatelessProfileCard.jsx';
 import JobList from './jobList/JobList.jsx';
 import EAuth from '../EAuth/EAuth.jsx';
 
-const backend = ' https://api.remotereq.com';
+const backend = 'https://api.remotereq.com';
 
 class EDashboard extends Component {
   constructor(props) {

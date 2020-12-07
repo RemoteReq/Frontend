@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Preloader from '../../components/svgs/Preloader.jsx';
 
-const backend = ' https://api.remotereq.com';
+const backend = 'https://api.remotereq.com';
 
 class SignUp extends Component {
   constructor(props) {

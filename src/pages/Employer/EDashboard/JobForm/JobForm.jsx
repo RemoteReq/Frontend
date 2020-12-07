@@ -4,7 +4,7 @@ import EAuth from '../../EAuth/EAuth.jsx';
 import PartTimeForm from './PartTimeForm.jsx';
 import FullTimeFrom from './FullTimeForm.jsx';
 
-const backend = ' https://api.remotereq.com';
+const backend = 'https://api.remotereq.com';
 
 class JobForm extends Component {
   constructor(props) {
