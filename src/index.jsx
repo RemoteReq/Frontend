@@ -1,3 +1,9 @@
+// support IE9
+import 'react-app-polyfill/ie9';
+
+// support IE11
+import 'react-app-polyfill/ie11';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 // this should be the only .scss file to import and linting is disabled for this import
