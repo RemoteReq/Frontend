@@ -18,7 +18,7 @@ class LandingPage extends Component {
             />
           </Helmet>
 
-          <Disclaimer />
+          {/* <Disclaimer /> */}
           <LPHeader />
           <AboutHeader />
           <AboutMain />

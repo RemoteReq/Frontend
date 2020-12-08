@@ -37,7 +37,7 @@ class App extends Component {
     return (
       <Router>
         <ScrollToTop>
-          <BetaBanner/>
+          {/* <BetaBanner/> */}
           <Navigation/>
             <Switch>
               <Route exact path="/" component={LandingPage} />
