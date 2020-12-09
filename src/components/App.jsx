@@ -46,7 +46,7 @@ class App extends Component {
               <Route path="/employer" component={Employer} />
               <Route path="/about-us" component={Mission} />
               <Route path="/find-talent" component={FindTalent} />
-              <Route path="/forgotPassword" component={ForgotPassword} />
+              <Route path="/forgot-password" component={ForgotPassword} />
               <Route path="/resetPassword" component={ResetPassword} />
               <Route path="/userEmailVerify" component={Verify} />
               <Route path="/employerEmailVerify" component={EVerify} />

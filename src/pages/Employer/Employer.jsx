@@ -13,6 +13,7 @@ import SecondPayment from './EDashboard/PaymentGateway/SecondPayment.jsx';
 import GigSelect from './EDashboard/PaymentGateway/GigSelect.jsx';
 import JobViewer from './EDashboard/JobViewer/JobViewer.jsx';
 import MatchViewer from './EDashboard/MatchViewer/MatchViewer.jsx';
+import EForgotPassword from './EForgotPassword/EForgotPassword.jsx';
 import IsHired from './IsHired/IsHired.jsx';
 
 const Employer = () => {
@@ -36,6 +37,7 @@ const Employer = () => {
         <Route path={`${path}/secondPayment`} component={SecondPayment} />
         <Route path={`${path}/jobs/`} component={JobViewer}/>
         <Route path={`${path}/match/`} component={MatchViewer} />
+        <Route path={`${path}/forgot-password`} component={EForgotPassword} />
         {/* <Route path={`${path}/isHired`} component={IsHired} /> */}
       </Switch>
     </div>

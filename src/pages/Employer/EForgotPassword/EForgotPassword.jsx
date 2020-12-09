@@ -74,8 +74,7 @@ class ForgotPassword extends Component {
       <div className="forgot-password">
 
         <form>
-
-          <h4>Job Seeker Password Recovery</h4>
+          <h4>Employer Password Recovery</h4>
 
           <br/>
           <p className="small-paragraph">Enter your email address and we will provide you a link to reset your password.</p>
@@ -92,7 +91,7 @@ class ForgotPassword extends Component {
           >{statusMessage}</p>
 
           <button
-            className="button-1"
+            className="e-button"
             onClick={(e) => { this.handleSubmit(e); }}
           >Request Password Reset</button>
 

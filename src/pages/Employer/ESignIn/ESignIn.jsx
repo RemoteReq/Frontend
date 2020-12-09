@@ -138,7 +138,7 @@ class ESignIn extends Component {
           </p>
 
           <p className="small-paragraph">
-            <Link to="/forgotPassword">Forgot your password?</Link>
+            <Link to="/employer/forgot-password">Forgot your password?</Link>
           </p>
 
         </form>
