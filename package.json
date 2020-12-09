@@ -10,6 +10,18 @@
     "dockerize": "sudo docker build -t rrapp . && sudo docker run --name rrapp -p 8080:3030 -d rrapp",
     "update": "sudo docker kill rrapp && sudo docker container rm -f rrapp && sudo docker image rm -f kill rrapp && npm run dockerize"
   },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RemoteReq/Template.git"
