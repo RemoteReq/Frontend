@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const backend = 'https://api.remotereq.com';
@@ -34,7 +35,7 @@ class ForgotPassword extends Component {
       email,
     };
 
-    axios.post(`${backend}/api/signin/forgotPassword`, body)
+    axios.post(`${backend}/api/signin/employerForgotPassword`, body)
       .then((response) => {
         console.log('sending email for password recovery!', response);
 
@@ -94,6 +95,10 @@ class ForgotPassword extends Component {
             className="e-button"
             onClick={(e) => { this.handleSubmit(e); }}
           >Request Password Reset</button>
+
+          <p className="small-paragraph">
+            Are you a Job Seeker? <Link to="/forgot-password">Recover your password here</Link>
+          </p>
 
         </form>
       </div>

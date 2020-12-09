@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const backend = 'https://api.remotereq.com';
@@ -95,6 +96,10 @@ class ForgotPassword extends Component {
             className="button-1"
             onClick={(e) => { this.handleSubmit(e); }}
           >Request Password Reset</button>
+
+          <p className="small-paragraph">
+            Are you an Employer? <Link to="/employer/forgot-password">Recover your password here</Link>
+          </p>
 
         </form>
       </div>
