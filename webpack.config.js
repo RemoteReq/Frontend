@@ -18,6 +18,9 @@ module.exports = {
       '#assets': path.join(__dirname, 'assets/'),
     },
   },
+  // entry: {
+  //   app: ['core-js/stable', path.join(__dirname, 'src/index.jsx')],
+  // },
   devServer: {
     contentBase: 'dist',
     port: 8080,
@@ -34,6 +37,7 @@ module.exports = {
             presets: ['@babel/preset-env'],
           },
         },
+        exclude: /node_modules/,
       },
       {
         test: /\.s[ac]ss$/i,
