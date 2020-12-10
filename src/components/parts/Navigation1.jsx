@@ -54,7 +54,11 @@ class Navigation1 extends Component {
           </Link>
 
           <Link to='/sign-in'>
-            <button className='button-1'>find jobs</button>
+            <button className='button-2'>find jobs</button>
+          </Link>
+
+          <Link to="/request-a-demo">
+            <button className='button-1'>request a demo</button>
           </Link>
         </div>
 

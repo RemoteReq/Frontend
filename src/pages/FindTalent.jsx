@@ -33,6 +33,15 @@ const FindTalent = () => {
         <Link to="/employer">
           <button className="button-1">Submit a Job Req</button>
         </Link>
+
+        <br />
+        <br />
+
+        <div>
+          <Link to="/request-a-demo" className="large-link">
+            Request a Demo
+          </Link>
+        </div>
       </div>
 
       <div className="find-talent-upper-graphics">

@@ -31,6 +31,7 @@ import EResetPassword from '../pages/Employer/EResetPassword/EResetPassword.jsx'
 import StatelessJobViewer from '../pages/Dashboard/StatelessJobViewer.jsx';
 import IsHired from '../pages/Employer/IsHired/IsHired.jsx';
 import ThankYou from '../pages/ThankYou/ThankYou.jsx';
+import RequestADemo from '../pages/RequestADemo.jsx';
 
 
 class App extends Component {
@@ -47,6 +48,7 @@ class App extends Component {
               <Route path="/employer" component={Employer} />
               <Route path="/about-us" component={Mission} />
               <Route path="/find-talent" component={FindTalent} />
+              <Route path="/request-a-demo" component={RequestADemo} />
               <Route path="/forgot-password" component={ForgotPassword} />
               <Route path="/resetPassword" component={ResetPassword} />
               <Route path="/userEmailVerify" component={Verify} />
