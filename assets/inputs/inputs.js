@@ -94,6 +94,9 @@ const causes = [
   'Youth Development',
 ];
 
+// sorts causes alphabetically
+causes.sort();
+
 const timeZones = [
   { value: '-12:00', zone: '(GMT -12:00) Eniwetok, Kwajalein' },
   { value: '-11:00', zone: '(GMT -11:00) Midway Island, Samoa' },
