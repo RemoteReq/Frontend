@@ -7,7 +7,7 @@ class RequestADemo extends Component {
     super(props);
 
     this.state = {
-      submitted: true,
+      submitted: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
