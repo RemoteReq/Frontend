@@ -1,6 +1,22 @@
 .request-a-demo {
   display: flex;
-  padding: 0 20vw;
+  background-color: $BackgroundColor;
+  padding: 10vh 20vw;
+  
+  div {
+    width: 100%;
+    margin: 8%;
+  }
+
+  form {
+    width: 100%;
+    background-color: white;
+    text-align: center;
+
+    h3 {
+      padding-bottom: 20px;
+    }
+  }
 }
 
 @media Screen and (max-aspect-ratio: 1/1) {
