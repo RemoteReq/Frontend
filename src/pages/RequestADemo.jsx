@@ -65,7 +65,7 @@ class RequestADemo extends Component {
           : <form>
           <h3>Request a Demo</h3>
 
-          <p>Let's learn about your company and interests so we can best meet your business needs</p>
+          <p>Let's learn about your company and interests so we can best meet your business needs.</p>
 
           <br />
           <br />
