@@ -13,7 +13,7 @@ module.exports = {
       path: '/home/ubuntu/',
       'pre-deploy-local': "echo 'beginning production deployment'",
       'post-setup': 'npm --version,',
-      'post-deploy': 'npm install && npm run build:pro && pm2 startOrRestart ecosystem.config.js --env production',
+      'post-deploy': 'npm install && npm run build:pro && pm2 startOrRestart RemoteReq --env production',
     },
     staging: {
       key: '/home/ryden/.ssh/Delta-Crow.pem',
@@ -24,7 +24,7 @@ module.exports = {
       path: '/home/ubuntu/',
       'pre-deploy-local': "echo 'beginning staging deployment'",
       'post-setup': 'npm --version,',
-      'post-deploy': 'npm install && npm run build:dev && pm2 startOrRestart ecosystem.config.js --env staging',
+      'post-deploy': 'npm install && npm run build:dev && pm2 startOrRestart RemoteReq --env staging',
     },
   },
 };
