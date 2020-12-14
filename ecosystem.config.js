@@ -12,7 +12,7 @@ module.exports = {
       repo: 'git@github.com:RemoteReq/Frontend.git',
       path: '/home/ubuntu/',
       'pre-deploy-local': "echo 'beginning production deployment'",
-      'post-deploy': 'npm install && npm run build:pro && pm2 startOrRestart RemoteReq && pm2 reload ecosystem.config.js --env production',
+      'post-deploy': 'npm install && npm run build:pro && pm2 startOrRestart ecosystem.config.js --env production',
     },
     staging: {
       key: '/home/ryden/.ssh/Delta-Crow.pem',
@@ -22,7 +22,7 @@ module.exports = {
       repo: 'git@github.com:RemoteReq/Frontend.git',
       path: '/home/ubuntu/',
       'pre-deploy-local': "echo 'beginning staging deployment'",
-      'post-deploy': 'npm install && npm run build:dev && pm2 startOrRestart RemoteReq && pm2 reload ecosystem.config.js',
+      'post-deploy': 'npm install && npm run build:dev && pm2 startOrRestart ecosystem.config.js --env staging',
     },
   },
 };
