@@ -12,7 +12,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'git@github.com:RemoteReq/Frontend.git',
       path: '/home/ubuntu',
-      'pre-deploy-local': 'repo cloned successfully!',
+      'pre-deploy-local': "echo 'beginning production deployment'",
       'post-deploy': 'npm install && npm run build:pro && npm run server && pm2 reload ecosystem.config.js --env production',
     },
     staging: {
@@ -22,7 +22,7 @@ module.exports = {
       ref: 'origin/development',
       repo: 'git@github.com:RemoteReq/Frontend.git',
       path: '/home/ubuntu',
-      'pre-deploy-local': 'repo cloned successfully!',
+      'pre-deploy-local': "echo 'beginning staging deployment'",
       'post-deploy': 'npm install && npm run build:dev && npm run server && pm2 reload ecosystem.config.js',
     },
   },
