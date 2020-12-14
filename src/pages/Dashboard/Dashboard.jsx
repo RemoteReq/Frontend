@@ -69,15 +69,6 @@ class Dashboard extends Component {
           }, () => { console.log('after getting Jobs data', this.state); });
         });
     }
-
-    const Nav = document.getElementById('navigation-1');
-    Nav.classList.remove('show');
-    Nav.classList.add('hide');
-  }
-
-  componentWillUnmount() {
-    const Nav = document.getElementById('navigation-1');
-    Nav.classList.remove('hide');
   }
 
   showProfileMenu() {

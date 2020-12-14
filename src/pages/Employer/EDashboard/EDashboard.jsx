@@ -73,18 +73,7 @@ class EDashboard extends Component {
           }, () => { console.log(this.state); });
         });
     }
-
-    const Nav = document.getElementById('navigation-1');
-    Nav.classList.remove('show');
-    Nav.classList.add('hide');
   }
-
-  componentWillUnmount() {
-    const Nav = document.getElementById('navigation-1');
-    Nav.classList.remove('hide');
-    Nav.classList.add('show');
-  }
-
 
   showProfileMenu() {
     this.setState({ profileMenuDropdown: !this.state.profileMenuDropdown });

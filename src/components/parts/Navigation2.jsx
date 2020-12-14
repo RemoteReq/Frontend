@@ -15,6 +15,18 @@ class Navigation2 extends Component {
     this.signOut = this.signOut.bind(this);
   }
 
+  componentDidMount() {
+    const Nav = document.getElementById('navigation-1');
+    Nav.classList.remove('show');
+    Nav.classList.add('hide');
+  }
+
+  componentWillUnmount() {
+    const Nav = document.getElementById('navigation-1');
+    Nav.classList.remove('hide');
+    Nav.classList.add('show');
+  }
+
   signOut(e) {
     e.preventDefault();
 
@@ -38,6 +50,7 @@ class Navigation2 extends Component {
       });
     }
   }
+
 
   render() {
     const { showHamburgerMenu } = this.state;
