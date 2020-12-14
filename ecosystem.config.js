@@ -2,7 +2,6 @@ module.exports = {
   apps: [{
     name: 'RemoteReq',
     script: './server/server.js',
-    watch: '.',
   }],
   deploy: {
     production: {
