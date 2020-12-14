@@ -21,12 +21,21 @@ class ESignIn extends Component {
   }
 
   componentDidMount() {
+    const Footer = document.getElementById('footer');
+    Footer.classList.add('hide');
+
     console.log(EAuth.isAuthenticated());
     if (EAuth.isAuthenticated()) {
       this.setState({
         redirectToReferrer: true,
       });
     }
+  }
+
+  componentWillUnmount() {
+    const Footer = document.getElementById('footer');
+    Footer.classList.remove('hide');
+    Footer.classList.add('show');
   }
 
   enablePreloader() {

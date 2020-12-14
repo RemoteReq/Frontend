@@ -21,8 +21,8 @@ const GigSelect = () => {
               <div className="gig-select-image">
                 {/* <img/> */}
               </div>
-              <p>$100 upfront to post</p>
-              <p>$2500 upon successful hire</p>
+              <p>$100 to view your matched candidates</p>
+              <p>$2400 upon successful hire</p>
             </div>
           </Link>
 
@@ -38,8 +38,8 @@ const GigSelect = () => {
               <div className="gig-select-image">
                 {/* <img/> */}
               </div>
-              <p>$100 upfront to post</p>
-              <p>$1000 upon successful hire</p>
+              <p>$100 to view your matched candidates</p>
+              <p>$900 upon successful hire</p>
             </div>
           </Link>
         </div>

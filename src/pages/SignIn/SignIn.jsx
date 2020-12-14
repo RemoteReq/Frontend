@@ -26,6 +26,9 @@ class SignIn extends Component {
   }
 
   componentDidMount() {
+    const Footer = document.getElementById('footer');
+    Footer.classList.add('hide');
+
     console.log(auth.isAuthenticated());
     if (auth.isAuthenticated()) {
       this.setState({
@@ -33,6 +36,12 @@ class SignIn extends Component {
         loginFailed: '',
       });
     }
+  }
+
+  componentWillUnmount() {
+    const Footer = document.getElementById('footer');
+    Footer.classList.remove('hide');
+    Footer.classList.add('show');
   }
 
   enablePreloader() {

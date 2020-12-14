@@ -12,3 +12,16 @@
     grid-auto-rows: auto;
   }
 }
+
+@media screen and (max-aspect-ratio: 8/5) {
+  .terms-of-use {
+    margin: 0 8vw;
+  }
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+  .terms-of-use {
+    padding: 90px 0;
+    margin: 0 4vw;
+  }
+}

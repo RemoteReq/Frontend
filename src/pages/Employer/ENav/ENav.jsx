@@ -15,6 +15,26 @@ class ENav extends Component {
     this.signOut = this.signOut.bind(this);
   }
 
+  componentDidMount() {
+    const Nav = document.getElementById('navigation-1');
+    Nav.classList.remove('show');
+    Nav.classList.add('hide');
+
+    const Footer = document.getElementById('footer');
+    Footer.classList.remove('show');
+    Footer.classList.add('hide');
+  }
+
+  componentWillUnmount() {
+    const Nav = document.getElementById('navigation-1');
+    Nav.classList.remove('hide');
+    Nav.classList.add('show');
+
+    const Footer = document.getElementById('footer');
+    Footer.classList.remove('hide');
+    Footer.classList.add('show');
+  }
+
   signOut(e) {
     e.preventDefault();
 

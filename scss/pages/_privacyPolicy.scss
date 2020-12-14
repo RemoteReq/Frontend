@@ -13,3 +13,16 @@
     grid-auto-rows: auto;
   }
 }
+
+@media screen and (max-aspect-ratio: 8/5) {
+  .privacy-policy {
+    margin: 0 8vw;
+  }
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+  .privacy-policy {
+    padding: 90px 0;
+    margin: 0 4vw;
+  }
+}

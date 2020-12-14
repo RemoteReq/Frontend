@@ -14,6 +14,9 @@ class JobViewer extends Component {
     this.state = {
       transactionId: '',
     };
+
+    this.submitHired = this.submitHired.bind(this);
+    this.submitNotHired = this.submitNotHired.bind(this);
   }
 
   componentDidMount() {
@@ -34,6 +37,36 @@ class JobViewer extends Component {
             transactionId: this.props.location.state.job.transactionDetails.transactionIdForAddJob.transactionId,
           });
         }
+      });
+  }
+
+  submitHired(e) {
+    e.preventDefault();
+
+    axios({
+      url: `${backend}/api/scheduleJob/isHired?status=true&jobId=${this.props.location.state.job._id}`,
+      method: 'POST',
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  submitNotHired(e) {
+    e.preventDefault();
+
+    axios({
+      url: `${backend}/api/scheduleJob/isHired?status=false&jobId=${this.props.location.state.job._id}`,
+      method: 'POST',
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }
 
@@ -85,7 +118,14 @@ class JobViewer extends Component {
 
           <p className="small-paragraph">{firstPaymentStatus ? `Matches expire on: ${expireDate.toDateString()}` : ''}</p>
 
-          <HireSelect />
+          <br/>
+          <br/>
+
+          <HireSelect
+            firstPaymentStatus={firstPaymentStatus}
+            yes={this.submitHired}
+            no={this.submitNotHired}
+          />
 
           <br/>
           <br/>

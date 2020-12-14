@@ -78,7 +78,7 @@
     left: 0;
     right: 0;
     margin: 0 10px;
-    // padding-top: 100vh;
+    padding-top: 100vh;
     z-index: -1;
 
     .upper-footer {
@@ -134,8 +134,8 @@
   }
 }
 
-@media Screen and (max-aspect-ratio: 1/1) {
-  .footer {
-    display: none;
-  }
-}
+// @media Screen and (max-aspect-ratio: 1/1) {
+//   .footer {
+//     display: none;
+//   }
+// }
