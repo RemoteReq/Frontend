@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ENav from '../../ENav/ENav.jsx';
 import EMatchRating from '#parts/EMatchRating.jsx';
 import MatchWindow from './MatchWindow.jsx';
+// import HireState
 
 const backend = 'https://api.remotereq.com';
 

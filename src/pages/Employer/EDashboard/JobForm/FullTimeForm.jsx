@@ -102,7 +102,7 @@ const FullTimeForm = ({
                   })
                 }
             </select>
-            <p className={`${fields.salary.isFilled ? '' : 'error'}`}>This is a required field.</p>
+            <p className={`${fields.salary.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
           </div>
 
           <div className="range">

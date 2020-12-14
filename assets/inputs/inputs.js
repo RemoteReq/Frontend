@@ -94,7 +94,6 @@ const causes = [
   'Youth Development',
 ];
 
-// sorts causes alphabetically
 causes.sort();
 
 const timeZones = [

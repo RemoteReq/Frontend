@@ -25,8 +25,7 @@ const Page3 = ({
       <br/>
 
       <p>
-        Provide a sample of your past relevant work (e.g. link to an online portfolio)
-      </p>
+        Provide a sample of your past relevant work (e.g. link to an online portfolio / past work sample / link to a past client)</p>
       <input
         name="sampleProjectLink"
         onChange={handleChange}

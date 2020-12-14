@@ -107,7 +107,7 @@ class FirstPayment extends Component {
           <h3>Checkout</h3>
           <h3>Total: ${this.props.location.state.price}</h3>
           <p className="small-paragraph">
-            After purchasing, our algorithm will begin matching your Job Req to well suited candidates.
+            Pay $100, now, to view your best-fit candidate matches. Your remaining balance ($2400) will be due at the time of hire.
           </p>
           {
             this.state.clientToken
