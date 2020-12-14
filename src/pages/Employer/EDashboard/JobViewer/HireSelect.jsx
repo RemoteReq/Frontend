@@ -1,14 +1,22 @@
 import React from 'react';
 
+// This component should render IF the first payment has gone through
 const HireSelect = () => {
+  const firstPayment = false;
+
   return (
-    <div>
-      <h3>Did you make a hire?</h3>
+    firstPayment
+      ? <div>
+      <h4>Did you make a hire?</h4>
 
-      <button>Yes</button>
+      <div className="button-container">
+        <button className="small-button button-1" >Yes</button>
 
-      <button>No</button>
+        <button className="small-button button-2" >No</button>
+      </div>
     </div>
+
+      : <div></div>
   );
 };
 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import ENav from '../../ENav/ENav.jsx';
-import EMatchRating from '#parts/EMatchRating.jsx';
+// import EMatchRating from '#parts/EMatchRating.jsx';
 import MatchWindow from './MatchWindow.jsx';
-// import HireState
+import HireSelect from './HireSelect.jsx';
 
 const backend = 'https://api.remotereq.com';
 
@@ -84,6 +84,8 @@ class JobViewer extends Component {
           <MatchWindow firstPaymentStatus={firstPaymentStatus} matches={matches} job={job}/>
 
           <p className="small-paragraph">{firstPaymentStatus ? `Matches expire on: ${expireDate.toDateString()}` : ''}</p>
+
+          <HireSelect />
 
           <br/>
           <br/>
