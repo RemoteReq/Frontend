@@ -19,7 +19,7 @@ module.exports = {
       key: '/home/ryden/.ssh/Delta-Crow.pem',
       user: 'ubuntu',
       host: '18.217.254.98',
-      ref: 'origin/development',
+      ref: 'origin/staging',
       repo: 'git@github.com:RemoteReq/Frontend.git',
       path: '/home/ubuntu/',
       'pre-deploy-local': "echo 'beginning staging deployment'",
