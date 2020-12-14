@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import ThankYou2 from './ThankYou/ThankYou2.jsx';
 
 class RequestADemo extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      submitted: false,
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,10 +24,18 @@ class RequestADemo extends Component {
       phoneNumber: this.state.phoneNumber,
     };
 
-    Axios.post('https://api.remotereq.com/subscribe', {
-      body,
-    })
+    console.log(this.state, 'current state');
+
+    console.log('payload', body);
+
+    Axios.post('https://api.remotereq.com/api/requestDemo', body)
       .then((response) => {
+        if (response.status === 200) {
+          this.setState({
+            submitted: true,
+          });
+        }
+
         console.log(response);
       })
       .catch((error) => {
@@ -41,21 +52,27 @@ class RequestADemo extends Component {
   }
 
   render() {
+    const { submitted } = this.state;
+
     return (
       <div className="request-a-demo">
-        <form>
+
+      {
+        submitted
+
+          ? <ThankYou2/>
+
+          : <form>
           <h3>Request a Demo</h3>
 
-          <p>Let's learn about your company and interests so we can best meet your business needs</p>
+          <p>Let's learn about your company and interests so we can best meet your business needs.</p>
+
+          <br />
+          <br />
 
           <input
             placeholder="Your Name (Required)"
             name="name"
-            onChange={(e) => { this.handleChange(e); }}
-          />
-          <input
-            placeholder="Company E-mail (Required)"
-            name="emailId"
             onChange={(e) => { this.handleChange(e); }}
           />
           <input
@@ -64,8 +81,13 @@ class RequestADemo extends Component {
             onChange={(e) => { this.handleChange(e); }}
           />
           <input
-            placeholder="Title"
-            name=""
+            placeholder="Company E-mail (Required)"
+            name="emailId"
+            onChange={(e) => { this.handleChange(e); }}
+          />
+          <input
+            placeholder="Phone Number (ex: 555-555-5555)"
+            name="phoneNumber"
             onChange={(e) => { this.handleChange(e); }}
           />
 
@@ -75,6 +97,8 @@ class RequestADemo extends Component {
           >Submit</button>
 
         </form>
+
+      }
       </div>
     );
   }

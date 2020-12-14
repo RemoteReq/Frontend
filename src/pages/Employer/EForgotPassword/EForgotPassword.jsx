@@ -53,7 +53,7 @@ class ForgotPassword extends Component {
           console.error('no such email');
 
           this.setState({
-            statusMessage: 'The email your provided is not associated with an account in our records',
+            statusMessage: 'The email you provided is not associated with an account in our records',
             responseStatus: true,
           });
         } else {

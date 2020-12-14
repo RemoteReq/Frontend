@@ -65,25 +65,37 @@ const daysOfWeek = [
 ];
 
 const causes = [
-  'Educational Equity (K-12)',
-  'Immigrant Rights',
-  'Voting Rights',
-  'Youth Extracurriculars (sports, band, etc.)',
-  'Environmental Rights',
   'Animal Rights',
-  'US Military Veterans',
-  'LGBTQ rights ',
-  'Health and Medical Care',
-  'Women’s Rights ',
-  'Community Development ',
+  'Arts and Culture',
+  'Climate Change',
+  'College Access and Success',
   'Criminal Justice Reform',
-  'Food Insecurity',
-  'Water and Sanitation',
-  'Arts and Culture ',
-  'Religion',
   'Digital Privacy and Security',
+  'Early Childhood Education',
+  'Economic Development ',
+  'Educational Equity (K-12)',
+  'Employment',
+  'Environmental',
+  'Food Insecurity',
+  'Health and Medical',
   'Homelessness and Poverty',
+  'Housing',
+  'Immigrant Rights',
+  'International Causes',
+  'LGBTQ rights ',
+  'Parks and Recreation',
+  'Politics and Advocacy',
+  'Racial and Social Justice',
+  'Religion',
+  'US Military Veterans',
+  'Voting Rights',
+  'Water and Sanitation',
+  'Women’s Rights ',
+  'Youth Development',
 ];
+
+// sorts causes alphabetically
+causes.sort();
 
 const timeZones = [
   { value: '-12:00', zone: '(GMT -12:00) Eniwetok, Kwajalein' },
