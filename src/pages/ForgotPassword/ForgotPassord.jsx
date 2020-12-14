@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-const backend = 'https://api.remotereq.com';
+const backend = process.env.BASE_URL;
 
 class ForgotPassword extends Component {
   constructor(props) {

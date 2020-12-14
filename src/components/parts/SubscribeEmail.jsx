@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-const backend = 'https://api.remotereq.com';
+const backend = process.env.BASE_URL;
 
 class SubscribeEmail extends Component {
   constructor(props) {

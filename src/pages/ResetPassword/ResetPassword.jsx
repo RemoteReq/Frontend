@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { useParams, useLocation, Link } from 'react-router-dom';
 import axios from 'axios';
 
-const backend = 'https://api.remotereq.com';
+const backend = process.env.BASE_URL;
 
 const ResetPasswordQuery = () => {
   return new URLSearchParams(useLocation().search);

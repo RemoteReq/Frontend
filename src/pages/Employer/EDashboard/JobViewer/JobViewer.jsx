@@ -5,7 +5,7 @@ import ENav from '../../ENav/ENav.jsx';
 import MatchWindow from './MatchWindow.jsx';
 import HireSelect from './HireSelect.jsx';
 
-const backend = 'https://api.remotereq.com';
+const backend = process.env.BASE_URL;
 
 class JobViewer extends Component {
   constructor(props) {

@@ -4,7 +4,7 @@ import EAuth from '../../EAuth/EAuth.jsx';
 import PartTimeForm from './PartTimeForm.jsx';
 import FullTimeFrom from './FullTimeForm.jsx';
 
-const backend = 'https://api.remotereq.com';
+const backend = process.env.BASE_URL;
 
 class JobForm extends Component {
   constructor(props) {

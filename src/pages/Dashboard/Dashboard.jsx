@@ -10,7 +10,7 @@ import ProfileCard from './ProfileCard.jsx';
 import SwitchWindow from './SwitchWindow.jsx';
 import auth from '../../components/Auth/Auth.jsx';
 
-const backend = 'https://api.remotereq.com';
+const backend = process.env.BASE_URL;
 
 class Dashboard extends Component {
   constructor(props) {

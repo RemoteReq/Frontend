@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-// const backend = 'https://api.remotereq.com';
+// const backend = process.env.BASE_URL;
 
 class Auth {
   constructor() {
     this.authState = false;
-    this.backend = 'https://api.remotereq.com';
+    this.backend = process.env.BASE_URL;
   }
 
   login(credentials, cb, err) {

@@ -6,7 +6,7 @@ import Eauth from '../../EAuth/EAuth.jsx';
 import ENav from '../../ENav/ENav.jsx';
 import Preloader from '#components/svgs/Preloader.jsx';
 
-const backend = 'https://api.remotereq.com';
+const backend = process.env.BASE_URL;
 
 class FirstPayment extends Component {
   constructor(props) {

@@ -10,7 +10,7 @@ import JobPreferenceEditor from './JobPreference/JobPreferenceEditor.jsx';
 import SettingsNav from './SettingsNav.jsx';
 import Auth from '../../components/Auth/Auth.jsx';
 
-const backend = 'https://api.remotereq.com';
+const backend = process.env.BASE_URL;
 
 class Settings extends Component {
   constructor(props) {

@@ -10,7 +10,7 @@ import JobReqNotifications from './JobReqNotifications/JobReqNotifications.jsx';
 import SettingsNav from './ESettingsNav.jsx';
 import EAuth from '../EAuth/EAuth.jsx';
 
-const backend = 'https://api.remotereq.com';
+const backend = process.env.BASE_URL;
 
 class ESettings extends Component {
   constructor(props) {

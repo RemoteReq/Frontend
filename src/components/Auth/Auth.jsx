@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const backend = 'https://api.remotereq.com';
+const backend = process.env.BASE_URL;
 
 class Auth {
   constructor() {
