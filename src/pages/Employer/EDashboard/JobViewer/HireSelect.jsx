@@ -4,6 +4,8 @@ import React from 'react';
 const HireSelect = () => {
   const firstPayment = false;
 
+  console.log(process.env.TEST_VARIABLE);
+
   return (
     firstPayment
       ? <div>
