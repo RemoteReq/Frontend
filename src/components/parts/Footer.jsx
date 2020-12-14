@@ -10,7 +10,9 @@ import InstagramIcon from '#assets/icons/pngs/flaticon/instagram.png';
 
 const Footer = () => {
   return (
-  <div className='footer'>
+  <div
+    id="footer"
+    className='footer'>
     <div className='upper-footer'>
       <ul className='footer-links'>
         <li><Link to="/sign-up" className="small-link">Find Jobs</Link></li>
