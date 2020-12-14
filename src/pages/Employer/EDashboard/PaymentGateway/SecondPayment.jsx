@@ -50,7 +50,6 @@ class SecondPayment extends Component {
   purchase(e) {
     e.preventDefault();
 
-
     this.instance.requestPaymentMethod()
       .then((response) => {
         console.log('first response in purchase', response);
@@ -62,7 +61,7 @@ class SecondPayment extends Component {
             token: localStorage.getItem('e-session'),
           },
           data: {
-            amount: 1000,
+            amount: 900,
             paymentMethodNonce: response.nonce,
             jobId: this.props.location.state.jobId,
           },
@@ -104,7 +103,7 @@ class SecondPayment extends Component {
             <p>Processing payment</p>
           </div>
           <h3>Checkout</h3>
-          <h3>Total: ${this.props.location.state.price || '2500'}</h3>
+          <h3>Total: ${this.props.location.state.price || '900'}</h3>
           <p className="small-paragraph">
             Congratulations on your new hire!
           </p>
@@ -117,7 +116,7 @@ class SecondPayment extends Component {
                       vaultManager: true,
                       paypal: {
                         flow: 'vault',
-                        amount: `${this.props.location.state.price || '2500'}`,
+                        amount: `${this.props.location.state.price || '900'}`,
                         currency: 'USD',
                       },
                     }}
