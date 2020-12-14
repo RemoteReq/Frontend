@@ -47,7 +47,7 @@ class IsHiredPoster extends Component {
     console.log(this.state);
 
     if (statusUpdateConfirmation === true) {
-      if (hireStatus === true) {
+      if (hireStatus === 'true') {
         return (
             <div>
               <Redirect
