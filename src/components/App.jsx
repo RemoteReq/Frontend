@@ -29,7 +29,7 @@ import TermsOfUse from '../pages/TermsOfUse.jsx';
 import DevBanner from './parts/DevBanner.jsx';
 import EResetPassword from '../pages/Employer/EResetPassword/EResetPassword.jsx';
 import StatelessJobViewer from '../pages/Dashboard/StatelessJobViewer.jsx';
-// import IsHired from '../pages/Employer/IsHired/IsHired.jsx';
+import IsHired from '../pages/Employer/IsHired/IsHired.jsx';
 import ThankYou from '../pages/ThankYou/ThankYou.jsx';
 import RequestADemo from '../pages/RequestADemo.jsx';
 
@@ -57,7 +57,7 @@ class App extends Component {
               <Route path="/privacy-policy" component={PrivacyPolicy} />
               <Route path="/terms-of-Use" component={TermsOfUse} />
               <Route path="/job" component={StatelessJobViewer} />
-              {/* <Route path="/isHired" component={IsHired} /> */}
+              <Route path="/isHired" component={IsHired} />
               <Route path="/afterSignUp" component={ThankYou} />
               <Route path="/employerResetPassword" component={EResetPassword} />
               <ProtectedRoute path="/QnA" component={QnA} />
