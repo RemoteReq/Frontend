@@ -1,20 +1,24 @@
 import React from 'react';
 
 // This component should render IF the first payment has gone through
-const HireSelect = () => {
-  const firstPayment = false;
-
+const HireSelect = ({ firstPaymentStatus, submitHired, submitNotHired }) => {
   console.log('NODE ENV!!', process.env.NODE_ENV);
 
   return (
-    firstPayment
-      ? <div>
-      <h4>Did you make a hire?</h4>
+    firstPaymentStatus
+      ? <div className="hire-select">
+      <h4>Did you make a hire for this job req?</h4>
 
-      <div className="button-container">
-        <button className="small-button button-1" >Yes</button>
+      <br/>
 
-        <button className="small-button button-2" >No</button>
+      <div className="button-group">
+        <button
+          onClick={(e) => { return submitHired(e); }}
+          className="button-1" >Yes</button>
+
+        <button
+          onClick={(e) => { return submitNotHired(e); }}
+          className="button-2" >No</button>
       </div>
     </div>
 
