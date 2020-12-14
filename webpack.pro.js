@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -22,12 +22,6 @@ module.exports = {
   // entry: {
   //   app: ['core-js/stable', path.join(__dirname, 'src/index.jsx')],
   // },
-  devServer: {
-    contentBase: 'dist',
-    port: 8080,
-    hot: true,
-    historyApiFallback: true,
-  },
   module: {
     rules: [
       {
@@ -76,6 +70,8 @@ module.exports = {
       template: './src/index.html',
       favicon: './assets/images/pngs/RR-cobalt-square.png',
     }),
-    new Dotenv(),
+    new Dotenv({
+      path: './.env',
+    }),
   ],
 };

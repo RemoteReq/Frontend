@@ -34,7 +34,9 @@ class Navigation1 extends Component {
     const { showHamburgerMenu } = this.state;
 
     return (
-      <nav className='navigation-1'>
+      <nav
+      id="navigation-1"
+      className='navigation-1'>
         <Link to="/" target="_self">
           <img src={ RemoteReq } className='remotereq-name' alt=""/>
           <img src={ RRLogo } className='rr-logo' alt=""/>

@@ -26,19 +26,21 @@ import QnA from '../pages/QnA/QnA.jsx';
 import EVerify from '../pages/Employer/EVerify/EVerify.jsx';
 import PrivacyPolicy from '../pages/PrivacyPolicy.jsx';
 import TermsOfUse from '../pages/TermsOfUse.jsx';
-// import BetaBanner from './parts/BetaBanner.jsx';
+import DevBanner from './parts/DevBanner.jsx';
 import EResetPassword from '../pages/Employer/EResetPassword/EResetPassword.jsx';
 import StatelessJobViewer from '../pages/Dashboard/StatelessJobViewer.jsx';
 // import IsHired from '../pages/Employer/IsHired/IsHired.jsx';
 import ThankYou from '../pages/ThankYou/ThankYou.jsx';
 import RequestADemo from '../pages/RequestADemo.jsx';
 
+const ENV_STATE = process.env.NODE_ENV;
+
 class App extends Component {
   render() {
     return (
       <Router>
         <ScrollToTop>
-          {/* <BetaBanner/> */}
+          <DevBanner env={ENV_STATE}/>
           <Navigation/>
             <Switch>
               <Route exact path="/" component={LandingPage} />

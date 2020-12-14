@@ -2,7 +2,7 @@
   // justify-content: space-between;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  padding: 5vh 15vw;
+  padding: 18vh 15vw;
   min-height: 80vh;
   min-width: auto;
   grid-gap: 80px;
@@ -12,7 +12,7 @@
 @media screen and (max-aspect-ratio: 8/5) {
   .dashboard {
     min-height: 100vh;
-    padding: 5vh 6vw;
+    padding: 18vh 6vw 5vh 6vw;
   }
 }
 

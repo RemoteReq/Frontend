@@ -7,6 +7,13 @@ import CallToAction from './CallToAction.jsx';
 import Disclaimer from './Disclaimer.jsx';
 
 class LandingPage extends Component {
+  componentDidMount() {
+    const Nav = document.getElementById('navigation-1');
+
+    Nav.classList.remove('hide');
+    Nav.classList.add('show');
+  }
+
   render() {
     return (
         <div className='landingPage'>

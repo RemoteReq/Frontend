@@ -43,7 +43,9 @@ class Navigation2 extends Component {
     const { showHamburgerMenu } = this.state;
 
     return (
-      <nav className='dashboard-navBar'>
+      <nav
+      id="dashboard-navBar"
+      className='dashboard-navBar'>
         <Link to="/dashboard" className="dashboard-home">
           <img src={ RemoteReq } className='remotereq-name' alt=""/>
           <p>Job Board</p>

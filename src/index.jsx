@@ -8,4 +8,6 @@ import ReactDOM from 'react-dom';
 import style from '#scss/index.scss'; // eslint-disable-line
 import App from './components/App.jsx';
 
+console.log('BASE URL', process.env.BASE_URL);
+
 ReactDOM.render(<App />, document.getElementById('App'));

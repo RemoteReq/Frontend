@@ -4,7 +4,7 @@ import React from 'react';
 const HireSelect = () => {
   const firstPayment = false;
 
-  console.log(process.env.TEST_VARIABLE);
+  console.log('NODE ENV!!', process.env.NODE_ENV);
 
   return (
     firstPayment
