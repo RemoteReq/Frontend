@@ -12,6 +12,7 @@ module.exports = {
       repo: 'git@github.com:RemoteReq/Frontend.git',
       path: '/home/ubuntu/',
       'pre-deploy-local': "echo 'beginning production deployment'",
+      'post-setup': 'npm --version,',
       'post-deploy': 'npm install && npm run build:pro && pm2 startOrRestart ecosystem.config.js --env production',
     },
     staging: {
@@ -22,6 +23,7 @@ module.exports = {
       repo: 'git@github.com:RemoteReq/Frontend.git',
       path: '/home/ubuntu/',
       'pre-deploy-local': "echo 'beginning staging deployment'",
+      'post-setup': 'npm --version,',
       'post-deploy': 'npm install && npm run build:dev && pm2 startOrRestart ecosystem.config.js --env staging',
     },
   },
