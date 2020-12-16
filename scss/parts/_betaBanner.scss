@@ -20,5 +20,11 @@
 }
 
 .dev-mode-nav2 {
-  padding-top: 50px;
+  padding-top: 25px;
+}
+
+@media Screen and (max-aspect-ratio: 1/1){
+  .dev-mode-nav2 {
+  padding-top: 40px;
+  }
 }
