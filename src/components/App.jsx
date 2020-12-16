@@ -33,39 +33,41 @@ import IsHired from '../pages/Employer/IsHired/IsHired.jsx';
 import ThankYou from '../pages/ThankYou/ThankYou.jsx';
 import RequestADemo from '../pages/RequestADemo.jsx';
 
-const ENV_STATE = process.env.NODE_ENV;
+const IN_DEV_MODE = process.env.NODE_ENV;
 
 class App extends Component {
   render() {
     return (
       <Router>
         <ScrollToTop>
-          <DevBanner env={ENV_STATE}/>
-          <Navigation/>
-            <Switch>
-              <Route exact path="/" component={LandingPage} />
-              <Route path="/sign-in" component={SignIn} />
-              <Route path="/sign-up" component={SignUp} />
-              <Route path="/employer" component={Employer} />
-              <Route path="/about-us" component={Mission} />
-              <Route path="/find-talent" component={FindTalent} />
-              <Route path="/request-a-demo" component={RequestADemo} />
-              <Route path="/forgot-password" component={ForgotPassword} />
-              <Route path="/resetPassword" component={ResetPassword} />
-              <Route path="/userEmailVerify" component={Verify} />
-              <Route path="/employerEmailVerify" component={EVerify} />
-              <Route path="/privacy-policy" component={PrivacyPolicy} />
-              <Route path="/terms-of-Use" component={TermsOfUse} />
-              <Route path="/job" component={StatelessJobViewer} />
-              <Route path="/isHired" component={IsHired} />
-              <Route path="/afterSignUp" component={ThankYou} />
-              <Route path="/employerResetPassword" component={EResetPassword} />
-              <ProtectedRoute path="/QnA" component={QnA} />
-              <ProtectedRoute path="/settings" component={Settings} />
-              <ProtectedRoute path="/dashboard" component={Dashboard} />
-              <Route component={Page404} />
-            </Switch>
-          <Footer/>
+          <DevBanner env={IN_DEV_MODE}/>
+          <div className={`${IN_DEV_MODE === 'development' ? 'dev-mode' : ''}`}>
+            <Navigation/>
+              <Switch>
+                <Route exact path="/" component={LandingPage} />
+                <Route path="/sign-in" component={SignIn} />
+                <Route path="/sign-up" component={SignUp} />
+                <Route path="/employer" component={Employer} />
+                <Route path="/about-us" component={Mission} />
+                <Route path="/find-talent" component={FindTalent} />
+                <Route path="/request-a-demo" component={RequestADemo} />
+                <Route path="/forgot-password" component={ForgotPassword} />
+                <Route path="/resetPassword" component={ResetPassword} />
+                <Route path="/userEmailVerify" component={Verify} />
+                <Route path="/employerEmailVerify" component={EVerify} />
+                <Route path="/privacy-policy" component={PrivacyPolicy} />
+                <Route path="/terms-of-Use" component={TermsOfUse} />
+                <Route path="/job" component={StatelessJobViewer} />
+                <Route path="/isHired" component={IsHired} />
+                <Route path="/afterSignUp" component={ThankYou} />
+                <Route path="/employerResetPassword" component={EResetPassword} />
+                <ProtectedRoute path="/QnA" component={QnA} />
+                <ProtectedRoute path="/settings" component={Settings} />
+                <ProtectedRoute path="/dashboard" component={Dashboard} />
+                <Route component={Page404} />
+              </Switch>
+            <Footer/>
+          </div>
         </ScrollToTop>
       </Router>
     );
