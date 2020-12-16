@@ -77,7 +77,7 @@ class ENav extends Component {
           >Sign out</a>
         </div>
 
-        <div className={`dashboard-hamburger-menu ${showHamburgerMenu ? 'show' : 'hide'}`}>
+        <div className={`dashboard-hamburger-menu ${showHamburgerMenu ? 'show' : 'hide'} ${IN_DEV_MODE ? 'dev-mode-nav2 dev-mode-nav3' : ''}`}>
           <Link to="/employer/settings/profile">
             <button className='button-1'>Settings</button>
           </Link>
