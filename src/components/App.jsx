@@ -41,7 +41,7 @@ class App extends Component {
       <Router>
         <ScrollToTop>
           <DevBanner env={IN_DEV_MODE}/>
-          <div className={`${IN_DEV_MODE ? 'dev-mode' : ''}`}>
+          <div className={`${IN_DEV_MODE === 'development' ? 'dev-mode' : ''}`}>
             <Navigation/>
               <Switch>
                 <Route exact path="/" component={LandingPage} />
