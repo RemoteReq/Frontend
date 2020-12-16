@@ -3,6 +3,8 @@ import { Link, withRouter } from 'react-router-dom';
 import RemoteReq from '#assets/images/pngs/RR-cobalt.png';
 import auth from '../Auth/Auth.jsx';
 
+const IN_DEV_MODE = process.env.NODE_ENV;
+
 class Navigation2 extends Component {
   constructor(props) {
     super(props);
@@ -66,7 +68,7 @@ class Navigation2 extends Component {
     return (
       <nav
       id="dashboard-navBar"
-      className='dashboard-navBar'>
+      className={`dashboard-navBar ${IN_DEV_MODE ? 'dev-mode-nav2' : ''}`}>
         <Link to="/dashboard" className="dashboard-home">
           <img src={ RemoteReq } className='remotereq-name' alt=""/>
           <p>Job Board</p>
