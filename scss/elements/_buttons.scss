@@ -98,8 +98,19 @@ button {
   letter-spacing: initial;
 }
 
-@media screen and (max-aspect-ratio: 3/2) {
+@media screen and (max-aspect-ratio: 8/5) {
   button {
+    height: 60px;
+    padding: 0 20px;
+    margin: 10px 0;
+    font-size: 12pt;
+  }
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+  button {
+    height: 80px;
+    padding: 0 20px;
     margin: 10px 0;
     font-size: 12pt;
   }
