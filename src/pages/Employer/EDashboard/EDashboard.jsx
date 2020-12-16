@@ -100,7 +100,6 @@ class EDashboard extends Component {
     }
 
     return (
-
       <div>
         <ENav
           showProfileMenu={ this.showProfileMenu }
