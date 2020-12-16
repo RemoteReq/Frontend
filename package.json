@@ -9,7 +9,9 @@
     "build:dev": "webpack --config webpack.dev.js",
     "build:pro": "webpack --config webpack.pro.js",
     "dockerize": "sudo docker build -t rrapp . && sudo docker run --name rrapp -p 8080:3030 -d rrapp",
-    "update": "sudo docker kill rrapp && sudo docker container rm -f rrapp && sudo docker image rm -f kill rrapp && npm run dockerize"
+    "update": "sudo docker kill rrapp && sudo docker container rm -f rrapp && sudo docker image rm -f kill rrapp && npm run dockerize",
+    "update:dev": "pm2 deploy ecosystem.config.js staging",
+    "update:pro": "pm2 deploy ecosystem.config.js production"
   },
   "browserslist": {
     "production": [

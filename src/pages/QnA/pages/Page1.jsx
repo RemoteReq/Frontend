@@ -84,7 +84,7 @@ const Page1 = ({
       <br/>
 
       <p>
-        Are you seeking work on a full-time, or part-time basis? Or, are you open to either?
+        Are you seeking work on a full-time, or part-time basis?
       </p>
       <div className="radios">
         <Radio value="Full Time" label="Full Time" name="jobType" handler={handleChange}/>
