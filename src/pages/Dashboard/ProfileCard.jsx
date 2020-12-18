@@ -10,7 +10,7 @@ const ProfileCard = ({ userDetails, handleFileUpload }) => {
       ? <div className="profile-card">
           <div className="profile-card-contents">
 
-            <div className="profile-card-picture">
+            <div className="profile-pic">
               {
                 userDetails.profilePicUrl
 
@@ -53,7 +53,7 @@ const ProfileCard = ({ userDetails, handleFileUpload }) => {
               <br/>
 
               <div className="upload-button">
-                <button className="button-2">Upload a resume</button>
+                <button className="small-button button-2">Upload a resume</button>
                 <input
                   type="file"
                   name="resume"

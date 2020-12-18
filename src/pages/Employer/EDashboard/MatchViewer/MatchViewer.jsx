@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ProfilePicPlaceholder from '#assets/icons/pngs/Profile.png';
 import ENav from '../../ENav/ENav.jsx';
 
 class MatchViewer extends Component {
@@ -17,27 +18,38 @@ class MatchViewer extends Component {
         <ENav/>
 
         <form>
-          <div className="candidate-name">
-            <h3>{candidate.fullName}</h3>
+          <div className="match-viewer-header">
+            <div>
 
-            <h4>{`is a ${candidate.matchingPercentage} % match for the Job Req you posted`}</h4>
+              <div className="candidate-name">
+                <h3>{candidate.fullName}</h3>
+                <h4>{`is a ${candidate.matchingPercentage} % match for the Job Req you posted`}</h4>
+              </div>
+
+              <br/>
+              <br/>
+
+              <div className="contact-info">
+                <p>Contact Information:</p>
+                <p className="small-paragraph">Phone #: &nbsp;{`${candidate.mobileNum}`}</p>
+                <p className="small-paragraph">Email: &nbsp;{`${candidate.email}`}</p>
+                <p className="small-paragraph">LinkedIn URL: &nbsp;
+                  <a href={`http://${candidate.linkedInURL}`}>{`http://${candidate.linkedInURL}`}</a>
+                </p>
+                <p className="small-paragraph">Personal URL: &nbsp;
+                  <a href={`http://${candidate.personalURL}`}>{`http://${candidate.personalURL}`}</a>
+                </p>
+                <p className="small-paragraph">
+                  <a href={candidate.resumePath || ProfilePicPlaceholder }>Resume</a>
+                </p>
+              </div>
+            </div>
+
+            <div className="profile-pic">
+              <img src={candidate.profilePicUrl || ''}/>
+            </div>
           </div>
 
-          <br/>
-          <br/>
-
-          <p>Contact Information:</p>
-          <p className="small-paragraph">Phone #: &nbsp;{`${candidate.mobileNum}`}</p>
-          <p className="small-paragraph">Email: &nbsp;{`${candidate.email}`}</p>
-          <p className="small-paragraph">LinkedIn URL: &nbsp;
-            <a href={`${candidate.linkedInURL}`}>{`${candidate.linkedInURL}`}</a>
-          </p>
-          <p className="small-paragraph">Personal URL: &nbsp;
-            <a href={`${candidate.personalURL}`}>{`${candidate.personalURL}`}</a>
-          </p>
-          <p className="small-paragraph">
-            <a href={candidate.resumePath || ''}>Resume</a>
-          </p>
 
           <br/>
           <br/>
