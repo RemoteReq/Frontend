@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import { Redirect, Link } from 'react-router-dom';
 // import { GoogleLogin } from 'react-google-login';
+import PasswordField from '#parts/PasswordField.jsx';
 import auth from '../../components/Auth/Auth.jsx';
 import Preloader from '#components/svgs/Preloader.jsx';
 
@@ -128,13 +129,18 @@ class SignIn extends Component {
               className="login-email"
               onChange={ this.updateInfoOnChange }
               placeholder="Username or Email" />
-            <input
+
+            <PasswordField
+              onChange={ this.updateInfoOnChange }
+            />
+
+            {/* <input
               type="password"
               name="password"
               autoComplete="current-password"
               className="login-password"
               onChange={ this.updateInfoOnChange }
-              placeholder="Password" />
+              placeholder="Password" /> */}
 
             <p className={
               `${this.state.loginFailed ? 'error' : 'hide'}`
