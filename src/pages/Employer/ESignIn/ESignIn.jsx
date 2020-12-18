@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, Redirect } from 'react-router-dom';
 import EAuth from '../EAuth/EAuth.jsx';
+import PasswordField from '#parts/PasswordField.jsx';
 import Preloader from '#components/svgs/Preloader.jsx';
 
 class ESignIn extends Component {
@@ -120,13 +121,18 @@ class ESignIn extends Component {
             className="e-signin-email"
             onChange={ this.updateInfoOnChange }
             placeholder="Username or Email" />
-          <input
+
+          <PasswordField
+            onChange={this.updateInfoOnChange}
+          />
+
+          {/* <input
             type="password"
             name="password"
             autoComplete="current-password"
             className="login-password"
             onChange={ this.updateInfoOnChange }
-            placeholder="Password" />
+            placeholder="Password" /> */}
 
           <p className={
               `error ${this.state.loginFailed ? 'show' : 'hide'}`

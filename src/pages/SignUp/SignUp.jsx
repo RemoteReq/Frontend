@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import PasswordField from '#parts/PasswordField.jsx';
 import Preloader from '../../components/svgs/Preloader.jsx';
 
 const backend = process.env.BASE_URL;
@@ -150,12 +151,15 @@ class SignUp extends Component {
             onChange={ this.onChange }
             placeholder='Email'
             required />
-          <input
+          <PasswordField
+            onChange={this.onChange}
+          />
+          {/* <input
             type='password'
             name='password'
             onChange={ this.onChange }
             placeholder='Create your password'
-            required />
+            required /> */}
           <input
             className={
               `${this.state.doPasswordsMatch ? '' : 'input-error'}`
