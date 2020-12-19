@@ -24,11 +24,19 @@ const JobListing = ({ job }) => {
           {
             job.matchesCandidateCount
 
-              ? <div className="match-counter">
-              <p>
-                {job.matchesCandidateCount}
-              </p>
-            </div>
+              ? <div className="job-listing-alerts">
+                <div className="match-counter">
+                  <p>
+                    {job.matchesCandidateCount}
+                  </p>
+                </div>
+
+                <div className={`${job.expireStatus === true && job.hiringPaymentStatus === null ? 'job-expire-status' : 'hide'}`}>
+                  <p>
+                    !
+                  </p>
+                </div>
+              </div>
 
               : <div></div>
           }

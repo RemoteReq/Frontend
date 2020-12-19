@@ -25,16 +25,15 @@
     }
 
     .image-column {
-      margin: 10px 25px;
+      margin: 0 25px;
 
-      img {
-        display: block;
+      .profile-pic {
         margin: auto;
-        max-height: 100%;
-        max-width: 100%;
+        padding: auto;
       }
       
       .upload-button {
+        margin: 10px 0;
         width: 100%;
 
         button {

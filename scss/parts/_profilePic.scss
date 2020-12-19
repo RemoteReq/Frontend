@@ -1,0 +1,13 @@
+.profile-pic {
+  height: 250px;
+  width: 250px;
+  border: 1px solid #e2e2e2;
+  
+  img {
+    object-fit: contain;
+    min-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    display: block;
+  }
+}

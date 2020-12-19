@@ -67,7 +67,7 @@ const StatelessProfileEditor = ({
         <div className="image-column">
 
           <label>Profile Picture</label>
-          <div className="image-box">
+          <div className="profile-pic">
             {
               userDetails.profilePicUrl
 

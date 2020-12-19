@@ -8,6 +8,11 @@
     margin: 4vh 16vw;
     width: 100%;
     background-color: white;
+
+    .match-viewer-header {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
 
