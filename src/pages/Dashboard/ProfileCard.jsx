@@ -46,7 +46,7 @@ const ProfileCard = ({ userDetails, handleFileUpload }) => {
               <h5>Current resume:</h5>
               <p className="small-paragraph">
                 {
-                  userDetails.resumePath.replace(/^.*[\\\/]/, '').replace(/\d{13}/, '')
+                  userDetails.resumePath.replace(/^.*[\\\/]/, '').replace(/\d{13}/, '').replace(/%/, '_')
                 }
               </p>
 
