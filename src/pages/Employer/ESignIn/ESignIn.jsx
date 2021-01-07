@@ -56,8 +56,19 @@ class ESignIn extends Component {
 
     this.enablePreloader();
 
+    const { username } = this.state;
+
+    let user;
+
+    if (username.includes('@')) {
+      user = username.toLowerCase();
+      console.log(user);
+    } else {
+      user = username;
+    }
+
     const body = {
-      emailOrUserName: this.state.username,
+      emailOrUserName: user,
       password: this.state.password,
     };
 

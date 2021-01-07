@@ -32,7 +32,7 @@ class ForgotPassword extends Component {
     const { email } = this.state;
 
     const body = {
-      email,
+      email: email.toLowerCase(),
     };
 
     axios.post(`${backend}/api/signin/employerForgotPassword`, body)

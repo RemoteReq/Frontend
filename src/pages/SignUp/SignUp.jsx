@@ -29,7 +29,7 @@ class SignUp extends Component {
     this.setState({
       [`${e.target.name}`]: e.target.value,
       signUpFailed: false,
-    });
+    }, () => { console.log(this.state); });
   }
 
   confirmPasswords(authFunction) {
@@ -67,12 +67,14 @@ class SignUp extends Component {
 
     this.enablePreloader();
 
+    const { email } = this.state;
+
     this.confirmPasswords(() => {
       const body = {
         username: this.state.username,
         fullName: this.state.fullName,
         password: this.state.confirmPassword,
-        email: this.state.email,
+        email: email.toLowerCase(),
       };
 
       axios.post(`${backend}/api/signup`, body)

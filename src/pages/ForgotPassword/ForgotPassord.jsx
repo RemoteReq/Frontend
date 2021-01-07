@@ -32,7 +32,7 @@ class ForgotPassword extends Component {
     const { email } = this.state;
 
     const body = {
-      email,
+      email: email.toLowerCase(),
     };
 
     axios.post(`${backend}/api/signin/forgotPassword`, body)
@@ -50,7 +50,7 @@ class ForgotPassword extends Component {
       })
       .catch((error) => {
         if (email) {
-          console.error('no such email');
+          console.error('no such email', error);
 
           this.setState({
             statusMessage: 'The email your provided is not associated with an account in our records',
