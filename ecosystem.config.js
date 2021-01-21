@@ -16,7 +16,6 @@ module.exports = {
       'post-deploy': 'npm install && npm run build:pro && pm2 startOrRestart ecosystem.config.js --env production',
     },
     staging: {
-      key: '/home/ryden/.ssh/Heavy-Storm.pem',
       user: 'ubuntu',
       host: '3.140.72.72',
       ref: 'origin/staging',
