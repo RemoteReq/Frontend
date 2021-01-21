@@ -13,7 +13,7 @@ const MatchWindow = ({ firstPaymentStatus, matches, job }) => {
       {
         matches
           ? <div>
-            <p>Candidates best suited for this job:</p>
+            <p>Candidates matches for your job req:</p>
             <div className="job-viewer-match-list">
             {
               firstPaymentStatus

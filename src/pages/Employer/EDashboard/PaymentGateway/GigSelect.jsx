@@ -8,6 +8,8 @@ const GigSelect = () => {
       <ENav />
 
       <form>
+        <p>Are you hiring full time or part time?</p>
+
         <div className="gig-select">
           <Link
             className="gig-select-choice"
@@ -21,8 +23,6 @@ const GigSelect = () => {
               <div className="gig-select-image">
                 {/* <img/> */}
               </div>
-              <p>$100 to view your matched candidates</p>
-              <p>$2400 upon successful hire</p>
             </div>
           </Link>
 
@@ -38,11 +38,11 @@ const GigSelect = () => {
               <div className="gig-select-image">
                 {/* <img/> */}
               </div>
-              <p>$100 to view your matched candidates</p>
-              <p>$900 upon successful hire</p>
             </div>
           </Link>
         </div>
+
+        <p>pay $100 to view your candidate matches</p>
       </form>
 
     </div>

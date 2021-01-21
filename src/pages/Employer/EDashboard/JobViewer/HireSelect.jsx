@@ -6,7 +6,7 @@ const HireSelect = ({ firstPaymentStatus, secondPaymentStatus, jobId }) => {
   return (
     firstPaymentStatus && secondPaymentStatus !== true
       ? <div className="hire-select">
-      <h4>Did you make a hire for this job req?</h4>
+      <h4>Did you hire a candidate we connected you to?</h4>
 
       <br/>
 
