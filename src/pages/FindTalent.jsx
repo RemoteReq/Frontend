@@ -73,11 +73,17 @@ const FindTalent = () => {
     </div>
 
     <div className="find-talent-pricing">
-      <h1>Simple, transparent pricing</h1>
 
       <div className="card-container">
         <div className="pricing-card" style={{ width: '80%' }}>
-          <p className="pricing-card-title">Pay $100 to view your candidate matches</p>
+          <h1>Simple, transparent pricing</h1>
+
+          <p
+            style={{
+              color: '#E69E22',
+              fontSize: '20pt',
+            }}
+          >Pay only $100 to view your candidate matches</p>
         </div>
       </div>
 
@@ -88,6 +94,7 @@ const FindTalent = () => {
         <div className="pricing-card">
           <p className="pricing-card-title">Gigs</p>
           <h1 className="pricing-card-price">$900</h1>
+          <p className="small-paragraph">per hire</p>
 
           <div className="divider"></div>
 
@@ -106,6 +113,7 @@ const FindTalent = () => {
         <div className="pricing-card">
         <p className="pricing-card-title">Full-Time</p>
           <h1 className="pricing-card-price">$2,400</h1>
+          <p className="small-paragraph">per hire</p>
 
           <div className="divider"></div>
 
