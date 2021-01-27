@@ -1,0 +1,25 @@
+.FAQ {
+  display: flex;
+  background-color: $BackgroundColor;
+  padding: 10vh 10vw;
+
+  form {
+    width: 100%;
+    background-color: white;
+    
+    h3 {
+      padding-bottom: 20px;
+      text-align: center;
+    }
+    
+    .list {
+      width: 100%;
+    }
+  }
+}
+
+@media Screen and (max-aspect-ratio: 1/1) {
+  .FAQ {
+    padding: 20vh 0;
+  }
+}

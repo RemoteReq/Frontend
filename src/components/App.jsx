@@ -32,6 +32,7 @@ import StatelessJobViewer from '../pages/Dashboard/StatelessJobViewer.jsx';
 import IsHired from '../pages/Employer/IsHired/IsHired.jsx';
 import ThankYou from '../pages/ThankYou/ThankYou.jsx';
 import RequestADemo from '../pages/RequestADemo.jsx';
+import FAQ from '../pages/FAQ.jsx';
 
 const IN_DEV_MODE = process.env.NODE_ENV;
 
@@ -61,6 +62,7 @@ class App extends Component {
                 <Route path="/isHired" component={IsHired} />
                 <Route path="/afterSignUp" component={ThankYou} />
                 <Route path="/employerResetPassword" component={EResetPassword} />
+                <Route path="/faq" component={FAQ} />
                 <ProtectedRoute path="/QnA" component={QnA} />
                 <ProtectedRoute path="/settings" component={Settings} />
                 <ProtectedRoute path="/dashboard" component={Dashboard} />

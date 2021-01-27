@@ -19,6 +19,7 @@ const Footer = () => {
         <li><Link to="/find-talent" className="small-link">Find Talent</Link></li>
         <li><Link to="/about-us" className="small-link">About Us</Link></li>
         <li><a href="https://blog.remotereq.com" className="small-link">Blog</a></li>
+        <li><Link to="/faq" className="small-link">FAQ</Link></li>
       </ul>
 
 
