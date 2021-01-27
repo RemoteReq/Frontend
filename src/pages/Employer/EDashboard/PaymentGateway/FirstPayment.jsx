@@ -30,6 +30,39 @@ class FirstPayment extends Component {
         ...this.props.location.state,
       });
     });
+
+    const { jobId } = this.props.location.state;
+
+    axios({
+      url: `${backend}/api/jobs/getJobById/${jobId}`,
+      method: 'POST',
+      headers: {
+        token: localStorage.getItem('e-session'),
+      },
+    })
+      .then((response) => {
+        console.log('single job by id:', response.data);
+
+        return response.data;
+      })
+      .then((response) => {
+        if (response.jobType === 'Part Time') {
+          this.setState({
+            jobType: response.jobType,
+            reqCost: 900,
+          });
+        } else if (response.jobType === 'Full Time') {
+          this.setState({
+            jobType: response.jobType,
+            reqCost: 2400,
+          });
+        } else {
+          console.log('error setting job type');
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   enablePreloader() {
@@ -85,7 +118,6 @@ class FirstPayment extends Component {
       this.state,
     );
 
-    const { jobId } = this.state;
     const { clientToken } = this.state;
     const { requestInProgress } = this.state;
 

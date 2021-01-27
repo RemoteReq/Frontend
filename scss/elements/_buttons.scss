@@ -7,6 +7,7 @@ button {
   letter-spacing: 2pt;
   padding: 0 40px;
   text-transform: uppercase;
+  margin: 10px 0;
 }
 
 button:hover { cursor: pointer; }
@@ -96,6 +97,24 @@ button {
   padding: 0 20px;
   height: 40px;
   letter-spacing: initial;
+}
+
+.google-button {
+  font-family: 'Roboto', 'sans-serif';
+  background-color: white;
+  border: 1px solid lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: none;
+  letter-spacing: initial;
+  font-size: initial;
+  font-weight: initial;
+
+  img {
+    height: 48px;
+    width: 48px;
+  }
 }
 
 @media screen and (max-aspect-ratio: 8/5) {

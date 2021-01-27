@@ -25,6 +25,8 @@ class SecondPayment extends Component {
   }
 
   componentDidMount() {
+    const { jobId } = this.props.location.state;
+
     Eauth.generateClientToken(() => {
       const newToken = localStorage.getItem('clientToken');
 
@@ -33,6 +35,37 @@ class SecondPayment extends Component {
         ...this.props.location.state,
       });
     });
+
+    axios({
+      url: `${backend}/api/jobs/getJobById/${jobId}`,
+      method: 'POST',
+      headers: {
+        token: localStorage.getItem('e-session'),
+      },
+    })
+      .then((response) => {
+        console.log('single job by id:', response.data);
+
+        return response.data;
+      })
+      .then((response) => {
+        if (response.jobType === 'Part Time') {
+          this.setState({
+            jobType: response.jobType,
+            reqCost: 900,
+          });
+        } else if (response.jobType === 'Full Time') {
+          this.setState({
+            jobType: response.jobType,
+            reqCost: 2400,
+          });
+        } else {
+          console.log('error setting job type');
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   enablePreloader() {
@@ -85,7 +118,8 @@ class SecondPayment extends Component {
       this.state,
     );
 
-    const { jobId } = this.state;
+    const { jobType } = this.state;
+    const { reqCost } = this.state;
     const { clientToken } = this.state;
     const { requestInProgress } = this.state;
 
@@ -102,10 +136,9 @@ class SecondPayment extends Component {
 
             <p>Processing payment</p>
           </div>
-          <h3>Checkout</h3>
-          <h3>Total: ${this.props.location.state.price || '900'}</h3>
+          <h3>Congratulations on your new hire!</h3>
           <p className="small-paragraph">
-            Congratulations on your new hire!
+            The placement fee for your new {jobType} hire will be ${reqCost}
           </p>
           {
             this.state.clientToken
@@ -116,7 +149,7 @@ class SecondPayment extends Component {
                       vaultManager: true,
                       paypal: {
                         flow: 'vault',
-                        amount: `${this.props.location.state.price || '900'}`,
+                        amount: `${reqCost}`,
                         currency: 'USD',
                       },
                     }}

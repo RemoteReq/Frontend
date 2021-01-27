@@ -73,19 +73,34 @@ const FindTalent = () => {
     </div>
 
     <div className="find-talent-pricing">
-      <h1>Simple, transparent pricing</h1>
-      <p></p>
+
+      <div className="card-container">
+        <div className="pricing-card" style={{ width: '80%' }}>
+          <h1>Simple, transparent pricing</h1>
+
+          <p
+            style={{
+              color: '#E69E22',
+              fontSize: '20pt',
+            }}
+          >Pay only $100 to view your candidate matches</p>
+        </div>
+      </div>
+
+      <br/>
+      <br/>
 
       <div className="card-container">
         <div className="pricing-card">
           <p className="pricing-card-title">Gigs</p>
-          <h1 className="pricing-card-price">$1,000</h1>
+          <h1 className="pricing-card-price">$900</h1>
+          <p className="small-paragraph">per hire</p>
 
           <div className="divider"></div>
 
           <div className="pricing-card-description">
             <p>For projects lasting 11 months or less</p>
-            <p>Up to 10 "best fit" candidates</p>
+            <p>Up to 5 "best fit" candidates</p>
             <p>Added capacity, skills, and expertise</p>
             <p>Negotiable hourly rates</p>
           </div>
@@ -97,13 +112,14 @@ const FindTalent = () => {
 
         <div className="pricing-card">
         <p className="pricing-card-title">Full-Time</p>
-          <h1 className="pricing-card-price">$2,500</h1>
+          <h1 className="pricing-card-price">$2,400</h1>
+          <p className="small-paragraph">per hire</p>
 
           <div className="divider"></div>
 
           <div className="pricing-card-description">
             <p>Grow your team with a remote hire</p>
-            <p>Up to 10 "best fit" candidates</p>
+            <p>Up to 5 "best fit" candidates</p>
             <p>Added capacity, skills, and expertise</p>
             <p>Negotiable pay and salary</p>
           </div>

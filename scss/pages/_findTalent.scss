@@ -71,6 +71,8 @@
       height: 200%;
       width: 100%;
 
+
+
       .pricing-card {
         padding: 4% 0;
         width: 35%;
@@ -78,6 +80,10 @@
         flex-direction: column;
         align-items: center;
         box-shadow: 4px 4px 20px #e2e2e2;
+
+        h1 {
+          padding: 0;
+        }
 
         .pricing-card-title {
           font-weight: 600;
@@ -87,6 +93,7 @@
         .pricing-card-price {
           font-family: $SecondaryFont;
           font-weight: 600;
+          padding: 0;
         }
 
         .divider {

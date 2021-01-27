@@ -10,6 +10,10 @@
     margin: 4vh auto;
     left: 0;
     right: 0;
+
+    p {
+      text-align: center;
+    }
     
     .gig-select {
       display: flex;
@@ -23,8 +27,8 @@
         flex-direction: column;
         align-items: center;
         padding: 50px;
-        height: 100%;
-        width: 100%;
+        height: 70%;
+        width: 70%;
         
         div {
           display: flex;

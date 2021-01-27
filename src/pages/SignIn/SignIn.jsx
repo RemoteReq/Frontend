@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import { Redirect, Link } from 'react-router-dom';
-// import { GoogleLogin } from 'react-google-login';
+import GoogleSignIn from '#components/Auth/GoogleSignIn.jsx';
+import Divider from '#components/parts/Divider.jsx';
 import PasswordField from '#parts/PasswordField.jsx';
 import auth from '../../components/Auth/Auth.jsx';
 import Preloader from '#components/svgs/Preloader.jsx';
-
-// const responseGoogle = (response) => {
-//   console.log(response);
-// };
 
 class SignIn extends Component {
   constructor(props) {
@@ -163,6 +160,8 @@ class SignIn extends Component {
                     className="button-1"
             >Sign in
             </button>
+
+            <GoogleSignIn />
 
             <p className="small-paragraph">
               Are you an employer? <Link to="/employer/sign-in">Sign In Here</Link>
