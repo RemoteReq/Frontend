@@ -183,11 +183,11 @@ const PartTimeForm = ({
                 <div className="slider">
                 <input
                   type="range"
-                  min="20"
+                  min="50"
                   max="100"
                   step="1"
                   name="percentageMatch"
-                  defaultValue="20"
+                  defaultValue="50"
                   onChange={handleNumber}
                   />
                 <input

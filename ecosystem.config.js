@@ -18,7 +18,7 @@ module.exports = {
     staging: {
       key: '/home/ryden/.ssh/Delta-Crow.pem',
       user: 'ubuntu',
-      host: '18.217.254.98',
+      host: '3.140.72.72',
       ref: 'origin/staging',
       repo: 'git@github.com:RemoteReq/Frontend.git',
       path: '/home/ubuntu/',
