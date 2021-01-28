@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 import axios from 'axios';
 import ENav from '../ENav/ENav.jsx';
+import Pricing from './Pricing.jsx';
 import StatelessProfileCard from './StatelessProfileCard.jsx';
 import JobList from './jobList/JobList.jsx';
 import EAuth from '../EAuth/EAuth.jsx';
@@ -109,7 +110,11 @@ class EDashboard extends Component {
         <div className='dashboard'>
           <StatelessProfileCard userDetails={userDetails}/>
 
-          <JobList jobReqs={jobReqs}/>
+          <div>
+            <Pricing />
+
+            <JobList jobReqs={jobReqs}/>
+          </div>
         </div>
       </div>
     );

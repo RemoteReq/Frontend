@@ -75,15 +75,14 @@ const FindTalent = () => {
     <div className="find-talent-pricing">
 
       <div className="card-container">
-        <div className="pricing-card" style={{ width: '80%' }}>
+        <div
+          className="pricing-card"
+          name="pricing"
+          id="pricing"
+        >
           <h1>Simple, transparent pricing</h1>
 
-          <p
-            style={{
-              color: '#E69E22',
-              fontSize: '20pt',
-            }}
-          >Pay only $100 to view your candidate matches</p>
+          <p>Pay only $100 for detailed access to your candidate matches</p>
         </div>
       </div>
 

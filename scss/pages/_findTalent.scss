@@ -71,7 +71,14 @@
       height: 200%;
       width: 100%;
 
+      #pricing {
+        width: 80%;
 
+        p {
+          color: $Yellow;
+          font-size: 20pt;
+        }
+      }
 
       .pricing-card {
         padding: 4% 0;
@@ -159,8 +166,11 @@
       .card-container {
         flex-direction: column;
 
+        #pricing {
+          width: 100%;
+        }
+
         .pricing-card {
-          padding: 0;
           margin: 4% 0;
           width: 100%;
         }
