@@ -27,6 +27,10 @@
   margin-bottom: 50px;
 
   .faq-q{
+    p {
+      color: $SecondaryColor;
+    }
+
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid lightgray;
