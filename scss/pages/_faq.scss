@@ -1,11 +1,16 @@
-.FAQ {
+.faq-page {
   display: flex;
   background-color: $BackgroundColor;
-  padding: 10vh 10vw;
+  padding: 5vh 20vw;
+
+  .divider {
+    margin: 25px 0;
+  }
 
   form {
     width: 100%;
     background-color: white;
+    padding: 50px 8%;
     
     h3 {
       padding-bottom: 20px;
@@ -18,8 +23,28 @@
   }
 }
 
+.faq {
+  margin-bottom: 50px;
+
+  .faq-q{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+    padding: 12px;
+  }
+
+  .faq-a {
+    padding: 12px;
+
+    p {
+      line-height: initial;
+      white-space: pre-line;
+    }
+  }
+}
+
 @media Screen and (max-aspect-ratio: 1/1) {
-  .FAQ {
+  .faq-page {
     padding: 20vh 0;
   }
 }

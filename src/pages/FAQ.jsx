@@ -1,64 +1,70 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Divider from '#components/parts/Divider.jsx';
-import { jobSeekerFaq, employerFaq } from '#assets/faq/faq.js';
+import { jobSeekerFaq, employerFaq, generalFaq } from '#assets/faq/faq.js';
 
-const Answer = ({ answer }) => {
+const Faq = ({ question, answer }) => {
   return (
-    <p className="small-paragraph">
-      {answer}
-    </p>
-  );
-};
+    <div className="faq">
+      <div className="faq-q">
+        <p>{question}</p>
+      </div>
 
-const Question = ({ question, answer }) => {
-  return (
-    <div>
-      <p>{question}</p>
-      <Answer answer={answer}/>
-
-      <br/>
-      <br/>
+      <div className="faq-a">
+        <p className="small-paragraph">{answer}</p>
+      </div>
     </div>
   );
 };
 
-const Faq = () => {
+const FaqList = ({ title, faqs }) => {
   return (
-    <div className="FAQ">
+    <div>
+      <h3>{title}</h3>
+
+      <div className="list">
+        {
+          faqs.map((faq, i) => {
+            return (
+              <Faq question={faq.question} answer={faq.answer} key={i}/>
+            );
+          })
+        }
+        </div>
+    </div>
+  );
+};
+
+
+class FaqPage extends Component {
+  extendAnswer() {
+
+  }
+
+  render() {
+    return (
+    <div className="faq-page">
       <form>
         <h3>Frequently Asked Questions (FAQ)</h3>
 
-        <h3>For Job Seekers</h3>
+        <FaqList
+          title="For Employers"
+          faqs={employerFaq}
+        />
 
-        <Divider />
+        <FaqList
+          title="For Job Seekers"
+          faqs={jobSeekerFaq}
+        />
 
-        <div className="list">
-          {
-            jobSeekerFaq.map((faq, i) => {
-              return (
-                <Question question={faq.question} answer={faq.answer} key={i}/>
-              );
-            })
-          }
-        </div>
-
-        <h3>For Employers</h3>
-
-        <Divider />
-
-        <div className="list">
-        {
-            employerFaq.map((faq, i) => {
-              return (
-                <Question question={faq.question} answer={faq.answer} key={i}/>
-              );
-            })
-          }
-        </div>
+        <FaqList
+          title="General"
+          faqs={generalFaq}
+        />
 
       </form>
     </div>
-  );
-};
+    );
+  }
+}
 
-export default Faq;
+export default FaqPage;
