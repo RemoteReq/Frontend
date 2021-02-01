@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import { Redirect, Link } from 'react-router-dom';
 import Divider from '#components/parts/Divider.jsx';
+import GoogleSignIn from '#components/Auth/GoogleSignIn.jsx';
 import PasswordField from '#parts/PasswordField.jsx';
 import auth from '../../components/Auth/Auth.jsx';
 import Preloader from '#components/svgs/Preloader.jsx';
@@ -160,6 +161,12 @@ class SignIn extends Component {
             >Sign in
             </button>
 
+<<<<<<< HEAD
+=======
+
+            <GoogleSignIn />
+
+>>>>>>> da75abd6aa99d9136fe9d78cf1f89e1a3604fed6
             <p className="small-paragraph">
               Are you an employer? <Link to="/employer/sign-in">Sign In Here</Link>
             </p>
