@@ -161,12 +161,9 @@ class SignIn extends Component {
             >Sign in
             </button>
 
-<<<<<<< HEAD
-=======
 
             <GoogleSignIn />
 
->>>>>>> da75abd6aa99d9136fe9d78cf1f89e1a3604fed6
             <p className="small-paragraph">
               Are you an employer? <Link to="/employer/sign-in">Sign In Here</Link>
             </p>
