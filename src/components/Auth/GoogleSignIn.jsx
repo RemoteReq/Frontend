@@ -3,7 +3,7 @@ import axios from 'axios';
 import GoogleLogo from '#assets/images/pngs/google-btn.png';
 
 // can only use Production URL in localhost and production due to app setup in Google services
-const backend = 'http://3.17.59.237:3030/login/google';
+const backend = 'https://api.remotereq.com/login/google';
 
 class GoogleSignIn extends Component {
   SignIn(e) {
