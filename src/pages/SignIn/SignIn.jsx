@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import { Redirect, Link } from 'react-router-dom';
-import GoogleSignIn from '#components/Auth/GoogleSignIn.jsx';
 import Divider from '#components/parts/Divider.jsx';
+import GoogleSignIn from '#components/Auth/GoogleSignIn.jsx';
 import PasswordField from '#parts/PasswordField.jsx';
 import auth from '../../components/Auth/Auth.jsx';
 import Preloader from '#components/svgs/Preloader.jsx';
@@ -160,6 +160,7 @@ class SignIn extends Component {
                     className="button-1"
             >Sign in
             </button>
+
 
             <GoogleSignIn />
 
