@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Preloader from '../../../components/svgs/Preloader.jsx';
+import GoogleSignIn from '#components/Auth/GoogleSignIn.jsx';
 
 const backend = process.env.BASE_URL;
 
@@ -194,6 +195,8 @@ class ESignUp extends Component {
           onClick={ this.signUp }
           >Create Your Profile
         </button>
+
+        <GoogleSignIn />
 
         <p className="small-paragraph">
           Already have an account? <Link className="small-link" to={'/employer/sign-in'}>Sign In</Link>
