@@ -2,12 +2,17 @@
   background-color: $BackgroundColor;
   display: flex;
   justify-content: center;
-  padding: 15vh 0;
+  padding: 10vh 0;
 
   form {
-    margin: 4vh 20vw;
+    margin: 4vh 25vw;
     width: 100%;
     background-color: white;
+
+
+    li {
+      font-size: 14pt;
+    }
 
     .title-cluster {
       display: flex;
@@ -57,10 +62,6 @@
         label {
           font-size: 16pt;
           font-weight: bold;
-        }
-
-        p {
-          font-size: 12pt;
         }
       }
     }

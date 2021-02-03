@@ -78,15 +78,9 @@ class JobViewer extends Component {
             <p className="small-paragraph">{transactionId ? `Transaction ID:${transactionId}` : ''}</p>
           </div>
 
-          <br/>
-          <br/>
-
           <MatchWindow firstPaymentStatus={firstPaymentStatus} matches={matches} job={job}/>
 
           <p className="small-paragraph">{firstPaymentStatus ? `Matches expire on: ${expireDate.toDateString()}` : ''}</p>
-
-          <br/>
-          <br/>
 
           <HireSelect
             firstPaymentStatus={firstPaymentStatus}
@@ -96,13 +90,9 @@ class JobViewer extends Component {
           />
 
           <br/>
-          <br/>
-
           <p>Our Mission:</p>
-          <p className="small-paragraph">{job.ourMission || ''}</p>
-
-          <br/>
-          <br/>
+          <p style={{ fontSize: '14pt' }}>{job.ourMission || 'Testing Text for Mission'}</p>
+          <br />
 
           <div className="job-headline">
 
@@ -130,7 +120,8 @@ class JobViewer extends Component {
           </div>
 
           <p>Description:</p>
-          <p className="small-paragraph" style={{ lineHeight: '14pt' }}>{job.jobDetails}</p>
+          <br/>
+          <p style={{ fontSize: '14pt', lineHeight: '14pt' }}>{job.jobDetails}</p>
 
           <br/>
           <br/>
@@ -149,6 +140,7 @@ class JobViewer extends Component {
           }
 
           <p>Skills required for this job:</p>
+          <br/>
           <ul>
             {
               job.keySkills.map((skill, i) => {
@@ -158,11 +150,6 @@ class JobViewer extends Component {
               })
             }
           </ul>
-
-
-          <br/>
-          <br/>
-
 
         </form>
       </div>

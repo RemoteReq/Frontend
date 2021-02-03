@@ -87,11 +87,6 @@
     }
   }
 
-  .match-rating {
-    display: flex;
-    padding-right: 24px;
-  }
-
   .percentage-circle {
     height: 25px;
     width: 25px;
@@ -103,4 +98,11 @@
     padding-left: 8px;
     color: $SecondaryColor;
   }
+}
+
+.match-rating {
+  display: flex;
+  width: auto;
+  height: auto;
+  margin: 0 6px;
 }
