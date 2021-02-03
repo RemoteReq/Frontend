@@ -11,7 +11,7 @@ class GoogleSignIn extends Component {
 
     console.log('yee');
 
-    axios.get(backend)
+    axios.get(`${backend}/login/google`)
       .then((response) => {
         console.log(response);
       })
