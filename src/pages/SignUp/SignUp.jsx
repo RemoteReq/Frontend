@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import PasswordField from '#parts/PasswordField.jsx';
 import Preloader from '../../components/svgs/Preloader.jsx';
+import GoogleSignIn from '#components/Auth/GoogleSignIn.jsx';
 
 const backend = process.env.BASE_URL;
 
@@ -193,6 +194,8 @@ class SignUp extends Component {
           onClick={ this.signUp }
           >Create Your Profile
         </button>
+
+        <GoogleSignIn />
 
         <p className="small-paragraph">Already have an account? <Link className="small-link" to='/sign-in'>Sign In</Link></p>
       </form>
