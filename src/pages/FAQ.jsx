@@ -34,6 +34,17 @@ const FaqList = ({ title, faqs }) => {
   );
 };
 
+const FaqBottom = () => {
+  return (
+    <div>
+      <p className="small-paragraph">
+        Still have questions? Email us at <a href="mailto:remotereqinfo@gmail.com">RemoteReqInfo@gmail.com</a> and we will get back to you with a response.
+        Heck, we might even add your question to this list.
+      </p>
+    </div>
+  );
+};
+
 
 class FaqPage extends Component {
   extendAnswer() {
@@ -61,6 +72,7 @@ class FaqPage extends Component {
           faqs={generalFaq}
         />
 
+      <FaqBottom />
       </form>
     </div>
     );
