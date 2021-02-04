@@ -12,7 +12,7 @@ const employerFaq = [
     answer: "Nothing. Employer profiles are free to create, and posting remote jobs is also free. \n\n Our recruiting algorithm will immediately return your 'best fit' candidate matches (up to 5 candidates). Next, pay only $100 for detailed access to your 'best fit' candidate matches, and start interviewing immediately",
   },
   {
-    question: 'Why are their two steps to the checkout process for employers?',
+    question: 'Why are there two steps to the checkout process for employers?',
     answer: " We want your dollars focused on your mission. Our cost-saving, two-step checkout process ensures that employers only pay for who they hire. After we find your best fit 'candidate matches,' here's what to expect - \n\n Step One: Pay $100 for instant access to detailed profiles for your candidate matches \n\n Step Two:  When you hire one of your candidate matches, pay $900 per part-time hire and $2400 per full-time hire \n\n Other job search platforms and jobs boards charge exorbitant upfront costs with no guarantee of hire. That works for big corporations with deep pockets, but not the little guys. Return on investment is mission-critical.",
   },
   {
