@@ -58,6 +58,11 @@ class FaqPage extends Component {
         <h3>Frequently Asked Questions (FAQ)</h3>
 
         <FaqList
+          title="General"
+          faqs={generalFaq}
+        />
+
+        <FaqList
           title="For Employers"
           faqs={employerFaq}
         />
@@ -65,11 +70,6 @@ class FaqPage extends Component {
         <FaqList
           title="For Job Seekers"
           faqs={jobSeekerFaq}
-        />
-
-        <FaqList
-          title="General"
-          faqs={generalFaq}
         />
 
       <FaqBottom />
