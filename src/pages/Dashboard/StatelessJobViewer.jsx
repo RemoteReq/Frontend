@@ -23,7 +23,7 @@ const StatelessJobViewer = (props) => {
 
                 {
                   job.companyWebsiteUrl
-                    ? <p className="small-paragraph">Company Website: <a href={`http://${job.companyWebsiteUrl}`}>{job.companyWebsiteUrl}</a></p>
+                    ? <h4>Company Website: <a href={`http://${job.companyWebsiteUrl}`}>{job.companyWebsiteUrl}</a></h4>
 
                     : <p></p>
                 }
