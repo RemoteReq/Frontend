@@ -11,13 +11,22 @@ class GoogleSignIn extends Component {
 
     console.log('yee');
 
-    axios.get(backend)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    const google = () => { return window.location.href = `${backend}/login/google`; };
+
+    google().then(() => { return console.log(response); });
+
+    // axios.get(`${backend}/login/google`, {
+    //   headers: {
+    //     'Access-Control-Allow-Origin': '*',
+    //     'Access-Control-Allow-Credentials': true,
+    //   },
+    // })
+    //   .then((response) => {
+    //     console.log(response);
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //   });
   }
 
   render() {

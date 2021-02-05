@@ -32,6 +32,13 @@ const StatelessProfileCard = ({ userDetails }) => {
               <h5>Email</h5>
               <p className="small-paragraph">{userDetails.email || ''}</p>
 
+              <h5>Website</h5>
+              <p className="small-paragraph">
+                <a href={`http://${userDetails.companyWebsite}`}>
+                  {userDetails.companyWebsite || ''}
+                </a>
+              </p>
+
             </div>
           </div>
 
