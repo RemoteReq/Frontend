@@ -123,13 +123,13 @@ const PartTimeForm = ({
               />
               <p className={`${fields.minExperience.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
-              <label>Maximum Years of Experience Required</label>
+              {/* <label>Maximum Years of Experience Required</label>
               <input
                 type="number"
                 name="maxExperience"
                 onChange={handleNumber}
               />
-              <p className={`${fields.maxExperience.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
+              <p className={`${fields.maxExperience.isFilled ? 'hide' : 'error'}`}>This is a required field.</p> */}
             </div>
 
             <EducationSelector handleChange={handleNumber} name="requiredEducationLevel"/>

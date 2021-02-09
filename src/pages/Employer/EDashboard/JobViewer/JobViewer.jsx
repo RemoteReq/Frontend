@@ -68,19 +68,27 @@ class JobViewer extends Component {
 
                 {
                   job.companyWebsiteUrl
-                    ? <p className="small-paragraph">Company Website: <a href={`http://${job.companyWebsiteUrl}`}>{job.companyWebsiteUrl}</a></p>
+                    ? <h4>Company Website: <a href={`http://${job.companyWebsiteUrl}`}>{job.companyWebsiteUrl}</a></h4>
 
                     : <p></p>
                 }
               </div>
             </div>
 
+
             <p className="small-paragraph">{transactionId ? `Transaction ID:${transactionId}` : ''}</p>
           </div>
+
+          <br/>
+          <br/>
 
           <MatchWindow firstPaymentStatus={firstPaymentStatus} matches={matches} job={job}/>
 
           <p className="small-paragraph">{firstPaymentStatus ? `Matches expire on: ${expireDate.toDateString()}` : ''}</p>
+
+          <br/>
+          <br/>
+
 
           <HireSelect
             firstPaymentStatus={firstPaymentStatus}
@@ -91,7 +99,7 @@ class JobViewer extends Component {
 
           <br/>
           <p>Our Mission:</p>
-          <p style={{ fontSize: '14pt' }}>{job.ourMission || 'Testing Text for Mission'}</p>
+          <p style={{ fontSize: '14pt' }}>{job.ourMission || ''}</p>
           <br />
 
           <div className="job-headline">
