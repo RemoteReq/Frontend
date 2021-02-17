@@ -72,7 +72,7 @@ const FindTalent = () => {
       </div>
     </div>
 
-    <div className="find-talent-pricing">
+    {/* <div className="find-talent-pricing">
 
       <div className="card-container">
         <div
@@ -130,7 +130,7 @@ const FindTalent = () => {
 
         </div>
       </div>
-    </div>
+    </div> */}
 
     <WebFooter
     header={'Build your remote team.'}

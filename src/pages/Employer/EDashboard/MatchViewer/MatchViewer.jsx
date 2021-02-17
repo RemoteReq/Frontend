@@ -81,7 +81,7 @@ class MatchViewer extends Component {
           <br/>
 
           <p>Experience:</p>
-          <p className="small-paragraph">Their key skills:</p>
+          <p className="small-paragraph">Key skills:</p>
           <ul>
 
           {
@@ -100,7 +100,7 @@ class MatchViewer extends Component {
             <a href={`${candidate.sampleProjectLink}`}>{`${candidate.sampleProjectLink}`}</a>
           </p>
 
-          <p className="small-paragraph">About their project:</p>
+          <p className="small-paragraph">Project Description:</p>
           <p className="small-paragraph">&quot;{`${candidate.projectDescription}`}&quot;</p>
 
           <br/>

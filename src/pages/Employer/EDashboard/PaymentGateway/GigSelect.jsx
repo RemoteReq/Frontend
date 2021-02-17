@@ -42,7 +42,7 @@ const GigSelect = () => {
           </Link>
         </div>
 
-        <p>pay $100 to view your candidate matches</p>
+        <p>Pay $100 to view your candidate matches.</p>
       </form>
 
     </div>
