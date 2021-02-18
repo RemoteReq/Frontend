@@ -76,7 +76,7 @@ const Page1 = ({
 
       <div className="textarea-div">
         <textarea
-          name="jobChangeReason"
+          name="reasonForCause"
           onChange={handleChange}/>
       </div>
 

@@ -28,7 +28,7 @@ class QnA extends Component {
       soonestJoinDate: '',
       fluentInEnglish: '',
       highestEducationLevel: 0,
-      jobChangeReason: '',
+      reasonForCause: '',
       availableWorkDays: [],
       availableWorkHours: '',
       availableHoursFrom: '',
@@ -127,7 +127,7 @@ class QnA extends Component {
       soonestJoinDate: answers.soonestJoinDate,
       fluentInEnglish: answers.fluentInEnglish,
       highestEducationLevel: answers.highestEducationLevel,
-      jobChangeReason: answers.jobChangeReason,
+      reasonForCause: answers.reasonForCause,
       availableWorkHours: workHours,
       timeZone: answers.timeZone,
       hourlyWage: answers.hourlyWage,
@@ -144,16 +144,16 @@ class QnA extends Component {
       // The following is hardcoded to comply with backend required fields, these MUST be removed on the backend
       // availableWorkDays: ['Monday', 'Wednesday', 'Friday'],
       // otherLanguages: ['language1', 'language2'],
-      descProfessionalGoal: 'To become a pro!',
+      // descProfessionalGoal: 'To become a pro!',
       // race: 'My Ethnicity',
       // veteranStatus: false,
       // dob: '1999-9-9',
       // desireIndustryType: 'Software',
       // gender: 'Male',
       // OR instead, must be part of a different schema
-      linkedInURL: 'LinkedInURL.com',
-      personalURL: 'myURL.com',
-      mobileNum: '555-555-5555',
+      linkedInURL: answers.linkedInURL,
+      personalURL: answers.personalURL,
+      mobileNum: answers.mobileNum,
       // refferedBy: 'Google Analytics',
     };
 

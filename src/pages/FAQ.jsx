@@ -16,9 +16,9 @@ const Faq = ({ question, answer }) => {
   );
 };
 
-const FaqList = ({ title, faqs }) => {
+const FaqList = ({ title, faqs, id }) => {
   return (
-    <div>
+    <div id={id}>
       <h3>{title}</h3>
 
       <div className="list">
@@ -59,16 +59,19 @@ class FaqPage extends Component {
 
         <FaqList
           title="For Employers"
+          id="employer-faq"
           faqs={employerFaq}
         />
 
         <FaqList
           title="For Job Seekers"
+          id="job-seeker-faq"
           faqs={jobSeekerFaq}
         />
 
         <FaqList
           title="General"
+          id="general-faq"
           faqs={generalFaq}
         />
 

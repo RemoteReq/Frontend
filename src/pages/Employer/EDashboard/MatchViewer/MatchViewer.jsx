@@ -11,9 +11,11 @@ class MatchViewer extends Component {
 
   render() {
     const { candidate } = this.props.location.state;
-    console.log('In the Match Viewer', candidate);
+
+    console.log('In match viewer', candidate);
 
     return (
+
       <div className="match-viewer">
         <ENav/>
 
@@ -75,13 +77,13 @@ class MatchViewer extends Component {
           <br/>
 
           <p>Why they want to work on these causes:</p>
-          <p className="small-paragraph">&quot;{candidate.jobChangeReason}&quot;</p>
+          <p className="small-paragraph">{candidate.reasonForCause}</p>
 
           <br/>
           <br/>
 
           <p>Experience:</p>
-          <p className="small-paragraph">Their key skills:</p>
+          <p className="small-paragraph">Key skills:</p>
           <ul>
 
           {
@@ -100,8 +102,8 @@ class MatchViewer extends Component {
             <a href={`${candidate.sampleProjectLink}`}>{`${candidate.sampleProjectLink}`}</a>
           </p>
 
-          <p className="small-paragraph">About their project:</p>
-          <p className="small-paragraph">&quot;{`${candidate.projectDescription}`}&quot;</p>
+          <p className="small-paragraph">Project Description:</p>
+          <p className="small-paragraph">{`${candidate.projectDescription}`}</p>
 
           <br/>
 

@@ -36,7 +36,7 @@ const jobSeekerFaq = [
   },
   {
     question: 'How will I be notified of a potential match?',
-    answer: 'We will email you. Also, your matches will appear in your dashboard. Again, keep your job search alive, see us your personal search partner, and keep your head up. Job searching can be a difficult and frustrating process, at times. Together, we will get there.',
+    answer: 'We will email you. Also, your matches will appear in your dashboard. Again, keep your job search alive, see us your personal search partner, and keep your head up. Job searching can be difficult and frustrating at time. We understand. We appreciate your patience. We are doing what we can to get you in front of potential employers.',
   },
   {
     question: "I just created a job seeker profile on RemoteReq. How long before I'll get a job match? Should I continue looking for jobs?",

@@ -27,7 +27,7 @@ const JobListing = ({ job }) => {
               ? <div className="job-listing-alerts">
                 <div className="match-counter">
                   <p>
-                    {job.matchesCandidateCount}
+                    Matched
                   </p>
                 </div>
 
