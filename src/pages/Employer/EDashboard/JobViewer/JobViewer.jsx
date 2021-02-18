@@ -25,8 +25,6 @@ class JobViewer extends Component {
       },
     })
       .then((response) => {
-        console.log('Retrieving candidate matches for job: ', response);
-
         if (response.data.length > 0) {
           this.setState({
             matches: response.data,
@@ -44,11 +42,6 @@ class JobViewer extends Component {
     const { hiringPaymentStatus } = job;
     const { transactionId } = this.state;
     const expireDate = new Date(job.expireDate);
-
-    console.log('job details', job);
-    console.log('you matches btw', matches);
-    console.log('firstPaymentStatus', firstPaymentStatus);
-    console.log('job viewer state', this.state);
 
     return (
       <div className="job-viewer">

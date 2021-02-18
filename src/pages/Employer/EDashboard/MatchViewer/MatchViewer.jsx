@@ -11,7 +11,6 @@ class MatchViewer extends Component {
 
   render() {
     const { candidate } = this.props.location.state;
-    console.log('In the Match Viewer', candidate);
 
     return (
       <div className="match-viewer">
