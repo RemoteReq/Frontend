@@ -1,4 +1,8 @@
 import React from 'react';
+import IconAndTitle from '#parts/IconAndTitle.jsx';
+import SuitcaseIcon from '#assets/icons/pngs/flaticon/profile-card-icons/suitcase.png';
+import RibbonIcon from '#assets/icons/pngs/flaticon/profile-card-icons/ribbon.png';
+import LocationIcon from '#assets/icons/pngs/flaticon/profile-card-icons/location.png';
 import Navigation from '#parts/Navigation2.jsx';
 
 const StatelessJobViewer = (props) => {
@@ -35,9 +39,8 @@ const StatelessJobViewer = (props) => {
           <br/>
 
           <div className="job-headline">
-
-            <div>
-              <label>Job</label>
+            <div className="job-headline-column">
+              <IconAndTitle title="Job" icon={SuitcaseIcon}/>
               <li>{job.jobType}</li>
               <li>
                 {
@@ -46,21 +49,17 @@ const StatelessJobViewer = (props) => {
               </li>
             </div>
 
-            <div>
-              <label>Causes</label>
+            <div className="job-headline-column">
+              <IconAndTitle title="Cause" icon={RibbonIcon}/>
               <li>{job.cause}</li>
             </div>
 
-            <div>
-              <label>Location</label>
+            <div className="job-headline-column">
+              <IconAndTitle title="Location" icon={LocationIcon}/>
             <li>{job.location}</li>
             <li>Time Zone: GMT ({job.timeZone})</li>
             </div>
-
           </div>
-
-          <br/>
-          <br/>
 
           <p>Description:</p>
           <p className="small-paragraph" style={{ lineHeight: '14pt' }}>{job.jobDetails}</p>

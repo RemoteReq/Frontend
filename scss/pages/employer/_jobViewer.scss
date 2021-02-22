@@ -50,19 +50,14 @@
 
     .job-headline {
       display: grid;
-      // grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       grid-auto-flow: column;
       // border: 1px solid lightgray;
       margin: 0 0 24px 0;
 
-      div {
+      .job-headline-column {
         border: 1px solid lightgray;
-        padding: 0 12px 12px 12px;
-        
-        label {
-          font-size: 16pt;
-          font-weight: bold;
-        }
+        padding: 12px;
       }
     }
   }
