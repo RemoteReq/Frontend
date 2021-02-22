@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ProfilePicPlaceholder from '#assets/icons/pngs/Profile.png';
+// import IconAndTitle from '#parts/IconAndTitle.jsx';
+import TitleAndDivider from '#parts/TitleAndDivider.jsx';
 import ENav from '../../ENav/ENav.jsx';
 
 class MatchViewer extends Component {
@@ -32,7 +34,7 @@ class MatchViewer extends Component {
               <br/>
 
               <div className="contact-info">
-                <p>Contact Information:</p>
+                <TitleAndDivider title="Contact Information: "/>
                 <p className="small-paragraph">Phone #: &nbsp;{`${candidate.mobileNum}`}</p>
                 <p className="small-paragraph">Email: &nbsp;{`${candidate.email}`}</p>
                 <p className="small-paragraph">LinkedIn URL: &nbsp;
@@ -41,6 +43,9 @@ class MatchViewer extends Component {
                 <p className="small-paragraph">Personal URL: &nbsp;
                   <a href={`http://${candidate.personalURL}`}>{`http://${candidate.personalURL}`}</a>
                 </p>
+
+                <p className="small-paragraph">Where {`${candidate.fullName.split(' ')[0]}`} is from: {candidate.location}</p>
+
                 <p className="small-paragraph">
                   <a href={candidate.resumePath || ProfilePicPlaceholder }>Resume</a>
                 </p>
@@ -56,13 +61,13 @@ class MatchViewer extends Component {
           <br/>
           <br/>
 
-          <p>About:</p>
+          <TitleAndDivider title="About:"/>
           <p className="small-paragraph">{candidate.aboutMe}</p>
 
           <br/>
           <br/>
 
-          <p>Causes they would like to work on:</p>
+          <TitleAndDivider title={`Causes ${candidate.fullName.split(' ')[0]} would like to work on: `}/>
           <ul>
             {
               candidate.causes.map((cause, key) => {
@@ -76,32 +81,32 @@ class MatchViewer extends Component {
           <br/>
           <br/>
 
-          <p>Why they want to work on these causes:</p>
+          <TitleAndDivider title={`Why ${candidate.fullName.split(' ')[0]} wants to work on these causes: `}/>
           <p className="small-paragraph">{candidate.reasonForCause}</p>
 
           <br/>
           <br/>
 
-          <p>Experience:</p>
-          <p className="small-paragraph">Key skills:</p>
+          <TitleAndDivider title="Key Skills:" />
           <ul>
-
           {
             candidate.desireKeySkills.map((skill, key) => {
               return (
-              <li key={key}>{`${skill}`}</li>
+                <li key={key}>{`${skill}`}</li>
               );
             })
-          }
+            }
           </ul>
 
           <br/>
           <br/>
 
+          <TitleAndDivider title="Experience: "/>
           <p className="small-paragraph">Project Showcase Link: &nbsp;
             <a href={`${candidate.sampleProjectLink}`}>{`${candidate.sampleProjectLink}`}</a>
           </p>
 
+          <br/>
           <p className="small-paragraph">Project Description:</p>
           <p className="small-paragraph">{`${candidate.projectDescription}`}</p>
 
