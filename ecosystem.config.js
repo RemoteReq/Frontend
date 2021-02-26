@@ -19,7 +19,7 @@ module.exports = {
       key: '/home/ryden/.ssh/Heavy-Storm.pem',
       user: 'ubuntu',
       host: '3.140.72.72',
-      ref: 'origin/GoogleSignIn',
+      ref: 'origin/Automate',
       repo: 'git@github.com:RemoteReq/Frontend.git',
       path: '/home/ubuntu/',
       'pre-deploy-local': "echo 'beginning staging deployment'",
