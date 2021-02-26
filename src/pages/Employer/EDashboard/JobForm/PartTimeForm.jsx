@@ -135,22 +135,32 @@ const PartTimeForm = ({
             <EducationSelector handleChange={handleNumber} name="requiredEducationLevel"/>
             <p className={`${fields.requiredEducationLevel.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
 
-            <div className="select">
-              <label>State</label>
-              <select name="location" onChange={handleChange}>
-                <option>-----</option>
-                {
-                  locations.map((state, i) => {
-                    return (
-                      <option key={i} value={state}>
-                        {state}
-                      </option>
-                    );
-                  })
-                }
-              </select>
-              <p className={`${fields.location.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
-            </div>
+          <div className="select">
+            <label>State</label>
+            <select name="location" onChange={handleChange}>
+              <option>-----</option>
+              {
+                locations.map((state, i) => {
+                  return (
+                    <option key={i} value={state}>
+                      {state}
+                    </option>
+                  );
+                })
+              }
+            </select>
+            <p className={`${fields.location.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
+          </div>
+
+          <div>
+            <label>Zip Code</label>
+            <input
+              type="number"
+              name="zipCode"
+              onChange={handleNumber}
+            />
+            <p className={`${fields.location.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
+          </div>
 
             <TimeZoneSelector handleChange={handleChange}/>
             <p className={`${fields.timeZone.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>

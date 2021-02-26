@@ -44,7 +44,7 @@ class MatchViewer extends Component {
                   <a href={`http://${candidate.personalURL}`}>{`http://${candidate.personalURL}`}</a>
                 </p>
 
-                <p className="small-paragraph">Where {`${candidate.fullName.split(' ')[0]}`} is from: {candidate.location}</p>
+                <p className="small-paragraph">Where {`${candidate.fullName.split(' ')[0]}`}  {candidate.location}</p>
 
                 <p className="small-paragraph">
                   <a href={candidate.resumePath || ProfilePicPlaceholder }>Resume</a>

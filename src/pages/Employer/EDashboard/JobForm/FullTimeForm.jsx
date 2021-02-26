@@ -143,6 +143,16 @@ const FullTimeForm = ({
             <p className={`${fields.location.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
           </div>
 
+          <div>
+            <label>Zip Code</label>
+            <input
+              type="number"
+              name="zipCode"
+              onChange={handleNumber}
+            />
+            <p className={`${fields.location.isFilled ? 'hide' : 'error'}`}>This is a required field.</p>
+          </div>
+
           <div className="notification-settings">
               <h3>Notification Settings</h3>
               <p className="small-paragraph">
