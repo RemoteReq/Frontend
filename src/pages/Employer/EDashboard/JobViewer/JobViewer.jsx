@@ -51,13 +51,13 @@ class JobViewer extends Component {
       <div className="job-viewer">
         <ENav/>
 
-        <div className="Job-Master-Tools">
+        {/* <div className="Job-Master-Tools">
           <h4>Master Tools</h4>
 
           <div className="button-group">
             <button className="button-1 small-button">Assign</button>
           </div>
-        </div>
+        </div> */}
 
         <form>
 
