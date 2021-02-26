@@ -2,12 +2,22 @@
   background-color: $BackgroundColor;
   display: flex;
   justify-content: center;
-  padding: 15vh 0;
+  padding: 10vh 0;
+
+  h5 {
+    font-size: 16pt;
+    color: #595959;
+    font-weight: 800;
+  }
 
   form {
-    margin: 4vh 16vw;
+    margin: 4vh 25vw;
     width: 100%;
     background-color: white;
+
+    p{
+      line-height: 20pt;
+    }
 
     .match-viewer-header {
       display: flex;

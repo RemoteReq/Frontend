@@ -11,6 +11,15 @@ class GoogleSignIn extends Component {
 
     console.log('yee');
 
+<<<<<<< HEAD
+    axios.get(`${backend}/login/google`)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+=======
     const google = () => { return window.location.href = `${backend}/login/google`; };
 
     google().then(() => { return console.log(response); });
@@ -27,6 +36,7 @@ class GoogleSignIn extends Component {
     //   .catch((error) => {
     //     console.error(error);
     //   });
+>>>>>>> 62b9ac5937da95c50e57f6ab274e66335bfc6111
   }
 
   render() {

@@ -1,12 +1,13 @@
 .job-viewer {
   background-color: $BackgroundColor;
-  display: flex;
-  justify-content: center;
+  display: flex; 
+  flex-direction: column;
+  // justify-content: center;
   padding: 10vh 0;
 
   form {
-    margin: 4vh 25vw;
-    width: 100%;
+    margin: 0 25vw;
+    // width: 100%;
     background-color: white;
 
 
@@ -50,19 +51,14 @@
 
     .job-headline {
       display: grid;
-      // grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       grid-auto-flow: column;
       // border: 1px solid lightgray;
       margin: 0 0 24px 0;
 
-      div {
+      .job-headline-column {
         border: 1px solid lightgray;
-        padding: 0 12px 12px 12px;
-        
-        label {
-          font-size: 16pt;
-          font-weight: bold;
-        }
+        padding: 12px;
       }
     }
   }

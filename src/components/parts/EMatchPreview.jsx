@@ -6,6 +6,7 @@ const EMatchPreview = ({ percent, candidate }) => {
   const candidateInitials = candidate.fullName.split(' ').map((n) => { return n[0]; }).join(' ');
 
   return (
+    <div className="match-rating">
       <div className={`c100 p${percent}`}>
         <span>
           <div className="match-label">
@@ -18,6 +19,7 @@ const EMatchPreview = ({ percent, candidate }) => {
             <div className="fill"></div>
         </div>
       </div>
+    </div>
   );
 };
 

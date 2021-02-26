@@ -4,6 +4,10 @@ import ENav from '../../ENav/ENav.jsx';
 // import EMatchRating from '#parts/EMatchRating.jsx';
 import MatchWindow from './MatchWindow.jsx';
 import HireSelect from './HireSelect.jsx';
+import IconAndTitle from '#parts/IconAndTitle.jsx';
+import SuitcaseIcon from '#assets/icons/pngs/flaticon/profile-card-icons/suitcase.png';
+import RibbonIcon from '#assets/icons/pngs/flaticon/profile-card-icons/ribbon.png';
+import LocationIcon from '#assets/icons/pngs/flaticon/profile-card-icons/location.png';
 
 const backend = process.env.BASE_URL;
 
@@ -25,8 +29,6 @@ class JobViewer extends Component {
       },
     })
       .then((response) => {
-        console.log('Retrieving candidate matches for job: ', response);
-
         if (response.data.length > 0) {
           this.setState({
             matches: response.data,
@@ -45,14 +47,17 @@ class JobViewer extends Component {
     const { transactionId } = this.state;
     const expireDate = new Date(job.expireDate);
 
-    console.log('job details', job);
-    console.log('you matches btw', matches);
-    console.log('firstPaymentStatus', firstPaymentStatus);
-    console.log('job viewer state', this.state);
-
     return (
       <div className="job-viewer">
         <ENav/>
+
+        {/* <div className="Job-Master-Tools">
+          <h4>Master Tools</h4>
+
+          <div className="button-group">
+            <button className="button-1 small-button">Assign</button>
+          </div>
+        </div> */}
 
         <form>
 
@@ -99,13 +104,13 @@ class JobViewer extends Component {
 
           <br/>
           <p>Our Mission:</p>
-          <p style={{ fontSize: '14pt' }}>{job.ourMission || 'Testing Text for Mission'}</p>
+          <p style={{ fontSize: '14pt' }}>{job.ourMission || ''}</p>
           <br />
 
           <div className="job-headline">
 
-            <div>
-              <label>Job</label>
+            <div className="job-headline-column">
+              <IconAndTitle title="Job" icon={SuitcaseIcon}/>
               <li>{job.jobType}</li>
               <li>
                 {
@@ -114,15 +119,15 @@ class JobViewer extends Component {
               </li>
             </div>
 
-            <div>
-              <label>Cause</label>
+            <div className="job-headline-column">
+             <IconAndTitle title="Cause" icon={RibbonIcon}/>
               <li>{job.cause}</li>
             </div>
 
-            <div>
-              <label>Location</label>
-            <li>{job.location}</li>
-            <li>Time Zone: GMT ({job.timeZone})</li>
+            <div className="job-headline-column">
+             <IconAndTitle title="Location" icon={LocationIcon}/>
+              <li>{job.location}</li>
+              <li>Time Zone: GMT ({job.timeZone})</li>
             </div>
 
           </div>

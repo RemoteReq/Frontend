@@ -18,12 +18,7 @@ const GigSelect = () => {
               state: { price: 100.00, afterHirePrice: 2500.00, jobType: 'Full Time' },
             }}
           >
-            <div>
-              <h3>Full Time</h3>
-              <div className="gig-select-image">
-                {/* <img/> */}
-              </div>
-            </div>
+              <button className="button-1" >Full Time</button>
           </Link>
 
           <Link
@@ -33,16 +28,11 @@ const GigSelect = () => {
               state: { price: 100.00, afterHirePrice: 1000.00, jobType: 'Part Time' },
             }}
           >
-            <div>
-              <h3>Part Time</h3>
-              <div className="gig-select-image">
-                {/* <img/> */}
-              </div>
-            </div>
+              <button className="button-1" >Part Time</button>
           </Link>
         </div>
 
-        <p>pay $100 to view your candidate matches</p>
+        <p>Pay $100 to view your candidate matches.</p>
       </form>
 
     </div>

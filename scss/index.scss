@@ -69,6 +69,8 @@
 @import './parts/_hireSelect.scss';
 @import './parts/_passwordField.scss';
 @import './parts/_profilePic.scss';
+@import './parts/_IconAndTitle.scss';
+@import './parts/_titleAndDivider.scss';
 
 // import employer side components
 @import './pages/employer/_eSignUp.scss';
@@ -98,6 +100,7 @@
 // import containers
 @import './containers/_buttonGroup.scss';
 @import './containers/_message.scss';
+@import './containers/_JobMasterTools.scss';
 
 // grids
 @import './grids/_grids.scss';

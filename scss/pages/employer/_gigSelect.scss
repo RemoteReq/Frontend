@@ -2,14 +2,12 @@
   background-color: $BackgroundColor;
   display: flex;
   justify-content: space-evenly;
-  padding: 18vh 0;
+  padding: 18vh;
+  // height: 100vh;
 
   form {
     background-color: white;
-    width: 60%;
-    margin: 4vh auto;
-    left: 0;
-    right: 0;
+    height: auto;
 
     p {
       text-align: center;
@@ -18,59 +16,6 @@
     .gig-select {
       display: flex;
       justify-content: space-between;
-      width: auto;
-      height: 50vh;
-
-      .gig-select-choice {
-        border: 1px solid lightgrey;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 50px;
-        height: 70%;
-        width: 70%;
-        
-        div {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          align-items: center;
-          height: 100%;
-          width: 100%;
-        }
-
-        .gig-select-image {
-          // background-color: lightgray;
-          width: 50%;
-          height: 50%;
-        }
-        
-        p {
-          font-size: 12pt;
-        }
-      }
-    }
-
-    .gig-select-choice:hover {
-      background-color: blue;
-      color: white;
-
-      p {
-        color: white
-      }
-    }
-
-    a {
-      width: 48%;
-      height: 100%;
-      text-decoration: none;
-      color: inherit;
-    }
-
-
-    .gig-select-choice:hover {
-      box-shadow: 1px 1px 20px #e2e2e2;
-
     }
   }
 }
@@ -78,9 +23,6 @@
 @media Screen and (max-aspect-ratio: 8/5) {
   .gig-select-page {
 
-    form {
-      width: 80vw !important;
-    }
   }
 }
 
