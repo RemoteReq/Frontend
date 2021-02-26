@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import GoogleLogo from '#assets/images/pngs/google-btn.png';
 
 // can only use Production URL in localhost and production due to app setup in Google services
@@ -22,13 +23,19 @@ class GoogleSignIn extends Component {
 
   render() {
     return (
-      <button
-        className="google-button"
-        onClick={(e) => { return this.SignIn(e); }}
-      >
-        <img src={GoogleLogo}/>
-        Sign In with Google
-      </button>
+    // <button
+    //   className="google-button"
+    //   onClick={(e) => { return this.SignIn(e); }}
+    // >
+    //   <img src={GoogleLogo}/>
+    //   Sign In with Google
+    // </button>
+
+      <a href="https://dev.remotereq.com/login/google"
+          className="google-button">
+          <img src={GoogleLogo}/>
+          Sign In with Google
+      </a>
     );
   }
 }
