@@ -25,12 +25,12 @@ const StatelessAccountEditor = ({
             readOnly
             defaultValue={`${userDetails.email}` || ''}
             />
-{/*
-          <button
-            className="button-1"
-            onClick={(e) => { handleSubmit(e); }}
-            >Update</button> */}
 
+          <label>Employer ID</label>
+          <input
+            readOnly
+            defaultValue={`${userDetails._id}` || ''}
+          />
         </div>
       </form>
 
