@@ -70,6 +70,9 @@ class JobForm extends Component {
         location: {
           isFilled: false,
         },
+        zipcode: {
+          isFilled: false,
+        },
         timeZone: {
           isFilled: false,
         },
