@@ -9,6 +9,8 @@ import SuitcaseIcon from '#assets/icons/pngs/flaticon/profile-card-icons/suitcas
 import RibbonIcon from '#assets/icons/pngs/flaticon/profile-card-icons/ribbon.png';
 import LocationIcon from '#assets/icons/pngs/flaticon/profile-card-icons/location.png';
 
+import JobMasterTools from '#auth/JobMasterTools.jsx';
+
 const backend = process.env.BASE_URL;
 
 class JobViewer extends Component {
@@ -17,10 +19,29 @@ class JobViewer extends Component {
 
     this.state = {
       transactionId: '',
+      privilegeStatus: false,
     };
   }
 
   componentDidMount() {
+    axios({
+      url: `${backend}/api/employers/getSingleEmployer`,
+      method: 'POST',
+      headers: {
+        token: localStorage.getItem('e-session'),
+      },
+    })
+      .then((response) => {
+        console.log('am I special?', response.data.specialPrivilege);
+
+        this.setState({
+          privilegeStatus: response.data.specialPrivilege,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
     axios({
       url: `${backend}/api/employers/matchesCandidateByEachJob/${this.props.location.state.job._id}`,
       method: 'POST',
@@ -45,22 +66,22 @@ class JobViewer extends Component {
     const { firstPaymentStatus } = job;
     const { hiringPaymentStatus } = job;
     const { transactionId } = this.state;
+    const { privilegeStatus } = this.state;
     const expireDate = new Date(job.expireDate);
+
+    console.log(this.state);
 
     return (
       <div className="job-viewer">
         <ENav/>
 
-        {/* <div className="Job-Master-Tools">
-          <h4>Master Tools</h4>
-
-          <div className="button-group">
-            <button className="button-1 small-button">Assign</button>
-          </div>
-        </div> */}
+        {
+          privilegeStatus
+            ? <JobMasterTools jobId={job._id} privilegeStatus={privilegeStatus}/>
+            : ''
+        }
 
         <form>
-
           <div className="title-and-edit">
             <div className="title-cluster">
               <div className="logo-box">
@@ -87,20 +108,26 @@ class JobViewer extends Component {
           <br/>
           <br/>
 
-          <MatchWindow firstPaymentStatus={firstPaymentStatus} matches={matches} job={job}/>
+          {
+            privilegeStatus
+              ? <MatchWindow firstPaymentStatus={true} matches={matches} job={job}/>
+              : <MatchWindow firstPaymentStatus={firstPaymentStatus} matches={matches} job={job}/>
+          }
 
           <p className="small-paragraph">{firstPaymentStatus ? `Matches expire on: ${expireDate.toDateString()}` : ''}</p>
 
           <br/>
           <br/>
-
-
-          <HireSelect
-            firstPaymentStatus={firstPaymentStatus}
-            secondPaymentStatus={hiringPaymentStatus}
-            jobType={job.jobType}
-            jobId={job._id}
-          />
+          {
+            privilegeStatus
+              ? ''
+              : <HireSelect
+                  firstPaymentStatus={firstPaymentStatus}
+                  secondPaymentStatus={hiringPaymentStatus}
+                  jobType={job.jobType}
+                  jobId={job._id}
+                />
+          }
 
           <br/>
           <p>Our Mission:</p>
