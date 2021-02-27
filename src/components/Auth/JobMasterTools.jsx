@@ -110,6 +110,8 @@ class JobMasterTools extends Component {
 
     this.setState({
       [e.target.name]: e.target.value,
+      assignmentSuccess: false,
+      assignmentFail: false,
     }, () => { console.log(this.state); });
   }
 
