@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-const backend = process.env.BASE_URL;
+// const backend = process.env.BASE_URL;
+const backend = 'http://localhost:3030';
 
 const AssignForm = ({
-  jobId, handleChange, assignJob, assignmentStatus,
+  jobId, handleChange, assignJob, assignmentSuccess, assignmentFail,
 }) => {
   return (
     <div>
+      <h4>Assign Tool</h4>
+
       <label>Job ID:</label>
       <input
         name="jobId"
@@ -15,9 +18,9 @@ const AssignForm = ({
         defaultValue={jobId}
       />
 
-      <label>Target Employer ID:</label>
+      <label>Employer Email: </label>
       <input
-        name="targetEmployerId"
+        name="targetEmployerEmail"
         onChange={(e) => { return handleChange(e); }}
       />
 
@@ -29,9 +32,17 @@ const AssignForm = ({
       </div>
 
         {
-          assignmentStatus
-            ? <p className="small-paragraph" style={{ color: 'Green' }}>
+          assignmentSuccess
+            ? <p className="small-paragraph" style={{ color: 'Green', textAlign: 'center' }}>
             Job assignment successful
+          </p>
+            : ''
+        }
+
+        {
+          assignmentFail
+            ? <p className="small-paragraph" style={{ color: 'Red', textAlign: 'center' }}>
+            No such email
           </p>
             : ''
         }
@@ -43,9 +54,7 @@ class JobMasterTools extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      assignmentStatus: false,
-    };
+    this.state = {};
 
     this.assignJob = this.assignJob.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -63,7 +72,7 @@ class JobMasterTools extends Component {
 
     const data = {
       jobId: this.state.jobId,
-      employerId: this.state.targetEmployerId,
+      email: this.state.targetEmployerEmail,
     };
 
     axios({
@@ -76,9 +85,23 @@ class JobMasterTools extends Component {
     })
       .then((response) => {
         console.log(response);
+
+        if (response.status === 200) {
+          this.setState({
+            assignmentSuccess: true,
+            assignmentFail: false,
+          }, () => {
+            window.location = '/employer/dashboard';
+          });
+        }
       })
       .catch((error) => {
         console.log(error);
+
+        this.setState({
+          assignmentSuccess: false,
+          assignmentFail: true,
+        });
       });
   }
 
@@ -91,17 +114,17 @@ class JobMasterTools extends Component {
   }
 
   render() {
-    const { assignmentStatus } = this.state;
+    const { assignmentSuccess, assignmentFail } = this.state;
 
     return (
       <div className="Job-Master-Tools">
-        <h4>Job Master Tool</h4>
 
         <AssignForm
           jobId={this.props.jobId}
           assignJob={this.assignJob}
           handleChange={this.handleChange}
-          assignmentStatus={assignmentStatus}
+          assignmentSuccess={assignmentSuccess}
+          assignmentFail={assignmentFail}
         />
       </div>
     );

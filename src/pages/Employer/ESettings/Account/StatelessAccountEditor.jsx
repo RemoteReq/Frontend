@@ -25,12 +25,6 @@ const StatelessAccountEditor = ({
             readOnly
             defaultValue={`${userDetails.email}` || ''}
             />
-
-          <label>Employer ID</label>
-          <input
-            readOnly
-            defaultValue={`${userDetails._id}` || ''}
-          />
         </div>
       </form>
 
