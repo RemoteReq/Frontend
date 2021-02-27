@@ -72,7 +72,7 @@ class JobMasterTools extends Component {
 
     const data = {
       jobId: this.state.jobId,
-      email: this.state.targetEmployerEmail,
+      email: this.state.targetEmployerEmail.toLowerCase(),
     };
 
     axios({
