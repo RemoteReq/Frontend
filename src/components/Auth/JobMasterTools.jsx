@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-// const backend = process.env.BASE_URL;
-const backend = 'http://localhost:3030';
+const backend = process.env.BASE_URL;
+// const backend = 'http://localhost:3030';
 
 const AssignForm = ({
   jobId, handleChange, assignJob, assignmentSuccess, assignmentFail,
