@@ -5,9 +5,17 @@
   padding: 18vh;
   // height: 100vh;
 
+  .gig-select-2{
+    background-color: white;
+    margin: 4vh 0;
+    width: 600px;
+  }
+
   form {
     background-color: white;
     height: auto;
+
+    width: 600px;
 
     p {
       text-align: center;
@@ -16,6 +24,7 @@
     .gig-select {
       display: flex;
       justify-content: space-between;
+      padding: 24px 0;
     }
   }
 }
@@ -34,8 +43,5 @@
   .gig-select {
     flex-direction: column;
 
-    .gig-select-choice {
-
-    }
   }
 }

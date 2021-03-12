@@ -1,0 +1,15 @@
+.gig-select-2 {
+  padding: 25px;
+
+  .availability-radios{
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0;
+
+    .radio {
+      border: 1px solid lightgray;
+      padding: 4px 24px 4px 0px;
+      border-radius: 50px;
+    }
+  }
+}

@@ -4,15 +4,15 @@ const Radio = ({
   value, label, name, handler,
 }) => {
   return (
-    <div className="radio">
+    <label className="radio">
       <input
         type="radio"
         value={value}
         name={name}
         onChange={(e) => { return handler(e); }}
         />
-      <label>{label}</label>
-    </div>
+      {label}
+    </label>
   );
 };
 

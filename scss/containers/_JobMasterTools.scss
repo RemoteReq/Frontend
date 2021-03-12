@@ -4,3 +4,10 @@
   padding: 12px 24px;
   border: 1px solid #e2e2e2;
 }
+
+@media Screen and (max-aspect-ratio: 1/1) {
+
+  .Job-Master-Tools {
+    margin: 0 2vw;
+  }
+}

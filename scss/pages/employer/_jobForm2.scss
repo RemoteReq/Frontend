@@ -1,0 +1,35 @@
+.job-form-2-page {
+  background-color: $BackgroundColor;
+  display: flex;
+  // flex-direction: column;
+  justify-content: space-evenly;
+  padding: 12vh 15vw;
+  
+  .company-window {    
+    margin: 25px 0;
+    padding: 25px;
+    background-color: white;
+    width: 800px;
+    display: flex;
+
+    .image-box {
+      height: 150px;
+      width: 150px;
+      margin-right: 25px;
+      
+      img {
+        display: block;
+        margin: 0 auto;
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+  
+  .job-form-2 {
+    margin: 25px 0;
+    padding: 25px;
+    background-color: white;
+    width: 800px;
+  }
+}

@@ -14,6 +14,8 @@ import GigSelect from './EDashboard/PaymentGateway/GigSelect.jsx';
 import JobViewer from './EDashboard/JobViewer/JobViewer.jsx';
 import MatchViewer from './EDashboard/MatchViewer/MatchViewer.jsx';
 import EForgotPassword from './EForgotPassword/EForgotPassword.jsx';
+import JobForm2 from './EDashboard/JobForm/JobForm2.jsx';
+import GigSelct2 from './EDashboard/JobForm/GigSelect2.jsx';
 
 const Employer = () => {
   const { path, url } = useRouteMatch();
@@ -31,7 +33,9 @@ const Employer = () => {
         <Route path={`${path}/settings`} component={ESettings}/>
         <Route path={`${path}/dashboard`} component={EDashboard} />
         <Route path={`${path}/addJob`} component={JobForm} />
+        <Route path={`${path}/job-form-2`} component={JobForm2}/>
         <Route path={`${path}/gigSelect`} component={GigSelect} />
+        <Route path={`${path}/gig-select-2`} component={GigSelct2}/>
         <Route path={`${path}/firstPayment`} component={FirstPayment} />
         <Route path={`${path}/secondPayment`} component={SecondPayment} />
         <Route path={`${path}/jobs/`} component={JobViewer}/>
