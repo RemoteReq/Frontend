@@ -1,13 +1,20 @@
 import React from 'react';
+import Select from 'react-select';
 import CauseSelector from '#parts/CauseSelector.jsx';
 import JobTitleSelector from '#parts/JobTitleSelector.jsx';
+
+import jobTitles from '#assets/inputs/new/new-job-titles.js';
+import causes from '#assets/inputs/new/new-causes.js';
 
 const Basics = ({ goNext, handleChange }) => {
   return (
     <div className="job-form">
 
       <label>Job Title</label>
-      <JobTitleSelector name="jobTitle" handleChange={handleChange}/>
+      <Select
+        options={jobTitles}
+      />
+      {/* <JobTitleSelector name="jobTitle" handleChange={handleChange}/> */}
 
       <label>Company Name</label>
       <input
@@ -17,7 +24,9 @@ const Basics = ({ goNext, handleChange }) => {
       />
 
       <label>What cause does your company work on?</label>
-      <CauseSelector name="cause"/>
+      <Select
+        options={causes}
+      />
 
       <label>Job Details</label>
       <div className="textarea-div">

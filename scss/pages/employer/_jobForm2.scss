@@ -6,6 +6,7 @@
   padding: 12vh 15vw;
   
   .company-window {    
+    border: 1px solid #ebebeb;
     margin: 25px 0;
     padding: 25px;
     background-color: white;
@@ -27,9 +28,15 @@
   }
   
   .job-form-2 {
+    border: 1px solid #ebebeb;
     margin: 25px 0;
     padding: 25px;
     background-color: white;
     width: 800px;
+
+  }
+
+  label {
+    padding-top: 24px;
   }
 }

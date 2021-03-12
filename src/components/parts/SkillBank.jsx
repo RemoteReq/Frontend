@@ -2,8 +2,12 @@ import React from 'react';
 import { keySkills } from '#assets/inputs/inputs';
 
 const SkillBank = ({ myKeySkills, addToList, removeFromList }) => {
+  myKeySkills = myKeySkills || [];
+
   return (
     <div className="select">
+      <label>Required Skills</label>
+
       <div className="skill-bank">
         <select name="keySkills" onChange={addToList}>
           <option>-----</option>

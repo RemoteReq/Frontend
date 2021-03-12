@@ -8,7 +8,9 @@ import Location from './Questions/Location.jsx';
 
 const backend = process.env.BASE_URL;
 
-const CompanyWindow = ({ companyName, companyLogo, companyWebsite }) => {
+const CompanyWindow = ({
+  companyName, companyLogo, companyWebsite, jobType, availability,
+}) => {
   return (
     <div className="company-window">
       <div className="image-box">
@@ -19,6 +21,8 @@ const CompanyWindow = ({ companyName, companyLogo, companyWebsite }) => {
         <h4>{companyName}</h4>
         <label>Company Website: </label>
         <a href={companyWebsite}>{companyWebsite}</a>
+        <p className="small-paragraph">{availability}</p>
+        <p className="small-paragraph">{jobType}</p>
       </div>
     </div>
   );
@@ -130,7 +134,7 @@ class JobForm2 extends Component {
   }
 
   componentDidMount() {
-    const { jobType } = this.props.location.state;
+    const { jobType, availability } = this.props.location.state;
 
     Axios({
       url: `${backend}/api/employers/getSingleEmployer`,
@@ -143,6 +147,7 @@ class JobForm2 extends Component {
         console.log(response);
         this.setState({
           jobType,
+          availability,
           companyName: response.data.companyName,
           companyLogo: response.data.companyLogo,
           companyWebsite: response.data.companyWebsite || '',
@@ -196,7 +201,7 @@ class JobForm2 extends Component {
 
   render() {
     const {
-      currentPage, progress, companyWebsite, companyLogo, companyName,
+      currentPage, progress, companyWebsite, companyLogo, companyName, jobType, availability,
     } = this.state;
 
     return (
@@ -205,6 +210,8 @@ class JobForm2 extends Component {
 
         <div className="container">
           <CompanyWindow
+            jobType={jobType}
+            availability={availability}
             companyName={companyName}
             companyLogo={companyLogo}
             companyWebsite={companyWebsite}
