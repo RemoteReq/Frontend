@@ -59,6 +59,10 @@ class Navigation1 extends Component {
             <button className='button-2'>find jobs</button>
           </Link>
 
+          <a href="https://blog.remotereq.com">
+            <button className="e-button-2">Blog</button>
+          </a>
+
           <Link to="/request-a-demo">
             <button className='button-1'>request a demo</button>
           </Link>

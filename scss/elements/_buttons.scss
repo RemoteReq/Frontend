@@ -80,6 +80,22 @@ button {
   }
 }
 
+.e-button-2 {
+  border: 4px solid $Yellow;
+  background: white;
+  color: $Yellow;
+  font-family: "Open Sans", sans-serif;
+  
+  a {
+    padding: 40px;
+    display: inline;
+    color: $PrimaryColor;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 0;
+  }
+}
+
 .button-prev {
   border: 4px solid $SecondaryColor;
   background: #fff;
