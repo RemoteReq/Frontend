@@ -227,6 +227,8 @@ class JobForm2 extends Component {
     // addJobForm.append('jobDescription', 'pdf.pdf');
     // addJobForm.append('companyWebsiteUrl', 'http://www.websiteURL.com');
 
+    addJobForm.append('availability', job.availability);
+
     addJobForm.append('title', job.title);
     addJobForm.append('companyName', job.companyName);
     addJobForm.append('cause', job.cause);
@@ -242,7 +244,7 @@ class JobForm2 extends Component {
     // This field shouldn't be required either, since the form may or may not be full time
 
     // --- !! This field must be deleted on the backend !! --
-    addJobForm.append('industryType', 'Software');
+    // addJobForm.append('industryType', 'Software');
 
     // notification settings
     addJobForm.append('numberOfCandidate', 5);
