@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import ENav from '../../ENav/ENav.jsx';
+import EAuth from '../../EAuth/EAuth.jsx';
 import Basics from './Questions/Basics.jsx';
 import Availability from './Questions/Availability.jsx';
 import Experience from './Questions/Experience.jsx';
@@ -73,7 +74,7 @@ const JobForm2BreadCrumbs = ({ setPage, progress }) => {
 };
 
 const QSwitch = ({
-  pageNumber, goNext, goPrev, handleChange, job, handlePush, handleSelect,
+  pageNumber, goNext, goPrev, handleChange, job, handlePush, handleSelect, addJob,
 }) => {
   switch (pageNumber) {
     case 1:
@@ -113,6 +114,7 @@ const QSwitch = ({
           handleChange={handleChange}
           handleSelect={handleSelect}
           goPrev={goPrev}
+          addJob={addJob}
         />
       );
     default:
@@ -135,6 +137,7 @@ class JobForm2 extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handlePush = this.handlePush.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
+    this.addJob = this.addJob.bind(this);
     this.setPage = this.setPage.bind(this);
     this.goNext = this.goNext.bind(this);
     this.goPrev = this.goPrev.bind(this);
@@ -203,6 +206,98 @@ class JobForm2 extends Component {
     }
   }
 
+  addJob(e) {
+    e.preventDefault();
+
+    const addJobForm = new FormData();
+
+    const { job } = this.state;
+    const workHours = `${job.availableHoursFrom}-${job.availableHoursTo}`;
+
+    addJobForm.append('transactionIdForAddJob', 'sample job for testing');
+    // addJobForm.append('transactionIdForAddJob', this.props.location.state.transactionId);
+
+
+    addJobForm.append('companyLogoPath', job.companyLogo);
+    addJobForm.append('jobDescription', job.jobDescription);
+    addJobForm.append('companyWebsiteUrl', job.companyWebsite);
+
+    // Comment and uncomment for testing
+    // addJobForm.append('companyLogoPath', 'test.jpg');
+    // addJobForm.append('jobDescription', 'pdf.pdf');
+    // addJobForm.append('companyWebsiteUrl', 'http://www.websiteURL.com');
+
+    addJobForm.append('title', job.title);
+    addJobForm.append('companyName', job.companyName);
+    addJobForm.append('cause', job.cause);
+    addJobForm.append('jobDetails', job.jobDetails);
+    addJobForm.append('keySkills', job.keySkills);
+    addJobForm.append('requiredEducationLevel', job.requiredEducationLevel);
+    addJobForm.append('minExperience', job.minExperience);
+    addJobForm.append('maxExperience', job.maxExperience);
+    addJobForm.append('location', job.location);
+    addJobForm.append('soonestJoinDate', job.soonestJoinDate);
+    addJobForm.append('otherLanguages', ['language1', 'language2']);
+
+    // This field shouldn't be required either, since the form may or may not be full time
+
+    // --- !! This field must be deleted on the backend !! --
+    addJobForm.append('industryType', 'Software');
+
+    // notification settings
+    addJobForm.append('numberOfCandidate', 5);
+    addJobForm.append('percentageMatch', 50);
+    addJobForm.append('eligibleToWorkInUS', true);
+    addJobForm.append('fluentInEnglish', true);
+
+    if (job.jobType === 'Part Time') {
+      addJobForm.append('salary', 0);
+      addJobForm.append('jobType', job.jobType);
+      addJobForm.append('timeZone', job.timeZone);
+      addJobForm.append('hourlyWage', job.hourlyWage);
+      addJobForm.append('workDays', ['Monday', 'Wednesday', 'Friday']);
+      addJobForm.append('workHours', workHours);
+    }
+
+    if (job.jobType === 'Full Time') {
+      addJobForm.append('salary', job.salary);
+      addJobForm.append('jobType', job.jobType);
+      addJobForm.append('timeZone', '');
+      addJobForm.append('hourlyWage', '');
+      addJobForm.append('workDays', '');
+      addJobForm.append('workHours', '');
+    }
+
+    // View values before sending
+    for (const pair of addJobForm.entries()) {
+      console.log(`${pair[0]}, ${pair[1]}`);
+    }
+
+    // this.enablePreloader();
+
+    Axios({
+      url: `${EAuth.backend}/api/jobs/add`,
+      method: 'post',
+      headers: {
+        token: localStorage.getItem('e-session'),
+      },
+      data: addJobForm,
+    })
+      .then((response) => {
+        console.log(response);
+
+        return response.status;
+      })
+      .then(() => {
+        console.log('taking you to dashboard');
+
+        window.location = '/employer/dashboard';
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   setPage(e) {
     e.preventDefault();
 
@@ -268,6 +363,7 @@ class JobForm2 extends Component {
               handleSelect={this.handleSelect}
               goNext={this.goNext}
               goPrev={this.goPrev}
+              addJob={this.addJob}
               />
           </div>
         </div>

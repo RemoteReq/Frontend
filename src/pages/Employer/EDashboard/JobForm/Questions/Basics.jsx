@@ -16,8 +16,8 @@ const Basics = ({
 
       <label>Job Title</label>
       <Select
-        name="jobTitle"
-        value={jobTitles.filter((jobTitle) => { return jobTitle.value === job.jobTitle; })}
+        name="title"
+        value={jobTitles.filter((title) => { return title.value === job.title; })}
         onChange={handleSelect}
         options={jobTitles}
       />

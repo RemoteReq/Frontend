@@ -8,7 +8,7 @@ const Availability = ({
   return (
     <div className="job-form">
 
-      <label>Soonest Join Date for Job</label>
+      <label>Soonest Join Date</label>
         <br/>
         <input
           value={job.soonestJoinDate}
@@ -17,8 +17,14 @@ const Availability = ({
           type="date"
         />
 
-        <label>Available work hours</label>
-        <AvailableHours handleChange={handleChange}/>
+        {
+          job.jobType === 'Part Time'
+            ? <div>
+            <label>Available work hours</label>
+            <AvailableHours handleChange={handleChange}/>
+          </div>
+            : <div></div>
+        }
 
         {
           job.jobType === 'Part Time'

@@ -19,7 +19,7 @@ const Experience = ({
       </div>
 
       <EducationSelector
-        value={job.education}
+        value={job.requiredEducationLevel}
         name="requiredEducationLevel"
         onChange={handleChange}
       />

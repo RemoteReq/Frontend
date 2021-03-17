@@ -4,7 +4,7 @@ import locations from '#assets/inputs/new/new-locations.js';
 import TimeZoneSelector from '#parts/TimeZoneSelector.jsx';
 
 const Location = ({
-  job, goPrev, handleChange, handleSelect,
+  job, goPrev, handleChange, handleSelect, addJob,
 }) => {
   return (
     <div className="job-form">
@@ -36,6 +36,7 @@ const Location = ({
 
         <button
           className="button-next"
+          onClick={addJob}
         >Submit &raquo;
         </button>
       </div>
