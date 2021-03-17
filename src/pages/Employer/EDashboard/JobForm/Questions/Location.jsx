@@ -1,33 +1,30 @@
 import React from 'react';
-import { locations } from '#assets/inputs/inputs.js';
+import Select from 'react-select';
+import locations from '#assets/inputs/new/new-locations.js';
+import TimeZoneSelector from '#parts/TimeZoneSelector.jsx';
 
-const Location = ({ goPrev }) => {
+const Location = ({
+  job, goPrev, handleChange, handleSelect,
+}) => {
   return (
     <div className="job-form">
 
-      <div className="select">
-            <label>State</label>
-            <select name="location"
-              // onChange={handleChange}
-            >
-              <option>-----</option>
-              {
-                locations.map((state, i) => {
-                  return (
-                    <option key={i} value={state}>
-                      {state}
-                    </option>
-                  );
-                })
-              }
-            </select>
-          </div>
+      <TimeZoneSelector value={job.timeZone} handleChange={handleChange}/>
+
+      <label>State</label>
+      <Select
+        name="location"
+        value={locations.filter((location) => { return location.value === job.location; })}
+        onChange={handleSelect}
+        options={locations}
+      />
 
           <label>Zip Code</label>
             <input
+              value={job.zipCode}
               type="number"
               name="zipCode"
-              // onChange={handleNumber}
+              onChange={handleChange}
             />
 
       <div className="job-form-nav-buttons">

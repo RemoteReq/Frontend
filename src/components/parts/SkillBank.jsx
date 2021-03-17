@@ -1,4 +1,5 @@
 import React from 'react';
+import Select from 'react-select';
 import { keySkills } from '#assets/inputs/inputs';
 
 const SkillBank = ({ myKeySkills, addToList, removeFromList }) => {

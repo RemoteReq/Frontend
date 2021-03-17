@@ -2,22 +2,29 @@ import React from 'react';
 import EducationSelector from '#parts/EducationSelector.jsx';
 import SkillBank from '#parts/SkillBank.jsx';
 
-const Experience = ({ goNext, goPrev }) => {
+const Experience = ({
+  job, goNext, goPrev, handleChange, skills, handlePush,
+}) => {
   return (
     <div className="job-form">
 
       <div className="range">
         <label>Minimum Years of Experience Required</label>
         <input
+          value={job.minExperience}
           type="number"
           name="minExperience"
-          // onChange={handleNumber}
+          onChange={handleChange}
         />
       </div>
 
-      <EducationSelector name="requiredEducationLevel"/>
+      <EducationSelector
+        value={job.education}
+        name="requiredEducationLevel"
+        onChange={handleChange}
+      />
 
-      <SkillBank/>
+      <SkillBank addToList={handlePush} />
 
       <div className="job-form-nav-buttons">
         <button

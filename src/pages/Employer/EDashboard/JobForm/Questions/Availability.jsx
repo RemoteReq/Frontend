@@ -1,34 +1,60 @@
 import React from 'react';
 import AvailableHours from '#parts/AvailableHours.jsx';
+import SalarySelector from '#parts/SalarySelector.jsx';
 
-const Availability = ({ goNext, goPrev }) => {
+const Availability = ({
+  job, goNext, goPrev, handleChange,
+}) => {
   return (
     <div className="job-form">
 
       <label>Soonest Join Date for Job</label>
         <br/>
         <input
+          value={job.soonestJoinDate}
           name="soonestJoinDate"
-          // onChange={handleChange}
+          onChange={handleChange}
           type="date"
         />
 
         <label>Available work hours</label>
-        <AvailableHours />
+        <AvailableHours handleChange={handleChange}/>
 
-        <label>Hourly Wage</label>
-        <input
-          type="number"
-          name="hourlyWage"
-          // onChange={handleNumber}
-        />
+        {
+          job.jobType === 'Part Time'
+            ? <div>
+            <label>Hourly Wage</label>
+            <input
+            value={job.hourlyWage}
+            type="number"
+            name="hourlyWage"
+            onChange={handleChange}
+            />
+          </div>
 
-        <label>Number of Hours Desired per Week</label>
-        <input
-          type="number"
-          name="numberOfHours"
-          // onChange={handleNumber}
-        />
+            : <SalarySelector
+              value={job.salary}
+              onChange={handleChange}
+            />
+        }
+
+        {
+
+          job.jobType === 'Part Time'
+            ? <div>
+            <label>Number of Hours Desired per Week</label>
+            <input
+            value={job.numberOfHours}
+            type="number"
+            name="numberOfHours"
+            onChange={handleChange}
+            />
+          </div>
+
+            : <div>
+
+          </div>
+      }
 
       <div className="job-form-nav-buttons">
       <button

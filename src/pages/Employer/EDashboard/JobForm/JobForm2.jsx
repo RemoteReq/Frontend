@@ -8,21 +8,19 @@ import Location from './Questions/Location.jsx';
 
 const backend = process.env.BASE_URL;
 
-const CompanyWindow = ({
-  companyName, companyLogo, companyWebsite, jobType, availability,
-}) => {
+const CompanyWindow = ({ job }) => {
   return (
     <div className="company-window">
       <div className="image-box">
-        <img src={companyLogo || ''}/>
+        <img src={job.companyLogo || ''}/>
       </div>
 
       <div>
-        <h4>{companyName}</h4>
+        <h4>{job.companyName}</h4>
         <label>Company Website: </label>
-        <a href={companyWebsite}>{companyWebsite}</a>
-        <p className="small-paragraph">{availability}</p>
-        <p className="small-paragraph">{jobType}</p>
+        <a href={job.companyWebsite}>{job.companyWebsite}</a>
+        <p className="small-paragraph">{job.availability}</p>
+        <p className="small-paragraph">{job.jobType}</p>
       </div>
     </div>
   );
@@ -75,13 +73,15 @@ const JobForm2BreadCrumbs = ({ setPage, progress }) => {
 };
 
 const QSwitch = ({
-  pageNumber, goNext, goPrev, handleChange,
+  pageNumber, goNext, goPrev, handleChange, job, handlePush, handleSelect,
 }) => {
   switch (pageNumber) {
     case 1:
       return (
         <Basics
+          job={job}
           handleChange={handleChange}
+          handleSelect={handleSelect}
           goNext={goNext}
         />
       );
@@ -89,6 +89,7 @@ const QSwitch = ({
     case 2:
       return (
         <Availability
+          job={job}
           handleChange={handleChange}
           goNext={goNext}
           goPrev={goPrev}
@@ -98,7 +99,9 @@ const QSwitch = ({
     case 3:
       return (
         <Experience
+          job={job}
           handleChange={handleChange}
+          handlePush={handlePush}
           goNext={goNext}
           goPrev={goPrev}
         />
@@ -106,7 +109,9 @@ const QSwitch = ({
     case 4:
       return (
         <Location
+          job={job}
           handleChange={handleChange}
+          handleSelect={handleSelect}
           goPrev={goPrev}
         />
       );
@@ -128,6 +133,8 @@ class JobForm2 extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handlePush = this.handlePush.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
     this.setPage = this.setPage.bind(this);
     this.goNext = this.goNext.bind(this);
     this.goPrev = this.goPrev.bind(this);
@@ -146,24 +153,54 @@ class JobForm2 extends Component {
       .then((response) => {
         console.log(response);
         this.setState({
-          jobType,
-          availability,
-          companyName: response.data.companyName,
-          companyLogo: response.data.companyLogo,
-          companyWebsite: response.data.companyWebsite || '',
+          job: {
+            ...this.state.job,
+            jobType,
+            availability,
+            companyName: response.data.companyName,
+            companyLogo: response.data.companyLogo,
+            companyWebsite: response.data.companyWebsite || '',
+          },
         }, () => { console.log(this.state); });
       });
   }
 
   handleChange(e) {
     e.preventDefault();
+    console.log('hit');
 
     this.setState({
       job: {
         ...this.state.job,
-        [e.target.name]: e.target.value,
+        [e.target.name]: e.target.type === 'number' ? parseFloat(e.target.value) : e.target.value,
       },
     }, () => { console.log(this.state); });
+  }
+
+  handleSelect(option, e) {
+    this.setState({
+      job: {
+        ...this.state.job,
+        [e.name]: option.value,
+      },
+    }, () => { return console.log(this.state); });
+  }
+
+  handlePush(e) {
+    let arrayToJoin = this.state[e.target.name];
+
+    if (!arrayToJoin.includes(e.target.value)) {
+      arrayToJoin = arrayToJoin.concat(e.target.value);
+
+      this.setState({
+        job: {
+          ...this.state.job,
+          [e.target.name]: arrayToJoin,
+        },
+      }, () => {
+        console.log(this.state.keySkills);
+      });
+    }
   }
 
   setPage(e) {
@@ -201,7 +238,9 @@ class JobForm2 extends Component {
 
   render() {
     const {
-      currentPage, progress, companyWebsite, companyLogo, companyName, jobType, availability,
+      currentPage, progress,
+      job,
+      // companyWebsite, companyLogo, companyName, jobType, availability,
     } = this.state;
 
     return (
@@ -210,11 +249,7 @@ class JobForm2 extends Component {
 
         <div className="container">
           <CompanyWindow
-            jobType={jobType}
-            availability={availability}
-            companyName={companyName}
-            companyLogo={companyLogo}
-            companyWebsite={companyWebsite}
+            job={job}
           />
 
           <div className="job-form-2">
@@ -225,9 +260,12 @@ class JobForm2 extends Component {
               />
 
             <QSwitch
+              job={job}
               pageNumber={currentPage}
               progress={progress}
               handleChange={this.handleChange}
+              handlePush={this.handlePush}
+              handleSelect={this.handleSelect}
               goNext={this.goNext}
               goPrev={this.goPrev}
               />
