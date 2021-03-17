@@ -3,7 +3,7 @@ import EducationSelector from '#parts/EducationSelector.jsx';
 import SkillBank from '#parts/SkillBank.jsx';
 
 const Experience = ({
-  job, goNext, goPrev, handleChange, skills, handlePush,
+  job, goNext, goPrev, handleChange, addToList, removeFromList,
 }) => {
   return (
     <div className="job-form">
@@ -24,7 +24,7 @@ const Experience = ({
         onChange={handleChange}
       />
 
-      <SkillBank addToList={handlePush} />
+      <SkillBank skillsList={job.keySkills} addToList={addToList} removeFromList={removeFromList}/>
 
       <div className="job-form-nav-buttons">
         <button

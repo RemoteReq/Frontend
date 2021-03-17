@@ -1,32 +1,28 @@
 import React from 'react';
 import Select from 'react-select';
-import { keySkills } from '#assets/inputs/inputs';
+import keySkills from '#assets/inputs/new/new-keySkills.js';
 
-const SkillBank = ({ myKeySkills, addToList, removeFromList }) => {
-  myKeySkills = myKeySkills || [];
+const SkillBank = ({ skillsList, addToList, removeFromList }) => {
+  skillsList = skillsList || [];
 
   return (
     <div className="select">
       <label>Required Skills</label>
 
+
       <div className="skill-bank">
-        <select name="keySkills" onChange={addToList}>
-          <option>-----</option>
-          {
-            keySkills.map((keySkill, key) => {
-              return (
-                <option key={key} value={keySkill}>{keySkill}</option>
-              );
-            })
-            }
-        </select>
+        <Select
+          name="keySkills"
+          onChange={addToList}
+          options={keySkills}
+        />
 
         <div className="skill-box">
           <p className="small-paragraph">Skills: </p>
 
           <ul>
             {
-              myKeySkills.map((myKeySkill, key) => {
+              skillsList.map((myKeySkill, key) => {
                 return (
                   <li key={key}>
                     <div className="skill">

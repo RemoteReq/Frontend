@@ -74,7 +74,7 @@ const JobForm2BreadCrumbs = ({ setPage, progress }) => {
 };
 
 const QSwitch = ({
-  pageNumber, goNext, goPrev, handleChange, job, handlePush, handleSelect, addJob,
+  pageNumber, goNext, goPrev, handleChange, job, addToList, handleSelect, addJob, removeFromList,
 }) => {
   switch (pageNumber) {
     case 1:
@@ -102,7 +102,8 @@ const QSwitch = ({
         <Experience
           job={job}
           handleChange={handleChange}
-          handlePush={handlePush}
+          addToList={addToList}
+          removeFromList={removeFromList}
           goNext={goNext}
           goPrev={goPrev}
         />
@@ -129,14 +130,17 @@ class JobForm2 extends Component {
     super(props);
 
     this.state = {
-      job: {},
+      job: {
+        keySkills: [],
+      },
       currentPage: 1,
       progress: 1,
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handlePush = this.handlePush.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
+    this.addToList = this.addToList.bind(this);
+    this.removeFromList = this.removeFromList.bind(this);
     this.addJob = this.addJob.bind(this);
     this.setPage = this.setPage.bind(this);
     this.goNext = this.goNext.bind(this);
@@ -189,21 +193,41 @@ class JobForm2 extends Component {
     }, () => { return console.log(this.state); });
   }
 
-  handlePush(e) {
-    let arrayToJoin = this.state[e.target.name];
+  addToList(option, e) {
+    console.log(option, e);
 
-    if (!arrayToJoin.includes(e.target.value)) {
-      arrayToJoin = arrayToJoin.concat(e.target.value);
+    let arrayToJoin = this.state.job[e.name];
+
+    if (!arrayToJoin.includes(option.value)) {
+      arrayToJoin = arrayToJoin.concat(option.value);
 
       this.setState({
         job: {
           ...this.state.job,
-          [e.target.name]: arrayToJoin,
+          [e.name]: arrayToJoin,
         },
       }, () => {
-        console.log(this.state.keySkills);
+        console.log(this.state);
       });
     }
+  }
+
+  removeFromList(e) {
+    const arrayToSplice = this.state.job.keySkills;
+    const index = arrayToSplice.indexOf(e.target.value);
+
+    arrayToSplice.splice(index, 1);
+
+    console.log(e.target.value, 'at index: ', index);
+
+    this.setState({
+      job: {
+        ...this.state.job,
+        [e.target.name]: arrayToSplice,
+      },
+    }, () => {
+      console.log(this.state);
+    });
   }
 
   addJob(e) {
@@ -361,8 +385,9 @@ class JobForm2 extends Component {
               pageNumber={currentPage}
               progress={progress}
               handleChange={this.handleChange}
-              handlePush={this.handlePush}
               handleSelect={this.handleSelect}
+              addToList={this.addToList}
+              removeFromList={this.removeFromList}
               goNext={this.goNext}
               goPrev={this.goPrev}
               addJob={this.addJob}

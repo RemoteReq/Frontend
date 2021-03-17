@@ -1,5 +1,5 @@
 const { writeFile } = require('fs');
-const { locations } = require('./inputs.js');
+const { keySkills } = require('./inputs.js');
 
 function stringToObjects(list) {
   const newList = [];
@@ -13,7 +13,7 @@ function stringToObjects(list) {
     newList.push(entry);
   });
 
-  writeFile('./new-locations.js', JSON.stringify(newList), 'utf8', () => { console.log('complete!'); });
+  writeFile('./new-keySkills.js', JSON.stringify(newList), 'utf8', () => { console.log('complete!'); });
 }
 
-stringToObjects(locations);
+stringToObjects(keySkills);
