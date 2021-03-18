@@ -312,6 +312,8 @@ class JobForm2 extends Component {
       .then((response) => {
         console.log(response);
 
+        window.location = '/employer/dashboard';
+
         return response.status;
       })
       .then(() => {
