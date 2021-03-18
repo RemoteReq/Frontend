@@ -75,6 +75,7 @@ const jobTitles = [
   { value: 'Special Projects Coordinator', label: 'Special Projects Coordinator' },
   { value: 'Special Projects Director', label: 'Special Projects Director' },
   { value: 'Teacher', label: 'Teacher' },
+  { value: 'UX Developer', label: 'UX Developer' },
   { value: 'Volunteer Director', label: 'Volunteer Director' },
   { value: 'Volunteer Manager', label: 'Volunteer Manager' }];
 
