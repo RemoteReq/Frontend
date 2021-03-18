@@ -15,7 +15,7 @@ const AboutHeader = () => {
     <div className='box get-matched'>
       <img src={ Connect } alt='connect icon'/>
       <h3>Get Matched</h3>
-      <p>Our recruiting algorithm finds your best fit remote matches. Think of us as your personal recruiter.</p>
+      <p>Our recruiting algorithm finds your best fit remote-first matches. Think of us as your personal recruiter.</p>
     </div>
 
     <div className='box pay-forward'>
