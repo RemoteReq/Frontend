@@ -24,6 +24,7 @@ const Experience = ({
         onChange={handleChange}
       />
 
+      <label>List Required Skills for this Job</label>
       <SkillBank skillsList={job.keySkills} addToList={addToList} removeFromList={removeFromList}/>
 
       <div className="job-form-nav-buttons">

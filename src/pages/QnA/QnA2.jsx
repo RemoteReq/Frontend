@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import Navigation2 from '#parts/Navigation2.jsx';
+import Page1 from './pages/Page1.jsx';
+import Page2 from './pages/Page2.jsx';
+import Page3 from './pages/Page3.jsx';
+import Page4 from './pages/Page4.jsx';
+
+const backend = process.env.BASE_URL;
 
 const QnA2BreadCrumbs = ({ setPage, progress }) => {
   return (
@@ -48,23 +55,25 @@ const QnA2BreadCrumbs = ({ setPage, progress }) => {
 };
 
 const QSwitch = ({
-  pageNumber, goNext, goPrev, handleChange, job, addToList, handleSelect, addJob, removeFromList,
+  answers, pageNumber, goNext, goPrev, handleChange, addToList, handleSelect, removeFromList, submitAnswers,
 }) => {
   switch (pageNumber) {
     case 1:
       return (
-        <Basics
-          job={job}
+        <Page1
+          answers={answers}
           handleChange={handleChange}
           handleSelect={handleSelect}
+          addToList={addToList}
+          removeFromList={removeFromList}
           goNext={goNext}
         />
       );
 
     case 2:
       return (
-        <Availability
-          job={job}
+        <Page2
+          answers={answers}
           handleChange={handleChange}
           goNext={goNext}
           goPrev={goPrev}
@@ -73,8 +82,8 @@ const QSwitch = ({
 
     case 3:
       return (
-        <Experience
-          job={job}
+        <Page3
+          answers={answers}
           handleChange={handleChange}
           addToList={addToList}
           removeFromList={removeFromList}
@@ -84,12 +93,12 @@ const QSwitch = ({
       );
     case 4:
       return (
-        <Location
-          job={job}
+        <Page4
+          answers={answers}
           handleChange={handleChange}
           handleSelect={handleSelect}
           goPrev={goPrev}
-          addJob={addJob}
+          submitAnswers={submitAnswers}
         />
       );
     default:
@@ -105,16 +114,128 @@ class QnA2 extends Component {
 
     this.state = {
       answers: {
+        eligibleToWorkInUS: '',
+        soonestJoinDate: '',
+        fluentInEnglish: '',
+        highestEducationLevel: 0,
+        reasonForCause: '',
+        availableWorkHours: '',
+        availableHoursFrom: '',
+        availableHoursTo: '',
+        timeZone: '',
+        hourlyWage: 0,
+        salary: 0,
+        projectDescription: '',
+        sampleProjectLink: '',
+        relavantCertificates: '',
+        isWorkRemotely: '',
+        totalExperience: '',
+        linkedInURL: '',
+        personalURL: '',
+        mobileNum: '',
         keySkills: [],
         causes: [],
-        titles: [],
+        title: [],
       },
+      currentPage: 1,
       progress: 1,
     };
 
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
+    this.addToList = this.addToList.bind(this);
+    this.removeFromList = this.removeFromList.bind(this);
     this.setPage = this.setPage.bind(this);
     this.goNext = this.goNext.bind(this);
     this.goPrev = this.goPrev.bind(this);
+    this.submitAnswers = this.submitAnswers.bind(this);
+  }
+
+  componentDidMount() {
+    axios({
+      url: `${backend}/api/user/getSingleUserDetails`,
+      method: 'post',
+      headers: {
+        token: localStorage.getItem('session'),
+      },
+    })
+      .then((response) => {
+        this.setState({
+          answers: {
+            ...this.state.answers,
+            ...response.data,
+            // availability:,
+            // causes,
+            keySkills: response.data.desireKeySkills,
+            // eligibleToWorkInUS: eligibleToWorkInUS,
+            // fluentInEnglish: fluentInEnglish,
+            // highestEducationLevel: highestEducationLevel,
+            // hourlyWage: hourlyWage,
+            // howLongWorkingRemotely: howLongWorkingRemotely,
+            // jobType: jobType,
+            // location: location,
+            // personalURL,
+            // reasonForCause,
+          },
+        });
+      });
+  }
+
+  handleChange(e) {
+    console.log('hit');
+
+    this.setState({
+      answers: {
+        ...this.state.answers,
+        [e.target.name]: e.target.type === 'number' ? parseFloat(e.target.value) : e.target.value,
+      },
+    }, () => { console.log(this.state); });
+  }
+
+  handleSelect(option, e) {
+    this.setState({
+      answers: {
+        ...this.state.answers,
+        [e.name]: option.value,
+      },
+    }, () => { return console.log(this.state); });
+  }
+
+  addToList(option, e) {
+    console.log(option, e);
+
+    let arrayToJoin = this.state.answers[e.name];
+
+    if (!arrayToJoin.includes(option.value)) {
+      arrayToJoin = arrayToJoin.concat(option.value);
+
+      this.setState({
+        answers: {
+          ...this.state.answers,
+          [e.name]: arrayToJoin,
+        },
+      }, () => {
+        console.log(this.state);
+      });
+    }
+  }
+
+  removeFromList(e) {
+    const arrayToSplice = this.state.answers.keySkills;
+    const index = arrayToSplice.indexOf(e.target.value);
+
+    arrayToSplice.splice(index, 1);
+
+    console.log(e.target.value, 'at index: ', index);
+
+    this.setState({
+      answers: {
+        ...this.state.answers,
+        [e.target.name]: arrayToSplice,
+      },
+    }, () => {
+      console.log(this.state);
+    });
   }
 
   setPage(e) {
@@ -150,9 +271,47 @@ class QnA2 extends Component {
     });
   }
 
+  submitAnswers(e) {
+    e.preventDefault();
+
+    console.log('here we go!');
+
+    const { answers } = this.state;
+    const availableWorkHours = `${answers.availableHoursFrom}-${answers.availableHoursTo}`;
+
+    const data = {
+      ...answers,
+      availableWorkHours,
+    };
+
+    axios({
+      url: `${backend}/api/user/updateUserProfile`,
+      method: 'POST',
+      headers: {
+        token: localStorage.getItem('session'),
+      },
+      data,
+    })
+      .then((response) => {
+        console.log(response);
+
+        return response.status;
+      })
+      .then((status) => {
+        if (status === 200) {
+          this.props.history.push('/dashboard');
+        } else {
+          console.log('fields are missing answers!');
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   render() {
     const {
-      currentPage, progress,
+      currentPage, progress, answers,
     } = this.state;
 
     return (
@@ -167,7 +326,16 @@ class QnA2 extends Component {
           />
 
           <QSwitch
-
+            answers={answers}
+            pageNumber={currentPage}
+            progress={progress}
+            handleChange={this.handleChange}
+            handleSelect={this.handleSelect}
+            addToList={this.addToList}
+            removeFromList={this.removeFromList}
+            goNext={this.goNext}
+            goPrev={this.goPrev}
+            submitAnswers={this.submitAnswers}
           />
 
         </div>

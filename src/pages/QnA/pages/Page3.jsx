@@ -1,48 +1,46 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import SkillBank from '#parts/SkillBank.jsx';
 import EducationSelector from '#parts/EducationSelector.jsx';
 
 const Page3 = ({
-  handleChange, increaseProgress, decreaseProgress, myKeySkills, addToList, removeFromList,
+  answers, handleChange, goPrev, goNext, addToList, removeFromList,
 }) => {
   return (
     <div className="QnA-page">
-      <br/>
-      <br/>
 
-      <p>
+      <label>
         Briefly describe a project you have worked on that is relevant to your desired work interests.
-      </p>
+      </label>
 
       <div className="textarea-div">
         <textarea
+          defaultValue={answers.projectDescription}
           name="projectDescription"
           onChange={handleChange}
         />
       </div>
 
-      <br/>
-
-      <p>
-        Provide a sample of your past relevant work (e.g. link to an online portfolio / past work sample / link to a past client)</p>
+      <label>
+        Provide a sample of your past relevant work (e.g. link to an online portfolio / past work sample / link to a past client)</label>
       <input
+        defaultValue={answers.sampleProjectLink}
         name="sampleProjectLink"
         onChange={handleChange}
       />
 
-      <br/>
-
-      <p>
+      <label>
         How many years of relevant work experience do you have for the kind of work you're seeking?
-      </p>
-      <input type="number" name="totalExperience" onChange={handleChange}/>
+      </label>
+      <input
+        defaultValue={answers.totalExperience}
+        type="number"
+        name="totalExperience"
+        onChange={handleChange}
+      />
 
-      <br/>
-      <br/>
 
       <label>Select all relevant skills you have to the kind of work you are seeking</label>
-      <SkillBank myKeySkills={myKeySkills} removeFromList={removeFromList} addToList={addToList}/>
+      <SkillBank skillsList={answers.keySkills} addToList={addToList} removeFromList={removeFromList}/>
 
       <EducationSelector
         handleChange={handleChange}
@@ -50,20 +48,16 @@ const Page3 = ({
         name="highestEducationLevel"
       />
 
-      <div className="form-nav">
-        <Link to="/QnA/2">
-          <button
-            className="button-prev"
-            onClick={decreaseProgress}
-          >&laquo; Prev</button>
-        </Link>
+      <div className="job-form-nav-buttons">
+        <button
+          className="button-prev"
+          onClick={goPrev}
+        >&laquo; Prev</button>
 
-        <Link to="/QnA/4">
-          <button
-            className="button-next"
-            onClick={increaseProgress}
-          >Next &raquo;</button>
-        </Link>
+        <button
+          className="button-next"
+          onClick={goNext}
+        >Next &raquo;</button>
       </div>
 
 

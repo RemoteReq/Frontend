@@ -1,133 +1,52 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import MultiCauseSelector from '#parts/MultiCauseSelector.jsx';
+import MultiTitleSelector from '#parts/MultiTitleSelector.jsx';
 import Radio from '#parts/Radio.jsx';
 
 const Page1 = ({
-  handleChange, increaseProgress, answered,
+  answers, handleChange, addToList, removeFromList, goNext,
 }) => {
   return (
-    <div className="QnA-page">
-      <br/>
-      <br/>
+    <div className="job-form">
 
-      <p>
-        Are you eligible to work in the United States?
-      </p>
-      <div className="radios">
-        <Radio value={true} label="Yes" name="eligibleToWorkInUS" handler={handleChange}/>
+      <label>
+        List jobs you're interested in applying to
+      </label>
+      <MultiTitleSelector
+        titlesList={answers.title}
+        handleChange={handleChange}
+        addToList={addToList}
+        removeFromList={removeFromList}
+      />
 
-        <Radio value={false} label="No" name="eligibleToWorkInUS" handler={handleChange}/>
-      </div>
-
-      <br/>
-
-      <p>
+      <label>
         Which of the following causes would you like to work on? (Select up to 3)
-      </p>
+      </label>
 
-      <MultiCauseSelector handleChange={handleChange} />
-      {/* <select
-        name="cause1"
-        onChange={handleChange}>
-        <option>-----</option>
-        {
-          causes.map((cause, key) => {
-            return (
-            <option key={key}>{cause}</option>
-            );
-          })
-        }
-      </select>
+      <MultiCauseSelector
+        causesList={answers.causes}
+        handleChange={handleChange}
+        addToList={addToList}
+        removeFromList={removeFromList}
+      />
 
-      <select
-        name="cause2"
-        onChange={handleChange}>
-      <option>-----</option>
-      {
-        causes.map((cause, key) => {
-          return (
-          <option key={key}>{cause}</option>
-          );
-        })
-      }
-      </select>
-
-      <select
-        name="cause3"
-        onChange={handleChange}>
-      <option>-----</option>
-        {
-          causes.map((cause, key) => {
-            return (
-            <option key={key}>{cause}</option>
-            );
-          })
-        }
-      </select> */}
-
-      <br/>
-      <br/>
-      <br/>
-
-      <p>
+      <label>
         Why do you want to work on these causes? (Optional 250 words or less)
-      </p>
+      </label>
 
       <div className="textarea-div">
         <textarea
+          value={answers.reasonForCause}
           name="reasonForCause"
           onChange={handleChange}/>
       </div>
 
-      <br/>
-      <br/>
-
-      <p>
-        Are you seeking work on a full-time, or part-time basis?
-      </p>
-      <div className="radios">
-        <Radio value="Full Time" label="Full Time" name="jobType" handler={handleChange}/>
-
-        <Radio value="Part Time" label="Part Time" name="jobType" handler={handleChange}/>
-
-        {/* <Radio value="Either" label="Either" name="jobType" handler={handleChange}/> */}
-      </div>
-
-      <br/>
-      <br/>
-
-      <p>
-        On what date are you available to start working? (Select a date on the calendar)
-      </p>
-      <div>
-        <input
-          name="soonestJoinDate"
-          onChange={handleChange}
-          type="date"
-        />
-      </div>
-
-      <br/>
-      <br/>
-
-      <p>
-        Are you able to communicate (orally and in writing) in English at a native level?
-      </p>
-      <div className="radios">
-        <Radio value={true} label="Yes" name="fluentInEnglish" handler={handleChange}/>
-
-        <Radio value={false} label="No" name="fluentInEnglish" handler={handleChange}/>
-      </div>
-
-      <div className="form-nav">
+      <div className="job-form-nav-buttons">
         <div></div>
-        <Link to="/QnA/2">
-          <button
-            className="button-next"
-            onClick={increaseProgress}
-          >Next &raquo;</button>
-        </Link>
+        <button
+          className="button-next"
+          onClick={goNext}
+        >Next &raquo;</button>
       </div>
     </div>
   );

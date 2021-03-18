@@ -1,88 +1,106 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Radio from '#parts/Radio.jsx';
 import TimeZoneSelector from '#parts/TimeZoneSelector.jsx';
 import AvailableHours from '#parts/AvailableHours.jsx';
 import SalarySelector from '#parts/SalarySelector.jsx';
 
 const Page2 = ({
-  handleChange, handleNumber, timeZones, increaseProgress, decreaseProgress,
+  answers, handleChange, handleNumber, goPrev, goNext,
 }) => {
   return (
 
     <div className="QnA-page">
-      <br/>
-      <br/>
 
-      <p>
+      {/* <label>
         All of our jobs are remote. Do you have access to (e.g. a computer, internet connection, a telephone and a private space) to work remotely?
-      </p>
+      </label>
 
-      <div className="radios">
-        <Radio value={true} label="Yes" name="isWorkRemotely" handler={handleChange}/>
+      <div className="radios" onChange={handleChange}>
+        <Radio value={true} label="Yes" name="isWorkRemotely"/>
 
-        <Radio value={false} label="No" name="isWorkRemotely" handler={handleChange}/>
+        <Radio value={false} label="No" name="isWorkRemotely"/>
+      </div> */}
+
+      <label>
+        Are you open to Remote, Flexible, or On-site jobs?
+      </label>
+
+      <div className="radios" onChange={handleChange}>
+        <Radio value="Remote" label="Remote" name="availability"/>
+        <Radio value="Flexible" label="Flexible" name="availability"/>
+        <Radio value="On-site" label="On-site" name="availability"/>
       </div>
 
-      <TimeZoneSelector handleChange={handleChange} label="What time zone are you working from?"/>
+      <label>
+        Are you seeking work on a full-time, or part-time basis?
+      </label>
+      <div className="radios" onChange={handleChange}>
+        <Radio value="Full Time" label="Full Time" name="jobType"/>
 
-      <br/>
-      <br/>
+        <Radio value="Part Time" label="Part Time" name="jobType"/>
+      </div>
 
-      <p>What are your hours of availability?</p>
-      <AvailableHours handleChange={handleChange} />
-
-      <br/>
-      <br/>
-
-      <p>How many hours are you available to work weekly?</p>
-      <input
-        name="howLongWorkingRemotely"
-        type="number"
-        onChange={handleNumber}
-      />
-
-      <p>
-        (For part-time only) What are your hourly pay expectations?
-      </p>
-
-      <div className="wage-input">
-        <p>$</p>
+      <label>
+        On what date are you available to start working? (Select a date on the calendar)
+      </label>
+      <div>
         <input
-          name="hourlyWage"
-          type="number"
-          onChange={handleNumber}
+          name="soonestJoinDate"
+          onChange={handleChange}
+          type="date"
         />
-        <p>/hr</p>
       </div>
 
-      <br/>
-      <br/>
+      {
+        answers.jobType === 'Part Time'
+          ? <div>
+          <label>What are your hours of availability?</label>
+          <AvailableHours handleChange={handleChange} />
 
-      <p>
-        (For full-time only) what are your annual salary expectations?
-      </p>
 
-      <div className="salary-input">
-        <p>$</p>
-        <SalarySelector handleChange={handleChange} name="salary"/>
-        <p>/year</p>
+          <label>How many hours are you available to work weekly?</label>
+          <input
+            defaultValue={answers.howLongWorkingRemotely}
+            name="howLongWorkingRemotely"
+            type="number"
+            onChange={handleChange}
+            />
+
+          <label>
+            What are your hourly pay expectations?
+          </label>
+
+          <div className="wage-input">
+            <input
+              defaultValue={answers.hourlyWage}
+              name="hourlyWage"
+              type="number"
+              onChange={handleChange}
+              />
+          </div>
+        </div>
+          : <div>
+        <label>
+          What are your annual salary expectations?
+        </label>
+
+        <div className="salary-input">
+          <SalarySelector handleChange={handleChange} name="salary"/>
+        </div>
       </div>
+      }
 
-      <div className="form-nav">
-        <Link to="/QnA/1">
-          <button
-            className="button-prev"
-            onClick={decreaseProgress}
-          >&laquo; Prev</button>
-        </Link>
 
-        <Link to="/QnA/3">
-          <button
-            className="button-next"
-            onClick={increaseProgress}
-          >Next &raquo;</button>
-        </Link>
+      <div className="job-form-nav-buttons">
+        <button
+          className="button-prev"
+          onClick={goPrev}
+        >&laquo; Prev</button>
+
+        <button
+          className="button-next"
+          onClick={goNext}
+        >Next &raquo;</button>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { salaries } from '#assets/inputs/inputs';
 const SalarySelector = ({ onChange, name, value }) => {
   return (
     <div className="select">
-      <label>{name || 'Salary'}</label>
+      <label>{'Salary'}</label>
       <select
         value={value}
         type="number"

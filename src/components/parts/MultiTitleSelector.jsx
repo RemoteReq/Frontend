@@ -1,33 +1,33 @@
 import React from 'react';
 import Select from 'react-select';
-import keySkills from '#assets/inputs/new/new-keySkills.js';
+import jobTitles from '#assets/inputs/new/new-job-titles.js';
 
-const SkillBank = ({ skillsList, addToList, removeFromList }) => {
-  skillsList = skillsList || [];
+const MultiJobSelector = ({ titlesList, addToList, removeFromList }) => {
+  titlesList = titlesList || [];
 
   return (
-    <div className="select">
+    <div className="multi-cause-selector">
 
-      <div className="skill-bank">
+    <div className="skill-bank">
         <Select
-          name="keySkills"
+          name="title"
           onChange={addToList}
-          options={keySkills}
+          options={jobTitles}
         />
 
         <div className="skill-box">
-          <p className="small-paragraph">Skills: </p>
+          <p className="small-paragraph">Jobs: </p>
 
           <ul>
             {
-              skillsList.map((myKeySkill, key) => {
+              titlesList.map((myTtitle, key) => {
                 return (
                   <li key={key}>
                     <div className="skill">
                       <input
                         readOnly
-                        value={myKeySkill}
-                        name="keySkills"
+                        value={myTtitle}
+                        name="title"
                         onClick={(e) => { return removeFromList(e); }}
                       />
 
@@ -42,8 +42,9 @@ const SkillBank = ({ skillsList, addToList, removeFromList }) => {
           </ul>
         </div>
       </div>
+
     </div>
   );
 };
 
-export default SkillBank;
+export default MultiJobSelector;

@@ -65,7 +65,7 @@ class App extends Component {
                 <Route path="/employerResetPassword" component={EResetPassword} />
                 <Route path="/faq" component={FAQ} />
                 <ProtectedRoute path="/QnA" component={QnA} />
-                <ProtectedRoute path="/QnA2" component={QnA2} />
+                <ProtectedRoute path="/QnAv2" component={QnA2} />
                 <ProtectedRoute path="/settings" component={Settings} />
                 <ProtectedRoute path="/dashboard" component={Dashboard} />
                 <Route component={Page404} />

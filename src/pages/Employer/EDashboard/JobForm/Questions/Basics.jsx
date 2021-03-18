@@ -1,8 +1,5 @@
 import React from 'react';
 import Select from 'react-select';
-import CauseSelector from '#parts/CauseSelector.jsx';
-import JobTitleSelector from '#parts/JobTitleSelector.jsx';
-
 import jobTitles from '#assets/inputs/new/new-job-titles.js';
 import causes from '#assets/inputs/new/new-causes.js';
 
@@ -21,7 +18,6 @@ const Basics = ({
         onChange={handleSelect}
         options={jobTitles}
       />
-      {/* <JobTitleSelector name="jobTitle" handleChange={handleChange}/> */}
 
       <label>Company Name</label>
       <input
@@ -49,7 +45,6 @@ const Basics = ({
           onChange={handleChange}
           />
       </div>
-
 
       <div className="job-form-nav-buttons">
         <div></div>

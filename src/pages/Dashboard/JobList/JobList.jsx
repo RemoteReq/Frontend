@@ -29,7 +29,15 @@ const MappedJobs = ({ jobs }) => {
   return (
     <div className='jobList'>
 
-    <h3>Job Matches</h3>
+      <div className="job-list-header">
+        <h3>Job Matches</h3>
+
+        <Link to="/QnAv2">
+          <button className="button-1 small-button">
+            Retake QnA
+          </button>
+        </Link>
+      </div>
 
     <div className="jobs">
       {
