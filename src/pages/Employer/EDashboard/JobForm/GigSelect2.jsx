@@ -133,6 +133,7 @@ class GigSelect extends Component {
                   jobType,
                   price,
                   afterHirePrice,
+                  ...this.state,
                 },
               }}
             >

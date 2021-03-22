@@ -148,7 +148,7 @@ class JobForm2 extends Component {
   }
 
   componentDidMount() {
-    const { jobType, availability } = this.props.location.state;
+    const { jobType, availability, ...rest } = this.props.location.state;
 
     Axios({
       url: `${backend}/api/employers/getSingleEmployer`,
@@ -162,6 +162,7 @@ class JobForm2 extends Component {
         this.setState({
           job: {
             ...this.state.job,
+            ...rest,
             jobType,
             availability,
             companyName: response.data.companyName,

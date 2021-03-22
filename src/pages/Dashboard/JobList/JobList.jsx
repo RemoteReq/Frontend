@@ -81,7 +81,7 @@ const AwaitingJobs = () => {
 
         <br/>
 
-        <Link to="/QnA/1">
+        <Link to="/QnAv2">
           <button className="button-1 small-button">Retake Questionnaire</button>
         </Link>
       </div>

@@ -20,15 +20,6 @@ const Availability = ({
         {
           job.jobType === 'Part Time'
             ? <div>
-            <label>Available work hours</label>
-            <AvailableHours handleChange={handleChange}/>
-          </div>
-            : <div></div>
-        }
-
-        {
-          job.jobType === 'Part Time'
-            ? <div>
             <label>Hourly Wage</label>
             <input
             value={job.hourlyWage}

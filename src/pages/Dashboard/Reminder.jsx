@@ -19,7 +19,7 @@ const Reminder = () => {
           and interests so we can match you.
         </p>
 
-        <Link to="/QnA/1">
+        <Link to="/QnAv2">
           <button className="button-1">
             Start Questionnaire
           </button>

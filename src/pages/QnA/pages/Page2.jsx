@@ -26,18 +26,18 @@ const Page2 = ({
       </label>
 
       <div className="radios" onChange={handleChange}>
-        <Radio value="Remote" label="Remote" name="availability"/>
-        <Radio value="Flexible" label="Flexible" name="availability"/>
-        <Radio value="On-site" label="On-site" name="availability"/>
+        <Radio value="Remote" label="Remote" name="availability" checked={answers.availability === 'Remote'} onChange={handleChange}/>
+        <Radio value="Flexible" label="Flexible" name="availability" checked={answers.availability === 'Flexible'} onChange={handleChange}/>
+        <Radio value="On-site" label="On-site" name="availability" checked={answers.availability === 'On-site'} onChange={handleChange}/>
       </div>
 
       <label>
         Are you seeking work on a full-time, or part-time basis?
       </label>
       <div className="radios" onChange={handleChange}>
-        <Radio value="Full Time" label="Full Time" name="jobType"/>
+        <Radio value="Full Time" label="Full Time" name="jobType" checked={answers.jobType === 'Full Time'} onChange={handleChange}/>
 
-        <Radio value="Part Time" label="Part Time" name="jobType"/>
+        <Radio value="Part Time" label="Part Time" name="jobType" checked={answers.jobType === 'Part Time'} onChange={handleChange}/>
       </div>
 
       <label>
@@ -54,10 +54,6 @@ const Page2 = ({
       {
         answers.jobType === 'Part Time'
           ? <div>
-          <label>What are your hours of availability?</label>
-          <AvailableHours handleChange={handleChange} />
-
-
           <label>How many hours are you available to work weekly?</label>
           <input
             defaultValue={answers.howLongWorkingRemotely}
