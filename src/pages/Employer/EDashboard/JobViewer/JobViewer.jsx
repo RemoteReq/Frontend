@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ENav from '../../ENav/ENav.jsx';
 // import EMatchRating from '#parts/EMatchRating.jsx';
@@ -101,8 +102,16 @@ class JobViewer extends Component {
               </div>
             </div>
 
-
-            <p className="small-paragraph">{transactionId ? `Transaction ID:${transactionId}` : ''}</p>
+              {
+                transactionId
+                  ? <p className="small-paragraph">{transactionId ? `Transaction ID:${transactionId}` : ''}</p>
+                  : <Link
+                      to={{
+                        pathname: '/employer/gig-select-2',
+                        state: { job },
+                      }}
+                    >Edit</Link>
+              }
           </div>
 
           <br/>
@@ -139,6 +148,7 @@ class JobViewer extends Component {
             <div className="job-headline-column">
               <IconAndTitle title="Job" icon={SuitcaseIcon}/>
               <li>{job.jobType}</li>
+              <li>{job.availability}</li>
               <li>
                 {
                   job.jobType === 'Part Time' ? `$${job.hourlyWage} / Hour` : `$${job.salary} / Year`

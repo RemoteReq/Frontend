@@ -14,6 +14,21 @@ class GigSelect extends Component {
 
     this.handlePriceOption = this.handlePriceOption.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleRadio = this.handleRadio.bind(this);
+  }
+
+  componentDidMount() {
+    const { job } = this.props.location.state;
+
+    this.setState({
+      ...job,
+    }, () => { console.log(this.state); });
+  }
+
+  handleRadio(e) {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
   }
 
   handleChange(e) {
@@ -65,16 +80,22 @@ class GigSelect extends Component {
               value="Remote"
               label="Remote"
               name="availability"
+              checked={availability === 'Remote'}
+              onChange={this.handleRadio}
             />
             <Radio
               value="Flexible"
               label="Flexible"
               name="availability"
+              checked={availability === 'Flexible'}
+              onChange={this.handleRadio}
             />
             <Radio
               value="On-site"
               label="On-site"
               name="availability"
+              checked={availability === 'On-site'}
+              onChange={this.handleRadio}
             />
           </div>
 
@@ -89,11 +110,15 @@ class GigSelect extends Component {
               value="Full Time"
               label="Full Time"
               name="jobType"
+              checked={jobType === 'Full Time'}
+              onChange={this.handleRadio}
             />
             <Radio
               value="Part Time"
               label="Part Time"
               name="jobType"
+              checked={jobType === 'Part Time'}
+              onChange={this.handleRadio}
             />
           </div>
 

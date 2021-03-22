@@ -7,8 +7,8 @@
 
   form {
     margin: 5vh 25vw;
-    // width: 100%;
     background-color: white;
+    widtH: 1000px;
 
 
     li {
@@ -86,8 +86,7 @@
   .job-viewer {
     
     form {
-      margin: 4vh 8vw;
-      width: 100%;
+      margin: 4vh auto;
 
       .job-headline {
         div {
@@ -103,7 +102,8 @@
   .job-viewer {
 
     form {
-      margin: 120px 2vw;
+      margin: 4vh auto;
+      width: auto;
 
       .logo-box {
         height: 100px;
