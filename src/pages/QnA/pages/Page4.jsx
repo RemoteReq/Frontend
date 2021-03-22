@@ -15,9 +15,9 @@ const Page4 = ({
         Are you eligible to work in the United States?
       </label>
       <div className="radios" onChange={handleChange}>
-        <Radio value={true} label="Yes" name="eligibleToWorkInUS"/>
+        <Radio value={true} label="Yes" name="eligibleToWorkInUS" onChange={handleChange} checked={answers.eligibleToWorkInUS === true}/>
 
-        <Radio value={false} label="No" name="eligibleToWorkInUS"/>
+        <Radio value={false} label="No" name="eligibleToWorkInUS" onChange={handleChange} checked={answers.eligibleToWorkInUS === false}/>
       </div>
 
 
@@ -28,9 +28,9 @@ const Page4 = ({
           Are you able to communicate (orally and in writing) in English at a native level?
         </label>
         <div className="radios" onChange={handleChange}>
-          <Radio value={true} label="Yes" name="fluentInEnglish"/>
+          <Radio value={true} label="Yes" name="fluentInEnglish" onChange={handleChange} checked={answers.fluentInEnglish === true}/>
 
-          <Radio value={false} label="No" name="fluentInEnglish"/>
+          <Radio value={false} label="No" name="fluentInEnglish" onChange={handleChange} checked={answers.fluentInEnglish === false}/>
         </div>
 
         <label>State</label>
