@@ -221,7 +221,7 @@ class QnA2 extends Component {
   }
 
   removeFromList(e) {
-    const arrayToSplice = this.state.answers.desireKeySkills;
+    const arrayToSplice = this.state.answers[e.target.name];
     const index = arrayToSplice.indexOf(e.target.value);
 
     arrayToSplice.splice(index, 1);
