@@ -1,5 +1,6 @@
 import React from 'react';
 import SkillBank from '#parts/SkillBank.jsx';
+import { degrees } from '#assets/inputs/inputs.js';
 import EducationSelector from '#parts/EducationSelector.jsx';
 
 const Page3 = ({
@@ -40,10 +41,11 @@ const Page3 = ({
 
 
       <label>Select all relevant skills you have to the kind of work you are seeking</label>
-      <SkillBank skillsList={answers.desireKeySkills} addToList={addToList} removeFromList={removeFromList}/>
+      <SkillBank name="desireKeySkills" skillsList={answers.desireKeySkills} addToList={addToList} removeFromList={removeFromList}/>
 
       <EducationSelector
-        handleChange={handleChange}
+        onChange={handleChange}
+        value={answers.highestEducationLevel}
         label="What is the highest level of education you have successfully completed?"
         name="highestEducationLevel"
       />

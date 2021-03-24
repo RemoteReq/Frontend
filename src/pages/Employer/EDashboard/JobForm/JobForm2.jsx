@@ -263,13 +263,17 @@ class JobForm2 extends Component {
     addJobForm.append('companyName', job.companyName);
     addJobForm.append('cause', job.cause);
     addJobForm.append('jobDetails', job.jobDetails);
-    addJobForm.append('keySkills', job.keySkills);
     addJobForm.append('requiredEducationLevel', job.requiredEducationLevel);
     addJobForm.append('minExperience', job.minExperience);
     addJobForm.append('maxExperience', job.maxExperience);
     addJobForm.append('location', job.location);
     addJobForm.append('soonestJoinDate', job.soonestJoinDate);
-    addJobForm.append('otherLanguages', ['language1', 'language2']);
+    // addJobForm.append('otherLanguages', ['language1', 'language2']);
+
+    // iterate over keyskills, appending them to the field
+    for (let i = 0; i < job.keySkills.length; i++) {
+      addJobForm.append('keySkills', job.keySkills[i]);
+    }
 
     // This field shouldn't be required either, since the form may or may not be full time
 
@@ -287,8 +291,6 @@ class JobForm2 extends Component {
       addJobForm.append('jobType', job.jobType);
       addJobForm.append('timeZone', job.timeZone);
       addJobForm.append('hourlyWage', job.hourlyWage);
-      addJobForm.append('workDays', ['Monday', 'Wednesday', 'Friday']);
-      addJobForm.append('workHours', workHours);
     }
 
     if (job.jobType === 'Full Time') {
@@ -302,7 +304,7 @@ class JobForm2 extends Component {
 
     // View values before sending
     for (const pair of addJobForm.entries()) {
-      console.log(`${pair[0]}, ${pair[1]}`);
+      console.log(`${pair[0]}: ${pair[1]}`);
     }
 
     // this.enablePreloader();

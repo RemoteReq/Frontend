@@ -50,7 +50,7 @@ const Page4 = ({
           : <div></div>
         }
 
-      <TimeZoneSelector handleChange={handleChange} label="What time zone are you working from?"/>
+      <TimeZoneSelector value={answers.timeZone} handleChange={handleChange} label="What time zone are you working from?"/>
 
       <div className="job-form-nav-buttons">
         <button

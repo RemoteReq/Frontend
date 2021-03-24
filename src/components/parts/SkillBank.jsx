@@ -2,7 +2,9 @@ import React from 'react';
 import Select from 'react-select';
 import keySkills from '#assets/inputs/new/new-keySkills.js';
 
-const SkillBank = ({ skillsList, addToList, removeFromList }) => {
+const SkillBank = ({
+  name, skillsList, addToList, removeFromList,
+}) => {
   skillsList = skillsList || [];
 
   return (
@@ -10,7 +12,7 @@ const SkillBank = ({ skillsList, addToList, removeFromList }) => {
 
       <div className="skill-bank">
         <Select
-          name="desireKeySkills"
+          name={name}
           onChange={addToList}
           options={keySkills}
         />
@@ -27,7 +29,7 @@ const SkillBank = ({ skillsList, addToList, removeFromList }) => {
                       <input
                         readOnly
                         value={myKeySkill}
-                        name="desireKeySkills"
+                        name={name}
                         onClick={(e) => { return removeFromList(e); }}
                       />
 

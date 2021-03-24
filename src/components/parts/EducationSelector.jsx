@@ -8,7 +8,7 @@ const EducationSelector = ({
     <div className="select">
       <label>{label || 'Minimum Education Level Required'}</label>
       <select
-        value={value}
+        value={value || ''}
         onChange={onChange}
         name={`${name || 'highestEducationLevel'}`}
         >
