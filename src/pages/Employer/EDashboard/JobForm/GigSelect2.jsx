@@ -18,10 +18,11 @@ class GigSelect extends Component {
   }
 
   componentDidMount() {
-    const { job } = this.props.location.state;
+    const { job, edit } = this.props.location.state;
 
     this.setState({
       ...job,
+      edit,
     }, () => { console.log(this.state); });
   }
 

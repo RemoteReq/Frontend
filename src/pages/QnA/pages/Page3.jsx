@@ -40,7 +40,7 @@ const Page3 = ({
 
 
       <label>Select all relevant skills you have to the kind of work you are seeking</label>
-      <SkillBank skillsList={answers.keySkills} addToList={addToList} removeFromList={removeFromList}/>
+      <SkillBank skillsList={answers.desireKeySkills} addToList={addToList} removeFromList={removeFromList}/>
 
       <EducationSelector
         handleChange={handleChange}

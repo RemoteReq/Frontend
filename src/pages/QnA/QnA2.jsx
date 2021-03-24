@@ -166,7 +166,7 @@ class QnA2 extends Component {
             ...response.data,
             // availability:,
             // causes,
-            keySkills: response.data.desireKeySkills,
+            desireKeySkills: response.data.desireKeySkills,
             // eligibleToWorkInUS: eligibleToWorkInUS,
             // fluentInEnglish: fluentInEnglish,
             // highestEducationLevel: highestEducationLevel,
@@ -221,7 +221,7 @@ class QnA2 extends Component {
   }
 
   removeFromList(e) {
-    const arrayToSplice = this.state.answers.keySkills;
+    const arrayToSplice = this.state.answers.desireKeySkills;
     const index = arrayToSplice.indexOf(e.target.value);
 
     arrayToSplice.splice(index, 1);

@@ -74,7 +74,7 @@ const JobForm2BreadCrumbs = ({ setPage, progress }) => {
 };
 
 const QSwitch = ({
-  pageNumber, goNext, goPrev, handleChange, job, addToList, handleSelect, addJob, removeFromList,
+  pageNumber, goNext, goPrev, handleChange, job, addToList, handleSelect, addJob, removeFromList, edit,
 }) => {
   switch (pageNumber) {
     case 1:
@@ -115,6 +115,7 @@ const QSwitch = ({
           handleChange={handleChange}
           handleSelect={handleSelect}
           goPrev={goPrev}
+          edit={edit}
           addJob={addJob}
         />
       );
@@ -135,6 +136,7 @@ class JobForm2 extends Component {
       },
       currentPage: 1,
       progress: 1,
+      edit: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -148,7 +150,9 @@ class JobForm2 extends Component {
   }
 
   componentDidMount() {
-    const { jobType, availability, ...rest } = this.props.location.state;
+    const {
+      jobType, availability, edit, ...rest
+    } = this.props.location.state;
 
     Axios({
       url: `${backend}/api/employers/getSingleEmployer`,
@@ -169,6 +173,7 @@ class JobForm2 extends Component {
             companyLogo: response.data.companyLogo,
             companyWebsite: response.data.companyWebsite || '',
           },
+          edit,
         }, () => { console.log(this.state); });
       });
   }
@@ -236,7 +241,7 @@ class JobForm2 extends Component {
 
     const addJobForm = new FormData();
 
-    const { job } = this.state;
+    const { job, edit } = this.state;
     const workHours = `${job.availableHoursFrom}-${job.availableHoursTo}`;
 
     addJobForm.append('transactionIdForAddJob', 'sample job for testing');
@@ -302,29 +307,55 @@ class JobForm2 extends Component {
 
     // this.enablePreloader();
 
-    Axios({
-      url: `${EAuth.backend}/api/jobs/add`,
-      method: 'post',
-      headers: {
-        token: localStorage.getItem('e-session'),
-      },
-      data: addJobForm,
-    })
-      .then((response) => {
-        console.log(response);
-
-        window.location = '/employer/dashboard';
-
-        return response.status;
+    if (edit === false) {
+      Axios({
+        url: `${EAuth.backend}/api/jobs/add`,
+        method: 'post',
+        headers: {
+          token: localStorage.getItem('e-session'),
+        },
+        data: addJobForm,
       })
-      .then(() => {
-        console.log('taking you to dashboard');
+        .then((response) => {
+          console.log(response);
 
-        window.location = '/employer/dashboard';
+          window.location = '/employer/dashboard';
+
+          return response.status;
+        })
+        .then(() => {
+          console.log('taking you to dashboard');
+
+          window.location = '/employer/dashboard';
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      Axios({
+        url: `${EAuth.backend}/api/jobs/editJob/${job._id}`,
+        method: 'post',
+        headers: {
+          token: localStorage.getItem('e-session'),
+        },
+        data: addJobForm,
       })
-      .catch((error) => {
-        console.log(error);
-      });
+        .then((response) => {
+          console.log(response);
+
+          window.location = '/employer/dashboard';
+
+          return response.status;
+        })
+        .then(() => {
+          console.log('taking you to dashboard');
+
+          window.location = '/employer/dashboard';
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   }
 
   setPage(e) {
@@ -364,6 +395,7 @@ class JobForm2 extends Component {
     const {
       currentPage, progress,
       job,
+      edit,
       // companyWebsite, companyLogo, companyName, jobType, availability,
     } = this.state;
 
@@ -385,6 +417,7 @@ class JobForm2 extends Component {
 
             <QSwitch
               job={job}
+              edit={edit}
               pageNumber={currentPage}
               progress={progress}
               handleChange={this.handleChange}

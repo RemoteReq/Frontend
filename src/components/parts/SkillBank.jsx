@@ -10,7 +10,7 @@ const SkillBank = ({ skillsList, addToList, removeFromList }) => {
 
       <div className="skill-bank">
         <Select
-          name="keySkills"
+          name="desireKeySkills"
           onChange={addToList}
           options={keySkills}
         />
@@ -27,7 +27,7 @@ const SkillBank = ({ skillsList, addToList, removeFromList }) => {
                       <input
                         readOnly
                         value={myKeySkill}
-                        name="keySkills"
+                        name="desireKeySkills"
                         onClick={(e) => { return removeFromList(e); }}
                       />
 

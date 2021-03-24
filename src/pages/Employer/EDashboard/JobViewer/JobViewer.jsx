@@ -108,7 +108,7 @@ class JobViewer extends Component {
                   : <Link
                       to={{
                         pathname: '/employer/gig-select-2',
-                        state: { job },
+                        state: { job, edit: true },
                       }}
                     >Edit</Link>
               }
