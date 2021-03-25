@@ -268,8 +268,14 @@ class JobForm2 extends Component {
     addJobForm.append('maxExperience', job.maxExperience);
     addJobForm.append('location', job.location);
     addJobForm.append('soonestJoinDate', job.soonestJoinDate);
-    // addJobForm.append('otherLanguages', ['language1', 'language2']);
+    addJobForm.append('zipcode', job.zipcode);
 
+    // These fields need to be removed
+    addJobForm.append('otherLanguages', ['language1', 'language2']);
+    addJobForm.append('workDays', '');
+    addJobForm.append('workHours', '');
+
+    // addJobForm.append('keySkills', JSON.stringify(job.keySkills));
     // iterate over keyskills, appending them to the field
     for (let i = 0; i < job.keySkills.length; i++) {
       addJobForm.append('keySkills', job.keySkills[i]);
@@ -298,8 +304,6 @@ class JobForm2 extends Component {
       addJobForm.append('jobType', job.jobType);
       addJobForm.append('timeZone', '');
       addJobForm.append('hourlyWage', '');
-      addJobForm.append('workDays', '');
-      addJobForm.append('workHours', '');
     }
 
     // View values before sending
@@ -309,34 +313,12 @@ class JobForm2 extends Component {
 
     // this.enablePreloader();
 
+    const destinatation = edit ? `${EAuth.backend}/api/jobs/editJob/${job._id}` : `${EAuth.backend}/api/jobs/add`;
+
     if (edit === false) {
       Axios({
-        url: `${EAuth.backend}/api/jobs/add`,
-        method: 'post',
-        headers: {
-          token: localStorage.getItem('e-session'),
-        },
-        data: addJobForm,
-      })
-        .then((response) => {
-          console.log(response);
-
-          window.location = '/employer/dashboard';
-
-          return response.status;
-        })
-        .then(() => {
-          console.log('taking you to dashboard');
-
-          window.location = '/employer/dashboard';
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    } else {
-      Axios({
-        url: `${EAuth.backend}/api/jobs/editJob/${job._id}`,
-        method: 'post',
+        url: destinatation,
+        method: 'POST',
         headers: {
           token: localStorage.getItem('e-session'),
         },

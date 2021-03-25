@@ -10,6 +10,7 @@ class GigSelect extends Component {
     this.state = {
       availability: '',
       jobType: '',
+      edit: false,
     };
 
     this.handlePriceOption = this.handlePriceOption.bind(this);
@@ -18,12 +19,16 @@ class GigSelect extends Component {
   }
 
   componentDidMount() {
-    const { job, edit } = this.props.location.state;
+    if (this.props.location.state) {
+      console.log(this.props.location.state);
 
-    this.setState({
-      ...job,
-      edit,
-    }, () => { console.log(this.state); });
+      const { job, edit } = this.props.location.state || '';
+
+      this.setState({
+        ...job,
+        edit,
+      }, () => { console.log(this.state); });
+    }
   }
 
   handleRadio(e) {
@@ -130,6 +135,7 @@ class GigSelect extends Component {
               to={{
                 pathname: '/employer/job-form-2',
                 state: {
+                  // edit,
                   availability,
                   jobType,
                   price,

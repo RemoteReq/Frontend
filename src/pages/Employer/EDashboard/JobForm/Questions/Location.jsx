@@ -23,7 +23,7 @@ const Location = ({
             <input
               value={job.zipCode}
               type="number"
-              name="zipCode"
+              name="zipcode"
               onChange={handleChange}
             />
 

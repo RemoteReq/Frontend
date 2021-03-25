@@ -22,6 +22,8 @@ class JobViewer extends Component {
       transactionId: '',
       privilegeStatus: false,
     };
+
+    this.deleteJob = this.deleteJob.bind(this);
   }
 
   componentDidMount() {
@@ -58,6 +60,24 @@ class JobViewer extends Component {
             transactionId: this.props.location.state.job.transactionDetails.transactionIdForAddJob.transactionId,
           });
         }
+      });
+  }
+
+  deleteJob() {
+    axios({
+      url: `${backend}/api/jobs/delete/${this.props.location.state.job._id}`,
+      method: 'POST',
+      headers: {
+        token: localStorage.getItem('e-session'),
+      },
+    })
+      .then((response) => {
+        console.log(response);
+
+        window.localStorage = '/employer/dashboard';
+      })
+      .catch((error) => {
+        console.error(error);
       });
   }
 
@@ -105,12 +125,17 @@ class JobViewer extends Component {
               {
                 transactionId
                   ? <p className="small-paragraph">{transactionId ? `Transaction ID:${transactionId}` : ''}</p>
-                  : <Link
+                  : <div>
+                    <Link
                       to={{
                         pathname: '/employer/gig-select-2',
                         state: { job, edit: true },
                       }}
                     >Edit</Link>
+                    <br/>
+                    <br/>
+                    <a onClick={this.deleteJob}>Delete</a>
+                    </div>
               }
           </div>
 
