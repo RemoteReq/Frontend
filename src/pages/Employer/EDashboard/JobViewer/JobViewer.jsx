@@ -63,22 +63,28 @@ class JobViewer extends Component {
       });
   }
 
-  deleteJob() {
-    axios({
-      url: `${backend}/api/jobs/delete/${this.props.location.state.job._id}`,
-      method: 'POST',
-      headers: {
-        token: localStorage.getItem('e-session'),
-      },
-    })
-      .then((response) => {
-        console.log(response);
+  deleteJob(e) {
+    e.preventDefault();
 
-        window.localStorage = '/employer/dashboard';
+    if (window.confirm('Are you sure you want to delete this job req?')) {
+      console.log('shucks howdy');
+
+      axios({
+        url: `${backend}/api/jobs/delete/${this.props.location.state.job._id}`,
+        method: 'POST',
+        headers: {
+          token: localStorage.getItem('e-session'),
+        },
       })
-      .catch((error) => {
-        console.error(error);
-      });
+        .then((response) => {
+          console.log(response);
+
+          window.location = '/employer/dashboard';
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
   }
 
   render() {
@@ -103,6 +109,7 @@ class JobViewer extends Component {
         }
 
         <form>
+
           <div className="title-and-edit">
             <div className="title-cluster">
               <div className="logo-box">
@@ -125,17 +132,7 @@ class JobViewer extends Component {
               {
                 transactionId
                   ? <p className="small-paragraph">{transactionId ? `Transaction ID:${transactionId}` : ''}</p>
-                  : <div>
-                    <Link
-                      to={{
-                        pathname: '/employer/gig-select-2',
-                        state: { job, edit: true },
-                      }}
-                    >Edit</Link>
-                    <br/>
-                    <br/>
-                    <a onClick={this.deleteJob}>Delete</a>
-                    </div>
+                  : <div></div>
               }
           </div>
 
@@ -218,13 +215,34 @@ class JobViewer extends Component {
           <br/>
           <ul>
             {
-              job.keySkills.map((skill, i) => {
+              JSON.parse(job.keySkills).map((skill, i) => {
                 return (
                   <li key={i}>{skill}</li>
                 );
               })
             }
           </ul>
+
+          <br/>
+          <br/>
+
+          <div className="job-tools">
+            <div>
+              <Link
+                to={{
+                  pathname: '/employer/gig-select-2',
+                  state: { job, edit: true },
+                }}
+                ><button className="small-button button-1">
+                  Edit
+                  </button>
+              </Link>
+
+              <button className="small-button button-2"
+                onClick={this.deleteJob}
+              >Delete</button>
+            </div>
+          </div>
 
         </form>
       </div>

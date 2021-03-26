@@ -242,49 +242,57 @@ class JobForm2 extends Component {
     const addJobForm = new FormData();
 
     const { job, edit } = this.state;
-    const workHours = `${job.availableHoursFrom}-${job.availableHoursTo}`;
+    // const workHours = `${job.availableHoursFrom}-${job.availableHoursTo}`;
 
-    addJobForm.append('transactionIdForAddJob', 'sample job for testing');
-    // addJobForm.append('transactionIdForAddJob', this.props.location.state.transactionId);
+    // addJobForm.append('transactionIdForAddJob', 'sample job for testing');
+    addJobForm.append('transactionIdForAddJob', this.props.location.state.transactionId || '');
 
-
+    // Header
     addJobForm.append('companyLogoPath', job.companyLogo);
-    addJobForm.append('jobDescription', job.jobDescription);
+    addJobForm.append('companyName', job.companyName);
     addJobForm.append('companyWebsiteUrl', job.companyWebsite);
+    addJobForm.append('jobDescription', job.jobDescription);
+    // jobType is in FT/PT conditional
+    addJobForm.append('availability', job.availability);
+    // aboutUs
 
     // Comment and uncomment for testing
     // addJobForm.append('companyLogoPath', 'test.jpg');
     // addJobForm.append('jobDescription', 'pdf.pdf');
     // addJobForm.append('companyWebsiteUrl', 'http://www.websiteURL.com');
 
-    addJobForm.append('availability', job.availability);
 
+    // basics
     addJobForm.append('title', job.title);
-    addJobForm.append('companyName', job.companyName);
     addJobForm.append('cause', job.cause);
     addJobForm.append('jobDetails', job.jobDetails);
-    addJobForm.append('requiredEducationLevel', job.requiredEducationLevel);
-    addJobForm.append('minExperience', job.minExperience);
-    addJobForm.append('maxExperience', job.maxExperience);
-    addJobForm.append('location', job.location);
+
+    // availability
     addJobForm.append('soonestJoinDate', job.soonestJoinDate);
+    // wage & salary are in FT/PT conditional
+
+    // experience
+    addJobForm.append('minExperience', job.minExperience);
+    addJobForm.append('requiredEducationLevel', job.requiredEducationLevel);
+
+    addJobForm.append('keySkills', JSON.stringify(job.keySkills));
+    // OR
+    // iterate over keyskills, appending them to the field
+    // for (let i = 0; i < job.keySkills.length; i++) {
+    //   addJobForm.append('keySkills', job.keySkills[i]);
+    // }
+
+    // location
+    addJobForm.append('timeZone', job.timeZone);
+    addJobForm.append('location', job.location);
     addJobForm.append('zipcode', job.zipcode);
 
     // These fields need to be removed
     addJobForm.append('otherLanguages', ['language1', 'language2']);
     addJobForm.append('workDays', '');
     addJobForm.append('workHours', '');
-
-    // addJobForm.append('keySkills', JSON.stringify(job.keySkills));
-    // iterate over keyskills, appending them to the field
-    for (let i = 0; i < job.keySkills.length; i++) {
-      addJobForm.append('keySkills', job.keySkills[i]);
-    }
-
-    // This field shouldn't be required either, since the form may or may not be full time
-
-    // --- !! This field must be deleted on the backend !! --
-    // addJobForm.append('industryType', 'Software');
+    addJobForm.append('requireCertification', '');
+    addJobForm.append('maxExperience', '');
 
     // notification settings
     addJobForm.append('numberOfCandidate', 5);
@@ -293,17 +301,15 @@ class JobForm2 extends Component {
     addJobForm.append('fluentInEnglish', true);
 
     if (job.jobType === 'Part Time') {
-      addJobForm.append('salary', 0);
       addJobForm.append('jobType', job.jobType);
-      addJobForm.append('timeZone', job.timeZone);
+      addJobForm.append('salary', 0);
       addJobForm.append('hourlyWage', job.hourlyWage);
     }
 
     if (job.jobType === 'Full Time') {
-      addJobForm.append('salary', job.salary);
       addJobForm.append('jobType', job.jobType);
-      addJobForm.append('timeZone', '');
-      addJobForm.append('hourlyWage', '');
+      addJobForm.append('salary', job.salary);
+      addJobForm.append('hourlyWage', 0);
     }
 
     // View values before sending

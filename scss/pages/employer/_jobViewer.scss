@@ -10,9 +10,19 @@
     background-color: white;
     widtH: 1000px;
 
-
     li {
       font-size: 14pt;
+    }
+
+    .job-tools {
+      display: flex;
+      justify-content: flex-end;
+
+      div {
+        button {
+          margin: 0 12px;
+        }
+      }
     }
 
     .title-cluster {
