@@ -71,7 +71,11 @@ class Pricing extends Component {
     const { jobType, jobPrices } = this.state;
 
     return (
-      <div className="pricing">
+      <div
+        className="pricing"
+        name="pricing"
+        id="pricing"
+      >
 
         <PricingTable
           jobType={jobType}
