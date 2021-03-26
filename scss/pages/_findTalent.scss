@@ -59,6 +59,111 @@
     }
   }
 
+  .pricing {
+    justify-content: center;
+    margin: 25px 0;
+    display: flex;
+    width: 100%;
+
+    .price-header {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+
+      div{
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .price-grid {
+      min-width: 800px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr)
+    }
+
+    .column {
+      display: grid;
+      width: 250px;
+      margin: 10px;
+      grid-template-rows: repeat((5, 1fr));
+      text-align: center;
+      
+      div {
+        padding: 25px 0;
+
+        .s{
+          font-weight: bold;
+        }
+      }
+    }
+
+    .zero {
+
+      .s {
+        color: $BurntOrange;
+        font-weight: bolder;
+        font-style: italic;
+      }
+    }
+
+    .one {
+      background-color: $SecondaryColor;
+      
+      h3{
+        color: white;
+      }
+
+      p{
+        color: white;
+      }
+    }
+
+    .two {
+      background-color: $BurntOrange;
+      
+      h3{
+        color: white;
+      }
+
+      p{
+        color: white;
+      }
+    }
+
+    .three {
+      background-color: $Yellow;
+      
+      h3{
+        color: $SecondaryColor;
+      }
+
+      p{
+        color: white;
+      }
+
+      .s{
+        color: $SecondaryColor;
+      }
+    }
+
+    .price-footer {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      margin: 20px 0;  
+
+      .price-toggle {
+        display: flex;
+        justify-content: center;
+
+        p{
+          margin: 0 15px;
+        }
+      }
+    }
+
+    
+  }
+
   .find-talent-pricing {
     display: flex;
     flex-direction: column;

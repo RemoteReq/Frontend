@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import triplet1 from '#assets/icons/pngs/Profile.png';
 import triplet2 from '#assets/icons/pngs/Matched.png';
 import triplet3 from '#assets/icons/pngs/Forward.png';
-import WebFooter from '../components/parts/WebFooter.jsx';
+import WebFooter from '#parts/WebFooter.jsx';
 import heroes from '#assets/images/pngs/find-talent-heroes.png';
+import Pricing from './PricingTables/Pricing.jsx';
 // import WebFooterLeft from '#assets/images/svgs/RR-web-footer-left.svg';
 // import WebFooterRight from '#assets/images/svgs/RR-web-footer-right.svg';
 
@@ -71,6 +72,8 @@ const FindTalent = () => {
           <p>Interview who excites you. Hire a passionate new team member. Do more good.</p>
       </div>
     </div>
+
+    <Pricing />
 
     {/* <div className="find-talent-pricing">
 

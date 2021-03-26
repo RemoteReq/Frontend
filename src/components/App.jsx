@@ -16,7 +16,7 @@ import Settings from '../pages/Settings/Settings.jsx';
 import LandingPage from '../pages/LandingPage/LandingPage.jsx';
 import Dashboard from '../pages/Dashboard/Dashboard.jsx';
 import Mission from '../pages/Mission/Mission.jsx';
-import FindTalent from '../pages/FindTalent.jsx';
+import FindTalent from '../pages/FindTalent/FindTalent.jsx';
 import Page404 from '../pages/Page404.jsx';
 import ForgotPassword from '../pages/ForgotPassword/ForgotPassord.jsx';
 import ResetPassword from '../pages/ResetPassword/ResetPassword.jsx';
