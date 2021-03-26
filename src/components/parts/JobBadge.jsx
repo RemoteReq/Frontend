@@ -1,9 +1,33 @@
 import React from 'react';
 
-const JobBadge = () => {
+const JobBadge = ({ availability }) => {
   return (
-    <div></div>
+    <p className={`job-badge ${availability}`}>
+      {availability}
+    </p>
   );
 };
 
-export default JobBadge;
+const TimeBadge = ({ jobType }) => {
+  return (
+    <p className={`job-badge ${jobType}`}>
+      {jobType}
+    </p>
+  );
+};
+
+const BadgeContainer = ({ availability, jobType }) => {
+  return (
+    <div className="job-badges">
+      {
+        availability ? <JobBadge availability={availability}/> : <></>
+      }
+
+      {
+        jobType ? <TimeBadge jobType={jobType} /> : <></>
+      }
+    </div>
+  );
+};
+
+export default BadgeContainer;

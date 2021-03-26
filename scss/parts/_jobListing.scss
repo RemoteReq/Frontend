@@ -2,7 +2,7 @@
   border: 1px solid lightgray;
   border-radius: 5px;
   margin: 20px 0 20px 0;
-  padding: 10px 0 20px 0;
+  padding: 12px 30px;
 
   a {
     text-decoration: none;
@@ -13,45 +13,30 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    p {
-      padding-top: 8px;
-      padding-right: 24px;
-    }
   }
 
   h4 {
     color: $SecondaryColor;
     font-weight: bold;
     // text-decoration: underline;
-    padding: 8px 24px 8px 24px;
   }
 
   h5 {
     font-size: 16pt;
-    padding: 8px 24px 8px 24px;
     color: lightgray;
   }
   
-  .see-job {
-    text-decoration-line: underline;
-    font-size: 18px;
-    color: blue;
-    font-weight: bolder;
-    cursor: pointer;
-  }
+  // .see-job {
+  //   text-decoration-line: underline;
+  //   font-size: 18px;
+  //   color: blue;
+  //   font-weight: bolder;
+  //   cursor: pointer;
+  // }
 
   .lower-job-listing {
     display: flex;
     justify-content: space-between;
-
-    p {
-      padding: 8px 24px; 
-    }
-    
-    a {
-      margin-left: 25px;
-    }
   }
   
   // .percentage-circle {
@@ -61,8 +46,9 @@
   //   border-radius: 50%;
   // }
 
-
   .percentage-match {
+    display: flex;
+    align-items: center;
     padding-left: 8px;
     line-height: unset;
     color: $SecondaryColor;

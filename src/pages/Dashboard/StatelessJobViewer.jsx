@@ -38,6 +38,12 @@ const StatelessJobViewer = (props) => {
           <br/>
           <br/>
 
+          <p>About {job.companyName}:</p>
+          <p className="small-paragraph">{job.aboutUs}</p>
+
+          <br/>
+          <br/>
+
           <div className="job-headline">
             <div className="job-headline-column">
               <IconAndTitle title="Job" icon={SuitcaseIcon}/>
@@ -61,7 +67,7 @@ const StatelessJobViewer = (props) => {
             </div>
           </div>
 
-          <p>Description:</p>
+          <p>Job Description:</p>
           <p className="small-paragraph" style={{ lineHeight: '14pt' }}>{job.jobDetails}</p>
 
           <br/>
