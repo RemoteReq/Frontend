@@ -226,7 +226,10 @@ class JobViewer extends Component {
           <br/>
           <br/>
 
-          <div className="job-tools">
+
+          {
+            firstPaymentStatus ? ''
+              : <div className="job-tools">
             <div>
               <Link
                 to={{
@@ -243,6 +246,8 @@ class JobViewer extends Component {
               >Delete</button>
             </div>
           </div>
+          }
+
 
         </form>
       </div>
