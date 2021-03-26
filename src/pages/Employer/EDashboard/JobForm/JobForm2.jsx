@@ -172,6 +172,7 @@ class JobForm2 extends Component {
             companyName: response.data.companyName,
             companyLogo: response.data.companyLogo,
             companyWebsite: response.data.companyWebsite || '',
+            aboutUs: response.data.location,
           },
           edit,
         }, () => { console.log(this.state); });
@@ -255,6 +256,7 @@ class JobForm2 extends Component {
     // jobType is in FT/PT conditional
     addJobForm.append('availability', job.availability);
     // aboutUs
+    addJobForm.append('aboutUs', job.aboutUs);
 
     // Comment and uncomment for testing
     // addJobForm.append('companyLogoPath', 'test.jpg');

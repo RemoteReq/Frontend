@@ -162,7 +162,7 @@ class JobViewer extends Component {
 
           <br/>
           <p>Our Mission:</p>
-          <p style={{ fontSize: '14pt' }}>{job.ourMission || ''}</p>
+          <p style={{ fontSize: '14pt' }}>{job.aboutUs || ''}</p>
           <br />
 
           <div className="job-headline">
