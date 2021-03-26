@@ -1,13 +1,21 @@
 import React from 'react';
 
-const Checkbox = ({ label, handleChange }) => {
+const Checkbox = ({
+  name, value, checked, onChange,
+}) => {
+  console.log(onChange);
+
   return (
-    <div className="checkbox">
+    <label className="checkbox">
       <input
         type="checkbox"
+        value={value}
+        name={name}
+        defaultChecked={checked}
+        onChange={onChange}
       />
-      <label>{label}</label>
-    </div>
+      {value}
+    </label>
   );
 };
 

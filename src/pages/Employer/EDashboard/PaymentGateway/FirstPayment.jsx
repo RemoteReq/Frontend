@@ -28,7 +28,7 @@ class FirstPayment extends Component {
       this.setState({
         clientToken: newToken,
         ...this.props.location.state,
-      });
+      }, () => { console.log(this.state); });
     });
 
     const { jobId } = this.props.location.state;

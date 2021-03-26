@@ -56,7 +56,10 @@ const QnA2BreadCrumbs = ({ setPage, progress }) => {
 
 const QSwitch = ({
   answers, pageNumber, goNext, goPrev, handleChange, addToList, handleSelect, removeFromList, submitAnswers,
+  handleCheckboxToArray,
 }) => {
+  console.log(handleCheckboxToArray, 'from Qswitch');
+
   switch (pageNumber) {
     case 1:
       return (
@@ -74,6 +77,7 @@ const QSwitch = ({
       return (
         <Page2
           answers={answers}
+          handleCheckBox={handleCheckboxToArray}
           handleChange={handleChange}
           goNext={goNext}
           goPrev={goPrev}
@@ -143,6 +147,7 @@ class QnA2 extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
+    this.handleCheckboxToArray = this.handleCheckboxToArray.bind(this);
     this.addToList = this.addToList.bind(this);
     this.removeFromList = this.removeFromList.bind(this);
     this.setPage = this.setPage.bind(this);
@@ -188,6 +193,25 @@ class QnA2 extends Component {
       answers: {
         ...this.state.answers,
         [e.target.name]: e.target.type === 'number' ? parseFloat(e.target.value) : e.target.value,
+      },
+    }, () => { console.log(this.state); });
+  }
+
+  handleCheckboxToArray(e) {
+    console.log('nice', e);
+
+    const { answers } = this.state;
+
+    let newArray = [...answers[e.target.name], e.target.value];
+
+    if (answers[e.target.name].includes(e.target.value)) {
+      newArray = newArray.filter((value) => { return value !== e.target.value; });
+    }
+
+    this.setState({
+      answers: {
+        ...answers,
+        [e.target.name]: newArray,
       },
     }, () => { console.log(this.state); });
   }
@@ -336,6 +360,7 @@ class QnA2 extends Component {
             goNext={this.goNext}
             goPrev={this.goPrev}
             submitAnswers={this.submitAnswers}
+            handleCheckboxToArray={this.handleCheckboxToArray}
           />
 
         </div>

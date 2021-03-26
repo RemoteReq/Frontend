@@ -33,6 +33,10 @@ input {
   display: flex;
 }
 
+.checkboxes {
+  display: flex;
+}
+
 .slider {
   display: grid;
   grid-template-columns: 4fr 1fr;
@@ -93,15 +97,11 @@ input {
 .checkbox{
   display: flex;
   align-items: center;
-  margin-right: 32px;
-
-  label{
-    padding: 0 8px;
-  }
 
   input[type=checkbox] {
     width: 20px;
     height: 20px;
+    margin: 0 16px;
   }
 }
 
