@@ -1,9 +1,10 @@
 import React from 'react';
+import Divider from '#parts/Divider.jsx';
 import EducationSelector from '#parts/EducationSelector.jsx';
 import SkillBank from '#parts/SkillBank.jsx';
 
 const Experience = ({
-  job, goNext, goPrev, handleChange, addToList, removeFromList,
+  job, goNext, goPrev, handleChange, handleFile, addToList, removeFromList,
 }) => {
   return (
     <div className="job-form">
@@ -26,6 +27,23 @@ const Experience = ({
 
       <label>List Required Skills for this Job</label>
       <SkillBank name="keySkills" skillsList={job.keySkills} addToList={addToList} removeFromList={removeFromList}/>
+
+      <Divider />
+
+      <p className="small-paragraph">{job.jobDescription ? job.jobDescription.name : ''}</p>
+
+      <div className="upload-button">
+        <button className="button-1 small-button">Upload a job description</button>
+        <input
+          type="file"
+          name="jobDescription"
+          accept="application/pdf,application/vnd.ms-excel"
+          onChange={(e) => { return handleFile(e); }}
+          />
+      </div>
+
+      <Divider />
+
 
       <div className="job-form-nav-buttons">
         <button
