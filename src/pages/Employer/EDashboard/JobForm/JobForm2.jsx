@@ -74,7 +74,7 @@ const JobForm2BreadCrumbs = ({ setPage, progress }) => {
 };
 
 const QSwitch = ({
-  pageNumber, goNext, goPrev, handleChange, job, addToList, handleSelect, addJob, removeFromList, edit,
+  pageNumber, goNext, goPrev, handleChange, job, addToList, handleSelect, handleFile, addJob, removeFromList, edit,
 }) => {
   switch (pageNumber) {
     case 1:
@@ -83,6 +83,7 @@ const QSwitch = ({
           job={job}
           handleChange={handleChange}
           handleSelect={handleSelect}
+          handleFile={handleFile}
           goNext={goNext}
         />
       );
@@ -102,6 +103,7 @@ const QSwitch = ({
         <Experience
           job={job}
           handleChange={handleChange}
+          handleFile={handleFile}
           addToList={addToList}
           removeFromList={removeFromList}
           goNext={goNext}
@@ -143,6 +145,7 @@ class JobForm2 extends Component {
     this.handleSelect = this.handleSelect.bind(this);
     this.addToList = this.addToList.bind(this);
     this.removeFromList = this.removeFromList.bind(this);
+    this.handleFile = this.handleFile.bind(this);
     this.addJob = this.addJob.bind(this);
     this.setPage = this.setPage.bind(this);
     this.goNext = this.goNext.bind(this);
@@ -237,6 +240,19 @@ class JobForm2 extends Component {
     });
   }
 
+  handleFile(e) {
+    e.preventDefault(e);
+
+    console.log(e.target.files);
+
+    this.setState({
+      job: {
+        ...this.state.job,
+        [e.target.name]: e.target.files[0],
+      },
+    }, () => { return console.log(this.state); });
+  }
+
   addJob(e) {
     e.preventDefault();
 
@@ -263,7 +279,6 @@ class JobForm2 extends Component {
     // addJobForm.append('jobDescription', 'pdf.pdf');
     // addJobForm.append('companyWebsiteUrl', 'http://www.websiteURL.com');
 
-
     // basics
     addJobForm.append('title', job.title);
     addJobForm.append('cause', job.cause);
@@ -277,11 +292,12 @@ class JobForm2 extends Component {
     addJobForm.append('minExperience', job.minExperience);
     addJobForm.append('requiredEducationLevel', job.requiredEducationLevel);
 
-    addJobForm.append('keySkills', JSON.stringify(job.keySkills));
+    // addJobForm.append('keySkills', JSON.stringify(job.keySkills));
+    addJobForm.append('keySkills', job.keySkills);
     // OR
     // iterate over keyskills, appending them to the field
     // for (let i = 0; i < job.keySkills.length; i++) {
-    //   addJobForm.append('keySkills', job.keySkills[i]);
+    //   addJobForm.append(`keySkills[${i}]`, job.keySkills[i]);
     // }
 
     // location
@@ -306,6 +322,7 @@ class JobForm2 extends Component {
       addJobForm.append('jobType', job.jobType);
       addJobForm.append('salary', 0);
       addJobForm.append('hourlyWage', job.hourlyWage);
+      addJobForm.append('numberOfHours', job.numberOfHours);
     }
 
     if (job.jobType === 'Full Time') {
@@ -323,31 +340,29 @@ class JobForm2 extends Component {
 
     const destinatation = edit ? `${EAuth.backend}/api/jobs/editJob/${job._id}` : `${EAuth.backend}/api/jobs/add`;
 
-    if (edit === false) {
-      Axios({
-        url: destinatation,
-        method: 'POST',
-        headers: {
-          token: localStorage.getItem('e-session'),
-        },
-        data: addJobForm,
+    Axios({
+      url: destinatation,
+      method: 'POST',
+      headers: {
+        token: localStorage.getItem('e-session'),
+      },
+      data: addJobForm,
+    })
+      .then((response) => {
+        console.log(response);
+
+        window.location = '/employer/dashboard';
+
+        return response.status;
       })
-        .then((response) => {
-          console.log(response);
+      .then(() => {
+        console.log('taking you to dashboard');
 
-          window.location = '/employer/dashboard';
-
-          return response.status;
-        })
-        .then(() => {
-          console.log('taking you to dashboard');
-
-          window.location = '/employer/dashboard';
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
+        window.location = '/employer/dashboard';
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   setPage(e) {
@@ -414,6 +429,7 @@ class JobForm2 extends Component {
               progress={progress}
               handleChange={this.handleChange}
               handleSelect={this.handleSelect}
+              handleFile={this.handleFile}
               addToList={this.addToList}
               removeFromList={this.removeFromList}
               goNext={this.goNext}

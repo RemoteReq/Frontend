@@ -6,8 +6,8 @@ import LocationIcon from '#assets/icons/pngs/flaticon/profile-card-icons/locatio
 import Navigation from '#parts/Navigation2.jsx';
 
 const StatelessJobViewer = (props) => {
-  console.log('Job Seeker Stateless Job Viewer says:', props.location.state);
-  const { job } = props.location.state;
+  const { job } = props.location.state || {};
+  console.log('Job Seeker Stateless Job Viewer says:', job);
 
   return (
     <div className="job-viewer">
@@ -89,7 +89,7 @@ const StatelessJobViewer = (props) => {
           <p>Skills required for this job:</p>
           <ul>
             {
-              JSON.parse(job.keySkills).map((skill, i) => {
+              job.keySkills.map((skill, i) => {
                 return (
                   <li key={i}>{skill}</li>
                 );

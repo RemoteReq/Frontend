@@ -53,10 +53,15 @@ class JobViewer extends Component {
       },
     })
       .then((response) => {
-        if (response.data.length > 0) {
+        // const keySkills = JSON.parse(this.props.location.state.job.keySkills, Array) || [];
+
+        if (response.data) {
           this.setState({
             matches: response.data,
-            job: this.props.location.state.job,
+            job: {
+              ...this.props.location.state.job,
+              // keySkills,
+            },
             transactionId: this.props.location.state.job.transactionDetails.transactionIdForAddJob.transactionId,
           });
         }
@@ -96,7 +101,7 @@ class JobViewer extends Component {
     const { privilegeStatus } = this.state;
     const expireDate = new Date(job.expireDate);
 
-    console.log(this.state);
+    console.log('viewing state', this.state);
 
     return (
       <div className="job-viewer">
@@ -215,7 +220,7 @@ class JobViewer extends Component {
           <br/>
           <ul>
             {
-              JSON.parse(job.keySkills).map((skill, i) => {
+              job.keySkills.map((skill, i) => {
                 return (
                   <li key={i}>{skill}</li>
                 );

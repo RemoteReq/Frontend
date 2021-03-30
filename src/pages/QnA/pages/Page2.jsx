@@ -99,7 +99,7 @@ const Page2 = ({
       </div>
 
       {
-        answers.jobType === 'Part Time'
+        answers.jobType.includes('Part Time')
           ? <div>
           <label>How many hours are you available to work weekly?</label>
           <input
@@ -123,6 +123,13 @@ const Page2 = ({
           </div>
         </div>
           : <div>
+          </div>
+        }
+
+        {
+
+        answers.jobType.includes('Full Time')
+          ? <div>
         <label>
           What are your annual salary expectations?
         </label>
@@ -131,6 +138,9 @@ const Page2 = ({
           <SalarySelector handleChange={handleChange} name="salary"/>
         </div>
       </div>
+
+          : <div>
+        </div>
       }
 
 

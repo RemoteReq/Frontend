@@ -29,7 +29,7 @@ const MultiCauseSelector = ({
                       <input
                         readOnly
                         value={myCause}
-                        name="cause"
+                        name="causes"
                         onClick={(e) => { return removeFromList(e); }}
                       />
 
