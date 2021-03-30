@@ -1,4 +1,8 @@
 import React from 'react';
+import Hands from '#assets/images/pngs/hands.png';
+import PostFor from '#assets/images/pngs/post-for.png';
+import PT from '#assets/images/pngs/part-time.png';
+import FT from '#assets/images/pngs/full-time.png';
 
 const PricingTable = ({ jobType, jobPrices, togglePrices }) => {
   console.log(jobType, jobPrices);
@@ -7,12 +11,15 @@ const PricingTable = ({ jobType, jobPrices, togglePrices }) => {
     <div>
 
       <div className="price-header">
-        <div></div>
+        <div>
+          <img className="hands" src={Hands}/>
+        </div>
 
         <div>
-          <h3>
-            {jobType}
-          </h3>
+            {jobType === 'Part Time'
+              ? <img className="job-type" src={PT}/>
+              : <img className="job-type" src={FT}/>
+            }
         </div>
       </div>
 
@@ -22,7 +29,7 @@ const PricingTable = ({ jobType, jobPrices, togglePrices }) => {
 
           </div>
           <div>
-            <p className="small-paragraph">Post for</p>
+            <img className="post-for" src={PostFor}/>
           </div>
           <div>
             <p className="small-paragraph">Access up to 5 candidate matches</p>
