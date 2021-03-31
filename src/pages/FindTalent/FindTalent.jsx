@@ -73,6 +73,12 @@ const FindTalent = () => {
       </div>
     </div>
 
+    <div name="pricing" id="pricing"></div>
+
+    <div className="price-header-main">
+      <h1>Hire for full-time or part-time openings</h1>
+    </div>
+
     <Pricing />
 
     {/* <div className="find-talent-pricing">

@@ -72,7 +72,7 @@ const PricingTable = ({ jobType, jobPrices, togglePrices }) => {
         <div></div>
 
         <div className="price-toggle">
-          <p>Part Time</p>
+          <p className={`${jobType === 'Part Time' ? 'highlight' : 'dim'}`}>Part Time</p>
 
           <label className="switch">
             <input
@@ -82,7 +82,7 @@ const PricingTable = ({ jobType, jobPrices, togglePrices }) => {
             <span className="slider"></span>
           </label>
 
-          <p>Full Time</p>
+          <p className={`${jobType === 'Full Time' ? 'highlight' : 'dim'}`}>Full Time</p>
         </div>
       </div>
     </div>
