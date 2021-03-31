@@ -5,6 +5,7 @@ import axios from 'axios';
 import Eauth from '../../EAuth/EAuth.jsx';
 import ENav from '../../ENav/ENav.jsx';
 import Preloader from '#components/svgs/Preloader.jsx';
+import Prices from '#assets/inputs/prices.js';
 
 const backend = process.env.BASE_URL;
 
@@ -46,19 +47,17 @@ class FirstPayment extends Component {
         return response.data;
       })
       .then((response) => {
-        if (response.jobType === 'Part Time') {
-          this.setState({
-            jobType: response.jobType,
-            reqCost: 900,
-          });
-        } else if (response.jobType === 'Full Time') {
-          this.setState({
-            jobType: response.jobType,
-            reqCost: 2400,
-          });
-        } else {
-          console.log('error setting job type');
-        }
+        const { jobType, availability } = response;
+
+        const { accessFee, hireFee } = Prices[jobType][availability];
+
+        console.log(accessFee);
+
+        this.setState({
+          jobType,
+          accessFee,
+          hireFee,
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -118,7 +117,7 @@ class FirstPayment extends Component {
       this.state,
     );
 
-    const { clientToken } = this.state;
+    const { clientToken, accessFee, hireFee } = this.state;
     const { requestInProgress } = this.state;
 
     return (
@@ -137,9 +136,9 @@ class FirstPayment extends Component {
           </div>
 
           <h3>Checkout</h3>
-          <h3>Total: ${this.props.location.state.price}</h3>
+          <h3>Total: ${accessFee}</h3>
           <p className="small-paragraph">
-            Pay $100, now, to view your best-fit candidate matches. Your remaining balance will be due at the time of hire.
+            Pay ${accessFee}, now, to view your best-fit candidate matches. Your remaining balance of ${hireFee} will be due at the time of hire.
           </p>
           {
             this.state.clientToken
@@ -150,7 +149,7 @@ class FirstPayment extends Component {
                       vaultManager: true,
                       paypal: {
                         flow: 'vault',
-                        amount: '100.00',
+                        amount: accessFee,
                         currency: 'USD',
                       },
                     }}

@@ -73,8 +73,6 @@ class Pricing extends Component {
     return (
       <div
         className="pricing"
-        name="pricing"
-        id="pricing"
       >
 
         <PricingTable

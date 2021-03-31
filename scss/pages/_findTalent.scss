@@ -33,13 +33,12 @@
   .find-talent-mid {
     display: flex;
     justify-content: space-evenly;
-    padding: 0 10% 0 10%;
+    margin: 120px 10%;
 
     .mid-triplet {
       display: flex;
       flex-direction: column;
       width: 25%;
-      padding: 8% 0 8% 0;
 
       img {
         width: 60px;
@@ -59,9 +58,15 @@
     }
   }
 
+  .price-header-main {
+    display: flex;
+    justify-content: center;
+    margin: 80px 0;
+  }
+
   .pricing {
     justify-content: center;
-    margin: 25px 0;
+    margin: 80px 0;
     display: flex;
     width: 100%;
 
@@ -168,6 +173,16 @@
       .price-toggle {
         display: flex;
         justify-content: center;
+
+        .highlight {
+          color: $SecondaryColor;
+          font-weight: bold;
+        }
+
+        .dim {
+          color: lightgray;
+          font-weight: bold;
+        }
 
         p{
           margin: 0 15px;
