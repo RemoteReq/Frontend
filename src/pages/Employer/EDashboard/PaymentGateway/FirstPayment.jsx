@@ -5,45 +5,9 @@ import axios from 'axios';
 import Eauth from '../../EAuth/EAuth.jsx';
 import ENav from '../../ENav/ENav.jsx';
 import Preloader from '#components/svgs/Preloader.jsx';
+import Prices from '#assets/inputs/prices.js';
 
 const backend = process.env.BASE_URL;
-
-const Prices = {
-  'Part Time': {
-    Remote: {
-      accessFee: 50,
-      hireFee: 250,
-      total: 300,
-    },
-    Flexible: {
-      accessFee: 50,
-      hireFee: 450,
-      total: 500,
-    },
-    'On-site': {
-      accessFee: 75,
-      hireFee: 750,
-      total: 825,
-    },
-  },
-  'Full Time': {
-    Remote: {
-      accessFee: 50,
-      hireFee: 450,
-      total: 500,
-    },
-    Flexible: {
-      accessFee: 75,
-      hireFee: 750,
-      total: 825,
-    },
-    'On-site': {
-      accessFee: 100,
-      hireFee: 900,
-      total: 1000,
-    },
-  },
-};
 
 class FirstPayment extends Component {
   constructor(props) {
