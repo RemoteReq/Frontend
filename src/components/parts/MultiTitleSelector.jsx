@@ -16,7 +16,7 @@ const MultiJobSelector = ({ titlesList, addToList, removeFromList }) => {
         />
 
         <div className="skill-box">
-          <p className="small-paragraph">Jobs: </p>
+          <p className="small-paragraph">Job Titles: </p>
 
           <ul>
             {

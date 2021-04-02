@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import ENav from '../../ENav/ENav.jsx';
 import EAuth from '../../EAuth/EAuth.jsx';
+import Breadcrumbs from '#parts/Breadcrumbs.jsx';
 import Basics from './Questions/Basics.jsx';
 import Availability from './Questions/Availability.jsx';
 import Experience from './Questions/Experience.jsx';
@@ -23,52 +24,6 @@ const CompanyWindow = ({ job }) => {
         <p className="small-paragraph">{job.availability}</p>
         <p className="small-paragraph">{job.jobType}</p>
       </div>
-    </div>
-  );
-};
-
-const JobForm2BreadCrumbs = ({ setPage, progress }) => {
-  return (
-    <div className="breadcrumbs">
-
-      <button
-        className={`small-button ${progress > 0 ? 'complete' : 'incomplete'}`}
-        onClick={(e) => { return setPage(e); }}
-        value={1}
-      >
-        Basics
-      </button>
-
-      <div className={`breadcrumb-bar ${progress > 1 ? 'complete' : 'incomplete'}`}></div>
-
-      <button
-        className={`small-button ${progress > 1 ? 'complete' : 'incomplete'}`}
-        onClick={(e) => { return setPage(e); }}
-        value={2}
-      >
-        Availability
-      </button>
-
-      <div className={`breadcrumb-bar ${progress > 2 ? 'complete' : 'incomplete'}`}></div>
-
-      <button
-        className={`small-button ${progress > 2 ? 'complete' : 'incomplete'}`}
-        onClick={(e) => { return setPage(e); }}
-        value={3}
-      >
-        Experience
-      </button>
-
-      <div className={`breadcrumb-bar ${progress > 3 ? 'complete' : 'incomplete'}`}></div>
-
-      <button
-        className={`small-button ${progress > 3 ? 'complete' : 'incomplete'}`}
-        onClick={(e) => { return setPage(e); }}
-        value={4}
-      >
-        Location
-      </button>
-
     </div>
   );
 };
@@ -417,8 +372,8 @@ class JobForm2 extends Component {
 
           <div className="job-form-2">
 
-            <JobForm2BreadCrumbs
-              setPage={this.setPage}
+            <Breadcrumbs
+              setProgress={this.setPage}
               progress={progress}
               />
 
