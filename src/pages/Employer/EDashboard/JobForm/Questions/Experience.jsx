@@ -1,7 +1,7 @@
 import React from 'react';
 import Divider from '#parts/Divider.jsx';
 import EducationSelector from '#parts/EducationSelector.jsx';
-import SkillBank from '#parts/SkillBank.jsx';
+import SelectList from '#parts/SelectList.jsx';
 
 const Experience = ({
   job, goNext, goPrev, handleChange, handleFile, addToList, removeFromList,
@@ -26,7 +26,12 @@ const Experience = ({
       />
 
       <label>List Required Skills for this Job</label>
-      <SkillBank name="keySkills" skillsList={job.keySkills} addToList={addToList} removeFromList={removeFromList}/>
+      <SelectList
+        name="keySkills"
+        data={job.keySkills}
+        addToList={addToList}
+        removeFromList={removeFromList}
+      />
 
       <Divider />
 

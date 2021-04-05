@@ -40,3 +40,9 @@
     padding-top: 24px;
   }
 }
+
+@media Screen and (max-aspect-ratio: 8/5) {
+  .job-form-2-page {
+    padding: 8vh 0;
+  }
+}

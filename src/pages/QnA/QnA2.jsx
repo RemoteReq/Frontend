@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Navigation2 from '#parts/Navigation2.jsx';
+import Breadcrumbs from '#parts/Breadcrumbs.jsx';
 import Page1 from './pages/Page1.jsx';
 import Page2 from './pages/Page2.jsx';
 import Page3 from './pages/Page3.jsx';
@@ -8,55 +9,9 @@ import Page4 from './pages/Page4.jsx';
 
 const backend = process.env.BASE_URL;
 
-const QnA2BreadCrumbs = ({ setPage, progress }) => {
-  return (
-    <div className="breadcrumbs">
-
-    <button
-      className={`small-button ${progress > 0 ? 'complete' : 'incomplete'}`}
-      onClick={(e) => { return setPage(e); }}
-      value={1}
-    >
-      Basics
-    </button>
-
-    <div className={`breadcrumb-bar ${progress > 1 ? 'complete' : 'incomplete'}`}></div>
-
-    <button
-      className={`small-button ${progress > 1 ? 'complete' : 'incomplete'}`}
-      onClick={(e) => { return setPage(e); }}
-      value={2}
-    >
-      Availability
-    </button>
-
-    <div className={`breadcrumb-bar ${progress > 2 ? 'complete' : 'incomplete'}`}></div>
-
-    <button
-      className={`small-button ${progress > 2 ? 'complete' : 'incomplete'}`}
-      onClick={(e) => { return setPage(e); }}
-      value={3}
-    >
-      Experience
-    </button>
-
-    <div className={`breadcrumb-bar ${progress > 3 ? 'complete' : 'incomplete'}`}></div>
-
-    <button
-      className={`small-button ${progress > 3 ? 'complete' : 'incomplete'}`}
-      onClick={(e) => { return setPage(e); }}
-      value={4}
-    >
-      Location
-    </button>
-
-    </div>
-  );
-};
-
 const QSwitch = ({
   answers, pageNumber, goNext, goPrev, handleChange, addToList, handleSelect, removeFromList, submitAnswers,
-  handleCheckboxToArray,
+  handleCheckboxToArray, handleBoolean,
 }) => {
   console.log(handleCheckboxToArray, 'from Qswitch');
 
@@ -100,6 +55,7 @@ const QSwitch = ({
         <Page4
           answers={answers}
           handleChange={handleChange}
+          handleBoolean={handleBoolean}
           handleSelect={handleSelect}
           goPrev={goPrev}
           submitAnswers={submitAnswers}
@@ -146,6 +102,7 @@ class QnA2 extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleBoolean = this.handleBoolean.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.handleCheckboxToArray = this.handleCheckboxToArray.bind(this);
     this.addToList = this.addToList.bind(this);
@@ -187,14 +144,21 @@ class QnA2 extends Component {
   }
 
   handleChange(e) {
-    console.log('hit');
-
     this.setState({
       answers: {
         ...this.state.answers,
         [e.target.name]: e.target.type === 'number' ? parseFloat(e.target.value) : e.target.value,
       },
     }, () => { console.log(this.state); });
+  }
+
+  handleBoolean(e) {
+    this.setState({
+      answers: {
+        ...this.state.answers,
+        [e.target.name]: e.target.value === 'true',
+      },
+    });
   }
 
   handleCheckboxToArray(e) {
@@ -344,8 +308,8 @@ class QnA2 extends Component {
 
         <div className="job-form-2">
 
-          <QnA2BreadCrumbs
-            setPage={this.setPage}
+          <Breadcrumbs
+            setProgress={this.setPage}
             progress={progress}
           />
 
@@ -354,6 +318,7 @@ class QnA2 extends Component {
             pageNumber={currentPage}
             progress={progress}
             handleChange={this.handleChange}
+            handleBoolean={this.handleBoolean}
             handleSelect={this.handleSelect}
             addToList={this.addToList}
             removeFromList={this.removeFromList}

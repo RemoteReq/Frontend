@@ -5,7 +5,7 @@ import {
 import axios from 'axios';
 import Navigation2 from '../../components/parts/Navigation2.jsx';
 import Auth from '../../components/Auth/Auth.jsx';
-import QnABreadcrumb from './QnABreadcrumb.jsx';
+import Breadcrumbs from '#parts//Breadcrumbs.jsx';
 import Page1 from './pages/Page1.jsx';
 import Page2 from './pages/Page2.jsx';
 import Page3 from './pages/Page3.jsx';
@@ -257,7 +257,7 @@ class QnA extends Component {
 
 
         <form>
-          <QnABreadcrumb
+          <Breadcrumbs
             progress={this.state.progress}
             setProgress={this.setProgress}
           />
