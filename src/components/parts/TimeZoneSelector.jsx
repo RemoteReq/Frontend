@@ -1,10 +1,9 @@
 import React from 'react';
 import { timeZones } from '#assets/inputs/inputs';
 
-const TimeZoneSelector = ({ value, handleChange, label }) => {
+const TimeZoneSelector = ({ value, handleChange }) => {
   return (
     <div className="select">
-      <label>{label || 'Time Zone'}</label>
       <select
         value={value || ''}
         name="timeZone"

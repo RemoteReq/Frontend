@@ -15,9 +15,9 @@ const Page2 = ({
     <div className="job-form">
 
       <div className="question">
-        <label>
+        <p>
           Are you open to Remote, Flexible, or On-site jobs?
-        </label>
+        </p>
 
         <div className="checkboxes">
           <Checkbox
@@ -47,9 +47,9 @@ const Page2 = ({
       </div>
 
       <div className="question">
-        <label>
+        <p>
           Are you seeking work on a full-time, or part-time basis?
-        </label>
+        </p>
         <div className="checkboxes">
           <Checkbox
             type="checkbox"
@@ -69,9 +69,9 @@ const Page2 = ({
       </div>
 
       <div className="question">
-        <label>
+        <p>
           On what date are you available to start working? (Select a date on the calendar)
-        </label>
+        </p>
         <div>
           <input
             name="soonestJoinDate"
@@ -84,7 +84,10 @@ const Page2 = ({
       {
         answers.jobType.includes('Part Time')
           ? <div className="question">
-          <label>How many hours are you available to work weekly?</label>
+
+          <h3>Part Time Information</h3>
+
+          <p>How many hours are you available to work weekly?</p>
           <input
             defaultValue={answers.howLongWorkingRemotely}
             name="howLongWorkingRemotely"
@@ -92,9 +95,9 @@ const Page2 = ({
             onChange={handleChange}
             />
 
-          <label>
+          <p>
             What are your hourly pay expectations?
-          </label>
+          </p>
 
           <div className="wage-input">
             <input
@@ -113,9 +116,11 @@ const Page2 = ({
 
         answers.jobType.includes('Full Time')
           ? <div className="question">
-        <label>
+        <h3>Full Time Information</h3>
+
+        <p>
           What are your annual salary expectations?
-        </label>
+        </p>
 
         <div className="salary-input">
           <SalarySelector handleChange={handleChange} name="salary"/>

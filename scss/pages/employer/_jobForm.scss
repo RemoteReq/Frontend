@@ -13,12 +13,19 @@
   .question {
     margin: 0 0 50px 0;
     // border: 1px dotted lightgray;
+    
+    h3 {
+      font-size: 18pt;
+      margin: 0 0 12px 0;
+    }
+
+    p {
+      font-size: 12pt;
+      line-height: unset;
+      margin: 0 0 8px 0;
+    }
   }
-  
-  .question > label {
-    font-weight: bolder;
-    line-height: 18pt;
-  }
+
   input {
     padding: 10px 15px;
     font-size: 1rem;

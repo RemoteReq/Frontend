@@ -11,35 +11,35 @@ const Page1 = ({
     <div className="job-form">
 
       <div className="question">
-        <label>
+        <p>
           List jobs you're interested in applying to
-        </label>
+        </p>
         <SelectList
           data={answers.title}
           name="title"
           addToList={addToList}
           removeFromList={removeFromList}
-          label="Job Titles:"
+          p="Job Titles:"
         />
       </div>
 
       <div className="question">
-        <label>
+        <p>
           Which of the following causes would you like to work on?
-        </label>
+        </p>
         <SelectList
           data={answers.causes}
           name="cause"
           addToList={addToList}
           removeFromList={removeFromList}
-          label="Causes:"
+          p="Causes:"
         />
       </div>
 
       <div className="question">
-        <label>
+        <p>
           Why do you want to work on these causes? (Optional)
-        </label>
+        </p>
         <div className="textarea-div">
           <textarea
             value={answers.reasonForCause}

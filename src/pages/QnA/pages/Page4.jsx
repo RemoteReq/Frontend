@@ -12,9 +12,9 @@ const Page4 = ({
     <div className="job-form">
 
       <div className="question">
-        <label>
+        <p>
           Are you eligible to work in the United States?
-        </label>
+        </p>
         <div className="radios" onChange={handleBoolean}>
           <Radio value={true} label="Yes" name="eligibleToWorkInUS" checked={answers.eligibleToWorkInUS === true}/>
 
@@ -28,9 +28,9 @@ const Page4 = ({
           ? <div>
 
           <div className="question">
-            <label>
+            <p>
               Are you able to communicate (orally and in writing) in English at a native level?
-            </label>
+            </p>
             <div className="radios" onChange={handleBoolean}>
               <Radio value={true} label="Yes" name="fluentInEnglish" checked={answers.fluentInEnglish === true}/>
 
@@ -39,7 +39,7 @@ const Page4 = ({
           </div>
 
         <div className="question">
-          <label>State</label>
+          <p>State</p>
           <Select
             name="location"
             value={locations.filter((location) => { return location.value === answers.location; })}
@@ -49,9 +49,9 @@ const Page4 = ({
         </div>
 
         <div className="question">
-          <label>
+          <p>
             Zip Code
-          </label>
+          </p>
           <input defaultValue={answers.zipcode} type="number" min="0" max="99999" onChange={handleChange} name="zipcode"/>
         </div>
       </div>
@@ -60,7 +60,9 @@ const Page4 = ({
         }
 
       <div className="question">
-        <TimeZoneSelector value={answers.timeZone} handleChange={handleChange} label="What time zone are you working from?"/>
+        <p>What time zone are you working from?</p>
+
+        <TimeZoneSelector value={answers.timeZone} handleChange={handleChange}/>
       </div>
 
       <div className="job-form-nav-buttons">
