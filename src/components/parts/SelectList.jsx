@@ -13,6 +13,8 @@ const GetList = (name) => {
       return KeySkills;
     case 'desireKeySkills':
       return KeySkills;
+    case 'cause':
+      return Causes;
     case 'causes':
       return Causes;
     case 'states':

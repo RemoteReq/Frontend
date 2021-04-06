@@ -9,8 +9,8 @@ const Experience = ({
   return (
     <div className="job-form">
 
-      <div className="range">
-        <label>Minimum Years of Experience Required</label>
+      <div className="question">
+        <p>Minimum Years of Experience Required</p>
         <input
           value={job.minExperience}
           type="number"
@@ -19,36 +19,38 @@ const Experience = ({
         />
       </div>
 
-      <EducationSelector
-        value={job.requiredEducationLevel}
-        name="requiredEducationLevel"
-        onChange={handleChange}
-      />
-
-      <label>List Required Skills for this Job</label>
-      <SelectList
-        name="keySkills"
-        data={job.keySkills}
-        addToList={addToList}
-        removeFromList={removeFromList}
-      />
-
-      <Divider />
-
-      <p className="small-paragraph">{job.jobDescription ? job.jobDescription.name : ''}</p>
-
-      <div className="upload-button">
-        <button className="button-1 small-button">Upload a job description</button>
-        <input
-          type="file"
-          name="jobDescription"
-          accept="application/pdf,application/vnd.ms-excel"
-          onChange={(e) => { return handleFile(e); }}
-          />
+      <div className="question">
+        <p>Minimum Education Level Required</p>
+        <EducationSelector
+          value={job.requiredEducationLevel}
+          name="requiredEducationLevel"
+          onChange={handleChange}
+        />
       </div>
 
-      <Divider />
+      <div className="question">
+        <p>List Required Skills for this Job</p>
+        <SelectList
+          name="keySkills"
+          data={job.keySkills}
+          addToList={addToList}
+          removeFromList={removeFromList}
+        />
+      </div>
 
+
+      <div className="question">
+        <p className="small-paragraph">{job.jobDescription ? job.jobDescription.name : ''}</p>
+        <div className="upload-button">
+          <button className="button-1 small-button">Upload a job description</button>
+          <input
+            type="file"
+            name="jobDescription"
+            accept="application/pdf,application/vnd.ms-excel"
+            onChange={(e) => { return handleFile(e); }}
+            />
+        </div>
+      </div>
 
       <div className="job-form-nav-buttons">
         <button
