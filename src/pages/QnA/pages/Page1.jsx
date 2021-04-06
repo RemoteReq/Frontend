@@ -29,7 +29,7 @@ const Page1 = ({
         </p>
         <SelectList
           data={answers.causes}
-          name="cause"
+          name="causes"
           addToList={addToList}
           removeFromList={removeFromList}
           p="Causes:"

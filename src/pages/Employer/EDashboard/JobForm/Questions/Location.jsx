@@ -9,23 +9,30 @@ const Location = ({
   return (
     <div className="job-form">
 
-      <TimeZoneSelector value={job.timeZone} handleChange={handleChange}/>
+      <div className="question">
+        <p>Time Zone</p>
+        <TimeZoneSelector value={job.timeZone} handleChange={handleChange}/>
+      </div>
 
-      <label>State</label>
-      <Select
-        name="location"
-        value={locations.filter((location) => { return location.value === job.location; })}
-        onChange={handleSelect}
-        options={locations}
-      />
+      <div className="question">
+        <p>State</p>
+        <Select
+          name="location"
+          value={locations.filter((location) => { return location.value === job.location; })}
+          onChange={handleSelect}
+          options={locations}
+        />
+      </div>
 
-          <label>Zip Code</label>
-            <input
-              value={job.zipCode}
-              type="number"
-              name="zipcode"
-              onChange={handleChange}
-            />
+      <div className="question">
+        <p>Zip Code</p>
+        <input
+          value={job.zipCode}
+          type="number"
+          name="zipcode"
+          onChange={handleChange}
+        />
+      </div>
 
       <div className="job-form-nav-buttons">
         <button

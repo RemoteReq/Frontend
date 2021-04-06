@@ -6,7 +6,6 @@ const EducationSelector = ({
 }) => {
   return (
     <div className="select">
-      <label>{label || 'Minimum Education Level Required'}</label>
       <select
         value={value || ''}
         onChange={onChange}
