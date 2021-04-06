@@ -12,9 +12,9 @@ const Page3 = ({
     <div className="job-form">
 
       <div className="question">
-        <label>
+        <p>
           Briefly describe a project you have worked on that is relevant to your desired work interests.
-        </label>
+        </p>
 
         <div className="textarea-div">
           <textarea
@@ -26,8 +26,8 @@ const Page3 = ({
       </div>
 
       <div className="question">
-        <label>
-          Provide a sample of your past relevant work (e.g. link to an online portfolio / past work sample / link to a past client)</label>
+        <p>
+          Provide a sample of your past relevant work (e.g. link to an online portfolio / past work sample / link to a past client)</p>
         <input
           defaultValue={answers.sampleProjectLink}
           name="sampleProjectLink"
@@ -36,9 +36,9 @@ const Page3 = ({
       </div>
 
       <div className="question">
-        <label>
+        <p>
           How many years of relevant work experience do you have for the kind of work you're seeking?
-        </label>
+        </p>
         <input
           defaultValue={answers.totalExperience}
           type="number"
@@ -48,14 +48,14 @@ const Page3 = ({
       </div>
 
       <div className="question">
-        <label>Select all relevant skills you have to the kind of work you are seeking</label>
+        <p>Select all relevant skills you have to the kind of work you are seeking</p>
         {/* <SkillBank name="desireKeySkills" skillsList={answers.desireKeySkills} addToList={addToList} removeFromList={removeFromList}/> */}
         <SelectList
           name="desireKeySkills"
           addToList={addToList}
           removeFromList={removeFromList}
           data={answers.desireKeySkills}
-          label="Your skills: "
+          p="Your skills: "
           />
       </div>
 
@@ -63,7 +63,7 @@ const Page3 = ({
         <EducationSelector
           onChange={handleChange}
           value={answers.highestEducationLevel}
-          label="What is the highest level of education you have successfully completed?"
+          p="What is the highest level of education you have successfully completed?"
           name="highestEducationLevel"
           />
       </div>
