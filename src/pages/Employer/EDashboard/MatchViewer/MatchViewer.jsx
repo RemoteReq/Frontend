@@ -35,25 +35,52 @@ class MatchViewer extends Component {
 
               <div className="contact-info">
                 <TitleAndDivider title="Contact Information: "/>
-                <p className="small-paragraph">Phone #: &nbsp;{`${candidate.mobileNum}`}</p>
-                <p className="small-paragraph">Email: &nbsp;{`${candidate.email}`}</p>
-                <p className="small-paragraph">LinkedIn URL: &nbsp;
-                  <a href={`http://${candidate.linkedInURL}`}>{`http://${candidate.linkedInURL}`}</a>
-                </p>
-                <p className="small-paragraph">Personal URL: &nbsp;
-                  <a href={`http://${candidate.personalURL}`}>{`http://${candidate.personalURL}`}</a>
-                </p>
+                {
+                  candidate.mobileNum
+                    ? <p className="small-paragraph">Phone #: &nbsp;{`${candidate.mobileNum}`}</p>
+                    : <div></div>
+                }
 
-                <p className="small-paragraph">Where {`${candidate.fullName.split(' ')[0]}`}  {candidate.location}</p>
+                {
+                  candidate.email
+                    ? <p className="small-paragraph">Email: &nbsp;{`${candidate.email}`}</p>
+                    : <div></div>
+                }
 
-                <p className="small-paragraph">
-                  <a href={candidate.resumePath || ProfilePicPlaceholder }>Resume</a>
-                </p>
+                {
+                  candidate.linkedInURL
+                    ? <p className="small-paragraph">LinkedIn URL: &nbsp;
+                    <a href={`http://${candidate.linkedInURL}`}>{`http://${candidate.linkedInURL}`}</a>
+                  </p>
+                    : <div></div>
+                }
+
+                {
+                  candidate.personalURL
+                    ? <p className="small-paragraph">Personal URL: &nbsp;
+                    <a href={`http://${candidate.personalURL}`}>{`http://${candidate.personalURL}`}</a>
+                  </p>
+                    : <div></div>
+                }
+
+                {
+                  candidate.location
+                    ? <p className="small-paragraph">Where {`${candidate.fullName.split(' ')[0]}`} is from:  {candidate.location}</p>
+                    : <div></div>
+                }
+
+                {
+                  candidate.resumePath
+                    ? <p className="small-paragraph">
+                    <a href={candidate.resumePath}>Resume</a>
+                  </p>
+                    : <div></div>
+                }
               </div>
             </div>
 
             <div className="profile-pic">
-              <img src={candidate.profilePicUrl || ''}/>
+              <img src={candidate.profilePicUrl || ProfilePicPlaceholder}/>
             </div>
           </div>
 
