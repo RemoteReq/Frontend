@@ -9,32 +9,28 @@ const LPHeader = () => {
     <div className='landingPage-heading-btns'>
       <div className='heading'>
         <h1>Find remote work with greater purpose.</h1>
-        { window.innerWidth > 767
-          ? <p>RemoteReq connects high-quality job seekers with mission-focused organizations offering remote-first work. </p>
-          : <p>RemoteReq connects high-quality job seekers with mission-focused organizations offering remote-first work. .</p>
-        }
+
+         <p>RemoteReq connects high-quality job seekers with mission-focused organizations offering remote-first work. </p>
       </div>
 
       <div className="button-and-link">
-        <div>
-          <Link to="/sign-up">
-            <button className='button-1'>Create your Profile</button>
-          </Link>
-        </div>
+        <Link to="/sign-up">
+          <button className='button-1'>Create your Profile</button>
+        </Link>
 
-        <div>
-          <Link to="/find-talent"
-                className="large-link"
-                >Find Talent
-          </Link>
-        </div>
+        <Link to="/find-talent"
+              className="large-link"
+              >Find Talent
+        </Link>
       </div>
     </div>
 
-    <img
-      src={LandingPageGraphic}
-      draggable="false"
-    />
+    <div>
+      <img
+        src={LandingPageGraphic}
+        draggable="false"
+        />
+    </div>
 
   </div>
   );
