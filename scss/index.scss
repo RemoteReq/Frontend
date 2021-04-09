@@ -69,6 +69,10 @@
 @import './parts/_hireSelect.scss';
 @import './parts/_passwordField.scss';
 @import './parts/_profilePic.scss';
+@import './parts/_IconAndTitle.scss';
+@import './parts/_titleAndDivider.scss';
+@import './parts/_jobBadge.scss';
+@import './parts/_selectList.scss';
 
 // import employer side components
 @import './pages/employer/_eSignUp.scss';
@@ -80,6 +84,8 @@
 @import './pages/employer/_employerJobListing.scss';
 @import './pages/employer/_matchViewer.scss';
 @import './pages/employer/_matchWindow.scss';
+@import './pages/employer/_jobForm2.scss';
+@import './pages/employer/_gigSelect2.scss';
 
 // import elements
 @import './elements/_buttons.scss';
@@ -94,10 +100,13 @@
 @import './elements/_textarea.scss';
 @import './elements/_selects.scss';
 @import './elements/_spans.scss';
+@import './elements/_toggleSwitch.scss';
 
 // import containers
 @import './containers/_buttonGroup.scss';
 @import './containers/_message.scss';
+@import './containers/_JobMasterTools.scss';
+@import './containers/_jobFormPage.scss';
 
 // grids
 @import './grids/_grids.scss';

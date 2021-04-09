@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import JobListing from './JobListing.jsx';
 
 // From here, loop over the inherited data from App.jsx and render and JobListings
@@ -28,7 +29,15 @@ const MappedJobs = ({ jobs }) => {
   return (
     <div className='jobList'>
 
-    <h3>Job Matches</h3>
+      <div className="job-list-header">
+        <h3>Job Matches</h3>
+
+        <Link to="/QnAv2">
+          <button className="button-1 small-button">
+            Retake QnA
+          </button>
+        </Link>
+      </div>
 
     <div className="jobs">
       {
@@ -57,22 +66,22 @@ const AwaitingJobs = () => {
         </div> */}
 
         <h4>
-          We're working hard to match you with the best jobs!
+          Thank you for completing your questionnaire.
         </h4>
 
         <p className="small-paragraph">
-          Expect an email with your first matches, and then check back here for a list of jobs.
+          We're working hard to find you a job match. Stay tuned.
         </p>
 
         <br/>
 
         <p className="small-paragraph">
-          Feel free to update your questionnaire responses in the meantime.
+          For more information, visit the Job Seeker Section of our <HashLink to="/faq#job-seeker-faq">Frequently Asked Questions</HashLink>
         </p>
 
         <br/>
 
-        <Link to="/QnA/1">
+        <Link to="/QnAv2">
           <button className="button-1 small-button">Retake Questionnaire</button>
         </Link>
       </div>

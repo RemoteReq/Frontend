@@ -16,7 +16,7 @@ import Settings from '../pages/Settings/Settings.jsx';
 import LandingPage from '../pages/LandingPage/LandingPage.jsx';
 import Dashboard from '../pages/Dashboard/Dashboard.jsx';
 import Mission from '../pages/Mission/Mission.jsx';
-import FindTalent from '../pages/FindTalent.jsx';
+import FindTalent from '../pages/FindTalent/FindTalent.jsx';
 import Page404 from '../pages/Page404.jsx';
 import ForgotPassword from '../pages/ForgotPassword/ForgotPassord.jsx';
 import ResetPassword from '../pages/ResetPassword/ResetPassword.jsx';
@@ -33,6 +33,7 @@ import IsHired from '../pages/Employer/IsHired/IsHired.jsx';
 import ThankYou from '../pages/ThankYou/ThankYou.jsx';
 import RequestADemo from '../pages/RequestADemo.jsx';
 import FAQ from '../pages/FAQ.jsx';
+import QnA2 from '../pages/QnA/QnA2.jsx';
 
 const IN_DEV_MODE = process.env.NODE_ENV;
 
@@ -64,6 +65,7 @@ class App extends Component {
                 <Route path="/employerResetPassword" component={EResetPassword} />
                 <Route path="/faq" component={FAQ} />
                 <ProtectedRoute path="/QnA" component={QnA} />
+                <ProtectedRoute path="/QnAv2" component={QnA2} />
                 <ProtectedRoute path="/settings" component={Settings} />
                 <ProtectedRoute path="/dashboard" component={Dashboard} />
                 <Route component={Page404} />

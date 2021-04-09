@@ -2,6 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SettingsIcon from '#assets/icons/pngs/flaticon/settings.png';
 import ProfilePlaceholder from '#assets/icons/pngs/Profile.png';
+import MessageIcon from '#assets/icons/pngs/flaticon/profile-card-icons/message.png';
+import EmailIcon from '#assets/icons/pngs/flaticon/profile-card-icons/email.png';
+import PhoneIcon from '#assets/icons/pngs/flaticon/profile-card-icons/phone.png';
+import RibbonIcon from '#assets/icons/pngs/flaticon/profile-card-icons/ribbon.png';
+// import LocationIcon from '#assets/icons/pngs/flaticon/profile-card-icons/location.png';
+import ResumeIcon from '#assets/icons/pngs/flaticon/profile-card-icons/resume.png';
+import ToolsIcons from '#assets/icons/pngs/flaticon/profile-card-icons/tools.png';
+import IconAndTitle from '#parts/IconAndTitle.jsx';
 
 const ProfileCard = ({ userDetails, handleFileUpload }) => {
   return (
@@ -23,27 +31,27 @@ const ProfileCard = ({ userDetails, handleFileUpload }) => {
             <h4>{userDetails.jobRole || ''}</h4>
 
             <div className="profile-card-bio">
-              <h5>About</h5>
+              <IconAndTitle title="About" icon={MessageIcon}/>
               <p className="small-paragraph">{userDetails.aboutMe}</p>
 
-              <h5>Causes</h5>
+              <IconAndTitle title="Causes" icon={RibbonIcon}/>
               <ul>{userDetails.causes.map((cause, key) => { return <li key={key}>{cause}</li>; })}</ul>
 
               {/* <h5>Education</h5> */}
               {/* {userDetails.education.map((item, key) => { return <p className="small-paragraph" key={key}>{item || ''}</p>; })} */}
 
-              <h5>Phone #</h5>
+              <IconAndTitle title="Phone Number" icon={PhoneIcon}/>
               <p className="small-paragraph">{userDetails.mobileNum || ''}</p>
 
-              <h5>Email</h5>
+              <IconAndTitle title="Email" icon={EmailIcon}/>
               <p className="small-paragraph">{userDetails.email || ''}</p>
 
-              <h5>Skills</h5>
+              <IconAndTitle title="Skills" icon={ToolsIcons} />
               <ul>
                 {userDetails.desireKeySkills.map((item, key) => { return <li key={key}>{item || 'user skill item here'}</li>; })}
               </ul>
 
-              <h5>Current resume:</h5>
+              <IconAndTitle title="Resume" icon={ResumeIcon} />
               <p className="small-paragraph">
                 {
                   userDetails.resumePath.replace(/^.*[\\\/]/, '').replace(/\d{13}/, '').replace(/%/, '_')

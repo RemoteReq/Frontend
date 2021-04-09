@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SettingsIcon from '#assets/icons/pngs/flaticon/settings.png';
+import IconAndTitle from '#parts/IconAndTitle.jsx';
+import BuildingIcon from '#assets/icons/pngs/flaticon/profile-card-icons/building.png';
+import RibbonIcon from '#assets/icons/pngs/flaticon/profile-card-icons/ribbon.png';
+import EmailIcon from '#assets/icons/pngs/flaticon/profile-card-icons/email.png';
+import URLIcon from '#assets/icons/pngs/flaticon/profile-card-icons/url.png';
 import ProfilePlaceholder from '#assets/icons/pngs/Profile.png';
 
 const StatelessProfileCard = ({ userDetails }) => {
@@ -23,14 +28,22 @@ const StatelessProfileCard = ({ userDetails }) => {
             <h4>{userDetails.jobRole || ''}</h4>
 
             <div className="profile-card-bio">
-              <h5>Company</h5>
+
+              <IconAndTitle title="Company" icon={BuildingIcon}/>
               <p className="small-paragraph">{userDetails.companyName || ''}</p>
 
-              <h5>Our Mission</h5>
+              <IconAndTitle title="Our Mission" icon={RibbonIcon}/>
               <p className="small-paragraph">{userDetails.location || ''}</p>
 
-              <h5>Email</h5>
+              <IconAndTitle title="Email" icon={EmailIcon}/>
               <p className="small-paragraph">{userDetails.email || ''}</p>
+
+              <IconAndTitle title="Website" icon={URLIcon}/>
+              <p className="small-paragraph">
+                <a href={`http://${userDetails.companyWebsite}`}>
+                  {userDetails.companyWebsite || ''}
+                </a>
+              </p>
 
             </div>
           </div>

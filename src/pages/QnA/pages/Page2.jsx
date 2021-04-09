@@ -1,88 +1,146 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Radio from '#parts/Radio.jsx';
 import TimeZoneSelector from '#parts/TimeZoneSelector.jsx';
 import AvailableHours from '#parts/AvailableHours.jsx';
 import SalarySelector from '#parts/SalarySelector.jsx';
+import Checkbox from '#parts/Checkbox.jsx';
 
 const Page2 = ({
-  handleChange, handleNumber, timeZones, increaseProgress, decreaseProgress,
+  answers, handleChange, handleCheckBox, goPrev, goNext,
 }) => {
+  console.log(handleCheckBox);
+
   return (
 
-    <div className="QnA-page">
-      <br/>
-      <br/>
+    <div className="job-form">
 
-      <p>
-        All of our jobs are remote. Do you have access to (e.g. a computer, internet connection, a telephone and a private space) to work remotely?
-      </p>
+      <div className="question">
+        <p>
+          Are you open to Remote, Flexible, or On-site jobs?
+        </p>
 
-      <div className="radios">
-        <Radio value={true} label="Yes" name="isWorkRemotely" handler={handleChange}/>
+        <div className="checkboxes">
+          <Checkbox
+            type="checkbox"
+            value="Remote"
+            name="availability"
+            checked={answers.availability.includes('Remote')}
+            onChange={handleCheckBox}
+            />
 
-        <Radio value={false} label="No" name="isWorkRemotely" handler={handleChange}/>
+          <Checkbox
+            type="checkbox"
+            value="Flexible"
+            name="availability"
+            checked={answers.availability.includes('Flexible')}
+            onChange={handleCheckBox}
+            />
+
+          <Checkbox
+            type="checkbox"
+            value="On-site"
+            name="availability"
+            checked={answers.availability.includes('On-site')}
+            onChange={handleCheckBox}
+            />
+        </div>
       </div>
 
-      <TimeZoneSelector handleChange={handleChange} label="What time zone are you working from?"/>
-
-      <br/>
-      <br/>
-
-      <p>What are your hours of availability?</p>
-      <AvailableHours handleChange={handleChange} />
-
-      <br/>
-      <br/>
-
-      <p>How many hours are you available to work weekly?</p>
-      <input
-        name="howLongWorkingRemotely"
-        type="number"
-        onChange={handleNumber}
-      />
-
-      <p>
-        (For part-time only) What are your hourly pay expectations?
-      </p>
-
-      <div className="wage-input">
-        <p>$</p>
-        <input
-          name="hourlyWage"
-          type="number"
-          onChange={handleNumber}
-        />
-        <p>/hr</p>
+      <div className="question">
+        <p>
+          Are you seeking work on a full-time, or part-time basis?
+        </p>
+        <div className="checkboxes">
+          <Checkbox
+            type="checkbox"
+            value="Full Time"
+            name="jobType"
+            checked={answers.jobType.includes('Full Time')}
+            onChange={handleCheckBox}
+            />
+          <Checkbox
+            type="checkbox"
+            value="Part Time"
+            name="jobType"
+            checked={answers.jobType.includes('Part Time')}
+            onChange={handleCheckBox}
+            />
+        </div>
       </div>
 
-      <br/>
-      <br/>
-
-      <p>
-        (For full-time only) what are your annual salary expectations?
-      </p>
-
-      <div className="salary-input">
-        <p>$</p>
-        <SalarySelector handleChange={handleChange} name="salary"/>
-        <p>/year</p>
+      <div className="question">
+        <p>
+          On what date are you available to start working? (Select a date on the calendar)
+        </p>
+        <div>
+          <input
+            name="soonestJoinDate"
+            onChange={handleChange}
+            type="date"
+            />
+        </div>
       </div>
 
-      <div className="form-nav">
-        <Link to="/QnA/1">
-          <button
-            className="button-prev"
-            onClick={decreaseProgress}
-          >&laquo; Prev</button>
-        </Link>
+      {
+        answers.jobType.includes('Part Time')
+          ? <div className="question">
 
-        <Link to="/QnA/3">
-          <button
-            className="button-next"
-            onClick={increaseProgress}
-          >Next &raquo;</button>
-        </Link>
+          <h3>Part Time Information</h3>
+
+          <p>How many hours are you available to work weekly?</p>
+          <input
+            defaultValue={answers.howLongWorkingRemotely}
+            name="howLongWorkingRemotely"
+            type="number"
+            onChange={handleChange}
+            />
+
+          <p>
+            What are your hourly pay expectations?
+          </p>
+
+          <div className="wage-input">
+            <input
+              defaultValue={answers.hourlyWage}
+              name="hourlyWage"
+              type="number"
+              onChange={handleChange}
+              />
+          </div>
+        </div>
+          : <div>
+          </div>
+        }
+
+        {
+
+        answers.jobType.includes('Full Time')
+          ? <div className="question">
+        <h3>Full Time Information</h3>
+
+        <p>
+          What are your annual salary expectations?
+        </p>
+
+        <div className="salary-input">
+          <SalarySelector handleChange={handleChange} name="salary"/>
+        </div>
+      </div>
+
+          : <div>
+        </div>
+      }
+
+      <div className="job-form-nav-buttons">
+        <button
+          className="button-prev"
+          onClick={goPrev}
+        >&laquo; Prev</button>
+
+        <button
+          className="button-next"
+          onClick={goNext}
+        >Next &raquo;</button>
       </div>
     </div>
   );

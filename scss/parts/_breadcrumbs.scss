@@ -3,13 +3,22 @@
   justify-content: space-between;
   align-items: center;
 
+  // button {
+  //   padding: 0;
+  // }
+
+  p {
+    padding: 0 0 8px 0;
+  }
+
   .complete {
-    background-color: $SecondaryColor;
-    color: white;
+    background-color: white;
+    color: $SecondaryColor;
   }
 
   .incomplete {
-    background-color: rgb(239, 239, 239);
+    background-color: white;
+    color: lightgray;
   }
 
   .breadcrumb-bar {
@@ -21,7 +30,7 @@
 @media screen and (max-aspect-ratio: 8/5) {
 }
 
-@media screen and (max-aspect-ratio: 1/1) {
+@media screen and (max-aspect-ratio: 5/8) {
   .breadcrumbs {
     flex-direction: column;
 

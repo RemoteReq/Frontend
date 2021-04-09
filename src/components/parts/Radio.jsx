@@ -1,18 +1,19 @@
 import React from 'react';
 
 const Radio = ({
-  value, label, name, handler,
+  value, label, name, checked, onChange,
 }) => {
   return (
-    <div className="radio">
+    <label className="radio">
       <input
         type="radio"
         value={value}
         name={name}
-        onChange={(e) => { return handler(e); }}
+        checked={checked}
+        onChange={onChange}
         />
-      <label>{label}</label>
-    </div>
+      {label}
+    </label>
   );
 };
 

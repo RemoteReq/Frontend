@@ -8,6 +8,7 @@ import axios from 'axios';
 import Eauth from '../../EAuth/EAuth.jsx';
 import ENav from '../../ENav/ENav.jsx';
 import Preloader from '#components/svgs/Preloader.jsx';
+import Prices from '#assets/inputs/prices.js';
 
 const backend = process.env.BASE_URL;
 
@@ -44,24 +45,35 @@ class SecondPayment extends Component {
       },
     })
       .then((response) => {
-        console.log('single job by id:', response.data);
+        console.log('single job by id:', response);
 
-        return response.data;
+        return response;
       })
       .then((response) => {
-        if (response.jobType === 'Part Time') {
-          this.setState({
-            jobType: response.jobType,
-            reqCost: 900,
-          });
-        } else if (response.jobType === 'Full Time') {
-          this.setState({
-            jobType: response.jobType,
-            reqCost: 2400,
-          });
-        } else {
-          console.log('error setting job type');
-        }
+        const { jobType, availability } = response.data;
+        const { hireFee } = Prices[jobType][availability];
+
+        console.log(hireFee);
+
+        this.setState({
+          jobType,
+          availability,
+          hireFee,
+        });
+
+        // if (response.jobType === 'Part Time') {
+        //   this.setState({
+        //     jobType: response.jobType,
+        //     reqCost: 900,
+        //   });
+        // } else if (response.jobType === 'Full Time') {
+        //   this.setState({
+        //     jobType: response.jobType,
+        //     reqCost: 2400,
+        //   });
+        // } else {
+        //   console.log('error setting job type');
+        // }
       })
       .catch((err) => {
         console.log(err);
@@ -118,8 +130,7 @@ class SecondPayment extends Component {
       this.state,
     );
 
-    const { jobType } = this.state;
-    const { reqCost } = this.state;
+    const { jobType, availability, hireFee } = this.state;
     const { clientToken } = this.state;
     const { requestInProgress } = this.state;
 
@@ -138,7 +149,7 @@ class SecondPayment extends Component {
           </div>
           <h3>Congratulations on your new hire!</h3>
           <p className="small-paragraph">
-            The placement fee for your new {jobType} hire will be ${reqCost}
+            The placement fee for your new {jobType} {availability} hire will be ${hireFee}
           </p>
           {
             this.state.clientToken
@@ -149,7 +160,7 @@ class SecondPayment extends Component {
                       vaultManager: true,
                       paypal: {
                         flow: 'vault',
-                        amount: `${reqCost}`,
+                        amount: hireFee,
                         currency: 'USD',
                       },
                     }}

@@ -25,19 +25,6 @@ const StatelessAccountEditor = ({
             readOnly
             defaultValue={`${userDetails.email}` || ''}
             />
-
-          <label>Phone Number</label>
-          <input
-            name="mobileNum"
-            // defaultValue={`${userDetails.mobileNum}` || ''}
-            onChange={(e) => { handleChange(e); }}
-            />
-
-          <button
-            className="button-1"
-            onClick={(e) => { handleSubmit(e); }}
-            >Update</button>
-
         </div>
       </form>
 

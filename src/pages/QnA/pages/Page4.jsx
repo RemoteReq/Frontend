@@ -1,50 +1,77 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { locations } from '#assets/inputs/inputs';
+import Select from 'react-select';
+import Radio from '#parts/Radio.jsx';
+import TimeZoneSelector from '#parts/TimeZoneSelector.jsx';
+import locations from '#assets/inputs/new/new-locations.js';
 
 const Page4 = ({
-  handleChange, submitAnswers, decreaseProgress,
+  answers, handleChange, handleBoolean, handleSelect, submitAnswers, goPrev,
 }) => {
   return (
-    <div className="QnA-page">
-      <br/>
-      <br/>
+    <div className="job-form">
 
-      <p>
-        Zip Code
-      </p>
-      <input type="number" min="0" max="99999" onChange={handleChange} name="address"/>
+      <div className="question">
+        <p>
+          Are you eligible to work in the United States?
+        </p>
+        <div className="radios" onChange={handleBoolean}>
+          <Radio value={true} label="Yes" name="eligibleToWorkInUS" checked={answers.eligibleToWorkInUS === true}/>
 
-      <br/>
-      <br/>
-
-      <p>State</p>
-      <div className="select">
-
-      <select name="location" onChange={handleChange}>
-        <option>-----</option>
-        {
-          locations.map((location, key) => {
-            return (
-              <option key={key} value={location}>{location}</option>
-            );
-          })
-          }
-      </select>
+          <Radio value={false} label="No" name="eligibleToWorkInUS" checked={answers.eligibleToWorkInUS === false}/>
+        </div>
       </div>
 
 
-      <div className="form-nav">
-        <Link to="/QnA/3">
-          <button
-            className="button-prev"
-            onClick={decreaseProgress}
-          >&laquo; Prev</button>
-        </Link>
+      {
+        answers.eligibleToWorkInUS
+          ? <div>
 
-        <Link to="/QnA/5">
-          <button className="button-next" onClick={submitAnswers}>Submit</button>
-        </Link>
+          <div className="question">
+            <p>
+              Are you able to communicate (orally and in writing) in English at a native level?
+            </p>
+            <div className="radios" onChange={handleBoolean}>
+              <Radio value={true} label="Yes" name="fluentInEnglish" checked={answers.fluentInEnglish === true}/>
+
+              <Radio value={false} label="No" name="fluentInEnglish" checked={answers.fluentInEnglish === false}/>
+            </div>
+          </div>
+
+        <div className="question">
+          <p>State</p>
+          <Select
+            name="location"
+            value={locations.filter((location) => { return location.value === answers.location; })}
+            onChange={handleSelect}
+            options={locations}
+            />
+        </div>
+
+        <div className="question">
+          <p>
+            Zip Code
+          </p>
+          <input defaultValue={answers.zipcode} type="number" min="0" max="99999" onChange={handleChange} name="zipcode"/>
+        </div>
+      </div>
+
+          : <div></div>
+        }
+
+      <div className="question">
+        <p>What time zone are you working from?</p>
+
+        <TimeZoneSelector value={answers.timeZone} handleChange={handleChange}/>
+      </div>
+
+      <div className="job-form-nav-buttons">
+        <button
+          className="button-prev"
+          onClick={goPrev}
+        >&laquo; Prev</button>
+
+        <button className="button-next" onClick={submitAnswers}>Submit</button>
       </div>
     </div>
   );

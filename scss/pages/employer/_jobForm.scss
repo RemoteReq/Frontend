@@ -7,8 +7,24 @@
 
 .job-form {
   background-color: white;
-  margin: 4vh 0;
+  margin: 4vh 0 0 0;
   width: auto;
+
+  .question {
+    margin: 0 0 50px 0;
+    // border: 1px dotted lightgray;
+    
+    h3 {
+      font-size: 18pt;
+      margin: 0 0 12px 0;
+    }
+
+    p {
+      font-size: 12pt;
+      line-height: unset;
+      margin: 0 0 8px 0;
+    }
+  }
 
   input {
     padding: 10px 15px;

@@ -5,7 +5,7 @@ const Pricing = () => {
   return (
     <div className="message">
       <p className="small-paragraph">
-        Pay only $100 for detailed access to your candidate matches. <HashLink to="/find-talent#pricing">Read more</HashLink>
+        View our pricing guidelines <HashLink to="/find-talent#pricing">here</HashLink>.
       </p>
     </div>
   );

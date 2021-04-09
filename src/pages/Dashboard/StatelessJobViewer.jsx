@@ -1,9 +1,13 @@
 import React from 'react';
+import IconAndTitle from '#parts/IconAndTitle.jsx';
+import SuitcaseIcon from '#assets/icons/pngs/flaticon/profile-card-icons/suitcase.png';
+import RibbonIcon from '#assets/icons/pngs/flaticon/profile-card-icons/ribbon.png';
+import LocationIcon from '#assets/icons/pngs/flaticon/profile-card-icons/location.png';
 import Navigation from '#parts/Navigation2.jsx';
 
 const StatelessJobViewer = (props) => {
-  console.log('Job Seeker Stateless Job Viewer says:', props.location.state);
-  const { job } = props.location.state;
+  const { job } = props.location.state || {};
+  console.log('Job Seeker Stateless Job Viewer says:', job);
 
   return (
     <div className="job-viewer">
@@ -23,7 +27,7 @@ const StatelessJobViewer = (props) => {
 
                 {
                   job.companyWebsiteUrl
-                    ? <p className="small-paragraph">Company Website: <a href={`http://${job.companyWebsiteUrl}`}>{job.companyWebsiteUrl}</a></p>
+                    ? <h4>Company Website: <a href={`http://${job.companyWebsiteUrl}`}>{job.companyWebsiteUrl}</a></h4>
 
                     : <p></p>
                 }
@@ -34,10 +38,15 @@ const StatelessJobViewer = (props) => {
           <br/>
           <br/>
 
-          <div className="job-headline">
+          <p>About {job.companyName}:</p>
+          <p className="small-paragraph">{job.aboutUs}</p>
 
-            <div>
-              <label>Job</label>
+          <br/>
+          <br/>
+
+          <div className="job-headline">
+            <div className="job-headline-column">
+              <IconAndTitle title="Job" icon={SuitcaseIcon}/>
               <li>{job.jobType}</li>
               <li>
                 {
@@ -46,23 +55,19 @@ const StatelessJobViewer = (props) => {
               </li>
             </div>
 
-            <div>
-              <label>Causes</label>
+            <div className="job-headline-column">
+              <IconAndTitle title="Cause" icon={RibbonIcon}/>
               <li>{job.cause}</li>
             </div>
 
-            <div>
-              <label>Location</label>
+            <div className="job-headline-column">
+              <IconAndTitle title="Location" icon={LocationIcon}/>
             <li>{job.location}</li>
             <li>Time Zone: GMT ({job.timeZone})</li>
             </div>
-
           </div>
 
-          <br/>
-          <br/>
-
-          <p>Description:</p>
+          <p>Job Description:</p>
           <p className="small-paragraph" style={{ lineHeight: '14pt' }}>{job.jobDetails}</p>
 
           <br/>

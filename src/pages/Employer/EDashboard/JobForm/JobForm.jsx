@@ -24,10 +24,10 @@ class JobForm extends Component {
       availableHoursTo: '',
       salary: 0,
       minExperience: 0,
-      maxExperience: 0,
+      // maxExperience: 0,
       location: '',
       numberOfCandidate: 1,
-      percentageMatch: 20,
+      percentageMatch: 50,
       fields: {
         // Side 1
         title: {
@@ -68,6 +68,9 @@ class JobForm extends Component {
           isFilled: false,
         },
         location: {
+          isFilled: false,
+        },
+        zipcode: {
           isFilled: false,
         },
         timeZone: {
@@ -301,7 +304,7 @@ class JobForm extends Component {
       })
       .then((status) => {
         if (status === 200) {
-          this.props.history.push('/employer/dashboard');
+          window.location = '/employer/dashboard';
         } else {
           console.log('fields are missing answers!');
         }

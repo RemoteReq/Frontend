@@ -5,7 +5,7 @@ import {
 import axios from 'axios';
 import Navigation2 from '../../components/parts/Navigation2.jsx';
 import Auth from '../../components/Auth/Auth.jsx';
-import QnABreadcrumb from './QnABreadcrumb.jsx';
+import Breadcrumbs from '#parts//Breadcrumbs.jsx';
 import Page1 from './pages/Page1.jsx';
 import Page2 from './pages/Page2.jsx';
 import Page3 from './pages/Page3.jsx';
@@ -28,8 +28,7 @@ class QnA extends Component {
       soonestJoinDate: '',
       fluentInEnglish: '',
       highestEducationLevel: 0,
-      jobChangeReason: '',
-      availableWorkDays: [],
+      reasonForCause: '',
       availableWorkHours: '',
       availableHoursFrom: '',
       availableHoursTo: '',
@@ -40,12 +39,13 @@ class QnA extends Component {
       sampleProjectLink: '',
       relavantCertificates: '',
       isWorkRemotely: '',
-      descProfessionalGoal: '',
       totalExperience: '',
       linkedInURL: '',
       personalURL: '',
       mobileNum: '',
+      descProfessionalGoal: '',
       howLongWorkingRemotely: '',
+      availableWorkDays: [],
       otherLanguages: [],
       refferedBy: '',
       gender: '',
@@ -127,7 +127,7 @@ class QnA extends Component {
       soonestJoinDate: answers.soonestJoinDate,
       fluentInEnglish: answers.fluentInEnglish,
       highestEducationLevel: answers.highestEducationLevel,
-      jobChangeReason: answers.jobChangeReason,
+      reasonForCause: answers.reasonForCause,
       availableWorkHours: workHours,
       timeZone: answers.timeZone,
       hourlyWage: answers.hourlyWage,
@@ -144,16 +144,16 @@ class QnA extends Component {
       // The following is hardcoded to comply with backend required fields, these MUST be removed on the backend
       // availableWorkDays: ['Monday', 'Wednesday', 'Friday'],
       // otherLanguages: ['language1', 'language2'],
-      descProfessionalGoal: 'To become a pro!',
+      // descProfessionalGoal: 'To become a pro!',
       // race: 'My Ethnicity',
       // veteranStatus: false,
       // dob: '1999-9-9',
       // desireIndustryType: 'Software',
       // gender: 'Male',
       // OR instead, must be part of a different schema
-      linkedInURL: 'LinkedInURL.com',
-      personalURL: 'myURL.com',
-      mobileNum: '555-555-5555',
+      linkedInURL: answers.linkedInURL,
+      personalURL: answers.personalURL,
+      mobileNum: answers.mobileNum,
       // refferedBy: 'Google Analytics',
     };
 
@@ -257,7 +257,7 @@ class QnA extends Component {
 
 
         <form>
-          <QnABreadcrumb
+          <Breadcrumbs
             progress={this.state.progress}
             setProgress={this.setProgress}
           />
