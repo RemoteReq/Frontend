@@ -118,7 +118,7 @@ class SignUp extends Component {
         </h1>
 
         <p>
-          Create a remote, job seeker profile to be matched with
+          Create a remote-first, job seeker profile to be matched with
           <br/>nonprofit and for-profit companies
           <br/>working on causes you care most about.
         </p>

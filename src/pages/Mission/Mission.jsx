@@ -35,7 +35,7 @@ const Mission = () => {
                 RemoteReq is a group of passionate digital nomads driven by work that matters.
                 We know what an incredible opportunity it is to work from home and change the world at the same time, and we believe more people should be able to have the same experience.
                 We also know remote workers are enormous assets to the companies they serve, but historically, nonprofits and other mission-driven organizations have not had the same level of access as other industries to this kind of talent.
-                We believe remote workers and mission-driven organizations should have more opportunities to connect and make a difference together.
+                We believe remote-first workers and mission-driven organizations should have more opportunities to connect and make a difference together.
               </p>
 
               <br/>

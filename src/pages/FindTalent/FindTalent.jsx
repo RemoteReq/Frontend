@@ -23,10 +23,10 @@ const FindTalent = () => {
 
     <div className="find-talent-upper">
       <div className="find-talent-upper-left">
-        <h1>Make a greater impact with remote talent.</h1>
+        <h1>Make a greater impact with remote-first talent.</h1>
 
         <p>
-          Our network of remote professionals are ready to help you do more good. Let us do the work for you.
+          Our network of remote-first professionals are ready to help you do more good. Let us do the work for you.
           We will find, vet, and connect you with the remote talent you need.
           Submit a job req to get started. Pay only for the candidates you choose to engage.
         </p>
@@ -61,8 +61,8 @@ const FindTalent = () => {
       <div className="mid-triplet">
           <img className="triplet-icon" src={triplet2}></img>
 
-          <h3>Get matched to remote talent</h3>
-          <p>Our recruiting algorithm will review thousands of remote professionals to find your "best fit" matches.</p>
+          <h3>Get matched to remote-first talent</h3>
+          <p>Our recruiting algorithm will review thousands of remote-first professionals to find your "best fit" matches.</p>
       </div>
 
       <div className="mid-triplet">
@@ -142,7 +142,7 @@ const FindTalent = () => {
     </div> */}
 
     <WebFooter
-    header={'Build your remote team.'}
+    header={'Build your remote-first team.'}
     graphics={true}
     component={
       <div>

@@ -8,7 +8,7 @@ const LPHeader = () => {
 
     <div className='landingPage-heading-btns'>
       <div className='heading'>
-        <h1>Find remote work with greater purpose.</h1>
+        <h1>Find remote-first work with greater purpose.</h1>
         { window.innerWidth > 767
           ? <p>RemoteReq connects high-quality job seekers with mission-focused organizations offering remote-first work. </p>
           : <p>RemoteReq connects high-quality job seekers with mission-focused organizations offering remote-first work. .</p>
