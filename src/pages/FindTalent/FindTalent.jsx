@@ -81,66 +81,6 @@ const FindTalent = () => {
 
     <Pricing />
 
-    {/* <div className="find-talent-pricing">
-
-      <div className="card-container">
-        <div
-          className="pricing-card"
-          name="pricing"
-          id="pricing"
-        >
-          <h1>Simple, transparent pricing</h1>
-
-          <p>Pay only $100 for detailed access to your candidate matches</p>
-        </div>
-      </div>
-
-      <br/>
-      <br/>
-
-      <div className="card-container">
-        <div className="pricing-card">
-          <p className="pricing-card-title">Gigs</p>
-          <h1 className="pricing-card-price">$900</h1>
-          <p className="small-paragraph">per hire</p>
-
-          <div className="divider"></div>
-
-          <div className="pricing-card-description">
-            <p>For projects lasting 11 months or less</p>
-            <p>Up to 5 "best fit" candidates</p>
-            <p>Added capacity, skills, and expertise</p>
-            <p>Negotiable hourly rates</p>
-          </div>
-
-          <Link to="/employer">
-          <button className="button-1">Submit a Part Time Job Req</button>
-        </Link>
-        </div>
-
-        <div className="pricing-card">
-        <p className="pricing-card-title">Full-Time</p>
-          <h1 className="pricing-card-price">$2,400</h1>
-          <p className="small-paragraph">per hire</p>
-
-          <div className="divider"></div>
-
-          <div className="pricing-card-description">
-            <p>Grow your team with a remote hire</p>
-            <p>Up to 5 "best fit" candidates</p>
-            <p>Added capacity, skills, and expertise</p>
-            <p>Negotiable pay and salary</p>
-          </div>
-
-
-          <Link to="/employer">
-          <button className="button-1">Submit a Full Time Job Req</button>
-        </Link>
-
-        </div>
-      </div>
-    </div> */}
-
     <WebFooter
     header={'Build your remote-first team.'}
     graphics={true}

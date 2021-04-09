@@ -16,25 +16,23 @@ const LPHeader = () => {
       </div>
 
       <div className="button-and-link">
-        <div>
-          <Link to="/sign-up">
-            <button className='button-1'>Create your Profile</button>
-          </Link>
-        </div>
+        <Link to="/sign-up">
+          <button className='button-1'>Create your Profile</button>
+        </Link>
 
-        <div>
-          <Link to="/find-talent"
-                className="large-link"
-                >Find Talent
-          </Link>
-        </div>
+        <Link to="/find-talent"
+              className="large-link"
+              >Find Talent
+        </Link>
       </div>
     </div>
 
-    <img
-      src={LandingPageGraphic}
-      draggable="false"
-    />
+    <div>
+      <img
+        src={LandingPageGraphic}
+        draggable="false"
+        />
+    </div>
 
   </div>
   );
