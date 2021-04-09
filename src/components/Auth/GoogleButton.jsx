@@ -6,11 +6,11 @@ import GoogleLogo from '#assets/images/pngs/google-btn.png';
 const backend = process.env.BASE_URL;
 
 const onSuccess = (response) => {
-  console.log(response);
+  console.log('google sign in success!', response);
 };
 
 const onFailure = (error) => {
-  console.log(error);
+  console.log('google sign in error!', error);
 };
 
 class GoogleButton extends Component {
