@@ -21,6 +21,7 @@ class GoogleButton extends Component {
         buttonText="Sign in with Google"
         onSuccess={onSuccess}
         onFailure={onFailure}
+        isSignedIn={true}
         className="google-button"
       />
 
