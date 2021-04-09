@@ -99,6 +99,9 @@
       
       div {
         padding: 25px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         .s{
           font-weight: bold;
@@ -107,11 +110,15 @@
     }
 
     .zero {
+      p {
+        font-size: 16pt;
+        font-weight: bold;
+      }
 
       .s {
         color: $BurntOrange;
-        font-weight: bolder;
-        font-style: italic;
+        font-weight: bold;
+        // font-style: italic;
       }
     }
 
@@ -165,7 +172,8 @@
         justify-content: center;
 
         .highlight {
-          color: $SecondaryColor;
+          background-color: $SecondaryColor;
+          color: white;
           font-weight: bold;
         }
 
@@ -175,6 +183,7 @@
         }
 
         p{
+          padding: 0 15px;
           margin: 0 15px;
         }
       }

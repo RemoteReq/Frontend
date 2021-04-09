@@ -44,8 +44,8 @@ class Pricing extends Component {
     super(props);
 
     this.state = {
-      jobType: 'Part Time',
-      jobPrices: PartTimePrices,
+      jobType: 'Full Time',
+      jobPrices: FullTimePrices,
     };
 
     this.togglePrices = this.togglePrices.bind(this);
