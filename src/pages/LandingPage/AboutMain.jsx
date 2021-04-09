@@ -25,8 +25,8 @@ const AboutMain = () => {
 
 
     <section className="middle-section">
-      <h1>Remote + Purposeful</h1>
-      <p>Finally, a central location for remote job seekers to find meaningful work at organizations making a difference.</p>
+      <h1>Remote-first + Purposeful</h1>
+      <p>Finally, a central location for remote-first job seekers to find meaningful work at organizations making a difference.</p>
       <p>Create a free profile to use your talents to make an impact.</p>
 
       <RnPModule />
@@ -36,7 +36,7 @@ const AboutMain = () => {
     <section className="reverse-section">
       <div className="section-desc">
         <h1>The best talent anywhere</h1>
-        <p>Through RemoteReq, remote workers can use their skills and passions to change the world from any corner of it, whether that’s a kitchen table in Texas or a flat in London.</p>
+        <p>Through RemoteReq, remote-first workers can use their skills and passions to change the world from any corner of it, whether that’s a kitchen table in Texas or a flat in London.</p>
         <Link to="/sign-up" className="large-link">Find your job</Link>
       </div>
 

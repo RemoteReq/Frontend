@@ -1,34 +1,30 @@
 .landingPage-header {
   background: #fbf9f4;
   padding: 4% 10%;
+  height: 80vh;
   display: flex;
   justify-content: space-between;
   position: relative;
 
   .landingPage-heading-btns {
-    width: 30vw;
+    width: 50%;
     z-index: 1;
 
     .heading {
 
       h1 {
-        font-size: 48pt;
-        margin-bottom: 37px;
+        margin-bottom: 36px;
       }
       
       p {
-        font-size: 16pt;
-        padding-bottom: 37px;
+        padding-bottom: 36px;
       }
 
     }
 
     .button-and-link{
-
-      div:first-child {
-        padding-bottom: 20px;
-      }
-
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -54,8 +50,7 @@
     }
 
     img {
-      // display: none;
-      opacity: 0.2;
+      opacity: 0.15;
     }
   }
 }
