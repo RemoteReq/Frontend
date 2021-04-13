@@ -124,6 +124,8 @@ class QnA2 extends Component {
       },
     })
       .then((response) => {
+        console.log(response);
+
         this.setState({
           answers: {
             ...this.state.answers,
