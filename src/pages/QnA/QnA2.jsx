@@ -269,11 +269,11 @@ class QnA2 extends Component {
     console.log('here we go!');
 
     const { answers } = this.state;
-    const availableWorkHours = `${answers.availableHoursFrom}-${answers.availableHoursTo}`;
+    // const availableWorkHours = `${answers.availableHoursFrom}-${answers.availableHoursTo}`;
 
     const data = {
       ...answers,
-      availableWorkHours,
+      // availableWorkHours,
     };
 
     axios({
