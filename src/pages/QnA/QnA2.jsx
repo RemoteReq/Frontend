@@ -96,6 +96,8 @@ class QnA2 extends Component {
         keySkills: [],
         causes: [],
         title: [],
+        jobType: [],
+        availbility: [],
       },
       currentPage: 1,
       progress: 1,
