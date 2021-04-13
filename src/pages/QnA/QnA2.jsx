@@ -13,7 +13,7 @@ const QSwitch = ({
   answers, pageNumber, goNext, goPrev, handleChange, addToList, handleSelect, removeFromList, submitAnswers,
   handleCheckboxToArray, handleBoolean,
 }) => {
-  console.log(handleCheckboxToArray, 'from Qswitch');
+  // console.log(handleCheckboxToArray, 'from Qswitch');
 
   switch (pageNumber) {
     case 1:

@@ -3,7 +3,7 @@ import React from 'react';
 const Checkbox = ({
   name, value, checked, onChange,
 }) => {
-  console.log(onChange);
+  // console.log(onChange);
 
   return (
     <label className="checkbox">

@@ -22,7 +22,7 @@ const Page2 = ({
             type="checkbox"
             value="Remote"
             name="availability"
-            checked={answers.availability.includes('Remote')}
+            checked={answers.availability.includes('Remote') || false}
             onChange={handleCheckBox}
             />
 
@@ -30,7 +30,7 @@ const Page2 = ({
             type="checkbox"
             value="Flexible"
             name="availability"
-            checked={answers.availability.includes('Flexible')}
+            checked={answers.availability.includes('Flexible') || false}
             onChange={handleCheckBox}
             />
 
@@ -38,7 +38,7 @@ const Page2 = ({
             type="checkbox"
             value="On-site"
             name="availability"
-            checked={answers.availability.includes('On-site')}
+            checked={answers.availability.includes('On-site') || false}
             onChange={handleCheckBox}
             />
         </div>
@@ -53,14 +53,14 @@ const Page2 = ({
             type="checkbox"
             value="Full Time"
             name="jobType"
-            checked={answers.jobType.includes('Full Time')}
+            checked={answers.jobType.includes('Full Time') || false}
             onChange={handleCheckBox}
             />
           <Checkbox
             type="checkbox"
             value="Part Time"
             name="jobType"
-            checked={answers.jobType.includes('Part Time')}
+            checked={answers.jobType.includes('Part Time') || false}
             onChange={handleCheckBox}
             />
         </div>
