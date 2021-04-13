@@ -8,8 +8,6 @@ import Checkbox from '#parts/Checkbox.jsx';
 const Page2 = ({
   answers, handleChange, handleCheckBox, goPrev, goNext,
 }) => {
-  console.log(handleCheckBox);
-
   return (
 
     <div className="job-form">
