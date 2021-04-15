@@ -10,7 +10,7 @@ import Page4 from './pages/Page4.jsx';
 const backend = process.env.BASE_URL;
 
 const QSwitch = ({
-  answers, pageNumber, goNext, goPrev, handleChange, addToList, handleSelect, removeFromList, submitAnswers,
+  answers, pageNumber, goNext, goPrev, handleChange, handleMoney, addToList, handleSelect, removeFromList, submitAnswers,
   handleCheckboxToArray, handleBoolean,
 }) => {
   console.log(handleCheckboxToArray, 'from Qswitch');
@@ -34,6 +34,7 @@ const QSwitch = ({
           answers={answers}
           handleCheckBox={handleCheckboxToArray}
           handleChange={handleChange}
+          handleMoney={handleMoney}
           goNext={goNext}
           goPrev={goPrev}
         />
@@ -103,6 +104,7 @@ class QnA2 extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleBoolean = this.handleBoolean.bind(this);
+    this.handleMoney = this.handleMoney.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.handleCheckboxToArray = this.handleCheckboxToArray.bind(this);
     this.addToList = this.addToList.bind(this);
@@ -148,6 +150,17 @@ class QnA2 extends Component {
       answers: {
         ...this.state.answers,
         [e.target.name]: e.target.type === 'number' ? parseFloat(e.target.value) : e.target.value,
+      },
+    }, () => { console.log(this.state); });
+  }
+
+  handleMoney(value, name) {
+    const num = parseFloat(value);
+
+    this.setState({
+      answers: {
+        ...this.state.answers,
+        [name]: num,
       },
     }, () => { console.log(this.state); });
   }
@@ -319,6 +332,7 @@ class QnA2 extends Component {
             progress={progress}
             handleChange={this.handleChange}
             handleBoolean={this.handleBoolean}
+            handleMoney={this.handleMoney}
             handleSelect={this.handleSelect}
             addToList={this.addToList}
             removeFromList={this.removeFromList}

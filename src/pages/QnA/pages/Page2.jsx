@@ -1,12 +1,14 @@
 import React from 'react';
+import CurrencyInput from 'react-currency-input-field';
 import Radio from '#parts/Radio.jsx';
+import { Wage, Salary } from '#components/Elements/Inputs/Money.jsx';
 import TimeZoneSelector from '#parts/TimeZoneSelector.jsx';
 import AvailableHours from '#parts/AvailableHours.jsx';
 import SalarySelector from '#parts/SalarySelector.jsx';
 import Checkbox from '#parts/Checkbox.jsx';
 
 const Page2 = ({
-  answers, handleChange, handleCheckBox, goPrev, goNext,
+  answers, handleChange, handleMoney, handleCheckBox, goPrev, goNext,
 }) => {
   return (
 
@@ -86,25 +88,26 @@ const Page2 = ({
           <h3>Part Time Information</h3>
 
           <p>How many hours are you available to work weekly?</p>
-          <input
-            defaultValue={answers.howLongWorkingRemotely}
-            name="howLongWorkingRemotely"
-            type="number"
-            onChange={handleChange}
-            />
+
+          <div className="input-per-unit">
+            <input
+              defaultValue={answers.howLongWorkingRemotely}
+              name="howLongWorkingRemotely"
+              type="number"
+              onChange={handleChange}
+              />
+
+            <p>hours per week</p>
+          </div>
 
           <p>
             What are your hourly pay expectations?
           </p>
 
-          <div className="wage-input">
-            <input
-              defaultValue={answers.hourlyWage}
-              name="hourlyWage"
-              type="number"
-              onChange={handleChange}
-              />
-          </div>
+          <Wage
+            defaultValue={answers.hourlyWage}
+            onChange={handleMoney}
+          />
         </div>
           : <div>
           </div>
@@ -120,9 +123,10 @@ const Page2 = ({
           What are your annual salary expectations?
         </p>
 
-        <div className="salary-input">
-          <SalarySelector handleChange={handleChange} name="salary"/>
-        </div>
+        <Salary
+          defaultValue={answers.salary}
+          onChange={handleMoney}
+        />
       </div>
 
           : <div>

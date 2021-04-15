@@ -29,7 +29,7 @@ const CompanyWindow = ({ job }) => {
 };
 
 const QSwitch = ({
-  pageNumber, goNext, goPrev, handleChange, job, addToList, handleSelect, handleFile, addJob, removeFromList, edit,
+  pageNumber, goNext, goPrev, handleChange, job, addToList, handleSelect, handleMoney, handleFile, addJob, removeFromList, edit,
 }) => {
   switch (pageNumber) {
     case 1:
@@ -48,6 +48,7 @@ const QSwitch = ({
         <Availability
           job={job}
           handleChange={handleChange}
+          handleMoney={handleMoney}
           goNext={goNext}
           goPrev={goPrev}
         />
@@ -98,6 +99,7 @@ class JobForm2 extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
+    this.handleMoney = this.handleMoney.bind(this);
     this.addToList = this.addToList.bind(this);
     this.removeFromList = this.removeFromList.bind(this);
     this.handleFile = this.handleFile.bind(this);
@@ -145,6 +147,17 @@ class JobForm2 extends Component {
       job: {
         ...this.state.job,
         [e.target.name]: e.target.type === 'number' ? parseFloat(e.target.value) : e.target.value,
+      },
+    }, () => { console.log(this.state); });
+  }
+
+  handleMoney(value, name) {
+    const num = parseFloat(value);
+
+    this.setState({
+      job: {
+        ...this.state.job,
+        [name]: num,
       },
     }, () => { console.log(this.state); });
   }
@@ -384,6 +397,7 @@ class JobForm2 extends Component {
               progress={progress}
               handleChange={this.handleChange}
               handleSelect={this.handleSelect}
+              handleMoney={this.handleMoney}
               handleFile={this.handleFile}
               addToList={this.addToList}
               removeFromList={this.removeFromList}
