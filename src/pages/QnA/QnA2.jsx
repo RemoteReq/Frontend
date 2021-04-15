@@ -13,7 +13,7 @@ const QSwitch = ({
   answers, pageNumber, goNext, goPrev, handleChange, handleMoney, addToList, handleSelect, removeFromList, submitAnswers,
   handleCheckboxToArray, handleBoolean,
 }) => {
-  console.log(handleCheckboxToArray, 'from Qswitch');
+  // console.log(handleCheckboxToArray, 'from Qswitch');
 
   switch (pageNumber) {
     case 1:
@@ -97,6 +97,8 @@ class QnA2 extends Component {
         keySkills: [],
         causes: [],
         title: [],
+        jobType: [],
+        availbility: [],
       },
       currentPage: 1,
       progress: 1,
@@ -124,24 +126,26 @@ class QnA2 extends Component {
       },
     })
       .then((response) => {
+        console.log(response);
+
         this.setState({
           answers: {
             ...this.state.answers,
             ...response.data,
-            // availability:,
-            // causes,
+            availability: typeof response.data.availability === 'object' ? response.data.availability : [],
+            jobType: typeof response.data.jobType === 'object' ? response.data.jobType : [],
             desireKeySkills: response.data.desireKeySkills,
+            // causes,
             // eligibleToWorkInUS: eligibleToWorkInUS,
             // fluentInEnglish: fluentInEnglish,
             // highestEducationLevel: highestEducationLevel,
             // hourlyWage: hourlyWage,
             // howLongWorkingRemotely: howLongWorkingRemotely,
-            // jobType: jobType,
             // location: location,
             // personalURL,
             // reasonForCause,
           },
-        });
+        }, () => { console.log('QnAv2 mounted, here is the state.', this.state); });
       });
   }
 
@@ -278,11 +282,11 @@ class QnA2 extends Component {
     console.log('here we go!');
 
     const { answers } = this.state;
-    const availableWorkHours = `${answers.availableHoursFrom}-${answers.availableHoursTo}`;
+    // const availableWorkHours = `${answers.availableHoursFrom}-${answers.availableHoursTo}`;
 
     const data = {
       ...answers,
-      availableWorkHours,
+      // availableWorkHours,
     };
 
     axios({
