@@ -10,10 +10,10 @@ import Page4 from './pages/Page4.jsx';
 const backend = process.env.BASE_URL;
 
 const QSwitch = ({
-  answers, pageNumber, goNext, goPrev, handleChange, addToList, handleSelect, removeFromList, submitAnswers,
+  answers, pageNumber, goNext, goPrev, handleChange, handleMoney, addToList, handleSelect, removeFromList, submitAnswers,
   handleCheckboxToArray, handleBoolean,
 }) => {
-  console.log(handleCheckboxToArray, 'from Qswitch');
+  // console.log(handleCheckboxToArray, 'from Qswitch');
 
   switch (pageNumber) {
     case 1:
@@ -34,6 +34,7 @@ const QSwitch = ({
           answers={answers}
           handleCheckBox={handleCheckboxToArray}
           handleChange={handleChange}
+          handleMoney={handleMoney}
           goNext={goNext}
           goPrev={goPrev}
         />
@@ -96,6 +97,8 @@ class QnA2 extends Component {
         keySkills: [],
         causes: [],
         title: [],
+        jobType: [],
+        availbility: [],
       },
       currentPage: 1,
       progress: 1,
@@ -103,6 +106,7 @@ class QnA2 extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleBoolean = this.handleBoolean.bind(this);
+    this.handleMoney = this.handleMoney.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.handleCheckboxToArray = this.handleCheckboxToArray.bind(this);
     this.addToList = this.addToList.bind(this);
@@ -122,24 +126,26 @@ class QnA2 extends Component {
       },
     })
       .then((response) => {
+        console.log(response);
+
         this.setState({
           answers: {
             ...this.state.answers,
             ...response.data,
-            // availability:,
-            // causes,
+            availability: typeof response.data.availability === 'object' ? response.data.availability : [],
+            jobType: typeof response.data.jobType === 'object' ? response.data.jobType : [],
             desireKeySkills: response.data.desireKeySkills,
+            // causes,
             // eligibleToWorkInUS: eligibleToWorkInUS,
             // fluentInEnglish: fluentInEnglish,
             // highestEducationLevel: highestEducationLevel,
             // hourlyWage: hourlyWage,
             // howLongWorkingRemotely: howLongWorkingRemotely,
-            // jobType: jobType,
             // location: location,
             // personalURL,
             // reasonForCause,
           },
-        });
+        }, () => { console.log('QnAv2 mounted, here is the state.', this.state); });
       });
   }
 
@@ -148,6 +154,17 @@ class QnA2 extends Component {
       answers: {
         ...this.state.answers,
         [e.target.name]: e.target.type === 'number' ? parseFloat(e.target.value) : e.target.value,
+      },
+    }, () => { console.log(this.state); });
+  }
+
+  handleMoney(value, name) {
+    const num = parseFloat(value);
+
+    this.setState({
+      answers: {
+        ...this.state.answers,
+        [name]: num,
       },
     }, () => { console.log(this.state); });
   }
@@ -265,11 +282,11 @@ class QnA2 extends Component {
     console.log('here we go!');
 
     const { answers } = this.state;
-    const availableWorkHours = `${answers.availableHoursFrom}-${answers.availableHoursTo}`;
+    // const availableWorkHours = `${answers.availableHoursFrom}-${answers.availableHoursTo}`;
 
     const data = {
       ...answers,
-      availableWorkHours,
+      // availableWorkHours,
     };
 
     axios({
@@ -319,6 +336,7 @@ class QnA2 extends Component {
             progress={progress}
             handleChange={this.handleChange}
             handleBoolean={this.handleBoolean}
+            handleMoney={this.handleMoney}
             handleSelect={this.handleSelect}
             addToList={this.addToList}
             removeFromList={this.removeFromList}

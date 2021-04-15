@@ -117,3 +117,17 @@ input[type=checkbox] {
   height: 25px;
   margin: 0;
 }
+
+.input-per-unit {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  
+  input {
+    width: 50%;
+  }
+
+  p {
+    padding: 0 15px;
+  }
+}
