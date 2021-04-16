@@ -29,13 +29,15 @@ class SignIn extends Component {
 
     const { isLoggedIn } = this.props.location.state || false;
 
-    console.log(auth.isAuthenticated());
-    if (auth.isAuthenticated() || isLoggedIn) {
-      this.setState({
-        redirectToReferrer: true,
-        loginFailed: '',
-      });
-    }
+    console.log('regular login authstatus', auth.isAuthenticated(), 'props login authstatus', isLoggedIn);
+
+
+    // if (auth.isAuthenticated() || isLoggedIn) {
+    //   this.setState({
+    //     redirectToReferrer: true,
+    //     loginFailed: '',
+    //   });
+    // }
   }
 
   componentWillUnmount() {
