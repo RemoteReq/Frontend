@@ -9,7 +9,7 @@ const backend = process.env.BASE_URL;
 const onSuccess = (response) => {
   console.log('google sign in success!', response);
 
-  const profile = response.Vw.profileObj;
+  const profile = response.profileObj;
 
   return (
     <Redirect
