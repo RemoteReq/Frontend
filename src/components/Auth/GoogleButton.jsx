@@ -61,20 +61,7 @@ class GoogleButton extends Component {
     const { isLoggedIn, profile } = this.state;
 
     return (
-
-      isLoggedIn
-
-        ? <Redirect
-          to={{
-            pathname: '/dashboard',
-            state: {
-              isLoggedIn,
-              profile,
-            },
-          }}
-        />
-
-        : <GoogleLogin
+        <GoogleLogin
         clientId="106530052018-epup7ot9lju37ugc54kjerd79av1pat0.apps.googleusercontent.com"
         buttonText="Sign in with Google"
         onSuccess={this.onSuccess}
