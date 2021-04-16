@@ -28,7 +28,7 @@ class RequestADemo extends Component {
 
     console.log('payload', body);
 
-    Axios.post('https://api.remotereq.com/api/requestDemo', body)
+    Axios.post(`${process.env.BASE_URL}/api/requestDemo`, body)
       .then((response) => {
         if (response.status === 200) {
           this.setState({
