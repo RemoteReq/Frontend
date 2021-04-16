@@ -27,8 +27,10 @@ class SignIn extends Component {
     const Footer = document.getElementById('footer');
     Footer.classList.add('hide');
 
+    const { isLoggedIn } = this.props.location.state || false;
+
     console.log(auth.isAuthenticated());
-    if (auth.isAuthenticated()) {
+    if (auth.isAuthenticated() || isLoggedIn) {
       this.setState({
         redirectToReferrer: true,
         loginFailed: '',

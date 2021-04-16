@@ -68,6 +68,7 @@ class GoogleButton extends Component {
           to={{
             pathname: '/dashboard',
             state: {
+              isLoggedIn,
               profile,
             },
           }}
