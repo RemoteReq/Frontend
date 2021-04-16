@@ -33,6 +33,7 @@ class GoogleButton extends Component {
 
     this.state = {
       isLoggedIn: false,
+      profile: {},
     };
 
     this.onSuccess = this.onSuccess.bind(this);
@@ -41,15 +42,38 @@ class GoogleButton extends Component {
 
   onSuccess(response) {
     console.log('method logging in works!', response);
+
+    this.setState({
+      isLoggedIn: true,
+      profile: response.profileObj,
+    });
   }
 
   onFailure(error) {
     console.log('method failure works at least', error);
+
+    this.setState({
+      isLoggedIn: false,
+    });
   }
 
   render() {
+    const { isLoggedIn, profile } = this.state;
+
     return (
-      <GoogleLogin
+
+      isLoggedIn
+
+        ? <Redirect
+          to={{
+            pathname: '/dashboard',
+            state: {
+              profile,
+            },
+          }}
+        />
+
+        : <GoogleLogin
         clientId="106530052018-epup7ot9lju37ugc54kjerd79av1pat0.apps.googleusercontent.com"
         buttonText="Sign in with Google"
         onSuccess={this.onSuccess}
@@ -59,11 +83,6 @@ class GoogleButton extends Component {
         className="google-button"
       />
 
-    // <a href="https://dev.remotereq.com/login/google"
-    //   className="google-button">
-    //   <img src={GoogleLogo}/>
-    //   Sign In with Google
-    // </a>
     );
   }
 }
