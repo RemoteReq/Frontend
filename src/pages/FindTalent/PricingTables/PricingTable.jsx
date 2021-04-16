@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Hands from '#assets/images/pngs/hands.png';
 import PostFor from '#assets/images/pngs/post-for.png';
 import PT from '#assets/images/pngs/part-time.png';
@@ -82,7 +82,9 @@ const PricingTable = ({ jobType, jobPrices, togglePrices }) => {
             <span className="slider"></span>
           </label>
 
-          <p className={`${jobType === 'Part Time' ? 'highlight' : 'dim'}`}>Part Time</p>
+          <p className={`${jobType === 'Part Time' ? 'highlight' : 'dim'}`}
+             id="price-head" ref={useRef(null)}
+          >Part Time</p>
         </div>
       </div>
     </div>
