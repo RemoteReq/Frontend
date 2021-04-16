@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
 import GoogleLogo from '#assets/images/pngs/google-btn.png';
 
@@ -7,6 +8,19 @@ const backend = process.env.BASE_URL;
 
 const onSuccess = (response) => {
   console.log('google sign in success!', response);
+
+  const profile = response.Vw.profileObj;
+
+  return (
+    <Redirect
+      to={{
+        pathname: '/dashboard',
+        state: {
+          profile,
+        },
+      }}
+    />
+  );
 };
 
 const onFailure = (error) => {
@@ -22,6 +36,7 @@ class GoogleButton extends Component {
         onSuccess={onSuccess}
         onFailure={onFailure}
         isSignedIn={true}
+        redirectUri={'/dashboard'}
         className="google-button"
       />
 
