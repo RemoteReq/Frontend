@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import { Redirect, Link } from 'react-router-dom';
-import GoogleButton from '#auth/GoogleButton.jsx';
+// import GoogleButton from '#auth/GoogleButton.jsx';
+import { GoogleLogin } from 'react-google-login';
 import Divider from '#components/parts/Divider.jsx';
 import PasswordField from '#parts/PasswordField.jsx';
 import auth from '../../components/Auth/Auth.jsx';
@@ -20,6 +21,8 @@ class SignIn extends Component {
 
     this.updateInfoOnChange = this.updateInfoOnChange.bind(this);
     this.login = this.login.bind(this);
+    this.onSuccess = this.login.bind(this);
+    this.onFailure = this.onFailure.bind(this);
     this.enablePreloader = this.enablePreloader.bind(this);
   }
 
@@ -27,17 +30,12 @@ class SignIn extends Component {
     const Footer = document.getElementById('footer');
     Footer.classList.add('hide');
 
-    const { isLoggedIn } = this.props.location.state || false;
-
-    console.log('regular login authstatus', auth.isAuthenticated(), 'props login authstatus', isLoggedIn);
-
-
-    // if (auth.isAuthenticated() || isLoggedIn) {
-    //   this.setState({
-    //     redirectToReferrer: true,
-    //     loginFailed: '',
-    //   });
-    // }
+    if (auth.isAuthenticated()) {
+      this.setState({
+        redirectToReferrer: true,
+        loginFailed: '',
+      });
+    }
   }
 
   componentWillUnmount() {
@@ -97,6 +95,23 @@ class SignIn extends Component {
     this.setState({
       [`${e.target.name}`]: e.target.value,
       loginFailed: false,
+    });
+  }
+
+  onSuccess(response) {
+    console.log('method logging in works!', response);
+
+    this.setState({
+      redirectToReferrer: true,
+      profile: response.profileObj,
+    });
+  }
+
+  onFailure(error) {
+    console.log('method failure works at least', error);
+
+    this.setState({
+      redirectToReferrer: false,
     });
   }
 
@@ -165,7 +180,17 @@ class SignIn extends Component {
             >Sign in
             </button>
 
-            <GoogleButton />
+            {/* <GoogleButton/> */}
+
+            <GoogleLogin
+              clientId="106530052018-epup7ot9lju37ugc54kjerd79av1pat0.apps.googleusercontent.com"
+              buttonText="Sign in with Google"
+              onSuccess={this.onSuccess}
+              onFailure={this.onFailure}
+              isSignedIn={true}
+              redirectUri={'/dashboard'}
+              className="google-button"
+            />
 
             <p className="small-paragraph">
               Are you an employer? <Link to="/employer/sign-in">Sign In Here</Link>
