@@ -58,6 +58,7 @@
     "react-router-hash-link": "^2.3.1",
     "react-select": "^4.2.1",
     "react-svg": "^11.0.23",
+    "react-xarrows": "^1.6.1",
     "sass-loader": "^8.0.0"
   },
   "devDependencies": {

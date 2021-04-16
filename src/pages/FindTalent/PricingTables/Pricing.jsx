@@ -1,5 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, useRef } from 'react';
 import PricingTable from './PricingTable.jsx';
+
+
+const PricingArrow = () => {
+  return (
+    <div className="price-tail" id="price-tail" ref={useRef(null)}>
+      <p>Toggle the switch to view our new updated prices!</p>
+    </div>
+  );
+};
 
 const PartTimePrices = [
   {
@@ -81,6 +90,7 @@ class Pricing extends Component {
           togglePrices={this.togglePrices}
         />
 
+        <PricingArrow />
       </div>
     );
   }

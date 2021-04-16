@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import Xarrow from 'react-xarrows';
 import triplet1 from '#assets/icons/pngs/Profile.png';
 import triplet2 from '#assets/icons/pngs/Matched.png';
 import triplet3 from '#assets/icons/pngs/Forward.png';
@@ -76,10 +77,23 @@ const FindTalent = () => {
     <div name="pricing" id="pricing"></div>
 
     <div className="price-header-main">
-      <h1>Hire for full-time or part-time openings</h1>
+      <h2>Hire for full-time or part-time openings</h2>
     </div>
 
     <Pricing />
+
+    <Xarrow
+      start="price-tail"
+      startAnchor="bottom"
+      end="price-head"
+      endAnchor="right"
+      strokeWidth={12}
+      dashness={{ animation: 1 }}
+      headSize={3}
+      curveness={1}
+      lineColor="#1d39eb"
+      headColor="#1d39eb"
+    />
 
     <WebFooter
     header={'Build your remote-first team.'}
