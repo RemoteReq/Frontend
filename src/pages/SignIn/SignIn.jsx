@@ -182,16 +182,6 @@ class SignIn extends Component {
 
             {/* <GoogleButton/> */}
 
-            <GoogleLogin
-              clientId="106530052018-epup7ot9lju37ugc54kjerd79av1pat0.apps.googleusercontent.com"
-              buttonText="Sign in with Google"
-              onSuccess={this.onSuccess}
-              onFailure={this.onFailure}
-              isSignedIn={true}
-              redirectUri={'/dashboard'}
-              className="google-button"
-            />
-
             <p className="small-paragraph">
               Are you an employer? <Link to="/employer/sign-in">Sign In Here</Link>
             </p>
