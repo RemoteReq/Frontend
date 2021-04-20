@@ -6,6 +6,7 @@ const Wage = ({ defaultValue, onChange }) => {
     <div className="input-per-unit">
       <CurrencyInput
         name="hourlyWage"
+        allowNegativeValue={false}
         prefix="$"
         placeholder="$0.00"
         decimalsLimit={2}
@@ -24,6 +25,7 @@ const Salary = ({ defaultValue, onChange }) => {
     <div className="input-per-unit">
       <CurrencyInput
         name="salary"
+        allowNegativeValue={false}
         prefix="$"
         placeholder="$0"
         defaultValue={defaultValue}

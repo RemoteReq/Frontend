@@ -85,29 +85,35 @@ const Page2 = ({
         answers.jobType.includes('Part Time')
           ? <div className="question">
 
+
           <h3>Part Time Information</h3>
 
-          <p>How many hours are you available to work weekly?</p>
+          <div className="question">
+            <p>How many hours are you available to work weekly?</p>
 
-          <div className="input-per-unit">
-            <input
-              defaultValue={answers.howLongWorkingRemotely}
-              name="howLongWorkingRemotely"
-              type="number"
-              onChange={handleChange}
-              />
+            <div className="input-per-unit">
+              <input
+                defaultValue={answers.howLongWorkingRemotely}
+                name="howLongWorkingRemotely"
+                type="number"
+                min="0"
+                onChange={handleChange}
+                />
 
-            <p>hours per week</p>
+              <p>hours per week</p>
+            </div>
           </div>
 
-          <p>
-            What are your hourly pay expectations?
-          </p>
+            <div className="question">
+              <p>
+                What are your hourly pay expectations?
+              </p>
 
-          <Wage
-            defaultValue={answers.hourlyWage}
-            onChange={handleMoney}
-          />
+              <Wage
+                defaultValue={answers.hourlyWage}
+                onChange={handleMoney}
+              />
+          </div>
         </div>
           : <div>
           </div>

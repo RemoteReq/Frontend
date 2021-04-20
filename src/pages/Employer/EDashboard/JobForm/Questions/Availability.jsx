@@ -27,6 +27,7 @@ const Availability = ({
             <input
             value={job.numberOfHours}
             type="number"
+            min="0"
             name="numberOfHours"
             onChange={handleChange}
             />

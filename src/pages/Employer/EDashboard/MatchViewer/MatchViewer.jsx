@@ -98,9 +98,11 @@ class MatchViewer extends Component {
           <ul>
             {
               candidate.causes.map((cause, key) => {
-                return (
-                  <li key={key}>{`${cause}`}</li>
-                );
+                if (cause.length > 0) {
+                  return (
+                    <li key={key}>{`${cause}`}</li>
+                  );
+                }
               })
             }
           </ul>
