@@ -54,7 +54,7 @@ const ProfileCard = ({ userDetails, handleFileUpload }) => {
               <IconAndTitle title="Resume" icon={ResumeIcon} />
               <p className="small-paragraph">
                 {
-                  userDetails.resumePath.replace(/^.*[\\\/]/, '').replace(/\d{13}/, '').replace(/%/, '_')
+                  userDetails.resumePath ? userDetails.resumePath.replace(/^.*[\\\/]/, '').replace(/\d{13}/, '').replace(/%/, '_') : ''
                 }
               </p>
 
