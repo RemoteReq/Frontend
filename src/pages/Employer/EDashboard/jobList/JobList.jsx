@@ -29,7 +29,7 @@ const MappedReqs = ({ jobReqs }) => {
 
         <Link to="/employer/gig-select-2">
           <button className="button-1 small-button">
-            Submit A Job Req
+            Post a job
           </button>
         </Link>
       </div>
@@ -65,7 +65,7 @@ const EReminder = () => {
 
       <Link to="/employer/gig-select-2">
         <button className="button-1 small-button">
-          Submit A Job Req
+          Post a job
         </button>
       </Link>
 

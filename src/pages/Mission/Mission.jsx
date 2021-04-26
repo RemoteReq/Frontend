@@ -65,7 +65,7 @@ const Mission = () => {
       graphics={false}
       component={
         <Link to="/employer">
-        <button className="button-1">Submit a Job Req</button>
+        <button className="button-1">Post a job</button>
         </Link>
       }
       />

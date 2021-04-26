@@ -52,7 +52,7 @@ class Navigation1 extends Component {
 
         <div className="navigation-1-links">
           <Link to="/find-talent">
-            <button className='button-2'>find talent</button>
+            <button className='button-2'>hire talent</button>
           </Link>
 
           <Link to='/sign-in'>
@@ -71,7 +71,7 @@ class Navigation1 extends Component {
 
         <div className={`hamburger-menu ${showHamburgerMenu ? 'show' : 'hide'}`}>
           <Link to="/find-talent">
-            <button className='button-2'>find talent</button>
+            <button className='button-2'>hire talent</button>
           </Link>
 
           <Link to='/sign-in'>
