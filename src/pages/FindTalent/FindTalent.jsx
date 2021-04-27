@@ -15,7 +15,7 @@ const FindTalent = () => {
   return (
   <div className="find-talent-page">
     <Helmet>
-      <title>Find Talent | RemoteReq</title>
+      <title>Hire Talent | RemoteReq</title>
       <meta
         name="description"
         content="Find the best prospects for your oganization. Using RemoteReq, we can match you with the best remote talent that fit the needs of your nonprofit. "
