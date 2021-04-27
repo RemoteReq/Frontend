@@ -16,7 +16,7 @@ const Footer = () => {
     <div className='upper-footer'>
       <ul className='footer-links'>
         <li><Link to="/sign-up" className="small-link">Find Jobs</Link></li>
-        <li><Link to="/find-talent" className="small-link">Find Talent</Link></li>
+        <li><Link to="/find-talent" className="small-link">Hire Talent</Link></li>
         <li><Link to="/about-us" className="small-link">About Us</Link></li>
         <li><a href="https://blog.remotereq.com" className="small-link">Blog</a></li>
         <li><Link to="/faq" className="small-link">FAQ</Link></li>

@@ -32,7 +32,7 @@ const LPHeader = () => {
 
         <Link to="/find-talent"
               className="large-link"
-              >Find Talent
+              >Hire Talent
         </Link>
       </div> */}
     </div>

@@ -15,7 +15,7 @@ const FindTalent = () => {
   return (
   <div className="find-talent-page">
     <Helmet>
-      <title>Find Talent | RemoteReq</title>
+      <title>Hire Talent | RemoteReq</title>
       <meta
         name="description"
         content="Find the best prospects for your oganization. Using RemoteReq, we can match you with the best remote talent that fit the needs of your nonprofit. "
@@ -29,11 +29,11 @@ const FindTalent = () => {
         <p>
           Our network of remote-first professionals are ready to help you do more good. Let us do the work for you.
           We will find, vet, and connect you with the remote talent you need.
-          Submit a job req to get started. Pay only for the candidates you choose to engage.
+          Post a job to get started. Pay only for the candidates you choose to engage.
         </p>
 
         <Link to="/employer">
-          <button className="button-1">Submit a Job Req</button>
+          <button className="button-1">Post a job</button>
         </Link>
 
         <br />
@@ -101,7 +101,7 @@ const FindTalent = () => {
     component={
       <div>
       <Link to="/employer">
-        <button className="button-1">Submit a Job Req</button>
+        <button className="button-1">Post a job</button>
       </Link>
 
       {/* <Link to="howItWorks">
