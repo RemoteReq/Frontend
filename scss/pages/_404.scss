@@ -1,11 +1,12 @@
 .page-404 {
   display: flex;
-  height: 100vh;
   background-color: $BackgroundColor;
+  justify-content: center;
 
   .message {
-    margin-top: 25%;
-    width: 100%;
+    padding: 125px 0;
+    margin: 125px 0;
+    width: 50%;
     text-align: center;
     
     p {
