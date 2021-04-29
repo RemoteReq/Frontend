@@ -8,11 +8,8 @@ const LPHeader = () => {
 
     <div className='landingPage-heading-btns'>
       <div className='heading'>
-        <h1>Find remote-first work with greater purpose.</h1>
-        { window.innerWidth > 767
-          ? <p>RemoteReq connects high-quality job seekers with mission-focused organizations offering remote-first work. Join our network today.</p>
-          : <p>RemoteReq connects high-quality job seekers with mission-focused organizations offering remote-first work. Join our network today.</p>
-        }
+        <h1>Hire mission-focused talent.</h1>
+        <p>Connect to quality talent, at a nonprofit discount. Post a job to hire for remote, flexible, and on-site jobs. Join our network today.</p>
       </div>
 
       <div className="join-us">
@@ -24,17 +21,6 @@ const LPHeader = () => {
             <button className="e-button">Employers</button>
           </Link>
       </div>
-
-      {/* <div className="button-and-link">
-        <Link to="/sign-up">
-          <button className='button-1'>Create your Profile</button>
-        </Link>
-
-        <Link to="/find-talent"
-              className="large-link"
-              >Hire Talent
-        </Link>
-      </div> */}
     </div>
 
     <div>
