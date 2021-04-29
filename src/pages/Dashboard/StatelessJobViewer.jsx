@@ -68,7 +68,7 @@ const StatelessJobViewer = (props) => {
           </div>
 
           <p>Job Description:</p>
-          <p className="small-paragraph" style={{ lineHeight: '14pt' }}>{job.jobDetails}</p>
+          <p className="small-paragraph">{job.jobDetails}</p>
 
           <br/>
           <br/>

@@ -12,8 +12,8 @@ const AboutMain = () => {
     <section>
       <div className="section-desc">
         <h1>Hire smarter &amp; faster</h1>
-        <p>Whether you’re looking for a job or looking for a candidate, we do all the hard work for you, using our finely-tuned algorithm to instantly match highly skilled candidates to positions relevant to issues they care most about.</p>
-        <Link to={'/sign-up'} className="large-link">Get Started</Link>
+        <p>Our impact-focused recruiting algorithm scores thousands of potential candidates to find your best fit candidate matches, instantly. We do the sourcing and sorting out for you, so you can jump ahead to interviewing great candidates.</p>
+        <Link to="/sign-up" className="large-link">Find your Job</Link>
       </div>
 
       <div className="section-graphic">
@@ -25,9 +25,9 @@ const AboutMain = () => {
 
 
     <section className="middle-section">
-      <h1>Remote-first + Purposeful</h1>
+      <h1>Mission-focused &amp; Flexible</h1>
       <p>Finally, a central location for remote-first job seekers to find meaningful work at organizations making a difference.</p>
-      <p>Create a free profile to use your talents to make an impact.</p>
+      <p>Nonprofits and impact-focused businesses now have access to the best available remote, flexible, and in-person talent.</p>
 
       <RnPModule />
     </section>
@@ -36,8 +36,8 @@ const AboutMain = () => {
     <section className="reverse-section">
       <div className="section-desc">
         <h1>The best talent anywhere</h1>
-        <p>Through RemoteReq, remote-first workers can use their skills and passions to change the world from any corner of it, whether that’s a kitchen table in Texas or a flat in London.</p>
-        <Link to="/sign-up" className="large-link">Find your job</Link>
+        <p>We offer you access to remote, flexible, and on-site talent. Choose the best fit for your team, while remaining laser focused on your double bottomline.</p>
+        <Link to="/find-talent" className="large-link">Find Talent</Link>
       </div>
 
       <div className="section-graphic">

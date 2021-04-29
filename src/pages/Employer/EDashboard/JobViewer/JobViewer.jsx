@@ -167,7 +167,9 @@ class JobViewer extends Component {
 
           <br/>
           <p>Our Mission:</p>
-          <p style={{ fontSize: '14pt' }}>{job.aboutUs || ''}</p>
+          <br/>
+
+          <p className="small-paragraph">{job.aboutUs || ''}</p>
           <br />
 
           <div className="job-headline">
@@ -198,7 +200,7 @@ class JobViewer extends Component {
 
           <p>Description:</p>
           <br/>
-          <p style={{ fontSize: '14pt', lineHeight: '14pt' }}>{job.jobDetails}</p>
+          <p className="small-paragraph">{job.jobDetails}</p>
 
           <br/>
           <br/>

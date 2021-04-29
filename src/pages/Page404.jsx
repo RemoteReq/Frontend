@@ -10,7 +10,6 @@ const Page404 = () => {
       <p>
         {"We're sorry but the URL you are trying to visit does not exist."}
       </p>
-
     </div>
   </div>
   );
