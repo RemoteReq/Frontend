@@ -26,7 +26,6 @@ const AboutMain = () => {
 
     <section className="middle-section">
       <h1>Mission-focused &amp; Flexible</h1>
-      <p>Finally, a central location for remote-first job seekers to find meaningful work at organizations making a difference.</p>
       <p>Nonprofits and impact-focused businesses now have access to the best available remote, flexible, and in-person talent.</p>
 
       <RnPModule />
