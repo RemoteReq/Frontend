@@ -111,7 +111,7 @@ class JobForm2 extends Component {
 
   componentDidMount() {
     const {
-      jobType, availability, edit, ...rest
+      jobType, availability, keySkills, edit, ...rest
     } = this.props.location.state;
 
     Axios({
@@ -127,6 +127,7 @@ class JobForm2 extends Component {
           job: {
             ...this.state.job,
             ...rest,
+            keySkills: JSON.parse(keySkills),
             jobType,
             availability,
             companyName: response.data.companyName,
