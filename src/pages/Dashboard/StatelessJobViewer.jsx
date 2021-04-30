@@ -88,12 +88,15 @@ const StatelessJobViewer = (props) => {
 
           <p>Skills required for this job:</p>
           <ul>
-            {
-              job.keySkills.map((skill, i) => {
-                return (
+          {
+              job.keySkills
+                ? JSON.parse(job.keySkills).map((skill, i) => {
+                  return (
                   <li key={i}>{skill}</li>
-                );
-              })
+                  );
+                })
+
+                : ''
             }
           </ul>
 

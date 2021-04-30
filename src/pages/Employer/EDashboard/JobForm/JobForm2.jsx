@@ -261,7 +261,10 @@ class JobForm2 extends Component {
     addJobForm.append('requiredEducationLevel', job.requiredEducationLevel);
 
     // addJobForm.append('keySkills', JSON.stringify(job.keySkills));
-    addJobForm.append('keySkills', job.keySkills);
+    const skills = JSON.stringify(job.keySkills);
+    console.log(skills);
+
+    addJobForm.append('keySkills', skills);
     // OR
     // iterate over keyskills, appending them to the field
     // for (let i = 0; i < job.keySkills.length; i++) {

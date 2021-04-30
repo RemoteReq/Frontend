@@ -222,11 +222,14 @@ class JobViewer extends Component {
           <br/>
           <ul>
             {
-              job.keySkills.map((skill, i) => {
-                return (
+              job.keySkills
+                ? JSON.parse(job.keySkills).map((skill, i) => {
+                  return (
                   <li key={i}>{skill}</li>
-                );
-              })
+                  );
+                })
+
+                : ''
             }
           </ul>
 
