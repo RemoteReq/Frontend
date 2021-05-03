@@ -36,7 +36,7 @@ const AboutMain = () => {
       <div className="section-desc">
         <h1>The best talent anywhere</h1>
         <p>We offer you access to remote, flexible, and on-site talent. Choose the best fit for your team, while remaining laser focused on your double bottomline.</p>
-        <Link to="/find-talent" className="large-link">Find Talent</Link>
+        <Link to="/find-talent" className="large-link">Hire Talent</Link>
       </div>
 
       <div className="section-graphic">

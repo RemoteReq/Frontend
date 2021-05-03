@@ -1,5 +1,6 @@
 import React from 'react';
 import IconAndTitle from '#parts/IconAndTitle.jsx';
+import TitleAndDivider from '#parts/TitleAndDivider.jsx';
 import SuitcaseIcon from '#assets/icons/pngs/flaticon/profile-card-icons/suitcase.png';
 import RibbonIcon from '#assets/icons/pngs/flaticon/profile-card-icons/ribbon.png';
 import LocationIcon from '#assets/icons/pngs/flaticon/profile-card-icons/location.png';
@@ -38,7 +39,7 @@ const StatelessJobViewer = (props) => {
           <br/>
           <br/>
 
-          <p>About {job.companyName}:</p>
+          <TitleAndDivider title={`About ${job.companyName}`}/>
           <p className="small-paragraph">{job.aboutUs}</p>
 
           <br/>
@@ -67,7 +68,7 @@ const StatelessJobViewer = (props) => {
             </div>
           </div>
 
-          <p>Job Description:</p>
+          <TitleAndDivider title="Job Description"/>
           <p className="small-paragraph">{job.jobDetails}</p>
 
           <br/>
@@ -86,19 +87,28 @@ const StatelessJobViewer = (props) => {
               : <p></p>
           }
 
-          <p>Skills required for this job:</p>
-          <ul>
-          {
-              job.keySkills
-                ? JSON.parse(job.keySkills).map((skill, i) => {
-                  return (
-                  <li key={i}>{skill}</li>
-                  );
-                })
+          <TitleAndDivider title="Skills required for this job"/>
+          <br/>
+          <div className="select-list">
+            <div className="item-list">
+              {
+                typeof job.keySkills[0] === 'string'
+                  ? JSON.parse(job.keySkills[0]).map((skill, i) => {
+                    return (
+                      <button
+                        key={i}
+                        disabled
+                        className="list-item"
+                      >
+                        {skill}
+                      </button>
+                    );
+                  })
 
-                : ''
-            }
-          </ul>
+                  : ''
+              }
+            </div>
+          </div>
 
         </form>
       </div>

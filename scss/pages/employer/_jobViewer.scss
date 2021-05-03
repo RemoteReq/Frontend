@@ -10,6 +10,21 @@
     background-color: white;
     widtH: 1000px;
 
+    .select-list {
+
+      .item-list {
+
+        .list-item {
+          background-color: $SecondaryColor;
+          color: white;
+        }
+
+        .list-item:hover {
+          cursor: initial;
+        }
+      }
+    }
+
     .small-paragraph {
       line-height: 20pt;
     }
