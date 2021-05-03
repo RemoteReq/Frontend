@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import TitleAndDivider from '#parts/TitleAndDivider.jsx';
 import EMatchRating from '#parts/EMatchRating.jsx';
 import EMatchPreview from '#parts/EMatchPreview.jsx';
 
@@ -13,7 +14,8 @@ const MatchWindow = ({ firstPaymentStatus, matches, job }) => {
       {
         matches
           ? <div>
-            <p>Candidates matches for your job req:</p>
+            {/* <p>Candidates matches for your job req:</p> */}
+            <TitleAndDivider title="Candidate matches for your job listing"/>
             <div className="job-viewer-match-list">
             {
               firstPaymentStatus

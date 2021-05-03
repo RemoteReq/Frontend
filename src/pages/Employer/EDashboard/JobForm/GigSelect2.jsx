@@ -67,7 +67,7 @@ class GigSelect extends Component {
 
   render() {
     const {
-      jobType, availability, price, afterHirePrice,
+      jobType, availability, price, afterHirePrice, keySkills,
     } = this.state;
 
     return (
@@ -140,6 +140,7 @@ class GigSelect extends Component {
                   jobType,
                   price,
                   afterHirePrice,
+                  keySkills,
                   ...this.state,
                 },
               }}

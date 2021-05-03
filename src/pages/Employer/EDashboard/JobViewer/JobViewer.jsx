@@ -5,6 +5,7 @@ import ENav from '../../ENav/ENav.jsx';
 // import EMatchRating from '#parts/EMatchRating.jsx';
 import MatchWindow from './MatchWindow.jsx';
 import HireSelect from './HireSelect.jsx';
+import TitleAndDivider from '#parts/TitleAndDivider.jsx';
 import IconAndTitle from '#parts/IconAndTitle.jsx';
 import SuitcaseIcon from '#assets/icons/pngs/flaticon/profile-card-icons/suitcase.png';
 import RibbonIcon from '#assets/icons/pngs/flaticon/profile-card-icons/ribbon.png';
@@ -166,7 +167,8 @@ class JobViewer extends Component {
           }
 
           <br/>
-          <p>Our Mission:</p>
+          <TitleAndDivider title="Our Mission"/>
+          {/* <p>Our Mission:</p> */}
           <br/>
 
           <p className="small-paragraph">{job.aboutUs || ''}</p>
@@ -198,7 +200,8 @@ class JobViewer extends Component {
 
           </div>
 
-          <p>Description:</p>
+          <TitleAndDivider title="Description"/>
+          {/* <p>Description:</p> */}
           <br/>
           <p className="small-paragraph">{job.jobDetails}</p>
 
@@ -218,21 +221,32 @@ class JobViewer extends Component {
               : <p></p>
           }
 
-          <p>Skills required for this job:</p>
+        <TitleAndDivider title="Skills required for this job"/>
+        {/* <p>Skills required for this job:</p> */}
           <br/>
-          <ul>
-            {
-              job.keySkills.map((skill, i) => {
-                return (
-                  <li key={i}>{skill}</li>
-                );
-              })
-            }
-          </ul>
+          <div className="select-list">
+            <div className="item-list">
+              {
+                typeof job.keySkills[0] === 'string'
+                  ? JSON.parse(job.keySkills[0]).map((skill, i) => {
+                    return (
+                      <button
+                        key={i}
+                        disabled
+                        className="list-item"
+                      >
+                        {skill}
+                      </button>
+                    );
+                  })
+
+                  : ''
+              }
+            </div>
+          </div>
 
           <br/>
           <br/>
-
 
           {
             firstPaymentStatus ? ''
@@ -254,7 +268,6 @@ class JobViewer extends Component {
             </div>
           </div>
           }
-
 
         </form>
       </div>
