@@ -4,7 +4,8 @@ import LPHeader from './LPHeader.jsx';
 import AboutHeader from './AboutHeader.jsx';
 import AboutMain from './AboutMain.jsx';
 import CallToAction from './CallToAction.jsx';
-import Disclaimer from './Disclaimer.jsx';
+// import Disclaimer from './Disclaimer.jsx';
+import OurPartners from './OurPartners.jsx';
 
 class LandingPage extends Component {
   componentDidMount() {
@@ -29,6 +30,7 @@ class LandingPage extends Component {
           <LPHeader />
           <AboutHeader />
           <AboutMain />
+          <OurPartners />
           <CallToAction />
         </div>
     );
