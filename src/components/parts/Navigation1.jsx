@@ -52,16 +52,16 @@ class Navigation1 extends Component {
 
         <div className="navigation-1-links">
           <Link to="/find-talent">
-            <button className='button-2'>hire talent</button>
+            <button className='button-1'>hire talent</button>
           </Link>
 
           <Link to='/sign-in'>
-            <button className='button-2'>find jobs</button>
+            <button className='button-1'>find jobs</button>
           </Link>
 
 
           <Link to="/request-a-demo">
-            <button className='button-1'>request a demo</button>
+            <button className='button-2'>request a demo</button>
           </Link>
 
           <a href="https://blog.remotereq.com">
@@ -71,15 +71,15 @@ class Navigation1 extends Component {
 
         <div className={`hamburger-menu ${showHamburgerMenu ? 'show' : 'hide'}`}>
           <Link to="/find-talent">
-            <button className='button-2'>hire talent</button>
+            <button className='button-1'>hire talent</button>
           </Link>
 
           <Link to='/sign-in'>
-            <button className='button-2'>find jobs</button>
+            <button className='button-1'>find jobs</button>
           </Link>
 
           <Link to="/request-a-demo">
-            <button className='button-1'>request a demo</button>
+            <button className='button-2'>request a demo</button>
           </Link>
         </div>
 
