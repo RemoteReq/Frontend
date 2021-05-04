@@ -1,15 +1,24 @@
 .landingPage-header {
   background: #fbf9f4;
   padding: 4% 10%;
-  height: 80vh;
+  height: 85vh;
   display: flex;
   justify-content: space-between;
   position: relative;
 
   .join-us {
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    // width: 50%;
+    // flex-wrap: wrap;
+
+    p {
+      margin: 0 14px 0 0
+    }
 
     button {
-      margin: 12px 24px 0 0;
+      margin: 0 14px 0 0;
     }
   }
 
@@ -47,9 +56,19 @@
 @media screen and (max-aspect-ratio: 1/1) {
   .landingPage {
     padding: 70px 0 0 0;
+    
+    h1 {
+      font-size: 32pt;
+    }
+    
+    .join-us {
+      display: flex;
+      flex-direction: column;
+    }
   }
-
+  
   .landingPage-header {
+    height: auto;
     .landingPage-heading-btns {
       width: 100%;
       display: flex;
