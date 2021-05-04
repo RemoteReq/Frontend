@@ -30,7 +30,7 @@ class LandingPage extends Component {
           <LPHeader />
           <AboutHeader />
           <AboutMain />
-          <OurPartners />
+          {/* <OurPartners /> */}
           <CallToAction />
         </div>
     );
