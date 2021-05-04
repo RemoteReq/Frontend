@@ -13,12 +13,14 @@ const LPHeader = () => {
       </div>
 
       <div className="join-us">
-          <Link to="/sign-up">
-            <button className="button-1">Job Seekers</button>
+          <Link to="/find-talent">
+            <button className="button-1">Hire Talent</button>
           </Link>
 
-          <Link to="/find-talent">
-            <button className="e-button">Employers</button>
+          <p>or</p>
+
+          <Link to="/sign-up">
+            <button className="button-1">Find Jobs</button>
           </Link>
       </div>
     </div>

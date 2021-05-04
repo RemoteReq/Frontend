@@ -5,7 +5,7 @@ import WebFooter from '../../components/parts/WebFooter.jsx';
 const CallToAction = () => {
   return (
   <WebFooter
-  header={'Where remote-first talent make their impact'}
+  header={'Where remote-first talent makes their impact'}
   graphics={true}
   component={
     <div>
