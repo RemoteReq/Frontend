@@ -32,9 +32,9 @@ const FindTalent = () => {
           Post a job to get started. Pay only for the candidates you choose to engage.
         </p>
 
-        <Link to="/employer">
+        <a href="https://employer.remotereq.com">
           <button className="button-1">Post a job</button>
-        </Link>
+        </a>
 
         <br />
         <br />
