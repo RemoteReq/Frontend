@@ -64,9 +64,9 @@ const Mission = () => {
       header={'Put our network to work for your cause.'}
       graphics={false}
       component={
-        <Link to="/employer">
+        <a href="https://employer.remotereq.com">
         <button className="button-1">Post a job</button>
-        </Link>
+        </a>
       }
       />
   </div>

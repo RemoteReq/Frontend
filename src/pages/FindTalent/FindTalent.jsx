@@ -100,9 +100,9 @@ const FindTalent = () => {
     graphics={true}
     component={
       <div>
-      <Link to="/employer">
+      <a href="https://employer.remotereq.com">
         <button className="button-1">Post a job</button>
-      </Link>
+      </a>
 
       {/* <Link to="howItWorks">
         <button className="button-2">How it works</button>
