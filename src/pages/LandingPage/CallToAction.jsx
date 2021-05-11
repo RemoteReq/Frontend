@@ -12,7 +12,7 @@ const CallToAction = () => {
       <Link to="/sign-up">
         <button className='button-1'>Find Jobs</button>
       </Link>
-
+      <p>or</p>
       <Link to="/find-talent">
         <button className='button-1'>Hire Talent</button>
       </Link>

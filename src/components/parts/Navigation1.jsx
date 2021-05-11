@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { PopupButton } from 'react-calendly';
 import { Link } from 'react-router-dom';
 import RemoteReq from '#assets/images/pngs/RemoteReq-logotype-cobalt.png';
 import RRLogo from '#assets/images/pngs/RR-cobalt.png';
@@ -59,10 +60,7 @@ class Navigation1 extends Component {
             <button className='button-1'>find jobs</button>
           </Link>
 
-
-          <Link to="/request-a-demo">
-            <button className='button-2'>request a demo</button>
-          </Link>
+          <PopupButton className="button-2" url="https://calendly.com/kevinwbryant/remotereq-employer-demo" text="Request a demo" styles={{ marginLeft: '20px' }}/>
 
           <a href="https://blog.remotereq.com">
             <button className="e-button-2">Blog</button>
@@ -78,9 +76,7 @@ class Navigation1 extends Component {
             <button className='button-1'>find jobs</button>
           </Link>
 
-          <Link to="/request-a-demo">
-            <button className='button-2'>request a demo</button>
-          </Link>
+          <PopupButton className="button-2" url="https://calendly.com/kevinwbryant/remotereq-employer-demo" text="Request a demo" styles={{ marginLeft: '20px' }}/>
         </div>
 
     </nav>
