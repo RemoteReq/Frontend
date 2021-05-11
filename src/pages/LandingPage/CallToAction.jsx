@@ -8,7 +8,7 @@ const CallToAction = () => {
   header={'Where remote-first talent makes their impact'}
   graphics={true}
   component={
-    <div>
+    <div className="call-to-action">
       <Link to="/sign-up">
         <button className='big-button button-1'>Find Jobs</button>
       </Link>

@@ -34,7 +34,7 @@ const FindTalent = () => {
         </p>
 
         <a href="https://employer.remotereq.com">
-          <button className="button-1">Post a job</button>
+          <button className="big-button button-1">Post a job</button>
         </a>
 
         <br />
