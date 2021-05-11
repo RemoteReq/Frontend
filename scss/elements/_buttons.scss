@@ -20,6 +20,30 @@ button {
   outline: none;
 }
 
+.big-button {
+  height: 80px;
+  margin: 20px 0;
+  font-size: 16pt;
+  padding: 0 50px;
+}
+
+.link-button {
+  background-color: $BackgroundColor;
+  border: none;
+  margin: 0;
+  padding: 0;
+  text-transform: initial;
+  letter-spacing: initial;
+  text-decoration: underline;
+  font-size: 14pt;
+  color: $SecondaryColor;
+  height: initial;
+}
+
+.link-button:hover {
+  color: $TertiaryColor;
+}
+
 .small-button {
   font-size: 12pt;
   padding: 0 20px;

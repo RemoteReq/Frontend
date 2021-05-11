@@ -73,13 +73,13 @@
 
 @media screen and (max-aspect-ratio: 3/2) {
   .footer{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    // position: absolute;
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
     margin: 0 10px;
-    padding-top: 100vh;
-    z-index: -1;
+    // padding-top: 100vh;
+    // z-index: -1;
 
     .upper-footer {
       flex-direction: column;
@@ -134,7 +134,7 @@
   }
 }
 
-// @media Screen and (max-aspect-ratio: 1/1) {
+// @media Screen and (max-aspect-ratio: 8/5) {
 //   .footer {
 //     display: none;
 //   }
