@@ -10,11 +10,11 @@ const CallToAction = () => {
   component={
     <div>
       <Link to="/sign-up">
-        <button className='button-1'>Find Jobs</button>
+        <button className='big-button button-1'>Find Jobs</button>
       </Link>
       <p>or</p>
       <Link to="/find-talent">
-        <button className='button-1'>Hire Talent</button>
+        <button className='big-button button-1'>Hire Talent</button>
       </Link>
     </div>
   }

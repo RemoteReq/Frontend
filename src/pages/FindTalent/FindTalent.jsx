@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import { PopupButton } from 'react-calendly';
 import Xarrow from 'react-xarrows';
 import triplet1 from '#assets/icons/pngs/Profile.png';
 import triplet2 from '#assets/icons/pngs/Matched.png';
@@ -40,9 +41,7 @@ const FindTalent = () => {
         <br />
 
         <div>
-          <Link to="/request-a-demo" className="large-link">
-            Request a Demo
-          </Link>
+          <PopupButton className="link-button" url="https://calendly.com/kevinwbryant/remotereq-employer-demo" text="Request a demo"/>
         </div>
       </div>
 
@@ -101,7 +100,7 @@ const FindTalent = () => {
     component={
       <div>
       <a href="https://employer.remotereq.com">
-        <button className="button-1">Post a job</button>
+        <button className="big-button button-1">Post a job</button>
       </a>
 
       {/* <Link to="howItWorks">
