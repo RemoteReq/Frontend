@@ -8,7 +8,7 @@ const LPHeader = () => {
 
     <div className='landingPage-heading-btns'>
       <div className='heading'>
-        <h1>Matching nonprofits to the talent they need to grow their impact. </h1>
+        <h1>Connecting nonprofits to purpose-driven talent</h1>
         <p>Connect to quality talent, at a nonprofit discount. Post a job to hire for remote, flexible, and on-site jobs. Join our network today.</p>
       </div>
 
