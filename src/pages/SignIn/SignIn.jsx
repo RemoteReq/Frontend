@@ -183,7 +183,7 @@ class SignIn extends Component {
             {/* <GoogleButton/> */}
 
             <p className="small-paragraph">
-              Are you an employer? <Link to="/employer/sign-in">Sign In Here</Link>
+              Are you an employer? <a href="https://employer.remotereq.com/sign-in">Sign In Here</a>
             </p>
 
             <p className="small-paragraph">
