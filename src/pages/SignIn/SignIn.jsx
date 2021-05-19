@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import { Redirect, Link } from 'react-router-dom';
-// import GoogleButton from '#auth/GoogleButton.jsx';
 import { GoogleLogin } from 'react-google-login';
+import GoogleButton from '#auth/GoogleButton.jsx';
 import Divider from '#components/parts/Divider.jsx';
 import PasswordField from '#parts/PasswordField.jsx';
 import auth from '../../components/Auth/Auth.jsx';
@@ -180,7 +180,7 @@ class SignIn extends Component {
             >Sign in
             </button>
 
-            {/* <GoogleButton/> */}
+            <GoogleButton/>
 
             <p className="small-paragraph">
               Are you an employer? <Link to="/employer/sign-in">Sign In Here</Link>
