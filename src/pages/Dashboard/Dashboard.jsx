@@ -46,9 +46,9 @@ class Dashboard extends Component {
           }, () => { return console.log('user details retrieved!', this.state); });
         })
         .catch((error) => {
-          auth.logout(() => {
-            this.props.history.push('/sign-in');
-          });
+          // auth.logout(() => {
+          //   this.props.history.push('/sign-in');
+          // });
 
           return error;
         })

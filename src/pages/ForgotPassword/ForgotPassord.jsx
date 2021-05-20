@@ -98,7 +98,7 @@ class ForgotPassword extends Component {
           >Request Password Reset</button>
 
           <p className="small-paragraph">
-            Are you an Employer? <a href="https://employer.remotereq.com/forgot-password">Recover your password here</a>
+            Are you an Employer? <a href={`${process.env.EMPLOYER_URL}/forgot-password`}>Recover your password here</a>
           </p>
 
         </form>
