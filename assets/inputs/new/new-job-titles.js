@@ -77,6 +77,9 @@ const jobTitles = [
   { value: 'Teacher', label: 'Teacher' },
   { value: 'UX Developer', label: 'UX Developer' },
   { value: 'Volunteer Director', label: 'Volunteer Director' },
-  { value: 'Volunteer Manager', label: 'Volunteer Manager' }];
+  { value: 'Volunteer Manager', label: 'Volunteer Manager' },
+  { value: 'Sales Manager', label: 'Sales Manager' },
+  { value: 'Sales Representative', label: 'Sales Representative' },
+  { value: 'Account Executive', label: 'Account Executive' }];
 
 module.exports = jobTitles;
