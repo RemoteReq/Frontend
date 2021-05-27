@@ -32,7 +32,7 @@ import RequestADemo from '../pages/RequestADemo.jsx';
 import FAQ from '../pages/FAQ.jsx';
 import QnA2 from '../pages/QnA/QnA2.jsx';
 // import Employer from '../pages/Employer/Employer.jsx';
-// import EVerify from '../pages/Employer/EVerify/EVerify.jsx';
+import EVerify from '../pages/Employer/EVerify/EVerify.jsx';
 // import EResetPassword from '../pages/Employer/EResetPassword/EResetPassword.jsx';
 
 const IN_DEV_MODE = process.env.NODE_ENV;
@@ -56,7 +56,7 @@ class App extends Component {
                 <Route path="/forgot-password" component={ForgotPassword} />
                 <Route path="/resetPassword" component={ResetPassword} />
                 <Route path="/userEmailVerify" component={Verify} />
-                {/* <Route path="/employerEmailVerify" component={EVerify} /> */}
+                <Route path="/employerEmailVerify" component={EVerify} />
                 <Route path="/privacy-policy" component={PrivacyPolicy} />
                 <Route path="/terms-of-Use" component={TermsOfUse} />
                 <Route path="/job" component={StatelessJobViewer} />
