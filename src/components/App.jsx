@@ -34,6 +34,7 @@ import QnA2 from '../pages/QnA/QnA2.jsx';
 // import Employer from '../pages/Employer/Employer.jsx';
 // import EVerify from '../pages/Employer/EVerify/EVerify.jsx';
 // import EResetPassword from '../pages/Employer/EResetPassword/EResetPassword.jsx';
+import Video from '../pages/LandingPage/Video/Video.jsx';
 
 const IN_DEV_MODE = process.env.NODE_ENV;
 
@@ -70,6 +71,8 @@ class App extends Component {
                 <ProtectedRoute path="/dashboard" component={Dashboard} />
                 <Route component={Page404} />
               </Switch>
+
+              {/* <Video /> */}
             <Footer/>
           </div>
         </ScrollToTop>

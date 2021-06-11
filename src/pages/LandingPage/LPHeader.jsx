@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Video from './Video/Video.jsx';
 import LandingPageGraphic from '#assets/images/pngs/landing-page-graphic-2.png';
 
 const LPHeader = () => {
@@ -23,6 +24,9 @@ const LPHeader = () => {
             <button className="big-button button-1">Find Jobs</button>
           </Link>
       </div>
+
+      <Video />
+
     </div>
 
     <div>

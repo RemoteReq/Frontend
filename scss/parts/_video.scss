@@ -1,0 +1,22 @@
+.video {
+  margin: 20px 0;
+}
+
+.sticky-video {
+  width: auto;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1;
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+  .sticky-video {
+    display: none;
+  }
+
+  .video {
+    display: flex;
+    justify-content: center;
+  }
+}
