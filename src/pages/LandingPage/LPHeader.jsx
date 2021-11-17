@@ -25,7 +25,7 @@ const LPHeader = () => {
           </Link>
       </div>
 
-      <Video />
+      {/* <Video /> */}
 
     </div>
 
